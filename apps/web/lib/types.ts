@@ -16,6 +16,8 @@ export type IndexSummary = {
   name: string;
   game: string;
   universe: "singles" | "sealed";
+  history_start_date: string;
+  history_start_kind: "validation" | "published";
   base_date: string;
   status: "accumulating" | "published";
   target_size: number;

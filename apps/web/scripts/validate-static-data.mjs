@@ -52,6 +52,15 @@ for (const index of sourceData.indexes) {
   if (!Array.isArray(sourceHistory) || sourceHistory.length === 0) {
     fail(`${index.code} source history is empty`);
   }
+  if (index.history_start_kind !== "validation" && index.history_start_kind !== "published") {
+    fail(`${index.code} has invalid history_start_kind`);
+  }
+  if (sourceHistory[0].value_date !== index.history_start_date) {
+    fail(`${index.code} history_start_date does not match its first observation`);
+  }
+  if (index.base_date < index.history_start_date || !sourceHistory.some((row) => row.value_date === index.base_date)) {
+    fail(`${index.code} base_date must be an available observation on or after history_start_date`);
+  }
   if (!Array.isArray(sourceConstituents)) {
     fail(`${index.code} source constituents must be an array`);
   }
@@ -168,6 +177,9 @@ for (const index of indexes) {
   const history = await readJson(`indexes/${index.id}/history.json`);
   const constituents = await readJson(`indexes/${index.id}/constituents.json`);
   if (summary.code !== index.id) fail(`${index.id} summary code mismatch`);
+  if (!summary.history_start_date || !summary.history_start_kind || !summary.base_date) {
+    fail(`${index.id} summary is missing history provenance`);
+  }
   if (!Array.isArray(history) || history.length === 0) fail(`${index.id} history is empty`);
   if (!Array.isArray(constituents)) fail(`${index.id} constituents must be an array`);
   const constituentKeys = new Set();

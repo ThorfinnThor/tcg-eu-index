@@ -29,7 +29,7 @@ export default async function Page() {
           </div>
         </div>
         <p className="mt-4 max-w-3xl text-sm leading-6 text-paper/65">
-          Not transaction prices. Formal MVP inception: 2026-07-20. The production Cardmarket import is not connected yet; current values are transparent fixture data used to validate the product and calculation surfaces.
+          Not transaction prices. Validation history begins 2026-04-01 and formal MVP inception is 2026-07-20. The official Cardmarket source is now schema-checked daily; current index values remain transparent fixtures until sufficient daily snapshots have accumulated.
         </p>
       </section>
 

@@ -5,6 +5,7 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -13,7 +14,17 @@ import {
 import { chartPoints, historyForRange, type ChartRange } from "@/lib/index-analytics";
 import type { DailyIndexValue } from "@/lib/types";
 
-function HistoryChart({ history, compact, drawdown }: { history: DailyIndexValue[]; compact: boolean; drawdown: boolean }) {
+function HistoryChart({
+  history,
+  compact,
+  drawdown,
+  baseDate
+}: {
+  history: DailyIndexValue[];
+  compact: boolean;
+  drawdown: boolean;
+  baseDate?: string;
+}) {
   const gradientId = `chart-fill-${useId().replaceAll(":", "")}`;
   const data = useMemo(() => chartPoints(history), [history]);
   const dataKey = drawdown ? "drawdown" : "value";
@@ -42,6 +53,14 @@ function HistoryChart({ history, compact, drawdown }: { history: DailyIndexValue
             labelFormatter={(_, payload) => payload?.[0]?.payload?.date ?? ""}
             formatter={(value: number) => [drawdown ? `${value.toFixed(2)}%` : value.toFixed(2), drawdown ? "Drawdown" : "Index"]}
           />
+          {baseDate && history.some((row) => row.value_date === baseDate) ? (
+            <ReferenceLine
+              x={baseDate.slice(5)}
+              stroke="#66b8a7"
+              strokeDasharray="4 4"
+              label={{ value: "Inception", fill: "#66b8a7", fontSize: 11, position: "insideTopRight" }}
+            />
+          ) : null}
           <Area
             type="monotone"
             dataKey={dataKey}
@@ -61,7 +80,7 @@ export function IndexChart({ history, compact = false }: { history: DailyIndexVa
 
 const ranges: ChartRange[] = ["1M", "3M", "6M", "1Y", "Max"];
 
-export function IndexChartExplorer({ history }: { history: DailyIndexValue[] }) {
+export function IndexChartExplorer({ history, baseDate }: { history: DailyIndexValue[]; baseDate: string }) {
   const [range, setRange] = useState<ChartRange>("3M");
   const [drawdown, setDrawdown] = useState(false);
   const visibleHistory = useMemo(() => historyForRange(history, range), [history, range]);
@@ -92,7 +111,7 @@ export function IndexChartExplorer({ history }: { history: DailyIndexValue[] }) 
           Drawdown
         </label>
       </div>
-      <HistoryChart history={visibleHistory} compact={false} drawdown={drawdown} />
+      <HistoryChart history={visibleHistory} compact={false} drawdown={drawdown} baseDate={baseDate} />
       <div className="mt-2 text-right text-xs text-paper/40">{visibleHistory.length} daily observations</div>
     </div>
   );

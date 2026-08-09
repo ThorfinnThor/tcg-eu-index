@@ -1,5 +1,5 @@
 {
-  "datasetVersion": "2026-08-09.1",
+  "datasetVersion": "2026-08-09.2",
   "schemaVersion": 1,
   "source": "repo-managed-mvp-json",
   "indexes": [
@@ -9,6 +9,8 @@
       "name": "One Piece Europe 100",
       "game": "One Piece",
       "universe": "singles",
+      "history_start_date": "2026-04-01",
+      "history_start_kind": "validation",
       "base_date": "2026-07-20",
       "status": "accumulating",
       "target_size": 100,
@@ -21,6 +23,8 @@
       "name": "Pokemon Europe 250",
       "game": "Pokemon",
       "universe": "singles",
+      "history_start_date": "2026-04-01",
+      "history_start_kind": "validation",
       "base_date": "2026-07-20",
       "status": "accumulating",
       "target_size": 250,
@@ -33,6 +37,8 @@
       "name": "One Piece Sealed Pilot",
       "game": "One Piece",
       "universe": "sealed",
+      "history_start_date": "2026-04-01",
+      "history_start_kind": "validation",
       "base_date": "2026-07-20",
       "status": "accumulating",
       "target_size": 25,

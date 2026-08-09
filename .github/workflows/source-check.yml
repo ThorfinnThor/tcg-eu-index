@@ -1,0 +1,28 @@
+name: cardmarket-source-check
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "30 4 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  source_check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync --all-packages
+      - name: Validate official Cardmarket downloads
+        run: uv run --package tcg-eu-index-ingest python -m ingest.source_check | tee source-check.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cardmarket-source-check-${{ github.run_id }}
+          path: source-check.json
+          retention-days: 14

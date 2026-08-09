@@ -56,11 +56,16 @@ function pctChange(history: DailyIndexValue[], days: number) {
   return last / previous - 1;
 }
 
+export function postInceptionHistory(index: IndexSummary) {
+  return index.history.filter((row) => row.value_date >= index.base_date);
+}
+
 export function changes(index: IndexSummary) {
+  const history = postInceptionHistory(index);
   return {
-    d1: pctChange(index.history, 1),
-    d7: pctChange(index.history, 7),
-    d30: pctChange(index.history, 30)
+    d1: pctChange(history, 1),
+    d7: pctChange(history, 7),
+    d30: pctChange(history, 30)
   };
 }
 

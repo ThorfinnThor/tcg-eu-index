@@ -2,6 +2,9 @@ single:
   - single
   - card
   - singles
+  - One Piece Single
+  - Pokemon Single
+  - Pokémon Single
 sealed:
   - booster
   - booster box
@@ -10,4 +13,31 @@ sealed:
   - sealed
   - starter deck
   - structure deck
-other: []
+  - One Piece Booster
+  - One Piece Booster Boxes
+  - One Piece Preconstructed Decks
+  - One Piece Promo Products
+  - PCG Set
+  - Pokemon Blisters
+  - Pokemon Booster
+  - Pokemon Box Set
+  - Pokemon Display
+  - Pokemon Elite Trainer Boxes
+  - Pokemon Theme Deck
+  - Pokemon Tins
+  - Pokemon Trainer Kits
+  - Pokémon Blisters
+  - Pokémon Booster
+  - Pokémon Box Set
+  - Pokémon Display
+  - Pokémon Elite Trainer Boxes
+  - Pokémon Pokémon Sets
+  - Pokémon Theme Deck
+  - Pokémon Tins
+  - Pokémon Trainer Kits
+other:
+  - One Piece Lots
+  - Pokemon Coins
+  - Pokemon Lot
+  - Pokémon Coins
+  - Pokémon Lot

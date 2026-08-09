@@ -6,7 +6,9 @@ Accepted for the JSON-only MVP.
 
 ## Decision
 
-The public index page must display only figures derivable from repository data. Available-history return, maximum drawdown, best and worst daily returns, positive-day ratio, 30-day annualized listing-price volatility, and calculation-flag counts are derived directly from daily index history and covered by unit tests.
+The public index page must display only figures derivable from repository data. Return, maximum drawdown, best and worst daily returns, positive-day ratio, 30-day annualized listing-price volatility, and calculation-flag counts are derived directly from daily index history and covered by unit tests.
+
+Repository fixture observations before the formal `base_date` are validation history. They may remain visible in the chart when labelled and separated by an inception marker, but they must not contribute to displayed return or risk analytics. Index metadata records both `history_start_date` and `history_start_kind`; validation enforces that the dates reconcile with the series.
 
 Per-card movers and contribution rankings are not shown until per-constituent daily return and weight series exist. The UI states that limitation explicitly. Synthetic rankings based on row order are prohibited.
 
@@ -22,4 +24,4 @@ Constituent filters are mirrored into URL query parameters so historical composi
 
 ## Production follow-up
 
-Connecting the confirmed Cardmarket download source is the gate for true per-card movers, contribution leaders, and automated daily freshness.
+Accumulating enough daily snapshots from the confirmed Cardmarket downloads is the gate for true per-card movers, contribution leaders, and automated daily freshness.

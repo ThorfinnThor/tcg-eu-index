@@ -14,6 +14,7 @@ from core.notifier import post_discord
 from core.r2 import R2Client, gzip_body, sha256_hex
 from core.settings import Settings, parse_run_date, utc_now
 
+from ingest.cardmarket import catalogue_urls, combine_catalogues, priceguide_url
 from ingest.manifest import Manifest, ManifestFile, latest_pointer, manifest_key
 
 logger = logging.getLogger(__name__)
@@ -21,10 +22,7 @@ HEADER_ALLOWLIST = {"etag", "last-modified", "cache-control", "content-type"}
 
 
 def snapshot_key(kind: str, game: str, run_date: date) -> str:
-    return (
-        f"cardmarket/{kind}/{game}/{run_date:%Y}/{run_date:%m}/"
-        f"{run_date.isoformat()}.json.gz"
-    )
+    return f"cardmarket/{kind}/{game}/{run_date:%Y}/{run_date:%m}/{run_date.isoformat()}.json.gz"
 
 
 class Fetcher:
@@ -64,6 +62,31 @@ def _format_url(template: str, game: str) -> str:
     return template.format(game=game)
 
 
+def _fetch_source(
+    kind: str,
+    game: str,
+    settings: Settings,
+    fetcher: Fetcher,
+) -> tuple[bytes, dict[str, str]]:
+    if kind == "priceguide":
+        url = (
+            _format_url(settings.cm_priceguide_url_template, game)
+            if settings.cm_priceguide_url_template
+            else priceguide_url(game)
+        )
+        return fetcher.fetch(url)
+
+    if settings.cm_catalogue_url_template:
+        return fetcher.fetch(_format_url(settings.cm_catalogue_url_template, game))
+
+    responses = [fetcher.fetch(url) for url in catalogue_urls(game)]
+    body = combine_catalogues([response[0] for response in responses])
+    headers = {
+        key: value for _, response_headers in responses for key, value in response_headers.items()
+    }
+    return body, headers
+
+
 def _safe_headers(headers: dict[str, str]) -> dict[str, str]:
     return {key: value for key, value in headers.items() if key in HEADER_ALLOWLIST}
 
@@ -101,12 +124,8 @@ def run_archive(
 
     files: list[ManifestFile] = []
     for game in settings.cm_games:
-        for kind, template in (
-            ("priceguide", settings.cm_priceguide_url_template),
-            ("catalogue", settings.cm_catalogue_url_template),
-        ):
-            url = _format_url(template, game)
-            body, headers = fetcher.fetch(url)
+        for kind in ("priceguide", "catalogue"):
+            body, headers = _fetch_source(kind, game, settings, fetcher)
             destination = snapshot_key(kind, game, run_date)
             written_key, already_same = write_immutable(store, destination, body)
             files.append(

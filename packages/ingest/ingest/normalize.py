@@ -15,6 +15,7 @@ from core.logging import configure_logging
 from core.r2 import R2Client, gunzip_body, sha256_hex
 from core.settings import Settings, parse_run_date
 
+from ingest.cardmarket import game_config
 from ingest.manifest import Manifest, manifest_key, validate_manifest
 
 logger = logging.getLogger(__name__)
@@ -42,7 +43,7 @@ def _records(raw: bytes) -> list[dict[str, Any]]:
     payload = json.loads(raw)
     if isinstance(payload, list):
         return [item for item in payload if isinstance(item, dict)]
-    for key in ("data", "products", "priceGuide"):
+    for key in ("data", "products", "priceGuide", "priceGuides"):
         value = payload.get(key)
         if isinstance(value, list):
             return [item for item in value if isinstance(item, dict)]
@@ -78,7 +79,9 @@ def normalize_catalogue(
         product_id = int(_first(record, "idProduct", "productId", "cm_product_id", "id"))
         expansion_id = _first(record, "idExpansion", "expansionId", "cm_expansion_id")
         set_name = _first(record, "expansionName", "setName", "set", default=None)
-        raw_category = str(_first(record, "category", "productType", "type", default=""))
+        raw_category = str(
+            _first(record, "categoryName", "category", "productType", "type", default="")
+        )
         kind = classify(raw_category, category_mapping)
         if kind == "other" and raw_category:
             unknown.add(raw_category)
@@ -102,11 +105,9 @@ def normalize_catalogue(
             }
         )
         variants.append({"cm_product_id": product_id, "variant_key": "nonfoil"})
-        if any(key in record for key in ("foilSell", "foilLow", "foilAvg", "priceFoil")):
-            variants.append({"cm_product_id": product_id, "variant_key": "foil"})
 
     return NormalizedCatalogue(
-        games=[{"cm_game_key": game, "name": game.replace("-", " ").title()}],
+        games=[{"cm_game_key": game, "name": game_config(game).display_name}],
         sets=list(sets_by_key.values()),
         products=products,
         variants=variants,
@@ -116,6 +117,7 @@ def normalize_catalogue(
 
 def normalize_prices(game: str, raw: bytes, value_date: date) -> pl.DataFrame:
     records = _records(raw)
+    variant_suffix = game_config(game).variant_suffix
     rows: list[dict[str, Any]] = []
     for record in records:
         product_id = int(_first(record, "idProduct", "productId", "cm_product_id", "id"))
@@ -130,14 +132,29 @@ def normalize_prices(game: str, raw: bytes, value_date: date) -> pl.DataFrame:
             "avg7": _first(record, "avg7", "avg7Price", default=None),
             "avg30": _first(record, "avg30", "avg30Price", default=None),
         }
-        rows.append(base)
-        foil_avg = _first(record, "foilAvg", "priceFoil", default=None)
-        if foil_avg is not None:
-            foil = dict(base)
-            foil["variant_key"] = "foil"
-            foil["price_avg"] = foil_avg
-            foil["price_low"] = _first(record, "foilLow", default=foil_avg)
-            rows.append(foil)
+        if base["price_avg"] is not None:
+            rows.append(base)
+        variant_avg = _first(
+            record,
+            f"avg-{variant_suffix}",
+            "foilAvg",
+            "priceFoil",
+            default=None,
+        )
+        if variant_avg is not None:
+            variant = dict(base)
+            variant["variant_key"] = "foil"
+            variant["price_avg"] = variant_avg
+            variant["price_low"] = _first(
+                record,
+                f"low-{variant_suffix}",
+                "foilLow",
+                default=variant_avg,
+            )
+            variant["avg1"] = _first(record, f"avg1-{variant_suffix}", default=None)
+            variant["avg7"] = _first(record, f"avg7-{variant_suffix}", default=None)
+            variant["avg30"] = _first(record, f"avg30-{variant_suffix}", default=None)
+            rows.append(variant)
     return pl.DataFrame(rows) if rows else pl.DataFrame()
 
 

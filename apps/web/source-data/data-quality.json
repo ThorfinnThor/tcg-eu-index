@@ -9,7 +9,11 @@
     },
     {
       "title": "MVP source data",
-      "body": "Current values are repo-managed MVP fixtures. Cardmarket imports remain a later phase before production-grade market claims."
+      "body": "Current index values are repo-managed MVP fixtures. Official Cardmarket downloads and schemas are checked daily, but real values require an accumulated daily snapshot history."
+    },
+    {
+      "title": "Validation history",
+      "body": "Observations before 2026-07-20 validate the product surfaces only. Public return and risk analytics start at formal MVP inception."
     },
     {
       "title": "No raw price exposure",
@@ -36,8 +40,8 @@
     {
       "id": "cardmarket-source-confirmation",
       "label": "Cardmarket source confirmation",
-      "status": "pending",
-      "detail": "Official download URLs and record schemas must be confirmed before replacing MVP fixtures."
+      "status": "pass",
+      "detail": "Official One Piece and Pokemon price-guide and catalogue URLs are verified by a scheduled schema and coverage check."
     },
     {
       "id": "manual-mvp-cadence",

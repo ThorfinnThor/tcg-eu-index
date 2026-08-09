@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
@@ -17,6 +18,24 @@ class FakeFetcher:
             if "price" in url
             else [{"idProduct": 1, "name": "Card", "category": "single"}]
         )
+        return json.dumps(body).encode(), {"etag": "fixture"}
+
+
+class OfficialFakeFetcher:
+    def __init__(self) -> None:
+        self.urls: list[str] = []
+
+    def fetch(self, url: str) -> tuple[bytes, dict[str, str]]:
+        self.urls.append(url)
+        if "priceGuide" in url:
+            body = {"version": 1, "createdAt": "2026-08-09", "priceGuides": []}
+        else:
+            product_id = 1 if "products_singles_" in url else 2
+            body = {
+                "version": 1,
+                "createdAt": "2026-08-09",
+                "products": [{"idProduct": product_id}],
+            }
         return json.dumps(body).encode(), {"etag": "fixture"}
 
 
@@ -57,3 +76,24 @@ def test_archive_is_idempotent(tmp_path: Path) -> None:
     assert store.exists(manifest_key(date(2026, 7, 20)))
     raw = gunzip_body(store.read_bytes(first.files[0].key))
     assert json.loads(raw)[0]["idProduct"] == 1
+
+
+def test_archive_uses_official_downloads_and_combines_catalogues(tmp_path: Path) -> None:
+    store = LocalObjectStore(tmp_path / "r2")
+    fetcher = OfficialFakeFetcher()
+    configured = replace(
+        settings(),
+        cm_priceguide_url_template="",
+        cm_catalogue_url_template="",
+    )
+    manifest = run_archive(
+        date(2026, 8, 9),
+        configured,
+        store=store,
+        fetcher=fetcher,
+        data_dir=tmp_path,
+    )
+    catalogue_file = next(item for item in manifest.files if item.kind == "catalogue")
+    catalogue = json.loads(gunzip_body(store.read_bytes(catalogue_file.key)))
+    assert [product["idProduct"] for product in catalogue["products"]] == [1, 2]
+    assert len(fetcher.urls) == 3

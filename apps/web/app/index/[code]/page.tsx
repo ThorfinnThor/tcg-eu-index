@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
-import { changes, getIndex } from "@/lib/data";
+import { changes, getIndex, postInceptionHistory } from "@/lib/data";
 import { calculateIndexAnalytics } from "@/lib/index-analytics";
 
 export const revalidate = 3600;
@@ -24,7 +24,9 @@ export default async function IndexPage({ params }: { params: { code: string } }
   if (!index) notFound();
   const delta = changes(index);
   const latest = index.history.at(-1);
-  const analytics = calculateIndexAnalytics(index.history);
+  const formalHistory = postInceptionHistory(index);
+  const analytics = calculateIndexAnalytics(formalHistory);
+  const validationObservations = index.history.length - formalHistory.length;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -33,7 +35,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
           <div className="text-sm text-paper/50">{index.code}</div>
           <h1 className="mt-1 text-3xl font-semibold text-paper">{index.name}</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-paper/60">
-            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. Formal MVP inception: {index.base_date}.
+            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. Validation history begins {index.history_start_date}; formal MVP inception is {index.base_date}.
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs text-paper/50">
             <span className="chip">Repo-managed MVP data</span>
@@ -49,7 +51,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
 
       <section className="grid gap-4 lg:grid-cols-[1fr_320px]">
         <div className="surface p-4">
-          <IndexChartExplorer history={index.history} />
+          <IndexChartExplorer history={index.history} baseDate={index.base_date} />
         </div>
         <aside className="surface p-4">
           <div className="grid grid-cols-2 gap-5">
@@ -65,9 +67,9 @@ export default async function IndexPage({ params }: { params: { code: string } }
 
       <section className="mt-4 grid gap-4 lg:grid-cols-2">
         <div className="surface p-4">
-          <h2 className="text-lg font-semibold">Available-history analytics</h2>
+          <h2 className="text-lg font-semibold">Post-inception analytics</h2>
           <p className="mt-2 text-xs leading-5 text-paper/45">
-            Calculated from {analytics.startDate} through {analytics.endDate}; these figures describe the available MVP history, not executed transactions.
+            Calculated from {analytics.startDate} through {analytics.endDate}. Pre-inception validation values and executed transactions are excluded.
           </p>
           <div className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-3">
             <Metric label="Period return" value={formatPct(analytics.periodReturn)} tone={analytics.periodReturn >= 0 ? "up" : "down"} />
@@ -82,8 +84,12 @@ export default async function IndexPage({ params }: { params: { code: string } }
           <h2 className="text-lg font-semibold">Calculation coverage</h2>
           <div className="mt-4 divide-y divide-line text-sm">
             <div className="flex items-center justify-between py-3">
-              <span className="text-paper/60">Daily observations</span>
+              <span className="text-paper/60">Post-inception observations</span>
               <span>{analytics.observationCount}</span>
+            </div>
+            <div className="flex items-center justify-between py-3">
+              <span className="text-paper/60">Validation observations</span>
+              <span>{validationObservations}</span>
             </div>
             <div className="flex items-center justify-between py-3">
               <span className="text-paper/60">Days with caps</span>

@@ -10,8 +10,10 @@
     "dev": "next dev",
     "prebuild": "npm run data:export && npm run data:validate",
     "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -22,6 +24,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@testing-library/react": "^16.0.1",
     "@types/node": "^22.7.4",
     "@types/react": "^18.3.11",
