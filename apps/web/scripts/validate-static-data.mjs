@@ -74,19 +74,35 @@ const sourceQuality = await readSourceFile("data-quality.json");
 if (!Array.isArray(sourceQuality.limitations) || !Array.isArray(sourceQuality.checks) || !Array.isArray(sourceQuality.gaps)) {
   fail("source-data/data-quality.json must define limitations, checks, and gaps arrays");
 }
+if (typeof sourceQuality.datasetCompleteness !== "number" || sourceQuality.datasetCompleteness < 0 || sourceQuality.datasetCompleteness > 1) {
+  fail("source-data/data-quality.json datasetCompleteness must be between 0 and 1");
+}
 const sourceReports = await readSourceFile("reports/index.json");
 if (!Array.isArray(sourceReports.reports)) {
   fail("source-data/reports/index.json must define a reports array");
 }
 const reportWeeks = new Set();
+const reportIds = new Set();
+const configuredIndexCodes = new Set(sourceData.indexes.map((index) => index.code));
 for (const report of sourceReports.reports) {
   if (!/^\d{4}-W\d{2}$/.test(report.week) || !["draft", "published"].includes(report.status)) {
     fail(`invalid report identity: ${JSON.stringify(report)}`);
   }
   if (reportWeeks.has(report.week)) fail(`duplicate report week ${report.week}`);
   reportWeeks.add(report.week);
+  if (!report.id || reportIds.has(report.id)) fail(`duplicate or missing report id ${report.id}`);
+  reportIds.add(report.id);
   if (!Array.isArray(report.indexHighlights) || report.indexHighlights.length !== sourceData.indexes.length) {
     fail(`${report.week} must include every configured index`);
+  }
+  const highlightCodes = new Set(report.indexHighlights.map((highlight) => highlight.code));
+  if (highlightCodes.size !== configuredIndexCodes.size || [...configuredIndexCodes].some((code) => !highlightCodes.has(code))) {
+    fail(`${report.week} highlights do not match configured indexes`);
+  }
+  if (report.id.endsWith("-generated") && report.indexHighlights.some((highlight) =>
+    typeof highlight.startValue !== "number" || typeof highlight.endValue !== "number" || typeof highlight.observations !== "number"
+  )) {
+    fail(`${report.week} generated highlights require values and observation counts`);
   }
   if (report.status === "published" && !report.publishedAt) fail(`${report.week} is published without publishedAt`);
 }
@@ -154,11 +170,17 @@ for (const index of indexes) {
   if (summary.code !== index.id) fail(`${index.id} summary code mismatch`);
   if (!Array.isArray(history) || history.length === 0) fail(`${index.id} history is empty`);
   if (!Array.isArray(constituents)) fail(`${index.id} constituents must be an array`);
+  const constituentKeys = new Set();
   for (const constituent of constituents) {
     if (!constituent.member_since || !constituent.action || typeof constituent.ref_price !== "number") {
       fail(`${index.id} has invalid exported constituent data`);
     }
+    const key = `${constituent.cm_product_id}:${constituent.variant_key}`;
+    if (constituentKeys.has(key)) fail(`${index.id} has duplicate constituent ${key}`);
+    constituentKeys.add(key);
   }
+  let previousRow = null;
+  const historyDates = new Set();
   for (const row of history) {
     if (!row.value_date || typeof row.index_value !== "number") {
       fail(`${index.id} has invalid history row`);
@@ -166,7 +188,35 @@ for (const index of indexes) {
     if (Math.abs(row.daily_return ?? 0) > 0.25) {
       fail(`${index.id} daily return exceeds methodology cap`);
     }
+    if (historyDates.has(row.value_date) || (previousRow && row.value_date <= previousRow.value_date)) {
+      fail(`${index.id} history dates must be unique and ascending`);
+    }
+    if (previousRow) {
+      const impliedReturn = row.index_value / previousRow.index_value - 1;
+      if (Math.abs(impliedReturn - row.daily_return) > 0.000001) {
+        fail(`${index.id} daily return does not reconcile on ${row.value_date}`);
+      }
+    }
+    historyDates.add(row.value_date);
+    previousRow = row;
   }
+}
+
+const statusPayload = await readJson("status/latest.json");
+if (statusPayload.gap_count !== dataQuality.gaps.length) fail("status gap_count does not match data-quality gaps");
+if (statusPayload.dataset_version !== manifest.datasetVersion || statusPayload.source !== manifest.sourceVersions.source) {
+  fail("status provenance does not match manifest");
+}
+if (!statusPayload.generated_at || Number.isNaN(new Date(statusPayload.generated_at).valueOf())) {
+  fail("status generated_at is invalid");
+}
+const exportedLatestDates = await Promise.all(indexes.map(async (index) => {
+  const history = await readJson(`indexes/${index.id}/history.json`);
+  return history.at(-1)?.value_date ?? null;
+}));
+const expectedLatestDate = exportedLatestDates.filter(Boolean).sort().at(-1) ?? null;
+if (statusPayload.last_snapshot_date !== expectedLatestDate || statusPayload.last_calc_date !== expectedLatestDate) {
+  fail("status latest dates do not match exported index history");
 }
 
 console.log("static data validation passed");

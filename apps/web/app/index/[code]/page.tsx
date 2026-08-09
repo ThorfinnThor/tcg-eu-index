@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContributionBars, IndexChartExplorer } from "@/components/IndexChart";
+import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
-import { changes, getConstituents, getIndex } from "@/lib/data";
+import { changes, getIndex } from "@/lib/data";
+import { calculateIndexAnalytics } from "@/lib/index-analytics";
 
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
@@ -23,11 +24,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
   if (!index) notFound();
   const delta = changes(index);
   const latest = index.history.at(-1);
-  const constituents = await getConstituents(index.code);
-  const bars = constituents.slice(0, 8).map((item, row) => ({
-    name: item.name.replace(" Benchmark Product", " #"),
-    contribution: Number(((8 - row) * 0.0012).toFixed(4))
-  }));
+  const analytics = calculateIndexAnalytics(index.history);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -36,13 +33,17 @@ export default async function IndexPage({ params }: { params: { code: string } }
           <div className="text-sm text-paper/50">{index.code}</div>
           <h1 className="mt-1 text-3xl font-semibold text-paper">{index.name}</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-paper/60">
-            Chain-linked equal-weight index, listing-price basis, currently {index.status}. Base value 1000 at {index.base_date}.
+            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. Formal MVP inception: {index.base_date}.
           </p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs text-paper/50">
+            <span className="chip">Repo-managed MVP data</span>
+            <span className="chip">Latest calculation {latest?.value_date ?? "pending"}</span>
+          </div>
         </div>
         <div className="flex flex-wrap gap-2">
           <Link className="chip hover:border-amber" href={`/index/${index.code}/constituents`}>Constituents</Link>
           <Link className="chip hover:border-amber" href="/methodology">Methodology</Link>
-          <a className="chip hover:border-amber" href={`/api/public/${index.code}/history.csv`}>CSV</a>
+          <a className="chip hover:border-amber" href={`/api/public/${index.code}/history.csv`} download>CSV</a>
         </div>
       </div>
 
@@ -64,18 +65,40 @@ export default async function IndexPage({ params }: { params: { code: string } }
 
       <section className="mt-4 grid gap-4 lg:grid-cols-2">
         <div className="surface p-4">
-          <h2 className="text-lg font-semibold">Contribution leaders</h2>
-          <ContributionBars data={bars} />
+          <h2 className="text-lg font-semibold">Available-history analytics</h2>
+          <p className="mt-2 text-xs leading-5 text-paper/45">
+            Calculated from {analytics.startDate} through {analytics.endDate}; these figures describe the available MVP history, not executed transactions.
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-3">
+            <Metric label="Period return" value={formatPct(analytics.periodReturn)} tone={analytics.periodReturn >= 0 ? "up" : "down"} />
+            <Metric label="Max drawdown" value={formatPct(analytics.maxDrawdown)} tone="down" />
+            <Metric label="Positive days" value={`${(analytics.positiveDayRatio * 100).toFixed(0)}%`} />
+            <Metric label="Best day" value={formatPct(analytics.bestDay?.daily_return ?? 0)} tone="up" />
+            <Metric label="Worst day" value={formatPct(analytics.worstDay?.daily_return ?? 0)} tone="down" />
+            <Metric label="Volatility 30d" value={`${(analytics.annualizedVolatility30d * 100).toFixed(1)}%`} />
+          </div>
         </div>
         <div className="surface p-4">
-          <h2 className="text-lg font-semibold">Movers</h2>
-          <div className="mt-4 divide-y divide-line">
-            {constituents.slice(0, 8).map((item, row) => (
-              <div key={`${item.cm_product_id}-${item.variant_key}`} className="flex items-center justify-between py-3 text-sm">
-                <span className="text-paper/75">{item.name}</span>
-                <span className={row % 2 ? "text-coral" : "text-mint"}>{row % 2 ? "-" : "+"}{(row + 1.8).toFixed(1)}%</span>
-              </div>
-            ))}
+          <h2 className="text-lg font-semibold">Calculation coverage</h2>
+          <div className="mt-4 divide-y divide-line text-sm">
+            <div className="flex items-center justify-between py-3">
+              <span className="text-paper/60">Daily observations</span>
+              <span>{analytics.observationCount}</span>
+            </div>
+            <div className="flex items-center justify-between py-3">
+              <span className="text-paper/60">Days with caps</span>
+              <span>{analytics.cappedDays}</span>
+            </div>
+            <div className="flex items-center justify-between py-3">
+              <span className="text-paper/60">Days with carried values</span>
+              <span>{analytics.carriedForwardDays}</span>
+            </div>
+          </div>
+          <div className="mt-4 border-t border-line pt-4">
+            <h3 className="text-sm font-semibold text-paper">Per-card movers and contributions</h3>
+            <p className="mt-2 text-xs leading-5 text-paper/50">
+              Unavailable in the JSON-only MVP because the repository does not yet contain per-constituent daily return series. No synthetic rankings are displayed.
+            </p>
           </div>
         </div>
       </section>

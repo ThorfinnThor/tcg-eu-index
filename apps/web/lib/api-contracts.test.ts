@@ -3,6 +3,7 @@ import { GET as getStatus } from "../app/api/status/route";
 import { POST as createPortfolio } from "../app/api/portfolios/route";
 import { PUT as uploadHoldings } from "../app/api/portfolios/[token]/holdings/route";
 import { GET as comparePortfolio } from "../app/api/portfolios/[token]/vs/[code]/route";
+import { GET as downloadHistory } from "../app/api/public/[code]/history.csv/route";
 
 describe("public API contracts", () => {
   it("returns status freshness with cache headers", async () => {
@@ -10,7 +11,13 @@ describe("public API contracts", () => {
     const payload = await response.json();
     expect(response.status).toBe(200);
     expect(response.headers.get("cache-control")).toContain("max-age=3600");
-    expect(payload).toMatchObject({ gap_count: expect.any(Number), indexes: expect.any(Array) });
+    expect(payload).toMatchObject({
+      source: "repo-managed-mvp-json",
+      dataset_version: expect.any(String),
+      generated_at: expect.any(String),
+      gap_count: expect.any(Number),
+      indexes: expect.any(Array)
+    });
   });
 
   it("creates an explicitly stateless MVP portfolio token", async () => {
@@ -49,6 +56,20 @@ describe("public API contracts", () => {
     const missing = await comparePortfolio(new Request("http://localhost"), {
       params: { token: "contract-token", code: "UNKNOWN" }
     });
+    expect(missing.status).toBe(404);
+  });
+
+  it("downloads auditable index history as CSV", async () => {
+    const response = await downloadHistory(new Request("http://localhost"), { params: { code: "OPEU100" } });
+    const body = await response.text();
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-disposition")).toContain("OPEU100-history.csv");
+    expect(response.headers.get("x-data-source")).toBe("repo-managed-mvp-json");
+    expect(body.split("\n")[0]).toBe(
+      "value_date,index_value,daily_return,n_constituents_active,n_capped,n_carried_forward,calc_version"
+    );
+
+    const missing = await downloadHistory(new Request("http://localhost"), { params: { code: "UNKNOWN" } });
     expect(missing.status).toBe(404);
   });
 });

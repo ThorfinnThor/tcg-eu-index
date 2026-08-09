@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDataQuality, getManifest, getStatus } from "@/lib/data";
+import { assessFreshness, freshnessTextClass } from "@/lib/freshness";
 
 function statusClass(status: string) {
   if (status === "pass") return "border-teal text-teal";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 
 export default async function DataQualityPage() {
   const [quality, status, manifest] = await Promise.all([getDataQuality(), getStatus(), getManifest()]);
+  const freshness = assessFreshness(status.last_snapshot_date);
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <div className="border-b border-line pb-6">
@@ -26,17 +28,24 @@ export default async function DataQualityPage() {
         </p>
       </div>
 
-      <section className="mt-6 grid gap-4 md:grid-cols-3">
+      <section className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="surface p-5">
           <div className="text-xs uppercase text-paper/45">Last snapshot</div>
           <div className="mt-2 text-2xl font-semibold">{status.last_snapshot_date ?? "pending"}</div>
+        </div>
+        <div className="surface p-5">
+          <div className="text-xs uppercase text-paper/45">Freshness</div>
+          <div className={`mt-2 text-2xl font-semibold ${freshnessTextClass(freshness.level)}`}>
+            {freshness.level}
+          </div>
+          <div className="mt-1 text-xs text-paper/45">{freshness.label}</div>
         </div>
         <div className="surface p-5">
           <div className="text-xs uppercase text-paper/45">Dataset version</div>
           <div className="mt-2 text-2xl font-semibold">{manifest?.datasetVersion ?? "unknown"}</div>
         </div>
         <div className="surface p-5">
-          <div className="text-xs uppercase text-paper/45">Completeness</div>
+          <div className="text-xs uppercase text-paper/45">Contract completeness</div>
           <div className="mt-2 text-2xl font-semibold">{(quality.datasetCompleteness * 100).toFixed(0)}%</div>
         </div>
       </section>

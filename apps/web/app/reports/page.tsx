@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { formatPct } from "@/components/Metric";
 import { getReports } from "@/lib/data";
 
@@ -28,7 +29,9 @@ export default async function ReportsPage() {
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <div className="text-xs text-paper/45">{report.week}</div>
-                    <h3 className="mt-1 font-semibold text-paper">{report.title}</h3>
+                    <h3 className="mt-1 font-semibold text-paper">
+                      <Link href={`/reports/${report.week}`} className="hover:text-amber">{report.title}</Link>
+                    </h3>
                   </div>
                   <span className="chip">{report.status}</span>
                 </div>
@@ -46,6 +49,9 @@ export default async function ReportsPage() {
                     </div>
                   ))}
                 </div>
+                <Link href={`/reports/${report.week}`} className="mt-4 inline-block text-xs font-semibold text-amber hover:text-paper">
+                  View report
+                </Link>
               </article>
             ))}
           </div>
@@ -55,8 +61,19 @@ export default async function ReportsPage() {
           <p className="mt-3 text-sm leading-6 text-paper/60">
             Provider: {reportsPayload.newsletterProvider}. Signup is {reportsPayload.signupEnabled ? "enabled" : "disabled"} for this deployment.
           </p>
-          <input className="surface mt-4 w-full px-3 py-2 text-sm" type="email" placeholder="you@example.com" />
-          <button className="mt-3 w-full rounded bg-amber px-3 py-2 text-sm font-semibold text-ink" type="button">Join</button>
+          <input
+            className="surface mt-4 w-full px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50"
+            type="email"
+            placeholder="you@example.com"
+            disabled={!reportsPayload.signupEnabled}
+          />
+          <button
+            className="mt-3 w-full rounded bg-amber px-3 py-2 text-sm font-semibold text-ink disabled:cursor-not-allowed disabled:opacity-40"
+            type="button"
+            disabled={!reportsPayload.signupEnabled}
+          >
+            Join
+          </button>
         </form>
       </div>
     </div>

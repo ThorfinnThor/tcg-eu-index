@@ -55,6 +55,9 @@ fileStats.push(
 );
 
 const status = {
+  dataset_version: sourceData.datasetVersion,
+  generated_at: generatedAt,
+  source: sourceData.source,
   last_snapshot_date: indexes
     .map((index) => index.history.at(-1)?.value_date)
     .filter(Boolean)
@@ -65,7 +68,7 @@ const status = {
     .filter(Boolean)
     .sort()
     .at(-1),
-  gap_count: 0,
+  gap_count: dataQuality.gaps.length,
   indexes: indexes.map((index) => ({
     code: index.code,
     freshness: index.history.at(-1)?.value_date ?? null,

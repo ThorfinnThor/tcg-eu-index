@@ -17,7 +17,13 @@ export async function generateMetadata({ params }: { params: { code: string } })
   };
 }
 
-export default async function ConstituentsPage({ params, searchParams }: { params: { code: string }; searchParams: { asOf?: string } }) {
+export default async function ConstituentsPage({
+  params,
+  searchParams
+}: {
+  params: { code: string };
+  searchParams: { asOf?: string; q?: string; inactive?: string };
+}) {
   const index = await getIndex(params.code);
   if (!index) notFound();
   const constituents = await getConstituents(params.code);
@@ -33,7 +39,14 @@ export default async function ConstituentsPage({ params, searchParams }: { param
           Replay the active composition at any available date and search the resulting membership snapshot.
         </p>
       </div>
-      <ConstituentsTable constituents={constituents} initialAsOf={asOf} minDate={index.base_date} maxDate={maxDate} />
+      <ConstituentsTable
+        constituents={constituents}
+        initialAsOf={asOf}
+        initialSearch={searchParams.q ?? ""}
+        initialIncludeInactive={searchParams.inactive === "1"}
+        minDate={index.base_date}
+        maxDate={maxDate}
+      />
     </div>
   );
 }

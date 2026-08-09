@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IndexChart } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { changes, getIndexes, getStatus } from "@/lib/data";
+import { assessFreshness, freshnessClass } from "@/lib/freshness";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -13,18 +14,22 @@ export const metadata: Metadata = {
 export default async function Page() {
   const indexes = await getIndexes();
   const status = await getStatus();
+  const freshness = assessFreshness(status.last_snapshot_date);
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       <section className="mb-6 border-b border-line pb-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm text-amber">Listing-price benchmarks derived from Cardmarket daily price guides.</p>
+            <p className="text-sm text-amber">Repository-managed MVP listing-price benchmarks.</p>
             <h1 className="mt-2 text-3xl font-semibold text-paper sm:text-4xl">Market overview</h1>
           </div>
-          <div className="text-sm text-paper/60">Last snapshot: {status.last_snapshot_date ?? "pending"}</div>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-paper/60">
+            <span>Last snapshot: {status.last_snapshot_date ?? "pending"}</span>
+            <span className={`chip ${freshnessClass(freshness.level)}`}>{freshness.label}</span>
+          </div>
         </div>
         <p className="mt-4 max-w-3xl text-sm leading-6 text-paper/65">
-          Not transaction prices. Inception: 2026-07-20. Raw per-card daily price feeds are archived privately; this interface exposes derived aggregates only.
+          Not transaction prices. Formal MVP inception: 2026-07-20. The production Cardmarket import is not connected yet; current values are transparent fixture data used to validate the product and calculation surfaces.
         </p>
       </section>
 

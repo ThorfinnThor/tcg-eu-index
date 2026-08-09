@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { chartPoints, historyForRange } from "./index-analytics";
+import { calculateIndexAnalytics, chartPoints, historyForRange } from "./index-analytics";
 import type { DailyIndexValue } from "./types";
 
 const history: DailyIndexValue[] = [
@@ -21,5 +21,21 @@ describe("historyForRange", () => {
 describe("chartPoints", () => {
   it("calculates drawdown against the running peak", () => {
     expect(chartPoints(history).map((point) => point.drawdown)).toEqual([0, 0, -25]);
+  });
+});
+
+describe("calculateIndexAnalytics", () => {
+  it("derives auditable metrics directly from daily history", () => {
+    const analytics = calculateIndexAnalytics(history);
+    expect(analytics.periodReturn).toBeCloseTo(-0.1);
+    expect(analytics.maxDrawdown).toBe(-0.25);
+    expect(analytics.bestDay?.value_date).toBe("2026-06-15");
+    expect(analytics.worstDay?.value_date).toBe("2026-07-15");
+    expect(analytics.positiveDayRatio).toBeCloseTo(1 / 3);
+    expect(analytics.observationCount).toBe(3);
+  });
+
+  it("returns a stable empty summary", () => {
+    expect(calculateIndexAnalytics([])).toMatchObject({ observationCount: 0, bestDay: null, worstDay: null });
   });
 });

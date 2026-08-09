@@ -4,8 +4,6 @@ import { useId, useMemo, useState } from "react";
 import {
   Area,
   AreaChart,
-  Bar,
-  BarChart,
   CartesianGrid,
   ResponsiveContainer,
   Tooltip,
@@ -96,22 +94,6 @@ export function IndexChartExplorer({ history }: { history: DailyIndexValue[] }) 
       </div>
       <HistoryChart history={visibleHistory} compact={false} drawdown={drawdown} />
       <div className="mt-2 text-right text-xs text-paper/40">{visibleHistory.length} daily observations</div>
-    </div>
-  );
-}
-
-export function ContributionBars({ data }: { data: { name: string; contribution: number }[] }) {
-  return (
-    <div className="h-64">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data} layout="vertical" margin={{ left: 20, right: 16, top: 8, bottom: 8 }}>
-          <CartesianGrid stroke="#34342e" horizontal={false} />
-          <XAxis type="number" tick={{ fill: "#a7a195", fontSize: 12 }} axisLine={false} tickLine={false} />
-          <YAxis type="category" dataKey="name" tick={{ fill: "#a7a195", fontSize: 12 }} axisLine={false} tickLine={false} width={120} />
-          <Tooltip contentStyle={{ background: "#191916", border: "1px solid #34342e", borderRadius: 8 }} />
-          <Bar dataKey="contribution" fill="#4db7ad" radius={[0, 4, 4, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
     </div>
   );
 }

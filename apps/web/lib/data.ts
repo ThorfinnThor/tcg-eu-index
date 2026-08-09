@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
-import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReportsPayload } from "./types";
+import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
 
@@ -21,6 +21,9 @@ type SearchRecord = {
 };
 
 type StatusPayload = {
+  dataset_version?: string;
+  generated_at?: string | null;
+  source?: string;
   last_snapshot_date: string | null;
   last_calc_date: string | null;
   gap_count: number;
@@ -120,6 +123,9 @@ export async function getStatus(): Promise<StatusPayload> {
     const indexes = await getIndexes();
     const latestDates = indexes.map((index) => index.history.at(-1)?.value_date).filter(Boolean);
     return {
+      dataset_version: "fixture-fallback",
+      generated_at: null,
+      source: "packaged-fixtures",
       last_snapshot_date: latestDates.sort().at(-1) ?? null,
       last_calc_date: latestDates.sort().at(-1) ?? null,
       gap_count: 0,
@@ -170,4 +176,9 @@ export async function getReports(): Promise<ReportsPayload> {
       reports: []
     };
   }
+}
+
+export async function getReport(week: string): Promise<WeeklyReport | null> {
+  const payload = await getReports();
+  return payload.reports.find((report) => report.week === week) ?? null;
 }

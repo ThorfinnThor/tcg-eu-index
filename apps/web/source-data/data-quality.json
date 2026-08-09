@@ -38,6 +38,12 @@
       "label": "Cardmarket source confirmation",
       "status": "pending",
       "detail": "Official download URLs and record schemas must be confirmed before replacing MVP fixtures."
+    },
+    {
+      "id": "manual-mvp-cadence",
+      "label": "MVP update cadence",
+      "status": "warn",
+      "detail": "Repository-managed benchmark data updates only when a reviewed JSON change is committed; stale dates remain visible in the interface."
     }
   ],
   "gaps": []

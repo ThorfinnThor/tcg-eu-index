@@ -1,25 +1,41 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { activeConstituentsAsOf, constituentActions, filterConstituents } from "@/lib/constituents";
 import type { Constituent } from "@/lib/types";
 
 type Props = {
   constituents: Constituent[];
   initialAsOf: string;
+  initialSearch: string;
+  initialIncludeInactive: boolean;
   minDate: string;
   maxDate: string;
 };
 
-export function ConstituentsTable({ constituents, initialAsOf, minDate, maxDate }: Props) {
+export function ConstituentsTable({
+  constituents,
+  initialAsOf,
+  initialSearch,
+  initialIncludeInactive,
+  minDate,
+  maxDate
+}: Props) {
   const [asOf, setAsOf] = useState(initialAsOf);
-  const [search, setSearch] = useState("");
-  const [includeInactive, setIncludeInactive] = useState(false);
+  const [search, setSearch] = useState(initialSearch);
+  const [includeInactive, setIncludeInactive] = useState(initialIncludeInactive);
   const activeCount = useMemo(() => activeConstituentsAsOf(constituents, asOf).length, [asOf, constituents]);
   const visible = useMemo(
     () => filterConstituents(constituents, asOf, search, includeInactive),
     [asOf, constituents, includeInactive, search]
   );
+
+  useEffect(() => {
+    const params = new URLSearchParams({ asOf });
+    if (search.trim()) params.set("q", search.trim());
+    if (includeInactive) params.set("inactive", "1");
+    window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`);
+  }, [asOf, includeInactive, search]);
 
   return (
     <div>
