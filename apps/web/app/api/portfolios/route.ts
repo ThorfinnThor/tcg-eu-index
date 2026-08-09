@@ -6,6 +6,8 @@ export async function POST(request: Request) {
   return NextResponse.json({
     public_token: token,
     name: body.name || "Untitled portfolio",
-    created_at: new Date().toISOString()
+    created_at: new Date().toISOString(),
+    storage: "client-session",
+    mode: "json-only-mvp"
   });
 }
