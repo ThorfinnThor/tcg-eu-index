@@ -1,8 +1,6 @@
-name: report
+name: report-future
 
 on:
-  schedule:
-    - cron: "0 7 * * 1"
   workflow_dispatch:
     inputs:
       week:
@@ -10,22 +8,10 @@ on:
         required: false
 
 jobs:
-  report:
+  report_future:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: uv sync --all-packages
-      - run: uv run python -m reports.generate --week "${{ inputs.week }}"
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/reports
-          git diff --cached --quiet || git commit -m "docs(report): weekly market report"
-          git push
+      - name: MVP note
+        run: |
+          echo "Weekly report automation is intentionally parked for the MVP."
+          echo "Enable this after real daily data is flowing."

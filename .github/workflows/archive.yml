@@ -1,49 +1,13 @@
-name: archive
+name: archive-future
 
 on:
-  schedule:
-    - cron: "10 5 * * *"
-    - cron: "10 8 * * *"
-    - cron: "10 11 * * *"
-    - cron: "10 14 * * *"
   workflow_dispatch: {}
 
-concurrency:
-  group: archive
-  cancel-in-progress: false
-
 jobs:
-  archive:
+  archive_future:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: uv sync --all-packages
-      - name: Archive Cardmarket snapshots
-        env:
-          CM_GAMES: ${{ vars.CM_GAMES || 'onepiece,pokemon' }}
-          CM_PRICEGUIDE_URL_TEMPLATE: ${{ secrets.CM_PRICEGUIDE_URL_TEMPLATE }}
-          CM_CATALOGUE_URL_TEMPLATE: ${{ secrets.CM_CATALOGUE_URL_TEMPLATE }}
-          CM_USER_AGENT: ${{ vars.CM_USER_AGENT }}
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
-        run: uv run python -m ingest.archive --date today
-      - name: Commit manifest pointer
+      - name: MVP note
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/manifest-latest.json
-          git diff --cached --quiet || git commit -m "chore(archive): $(date -u +%F)"
-          git push
-      - name: Trigger calc
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run calc.yml
+          echo "Archive workflow is intentionally parked for the MVP."
+          echo "Enable this after Cardmarket download URLs and object storage are finalized."
