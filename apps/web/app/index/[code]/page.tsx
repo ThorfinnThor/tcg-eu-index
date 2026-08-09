@@ -2,14 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContributionBars, IndexChart } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
-import { changes, getConstituents, getIndex, getSearchIndex } from "@/lib/data";
+import { changes, getConstituents, getIndex } from "@/lib/data";
 
 export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  const indexes = await getSearchIndex();
-  return indexes.map((index) => ({ code: index.id }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function IndexPage({ params }: { params: { code: string } }) {
   const index = await getIndex(params.code);

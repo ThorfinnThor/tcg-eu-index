@@ -1,12 +1,8 @@
 import { notFound } from "next/navigation";
-import { getConstituents, getIndex, getSearchIndex } from "@/lib/data";
+import { getConstituents, getIndex } from "@/lib/data";
 
 export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  const indexes = await getSearchIndex();
-  return indexes.map((index) => ({ code: index.id }));
-}
+export const dynamic = "force-dynamic";
 
 export default async function ConstituentsPage({ params, searchParams }: { params: { code: string }; searchParams: { asOf?: string } }) {
   const index = await getIndex(params.code);
