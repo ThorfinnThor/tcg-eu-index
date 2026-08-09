@@ -1,0 +1,402 @@
+[
+  {
+    "cm_product_id": 750000,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 1",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.91,
+    "ref_price": 2
+  },
+  {
+    "cm_product_id": 750001,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 2",
+    "set": "Current Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.904,
+    "ref_price": 3.35
+  },
+  {
+    "cm_product_id": 750002,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 3",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.898,
+    "ref_price": 4.7
+  },
+  {
+    "cm_product_id": 750003,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 4",
+    "set": "Current Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.892,
+    "ref_price": 6.05
+  },
+  {
+    "cm_product_id": 750004,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 5",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.886,
+    "ref_price": 7.4
+  },
+  {
+    "cm_product_id": 750005,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 6",
+    "set": "Current Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.88,
+    "ref_price": 8.75
+  },
+  {
+    "cm_product_id": 750006,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 7",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.874,
+    "ref_price": 10.1
+  },
+  {
+    "cm_product_id": 750007,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 8",
+    "set": "Current Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.868,
+    "ref_price": 11.45
+  },
+  {
+    "cm_product_id": 750008,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 9",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.862,
+    "ref_price": 12.8
+  },
+  {
+    "cm_product_id": 750009,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 10",
+    "set": "Current Set",
+    "member_since": "2026-07-20",
+    "action": "retained",
+    "liquidity_score": 0.856,
+    "ref_price": 14.15
+  },
+  {
+    "cm_product_id": 750010,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 11",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.85,
+    "ref_price": 15.5
+  },
+  {
+    "cm_product_id": 750011,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 12",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.844,
+    "ref_price": 16.85
+  },
+  {
+    "cm_product_id": 750012,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 13",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.838,
+    "ref_price": 18.2
+  },
+  {
+    "cm_product_id": 750013,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 14",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.832,
+    "ref_price": 19.55
+  },
+  {
+    "cm_product_id": 750014,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 15",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.826,
+    "ref_price": 20.9
+  },
+  {
+    "cm_product_id": 750015,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 16",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.82,
+    "ref_price": 22.25
+  },
+  {
+    "cm_product_id": 750016,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 17",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.814,
+    "ref_price": 23.6
+  },
+  {
+    "cm_product_id": 750017,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 18",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.808,
+    "ref_price": 24.95
+  },
+  {
+    "cm_product_id": 750018,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 19",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.802,
+    "ref_price": 26.3
+  },
+  {
+    "cm_product_id": 750019,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 20",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.796,
+    "ref_price": 27.65
+  },
+  {
+    "cm_product_id": 750020,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 21",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.79,
+    "ref_price": 29
+  },
+  {
+    "cm_product_id": 750021,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 22",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.784,
+    "ref_price": 30.35
+  },
+  {
+    "cm_product_id": 750022,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 23",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.778,
+    "ref_price": 31.7
+  },
+  {
+    "cm_product_id": 750023,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 24",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.772,
+    "ref_price": 33.05
+  },
+  {
+    "cm_product_id": 750024,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 25",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.766,
+    "ref_price": 34.4
+  },
+  {
+    "cm_product_id": 750025,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 26",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.76,
+    "ref_price": 35.75
+  },
+  {
+    "cm_product_id": 750026,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 27",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.754,
+    "ref_price": 37.1
+  },
+  {
+    "cm_product_id": 750027,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 28",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.748,
+    "ref_price": 38.45
+  },
+  {
+    "cm_product_id": 750028,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 29",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.742,
+    "ref_price": 39.8
+  },
+  {
+    "cm_product_id": 750029,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 30",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.736,
+    "ref_price": 41.15
+  },
+  {
+    "cm_product_id": 750030,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 31",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.73,
+    "ref_price": 42.5
+  },
+  {
+    "cm_product_id": 750031,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 32",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.724,
+    "ref_price": 43.85
+  },
+  {
+    "cm_product_id": 750032,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 33",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.718,
+    "ref_price": 45.2
+  },
+  {
+    "cm_product_id": 750033,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 34",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.712,
+    "ref_price": 46.55
+  },
+  {
+    "cm_product_id": 750034,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 35",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.706,
+    "ref_price": 47.9
+  },
+  {
+    "cm_product_id": 750035,
+    "variant_key": "foil",
+    "name": "One Piece Benchmark Product 36",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.7,
+    "ref_price": 49.25
+  },
+  {
+    "cm_product_id": 750036,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 37",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.694,
+    "ref_price": 50.6
+  },
+  {
+    "cm_product_id": 750037,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 38",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.688,
+    "ref_price": 51.95
+  },
+  {
+    "cm_product_id": 750038,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 39",
+    "set": "Launch Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.682,
+    "ref_price": 53.3
+  },
+  {
+    "cm_product_id": 750039,
+    "variant_key": "nonfoil",
+    "name": "One Piece Benchmark Product 40",
+    "set": "Current Set",
+    "member_since": "2026-08-01",
+    "action": "added",
+    "liquidity_score": 0.676,
+    "ref_price": 54.65
+  }
+]

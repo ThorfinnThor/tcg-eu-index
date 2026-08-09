@@ -4,7 +4,8 @@ import path from "node:path";
 
 const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
-const sourceDataPath = path.join(root, "source-data", "indexes.json");
+const sourceDataRoot = path.join(root, "source-data");
+const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 const maxBytes = 1_000_000;
 const preferredMaxBytes = 250_000;
 
@@ -15,6 +16,10 @@ function fail(message) {
 async function readJson(relativePath) {
   const body = await readFile(path.join(dataRoot, relativePath), "utf8");
   return JSON.parse(body);
+}
+
+async function readSourceJson(indexCode, fileName) {
+  return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
 }
 
 const manifest = await readJson("manifest.json");
@@ -28,6 +33,19 @@ if (!Array.isArray(sourceData.indexes) || sourceData.indexes.length === 0) {
 }
 if (sourceData.datasetVersion !== manifest.datasetVersion) {
   fail("source data and manifest dataset versions differ");
+}
+for (const index of sourceData.indexes) {
+  if (!index.code || !index.slug || !index.name || !index.game || !index.universe) {
+    fail(`invalid source index metadata: ${JSON.stringify(index)}`);
+  }
+  const sourceHistory = await readSourceJson(index.code, "history.json");
+  const sourceConstituents = await readSourceJson(index.code, "constituents.json");
+  if (!Array.isArray(sourceHistory) || sourceHistory.length === 0) {
+    fail(`${index.code} source history is empty`);
+  }
+  if (!Array.isArray(sourceConstituents)) {
+    fail(`${index.code} source constituents must be an array`);
+  }
 }
 
 const generatedAt = new Date(manifest.generatedAt);

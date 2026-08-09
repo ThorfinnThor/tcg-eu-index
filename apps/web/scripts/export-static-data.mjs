@@ -4,47 +4,11 @@ import path from "node:path";
 
 const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
-const sourceDataPath = path.join(root, "source-data", "indexes.json");
+const sourceDataRoot = path.join(root, "source-data");
+const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 
-const dates = Array.from({ length: 120 }, (_, index) => {
-  const date = new Date(Date.UTC(2026, 3, 1 + index));
-  return date.toISOString().slice(0, 10);
-});
-
-function curve(seed) {
-  let value = 1000;
-  return dates.map((day, index) => {
-    const daily = Math.sin((index + seed) / 8) * 0.006 + Math.cos((index + seed) / 19) * 0.003;
-    value *= 1 + daily;
-    return {
-      value_date: day,
-      index_value: Number(value.toFixed(6)),
-      daily_return: Number(daily.toFixed(8)),
-      n_constituents_active: seed === 3 ? 25 : seed === 2 ? 250 : 100,
-      n_capped: index % 41 === 0 ? 1 : 0,
-      n_carried_forward: index % 23 === 0 ? 2 : 0,
-      calc_version: "1.0.0"
-    };
-  });
-}
-
-const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
-const indexes = sourceData.indexes.map(({ seed, ...index }) => ({
-  ...index,
-  history: curve(seed)
-}));
-
-function constituents(index) {
-  return Array.from({ length: Math.min(index.target_size, 40) }, (_, row) => ({
-    cm_product_id: 750000 + row,
-    variant_key: row % 7 === 0 ? "foil" : "nonfoil",
-    name: `${index.game} Benchmark Product ${row + 1}`,
-    set: row % 2 === 0 ? "Launch Set" : "Current Set",
-    member_since: row < 10 ? "2026-07-20" : "2026-08-01",
-    action: row < 10 ? "retained" : "added",
-    liquidity_score: Number((0.91 - row * 0.006).toFixed(3)),
-    ref_price: Number((2 + row * 1.35).toFixed(2))
-  }));
+async function readSourceJson(indexCode, fileName) {
+  return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
 }
 
 async function writeJson(relativePath, payload) {
@@ -61,6 +25,14 @@ async function writeJson(relativePath, payload) {
 
 const generatedAt = new Date().toISOString();
 const fileStats = [];
+const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
+const indexes = await Promise.all(
+  sourceData.indexes.map(async (index) => ({
+    ...index,
+    history: await readSourceJson(index.code, "history.json"),
+    constituents: await readSourceJson(index.code, "constituents.json")
+  }))
+);
 
 fileStats.push(
   await writeJson(
@@ -100,9 +72,10 @@ fileStats.push(await writeJson("status/latest.json", status));
 for (const index of indexes) {
   const summary = { ...index };
   delete summary.history;
+  delete summary.constituents;
   fileStats.push(await writeJson(`indexes/${index.code}/summary.json`, summary));
   fileStats.push(await writeJson(`indexes/${index.code}/history.json`, index.history));
-  fileStats.push(await writeJson(`indexes/${index.code}/constituents.json`, constituents(index)));
+  fileStats.push(await writeJson(`indexes/${index.code}/constituents.json`, index.constituents));
 }
 
 const manifestBody = {
