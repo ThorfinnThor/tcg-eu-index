@@ -1,0 +1,61 @@
+import Link from "next/link";
+import { IndexChart } from "@/components/IndexChart";
+import { Metric, formatPct } from "@/components/Metric";
+import { changes, getIndexes, getStatus } from "@/lib/data";
+
+export const revalidate = 3600;
+
+export default async function Page() {
+  const indexes = await getIndexes();
+  const status = await getStatus();
+  return (
+    <div className="mx-auto max-w-7xl px-4 py-8">
+      <section className="mb-6 border-b border-line pb-6">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm text-amber">Listing-price benchmarks derived from Cardmarket daily price guides.</p>
+            <h1 className="mt-2 text-3xl font-semibold text-paper sm:text-4xl">Market overview</h1>
+          </div>
+          <div className="text-sm text-paper/60">Last snapshot: {status.last_snapshot_date ?? "pending"}</div>
+        </div>
+        <p className="mt-4 max-w-3xl text-sm leading-6 text-paper/65">
+          Not transaction prices. Inception: 2026-07-20. Raw per-card daily price feeds are archived privately; this interface exposes derived aggregates only.
+        </p>
+      </section>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        {indexes.map((index) => {
+          const latest = index.history.at(-1);
+          const delta = changes(index);
+          return (
+            <Link key={index.code} href={`/index/${index.code}`} className="surface block p-4 transition hover:border-amber">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className="text-xs text-paper/45">{index.code}</div>
+                  <h2 className="mt-1 text-xl font-semibold text-paper">{index.name}</h2>
+                  <div className="mt-2 flex gap-2 text-paper/55">
+                    <span className="chip">{index.game}</span>
+                    <span className="chip">{index.universe}</span>
+                  </div>
+                </div>
+                <span className="chip border-teal text-teal">{index.status}</span>
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-4">
+                <Metric label="Latest" value={latest?.index_value.toFixed(2) ?? "pending"} />
+                <Metric label="30d" value={formatPct(delta.d30)} tone={delta.d30 >= 0 ? "up" : "down"} />
+              </div>
+              <div className="mt-4">
+                <IndexChart history={index.history.slice(-90)} compact />
+              </div>
+              <div className="mt-4 flex justify-between text-sm text-paper/55">
+                <span>1d {formatPct(delta.d1)}</span>
+                <span>7d {formatPct(delta.d7)}</span>
+                <span>Breadth {(index.breadth * 100).toFixed(0)}%</span>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}

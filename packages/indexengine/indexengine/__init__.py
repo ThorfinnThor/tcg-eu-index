@@ -1,0 +1,1 @@
+"""Deterministic index calculation engine."""

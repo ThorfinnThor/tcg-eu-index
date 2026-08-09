@@ -1,0 +1,28 @@
+[
+  {
+    "id": "en-tcg-europe-index",
+    "keyword": "European TCG index",
+    "locale": "en",
+    "market": "EU",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
+    "priority": 80,
+    "evidence": ["product-strategy"],
+    "validated": true,
+    "status": "approved",
+    "lastReviewed": "2026-08-05"
+  },
+  {
+    "id": "en-one-piece-cardmarket-index",
+    "keyword": "One Piece Cardmarket price index",
+    "locale": "en",
+    "market": "EU",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
+    "priority": 70,
+    "evidence": ["product-strategy"],
+    "validated": true,
+    "status": "approved",
+    "lastReviewed": "2026-08-05"
+  }
+]

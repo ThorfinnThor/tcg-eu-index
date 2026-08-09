@@ -1,0 +1,41 @@
+methodology_version: "1.0.0"
+price_field_primary: "price_avg"
+price_field_fallback: "price_low"
+min_price_eur:
+  singles: 2.00
+  sealed: 10.00
+seasoning_days: 90
+min_history_days: 60
+min_observation_ratio: 0.80
+daily_return_cap: 0.25
+carry_forward_max_days: 5
+rebalance: monthly
+selection_lookback_days: 60
+indexes:
+  - code: OPEU100
+    name: One Piece Europe 100
+    game_key: onepiece
+    universe: singles
+    target_size: 100
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: PKEU250
+    name: Pokemon Europe 250
+    game_key: pokemon
+    universe: singles
+    target_size: 250
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: OPEUSLD
+    name: One Piece Sealed Pilot
+    game_key: onepiece
+    universe: sealed
+    target_size: 25
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]

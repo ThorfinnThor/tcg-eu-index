@@ -1,0 +1,24 @@
+[
+  {
+    "id": "overview",
+    "slug": "",
+    "keywordId": "en-tcg-europe-index",
+    "template": "market-overview",
+    "filters": {},
+    "minimumResults": 3,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  },
+  {
+    "id": "opeu100-index",
+    "slug": "index/OPEU100",
+    "keywordId": "en-one-piece-cardmarket-index",
+    "template": "index-detail",
+    "filters": { "code": "OPEU100" },
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  }
+]

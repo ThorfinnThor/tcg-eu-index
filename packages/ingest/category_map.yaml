@@ -1,0 +1,13 @@
+single:
+  - single
+  - card
+  - singles
+sealed:
+  - booster
+  - booster box
+  - display
+  - elite trainer box
+  - sealed
+  - starter deck
+  - structure deck
+other: []

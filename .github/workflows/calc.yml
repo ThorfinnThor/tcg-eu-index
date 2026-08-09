@@ -1,0 +1,48 @@
+name: calc
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: YYYY-MM-DD or today
+        required: false
+        default: today
+
+jobs:
+  calc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: uv sync --all-packages
+      - name: Normalize catalogue and prices
+        env:
+          CM_GAMES: ${{ vars.CM_GAMES || 'onepiece,pokemon' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
+        run: uv run python -m ingest.normalize --date "${{ inputs.run_date || 'today' }}"
+      - name: Calculate indexes and exports
+        env:
+          CM_GAMES: ${{ vars.CM_GAMES || 'onepiece,pokemon' }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
+        run: uv run python -m indexengine.calc --date "${{ inputs.run_date || 'today' }}"
+      - name: Validate static public-data contract
+        run: |
+          npm ci --prefix apps/web
+          npm --prefix apps/web run data:export
+          npm --prefix apps/web run data:validate
