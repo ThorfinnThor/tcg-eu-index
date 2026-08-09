@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
-import type { Constituent, DailyIndexValue, IndexCode, IndexSummary } from "./types";
+import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReportsPayload } from "./types";
 
 export const revalidate = 3600;
 
@@ -25,6 +25,14 @@ type StatusPayload = {
   last_calc_date: string | null;
   gap_count: number;
   indexes: Array<{ code: string; freshness: string | null; status: string }>;
+};
+
+type ManifestPayload = {
+  datasetVersion: string;
+  generatedAt: string;
+  schemaVersion: number;
+  sourceVersions: { methodology: string; source: string };
+  files: Array<{ path: string; checksum: string; bytes: number }>;
 };
 
 const dataRoot = path.join(process.cwd(), "public", "data");
@@ -120,6 +128,46 @@ export async function getStatus(): Promise<StatusPayload> {
         freshness: index.history.at(-1)?.value_date ?? null,
         status: index.status
       }))
+    };
+  }
+}
+
+export async function getManifest(): Promise<ManifestPayload | null> {
+  try {
+    return await readJson<ManifestPayload>("manifest.json");
+  } catch {
+    return null;
+  }
+}
+
+export async function getDataQuality(): Promise<DataQualityPayload> {
+  try {
+    return await readJson<DataQualityPayload>("data-quality/latest.json");
+  } catch {
+    return {
+      datasetCompleteness: 0,
+      sourceCoverage: "fallback fixtures",
+      licensingPosture: "derived-aggregates-only",
+      limitations: [
+        {
+          title: "Fallback mode",
+          body: "Generated static data files were unavailable, so the app is displaying packaged fixtures."
+        }
+      ],
+      checks: [{ id: "fallback", label: "Fallback fixture mode", status: "warn", detail: "Public data export was not found." }],
+      gaps: []
+    };
+  }
+}
+
+export async function getReports(): Promise<ReportsPayload> {
+  try {
+    return await readJson<ReportsPayload>("reports/index.json");
+  } catch {
+    return {
+      newsletterProvider: "disabled",
+      signupEnabled: false,
+      reports: []
     };
   }
 }

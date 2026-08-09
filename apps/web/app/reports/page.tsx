@@ -1,24 +1,52 @@
+import { formatPct } from "@/components/Metric";
+import { getReports } from "@/lib/data";
+
 export const revalidate = 3600;
 
-export default function ReportsPage() {
+export default async function ReportsPage() {
+  const reportsPayload = await getReports();
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="text-3xl font-semibold">Weekly reports</h1>
+      <div className="border-b border-line pb-6">
+        <p className="text-sm text-amber">Human-reviewed weekly archive</p>
+        <h1 className="mt-2 text-3xl font-semibold">Weekly reports</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-paper/65">
+          Report records are generated from static JSON first, then marked published only after an editor review. Newsletter delivery is pluggable and disabled for the MVP.
+        </p>
+      </div>
       <div className="mt-6 grid gap-4 md:grid-cols-[1fr_320px]">
         <section className="surface p-5">
           <h2 className="text-lg font-semibold">Archive</h2>
-          <p className="mt-3 text-sm leading-6 text-paper/65">
-            Reports are generated each Monday with benchmark returns, movers, breadth, flagged events, and an editor notes placeholder for human review before publishing.
-          </p>
           <div className="mt-5 divide-y divide-line text-sm">
-            <div className="flex justify-between py-3">
-              <span>First report</span>
-              <span className="text-paper/55">pending production snapshots</span>
-            </div>
+            {reportsPayload.reports.map((report) => (
+              <article key={report.id} className="py-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <div className="text-xs text-paper/45">{report.week}</div>
+                    <h3 className="mt-1 font-semibold text-paper">{report.title}</h3>
+                  </div>
+                  <span className="chip">{report.status}</span>
+                </div>
+                <p className="mt-3 leading-6 text-paper/65">{report.summary}</p>
+                <div className="mt-4 grid gap-3">
+                  {report.indexHighlights.map((highlight) => (
+                    <div key={`${report.id}-${highlight.code}`} className="grid gap-2 rounded border border-line px-3 py-2 sm:grid-cols-[90px_1fr_90px_90px]">
+                      <span className="font-semibold text-paper">{highlight.code}</span>
+                      <span className="text-paper/65">{highlight.headline}</span>
+                      <span className={highlight.weeklyReturn >= 0 ? "text-mint" : "text-coral"}>{formatPct(highlight.weeklyReturn)}</span>
+                      <span className="text-paper/55">{(highlight.breadth * 100).toFixed(0)}% breadth</span>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </section>
         <form className="surface p-5">
           <h2 className="text-lg font-semibold">Email signup</h2>
+          <p className="mt-3 text-sm leading-6 text-paper/60">
+            Provider: {reportsPayload.newsletterProvider}. Signup is {reportsPayload.signupEnabled ? "enabled" : "disabled"} for this deployment.
+          </p>
           <input className="surface mt-4 w-full px-3 py-2 text-sm" type="email" placeholder="you@example.com" />
           <button className="mt-3 w-full rounded bg-amber px-3 py-2 text-sm font-semibold text-ink" type="button">Join</button>
         </form>

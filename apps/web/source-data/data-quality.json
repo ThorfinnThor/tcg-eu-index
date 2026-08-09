@@ -1,0 +1,44 @@
+{
+  "datasetCompleteness": 1,
+  "sourceCoverage": "MVP simulated benchmark set",
+  "licensingPosture": "derived-aggregates-only",
+  "limitations": [
+    {
+      "title": "Listing-price basis",
+      "body": "Benchmarks use daily guide-style listing prices, not executed transaction prices."
+    },
+    {
+      "title": "MVP source data",
+      "body": "Current values are repo-managed MVP fixtures. Cardmarket imports remain a later phase before production-grade market claims."
+    },
+    {
+      "title": "No raw price exposure",
+      "body": "Public files expose derived index values, summaries, constituents, status, and reports only."
+    },
+    {
+      "title": "Carry-forward rule",
+      "body": "Missing constituent observations may be carried forward for a limited window and are counted in the public status surface."
+    }
+  ],
+  "checks": [
+    {
+      "id": "manifest-checksums",
+      "label": "Manifest checksums",
+      "status": "pass",
+      "detail": "Every exported public JSON file is listed with a SHA-256 checksum."
+    },
+    {
+      "id": "static-json-contract",
+      "label": "Static JSON contract",
+      "status": "pass",
+      "detail": "The first page load reads generated static files and does not require Supabase."
+    },
+    {
+      "id": "cardmarket-source-confirmation",
+      "label": "Cardmarket source confirmation",
+      "status": "pending",
+      "detail": "Official download URLs and record schemas must be confirmed before replacing MVP fixtures."
+    }
+  ],
+  "gaps": []
+}

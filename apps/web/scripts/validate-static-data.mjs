@@ -6,6 +6,7 @@ const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
 const sourceDataRoot = path.join(root, "source-data");
 const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
+const seoDataRoot = path.join(root, "data-config", "seo");
 const maxBytes = 1_000_000;
 const preferredMaxBytes = 250_000;
 
@@ -20,6 +21,14 @@ async function readJson(relativePath) {
 
 async function readSourceJson(indexCode, fileName) {
   return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
+}
+
+async function readSourceFile(relativePath) {
+  return JSON.parse(await readFile(path.join(sourceDataRoot, relativePath), "utf8"));
+}
+
+async function readSeoFile(fileName) {
+  return JSON.parse(await readFile(path.join(seoDataRoot, fileName), "utf8"));
 }
 
 const manifest = await readJson("manifest.json");
@@ -47,12 +56,48 @@ for (const index of sourceData.indexes) {
     fail(`${index.code} source constituents must be an array`);
   }
 }
+const sourceQuality = await readSourceFile("data-quality.json");
+if (!Array.isArray(sourceQuality.limitations) || !Array.isArray(sourceQuality.checks) || !Array.isArray(sourceQuality.gaps)) {
+  fail("source-data/data-quality.json must define limitations, checks, and gaps arrays");
+}
+const sourceReports = await readSourceFile("reports/index.json");
+if (!Array.isArray(sourceReports.reports)) {
+  fail("source-data/reports/index.json must define a reports array");
+}
 
 const generatedAt = new Date(manifest.generatedAt);
 if (Number.isNaN(generatedAt.valueOf())) fail("manifest generatedAt is invalid");
 
 const indexes = await readJson("search/indexes.json");
 if (!Array.isArray(indexes) || indexes.length === 0) fail("search/indexes.json is empty");
+const dataQuality = await readJson("data-quality/latest.json");
+if (!Array.isArray(dataQuality.checks) || !Array.isArray(dataQuality.gaps)) {
+  fail("data-quality/latest.json has invalid shape");
+}
+const reports = await readJson("reports/index.json");
+if (!Array.isArray(reports.reports)) fail("reports/index.json has invalid shape");
+
+const keywords = await readSeoFile("keywords.json");
+const pageDefinitions = await readSeoFile("page-definitions.json");
+if (!Array.isArray(keywords) || !Array.isArray(pageDefinitions)) {
+  fail("SEO registry files must be arrays");
+}
+const approvedKeywordIds = new Set(
+  keywords
+    .filter((keyword) => keyword.status === "approved" && keyword.validated === true)
+    .map((keyword) => keyword.id)
+);
+for (const page of pageDefinitions.filter((definition) => definition.status === "published")) {
+  if (!page.id || !page.template || typeof page.minimumDataCompleteness !== "number") {
+    fail(`invalid published SEO page definition: ${JSON.stringify(page)}`);
+  }
+  if (!approvedKeywordIds.has(page.keywordId)) {
+    fail(`${page.id} references a missing or unapproved keyword`);
+  }
+  if (page.indexable !== true) {
+    fail(`${page.id} is published but not indexable`);
+  }
+}
 
 const slugs = new Set();
 for (const item of indexes) {

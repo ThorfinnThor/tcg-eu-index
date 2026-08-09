@@ -34,3 +34,36 @@ export type Constituent = {
   liquidity_score: number;
   ref_price: number;
 };
+
+export type DataQualityPayload = {
+  datasetCompleteness: number;
+  sourceCoverage: string;
+  licensingPosture: string;
+  limitations: Array<{ title: string; body: string }>;
+  checks: Array<{ id: string; label: string; status: "pass" | "warn" | "pending" | "fail"; detail: string }>;
+  gaps: Array<{ date: string; game?: string; reason: string; detected_at?: string }>;
+};
+
+export type ReportHighlight = {
+  code: IndexCode;
+  headline: string;
+  weeklyReturn: number;
+  breadth: number;
+};
+
+export type WeeklyReport = {
+  id: string;
+  week: string;
+  title: string;
+  status: "draft" | "published";
+  publishedAt: string | null;
+  summary: string;
+  notes: string[];
+  indexHighlights: ReportHighlight[];
+};
+
+export type ReportsPayload = {
+  newsletterProvider: string;
+  signupEnabled: boolean;
+  reports: WeeklyReport[];
+};

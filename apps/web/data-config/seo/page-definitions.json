@@ -20,5 +20,60 @@
     "minimumDataCompleteness": 0.8,
     "indexable": true,
     "status": "published"
+  },
+  {
+    "id": "pkeu250-index",
+    "slug": "index/PKEU250",
+    "keywordId": "en-pokemon-europe-price-index",
+    "template": "index-detail",
+    "filters": { "code": "PKEU250" },
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  },
+  {
+    "id": "opeusld-index",
+    "slug": "index/OPEUSLD",
+    "keywordId": "en-one-piece-cardmarket-index",
+    "template": "index-detail",
+    "filters": { "code": "OPEUSLD" },
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  },
+  {
+    "id": "methodology",
+    "slug": "methodology",
+    "keywordId": "en-tcg-index-methodology",
+    "template": "methodology",
+    "filters": {},
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  },
+  {
+    "id": "reports",
+    "slug": "reports",
+    "keywordId": "en-tcg-market-report",
+    "template": "report-archive",
+    "filters": {},
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
+  },
+  {
+    "id": "data-quality",
+    "slug": "data-quality",
+    "keywordId": "en-tcg-index-methodology",
+    "template": "data-quality",
+    "filters": {},
+    "minimumResults": 1,
+    "minimumDataCompleteness": 0.8,
+    "indexable": true,
+    "status": "published"
   }
 ]

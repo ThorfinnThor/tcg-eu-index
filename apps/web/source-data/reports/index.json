@@ -1,0 +1,39 @@
+{
+  "newsletterProvider": "buttondown-compatible-placeholder",
+  "signupEnabled": false,
+  "reports": [
+    {
+      "id": "2026-W32-mvp",
+      "week": "2026-W32",
+      "title": "MVP benchmark dry run",
+      "status": "draft",
+      "publishedAt": null,
+      "summary": "Initial static report record used to validate the weekly report archive, quality disclosures, and newsletter handoff before automated report generation is enabled.",
+      "notes": [
+        "All index values are derived from repo-managed MVP JSON fixtures.",
+        "No Cardmarket production import has been connected yet.",
+        "Editor review is required before any report is marked published."
+      ],
+      "indexHighlights": [
+        {
+          "code": "OPEU100",
+          "headline": "One Piece benchmark available",
+          "weeklyReturn": 0.018,
+          "breadth": 0.58
+        },
+        {
+          "code": "PKEU250",
+          "headline": "Pokemon benchmark available",
+          "weeklyReturn": 0.014,
+          "breadth": 0.53
+        },
+        {
+          "code": "OPEUSLD",
+          "headline": "Sealed pilot benchmark available",
+          "weeklyReturn": 0.009,
+          "breadth": 0.62
+        }
+      ]
+    }
+  ]
+}

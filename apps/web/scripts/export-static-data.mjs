@@ -11,6 +11,10 @@ async function readSourceJson(indexCode, fileName) {
   return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
 }
 
+async function readSourceFile(relativePath) {
+  return JSON.parse(await readFile(path.join(sourceDataRoot, relativePath), "utf8"));
+}
+
 async function writeJson(relativePath, payload) {
   const destination = path.join(dataRoot, relativePath);
   await mkdir(path.dirname(destination), { recursive: true });
@@ -26,6 +30,8 @@ async function writeJson(relativePath, payload) {
 const generatedAt = new Date().toISOString();
 const fileStats = [];
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
+const dataQuality = await readSourceFile("data-quality.json");
+const reports = await readSourceFile("reports/index.json");
 const indexes = await Promise.all(
   sourceData.indexes.map(async (index) => ({
     ...index,
@@ -68,6 +74,8 @@ const status = {
 };
 
 fileStats.push(await writeJson("status/latest.json", status));
+fileStats.push(await writeJson("data-quality/latest.json", dataQuality));
+fileStats.push(await writeJson("reports/index.json", reports));
 
 for (const index of indexes) {
   const summary = { ...index };
