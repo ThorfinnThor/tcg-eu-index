@@ -1,9 +1,10 @@
 import { createHash } from "node:crypto";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
+const sourceDataPath = path.join(root, "source-data", "indexes.json");
 
 const dates = Array.from({ length: 120 }, (_, index) => {
   const date = new Date(Date.UTC(2026, 3, 1 + index));
@@ -27,47 +28,11 @@ function curve(seed) {
   });
 }
 
-const indexes = [
-  {
-    code: "OPEU100",
-    slug: "one-piece-europe-100",
-    name: "One Piece Europe 100",
-    game: "One Piece",
-    universe: "singles",
-    base_date: "2026-07-20",
-    status: "accumulating",
-    target_size: 100,
-    breadth: 0.58,
-    volatility_30d: 0.31,
-    history: curve(1)
-  },
-  {
-    code: "PKEU250",
-    slug: "pokemon-europe-250",
-    name: "Pokemon Europe 250",
-    game: "Pokemon",
-    universe: "singles",
-    base_date: "2026-07-20",
-    status: "accumulating",
-    target_size: 250,
-    breadth: 0.53,
-    volatility_30d: 0.24,
-    history: curve(2)
-  },
-  {
-    code: "OPEUSLD",
-    slug: "one-piece-sealed-pilot",
-    name: "One Piece Sealed Pilot",
-    game: "One Piece",
-    universe: "sealed",
-    base_date: "2026-07-20",
-    status: "accumulating",
-    target_size: 25,
-    breadth: 0.62,
-    volatility_30d: 0.18,
-    history: curve(3)
-  }
-];
+const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
+const indexes = sourceData.indexes.map(({ seed, ...index }) => ({
+  ...index,
+  history: curve(seed)
+}));
 
 function constituents(index) {
   return Array.from({ length: Math.min(index.target_size, 40) }, (_, row) => ({
@@ -141,12 +106,12 @@ for (const index of indexes) {
 }
 
 const manifestBody = {
-  datasetVersion: `${new Date().toISOString().slice(0, 10)}.1`,
+  datasetVersion: sourceData.datasetVersion,
   generatedAt,
-  schemaVersion: 1,
+  schemaVersion: sourceData.schemaVersion,
   sourceVersions: {
     methodology: "1.0.0",
-    source: "local-fixture-until-production-archive"
+    source: sourceData.source
   },
   fileChecksums: Object.fromEntries(fileStats.map((file) => [file.path, file.checksum])),
   files: fileStats

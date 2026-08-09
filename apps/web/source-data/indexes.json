@@ -1,0 +1,46 @@
+{
+  "datasetVersion": "2026-08-09.1",
+  "schemaVersion": 1,
+  "source": "repo-managed-mvp-seed-data",
+  "indexes": [
+    {
+      "code": "OPEU100",
+      "slug": "one-piece-europe-100",
+      "name": "One Piece Europe 100",
+      "game": "One Piece",
+      "universe": "singles",
+      "base_date": "2026-07-20",
+      "status": "accumulating",
+      "target_size": 100,
+      "breadth": 0.58,
+      "volatility_30d": 0.31,
+      "seed": 1
+    },
+    {
+      "code": "PKEU250",
+      "slug": "pokemon-europe-250",
+      "name": "Pokemon Europe 250",
+      "game": "Pokemon",
+      "universe": "singles",
+      "base_date": "2026-07-20",
+      "status": "accumulating",
+      "target_size": 250,
+      "breadth": 0.53,
+      "volatility_30d": 0.24,
+      "seed": 2
+    },
+    {
+      "code": "OPEUSLD",
+      "slug": "one-piece-sealed-pilot",
+      "name": "One Piece Sealed Pilot",
+      "game": "One Piece",
+      "universe": "sealed",
+      "base_date": "2026-07-20",
+      "status": "accumulating",
+      "target_size": 25,
+      "breadth": 0.62,
+      "volatility_30d": 0.18,
+      "seed": 3
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
+const sourceDataPath = path.join(root, "source-data", "indexes.json");
 const maxBytes = 1_000_000;
 const preferredMaxBytes = 250_000;
 
@@ -19,6 +20,14 @@ async function readJson(relativePath) {
 const manifest = await readJson("manifest.json");
 if (!manifest.datasetVersion || !manifest.generatedAt || manifest.schemaVersion !== 1) {
   fail("manifest is missing required version fields");
+}
+
+const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
+if (!Array.isArray(sourceData.indexes) || sourceData.indexes.length === 0) {
+  fail("source-data/indexes.json must define at least one index");
+}
+if (sourceData.datasetVersion !== manifest.datasetVersion) {
+  fail("source data and manifest dataset versions differ");
 }
 
 const generatedAt = new Date(manifest.generatedAt);
