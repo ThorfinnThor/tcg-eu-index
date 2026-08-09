@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import { formatPct } from "@/components/Metric";
 import { getReports } from "@/lib/data";
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "Weekly reports",
+  description: "Browse human-reviewed weekly reports for European One Piece and Pokemon listing-price benchmarks."
+};
 
 export default async function ReportsPage() {
   const reportsPayload = await getReports();
@@ -35,6 +40,9 @@ export default async function ReportsPage() {
                       <span className="text-paper/65">{highlight.headline}</span>
                       <span className={highlight.weeklyReturn >= 0 ? "text-mint" : "text-coral"}>{formatPct(highlight.weeklyReturn)}</span>
                       <span className="text-paper/55">{(highlight.breadth * 100).toFixed(0)}% breadth</span>
+                      {highlight.notableEvents?.length ? (
+                        <div className="text-xs leading-5 text-paper/45 sm:col-span-4">{highlight.notableEvents.join(" ")}</div>
+                      ) : null}
                     </div>
                   ))}
                 </div>

@@ -67,15 +67,25 @@ export const fixtureIndexes: IndexSummary[] = [
 export const fixtureConstituents: Record<string, Constituent[]> = Object.fromEntries(
   fixtureIndexes.map((index) => [
     index.code,
-    Array.from({ length: Math.min(index.target_size, 40) }, (_, row) => ({
+    [...Array.from({ length: Math.min(index.target_size, 40) }, (_, row) => ({
       cm_product_id: 750000 + row,
       variant_key: row % 7 === 0 ? "foil" : "nonfoil",
       name: `${index.game} Benchmark Product ${row + 1}`,
       set: row % 2 === 0 ? "Launch Set" : "Current Set",
       member_since: row < 10 ? "2026-07-20" : "2026-08-01",
-      action: row < 10 ? "retained" : "added",
+      action: (row < 10 ? "retained" : "added") as Constituent["action"],
       liquidity_score: Number((0.91 - row * 0.006).toFixed(3)),
       ref_price: Number((2 + row * 1.35).toFixed(2))
-    }))
+    })), {
+      cm_product_id: 759900,
+      variant_key: "nonfoil",
+      name: `${index.game} Historical Benchmark Product`,
+      set: "Launch Set",
+      member_since: "2026-07-20",
+      removed_at: "2026-08-01",
+      action: "removed" as const,
+      liquidity_score: 0.64,
+      ref_price: 8.5
+    }]
   ])
 );

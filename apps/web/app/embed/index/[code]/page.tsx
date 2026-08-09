@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { IndexChart } from "@/components/IndexChart";
 import { changes, getIndex, getSearchIndex } from "@/lib/data";
 import { formatPct } from "@/components/Metric";
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "Embedded index chart",
+  robots: { index: false, follow: false }
+};
 
 export async function generateStaticParams() {
   const indexes = await getSearchIndex();

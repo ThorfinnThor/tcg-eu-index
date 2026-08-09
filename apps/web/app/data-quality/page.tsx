@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getDataQuality, getManifest, getStatus } from "@/lib/data";
 
 function statusClass(status: string) {
@@ -8,6 +9,10 @@ function statusClass(status: string) {
 }
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "Data quality",
+  description: "Review freshness, completeness, known gaps, and limitations of the European TCG Index dataset."
+};
 
 export default async function DataQualityPage() {
   const [quality, status, manifest] = await Promise.all([getDataQuality(), getStatus(), getManifest()]);

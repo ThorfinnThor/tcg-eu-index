@@ -34,6 +34,57 @@
           "breadth": 0.62
         }
       ]
+    },
+    {
+      "id": "2026-W31-generated",
+      "week": "2026-W31",
+      "title": "European TCG market report - 2026-W31",
+      "status": "draft",
+      "publishedAt": null,
+      "summary": "3 European TCG benchmarks were calculated from the repository-managed MVP dataset for 2026-W31.",
+      "notes": [
+        "Generated figures use repo-managed MVP JSON and are not transaction prices.",
+        "Per-product movers remain unavailable until the production Cardmarket-derived data flow is connected.",
+        "Editor review is required before this draft can be marked published."
+      ],
+      "indexHighlights": [
+        {
+          "code": "OPEU100",
+          "headline": "One Piece Europe 100 rose 2.24%",
+          "weeklyReturn": 0.02240433,
+          "breadth": 0.58,
+          "startValue": 1066.418586,
+          "endValue": 1090.310981,
+          "observations": 3,
+          "notableEvents": [
+            "No calculation flags were recorded during the week."
+          ]
+        },
+        {
+          "code": "PKEU250",
+          "headline": "Pokemon Europe 250 rose 2.08%",
+          "weeklyReturn": 0.02077309,
+          "breadth": 0.53,
+          "startValue": 1070.834431,
+          "endValue": 1093.078966,
+          "observations": 3,
+          "notableEvents": [
+            "No calculation flags were recorded during the week."
+          ]
+        },
+        {
+          "code": "OPEUSLD",
+          "headline": "One Piece Sealed Pilot rose 1.89%",
+          "weeklyReturn": 0.01893437,
+          "breadth": 0.62,
+          "startValue": 1074.001887,
+          "endValue": 1094.337433,
+          "observations": 3,
+          "notableEvents": [
+            "No calculation flags were recorded during the week."
+          ]
+        }
+      ]
     }
   ]
 }

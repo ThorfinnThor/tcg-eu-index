@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { IndexChart } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { changes, getIndexes, getStatus } from "@/lib/data";
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "European trading card market benchmarks",
+  description: "Track European One Piece and Pokemon listing-price indexes, breadth, volatility, and data freshness."
+};
 
 export default async function Page() {
   const indexes = await getIndexes();

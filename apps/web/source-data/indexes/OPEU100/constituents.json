@@ -398,5 +398,16 @@
     "action": "added",
     "liquidity_score": 0.676,
     "ref_price": 54.65
+  },
+  {
+    "cm_product_id": 759900,
+    "variant_key": "nonfoil",
+    "name": "One Piece Historical Benchmark Product",
+    "set": "Launch Set",
+    "member_since": "2026-07-20",
+    "removed_at": "2026-08-01",
+    "action": "removed",
+    "liquidity_score": 0.64,
+    "ref_price": 8.5
   }
 ]

@@ -30,6 +30,7 @@ export type Constituent = {
   name: string;
   set: string;
   member_since: string;
+  removed_at?: string | null;
   action: "added" | "retained" | "removed";
   liquidity_score: number;
   ref_price: number;
@@ -49,6 +50,10 @@ export type ReportHighlight = {
   headline: string;
   weeklyReturn: number;
   breadth: number;
+  startValue?: number;
+  endValue?: number;
+  observations?: number;
+  notableEvents?: string[];
 };
 
 export type WeeklyReport = {

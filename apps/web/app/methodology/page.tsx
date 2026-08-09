@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const revalidate = 3600;
+export const metadata: Metadata = {
+  title: "Index methodology",
+  description: "Read the versioned calculation, eligibility, weighting, and data-quality methodology for the European TCG Index."
+};
 
 export default async function MethodologyPage() {
   const markdown = await readFile(path.join(process.cwd(), "../../docs/methodology/v1.0.0.md"), "utf8").catch(

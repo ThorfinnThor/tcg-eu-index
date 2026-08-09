@@ -5,6 +5,7 @@
   "scripts": {
     "data:export": "node scripts/export-static-data.mjs",
     "data:validate": "node scripts/validate-static-data.mjs",
+    "reports:generate": "node scripts/generate-weekly-report.mjs",
     "predev": "npm run data:export && npm run data:validate",
     "dev": "next dev",
     "prebuild": "npm run data:export && npm run data:validate",

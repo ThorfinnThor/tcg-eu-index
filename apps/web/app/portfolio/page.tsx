@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { PortfolioWorkbench } from "@/components/PortfolioWorkbench";
 import { getConstituents, getIndexes } from "@/lib/data";
 import type { IndexCode } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: "Portfolio benchmark",
+  description: "Compare a trading card collection CSV with European One Piece and Pokemon listing-price benchmarks in your browser."
+};
 
 export default async function PortfolioPage() {
   const indexes = await getIndexes();

@@ -1,11 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ContributionBars, IndexChart } from "@/components/IndexChart";
+import { ContributionBars, IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { changes, getConstituents, getIndex } from "@/lib/data";
 
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
+  const index = await getIndex(params.code);
+  if (!index) return { title: "Index not found" };
+  return {
+    title: index.name,
+    description: `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`,
+    alternates: { canonical: `/index/${index.code}` }
+  };
+}
 
 export default async function IndexPage({ params }: { params: { code: string } }) {
   const index = await getIndex(params.code);
@@ -37,12 +48,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
 
       <section className="grid gap-4 lg:grid-cols-[1fr_320px]">
         <div className="surface p-4">
-          <div className="mb-4 flex flex-wrap gap-2">
-            {["1M", "3M", "6M", "1Y", "Max", "Drawdown"].map((label) => (
-              <span key={label} className="chip">{label}</span>
-            ))}
-          </div>
-          <IndexChart history={index.history} />
+          <IndexChartExplorer history={index.history} />
         </div>
         <aside className="surface p-4">
           <div className="grid grid-cols-2 gap-5">
