@@ -24,4 +24,4 @@ Constituent filters are mirrored into URL query parameters so historical composi
 
 ## Production follow-up
 
-Accumulating enough daily snapshots from the confirmed Cardmarket downloads is the gate for true per-card movers, contribution leaders, and automated daily freshness.
+Accumulating enough validated daily snapshots and normalized observations from the confirmed Cardmarket downloads is the gate for true movers, contribution leaders, and automated daily freshness. Private per-card observations remain in R2; only derived aggregate analytics are candidates for public export.

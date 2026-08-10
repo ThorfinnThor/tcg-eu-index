@@ -49,3 +49,17 @@ uv run python scripts/verify_archive.py \
 ```
 
 Production index values remain repository-managed until enough verified daily snapshots exist for the methodology's observation windows.
+
+## Private normalization
+
+Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
+
+Replay an archived range in production:
+
+```bash
+uv run python scripts/backfill.py \
+  --since YYYY-MM-DD \
+  --until YYYY-MM-DD
+```
+
+Add `--store-root /path/to/archive` for a local object-store fixture. The normalized contracts and stable identity format are recorded in `docs/adr/010-r2-normalized-data.md`.

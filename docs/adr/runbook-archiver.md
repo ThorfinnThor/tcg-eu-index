@@ -49,11 +49,21 @@ The schedule remains inert while `ARCHIVE_ENABLED` is not exactly `true`.
 
 ## Daily Operation
 
-`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate the completed archive and exit without replacing objects.
+`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices into private derived R2 objects, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate and idempotently reprocess the completed archive without replacing identical objects.
 
 The manifest records checksums, byte sizes, source timestamps, fetch timestamps, and whether each payload is unchanged from the preceding day's snapshot.
 
 `audit.yml` runs every Sunday. It verifies that every daily manifest exists from `ARCHIVE_INCEPTION_DATE` through the current UTC date and performs checksum, decompression, and schema checks on a deterministic 5% sample of archived files.
+
+Replay normalization after a code or category-map change:
+
+```bash
+uv run python scripts/backfill.py \
+  --since YYYY-MM-DD \
+  --until YYYY-MM-DD
+```
+
+Each successful game/day produces `derived/ingest_runs/YYYY-MM-DD-<game>.json`. A category coverage below 99% fails normalization before its completion manifest and ingest receipt are written.
 
 ## Missed Day
 

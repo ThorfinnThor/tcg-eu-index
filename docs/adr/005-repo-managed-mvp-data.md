@@ -28,4 +28,4 @@ apps/web/public/data/
 
 Those generated files are deployment artifacts and are ignored by Git. The source data files are versioned in Git.
 
-Later, Cardmarket import automation can replace the repo-managed MVP JSON files while keeping the same public JSON contract.
+Cardmarket collection and private normalization are now active. The repo-managed MVP JSON remains the public source until the real observation windows and index calculations pass their quality gates. The later cutover replaces source values while keeping the same public JSON paths and schemas.
