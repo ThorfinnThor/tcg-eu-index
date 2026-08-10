@@ -27,6 +27,12 @@ jobs:
       - run: npm ci --prefix apps/web
       - run: npm --prefix apps/web run data:export
       - run: npm --prefix apps/web run data:validate
+      - name: Retain static build report
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-build-report-${{ github.run_id }}
+          path: apps/web/generated/reports/static-build.json
+          retention-days: 30
       - run: npm --prefix apps/web run lint
       - run: npm --prefix apps/web run test
       - run: npm --prefix apps/web run build
