@@ -1,13 +1,70 @@
-name: archive-future
+name: cardmarket-daily-archive
 
 on:
-  workflow_dispatch: {}
+  schedule:
+    - cron: "10 5 * * *"
+    - cron: "10 8 * * *"
+    - cron: "10 11 * * *"
+    - cron: "10 14 * * *"
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: UTC date (YYYY-MM-DD) or today
+        required: false
+        default: today
+
+concurrency:
+  group: cardmarket-daily-archive
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
-  archive_future:
+  archive:
+    if: github.event_name == 'workflow_dispatch' || vars.ARCHIVE_ENABLED == 'true'
     runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      CM_GAMES: onepiece,pokemon
+      CM_USER_AGENT: tcg-eu-index/1.0 contact=${{ vars.CM_CONTACT_EMAIL }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ vars.R2_BUCKET || 'tcg-raw' }}
+      ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
-      - name: MVP note
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: astral-sh/setup-uv@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync --all-packages
+      - name: Validate operator identity
+        run: test -n "${{ vars.CM_CONTACT_EMAIL }}"
+      - name: Archive and verify official Cardmarket snapshots
         run: |
-          echo "Archive workflow is intentionally parked for the MVP."
-          echo "Enable this after Cardmarket download URLs and object storage are finalized."
+          uv run --package tcg-eu-index-ingest python -m ingest.archive \
+            --date "${{ inputs.run_date || 'today' }}" | tee archive-result.json
+      - name: Retain archive receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: cardmarket-archive-${{ github.run_id }}
+          path: |
+            archive-result.json
+            data/manifest-latest.json
+          retention-days: 30
+      - name: Commit archive heartbeat
+        run: |
+          if git diff --quiet -- data/manifest-latest.json; then
+            echo "Archive already recorded; no heartbeat change."
+            exit 0
+          fi
+          archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/manifest-latest.json
+          git commit -m "chore(archive): ${archive_date}"
+          git push origin HEAD:main
