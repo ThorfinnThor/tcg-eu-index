@@ -1471,20 +1471,14 @@ name = "tcg-eu-index-engine"
 version = "0.1.0"
 source = { editable = "packages/indexengine" }
 dependencies = [
-    { name = "click" },
     { name = "polars" },
     { name = "pyyaml" },
-    { name = "tcg-eu-index-core" },
-    { name = "tcg-eu-index-ingest" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "click", specifier = ">=8.1" },
     { name = "polars", specifier = ">=1.9" },
     { name = "pyyaml", specifier = ">=6.0" },
-    { name = "tcg-eu-index-core", editable = "packages/core" },
-    { name = "tcg-eu-index-ingest", editable = "packages/ingest" },
 ]
 
 [[package]]
