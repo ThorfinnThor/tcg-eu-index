@@ -7,6 +7,7 @@ from pathlib import Path
 
 import boto3
 from botocore.client import BaseClient
+from botocore.exceptions import ClientError
 
 from core.settings import Settings
 
@@ -22,6 +23,19 @@ class R2Client:
     def __init__(self, settings: Settings, client: BaseClient | None = None) -> None:
         self.settings = settings
         self.bucket = settings.r2_bucket
+        if client is None:
+            missing = [
+                name
+                for name, value in (
+                    ("R2_ACCOUNT_ID", settings.r2_account_id),
+                    ("R2_ACCESS_KEY_ID", settings.r2_access_key_id),
+                    ("R2_SECRET_ACCESS_KEY", settings.r2_secret_access_key),
+                    ("R2_BUCKET", settings.r2_bucket),
+                )
+                if not value
+            ]
+            if missing:
+                raise ValueError(f"missing R2 configuration: {', '.join(missing)}")
         self.client = client or boto3.client(
             "s3",
             endpoint_url=settings.r2_endpoint_url,
@@ -33,8 +47,11 @@ class R2Client:
     def exists(self, key: str) -> bool:
         try:
             self.client.head_object(Bucket=self.bucket, Key=key)
-        except Exception:
-            return False
+        except ClientError as exc:
+            code = str(exc.response.get("Error", {}).get("Code", ""))
+            if code in {"404", "NoSuchKey", "NotFound"}:
+                return False
+            raise
         return True
 
     def read_bytes(self, key: str) -> bytes:

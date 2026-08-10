@@ -34,4 +34,18 @@ Verify the current official Cardmarket downloads without writing data:
 uv run --package tcg-eu-index-ingest python -m ingest.source_check
 ```
 
-The public source paths and confirmed JSON schema are recorded in `docs/adr/001-source-schema.md`. The scheduled workflow retains each source-check result as a GitHub artifact for 14 days. Production index values remain repository-managed until enough daily official snapshots exist for the methodology's observation windows.
+The public source paths and confirmed JSON schema are recorded in `docs/adr/001-source-schema.md`. The scheduled workflow retains each source-check result as a GitHub artifact for 14 days.
+
+## Daily source archive
+
+The private Cardmarket archive uses GitHub Actions and Cloudflare R2. It is not a runtime dependency of the Vercel site, and Supabase is not required. Activate it only after following `docs/adr/runbook-archiver.md`.
+
+Audit a local archive fixture:
+
+```bash
+uv run python scripts/verify_archive.py \
+  --store-root /path/to/archive \
+  --since YYYY-MM-DD
+```
+
+Production index values remain repository-managed until enough verified daily snapshots exist for the methodology's observation windows.

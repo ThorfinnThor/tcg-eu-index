@@ -41,4 +41,4 @@ apps/web/generated/reports/static-build.json
 The report records public JSON size, the largest file, page counts, indexable/noindex counts, duplicate candidates, and failed quality checks. A critical validation failure stops the build before Next.js or Vercel deployment.
 Successful CI and static-data-check runs retain this report as a GitHub Actions artifact for 30 days.
 
-This keeps the MVP deployable on Vercel with zero public database reads. Cardmarket ingestion, newsletter delivery, and fully automated weekly report generation remain later phases.
+This keeps the MVP deployable on Vercel with zero public database reads. Collection of immutable Cardmarket source snapshots is active as an independent background workflow; transforming those snapshots into production index values, newsletter delivery, and fully automated weekly report generation remain later phases.

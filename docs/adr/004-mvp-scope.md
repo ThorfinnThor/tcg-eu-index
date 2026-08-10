@@ -16,17 +16,21 @@ GitHub repository
 
 Deferred until product validation:
 
-- Cloudflare R2 raw archive,
 - Supabase master/admin database,
-- daily Cardmarket archive workflow,
 - Discord alerts,
 - weekly report automation,
 - portfolio persistence.
+
+Activated data-collection extension:
+
+- private Cloudflare R2 raw archive,
+- daily Cardmarket archive workflow,
+- weekly archive integrity audit.
 
 Reasoning:
 
 - The website can be validated with static JSON first.
 - Vercel does not need Supabase or Cloudflare for public page rendering.
-- Raw archive durability matters later, once real daily source URLs and the product direction are confirmed.
+- R2 preserves replaceable daily source files but is not read by public pages or Vercel builds.
 
-Re-enable the parked workflows after the Cardmarket official download links and storage decision are finalized.
+The archive schedules remain guarded by `ARCHIVE_ENABLED` until the one-time setup and manual first-snapshot checks in the archiver runbook are complete.
