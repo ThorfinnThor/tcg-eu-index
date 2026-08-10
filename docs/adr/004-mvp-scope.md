@@ -25,6 +25,7 @@ Activated data-collection extension:
 
 - private Cloudflare R2 raw archive,
 - daily Cardmarket archive workflow,
+- deterministic private catalogue and price normalization,
 - weekly archive integrity audit.
 
 Reasoning:
