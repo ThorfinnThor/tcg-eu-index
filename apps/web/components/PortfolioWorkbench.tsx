@@ -34,11 +34,11 @@ export function PortfolioWorkbench({ indexes, constituentsByCode }: Props) {
 
   return (
     <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_360px]">
-      <section className="surface p-5">
+      <section className="surface min-w-0 p-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-lg font-semibold">CSV holdings</h2>
           <select
-            className="surface px-3 py-2 text-sm"
+            className="surface max-w-full px-3 py-2 text-sm"
             value={selectedCode}
             onChange={(event) => setSelectedCode(event.target.value as IndexCode)}
             aria-label="Benchmark index"
@@ -103,7 +103,7 @@ export function PortfolioWorkbench({ indexes, constituentsByCode }: Props) {
         </div>
       </section>
 
-      <aside className="surface p-5">
+      <aside className="surface min-w-0 p-5">
         <h2 className="text-lg font-semibold">Comparison</h2>
         <div className="mt-5 space-y-4 text-sm">
           <div className="flex justify-between gap-3">
