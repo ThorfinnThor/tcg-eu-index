@@ -49,7 +49,7 @@ The schedule remains inert while `ARCHIVE_ENABLED` is not exactly `true`.
 
 ## Daily Operation
 
-`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices into private derived R2 objects, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate and idempotently reprocess the completed archive without replacing identical objects.
+`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices, recalculates the private shadow indexes, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate and idempotently reprocess the completed pipeline without replacing identical objects.
 
 The manifest records checksums, byte sizes, source timestamps, fetch timestamps, and whether each payload is unchanged from the preceding day's snapshot.
 
@@ -64,6 +64,8 @@ uv run python scripts/backfill.py \
 ```
 
 Each successful game/day produces `derived/ingest_runs/YYYY-MM-DD-<game>.json`. A category coverage below 99% fails normalization before its completion manifest and ingest receipt are written.
+
+Each successful calculation produces `derived/calc_runs/YYYY-MM-DD.json`. An `accumulating` result is expected before the full lookback and target-size gates pass. It is not a pipeline failure and does not publish shadow values to the web application.
 
 ## Missed Day
 

@@ -54,6 +54,8 @@ Production index values remain repository-managed until enough verified daily sn
 
 Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
 
+The same workflow then recomputes private shadow indexes. Shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. They do not replace the repository-managed public JSON automatically.
+
 Replay an archived range in production:
 
 ```bash
@@ -62,4 +64,4 @@ uv run python scripts/backfill.py \
   --until YYYY-MM-DD
 ```
 
-Add `--store-root /path/to/archive` for a local object-store fixture. The normalized contracts and stable identity format are recorded in `docs/adr/010-r2-normalized-data.md`.
+Add `--store-root /path/to/archive` for a local object-store fixture. A successful replay also recalculates the shadow indexes through the final date. The normalized contracts and stable identity format are recorded in `docs/adr/010-r2-normalized-data.md`; the shadow-index contract is recorded in `docs/adr/011-private-shadow-index-engine.md`.

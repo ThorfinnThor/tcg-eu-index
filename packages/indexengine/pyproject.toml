@@ -2,7 +2,13 @@
 name = "tcg-eu-index-engine"
 version = "0.1.0"
 requires-python = ">=3.12"
-dependencies = ["polars>=1.9", "pyyaml>=6.0"]
+dependencies = [
+  "tcg-eu-index-core",
+  "tcg-eu-index-ingest",
+  "click>=8.1",
+  "polars>=1.9",
+  "pyyaml>=6.0",
+]
 
 [tool.setuptools.packages.find]
 where = ["."]

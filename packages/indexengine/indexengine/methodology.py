@@ -29,10 +29,14 @@ class Methodology:
     seasoning_days: int
     min_history_days: int
     min_observation_ratio: float
+    price_floor_observation_ratio: float
+    max_suspect_zero_ratio: float
     daily_return_cap: float
     carry_forward_max_days: int
     rebalance: str
     selection_lookback_days: int
+    buffer_retention_multiplier: float
+    buffer_entry_multiplier: float
     indexes: list[IndexDefinition]
 
     @classmethod
@@ -46,10 +50,14 @@ class Methodology:
             seasoning_days=int(payload["seasoning_days"]),
             min_history_days=int(payload["min_history_days"]),
             min_observation_ratio=float(payload["min_observation_ratio"]),
+            price_floor_observation_ratio=float(payload["price_floor_observation_ratio"]),
+            max_suspect_zero_ratio=float(payload["max_suspect_zero_ratio"]),
             daily_return_cap=float(payload["daily_return_cap"]),
             carry_forward_max_days=int(payload["carry_forward_max_days"]),
             rebalance=str(payload["rebalance"]),
             selection_lookback_days=int(payload["selection_lookback_days"]),
+            buffer_retention_multiplier=float(payload["buffer_retention_multiplier"]),
+            buffer_entry_multiplier=float(payload["buffer_entry_multiplier"]),
             indexes=[IndexDefinition(**item) for item in payload["indexes"]],
         )
 
