@@ -7,10 +7,14 @@ min_price_eur:
 seasoning_days: 90
 min_history_days: 60
 min_observation_ratio: 0.80
+price_floor_observation_ratio: 0.80
+max_suspect_zero_ratio: 0.05
 daily_return_cap: 0.25
 carry_forward_max_days: 5
 rebalance: monthly
 selection_lookback_days: 60
+buffer_retention_multiplier: 1.20
+buffer_entry_multiplier: 0.90
 indexes:
   - code: OPEU100
     name: One Piece Europe 100

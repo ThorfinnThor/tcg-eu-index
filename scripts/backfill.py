@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import asdict
 from datetime import date
 from pathlib import Path
 
@@ -8,6 +9,7 @@ import click
 from core.r2 import LocalObjectStore, R2Client
 from core.settings import Settings, utc_now
 from core.store import ObjectStore
+from indexengine.calc import run_calc
 from ingest.backfill import backfill_archive
 
 
@@ -29,6 +31,10 @@ def main(
         LocalObjectStore(Path(store_root)) if store_root else R2Client(settings)
     )
     report = backfill_archive(store, start, end, settings)
+    if report["status"] == "pass":
+        report["shadow_calculation"] = [
+            asdict(result) for result in run_calc(end, settings, store=store)
+        ]
     body = json.dumps(report, indent=2, sort_keys=True) + "\n"
     if output:
         destination = Path(output)

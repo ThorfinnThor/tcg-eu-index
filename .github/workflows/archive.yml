@@ -54,13 +54,19 @@ jobs:
           set -o pipefail
           uv run --package tcg-eu-index-ingest python -m ingest.normalize \
             --date "${{ inputs.run_date || 'today' }}" | tee normalize-result.json
-      - name: Retain archive receipt
+      - name: Calculate private shadow indexes
+        run: |
+          set -o pipefail
+          uv run --package tcg-eu-index-engine python -m indexengine.calc \
+            --date "${{ inputs.run_date || 'today' }}" | tee calc-result.json
+      - name: Retain pipeline receipt
         uses: actions/upload-artifact@v4
         with:
           name: cardmarket-archive-${{ github.run_id }}
           path: |
             archive-result.json
             normalize-result.json
+            calc-result.json
             data/manifest-latest.json
           retention-days: 30
       - name: Commit archive heartbeat
