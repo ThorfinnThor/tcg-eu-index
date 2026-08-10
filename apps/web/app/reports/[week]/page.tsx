@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { formatPct } from "@/components/Metric";
 import { getReport } from "@/lib/data";
+import { reportPageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
@@ -10,12 +12,7 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: { week: string } }): Promise<Metadata> {
   const report = await getReport(params.week);
   if (!report) return { title: "Report not found" };
-  return {
-    title: report.title,
-    description: report.summary,
-    alternates: { canonical: `/reports/${report.week}` },
-    robots: report.status === "published" ? undefined : { index: false, follow: true }
-  };
+  return reportPageMetadata(`reports/${report.week}`, report.title, report.summary);
 }
 
 export default async function ReportPage({ params }: { params: { week: string } }) {
@@ -24,6 +21,11 @@ export default async function ReportPage({ params }: { params: { week: string } 
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
+      <Breadcrumbs items={[
+        { label: "Overview", href: "/" },
+        { label: "Weekly reports", href: "/reports" },
+        { label: report.week }
+      ]} />
       <div className="border-b border-line pb-6">
         <Link href="/reports" className="text-sm text-paper/50 hover:text-paper">Weekly reports</Link>
         <div className="mt-4 flex flex-wrap items-center gap-2">

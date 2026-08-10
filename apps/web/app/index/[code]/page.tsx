@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
+import { RelatedPages } from "@/components/RelatedPages";
+import { StructuredData } from "@/components/StructuredData";
 import { changes, getIndex, postInceptionHistory } from "@/lib/data";
 import { calculateIndexAnalytics } from "@/lib/index-analytics";
+import { pageMetadata } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
+import { breadcrumbStructuredData, indexDatasetStructuredData } from "@/lib/structured-data";
 
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
@@ -12,11 +18,11 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
   const index = await getIndex(params.code);
   if (!index) return { title: "Index not found" };
-  return {
-    title: index.name,
-    description: `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`,
-    alternates: { canonical: `/index/${index.code}` }
-  };
+  return pageMetadata(
+    `${index.code.toLowerCase()}-index`,
+    index.name,
+    `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`
+  );
 }
 
 export default async function IndexPage({ params }: { params: { code: string } }) {
@@ -27,9 +33,24 @@ export default async function IndexPage({ params }: { params: { code: string } }
   const formalHistory = postInceptionHistory(index);
   const analytics = calculateIndexAnalytics(formalHistory);
   const validationObservations = index.history.length - formalHistory.length;
+  const siteUrl = getSiteUrl();
+  const description = `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`;
+  const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
+      <StructuredData value={[
+        breadcrumbStructuredData(siteUrl, breadcrumbs),
+        indexDatasetStructuredData({
+          siteUrl,
+          code: index.code,
+          name: index.name,
+          description,
+          startDate: index.base_date,
+          endDate: latest?.value_date ?? null
+        })
+      ]} />
+      <Breadcrumbs items={breadcrumbs} />
       <div className="mb-6 flex flex-col gap-4 border-b border-line pb-5 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="text-sm text-paper/50">{index.code}</div>
@@ -108,6 +129,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
           </div>
         </div>
       </section>
+      <RelatedPages definitionId={`${index.code.toLowerCase()}-index`} />
     </div>
   );
 }

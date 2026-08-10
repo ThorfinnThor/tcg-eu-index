@@ -1,78 +1,154 @@
 [
   {
     "id": "overview",
+    "linkLabel": "Market overview",
     "slug": "",
     "keywordId": "en-tcg-europe-index",
+    "locale": "en",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
     "template": "market-overview",
     "filters": {},
     "minimumResults": 3,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 3,
+    "canonical": "/",
+    "relationships": [
+      { "type": "child", "targetId": "opeu100-index" },
+      { "type": "child", "targetId": "pkeu250-index" },
+      { "type": "child", "targetId": "opeusld-index" },
+      { "type": "related", "targetId": "methodology" },
+      { "type": "related", "targetId": "data-quality" }
+    ],
     "indexable": true,
     "status": "published"
   },
   {
     "id": "opeu100-index",
+    "linkLabel": "One Piece Europe 100",
     "slug": "index/OPEU100",
     "keywordId": "en-one-piece-cardmarket-index",
+    "locale": "en",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
     "filters": { "code": "OPEU100" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 3,
+    "canonical": "/index/OPEU100",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "next_step", "targetId": "methodology" },
+      { "type": "related", "targetId": "pkeu250-index" }
+    ],
     "indexable": true,
     "status": "published"
   },
   {
     "id": "pkeu250-index",
+    "linkLabel": "Pokemon Europe 250",
     "slug": "index/PKEU250",
     "keywordId": "en-pokemon-europe-price-index",
+    "locale": "en",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
     "filters": { "code": "PKEU250" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 3,
+    "canonical": "/index/PKEU250",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "next_step", "targetId": "methodology" },
+      { "type": "related", "targetId": "opeu100-index" }
+    ],
     "indexable": true,
     "status": "published"
   },
   {
     "id": "opeusld-index",
+    "linkLabel": "One Piece Sealed Pilot",
     "slug": "index/OPEUSLD",
-    "keywordId": "en-one-piece-cardmarket-index",
+    "keywordId": "en-one-piece-sealed-index",
+    "locale": "en",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
     "filters": { "code": "OPEUSLD" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 3,
+    "canonical": "/index/OPEUSLD",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "next_step", "targetId": "methodology" },
+      { "type": "related", "targetId": "opeu100-index" }
+    ],
     "indexable": true,
     "status": "published"
   },
   {
     "id": "methodology",
+    "linkLabel": "Index methodology",
     "slug": "methodology",
     "keywordId": "en-tcg-index-methodology",
+    "locale": "en",
+    "intent": "trust",
+    "cluster": "tcg-market-benchmarks",
     "template": "methodology",
     "filters": {},
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 1,
+    "canonical": "/methodology",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "related", "targetId": "data-quality" }
+    ],
     "indexable": true,
     "status": "published"
   },
   {
     "id": "reports",
+    "linkLabel": "Weekly reports",
     "slug": "reports",
     "keywordId": "en-tcg-market-report",
+    "locale": "en",
+    "intent": "monitoring",
+    "cluster": "tcg-market-benchmarks",
     "template": "report-archive",
     "filters": {},
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
-    "indexable": true,
-    "status": "published"
+    "minimumInsights": 1,
+    "canonical": "/reports",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "related", "targetId": "data-quality" }
+    ],
+    "indexable": false,
+    "status": "draft"
   },
   {
     "id": "data-quality",
+    "linkLabel": "Data quality and limitations",
     "slug": "data-quality",
-    "keywordId": "en-tcg-index-methodology",
+    "keywordId": "en-tcg-index-data-quality",
+    "locale": "en",
+    "intent": "trust",
+    "cluster": "tcg-market-benchmarks",
     "template": "data-quality",
     "filters": {},
     "minimumResults": 1,
     "minimumDataCompleteness": 0.8,
+    "minimumInsights": 3,
+    "canonical": "/data-quality",
+    "relationships": [
+      { "type": "parent", "targetId": "overview" },
+      { "type": "related", "targetId": "methodology" }
+    ],
     "indexable": true,
     "status": "published"
   }

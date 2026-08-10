@@ -15,14 +15,14 @@ Supabase remains allowed for:
 Public runtime data flow:
 
 ```text
-Cardmarket official downloads
-  -> GitHub Actions
-  -> validation, normalization, scoring
-  -> Supabase master/admin tables and R2 archive
-  -> small versioned JSON files
+repository-managed source JSON
+  -> validation and deterministic export
+  -> small versioned public JSON files
   -> Next.js static generation
   -> Vercel CDN
 ```
+
+The future Cardmarket production pipeline may use R2 for immutable raw snapshots and Supabase for admin or derived persistence, but neither service is an MVP runtime or build dependency. Any production pipeline must preserve the same public JSON contract.
 
 The web app reads from `apps/web/public/data` during build and route-handler execution. The build runs `data:export` and `data:validate` before `next build`.
 

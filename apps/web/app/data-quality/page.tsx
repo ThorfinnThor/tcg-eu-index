@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedPages } from "@/components/RelatedPages";
 import { getDataQuality, getManifest, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessTextClass } from "@/lib/freshness";
+import { pageMetadata } from "@/lib/seo";
 
 function statusClass(status: string) {
   if (status === "pass") return "border-teal text-teal";
@@ -10,16 +13,18 @@ function statusClass(status: string) {
 }
 
 export const revalidate = 3600;
-export const metadata: Metadata = {
-  title: "Data quality",
-  description: "Review freshness, completeness, known gaps, and limitations of the European TCG Index dataset."
-};
+export const metadata: Metadata = pageMetadata(
+  "data-quality",
+  "Data quality",
+  "Review freshness, completeness, known gaps, and limitations of the European TCG Index dataset."
+);
 
 export default async function DataQualityPage() {
   const [quality, status, manifest] = await Promise.all([getDataQuality(), getStatus(), getManifest()]);
   const freshness = assessFreshness(status.last_snapshot_date);
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
+      <Breadcrumbs items={[{ label: "Overview", href: "/" }, { label: "Data quality" }]} />
       <div className="border-b border-line pb-6">
         <p className="text-sm text-amber">Public data contract</p>
         <h1 className="mt-2 text-3xl font-semibold">Data quality</h1>
@@ -96,6 +101,7 @@ export default async function DataQualityPage() {
           </div>
         )}
       </section>
+      <RelatedPages definitionId="data-quality" />
     </div>
   );
 }

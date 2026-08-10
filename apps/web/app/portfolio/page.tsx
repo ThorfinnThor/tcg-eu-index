@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PortfolioWorkbench } from "@/components/PortfolioWorkbench";
 import { getConstituents, getIndexes } from "@/lib/data";
+import { utilityPageMetadata } from "@/lib/seo";
 import type { IndexCode } from "@/lib/types";
 
-export const metadata: Metadata = {
-  title: "Portfolio benchmark",
-  description: "Compare a trading card collection CSV with European One Piece and Pokemon listing-price benchmarks in your browser."
-};
+export const metadata: Metadata = utilityPageMetadata(
+  "Portfolio benchmark",
+  "Compare a trading card collection CSV with European One Piece and Pokemon listing-price benchmarks in your browser.",
+  "/portfolio"
+);
 
 export default async function PortfolioPage() {
   const indexes = await getIndexes();
@@ -15,6 +18,7 @@ export default async function PortfolioPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
+      <Breadcrumbs items={[{ label: "Overview", href: "/" }, { label: "Portfolio benchmark" }]} />
       <div className="border-b border-line pb-6">
         <p className="text-sm text-amber">CSV upload preview</p>
         <h1 className="mt-2 text-3xl font-semibold">Portfolio benchmark</h1>

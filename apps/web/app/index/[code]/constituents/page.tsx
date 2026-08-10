@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConstituentsTable } from "@/components/ConstituentsTable";
 import { latestCompositionDate } from "@/lib/constituents";
 import { getConstituents, getIndex } from "@/lib/data";
+import { utilityPageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
@@ -10,11 +12,11 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
   const index = await getIndex(params.code);
   if (!index) return { title: "Constituents not found" };
-  return {
-    title: `${index.name} constituents`,
-    description: `Search and replay the historical constituent composition of ${index.name}.`,
-    alternates: { canonical: `/index/${index.code}/constituents` }
-  };
+  return utilityPageMetadata(
+    `${index.name} constituents`,
+    `Search and replay the historical constituent composition of ${index.name}.`,
+    `/index/${index.code}/constituents`
+  );
 }
 
 export default async function ConstituentsPage({
@@ -32,6 +34,11 @@ export default async function ConstituentsPage({
   const asOf = requestedAsOf && requestedAsOf >= index.base_date && requestedAsOf <= maxDate ? requestedAsOf : maxDate;
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
+      <Breadcrumbs items={[
+        { label: "Overview", href: "/" },
+        { label: index.name, href: `/index/${index.code}` },
+        { label: "Constituents" }
+      ]} />
       <div className="mb-6 border-b border-line pb-5">
         <div className="text-sm text-paper/50">{index.code}</div>
         <h1 className="mt-1 text-3xl font-semibold">Constituents</h1>
