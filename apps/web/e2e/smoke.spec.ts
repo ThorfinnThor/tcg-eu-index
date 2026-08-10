@@ -20,7 +20,7 @@ test("market overview and index exploration", async ({ page }) => {
 test("constituents, embed, reports, and public CSV remain reachable", async ({ page, request }) => {
   await page.goto("/index/OPEU100/constituents?asOf=2026-07-29&q=Benchmark&inactive=1");
   await expect(page.getByRole("heading", { name: "Constituents" })).toBeVisible();
-  await expect(page.getByRole("textbox", { name: /search/i })).toHaveValue("Benchmark");
+  await expect(page.getByRole("searchbox", { name: /search/i })).toHaveValue("Benchmark");
 
   await page.goto("/embed/index/OPEU100");
   await expect(page.getByText("OPEU100", { exact: true })).toBeVisible();
