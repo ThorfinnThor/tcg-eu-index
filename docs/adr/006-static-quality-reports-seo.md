@@ -25,6 +25,19 @@ The static-data validation step verifies:
 - source JSON shape,
 - generated manifest checksums,
 - data-quality and reports public contracts,
-- published SEO pages reference approved keywords.
+- keyword and page-definition identities are unique,
+- indexable pages reference distinct approved keywords,
+- canonical URLs match registered slugs,
+- page locale, intent, and cluster match the keyword registry,
+- explicit internal-link relationships resolve,
+- indexable pages pass result, insight, and completeness thresholds.
+
+The page-definition registry is the only source for sitemap inclusion and indexability. Utility pages, filtered constituent views, embeds, draft reports, and the report archive before its first human-reviewed publication use `noindex`. The validator writes an ignored build artifact to:
+
+```text
+apps/web/generated/reports/static-build.json
+```
+
+The report records public JSON size, the largest file, page counts, indexable/noindex counts, duplicate candidates, and failed quality checks. A critical validation failure stops the build before Next.js or Vercel deployment.
 
 This keeps the MVP deployable on Vercel with zero public database reads. Cardmarket ingestion, newsletter delivery, and fully automated weekly report generation remain later phases.

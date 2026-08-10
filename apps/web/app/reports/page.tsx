@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { formatPct } from "@/components/Metric";
+import { RelatedPages } from "@/components/RelatedPages";
 import { getReports } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
-export const metadata: Metadata = {
-  title: "Weekly reports",
-  description: "Browse human-reviewed weekly reports for European One Piece and Pokemon listing-price benchmarks."
-};
+export const metadata: Metadata = pageMetadata(
+  "reports",
+  "Weekly reports",
+  "Browse human-reviewed weekly reports for European One Piece and Pokemon listing-price benchmarks."
+);
 
 export default async function ReportsPage() {
   const reportsPayload = await getReports();
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
+      <Breadcrumbs items={[{ label: "Overview", href: "/" }, { label: "Weekly reports" }]} />
       <div className="border-b border-line pb-6">
         <p className="text-sm text-amber">Human-reviewed weekly archive</p>
         <h1 className="mt-2 text-3xl font-semibold">Weekly reports</h1>
@@ -76,6 +81,7 @@ export default async function ReportsPage() {
           </button>
         </form>
       </div>
+      <RelatedPages definitionId="reports" />
     </div>
   );
 }

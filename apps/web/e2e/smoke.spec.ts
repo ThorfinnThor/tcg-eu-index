@@ -46,3 +46,19 @@ test("primary pages do not overflow the viewport", async ({ page }) => {
     );
   }
 });
+
+test("SEO publication rules are visible in rendered output", async ({ page, request }) => {
+  await page.goto("/index/OPEU100");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/index\/OPEU100$/);
+  await expect(page.locator('script[type="application\/ld\+json"]')).toHaveCount(1);
+
+  await page.goto("/reports");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+
+  const response = await request.get("/sitemap.xml");
+  const xml = await response.text();
+  expect(response.ok()).toBe(true);
+  expect(xml).toContain("/index/OPEU100");
+  expect(xml).not.toContain("/portfolio");
+  expect(xml).not.toContain("/constituents");
+});

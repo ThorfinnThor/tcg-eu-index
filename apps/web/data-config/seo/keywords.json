@@ -26,6 +26,19 @@
     "lastReviewed": "2026-08-05"
   },
   {
+    "id": "en-one-piece-sealed-index",
+    "keyword": "One Piece sealed product price index Europe",
+    "locale": "en",
+    "market": "EU",
+    "intent": "reference",
+    "cluster": "tcg-market-benchmarks",
+    "priority": 60,
+    "evidence": ["product-strategy"],
+    "validated": true,
+    "status": "approved",
+    "lastReviewed": "2026-08-10"
+  },
+  {
     "id": "en-pokemon-europe-price-index",
     "keyword": "Pokemon Europe price index",
     "locale": "en",
@@ -50,6 +63,19 @@
     "validated": true,
     "status": "approved",
     "lastReviewed": "2026-08-09"
+  },
+  {
+    "id": "en-tcg-index-data-quality",
+    "keyword": "TCG index data quality",
+    "locale": "en",
+    "market": "EU",
+    "intent": "trust",
+    "cluster": "tcg-market-benchmarks",
+    "priority": 45,
+    "evidence": ["product-strategy"],
+    "validated": true,
+    "status": "approved",
+    "lastReviewed": "2026-08-10"
   },
   {
     "id": "en-tcg-market-report",

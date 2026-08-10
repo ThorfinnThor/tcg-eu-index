@@ -1,18 +1,17 @@
 import type { MetadataRoute } from "next";
-import { getIndexes, getReports } from "@/lib/data";
+import { getStatus } from "@/lib/data";
+import { getPageDefinitions, isIndexable } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tcg-eu-index.vercel.app";
+const siteUrl = getSiteUrl();
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [indexes, reports] = await Promise.all([getIndexes(), getReports()]);
-  const staticRoutes = ["", "/methodology", "/reports", "/portfolio", "/data-quality"];
-  const indexRoutes = indexes.flatMap((index) => [`/index/${index.code}`, `/index/${index.code}/constituents`]);
-  const reportRoutes = reports.reports.filter((report) => report.status === "published").map((report) => `/reports/${report.week}`);
-
-  return [...staticRoutes, ...indexRoutes, ...reportRoutes].map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
+  const status = await getStatus();
+  const lastModified = status.last_calc_date ? new Date(`${status.last_calc_date}T00:00:00Z`) : undefined;
+  return getPageDefinitions().filter(isIndexable).map((definition) => ({
+    url: `${siteUrl}${definition.canonical === "/" ? "" : definition.canonical}`,
+    lastModified,
     changeFrequency: "daily",
-    priority: route === "" ? 1 : route.startsWith("/index/") ? 0.8 : 0.6
+    priority: definition.id === "overview" ? 1 : definition.template === "index-detail" ? 0.8 : 0.6
   }));
 }

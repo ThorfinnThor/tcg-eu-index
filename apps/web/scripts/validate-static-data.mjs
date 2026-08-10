@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFile, stat } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -7,8 +7,10 @@ const dataRoot = path.join(root, "public", "data");
 const sourceDataRoot = path.join(root, "source-data");
 const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 const seoDataRoot = path.join(root, "data-config", "seo");
+const reportsRoot = path.join(root, "generated", "reports");
 const maxBytes = 1_000_000;
 const preferredMaxBytes = 250_000;
+const allowedRelationshipTypes = new Set(["parent", "child", "related", "comparison", "next_step"]);
 
 function fail(message) {
   throw new Error(`static data validation failed: ${message}`);
@@ -133,20 +135,106 @@ const pageDefinitions = await readSeoFile("page-definitions.json");
 if (!Array.isArray(keywords) || !Array.isArray(pageDefinitions)) {
   fail("SEO registry files must be arrays");
 }
-const approvedKeywordIds = new Set(
-  keywords
-    .filter((keyword) => keyword.status === "approved" && keyword.validated === true)
-    .map((keyword) => keyword.id)
-);
-for (const page of pageDefinitions.filter((definition) => definition.status === "published")) {
-  if (!page.id || !page.template || typeof page.minimumDataCompleteness !== "number") {
-    fail(`invalid published SEO page definition: ${JSON.stringify(page)}`);
+const keywordsById = new Map();
+for (const keyword of keywords) {
+  if (
+    !keyword.id || !keyword.keyword || !keyword.locale || !keyword.market || !keyword.intent || !keyword.cluster ||
+    typeof keyword.priority !== "number" || typeof keyword.validated !== "boolean" || !keyword.status
+  ) {
+    fail(`invalid SEO keyword: ${JSON.stringify(keyword)}`);
   }
-  if (!approvedKeywordIds.has(page.keywordId)) {
-    fail(`${page.id} references a missing or unapproved keyword`);
+  if (keywordsById.has(keyword.id)) fail(`duplicate keyword id ${keyword.id}`);
+  if (!Array.isArray(keyword.evidence) || keyword.evidence.length === 0) {
+    fail(`${keyword.id} must record demand evidence`);
   }
-  if (page.indexable !== true) {
-    fail(`${page.id} is published but not indexable`);
+  keywordsById.set(keyword.id, keyword);
+}
+
+const pageDefinitionsById = new Map();
+const pageSlugs = new Set();
+const pageCanonicals = new Set();
+const indexableKeywordIds = new Set();
+for (const page of pageDefinitions) {
+  if (
+    !page.id || !page.linkLabel || typeof page.slug !== "string" || !page.keywordId || !page.locale || !page.intent || !page.cluster ||
+    !page.template || typeof page.minimumResults !== "number" ||
+    typeof page.minimumDataCompleteness !== "number" || typeof page.minimumInsights !== "number" ||
+    !page.canonical || typeof page.indexable !== "boolean" || !["draft", "published", "retired"].includes(page.status)
+  ) {
+    fail(`invalid SEO page definition: ${JSON.stringify(page)}`);
+  }
+  if (pageDefinitionsById.has(page.id)) fail(`duplicate page definition id ${page.id}`);
+  if (pageSlugs.has(page.slug)) fail(`duplicate page definition slug ${page.slug}`);
+  if (pageCanonicals.has(page.canonical)) fail(`duplicate canonical ${page.canonical}`);
+  const expectedCanonical = page.slug ? `/${page.slug}` : "/";
+  if (page.canonical !== expectedCanonical) fail(`${page.id} canonical does not match its slug`);
+  if (page.minimumResults < 0 || page.minimumInsights < 0) fail(`${page.id} has a negative quality threshold`);
+  if (page.minimumDataCompleteness < 0 || page.minimumDataCompleteness > 1) {
+    fail(`${page.id} minimumDataCompleteness must be between 0 and 1`);
+  }
+  if (!Array.isArray(page.relationships)) fail(`${page.id} relationships must be an array`);
+  if (page.indexable && page.status !== "published") fail(`${page.id} is indexable without published status`);
+  const keyword = keywordsById.get(page.keywordId);
+  if (!keyword) fail(`${page.id} references missing keyword ${page.keywordId}`);
+  if (page.locale !== keyword.locale || page.intent !== keyword.intent || page.cluster !== keyword.cluster) {
+    fail(`${page.id} does not match its keyword locale, intent, and cluster`);
+  }
+  if (page.indexable) {
+    if (keyword.status !== "approved" || keyword.validated !== true) {
+      fail(`${page.id} references an unapproved keyword`);
+    }
+    if (indexableKeywordIds.has(page.keywordId)) {
+      fail(`${page.id} reuses indexable keyword ${page.keywordId} and creates a cannibalization risk`);
+    }
+    indexableKeywordIds.add(page.keywordId);
+  }
+  pageDefinitionsById.set(page.id, page);
+  pageSlugs.add(page.slug);
+  pageCanonicals.add(page.canonical);
+}
+
+for (const page of pageDefinitions) {
+  for (const relationship of page.relationships) {
+    if (!allowedRelationshipTypes.has(relationship.type) || !pageDefinitionsById.has(relationship.targetId)) {
+      fail(`${page.id} has an invalid relationship ${JSON.stringify(relationship)}`);
+    }
+    if (relationship.targetId === page.id) fail(`${page.id} cannot link to itself`);
+  }
+  if (page.indexable && page.id !== "overview" && !page.relationships.some((relationship) => relationship.type === "parent")) {
+    fail(`${page.id} is an orphan without a parent relationship`);
+  }
+}
+
+const publishedReportCount = sourceReports.reports.filter((report) => report.status === "published").length;
+function pageQuality(page) {
+  if (page.template === "market-overview") {
+    return { resultCount: sourceData.indexes.length, insightCount: sourceData.indexes.length };
+  }
+  if (page.template === "index-detail") {
+    const code = page.filters?.code;
+    const index = sourceData.indexes.find((candidate) => candidate.code === code);
+    return { resultCount: index ? 1 : 0, insightCount: index ? 3 : 0 };
+  }
+  if (page.template === "methodology") return { resultCount: 1, insightCount: 1 };
+  if (page.template === "report-archive") {
+    return { resultCount: publishedReportCount, insightCount: publishedReportCount };
+  }
+  if (page.template === "data-quality") {
+    return { resultCount: sourceQuality.checks.length, insightCount: sourceQuality.limitations.length };
+  }
+  return { resultCount: 0, insightCount: 0 };
+}
+
+for (const page of pageDefinitions.filter((definition) => definition.indexable)) {
+  const quality = pageQuality(page);
+  if (quality.resultCount < page.minimumResults) {
+    fail(`${page.id} has ${quality.resultCount} results but requires ${page.minimumResults}`);
+  }
+  if (quality.insightCount < page.minimumInsights) {
+    fail(`${page.id} has ${quality.insightCount} insights but requires ${page.minimumInsights}`);
+  }
+  if (sourceQuality.datasetCompleteness < page.minimumDataCompleteness) {
+    fail(`${page.id} fails its minimum data completeness threshold`);
   }
 }
 
@@ -231,4 +319,32 @@ if (statusPayload.last_snapshot_date !== expectedLatestDate || statusPayload.las
   fail("status latest dates do not match exported index history");
 }
 
-console.log("static data validation passed");
+const totalPublicJsonBytes = (manifest.files ?? []).reduce((total, file) => total + file.bytes, 0);
+const largestPublicFile = [...(manifest.files ?? [])].sort((left, right) => right.bytes - left.bytes)[0] ?? null;
+const buildReport = {
+  generatedAt: new Date().toISOString(),
+  datasetVersion: manifest.datasetVersion,
+  publicData: {
+    fileCount: manifest.files?.length ?? 0,
+    totalBytes: totalPublicJsonBytes,
+    largestFile: largestPublicFile ? { path: largestPublicFile.path, bytes: largestPublicFile.bytes } : null,
+    preferredMaxBytes,
+    hardMaxBytes: maxBytes
+  },
+  seo: {
+    keywordCount: keywords.length,
+    pageCount: pageDefinitions.length,
+    indexableCount: pageDefinitions.filter((page) => page.indexable).length,
+    noindexCount: pageDefinitions.filter((page) => !page.indexable).length,
+    skippedPages: pageDefinitions.filter((page) => page.status === "retired").map((page) => page.id),
+    duplicateCandidates: [],
+    failedQualityChecks: []
+  }
+};
+await mkdir(reportsRoot, { recursive: true });
+await writeFile(path.join(reportsRoot, "static-build.json"), `${JSON.stringify(buildReport, null, 2)}\n`);
+
+console.log(
+  `static data validation passed: ${buildReport.publicData.fileCount} files, ${buildReport.publicData.totalBytes} bytes, ` +
+  `${buildReport.seo.indexableCount} indexable pages, ${buildReport.seo.noindexCount} noindex pages`
+);

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tcg-eu-index.vercel.app";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -11,12 +12,17 @@ export const metadata: Metadata = {
     template: "%s | European TCG Index"
   },
   description: "EU-first listing-price benchmarks for One Piece and Pokemon cards.",
+  applicationName: "European TCG Index",
+  authors: [{ name: "European TCG Index" }],
+  category: "finance",
   openGraph: {
     type: "website",
     siteName: "European TCG Index",
     title: "European TCG Index",
-    description: "Transparent European TCG listing-price benchmarks with methodology and data-quality disclosures."
-  }
+    description: "Transparent European TCG listing-price benchmarks with methodology and data-quality disclosures.",
+    url: siteUrl
+  },
+  twitter: { card: "summary", title: "European TCG Index" }
 };
 
 const nav = [

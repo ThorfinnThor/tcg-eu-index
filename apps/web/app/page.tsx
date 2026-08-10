@@ -2,21 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { IndexChart } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
+import { StructuredData } from "@/components/StructuredData";
 import { changes, getIndexes, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessClass } from "@/lib/freshness";
+import { pageMetadata } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 export const revalidate = 3600;
-export const metadata: Metadata = {
-  title: "European trading card market benchmarks",
-  description: "Track European One Piece and Pokemon listing-price indexes, breadth, volatility, and data freshness."
-};
+export const metadata: Metadata = pageMetadata(
+  "overview",
+  "European trading card market benchmarks",
+  "Track European One Piece and Pokemon listing-price indexes, breadth, volatility, and data freshness."
+);
 
 export default async function Page() {
   const indexes = await getIndexes();
   const status = await getStatus();
   const freshness = assessFreshness(status.last_snapshot_date);
+  const siteUrl = getSiteUrl();
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
+      <StructuredData value={[
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "European TCG Index",
+          url: siteUrl,
+          description: "EU-first listing-price benchmarks for One Piece and Pokemon cards."
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "European TCG indexes",
+          itemListElement: indexes.map((index, position) => ({
+            "@type": "ListItem",
+            position: position + 1,
+            name: index.name,
+            url: `${siteUrl}/index/${index.code}`
+          }))
+        }
+      ]} />
       <section className="mb-6 border-b border-line pb-6">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
