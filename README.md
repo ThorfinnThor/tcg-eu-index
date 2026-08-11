@@ -56,6 +56,8 @@ Every successful daily archive run also normalizes the verified catalogue and pr
 
 The same workflow then recomputes private shadow indexes. Shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. They do not replace the repository-managed public JSON automatically.
 
+Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published.
+
 Replay an archived range in production:
 
 ```bash

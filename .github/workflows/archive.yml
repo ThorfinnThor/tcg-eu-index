@@ -34,11 +34,11 @@ jobs:
       R2_BUCKET: ${{ vars.R2_BUCKET || 'tcg-raw' }}
       ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: main
-      - uses: astral-sh/setup-uv@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: uv sync --all-packages
@@ -60,7 +60,7 @@ jobs:
           uv run --package tcg-eu-index-engine python -m indexengine.calc \
             --date "${{ inputs.run_date || 'today' }}" | tee calc-result.json
       - name: Retain pipeline receipt
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cardmarket-archive-${{ github.run_id }}
           path: |
