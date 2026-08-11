@@ -8,7 +8,7 @@ import click
 from core.r2 import LocalObjectStore, R2Client
 from core.settings import Settings, utc_now
 from core.store import ObjectStore
-from ingest.audit import audit_archive
+from ingest.audit import audit_archive, render_audit_summary
 
 
 @click.command()
@@ -21,6 +21,10 @@ from ingest.audit import audit_archive
 @click.option("--sample-rate", type=click.FloatRange(0.0, 1.0, min_open=True), default=1.0)
 @click.option("--seed", default=None, help="Deterministic sample seed; defaults to end date")
 @click.option("--output", default=None, help="Optional JSON report path")
+@click.option("--summary-output", default=None, help="Optional Markdown summary path")
+@click.option("--indexes", default="OPEU100,PKEU250,OPEUSLD")
+@click.option("--required-lookback-days", type=click.IntRange(min=1), default=60)
+@click.option("--scheduled-attempts-per-day", type=click.IntRange(min=1), default=4)
 def main(
     since: str,
     until_value: str | None,
@@ -29,6 +33,10 @@ def main(
     sample_rate: float,
     seed: str | None,
     output: str | None,
+    summary_output: str | None,
+    indexes: str,
+    required_lookback_days: int,
+    scheduled_attempts_per_day: int,
 ) -> None:
     start = date.fromisoformat(since)
     end = date.fromisoformat(until_value) if until_value else utc_now().date()
@@ -39,12 +47,27 @@ def main(
     store: ObjectStore = (
         LocalObjectStore(Path(store_root)) if store_root else R2Client(settings)
     )
-    report = audit_archive(store, start, end, expected_games, sample_rate, seed or end.isoformat())
+    index_codes = [item.strip() for item in indexes.split(",") if item.strip()]
+    report = audit_archive(
+        store,
+        start,
+        end,
+        expected_games,
+        sample_rate,
+        seed or end.isoformat(),
+        index_codes=index_codes,
+        required_lookback_days=required_lookback_days,
+        scheduled_attempts_per_day=scheduled_attempts_per_day,
+    )
     body = json.dumps(report, indent=2, sort_keys=True) + "\n"
     if output:
         destination = Path(output)
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(body)
+    if summary_output:
+        summary_destination = Path(summary_output)
+        summary_destination.parent.mkdir(parents=True, exist_ok=True)
+        summary_destination.write_text(render_audit_summary(report))
     click.echo(body, nl=False)
     if report["status"] != "pass":
         raise SystemExit(1)

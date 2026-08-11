@@ -45,8 +45,12 @@ Audit a local archive fixture:
 ```bash
 uv run python scripts/verify_archive.py \
   --store-root /path/to/archive \
-  --since YYYY-MM-DD
+  --since YYYY-MM-DD \
+  --output archive-audit.json \
+  --summary-output archive-audit.md
 ```
+
+The audit includes archive integrity, exact object-storage usage, conservative R2 operation projections, and per-index readiness for the eventual human cutover review.
 
 Production index values remain repository-managed until enough verified daily snapshots exist for the methodology's observation windows.
 

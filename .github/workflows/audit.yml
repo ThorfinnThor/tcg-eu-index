@@ -32,12 +32,24 @@ jobs:
           uv run python scripts/verify_archive.py \
             --since "${{ vars.ARCHIVE_INCEPTION_DATE }}" \
             --sample-rate 0.05 \
-            --output archive-audit.json
+            --output archive-audit.json \
+            --summary-output archive-audit.md
+      - name: Publish audit summary
+        if: always()
+        run: |
+          if test -f archive-audit.md; then
+            cat archive-audit.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "# Cardmarket archive audit" >> "$GITHUB_STEP_SUMMARY"
+            echo "Audit did not produce a summary." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Retain audit report
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: cardmarket-archive-audit-${{ github.run_id }}
-          path: archive-audit.json
+          path: |
+            archive-audit.json
+            archive-audit.md
           if-no-files-found: warn
           retention-days: 90

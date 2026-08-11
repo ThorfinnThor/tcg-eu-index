@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import gzip
 import hashlib
-from dataclasses import dataclass
 from pathlib import Path
 
 import boto3
@@ -10,13 +9,7 @@ from botocore.client import BaseClient
 from botocore.exceptions import ClientError
 
 from core.settings import Settings
-
-
-@dataclass(frozen=True)
-class ObjectStat:
-    key: str
-    size: int
-    etag: str | None
+from core.store import ObjectStat
 
 
 class R2Client:
@@ -68,11 +61,21 @@ class R2Client:
         )
 
     def list_keys(self, prefix: str) -> list[str]:
+        return [item.key for item in self.list_objects(prefix)]
+
+    def list_objects(self, prefix: str) -> list[ObjectStat]:
         paginator = self.client.get_paginator("list_objects_v2")
-        keys: list[str] = []
+        objects: list[ObjectStat] = []
         for page in paginator.paginate(Bucket=self.bucket, Prefix=prefix):
-            keys.extend(item["Key"] for item in page.get("Contents", []))
-        return keys
+            objects.extend(
+                ObjectStat(
+                    key=str(item["Key"]),
+                    size=int(item.get("Size", 0)),
+                    etag=str(item["ETag"]).strip('"') if item.get("ETag") else None,
+                )
+                for item in page.get("Contents", [])
+            )
+        return objects
 
 
 class LocalObjectStore:
@@ -96,10 +99,21 @@ class LocalObjectStore:
         path.write_bytes(body)
 
     def list_keys(self, prefix: str) -> list[str]:
+        return [item.key for item in self.list_objects(prefix)]
+
+    def list_objects(self, prefix: str) -> list[ObjectStat]:
         base = self.root / prefix
         if not base.exists():
             return []
-        return [str(path.relative_to(self.root)) for path in base.rglob("*") if path.is_file()]
+        return [
+            ObjectStat(
+                key=str(path.relative_to(self.root)),
+                size=path.stat().st_size,
+                etag=None,
+            )
+            for path in base.rglob("*")
+            if path.is_file()
+        ]
 
 
 def gzip_body(body: bytes) -> bytes:

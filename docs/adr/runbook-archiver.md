@@ -53,7 +53,15 @@ The schedule remains inert while `ARCHIVE_ENABLED` is not exactly `true`.
 
 The manifest records checksums, byte sizes, source timestamps, fetch timestamps, and whether each payload is unchanged from the preceding day's snapshot.
 
-`audit.yml` runs every Sunday. It verifies that every daily manifest exists from `ARCHIVE_INCEPTION_DATE` through the current UTC date and performs checksum, decompression, and schema checks on a deterministic 5% sample of archived files.
+`audit.yml` runs every Sunday. It verifies that every daily manifest exists from `ARCHIVE_INCEPTION_DATE` through the current UTC date and performs checksum, decompression, and schema checks on a deterministic 5% sample of archived files. Its GitHub Actions summary also reports:
+
+- exact R2 object counts and stored bytes from one bucket listing,
+- storage totals split across raw snapshots, manifests, normalized data, shadow indexes, and receipts,
+- conservative monthly Class A and Class B operation projections for the four scheduled attempts per day,
+- archive-window, target-size, quality-receipt, and language-scope gates for every index,
+- the earliest possible full-lookback and monthly rebalance dates assuming no archive gaps.
+
+The operation figures are deliberately labeled projections. The S3-compatible R2 API does not expose account billing counters; Cloudflare's dashboard remains authoritative. The watchdog uses the R2 Standard monthly free allocation documented in [Cloudflare's R2 pricing](https://developers.cloudflare.com/r2/pricing/), warns at 80% of those limits, and does not convert a cost warning into an archive-integrity failure.
 
 Replay normalization after a code or category-map change:
 
@@ -81,7 +89,9 @@ Run a production audit locally only with the R2 credentials exported:
 ```bash
 uv run python scripts/verify_archive.py \
   --since YYYY-MM-DD \
-  --sample-rate 0.05
+  --sample-rate 0.05 \
+  --output archive-audit.json \
+  --summary-output archive-audit.md
 ```
 
 ## Conflict
