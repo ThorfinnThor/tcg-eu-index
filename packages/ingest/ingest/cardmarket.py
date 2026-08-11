@@ -16,8 +16,22 @@ class CardmarketGame:
 
 
 GAMES: dict[str, CardmarketGame] = {
+    "magic": CardmarketGame("magic", 1, "Magic: The Gathering", "foil"),
+    "yugioh": CardmarketGame("yugioh", 3, "Yu-Gi-Oh!", "foil"),
     "onepiece": CardmarketGame("onepiece", 18, "One Piece", "foil"),
     "pokemon": CardmarketGame("pokemon", 6, "Pokemon", "holo"),
+    "dragonballsuper": CardmarketGame(
+        "dragonballsuper", 13, "Dragon Ball Super", "foil"
+    ),
+    "fleshandblood": CardmarketGame(
+        "fleshandblood", 16, "Flesh and Blood", "foil"
+    ),
+    "digimon": CardmarketGame("digimon", 17, "Digimon", "foil"),
+    "lorcana": CardmarketGame("lorcana", 19, "Disney Lorcana", "foil"),
+    "starwarsunlimited": CardmarketGame(
+        "starwarsunlimited", 21, "Star Wars: Unlimited", "foil"
+    ),
+    "riftbound": CardmarketGame("riftbound", 22, "Riftbound", "foil"),
 }
 
 

@@ -42,7 +42,19 @@ type ManifestPayload = {
 const dataRoot = path.join(process.cwd(), "public", "data");
 
 export function codes(): IndexCode[] {
-  return ["OPEU100", "PKEU250", "OPEUSLD"];
+  return [
+    "MTEU500",
+    "YGEU250",
+    "OPEU100",
+    "PKEU250",
+    "OPEUSLD",
+    "DBSEU100",
+    "FABEU100",
+    "DGEU100",
+    "LCEU100",
+    "SWUEU100",
+    "RBEU100"
+  ];
 }
 
 async function readJson<T>(relativePath: string): Promise<T> {

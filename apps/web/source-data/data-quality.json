@@ -41,7 +41,7 @@
       "id": "cardmarket-source-confirmation",
       "label": "Cardmarket source confirmation",
       "status": "pass",
-      "detail": "Official One Piece and Pokemon price-guide and catalogue URLs are verified by a scheduled schema and coverage check."
+      "detail": "Official price-guide and catalogue URLs for all ten configured games are verified by a scheduled schema and coverage check."
     },
     {
       "id": "manual-mvp-cadence",

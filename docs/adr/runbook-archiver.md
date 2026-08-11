@@ -31,7 +31,7 @@ ARCHIVE_ENABLED=false
 1. Open **Actions > cardmarket-daily-archive > Run workflow**.
 2. Leave `run_date` as `today` and run the workflow.
 3. Confirm that the job is green and that its artifact contains `archive-result.json` and `manifest-latest.json`.
-4. Confirm these R2 objects exist for the UTC date:
+4. Confirm the manifest contains `priceguide` and `catalogue` objects for every configured game. Representative keys are:
 
 ```text
 cardmarket/priceguide/onepiece/YYYY/MM/YYYY-MM-DD.json.gz
@@ -41,6 +41,8 @@ cardmarket/catalogue/pokemon/YYYY/MM/YYYY-MM-DD.json.gz
 manifests/YYYY-MM-DD.json
 ```
 
+The complete configured game list is `magic,yugioh,pokemon,onepiece,dragonballsuper,fleshandblood,digimon,lorcana,starwarsunlimited,riftbound`.
+
 5. Set `ARCHIVE_INCEPTION_DATE` to the successful UTC date.
 6. Run **cardmarket-archive-audit** manually and confirm it is green.
 7. Change `ARCHIVE_ENABLED` to `true`.
@@ -49,7 +51,9 @@ The schedule remains inert while `ARCHIVE_ENABLED` is not exactly `true`.
 
 ## Daily Operation
 
-`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices, recalculates the private shadow indexes, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate and idempotently reprocess the completed pipeline without replacing identical objects.
+`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices, recalculates the private shadow indexes, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate the completed archive and skip the expensive normalization and calculation when the repository heartbeat already records that date. A manual run can select `force_reprocess` after a normalization or engine change.
+
+The expansion from two to ten games starts with the 2026-08-12 UTC snapshot. Earlier manifests intentionally retain their original two-game scope and are not rewritten. The weekly audit passes explicit per-game inception dates, so it validates the historical scope and still fails on any missing new-game snapshot from 2026-08-12 onward.
 
 The manifest records checksums, byte sizes, source timestamps, fetch timestamps, and whether each payload is unchanged from the preceding day's snapshot.
 

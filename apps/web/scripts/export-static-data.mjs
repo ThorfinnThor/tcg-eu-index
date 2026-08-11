@@ -31,7 +31,7 @@ function activeAsOf(constituents, asOf) {
   return constituents.filter((item) => item.member_since <= asOf && (!item.removed_at || item.removed_at > asOf));
 }
 
-function deriveRebalances(index, constituents) {
+function deriveRebalances(index, constituents, methodologyVersion) {
   const dates = [...new Set(constituents.flatMap((item) => [item.member_since, item.removed_at].filter(Boolean)))].sort();
   const generatedFor = dates.at(-1) ?? index.base_date;
   return {
@@ -46,7 +46,7 @@ function deriveRebalances(index, constituents) {
       const active = activeAsOf(constituents, effectiveDate);
       return {
         effective_date: effectiveDate,
-        methodology_version: "1.0.0",
+        methodology_version: methodologyVersion,
         selection_snapshot_sha256: null,
         eligible_count: null,
         active_count: active.length,
@@ -138,7 +138,10 @@ for (const index of indexes) {
   fileStats.push(await writeJson(`indexes/${index.code}/summary.json`, summary));
   fileStats.push(await writeJson(`indexes/${index.code}/history.json`, index.history));
   fileStats.push(await writeJson(`indexes/${index.code}/constituents.json`, index.constituents));
-  fileStats.push(await writeJson(`indexes/${index.code}/rebalances.json`, deriveRebalances(index, index.constituents)));
+  fileStats.push(await writeJson(
+    `indexes/${index.code}/rebalances.json`,
+    deriveRebalances(index, index.constituents, sourceData.methodologyVersion)
+  ));
 }
 
 const manifestBody = {
@@ -146,7 +149,7 @@ const manifestBody = {
   generatedAt,
   schemaVersion: sourceData.schemaVersion,
   sourceVersions: {
-    methodology: "1.0.0",
+    methodology: sourceData.methodologyVersion,
     source: sourceData.source
   },
   fileChecksums: Object.fromEntries(fileStats.map((file) => [file.path, file.checksum])),

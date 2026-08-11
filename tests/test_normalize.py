@@ -27,11 +27,29 @@ def payload(key: str, records: list[dict[str, object]]) -> bytes:
     ).encode()
 
 
-def test_official_download_urls_use_verified_game_ids() -> None:
-    assert priceguide_url("onepiece").endswith("/priceGuide/price_guide_18.json")
-    assert priceguide_url("pokemon").endswith("/priceGuide/price_guide_6.json")
-    assert catalogue_urls("onepiece")[0].endswith("/productList/products_singles_18.json")
-    assert catalogue_urls("pokemon")[1].endswith("/productList/products_nonsingles_6.json")
+@pytest.mark.parametrize(
+    ("game", "game_id"),
+    [
+        ("magic", 1),
+        ("yugioh", 3),
+        ("pokemon", 6),
+        ("dragonballsuper", 13),
+        ("fleshandblood", 16),
+        ("digimon", 17),
+        ("onepiece", 18),
+        ("lorcana", 19),
+        ("starwarsunlimited", 21),
+        ("riftbound", 22),
+    ],
+)
+def test_official_download_urls_use_verified_game_ids(game: str, game_id: int) -> None:
+    assert priceguide_url(game).endswith(f"/priceGuide/price_guide_{game_id}.json")
+    assert catalogue_urls(game)[0].endswith(
+        f"/productList/products_singles_{game_id}.json"
+    )
+    assert catalogue_urls(game)[1].endswith(
+        f"/productList/products_nonsingles_{game_id}.json"
+    )
 
 
 def test_combine_catalogues_preserves_both_product_groups() -> None:

@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = pageMetadata(
   "overview",
   "European trading card market benchmarks",
-  "Track European One Piece and Pokemon listing-price indexes, breadth, volatility, and data freshness."
+  "Track European trading card listing-price indexes, breadth, volatility, and data freshness."
 );
 
 export default async function Page() {
@@ -28,7 +28,7 @@ export default async function Page() {
           "@type": "WebSite",
           name: "European TCG Index",
           url: siteUrl,
-          description: "EU-first listing-price benchmarks for One Piece and Pokemon cards."
+          description: "EU-first listing-price benchmarks for major trading card games."
         },
         {
           "@context": "https://schema.org",

@@ -1,4 +1,4 @@
-methodology_version: "1.0.0"
+methodology_version: "1.1.0"
 price_field_primary: "price_avg"
 price_field_fallback: "price_low"
 min_price_eur:
@@ -16,6 +16,24 @@ selection_lookback_days: 60
 buffer_retention_multiplier: 1.20
 buffer_entry_multiplier: 0.90
 indexes:
+  - code: MTEU500
+    name: Magic Europe 500
+    game_key: magic
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: YGEU250
+    name: Yu-Gi-Oh! Europe 250
+    game_key: yugioh
+    universe: singles
+    target_size: 250
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: OPEU100
     name: One Piece Europe 100
     game_key: onepiece
@@ -40,6 +58,60 @@ indexes:
     universe: sealed
     target_size: 25
     base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: DBSEU100
+    name: Dragon Ball Super Europe 100
+    game_key: dragonballsuper
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: FABEU100
+    name: Flesh and Blood Europe 100
+    game_key: fleshandblood
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: DGEU100
+    name: Digimon Europe 100
+    game_key: digimon
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: LCEU100
+    name: Disney Lorcana Europe 100
+    game_key: lorcana
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: SWUEU100
+    name: Star Wars Unlimited Europe 100
+    game_key: starwarsunlimited
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: RBEU100
+    name: Riftbound Europe 100
+    game_key: riftbound
+    universe: singles
+    target_size: 100
+    base_date: "2026-08-12"
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]

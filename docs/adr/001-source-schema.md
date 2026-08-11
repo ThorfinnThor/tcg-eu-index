@@ -1,6 +1,6 @@
 # ADR 001: Cardmarket Source Schema
 
-Status: accepted on 2026-08-09
+Status: amended on 2026-08-11
 
 ## Decision
 
@@ -11,10 +11,23 @@ Verified sources:
 - Announcement: <https://news.cardmarket.com/en/DragonBallSuper/were-making-the-price-guide-and-product-catalogue-available-for-download>
 - One Piece price guide page: <https://www.cardmarket.com/en/OnePiece/Data/Price-Guide>
 - One Piece product list page: <https://www.cardmarket.com/en/OnePiece/Data/Product-List>
-- One Piece price guide: <https://downloads.s3.cardmarket.com/productCatalog/priceGuide/price_guide_18.json>
-- Pokemon price guide: <https://downloads.s3.cardmarket.com/productCatalog/priceGuide/price_guide_6.json>
-- One Piece catalogues: `products_singles_18.json` and `products_nonsingles_18.json`
-- Pokemon catalogues: `products_singles_6.json` and `products_nonsingles_6.json`
+- Price guides use `priceGuide/price_guide_<game-id>.json`.
+- Catalogues use `productList/products_singles_<game-id>.json` and `productList/products_nonsingles_<game-id>.json`.
+
+Verified game IDs on 2026-08-11:
+
+| Key | Game | Cardmarket ID | Variant suffix |
+|---|---|---:|---|
+| `magic` | Magic: The Gathering | 1 | `foil` |
+| `yugioh` | Yu-Gi-Oh! | 3 | `foil` |
+| `pokemon` | Pokemon | 6 | `holo` |
+| `dragonballsuper` | Dragon Ball Super | 13 | `foil` |
+| `fleshandblood` | Flesh and Blood | 16 | `foil` |
+| `digimon` | Digimon | 17 | `foil` |
+| `onepiece` | One Piece | 18 | `foil` |
+| `lorcana` | Disney Lorcana | 19 | `foil` |
+| `starwarsunlimited` | Star Wars: Unlimited | 21 | `foil` |
+| `riftbound` | Riftbound | 22 | `foil` |
 
 Catalogue paths use the base `https://downloads.s3.cardmarket.com/productCatalog/productList/`. Singles and nonsingles are downloaded separately and combined before normalization.
 
@@ -22,7 +35,7 @@ Catalogue paths use the base `https://downloads.s3.cardmarket.com/productCatalog
 
 Price-guide payloads have top-level fields `version`, `createdAt`, and `priceGuides`. Every row contains `idProduct` and `idCategory`. Depending on the product category, a row exposes the nonfoil family (`avg`, `low`, `trend`, `avg1`, `avg7`, and `avg30`), a variant family, or both. The normalizer skips an unavailable family instead of creating an empty price row.
 
-One Piece variant fields use the `-foil` suffix, including `avg-foil`, `low-foil`, `avg1-foil`, `avg7-foil`, and `avg30-foil`. Pokemon uses the corresponding `-holo` suffix. Both are normalized to the internal `foil` variant key.
+All configured games except Pokemon use the `-foil` suffix, including `avg-foil`, `low-foil`, `avg1-foil`, `avg7-foil`, and `avg30-foil`. Pokemon uses the corresponding `-holo` suffix. Both families are normalized to the internal `foil` variant key.
 
 Catalogue payloads have top-level fields `version`, `createdAt`, and `products`. Each product contains `idProduct`, `name`, `idCategory`, `categoryName`, and, where applicable, `idExpansion`, `idMetacard`, and `dateAdded`. The public catalogue does not provide expansion names, so the normalized fallback is `Expansion <idExpansion>`.
 

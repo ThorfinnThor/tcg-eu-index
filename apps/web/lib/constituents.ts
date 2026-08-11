@@ -67,7 +67,7 @@ export function deriveRebalanceHistory(
   constituents: Constituent[],
   dataState: RebalanceHistory["data_state"],
   generatedFor: string,
-  methodologyVersion = "1.0.0"
+  methodologyVersion = "1.1.0"
 ): RebalanceHistory {
   const dates = compositionDates(constituents, constituents[0]?.member_since ?? generatedFor);
   const rebalances = dates.map<RebalanceRecord>((effectiveDate, index) => {

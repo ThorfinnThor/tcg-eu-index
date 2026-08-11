@@ -7,7 +7,7 @@ import type { IndexCode } from "@/lib/types";
 
 export const metadata: Metadata = utilityPageMetadata(
   "Portfolio benchmark",
-  "Compare a trading card collection CSV with European One Piece and Pokemon listing-price benchmarks in your browser.",
+  "Compare a trading card collection CSV with European listing-price benchmarks in your browser.",
   "/portfolio"
 );
 

@@ -107,6 +107,32 @@ def test_archive_audit_passes_complete_range(tmp_path: Path) -> None:
     assert report["cutover"]["first_monthly_rebalance_date_if_gapless"] == "2026-10-01"
 
 
+def test_archive_audit_applies_per_game_inception_dates(tmp_path: Path) -> None:
+    store = LocalObjectStore(tmp_path / "r2")
+    run_archive(
+        date(2026, 7, 20),
+        audit_settings(),
+        store=store,
+        fetcher=AuditFakeFetcher(),
+        data_dir=tmp_path,
+    )
+    report = audit_archive(
+        store,
+        date(2026, 7, 20),
+        date(2026, 7, 20),
+        ["onepiece", "magic"],
+        sample_rate=1.0,
+        seed="fixture",
+        game_inceptions={
+            "onepiece": date(2026, 7, 20),
+            "magic": date(2026, 7, 21),
+        },
+    )
+
+    assert report["status"] == "pass"
+    assert report["game_inceptions"]["magic"] == "2026-07-21"
+
+
 def test_archive_audit_reports_malformed_manifest_metadata(tmp_path: Path) -> None:
     store = LocalObjectStore(tmp_path / "r2")
     run_archive(

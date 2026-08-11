@@ -31,6 +31,7 @@ jobs:
         run: |
           uv run python scripts/verify_archive.py \
             --since "${{ vars.ARCHIVE_INCEPTION_DATE }}" \
+            --game-inceptions "onepiece=${{ vars.ARCHIVE_INCEPTION_DATE }},pokemon=${{ vars.ARCHIVE_INCEPTION_DATE }},magic=2026-08-12,yugioh=2026-08-12,dragonballsuper=2026-08-12,fleshandblood=2026-08-12,digimon=2026-08-12,lorcana=2026-08-12,starwarsunlimited=2026-08-12,riftbound=2026-08-12" \
             --sample-rate 0.05 \
             --output archive-audit.json \
             --summary-output archive-audit.md

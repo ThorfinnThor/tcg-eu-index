@@ -186,11 +186,22 @@ def audit_archive(
     index_codes: list[str] | None = None,
     required_lookback_days: int = 60,
     scheduled_attempts_per_day: int = 4,
+    game_inceptions: dict[str, date] | None = None,
 ) -> dict[str, Any]:
     if required_lookback_days < 1:
         raise ValueError("required_lookback_days must be positive")
     if scheduled_attempts_per_day < 1:
         raise ValueError("scheduled_attempts_per_day must be positive")
+
+    game_inceptions = game_inceptions or {game: start for game in expected_games}
+    missing_inceptions = set(expected_games) - set(game_inceptions)
+    unexpected_inceptions = set(game_inceptions) - set(expected_games)
+    if missing_inceptions or unexpected_inceptions:
+        raise ValueError(
+            "game inception keys must match expected games; "
+            f"missing={sorted(missing_inceptions)}, "
+            f"unexpected={sorted(unexpected_inceptions)}"
+        )
 
     objects = store.list_objects("")
     manifests: list[tuple[date, Manifest]] = []
@@ -222,8 +233,13 @@ def audit_archive(
         if sample_size == len(all_file_keys)
         else set(random.Random(seed).sample(all_file_keys, sample_size))
     )
-    for _, manifest in manifests:
-        manifest_errors = validate_manifest(store, manifest, expected_games, selected_keys)
+    for manifest_date, manifest in manifests:
+        expected_for_date = [
+            game for game in expected_games if manifest_date >= game_inceptions[game]
+        ]
+        manifest_errors = validate_manifest(
+            store, manifest, expected_for_date, selected_keys
+        )
         errors.extend(f"{manifest.run_date}: {error}" for error in manifest_errors)
 
     expected_days = (end - start).days + 1
@@ -264,6 +280,10 @@ def audit_archive(
         "file_count": len(all_file_keys),
         "snapshot_object_count": sum(item.key.startswith("cardmarket/") for item in objects),
         "sample_rate": sample_rate,
+        "game_inceptions": {
+            game: inception.isoformat()
+            for game, inception in sorted(game_inceptions.items())
+        },
         "verified_file_count": len(selected_keys),
         "errors": errors,
         "warnings": warnings,

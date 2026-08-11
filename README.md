@@ -1,6 +1,6 @@
 # TCG Europe Index
 
-European One Piece and Pokemon listing-price indexes under development. Public values remain unavailable while the Cardmarket observation history accumulates.
+European listing-price indexes for ten active trading card games under development. Public values remain unavailable while the Cardmarket observation history accumulates.
 
 ## Local development
 
@@ -39,6 +39,8 @@ The public source paths and confirmed JSON schema are recorded in `docs/adr/001-
 ## Daily source archive
 
 The private Cardmarket archive uses GitHub Actions and Cloudflare R2. It is not a runtime dependency of the Vercel site, and Supabase is not required. Activate it only after following `docs/adr/runbook-archiver.md`.
+
+The daily archive covers Magic: The Gathering, Yu-Gi-Oh!, Pokemon, One Piece, Dragon Ball Super, Flesh and Blood, Digimon, Disney Lorcana, Star Wars: Unlimited, and Riftbound.
 
 Audit a local archive fixture:
 

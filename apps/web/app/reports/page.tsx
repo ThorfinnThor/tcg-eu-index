@@ -10,7 +10,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = pageMetadata(
   "reports",
   "Weekly reports",
-  "Browse human-reviewed weekly reports for European One Piece and Pokemon listing-price benchmarks."
+  "Browse human-reviewed weekly reports for European trading card listing-price benchmarks."
 );
 
 export default async function ReportsPage() {

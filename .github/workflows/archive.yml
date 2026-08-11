@@ -12,6 +12,11 @@ on:
         description: UTC date (YYYY-MM-DD) or today
         required: false
         default: today
+      force_reprocess:
+        description: Re-run normalization and index calculation for an archived date
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: cardmarket-daily-archive
@@ -24,9 +29,9 @@ jobs:
   archive:
     if: github.event_name == 'workflow_dispatch' || vars.ARCHIVE_ENABLED == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 90
     env:
-      CM_GAMES: onepiece,pokemon
+      CM_GAMES: magic,yugioh,pokemon,onepiece,dragonballsuper,fleshandblood,digimon,lorcana,starwarsunlimited,riftbound
       CM_USER_AGENT: tcg-eu-index/1.0 contact=${{ vars.CM_CONTACT_EMAIL }}
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -44,17 +49,35 @@ jobs:
       - run: uv sync --all-packages
       - name: Validate operator identity
         run: test -n "${{ vars.CM_CONTACT_EMAIL }}"
+      - name: Check whether this date was already processed
+        id: archive_state
+        env:
+          REQUESTED_DATE: ${{ inputs.run_date || 'today' }}
+          FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
+        run: |
+          effective_date="$REQUESTED_DATE"
+          if test "$effective_date" = "today"; then
+            effective_date="$(date -u +%F)"
+          fi
+          latest_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
+          if test "$latest_date" = "$effective_date" && test "$FORCE_REPROCESS" != "true"; then
+            echo "already_processed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "already_processed=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: Archive and verify official Cardmarket snapshots
         run: |
           set -o pipefail
           uv run --package tcg-eu-index-ingest python -m ingest.archive \
             --date "${{ inputs.run_date || 'today' }}" | tee archive-result.json
       - name: Normalize verified catalogue and prices
+        if: steps.archive_state.outputs.already_processed != 'true'
         run: |
           set -o pipefail
           uv run --package tcg-eu-index-ingest python -m ingest.normalize \
             --date "${{ inputs.run_date || 'today' }}" | tee normalize-result.json
       - name: Calculate private shadow indexes
+        if: steps.archive_state.outputs.already_processed != 'true'
         run: |
           set -o pipefail
           uv run --package tcg-eu-index-engine python -m indexengine.calc \

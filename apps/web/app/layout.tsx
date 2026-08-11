@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "European TCG Index",
     template: "%s | European TCG Index"
   },
-  description: "EU-first listing-price benchmarks for One Piece and Pokemon cards.",
+  description: "EU-first listing-price benchmarks for major trading card games.",
   applicationName: "European TCG Index",
   authors: [{ name: "European TCG Index" }],
   category: "finance",

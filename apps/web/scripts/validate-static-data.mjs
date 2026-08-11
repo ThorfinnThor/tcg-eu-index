@@ -51,17 +51,20 @@ for (const index of sourceData.indexes) {
   }
   const sourceHistory = await readSourceJson(index.code, "history.json");
   const sourceConstituents = await readSourceJson(index.code, "constituents.json");
-  if (!Array.isArray(sourceHistory) || sourceHistory.length === 0) {
-    fail(`${index.code} source history is empty`);
-  }
+  if (!Array.isArray(sourceHistory)) fail(`${index.code} source history must be an array`);
   if (index.history_start_kind !== "validation" && index.history_start_kind !== "published") {
     fail(`${index.code} has invalid history_start_kind`);
   }
-  if (sourceHistory[0].value_date !== index.history_start_date) {
-    fail(`${index.code} history_start_date does not match its first observation`);
+  if (index.status === "published" && sourceHistory.length === 0) {
+    fail(`${index.code} published source history is empty`);
   }
-  if (index.base_date < index.history_start_date || !sourceHistory.some((row) => row.value_date === index.base_date)) {
-    fail(`${index.code} base_date must be an available observation on or after history_start_date`);
+  if (sourceHistory.length > 0) {
+    if (sourceHistory[0].value_date !== index.history_start_date) {
+      fail(`${index.code} history_start_date does not match its first observation`);
+    }
+    if (index.base_date < index.history_start_date || !sourceHistory.some((row) => row.value_date === index.base_date)) {
+      fail(`${index.code} base_date must be an available observation on or after history_start_date`);
+    }
   }
   if (!Array.isArray(sourceConstituents)) {
     fail(`${index.code} source constituents must be an array`);
@@ -109,11 +112,11 @@ for (const report of sourceReports.reports) {
   reportWeeks.add(report.week);
   if (!report.id || reportIds.has(report.id)) fail(`duplicate or missing report id ${report.id}`);
   reportIds.add(report.id);
-  if (!Array.isArray(report.indexHighlights) || report.indexHighlights.length !== sourceData.indexes.length) {
-    fail(`${report.week} must include every configured index`);
-  }
+  if (!Array.isArray(report.indexHighlights)) fail(`${report.week} indexHighlights must be an array`);
   const highlightCodes = new Set(report.indexHighlights.map((highlight) => highlight.code));
-  if (highlightCodes.size !== configuredIndexCodes.size || [...configuredIndexCodes].some((code) => !highlightCodes.has(code))) {
+  if (report.status === "published" && (
+    highlightCodes.size !== configuredIndexCodes.size || [...configuredIndexCodes].some((code) => !highlightCodes.has(code))
+  )) {
     fail(`${report.week} highlights do not match configured indexes`);
   }
   if (report.id.endsWith("-generated") && report.indexHighlights.some((highlight) =>

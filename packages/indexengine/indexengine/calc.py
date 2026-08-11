@@ -408,7 +408,12 @@ def run_calc(
     engine_revision = os.getenv("GITHUB_SHA", "local-working-tree")
     results: list[CalcRunResult] = []
 
-    for definition in methodology.indexes:
+    definitions = [
+        definition
+        for definition in methodology.indexes
+        if definition.game_key in settings.cm_games
+    ]
+    for definition in definitions:
         prices, price_source_sha = _load_price_history(store, definition.game_key, run_date)
         products_key = f"derived/catalogue/{definition.game_key}/products.parquet"
         if not store.exists(products_key):

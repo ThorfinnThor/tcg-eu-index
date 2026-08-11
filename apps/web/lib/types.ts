@@ -1,4 +1,15 @@
-export type IndexCode = "OPEU100" | "PKEU250" | "OPEUSLD";
+export type IndexCode =
+  | "MTEU500"
+  | "YGEU250"
+  | "OPEU100"
+  | "PKEU250"
+  | "OPEUSLD"
+  | "DBSEU100"
+  | "FABEU100"
+  | "DGEU100"
+  | "LCEU100"
+  | "SWUEU100"
+  | "RBEU100";
 
 export type DailyIndexValue = {
   value_date: string;

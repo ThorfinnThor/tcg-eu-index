@@ -4,6 +4,19 @@ import os
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 
+DEFAULT_CM_GAMES = [
+    "magic",
+    "yugioh",
+    "pokemon",
+    "onepiece",
+    "dragonballsuper",
+    "fleshandblood",
+    "digimon",
+    "lorcana",
+    "starwarsunlimited",
+    "riftbound",
+]
+
 
 def _split_csv(value: str | None, default: list[str]) -> list[str]:
     if not value:
@@ -29,7 +42,7 @@ class Settings:
     @classmethod
     def from_env(cls) -> Settings:
         return cls(
-            cm_games=_split_csv(os.getenv("CM_GAMES"), ["onepiece", "pokemon"]),
+            cm_games=_split_csv(os.getenv("CM_GAMES"), DEFAULT_CM_GAMES),
             cm_priceguide_url_template=os.getenv("CM_PRICEGUIDE_URL_TEMPLATE", ""),
             cm_catalogue_url_template=os.getenv("CM_CATALOGUE_URL_TEMPLATE", ""),
             cm_user_agent=os.getenv(
