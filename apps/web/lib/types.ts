@@ -1,15 +1,24 @@
 export type IndexCode =
   | "MTEU500"
+  | "MTEUSLD"
   | "YGEU250"
+  | "YGEUSLD"
   | "OPEU100"
-  | "PKEU250"
   | "OPEUSLD"
+  | "PKEU250"
+  | "PKEUSLD"
   | "DBSEU100"
+  | "DBSEUSLD"
   | "FABEU100"
+  | "FABEUSLD"
   | "DGEU100"
+  | "DGEUSLD"
   | "LCEU100"
+  | "LCEUSLD"
   | "SWUEU100"
-  | "RBEU100";
+  | "SWUEUSLD"
+  | "RBEU100"
+  | "RBEUSLD";
 
 export type DailyIndexValue = {
   value_date: string;

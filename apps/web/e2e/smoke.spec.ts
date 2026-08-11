@@ -31,6 +31,12 @@ test("constituents, embed, reports, and public CSV remain reachable", async ({ p
   expect(await csv.json()).toMatchObject({ error: "Index history has not been published" });
 });
 
+test("sealed indexes describe constituents as products", async ({ page }) => {
+  await page.goto("/index/OPEUSLD/constituents");
+  await expect(page.getByRole("heading", { name: "No products published yet" })).toBeVisible();
+  await expect(page.getByText("Target composition: 25 products.", { exact: false })).toBeVisible();
+});
+
 test("primary pages do not overflow the viewport", async ({ page }) => {
   for (const path of ["/", "/index/PKEU250", "/index/OPEU100/constituents", "/portfolio", "/data-quality"]) {
     await page.goto(path);

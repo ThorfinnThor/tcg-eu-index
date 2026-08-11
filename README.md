@@ -2,6 +2,8 @@
 
 European listing-price indexes for ten active trading card games under development. Public values remain unavailable while the Cardmarket observation history accumulates.
 
+Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
+
 ## Local development
 
 Requirements: Python 3.12 with `uv`, and Node.js 20 or newer.

@@ -58,9 +58,10 @@ export default async function Page() {
         </p>
       </section>
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-2">
         {indexes.map((index) => {
           const published = index.status === "published" && index.history.length > 0;
+          const memberLabel = index.universe === "sealed" ? "products" : "cards";
           const latest = index.history.at(-1);
           const delta = changes(index);
           return (
@@ -95,7 +96,7 @@ export default async function Page() {
                 <div className="mt-6 border-t border-line pt-5">
                   <div className="text-xl font-semibold text-paper">Publication pending</div>
                   <p className="mt-2 text-sm leading-6 text-paper/55">
-                    Collecting the observation history required for {index.target_size} real constituents.
+                    Collecting the observation history required for {index.target_size} real {memberLabel}.
                   </p>
                 </div>
               )}

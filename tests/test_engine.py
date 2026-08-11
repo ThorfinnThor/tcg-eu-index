@@ -341,7 +341,7 @@ def test_shadow_run_is_private_accumulating_and_idempotent(tmp_path: Path) -> No
     assert all(item.analytics_days == 0 for item in first)
     assert all(
         store.exists(f"derived/indexes/{code}/analytics.json")
-        for code in ("OPEU100", "PKEU250", "OPEUSLD")
+        for code in ("OPEU100", "OPEUSLD", "PKEU250", "PKEUSLD")
     )
     assert store.list_keys("derived/public") == []
 

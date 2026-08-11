@@ -33,6 +33,7 @@ export default async function ConstituentsPage({
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (index.status !== "published") {
+    const memberLabel = index.universe === "sealed" ? "products" : "cards";
     return (
       <div className="mx-auto max-w-5xl px-4 py-8">
         <Breadcrumbs items={[
@@ -45,12 +46,12 @@ export default async function ConstituentsPage({
           <h1 className="mt-1 text-3xl font-semibold">Constituents</h1>
         </div>
         <section className="mt-6 border-l-2 border-amber bg-amber/[0.06] px-5 py-5" role="status">
-          <h2 className="text-lg font-semibold text-paper">No cards published yet</h2>
+          <h2 className="text-lg font-semibold text-paper">No {memberLabel} published yet</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/65">
             Real Cardmarket snapshots are currently being collected. The first constituent list will appear only after the required 60-day observation window, all selection checks, and the human cutover review have passed.
           </p>
           <p className="mt-3 text-sm text-paper/50">
-            Target composition: {index.target_size} cards. Synthetic development products are not public index members.
+            Target composition: {index.target_size} {memberLabel}. Synthetic development products are not public index members.
           </p>
           <Link href="/data-quality" className="mt-4 inline-block text-sm font-semibold text-amber hover:text-paper">
             View data readiness

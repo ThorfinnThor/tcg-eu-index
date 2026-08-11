@@ -17,6 +17,21 @@ export const fixtureIndexes: IndexSummary[] = [
     history: []
   },
   {
+    code: "MTEUSLD",
+    slug: "magic-sealed-europe-100",
+    name: "Magic Sealed Europe 100",
+    game: "Magic: The Gathering",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 100,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
     code: "YGEU250",
     slug: "yugioh-europe-250",
     name: "Yu-Gi-Oh! Europe 250",
@@ -27,6 +42,21 @@ export const fixtureIndexes: IndexSummary[] = [
     base_date: "2026-08-12",
     status: "accumulating",
     target_size: 250,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
+    code: "YGEUSLD",
+    slug: "yugioh-sealed-europe-100",
+    name: "Yu-Gi-Oh! Sealed Europe 100",
+    game: "Yu-Gi-Oh!",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 100,
     breadth: 0,
     volatility_30d: 0,
     history: []
@@ -62,9 +92,24 @@ export const fixtureIndexes: IndexSummary[] = [
     history: []
   },
   {
+    code: "PKEUSLD",
+    slug: "pokemon-sealed-europe-100",
+    name: "Pokemon Sealed Europe 100",
+    game: "Pokemon",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 100,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
     code: "OPEUSLD",
-    slug: "one-piece-sealed-pilot",
-    name: "One Piece Sealed Pilot",
+    slug: "one-piece-sealed-europe-25",
+    name: "One Piece Sealed Europe 25",
     game: "One Piece",
     universe: "sealed",
     history_start_date: "2026-04-01",
@@ -92,6 +137,21 @@ export const fixtureIndexes: IndexSummary[] = [
     history: []
   },
   {
+    code: "DBSEUSLD",
+    slug: "dragon-ball-super-sealed-europe-25",
+    name: "Dragon Ball Super Sealed Europe 25",
+    game: "Dragon Ball Super",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
     code: "FABEU100",
     slug: "flesh-and-blood-europe-100",
     name: "Flesh and Blood Europe 100",
@@ -102,6 +162,21 @@ export const fixtureIndexes: IndexSummary[] = [
     base_date: "2026-08-12",
     status: "accumulating",
     target_size: 100,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
+    code: "FABEUSLD",
+    slug: "flesh-and-blood-sealed-europe-25",
+    name: "Flesh and Blood Sealed Europe 25",
+    game: "Flesh and Blood",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
     breadth: 0,
     volatility_30d: 0,
     history: []
@@ -122,6 +197,21 @@ export const fixtureIndexes: IndexSummary[] = [
     history: []
   },
   {
+    code: "DGEUSLD",
+    slug: "digimon-sealed-europe-25",
+    name: "Digimon Sealed Europe 25",
+    game: "Digimon",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
     code: "LCEU100",
     slug: "disney-lorcana-europe-100",
     name: "Disney Lorcana Europe 100",
@@ -132,6 +222,21 @@ export const fixtureIndexes: IndexSummary[] = [
     base_date: "2026-08-12",
     status: "accumulating",
     target_size: 100,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
+    code: "LCEUSLD",
+    slug: "disney-lorcana-sealed-europe-25",
+    name: "Disney Lorcana Sealed Europe 25",
+    game: "Disney Lorcana",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
     breadth: 0,
     volatility_30d: 0,
     history: []
@@ -152,6 +257,21 @@ export const fixtureIndexes: IndexSummary[] = [
     history: []
   },
   {
+    code: "SWUEUSLD",
+    slug: "star-wars-unlimited-sealed-europe-25",
+    name: "Star Wars Unlimited Sealed Europe 25",
+    game: "Star Wars: Unlimited",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
     code: "RBEU100",
     slug: "riftbound-europe-100",
     name: "Riftbound Europe 100",
@@ -162,6 +282,21 @@ export const fixtureIndexes: IndexSummary[] = [
     base_date: "2026-08-12",
     status: "accumulating",
     target_size: 100,
+    breadth: 0,
+    volatility_30d: 0,
+    history: []
+  },
+  {
+    code: "RBEUSLD",
+    slug: "riftbound-sealed-europe-25",
+    name: "Riftbound Sealed Europe 25",
+    game: "Riftbound",
+    universe: "sealed",
+    history_start_date: "2026-08-12",
+    history_start_kind: "validation",
+    base_date: "2026-08-12",
+    status: "accumulating",
+    target_size: 25,
     breadth: 0,
     volatility_30d: 0,
     history: []

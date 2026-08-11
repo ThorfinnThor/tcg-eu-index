@@ -1,4 +1,4 @@
-methodology_version: "1.1.0"
+methodology_version: "1.2.0"
 price_field_primary: "price_avg"
 price_field_fallback: "price_low"
 min_price_eur:
@@ -25,11 +25,29 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
+  - code: MTEUSLD
+    name: Magic Sealed Europe 100
+    game_key: magic
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: YGEU250
     name: Yu-Gi-Oh! Europe 250
     game_key: yugioh
     universe: singles
     target_size: 250
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: YGEUSLD
+    name: Yu-Gi-Oh! Sealed Europe 100
+    game_key: yugioh
+    universe: sealed
+    target_size: 100
     base_date: "2026-08-12"
     base_value: 1000
     status: accumulating
@@ -43,6 +61,15 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
+  - code: OPEUSLD
+    name: One Piece Sealed Europe 25
+    game_key: onepiece
+    universe: sealed
+    target_size: 25
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: PKEU250
     name: Pokemon Europe 250
     game_key: pokemon
@@ -52,12 +79,12 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
-  - code: OPEUSLD
-    name: One Piece Sealed Pilot
-    game_key: onepiece
+  - code: PKEUSLD
+    name: Pokemon Sealed Europe 100
+    game_key: pokemon
     universe: sealed
-    target_size: 25
-    base_date: "2026-07-20"
+    target_size: 100
+    base_date: "2026-08-12"
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
@@ -66,6 +93,15 @@ indexes:
     game_key: dragonballsuper
     universe: singles
     target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: DBSEUSLD
+    name: Dragon Ball Super Sealed Europe 25
+    game_key: dragonballsuper
+    universe: sealed
+    target_size: 25
     base_date: "2026-08-12"
     base_value: 1000
     status: accumulating
@@ -79,11 +115,29 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
+  - code: FABEUSLD
+    name: Flesh and Blood Sealed Europe 25
+    game_key: fleshandblood
+    universe: sealed
+    target_size: 25
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: DGEU100
     name: Digimon Europe 100
     game_key: digimon
     universe: singles
     target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: DGEUSLD
+    name: Digimon Sealed Europe 25
+    game_key: digimon
+    universe: sealed
+    target_size: 25
     base_date: "2026-08-12"
     base_value: 1000
     status: accumulating
@@ -97,6 +151,15 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
+  - code: LCEUSLD
+    name: Disney Lorcana Sealed Europe 25
+    game_key: lorcana
+    universe: sealed
+    target_size: 25
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: SWUEU100
     name: Star Wars Unlimited Europe 100
     game_key: starwarsunlimited
@@ -106,11 +169,29 @@ indexes:
     base_value: 1000
     status: accumulating
     language_scope: ["EN", "DE"]
+  - code: SWUEUSLD
+    name: Star Wars Unlimited Sealed Europe 25
+    game_key: starwarsunlimited
+    universe: sealed
+    target_size: 25
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
   - code: RBEU100
     name: Riftbound Europe 100
     game_key: riftbound
     universe: singles
     target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["EN", "DE"]
+  - code: RBEUSLD
+    name: Riftbound Sealed Europe 25
+    game_key: riftbound
+    universe: sealed
+    target_size: 25
     base_date: "2026-08-12"
     base_value: 1000
     status: accumulating

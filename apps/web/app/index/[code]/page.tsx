@@ -33,6 +33,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
   const siteUrl = getSiteUrl();
   const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
   const published = index.status === "published" && index.history.length > 0;
+  const memberLabel = index.universe === "sealed" ? "products" : "cards";
 
   if (!published) {
     return (
@@ -47,7 +48,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs text-paper/55">
             <span className="chip border-amber text-amber">collecting data</span>
-            <span className="chip">target {index.target_size} constituents</span>
+            <span className="chip">target {index.target_size} {memberLabel}</span>
           </div>
         </div>
         <section className="mt-6 grid gap-4 md:grid-cols-3">
