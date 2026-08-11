@@ -1,27 +1,27 @@
 {
-  "date": "2026-08-10",
+  "date": "2026-08-11",
   "files": [
     {
       "game": "onepiece",
-      "key": "cardmarket/priceguide/onepiece/2026/08/2026-08-10.json.gz",
+      "key": "cardmarket/priceguide/onepiece/2026/08/2026-08-11.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "9ced8e350e11d066934398c4217fde4f834617b5123e3f35000804adf6c4975a"
+      "sha256_uncompressed": "23d52d3ea4ae1101b685605771660f6c8269d6b4179613c58eba54c32fc50161"
     },
     {
       "game": "onepiece",
-      "key": "cardmarket/catalogue/onepiece/2026/08/2026-08-10.json.gz",
+      "key": "cardmarket/catalogue/onepiece/2026/08/2026-08-11.json.gz",
       "kind": "catalogue",
       "sha256_uncompressed": "3e9c0b5ddf27ccbc9bb85981fe60e47b2f3eee9e08981d6b31b71e89613ef1c6"
     },
     {
       "game": "pokemon",
-      "key": "cardmarket/priceguide/pokemon/2026/08/2026-08-10.json.gz",
+      "key": "cardmarket/priceguide/pokemon/2026/08/2026-08-11.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "cd7a69da2c200c20cff8ef1518861e6937285d7efe1ab017fb8c12946a53f711"
+      "sha256_uncompressed": "237c97e47633581f716dd8dd7790f983582c6048a12f24608575eda17037b931"
     },
     {
       "game": "pokemon",
-      "key": "cardmarket/catalogue/pokemon/2026/08/2026-08-10.json.gz",
+      "key": "cardmarket/catalogue/pokemon/2026/08/2026-08-11.json.gz",
       "kind": "catalogue",
       "sha256_uncompressed": "4ecf877e0100ab0af87375a99246de389cd7640176b9d4668f092bf2a7e8051c"
     }
