@@ -8,7 +8,7 @@ Accepted for the JSON-only MVP.
 
 The public index page must display only figures derivable from repository data. Return, maximum drawdown, best and worst daily returns, positive-day ratio, 30-day annualized listing-price volatility, and calculation-flag counts are derived directly from daily index history and covered by unit tests.
 
-Repository fixture observations before the formal `base_date` are validation history. They may remain visible in the chart when labelled and separated by an inception marker, but they must not contribute to displayed return or risk analytics. Index metadata records both `history_start_date` and `history_start_kind`; validation enforces that the dates reconcile with the series.
+Repository fixture observations are internal validation history. They must not appear in public charts, downloads, constituents, reports, portfolio calculations, return analytics, or risk analytics. Index metadata records both `history_start_date` and `history_start_kind`; the exporter publishes observations only when both the index status and history provenance are `published`.
 
 Per-card movers and contribution rankings are not shown until per-constituent daily return and weight series exist. The UI states that limitation explicitly. Synthetic rankings based on row order are prohibited.
 
@@ -18,9 +18,9 @@ The public status payload includes dataset version, generation timestamp, and so
 - 3-7 days: delayed
 - more than 7 days: stale
 
-Contract completeness and date freshness are separate signals. A structurally complete fixture dataset may still be stale.
+Contract completeness and date freshness are separate signals. An accumulating index has zero public-data completeness and no public freshness date.
 
-Constituent filters are mirrored into URL query parameters so historical compositions can be linked and reproduced. Draft reports remain accessible for review but use `noindex`; only published report pages enter the sitemap.
+Constituent filters are mirrored into URL query parameters so published historical compositions can be linked and reproduced. Draft reports remain internal; only published report pages enter the public export and sitemap.
 
 ## Production follow-up
 

@@ -5,6 +5,9 @@ import { buildPortfolioComparison, validatePortfolioCsv } from "@/lib/portfolio"
 export async function GET(_request: Request, { params }: { params: { token: string; code: string } }) {
   const index = await getIndex(params.code);
   if (!index) return NextResponse.json({ error: "Unknown benchmark" }, { status: 404 });
+  if (index.status !== "published" || index.history.length === 0) {
+    return NextResponse.json({ error: "Benchmark has not been published" }, { status: 409 });
+  }
   const emptyValidation = validatePortfolioCsv("cm_product_id,variant_key,quantity,cost_basis_eur\n", []);
   const series = buildPortfolioComparison(index.history, emptyValidation);
   return NextResponse.json({

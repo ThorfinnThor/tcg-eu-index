@@ -76,11 +76,16 @@ const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
 const dataQuality = await readSourceFile("data-quality.json");
 const reports = await readSourceFile("reports/index.json");
 const indexes = await Promise.all(
-  sourceData.indexes.map(async (index) => ({
-    ...index,
-    history: await readSourceJson(index.code, "history.json"),
-    constituents: await readSourceJson(index.code, "constituents.json")
-  }))
+  sourceData.indexes.map(async (index) => {
+    const published = index.status === "published" && index.history_start_kind === "published";
+    return {
+      ...index,
+      breadth: published ? index.breadth : 0,
+      volatility_30d: published ? index.volatility_30d : 0,
+      history: published ? await readSourceJson(index.code, "history.json") : [],
+      constituents: published ? await readSourceJson(index.code, "constituents.json") : []
+    };
+  })
 );
 
 fileStats.push(
@@ -90,7 +95,7 @@ fileStats.push(
       id: code,
       slug,
       name,
-      score: history.at(-1)?.index_value ?? 1000,
+      score: status === "published" ? history.at(-1)?.index_value ?? null : null,
       category: universe,
       filterValues: { game, universe, status, target_size, breadth }
     }))
@@ -105,12 +110,12 @@ const status = {
     .map((index) => index.history.at(-1)?.value_date)
     .filter(Boolean)
     .sort()
-    .at(-1),
+    .at(-1) ?? null,
   last_calc_date: indexes
     .map((index) => index.history.at(-1)?.value_date)
     .filter(Boolean)
     .sort()
-    .at(-1),
+    .at(-1) ?? null,
   gap_count: dataQuality.gaps.length,
   indexes: indexes.map((index) => ({
     code: index.code,
@@ -121,7 +126,10 @@ const status = {
 
 fileStats.push(await writeJson("status/latest.json", status));
 fileStats.push(await writeJson("data-quality/latest.json", dataQuality));
-fileStats.push(await writeJson("reports/index.json", reports));
+fileStats.push(await writeJson("reports/index.json", {
+  ...reports,
+  reports: reports.reports.filter((report) => report.status === "published")
+}));
 
 for (const index of indexes) {
   const summary = { ...index };

@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
-import { codes, getConstituents } from "@/lib/data";
+import { codes, getConstituents, getIndexes } from "@/lib/data";
 import { validatePortfolioCsv } from "@/lib/portfolio";
 
 export async function PUT(request: Request, { params }: { params: { token: string } }) {
+  const indexes = await getIndexes();
+  if (!indexes.some((index) => index.status === "published" && index.history.length > 0)) {
+    return NextResponse.json({ error: "Portfolio matching requires published index data" }, { status: 409 });
+  }
   const csv = await request.text();
   const constituents = (await Promise.all(codes().map((code) => getConstituents(code)))).flat();
   const validation = validatePortfolioCsv(csv, constituents);

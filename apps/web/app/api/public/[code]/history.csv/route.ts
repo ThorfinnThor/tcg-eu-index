@@ -6,6 +6,12 @@ export const revalidate = 3600;
 export async function GET(_request: Request, { params }: { params: { code: string } }) {
   const index = await getIndex(params.code);
   if (!index) return NextResponse.json({ error: "Unknown index" }, { status: 404 });
+  if (index.status !== "published" || index.history.length === 0) {
+    return NextResponse.json(
+      { error: "Index history has not been published", status: index.status },
+      { status: 409, headers: { "Cache-Control": "public, max-age=3600" } }
+    );
+  }
   const lines = ["value_date,index_value,daily_return,n_constituents_active,n_capped,n_carried_forward,calc_version"];
   lines.push(
     ...index.history.map((row) =>

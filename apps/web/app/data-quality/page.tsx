@@ -50,7 +50,7 @@ export default async function DataQualityPage() {
           <div className="mt-2 text-2xl font-semibold">{manifest?.datasetVersion ?? "unknown"}</div>
         </div>
         <div className="surface p-5">
-          <div className="text-xs uppercase text-paper/45">Contract completeness</div>
+          <div className="text-xs uppercase text-paper/45">Public index data</div>
           <div className="mt-2 text-2xl font-semibold">{(quality.datasetCompleteness * 100).toFixed(0)}%</div>
         </div>
       </section>

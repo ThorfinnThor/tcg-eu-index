@@ -10,7 +10,7 @@
     "template": "market-overview",
     "filters": {},
     "minimumResults": 3,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 3,
     "canonical": "/",
     "relationships": [
@@ -20,8 +20,8 @@
       { "type": "related", "targetId": "methodology" },
       { "type": "related", "targetId": "data-quality" }
     ],
-    "indexable": true,
-    "status": "published"
+    "indexable": false,
+    "status": "draft"
   },
   {
     "id": "opeu100-index",
@@ -34,7 +34,7 @@
     "template": "index-detail",
     "filters": { "code": "OPEU100" },
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 3,
     "canonical": "/index/OPEU100",
     "relationships": [
@@ -42,8 +42,8 @@
       { "type": "next_step", "targetId": "methodology" },
       { "type": "related", "targetId": "pkeu250-index" }
     ],
-    "indexable": true,
-    "status": "published"
+    "indexable": false,
+    "status": "draft"
   },
   {
     "id": "pkeu250-index",
@@ -56,7 +56,7 @@
     "template": "index-detail",
     "filters": { "code": "PKEU250" },
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 3,
     "canonical": "/index/PKEU250",
     "relationships": [
@@ -64,8 +64,8 @@
       { "type": "next_step", "targetId": "methodology" },
       { "type": "related", "targetId": "opeu100-index" }
     ],
-    "indexable": true,
-    "status": "published"
+    "indexable": false,
+    "status": "draft"
   },
   {
     "id": "opeusld-index",
@@ -78,7 +78,7 @@
     "template": "index-detail",
     "filters": { "code": "OPEUSLD" },
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 3,
     "canonical": "/index/OPEUSLD",
     "relationships": [
@@ -86,8 +86,8 @@
       { "type": "next_step", "targetId": "methodology" },
       { "type": "related", "targetId": "opeu100-index" }
     ],
-    "indexable": true,
-    "status": "published"
+    "indexable": false,
+    "status": "draft"
   },
   {
     "id": "methodology",
@@ -100,7 +100,7 @@
     "template": "methodology",
     "filters": {},
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 1,
     "canonical": "/methodology",
     "relationships": [
@@ -121,7 +121,7 @@
     "template": "report-archive",
     "filters": {},
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 1,
     "canonical": "/reports",
     "relationships": [
@@ -142,7 +142,7 @@
     "template": "data-quality",
     "filters": {},
     "minimumResults": 1,
-    "minimumDataCompleteness": 0.8,
+    "minimumDataCompleteness": 0,
     "minimumInsights": 3,
     "canonical": "/data-quality",
     "relationships": [

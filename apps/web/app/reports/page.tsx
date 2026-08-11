@@ -59,6 +59,11 @@ export default async function ReportsPage() {
                 </Link>
               </article>
             ))}
+            {reportsPayload.reports.length === 0 ? (
+              <p className="py-5 leading-6 text-paper/60">
+                No market report has been published. Reports will begin after real index data is available and has passed editorial review.
+              </p>
+            ) : null}
           </div>
         </section>
         <form className="surface p-5">

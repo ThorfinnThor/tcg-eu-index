@@ -10,7 +10,7 @@ type SearchRecord = {
   id: IndexCode;
   slug: string;
   name: string;
-  score: number;
+  score: number | null;
   category: string;
   filterValues: {
     game: string;
@@ -82,7 +82,7 @@ export async function getSearchIndex(): Promise<SearchRecord[]> {
       id: index.code,
       slug: index.slug,
       name: index.name,
-      score: index.history.at(-1)?.index_value ?? 1000,
+      score: index.history.at(-1)?.index_value ?? null,
       category: index.universe,
       filterValues: {
         game: index.game,

@@ -21,21 +21,61 @@ export async function generateMetadata({ params }: { params: { code: string } })
   return pageMetadata(
     `${index.code.toLowerCase()}-index`,
     index.name,
-    `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`
+    index.status === "published"
+      ? `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`
+      : `${index.name} is collecting Cardmarket history before its first public index composition and value are released.`
   );
 }
 
 export default async function IndexPage({ params }: { params: { code: string } }) {
   const index = await getIndex(params.code);
   if (!index) notFound();
+  const siteUrl = getSiteUrl();
+  const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
+  const published = index.status === "published" && index.history.length > 0;
+
+  if (!published) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-8">
+        <StructuredData value={breadcrumbStructuredData(siteUrl, breadcrumbs)} />
+        <Breadcrumbs items={breadcrumbs} />
+        <div className="border-b border-line pb-5">
+          <div className="text-sm text-paper/50">{index.code}</div>
+          <h1 className="mt-1 text-3xl font-semibold text-paper">{index.name}</h1>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-paper/65">
+            Cardmarket history is being collected. No public index level, return, constituent list, breadth, or volatility figure has been published yet.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2 text-xs text-paper/55">
+            <span className="chip border-amber text-amber">collecting data</span>
+            <span className="chip">target {index.target_size} constituents</span>
+          </div>
+        </div>
+        <section className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="surface p-5 md:col-span-2">
+            <h2 className="text-lg font-semibold">Publication pending</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-paper/60">
+              The first real composition is calculated only after the 60-day observation window and quality gates are complete. A human review is required before those results replace this pending state.
+            </p>
+          </div>
+          <div className="surface p-5">
+            <div className="text-xs uppercase text-paper/45">Public index value</div>
+            <div className="mt-2 text-2xl font-semibold">Pending</div>
+            <Link className="mt-5 inline-block text-sm font-semibold text-amber hover:text-paper" href={`/index/${index.code}/constituents`}>
+              Constituent status
+            </Link>
+          </div>
+        </section>
+        <RelatedPages definitionId={`${index.code.toLowerCase()}-index`} />
+      </div>
+    );
+  }
+
   const delta = changes(index);
   const latest = index.history.at(-1);
   const formalHistory = postInceptionHistory(index);
   const analytics = calculateIndexAnalytics(formalHistory);
   const validationObservations = index.history.length - formalHistory.length;
-  const siteUrl = getSiteUrl();
   const description = `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`;
-  const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">

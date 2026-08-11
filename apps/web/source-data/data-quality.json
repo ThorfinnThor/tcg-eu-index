@@ -1,6 +1,6 @@
 {
-  "datasetCompleteness": 1,
-  "sourceCoverage": "MVP simulated benchmark set",
+  "datasetCompleteness": 0,
+  "sourceCoverage": "Private Cardmarket archive accumulating; no public index dataset",
   "licensingPosture": "derived-aggregates-only",
   "limitations": [
     {
@@ -8,16 +8,16 @@
       "body": "Benchmarks use daily guide-style listing prices, not executed transaction prices."
     },
     {
-      "title": "MVP source data",
-      "body": "Current index values are repo-managed MVP fixtures. Official Cardmarket downloads and schemas are checked daily, but real values require an accumulated daily snapshot history."
+      "title": "Index publication pending",
+      "body": "Official Cardmarket downloads are archived and checked daily. No index values, constituents, returns, or rankings are published until the required history and cutover review are complete."
     },
     {
-      "title": "Validation history",
-      "body": "Observations before 2026-07-20 validate the product surfaces only. Public return and risk analytics start at formal MVP inception."
+      "title": "Internal validation only",
+      "body": "Synthetic fixtures may be used in automated software tests, but they are excluded from every public data export and user-facing calculation."
     },
     {
       "title": "No raw price exposure",
-      "body": "Public files expose derived index values, summaries, constituents, status, and reports only."
+      "body": "After publication, public files will expose derived index values, summaries, constituents, status, and reports only."
     },
     {
       "title": "Carry-forward rule",
@@ -45,9 +45,9 @@
     },
     {
       "id": "manual-mvp-cadence",
-      "label": "MVP update cadence",
-      "status": "warn",
-      "detail": "Repository-managed benchmark data updates only when a reviewed JSON change is committed; stale dates remain visible in the interface."
+      "label": "Public index publication",
+      "status": "pending",
+      "detail": "No public index dataset exists yet. Publication requires sufficient archived history and a successful human cutover review."
     }
   ],
   "gaps": []

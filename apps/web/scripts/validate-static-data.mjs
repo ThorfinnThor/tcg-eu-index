@@ -246,7 +246,11 @@ for (const page of pageDefinitions.filter((definition) => definition.indexable))
 
 const slugs = new Set();
 for (const item of indexes) {
-  if (!item.id || !item.slug || !item.name || typeof item.score !== "number") {
+  const published = item.filterValues?.status === "published";
+  if (
+    !item.id || !item.slug || !item.name ||
+    (published ? typeof item.score !== "number" : item.score !== null)
+  ) {
     fail(`invalid search record: ${JSON.stringify(item)}`);
   }
   if (slugs.has(item.slug)) fail(`duplicate slug ${item.slug}`);
@@ -275,8 +279,14 @@ for (const index of indexes) {
   if (!summary.history_start_date || !summary.history_start_kind || !summary.base_date) {
     fail(`${index.id} summary is missing history provenance`);
   }
-  if (!Array.isArray(history) || history.length === 0) fail(`${index.id} history is empty`);
+  if (!Array.isArray(history)) fail(`${index.id} history must be an array`);
   if (!Array.isArray(constituents)) fail(`${index.id} constituents must be an array`);
+  if (summary.status === "published" && (history.length === 0 || constituents.length === 0)) {
+    fail(`${index.id} published data must include history and constituents`);
+  }
+  if (summary.status !== "published" && (history.length > 0 || constituents.length > 0)) {
+    fail(`${index.id} accumulating data must not expose validation history or constituents`);
+  }
   if (
     rebalances.schema_version !== 1 || rebalances.index_code !== index.id || rebalances.cadence !== "monthly" ||
     !["validation", "published"].includes(rebalances.data_state) || !Array.isArray(rebalances.rebalances)

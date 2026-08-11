@@ -1,6 +1,6 @@
 # TCG Europe Index
 
-Public, repository-managed listing-price benchmarks for the European One Piece and Pokemon card markets.
+European One Piece and Pokemon listing-price indexes under development. Public values remain unavailable while the Cardmarket observation history accumulates.
 
 ## Local development
 
@@ -52,7 +52,7 @@ uv run python scripts/verify_archive.py \
 
 The audit includes archive integrity, exact object-storage usage, conservative R2 operation projections, and per-index readiness for the eventual human cutover review.
 
-Production index values remain repository-managed until enough verified daily snapshots exist for the methodology's observation windows.
+No fixture index values or constituents are published. Production values remain pending until enough verified daily snapshots exist for the methodology's observation windows and the cutover review passes.
 
 ## Private normalization
 

@@ -28,4 +28,4 @@ apps/web/public/data/
 
 Those generated files are deployment artifacts and are ignored by Git. The source data files are versioned in Git.
 
-Cardmarket collection and private normalization are now active. The repo-managed MVP JSON remains the public source until the real observation windows and index calculations pass their quality gates. The later cutover replaces source values while keeping the same public JSON paths and schemas.
+Cardmarket collection and private normalization are now active. Repository fixtures remain available for deterministic development and calculation tests, but accumulating indexes export empty history, constituent, rebalance, and report collections. The later cutover fills the same public JSON paths and schemas only after the real observation windows, index calculations, and human review pass their quality gates.

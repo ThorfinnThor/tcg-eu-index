@@ -20,7 +20,7 @@ describe("public API contracts", () => {
     });
   });
 
-  it("creates an explicitly stateless MVP portfolio token", async () => {
+  it("keeps portfolio creation unavailable before index publication", async () => {
     const request = new Request("http://localhost/api/portfolios", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,11 +28,11 @@ describe("public API contracts", () => {
     });
     const response = await createPortfolio(request);
     const payload = await response.json();
-    expect(payload).toMatchObject({ name: "Collector test", mode: "json-only-mvp", storage: "client-session" });
-    expect(payload.public_token).toMatch(/^[a-f0-9]{32}$/);
+    expect(response.status).toBe(409);
+    expect(payload).toEqual({ error: "Portfolio tools require published index data" });
   });
 
-  it("validates uploaded CSV and reports unmatched rows", async () => {
+  it("keeps portfolio matching unavailable before index publication", async () => {
     const csv = [
       "cm_product_id,variant_key,quantity,cost_basis_eur",
       "750001,nonfoil,2,3",
@@ -42,16 +42,16 @@ describe("public API contracts", () => {
       params: { token: "contract-token" }
     });
     const payload = await response.json();
-    expect(payload).toMatchObject({ token: "contract-token", accepted: 1, mode: "json-only-mvp" });
-    expect(payload.errors).toHaveLength(1);
-    expect(payload.holdings).toHaveLength(1);
+    expect(response.status).toBe(409);
+    expect(payload).toEqual({ error: "Portfolio matching requires published index data" });
   });
 
-  it("returns the benchmark contract and rejects unknown codes", async () => {
+  it("rejects unpublished and unknown benchmark comparisons", async () => {
     const valid = await comparePortfolio(new Request("http://localhost"), {
       params: { token: "contract-token", code: "OPEU100" }
     });
-    expect(await valid.json()).toMatchObject({ token: "contract-token", code: "OPEU100", mode: "stateless-benchmark-only" });
+    expect(valid.status).toBe(409);
+    expect(await valid.json()).toEqual({ error: "Benchmark has not been published" });
 
     const missing = await comparePortfolio(new Request("http://localhost"), {
       params: { token: "contract-token", code: "UNKNOWN" }
@@ -59,15 +59,10 @@ describe("public API contracts", () => {
     expect(missing.status).toBe(404);
   });
 
-  it("downloads auditable index history as CSV", async () => {
+  it("does not expose validation history through the public CSV route", async () => {
     const response = await downloadHistory(new Request("http://localhost"), { params: { code: "OPEU100" } });
-    const body = await response.text();
-    expect(response.status).toBe(200);
-    expect(response.headers.get("content-disposition")).toContain("OPEU100-history.csv");
-    expect(response.headers.get("x-data-source")).toBe("repo-managed-mvp-json");
-    expect(body.split("\n")[0]).toBe(
-      "value_date,index_value,daily_return,n_constituents_active,n_capped,n_carried_forward,calc_version"
-    );
+    expect(response.status).toBe(409);
+    expect(await response.json()).toEqual({ error: "Index history has not been published", status: "accumulating" });
 
     const missing = await downloadHistory(new Request("http://localhost"), { params: { code: "UNKNOWN" } });
     expect(missing.status).toBe(404);
