@@ -27,6 +27,49 @@ async function writeJson(relativePath, payload) {
   };
 }
 
+function activeAsOf(constituents, asOf) {
+  return constituents.filter((item) => item.member_since <= asOf && (!item.removed_at || item.removed_at > asOf));
+}
+
+function deriveRebalances(index, constituents) {
+  const dates = [...new Set(constituents.flatMap((item) => [item.member_since, item.removed_at].filter(Boolean)))].sort();
+  const generatedFor = dates.at(-1) ?? index.base_date;
+  return {
+    schema_version: 1,
+    index_code: index.code,
+    data_state: index.history_start_kind === "published" ? "published" : "validation",
+    cadence: "monthly",
+    generated_for: generatedFor,
+    rebalances: dates.map((effectiveDate, position) => {
+      const additions = constituents.filter((item) => item.member_since === effectiveDate);
+      const removals = constituents.filter((item) => item.removed_at === effectiveDate);
+      const active = activeAsOf(constituents, effectiveDate);
+      return {
+        effective_date: effectiveDate,
+        methodology_version: "1.0.0",
+        selection_snapshot_sha256: null,
+        eligible_count: null,
+        active_count: active.length,
+        retained_count: Math.max(active.length - additions.length, 0),
+        changes: [
+          ...additions.map((item) => ({
+            cm_product_id: item.cm_product_id,
+            variant_key: item.variant_key,
+            action: "added",
+            reason: item.entry_reason ?? (position === 0 ? "Initial composition" : "Entered the selection")
+          })),
+          ...removals.map((item) => ({
+            cm_product_id: item.cm_product_id,
+            variant_key: item.variant_key,
+            action: "removed",
+            reason: item.removal_reason ?? "Left the selection"
+          }))
+        ]
+      };
+    })
+  };
+}
+
 const generatedAt = new Date().toISOString();
 const fileStats = [];
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
@@ -87,6 +130,7 @@ for (const index of indexes) {
   fileStats.push(await writeJson(`indexes/${index.code}/summary.json`, summary));
   fileStats.push(await writeJson(`indexes/${index.code}/history.json`, index.history));
   fileStats.push(await writeJson(`indexes/${index.code}/constituents.json`, index.constituents));
+  fileStats.push(await writeJson(`indexes/${index.code}/rebalances.json`, deriveRebalances(index, index.constituents)));
 }
 
 const manifestBody = {

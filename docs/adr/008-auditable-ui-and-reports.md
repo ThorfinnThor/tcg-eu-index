@@ -10,6 +10,10 @@ Public index pages calculate chart ranges and drawdowns from the exported daily 
 
 Constituent source records may include `removed_at`. The public table derives the active composition for an `as of` date using `member_since <= as_of < removed_at`, then applies client-side search. This keeps historical additions and removals inspectable without a database.
 
+The static export also derives `indexes/<code>/rebalances.json`. The constituent explorer offers a current/historical composition view, a two-date membership comparison, and monthly or ISO-week grouping of actual rebalance events. Weekly grouping never implies a weekly rebalance: weeks without an event have no membership change. Validation fixtures are labeled prominently and cannot be presented as real Cardmarket constituents.
+
+Membership is modeled as an interval, not one mutable row per card. If the same variant leaves and later re-enters, the export keeps two intervals distinguished by `member_since`, preserving the complete audit trail.
+
 Weekly report drafts are generated manually with:
 
 ```bash

@@ -11,6 +11,7 @@ from core.settings import Settings
 from indexengine.analytics import calculate_analytics
 from indexengine.calc import Rebalance, calculate_chain_linked, run_calc
 from indexengine.methodology import IndexDefinition, Methodology
+from indexengine.public_export import build_public_membership_contract
 from indexengine.selection import Constituent, RemovedConstituent, select_constituents
 
 
@@ -343,3 +344,91 @@ def test_shadow_run_is_private_accumulating_and_idempotent(tmp_path: Path) -> No
         for code in ("OPEU100", "PKEU250", "OPEUSLD")
     )
     assert store.list_keys("derived/public") == []
+
+
+def test_public_membership_contract_preserves_removal_and_reentry_history() -> None:
+    first = Rebalance(
+        "2026-08-01",
+        "1.0.0",
+        "first",
+        2,
+        [constituent(1), constituent(2)],
+        [],
+    )
+    second = Rebalance(
+        "2026-09-01",
+        "1.0.0",
+        "second",
+        2,
+        [
+            replace(constituent(1), action="retained", reason="incumbent retained"),
+            constituent(3),
+        ],
+        [
+            RemovedConstituent(
+                2,
+                "nonfoil",
+                "removed",
+                "outside selection buffer",
+                "cardmarket:onepiece:product:2:nonfoil",
+            )
+        ],
+    )
+    third = Rebalance(
+        "2026-10-01",
+        "1.0.0",
+        "third",
+        2,
+        [
+            replace(constituent(1), action="retained", reason="incumbent retained"),
+            constituent(2),
+        ],
+        [
+            RemovedConstituent(
+                3,
+                "nonfoil",
+                "removed",
+                "failed eligibility gates",
+                "cardmarket:onepiece:product:3:nonfoil",
+            )
+        ],
+    )
+    products = pl.DataFrame(
+        [
+            {"cm_product_id": product_id, "name": f"Card {product_id}", "cm_expansion_id": 10}
+            for product_id in (1, 2, 3)
+        ]
+    )
+    sets = pl.DataFrame([{"cm_expansion_id": 10, "name": "Test Set"}])
+
+    contract = build_public_membership_contract(
+        "OPEU100",
+        "2026-10-01",
+        [first, second, third],
+        products,
+        sets,
+        data_state="published",
+    )
+
+    intervals = [
+        item for item in contract["constituents"] if item["cm_product_id"] == 2
+    ]
+    assert len(intervals) == 2
+    assert intervals[0]["removed_at"] == "2026-09-01"
+    assert intervals[1]["member_since"] == "2026-10-01"
+    rebalance_history = contract["rebalances"]
+    assert rebalance_history["data_state"] == "published"
+    assert rebalance_history["rebalances"][1]["changes"] == [
+        {
+            "cm_product_id": 3,
+            "variant_key": "nonfoil",
+            "action": "added",
+            "reason": "golden fixture",
+        },
+        {
+            "cm_product_id": 2,
+            "variant_key": "nonfoil",
+            "action": "removed",
+            "reason": "outside selection buffer",
+        },
+    ]

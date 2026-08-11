@@ -1,7 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
-import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReportsPayload, WeeklyReport } from "./types";
+import { deriveRebalanceHistory } from "./constituents";
+import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
 
@@ -119,6 +120,28 @@ export async function getConstituents(code: string): Promise<Constituent[]> {
   } catch {
     return fixtureConstituents[code] ?? [];
   }
+}
+
+export async function getRebalanceHistory(code: IndexCode): Promise<RebalanceHistory> {
+  try {
+    return await readJson<RebalanceHistory>(`indexes/${code}/rebalances.json`);
+  } catch {
+    const [index, constituents] = await Promise.all([getIndex(code), getConstituents(code)]);
+    const generatedFor = latestDate(constituents, index?.base_date ?? "1970-01-01");
+    return deriveRebalanceHistory(
+      code,
+      constituents,
+      index?.history_start_kind === "published" ? "published" : "validation",
+      generatedFor
+    );
+  }
+}
+
+function latestDate(constituents: Constituent[], fallback: string) {
+  return constituents.reduce((latest, item) => {
+    const candidate = item.removed_at && item.removed_at > item.member_since ? item.removed_at : item.member_since;
+    return candidate > latest ? candidate : latest;
+  }, fallback);
 }
 
 export async function getStatus(): Promise<StatusPayload> {

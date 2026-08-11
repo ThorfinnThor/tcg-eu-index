@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { activeConstituentsAsOf, constituentActions, filterConstituents, latestCompositionDate } from "./constituents";
+import {
+  activeConstituentsAsOf,
+  compositionDelta,
+  constituentActions,
+  deriveRebalanceHistory,
+  filterConstituents,
+  groupRebalances,
+  latestCompositionDate
+} from "./constituents";
 import type { Constituent } from "./types";
 
 const constituents: Constituent[] = [
@@ -52,10 +60,43 @@ describe("constituentActions", () => {
       { date: "2026-08-01", action: "removed" }
     ]);
   });
+
+  it("treats the beginning of every membership interval as an addition", () => {
+    expect(constituentActions({ ...constituents[1], action: "retained" })[0]).toEqual({
+      date: "2026-08-01",
+      action: "added"
+    });
+  });
 });
 
 describe("latestCompositionDate", () => {
   it("includes rebalance events newer than daily index history", () => {
     expect(latestCompositionDate(constituents, "2026-07-29")).toBe("2026-08-01");
+  });
+});
+
+describe("compositionDelta", () => {
+  it("compares active membership without counting retained cards as changes", () => {
+    const delta = compositionDelta(constituents, "2026-07-31", "2026-08-01");
+    expect(delta.additions.map((item) => item.cm_product_id)).toEqual([2]);
+    expect(delta.removals.map((item) => item.cm_product_id)).toEqual([1]);
+    expect(delta.retained).toEqual([]);
+  });
+});
+
+describe("rebalance history", () => {
+  it("derives auditable changes and groups them without inventing weekly rebalances", () => {
+    const history = deriveRebalanceHistory("OPEU100", constituents, "validation", "2026-08-01");
+    expect(history.rebalances).toHaveLength(2);
+    expect(history.rebalances[1]).toMatchObject({
+      effective_date: "2026-08-01",
+      active_count: 1,
+      retained_count: 0
+    });
+    expect(history.rebalances[1].changes.map((change) => change.action)).toEqual(["added", "removed"]);
+
+    const weeks = groupRebalances(history.rebalances, "week");
+    expect(weeks.map((group) => group.key)).toEqual(["2026-W31", "2026-W30"]);
+    expect(weeks[0]).toMatchObject({ additions: 1, removals: 1 });
   });
 });

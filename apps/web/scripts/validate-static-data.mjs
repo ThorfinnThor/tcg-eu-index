@@ -79,6 +79,12 @@ for (const index of sourceData.indexes) {
     if (typeof constituent.liquidity_score !== "number" || typeof constituent.ref_price !== "number") {
       fail(`${index.code} constituent metrics must be numeric`);
     }
+    if (constituent.entry_reason !== undefined && typeof constituent.entry_reason !== "string") {
+      fail(`${index.code} constituent entry_reason must be a string`);
+    }
+    if (constituent.removal_reason !== undefined && typeof constituent.removal_reason !== "string") {
+      fail(`${index.code} constituent removal_reason must be a string`);
+    }
   }
 }
 const sourceQuality = await readSourceFile("data-quality.json");
@@ -264,20 +270,75 @@ for (const index of indexes) {
   const summary = await readJson(`indexes/${index.id}/summary.json`);
   const history = await readJson(`indexes/${index.id}/history.json`);
   const constituents = await readJson(`indexes/${index.id}/constituents.json`);
+  const rebalances = await readJson(`indexes/${index.id}/rebalances.json`);
   if (summary.code !== index.id) fail(`${index.id} summary code mismatch`);
   if (!summary.history_start_date || !summary.history_start_kind || !summary.base_date) {
     fail(`${index.id} summary is missing history provenance`);
   }
   if (!Array.isArray(history) || history.length === 0) fail(`${index.id} history is empty`);
   if (!Array.isArray(constituents)) fail(`${index.id} constituents must be an array`);
+  if (
+    rebalances.schema_version !== 1 || rebalances.index_code !== index.id || rebalances.cadence !== "monthly" ||
+    !["validation", "published"].includes(rebalances.data_state) || !Array.isArray(rebalances.rebalances)
+  ) {
+    fail(`${index.id} rebalances have an invalid contract`);
+  }
+  if (
+    rebalances.data_state !== (summary.history_start_kind === "published" ? "published" : "validation") ||
+    !rebalances.generated_for
+  ) {
+    fail(`${index.id} rebalance provenance does not match its summary`);
+  }
   const constituentKeys = new Set();
   for (const constituent of constituents) {
     if (!constituent.member_since || !constituent.action || typeof constituent.ref_price !== "number") {
       fail(`${index.id} has invalid exported constituent data`);
     }
-    const key = `${constituent.cm_product_id}:${constituent.variant_key}`;
+    const key = `${constituent.cm_product_id}:${constituent.variant_key}:${constituent.member_since}`;
     if (constituentKeys.has(key)) fail(`${index.id} has duplicate constituent ${key}`);
     constituentKeys.add(key);
+  }
+  let previousRebalanceDate = null;
+  for (const rebalance of rebalances.rebalances) {
+    if (
+      !rebalance.effective_date || !rebalance.methodology_version ||
+      !Number.isInteger(rebalance.active_count) || !Number.isInteger(rebalance.retained_count) ||
+      !Array.isArray(rebalance.changes)
+    ) {
+      fail(`${index.id} has an invalid rebalance record`);
+    }
+    if (previousRebalanceDate && rebalance.effective_date <= previousRebalanceDate) {
+      fail(`${index.id} rebalance dates must be unique and ascending`);
+    }
+    const activeCount = constituents.filter((item) =>
+      item.member_since <= rebalance.effective_date && (!item.removed_at || item.removed_at > rebalance.effective_date)
+    ).length;
+    if (rebalance.active_count !== activeCount) {
+      fail(`${index.id} rebalance active_count does not reconcile on ${rebalance.effective_date}`);
+    }
+    const additions = rebalance.changes.filter((change) => change.action === "added");
+    if (rebalance.retained_count !== Math.max(activeCount - additions.length, 0)) {
+      fail(`${index.id} rebalance retained_count does not reconcile on ${rebalance.effective_date}`);
+    }
+    for (const change of rebalance.changes) {
+      if (
+        !Number.isInteger(change.cm_product_id) || !change.variant_key ||
+        !["added", "removed"].includes(change.action) || !change.reason
+      ) {
+        fail(`${index.id} has an invalid rebalance change`);
+      }
+      const matchingLifecycle = constituents.some((item) =>
+        item.cm_product_id === change.cm_product_id && item.variant_key === change.variant_key &&
+        (change.action === "added" ? item.member_since === rebalance.effective_date : item.removed_at === rebalance.effective_date)
+      );
+      if (!matchingLifecycle) {
+        fail(`${index.id} rebalance change does not match constituent lifecycle`);
+      }
+    }
+    previousRebalanceDate = rebalance.effective_date;
+  }
+  if (rebalances.rebalances.length && rebalances.generated_for !== rebalances.rebalances.at(-1).effective_date) {
+    fail(`${index.id} rebalance generated_for does not match its latest event`);
   }
   let previousRow = null;
   const historyDates = new Set();

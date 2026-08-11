@@ -34,8 +34,36 @@ export type Constituent = {
   member_since: string;
   removed_at?: string | null;
   action: "added" | "retained" | "removed";
+  entry_reason?: string;
+  removal_reason?: string;
   liquidity_score: number;
   ref_price: number;
+};
+
+export type RebalanceChange = {
+  cm_product_id: number;
+  variant_key: string;
+  action: "added" | "removed";
+  reason: string;
+};
+
+export type RebalanceRecord = {
+  effective_date: string;
+  methodology_version: string;
+  selection_snapshot_sha256?: string | null;
+  eligible_count?: number | null;
+  active_count: number;
+  retained_count: number;
+  changes: RebalanceChange[];
+};
+
+export type RebalanceHistory = {
+  schema_version: 1;
+  index_code: IndexCode;
+  data_state: "validation" | "published";
+  cadence: "monthly";
+  generated_for: string;
+  rebalances: RebalanceRecord[];
 };
 
 export type DataQualityPayload = {

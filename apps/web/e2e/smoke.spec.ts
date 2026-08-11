@@ -20,7 +20,14 @@ test("market overview and index exploration", async ({ page }) => {
 test("constituents, embed, reports, and public CSV remain reachable", async ({ page, request }) => {
   await page.goto("/index/OPEU100/constituents?asOf=2026-07-29&q=Benchmark&inactive=1");
   await expect(page.getByRole("heading", { name: "Constituents" })).toBeVisible();
+  await expect(page.getByText("Validation composition")).toBeVisible();
   await expect(page.getByRole("searchbox", { name: /search/i })).toHaveValue("Benchmark");
+  await page.getByRole("tab", { name: "Changes" }).click();
+  await expect(page.getByRole("heading", { name: "Compare composition dates" })).toBeVisible();
+  await expect(page.getByText("+30", { exact: true })).toBeVisible();
+  await expect(page.getByText("-1", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /weekly/i }).click();
+  await expect(page.getByRole("heading", { name: "Week 31, 2026" })).toBeVisible();
 
   await page.goto("/embed/index/OPEU100");
   await expect(page.getByText("OPEU100", { exact: true })).toBeVisible();
@@ -35,7 +42,7 @@ test("constituents, embed, reports, and public CSV remain reachable", async ({ p
 });
 
 test("primary pages do not overflow the viewport", async ({ page }) => {
-  for (const path of ["/", "/index/PKEU250", "/portfolio", "/data-quality"]) {
+  for (const path of ["/", "/index/PKEU250", "/index/OPEU100/constituents", "/portfolio", "/data-quality"]) {
     await page.goto(path);
     const dimensions = await page.evaluate(() => ({
       documentWidth: document.documentElement.scrollWidth,
