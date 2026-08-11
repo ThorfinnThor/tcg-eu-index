@@ -10,6 +10,7 @@ Private output keys:
 derived/indexes/<code>/rebalances.json
 derived/indexes/<code>/daily-values.parquet
 derived/indexes/<code>/contributions.parquet
+derived/indexes/<code>/analytics.json
 derived/indexes/<code>/quality/YYYY-MM-DD.json
 derived/indexes/<code>/manifest.json
 derived/calc_runs/YYYY-MM-DD.json
@@ -18,5 +19,7 @@ derived/calc_runs/YYYY-MM-DD.json
 The engine recomputes from the available normalized history on every run. Rebalances are monthly, selection is liquidity-screened and buffer-controlled, and daily values are equal-weighted and chain-linked. Missing archive dates remain gaps. Constituent prices can be carried for the configured number of days, after which that constituent is suspended until a fresh observation arrives. Daily returns are capped according to the versioned methodology.
 
 The completion manifest is written last and contains source and output checksums. Re-running unchanged inputs must produce byte-identical output and no object writes. Per-card contributions and constituent selections remain private in R2. Only a later, explicitly approved export may generate the small aggregate JSON contract consumed by Vercel.
+
+`analytics.json` contains deterministic daily aggregate records for 1, 7, and 30 calendar-day windows: top and bottom movers, contribution leaders and laggards, seven-day breadth, running drawdown, and annualized 30-day listing-price volatility. Whole-market unchanged snapshots keep the index return at zero but are excluded from mover and breadth observations so source staleness cannot masquerade as a flat market. Product names and derived returns may later enter the small public contract; raw prices remain private.
 
 Cardmarket's confirmed files do not expose a reliable language field. The configured language scope is therefore recorded as pending and is not silently inferred from product names. It must be resolved before the first public rebalance.

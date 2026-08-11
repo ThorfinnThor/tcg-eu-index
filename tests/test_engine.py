@@ -8,6 +8,7 @@ import polars as pl
 import pytest
 from core.r2 import LocalObjectStore
 from core.settings import Settings
+from indexengine.analytics import calculate_analytics
 from indexengine.calc import Rebalance, calculate_chain_linked, run_calc
 from indexengine.methodology import IndexDefinition, Methodology
 from indexengine.selection import Constituent, RemovedConstituent, select_constituents
@@ -201,6 +202,66 @@ def test_golden_chain_linked_index_covers_caps_carry_suspension_and_rebalance() 
         for item in contributions
     )
 
+    products = pl.DataFrame(
+        [{"cm_product_id": product_id, "name": f"Card {product_id}"} for product_id in series]
+    )
+    analytics = calculate_analytics(values, contributions, products)
+    day_two = analytics[1]
+    one_day = next(item for item in day_two.windows if item.window == "1d")
+    assert day_two.breadth_7d == pytest.approx(0.2)
+    assert one_day.top_movers[0].cm_product_id == 1
+    assert one_day.top_movers[0].value == pytest.approx(0.25)
+    assert one_day.contribution_leaders[0].value == pytest.approx(0.05)
+    assert analytics[6].drawdown == pytest.approx(-0.05)
+    assert analytics[6].volatility_30d is not None
+    assert analytics[6].volatility_observations == 7
+
+
+def test_analytics_excludes_whole_market_unchanged_day_from_rankings() -> None:
+    start = date(2026, 7, 20)
+    rows = [
+        {
+            "value_date": start + timedelta(days=offset),
+            "stable_variant_id": "cardmarket:onepiece:product:1:nonfoil",
+            "cm_product_id": 1,
+            "variant_key": "nonfoil",
+            "product_kind": "single",
+            "price_avg": price,
+            "price_low": price,
+        }
+        for offset, price in enumerate((10.0, 20.0))
+    ]
+    rebalance = Rebalance(
+        start.isoformat(),
+        "test",
+        "unchanged",
+        1,
+        [constituent(1)],
+        [],
+    )
+    values, contributions = calculate_chain_linked(
+        pl.DataFrame(rows),
+        definition(target_size=1),
+        methodology(),
+        [rebalance],
+        [start, start + timedelta(days=1)],
+        {start + timedelta(days=1)},
+    )
+
+    analytics = calculate_analytics(
+        values,
+        contributions,
+        pl.DataFrame([{"cm_product_id": 1, "name": "Card 1"}]),
+    )
+    latest = analytics[-1]
+    one_day = next(item for item in latest.windows if item.window == "1d")
+    assert latest.whole_market_carried_forward
+    assert latest.daily_return == 0
+    assert one_day.observation_dates == 0
+    assert one_day.excluded_whole_market_dates == 1
+    assert one_day.top_movers == []
+    assert one_day.contribution_leaders == []
+
 
 def settings() -> Settings:
     return Settings(
@@ -276,4 +337,9 @@ def test_shadow_run_is_private_accumulating_and_idempotent(tmp_path: Path) -> No
     assert all(item.changed_outputs for item in first)
     assert all(item.changed_outputs == [] for item in second)
     assert first_bytes == second_bytes
+    assert all(item.analytics_days == 0 for item in first)
+    assert all(
+        store.exists(f"derived/indexes/{code}/analytics.json")
+        for code in ("OPEU100", "PKEU250", "OPEUSLD")
+    )
     assert store.list_keys("derived/public") == []

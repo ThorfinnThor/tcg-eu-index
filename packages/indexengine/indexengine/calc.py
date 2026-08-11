@@ -18,6 +18,7 @@ from core.settings import Settings, parse_run_date
 from core.store import ObjectStore
 from ingest.manifest import Manifest
 
+from indexengine.analytics import calculate_analytics
 from indexengine.methodology import IndexDefinition, Methodology
 from indexengine.selection import (
     Constituent,
@@ -75,6 +76,7 @@ class CalcRunResult:
     selected_constituents: int
     daily_values: int
     contributions: int
+    analytics_days: int
     latest_rebalance: str | None
     changed_outputs: list[str]
 
@@ -425,6 +427,7 @@ def run_calc(
             calendar_dates,
             unchanged_dates,
         )
+        analytics = calculate_analytics(values, contributions, products)
         latest_rebalance = rebalances[-1] if rebalances else None
         selected_count = len(latest_rebalance.constituents) if latest_rebalance else 0
         status = (
@@ -439,6 +442,7 @@ def run_calc(
         rebalances_key = f"{prefix}/rebalances.json"
         values_key = f"{prefix}/daily-values.parquet"
         contributions_key = f"{prefix}/contributions.parquet"
+        analytics_key = f"{prefix}/analytics.json"
         quality_key = f"{prefix}/quality/{run_date.isoformat()}.json"
         rebalances_body = _json_bytes(
             {
@@ -451,6 +455,17 @@ def run_calc(
         values_body = _parquet_bytes([asdict(item) for item in values], DAILY_SCHEMA)
         contributions_body = _parquet_bytes(
             [asdict(item) for item in contributions], CONTRIBUTION_SCHEMA
+        )
+        analytics_body = _json_bytes(
+            {
+                "schema_version": 1,
+                "index_code": definition.code,
+                "methodology_version": methodology.methodology_version,
+                "generated_for": run_date.isoformat(),
+                "windows": ["1d", "7d", "30d"],
+                "volatility_label": "annualized listing-price volatility",
+                "records": [asdict(item) for item in analytics],
+            }
         )
         quality_body = _json_bytes(
             {
@@ -466,6 +481,8 @@ def run_calc(
                 "target_size": definition.target_size,
                 "selected_constituents": selected_count,
                 "daily_values": len(values),
+                "analytics_days": len(analytics),
+                "latest_analytics_date": analytics[-1].value_date if analytics else None,
                 "latest_rebalance": latest_rebalance.effective_date if latest_rebalance else None,
                 "language_scope": definition.language_scope,
                 "language_scope_status": "pending_source_field",
@@ -480,6 +497,7 @@ def run_calc(
                 "application/vnd.apache.parquet",
                 len(contributions),
             ),
+            analytics_key: (analytics_body, "application/json", len(analytics)),
             quality_key: (quality_body, "application/json", 1),
         }
         changed: list[str] = []
@@ -518,6 +536,7 @@ def run_calc(
             selected_constituents=selected_count,
             daily_values=len(values),
             contributions=len(contributions),
+            analytics_days=len(analytics),
             latest_rebalance=latest_rebalance.effective_date if latest_rebalance else None,
             changed_outputs=changed,
         )
