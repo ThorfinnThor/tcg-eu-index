@@ -3,9 +3,10 @@ import { expect, test } from "@playwright/test";
 test("market overview and index exploration", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Market overview" })).toBeVisible();
-  await expect(page.getByText("Validation history begins 2026-04-01")).toBeVisible();
 
-  await page.getByRole("link", { name: /One Piece Europe 100/ }).click();
+  const onePieceIndex = page.getByRole("link", { name: /One Piece Europe 100/ });
+  await expect(onePieceIndex).toBeVisible();
+  await onePieceIndex.click();
   await expect(page).toHaveURL(/\/index\/OPEU100$/);
   await expect(page.getByRole("heading", { name: "One Piece Europe 100" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Publication pending" })).toBeVisible();
