@@ -20,6 +20,7 @@ describe("weekly report generator", () => {
     expect(highlight.weeklyReturn).toBe(0.05);
     expect(highlight.observations).toBe(2);
     expect(highlight.notableEvents).toHaveLength(2);
+    expect(highlight.chartPath).toBe("/reports/2026-W32/OPEU100.png");
   });
 
   it("produces a draft with an editor placeholder", () => {

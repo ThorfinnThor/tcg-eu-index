@@ -111,4 +111,18 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/manifest-latest.json apps/web/source-data/readiness.json
           git commit -m "chore(archive): ${archive_date}"
+          git pull --rebase origin main
           git push origin HEAD:main
+      - name: Post pipeline digest
+        if: always()
+        env:
+          PIPELINE_STATUS: ${{ job.status }}
+          RUN_DATE: ${{ inputs.run_date || 'today' }}
+        run: |
+          if test "$PIPELINE_STATUS" = "success"; then
+            level="OK"
+          else
+            level="CRITICAL"
+          fi
+          uv run python scripts/notify_pipeline.py --level "$level" \
+            --message "Daily Cardmarket archive, normalization, shadow calculation, and readiness update: ${PIPELINE_STATUS} (${RUN_DATE})."

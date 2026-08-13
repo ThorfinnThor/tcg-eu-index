@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
-import { getDataQuality, getManifest, getReadiness, getStatus } from "@/lib/data";
+import { getArchiveHealth, getDataQuality, getManifest, getReadiness, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessTextClass } from "@/lib/freshness";
 import { pageMetadata } from "@/lib/seo";
 
@@ -20,13 +20,15 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function DataQualityPage() {
-  const [quality, status, manifest, readiness] = await Promise.all([
+  const [quality, status, manifest, readiness, archiveHealth] = await Promise.all([
     getDataQuality(),
     getStatus(),
     getManifest(),
-    getReadiness()
+    getReadiness(),
+    getArchiveHealth()
   ]);
   const freshness = assessFreshness(status.last_snapshot_date);
+  const archiveGaps = archiveHealth.generatedFor ? archiveHealth.gaps : quality.gaps;
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
       <Breadcrumbs items={[{ label: "Overview", href: "/" }, { label: "Data quality" }]} />
@@ -68,6 +70,52 @@ export default async function DataQualityPage() {
           </section>
         ))}
       </div>
+
+      <section className="mt-6 border-y border-line py-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-semibold">Archive health</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/60">
+              Weekly integrity checks publish aggregate coverage and free-tier projections. Private object names and source payloads remain in R2.
+            </p>
+          </div>
+          <span className={`chip ${archiveHealth.status === "healthy" ? "border-teal text-teal" : archiveHealth.status === "attention_required" ? "border-coral text-coral" : "border-amber text-amber"}`}>
+            {archiveHealth.status.replaceAll("_", " ")}
+          </span>
+        </div>
+        <dl className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <dt className="text-xs uppercase text-paper/45">Calendar coverage</dt>
+            <dd className="mt-1 text-xl font-semibold">
+              {archiveHealth.coverageRatio == null ? "pending" : `${(archiveHealth.coverageRatio * 100).toFixed(1)}%`}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase text-paper/45">Verified files</dt>
+            <dd className="mt-1 text-xl font-semibold">{archiveHealth.verifiedFileCount ?? "pending"}</dd>
+          </div>
+          <div>
+            <dt className="text-xs uppercase text-paper/45">R2 storage</dt>
+            <dd className="mt-1 text-xl font-semibold">
+              {archiveHealth.storage.usageRatio == null ? "pending" : `${(archiveHealth.storage.usageRatio * 100).toFixed(2)}%`}
+            </dd>
+            <div className="mt-1 text-xs text-paper/45">of free allocation</div>
+          </div>
+          <div>
+            <dt className="text-xs uppercase text-paper/45">Projected monthly rebalance</dt>
+            <dd className="mt-1 text-xl font-semibold">{archiveHealth.cutoverProjection.firstMonthlyRebalanceDate ?? "pending"}</dd>
+            <div className="mt-1 text-xs text-paper/45">assumes no archive gaps</div>
+          </div>
+        </dl>
+        <div className="mt-5 grid gap-3 text-sm sm:grid-cols-2">
+          {([archiveHealth.operations.classA, archiveHealth.operations.classB] as const).map((budget, position) => (
+            <div key={position} className="flex items-center justify-between gap-3 border-t border-line pt-3">
+              <span className="text-paper/60">Class {position === 0 ? "A" : "B"} operations</span>
+              <span>{budget.usageRatio == null ? "pending" : `${(budget.usageRatio * 100).toFixed(2)}% projected`}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="surface mt-6 overflow-x-auto">
         <table className="w-full min-w-[720px] border-collapse text-sm">
@@ -140,11 +188,11 @@ export default async function DataQualityPage() {
 
       <section className="surface mt-6 p-5">
         <h2 className="text-lg font-semibold">Archive gaps</h2>
-        {quality.gaps.length === 0 ? (
+        {archiveGaps.length === 0 ? (
           <p className="mt-3 text-sm text-paper/65">No source gaps are recorded in the MVP dataset.</p>
         ) : (
           <div className="mt-4 divide-y divide-line text-sm">
-            {quality.gaps.map((gap) => (
+            {archiveGaps.map((gap) => (
               <div key={`${gap.date}-${gap.reason}`} className="grid gap-2 py-3 md:grid-cols-[140px_120px_1fr]">
                 <span>{gap.date}</span>
                 <span className="text-paper/60">{gap.game ?? "all games"}</span>

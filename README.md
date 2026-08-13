@@ -61,6 +61,8 @@ No fixture index values or constituents are published. Production values remain 
 
 Each new daily calculation also updates a small aggregate readiness receipt for the static site. It contains archive-day counts and gate states only, never card prices. After all gates pass, prepare an isolated review candidate with `scripts/prepare_cutover.py`; the command cannot write into the public source directories and never publishes automatically.
 
+The Sunday audit publishes a separate aggregate archive-health receipt with coverage, gap counts, verified-file totals, free-tier projections, and gapless launch dates. Detailed R2 object information remains confined to the private workflow artifact.
+
 ## Private normalization
 
 Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
@@ -68,6 +70,12 @@ Every successful daily archive run also normalizes the verified catalogue and pr
 The same workflow then recomputes private shadow indexes. Shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. They do not replace the repository-managed public JSON automatically.
 
 Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published.
+
+## Editorial and optional user features
+
+Once real indexes are published, the Monday workflow generates the prior week's report and charts in a draft pull request. Drafts are excluded from the public export until an editor changes the status to `published` and supplies `publishedAt`.
+
+Newsletter signup activates only when `NEWSLETTER_ENDPOINT` is configured on Vercel. Portfolio CSV files remain in the visitor's browser; the tool validates up to 5,000 rows and never fabricates a daily collection series when only cost basis and current reference values are available.
 
 Replay an archived range in production:
 

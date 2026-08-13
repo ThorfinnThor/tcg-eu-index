@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -75,7 +75,9 @@ const fileStats = [];
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
 const dataQuality = await readSourceFile("data-quality.json");
 const readiness = await readSourceFile("readiness.json");
+const archiveHealth = await readSourceFile("archive-health.json");
 const reports = await readSourceFile("reports/index.json");
+const publishedReports = reports.reports.filter((report) => report.status === "published");
 const indexes = await Promise.all(
   sourceData.indexes.map(async (index) => {
     const published = index.status === "published" && index.history_start_kind === "published";
@@ -117,7 +119,7 @@ const status = {
     .filter(Boolean)
     .sort()
     .at(-1) ?? null,
-  gap_count: dataQuality.gaps.length,
+  gap_count: archiveHealth.gapCount ?? dataQuality.gaps.length,
   indexes: indexes.map((index) => ({
     code: index.code,
     freshness: index.history.at(-1)?.value_date ?? null,
@@ -128,10 +130,24 @@ const status = {
 fileStats.push(await writeJson("status/latest.json", status));
 fileStats.push(await writeJson("data-quality/latest.json", dataQuality));
 fileStats.push(await writeJson("readiness/latest.json", readiness));
+fileStats.push(await writeJson("archive-health/latest.json", archiveHealth));
 fileStats.push(await writeJson("reports/index.json", {
   ...reports,
-  reports: reports.reports.filter((report) => report.status === "published")
+  newsletterProvider: process.env.NEWSLETTER_ENDPOINT ? "configured provider" : reports.newsletterProvider,
+  signupEnabled: Boolean(process.env.NEWSLETTER_ENDPOINT),
+  reports: publishedReports
 }));
+
+await rm(path.join(root, "public", "reports"), { recursive: true, force: true });
+for (const report of publishedReports) {
+  for (const highlight of report.indexHighlights) {
+    if (!highlight.chartPath) continue;
+    const source = path.join(sourceDataRoot, "report-assets", report.week, `${highlight.code}.png`);
+    const destination = path.join(root, "public", highlight.chartPath.replace(/^\//, ""));
+    await mkdir(path.dirname(destination), { recursive: true });
+    await copyFile(source, destination);
+  }
+}
 
 for (const index of indexes) {
   const summary = { ...index };

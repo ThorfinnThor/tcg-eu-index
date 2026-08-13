@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildPortfolioComparison, parsePortfolioCsv, summarizePortfolio, validatePortfolioCsv } from "./portfolio";
+import { buildBenchmarkSeries, buildPortfolioComparison, parsePortfolioCsv, summarizePortfolio, validatePortfolioCsv } from "./portfolio";
 import type { Constituent, DailyIndexValue } from "./types";
 
 const constituents: Constituent[] = [
@@ -50,6 +50,13 @@ describe("validatePortfolioCsv", () => {
     expect(result.errors[0]).toMatchObject({ line: 2 });
     expect(result.errors[0]?.error).toContain("Unmatched");
   });
+
+  it("rejects duplicate holdings instead of double counting them", () => {
+    const csv = "cm_product_id,variant_key,quantity\n750001,nonfoil,1\n750001,nonfoil,2\n";
+    const result = validatePortfolioCsv(csv, constituents);
+    expect(result.accepted).toHaveLength(1);
+    expect(result.errors[0]?.error).toContain("Duplicate");
+  });
 });
 
 describe("portfolio comparison", () => {
@@ -68,5 +75,24 @@ describe("portfolio comparison", () => {
     expect(series).toHaveLength(2);
     expect(series[0]).toMatchObject({ value_date: "2026-07-20", portfolio: 1000, benchmark: 1000 });
     expect(series[1]).toMatchObject({ value_date: "2026-07-21", portfolio: 1250, benchmark: 1100 });
+  });
+
+  it("uses the selected basis date without inventing intermediate portfolio prices", () => {
+    const longerHistory = [
+      history[0],
+      { value_date: "2026-07-21", index_value: 1050, daily_return: 0.05, n_constituents_active: 1 },
+      { value_date: "2026-07-22", index_value: 1100, daily_return: 0.0476, n_constituents_active: 1 }
+    ];
+    const validation = validatePortfolioCsv("cm_product_id,variant_key,quantity,cost_basis_eur\n750001,nonfoil,2,8\n", constituents);
+    const series = buildPortfolioComparison(longerHistory, validation, "2026-07-21");
+    expect(series).toHaveLength(2);
+    expect(series[0].value_date).toBe("2026-07-21");
+  });
+
+  it("builds a benchmark-only series for the stateless API", () => {
+    expect(buildBenchmarkSeries(history)).toEqual([
+      { value_date: "2026-07-20", benchmark: 1000 },
+      { value_date: "2026-07-21", benchmark: 1100 }
+    ]);
   });
 });

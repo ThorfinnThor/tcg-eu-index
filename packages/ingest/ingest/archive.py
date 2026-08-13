@@ -11,7 +11,6 @@ from typing import Literal
 import click
 import requests
 from core.logging import configure_logging
-from core.notifier import post_discord
 from core.r2 import R2Client, gzip_body, sha256_hex
 from core.settings import Settings, parse_run_date, utc_now
 from core.store import ObjectStore
@@ -243,22 +242,8 @@ def main(date_value: str) -> None:
     configure_logging()
     settings = Settings.from_env()
     run_date = parse_run_date(date_value)
-    try:
-        manifest = run_archive(run_date, settings)
-        unchanged = [
-            f"{file.game}/{file.kind}" for file in manifest.files if file.unchanged_from_previous
-        ]
-        level = "WARN" if unchanged else "OK"
-        suffix = f"; unchanged: {', '.join(unchanged)}" if unchanged else ""
-        post_discord(
-            settings.alert_discord_webhook,
-            level,
-            f"Archive complete for {manifest.run_date}{suffix}",
-        )
-        click.echo(json.dumps(latest_pointer(manifest), sort_keys=True))
-    except Exception as exc:
-        post_discord(settings.alert_discord_webhook, "CRITICAL", f"Archive failed: {exc}")
-        raise
+    manifest = run_archive(run_date, settings)
+    click.echo(json.dumps(latest_pointer(manifest), sort_keys=True))
 
 
 if __name__ == "__main__":

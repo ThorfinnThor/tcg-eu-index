@@ -4,8 +4,8 @@ import type { Constituent, DailyIndexValue } from "./types";
 export const holdingSchema = z.object({
   cm_product_id: z.coerce.number().int().positive(),
   variant_key: z.string().trim().default("nonfoil"),
-  quantity: z.coerce.number().positive(),
-  cost_basis_eur: z.coerce.number().optional()
+  quantity: z.coerce.number().positive().max(1_000_000),
+  cost_basis_eur: z.coerce.number().positive().optional()
 });
 
 export type Holding = z.infer<typeof holdingSchema>;
@@ -34,6 +34,8 @@ export type PortfolioComparisonPoint = {
 };
 
 const requiredColumns = ["cm_product_id", "quantity"];
+const maxCsvBytes = 1_000_000;
+const maxRows = 5_000;
 
 function parseCsvLine(line: string) {
   return line.split(",").map((item) => item.trim());
@@ -48,8 +50,14 @@ export function buildConstituentLookup(constituents: Constituent[]) {
 }
 
 export function parsePortfolioCsv(csv: string): ParsedHoldingRow[] {
+  if (new TextEncoder().encode(csv).length > maxCsvBytes) {
+    return [{ line: 1, ok: false, error: "CSV exceeds the 1 MB limit" }];
+  }
   const lines = csv.trim().split(/\r?\n/).filter(Boolean);
   if (lines.length === 0) return [{ line: 1, ok: false, error: "CSV is empty" }];
+  if (lines.length - 1 > maxRows) {
+    return [{ line: 1, ok: false, error: `CSV exceeds the ${maxRows} holding limit` }];
+  }
   const [header, ...rows] = lines;
   const columns = parseCsvLine(header);
   const missing = requiredColumns.filter((column) => !columns.includes(column));
@@ -75,6 +83,7 @@ export function validatePortfolioCsv(csv: string, constituents: Constituent[]): 
   const lookup = buildConstituentLookup(constituents);
   const accepted: AcceptedHolding[] = [];
   const errors: Array<{ line: number; error: string }> = [];
+  const seen = new Set<string>();
 
   for (const row of parsePortfolioCsv(csv)) {
     if (!row.ok) {
@@ -82,7 +91,13 @@ export function validatePortfolioCsv(csv: string, constituents: Constituent[]): 
       continue;
     }
 
-    const constituent = lookup.get(constituentKey(row.holding.cm_product_id, row.holding.variant_key));
+    const key = constituentKey(row.holding.cm_product_id, row.holding.variant_key);
+    if (seen.has(key)) {
+      errors.push({ line: row.line, error: "Duplicate product and variant" });
+      continue;
+    }
+    seen.add(key);
+    const constituent = lookup.get(key);
     if (!constituent) {
       errors.push({
         line: row.line,
@@ -106,12 +121,18 @@ export function validatePortfolioCsv(csv: string, constituents: Constituent[]): 
   return { accepted, errors };
 }
 
-export function summarizePortfolio(validation: PortfolioValidation, history: DailyIndexValue[]) {
+function benchmarkWindow(history: DailyIndexValue[], basisDate?: string) {
+  const eligible = basisDate ? history.filter((row) => row.value_date >= basisDate) : history;
+  return eligible.length > 0 ? eligible : history;
+}
+
+export function summarizePortfolio(validation: PortfolioValidation, history: DailyIndexValue[], basisDate?: string) {
   const latestMarketValue = validation.accepted.reduce((sum, item) => sum + item.market_value_eur, 0);
   const providedCostBasis = validation.accepted.reduce((sum, item) => sum + (item.cost_basis_value_eur ?? 0), 0);
   const hasCostBasis = validation.accepted.some((item) => item.cost_basis_value_eur !== null);
-  const first = history.at(0)?.index_value ?? 1000;
-  const latest = history.at(-1)?.index_value ?? first;
+  const window = benchmarkWindow(history, basisDate);
+  const first = window.at(0)?.index_value ?? 1000;
+  const latest = window.at(-1)?.index_value ?? first;
   const benchmarkReturn = latest / first - 1;
   const portfolioReturn = hasCostBasis && providedCostBasis > 0 ? latestMarketValue / providedCostBasis - 1 : null;
 
@@ -124,20 +145,36 @@ export function summarizePortfolio(validation: PortfolioValidation, history: Dai
   };
 }
 
-export function buildPortfolioComparison(history: DailyIndexValue[], validation: PortfolioValidation): PortfolioComparisonPoint[] {
-  const summary = summarizePortfolio(validation, history);
-  const first = history.at(0)?.index_value ?? 1000;
-  const targetReturn = summary.portfolioReturn ?? summary.benchmarkReturn;
+export function buildPortfolioComparison(
+  history: DailyIndexValue[],
+  validation: PortfolioValidation,
+  basisDate?: string
+): PortfolioComparisonPoint[] {
+  const window = benchmarkWindow(history, basisDate);
+  const firstRow = window.at(0);
+  const latestRow = window.at(-1);
+  if (!firstRow || !latestRow) return [];
+  const summary = summarizePortfolio(validation, history, basisDate);
+  const portfolioEnd = summary.portfolioReturn === null ? null : 1000 * (1 + summary.portfolioReturn);
+  const benchmarkEnd = (latestRow.index_value / firstRow.index_value) * 1000;
+  if (portfolioEnd === null) return [];
+  return [
+    { value_date: firstRow.value_date, portfolio: 1000, benchmark: 1000, relative_pp: 0 },
+    {
+      value_date: latestRow.value_date,
+      portfolio: Number(portfolioEnd.toFixed(2)),
+      benchmark: Number(benchmarkEnd.toFixed(2)),
+      relative_pp: Number(((portfolioEnd / benchmarkEnd - 1) * 100).toFixed(2))
+    }
+  ];
+}
 
-  return history.map((row, position) => {
-    const progress = history.length <= 1 ? 1 : position / (history.length - 1);
-    const benchmark = (row.index_value / first) * 1000;
-    const portfolio = 1000 * (1 + targetReturn * progress);
-    return {
-      value_date: row.value_date,
-      portfolio: Number(portfolio.toFixed(2)),
-      benchmark: Number(benchmark.toFixed(2)),
-      relative_pp: Number(((portfolio / benchmark - 1) * 100).toFixed(2))
-    };
-  });
+export function buildBenchmarkSeries(history: DailyIndexValue[], basisDate?: string) {
+  const window = benchmarkWindow(history, basisDate);
+  const first = window.at(0)?.index_value;
+  if (!first) return [];
+  return window.map((row) => ({
+    value_date: row.value_date,
+    benchmark: Number(((row.index_value / first) * 1000).toFixed(2))
+  }));
 }

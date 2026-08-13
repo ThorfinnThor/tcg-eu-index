@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   audit:
@@ -18,6 +18,7 @@ jobs:
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       R2_BUCKET: ${{ vars.R2_BUCKET || 'tcg-raw' }}
+      ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
@@ -35,6 +36,14 @@ jobs:
             --sample-rate 0.05 \
             --output archive-audit.json \
             --summary-output archive-audit.md
+      - name: Update aggregate public archive health
+        if: always()
+        run: |
+          if test -f archive-audit.json; then
+            uv run python scripts/update_public_archive_health.py \
+              --audit-report archive-audit.json \
+              --output apps/web/source-data/archive-health.json
+          fi
       - name: Publish audit summary
         if: always()
         run: |
@@ -52,5 +61,27 @@ jobs:
           path: |
             archive-audit.json
             archive-audit.md
+            apps/web/source-data/archive-health.json
           if-no-files-found: warn
           retention-days: 90
+      - name: Commit public archive health
+        if: always()
+        run: |
+          if git diff --quiet -- apps/web/source-data/archive-health.json; then
+            echo "Public archive health is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/web/source-data/archive-health.json
+          git commit -m "chore(audit): update public archive health"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Post audit digest
+        if: always()
+        env:
+          PIPELINE_STATUS: ${{ job.status }}
+        run: |
+          if test "$PIPELINE_STATUS" = "success"; then level="OK"; else level="CRITICAL"; fi
+          uv run python scripts/notify_pipeline.py --level "$level" \
+            --message "Weekly Cardmarket archive integrity audit: ${PIPELINE_STATUS}."

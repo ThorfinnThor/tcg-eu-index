@@ -95,6 +95,16 @@ export function ConstituentsTable({
   const groups = useMemo(() => groupRebalances(rebalances.rebalances, period), [period, rebalances.rebalances]);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedAsOf = params.get("asOf");
+    if (requestedAsOf && requestedAsOf >= minDate && requestedAsOf <= maxDate) {
+      setAsOf(requestedAsOf);
+    }
+    setSearch(params.get("q") ?? initialSearch);
+    setIncludeInactive(params.get("inactive") === "1" || initialIncludeInactive);
+  }, [initialIncludeInactive, initialSearch, maxDate, minDate]);
+
+  useEffect(() => {
     if (view !== "composition") return;
     const params = new URLSearchParams({ asOf });
     if (search.trim()) params.set("q", search.trim());

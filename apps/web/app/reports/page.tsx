@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { formatPct } from "@/components/Metric";
 import { RelatedPages } from "@/components/RelatedPages";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { getReports } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
@@ -22,7 +23,7 @@ export default async function ReportsPage() {
         <p className="text-sm text-amber">Human-reviewed weekly archive</p>
         <h1 className="mt-2 text-3xl font-semibold">Weekly reports</h1>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-paper/65">
-          Report records are generated from static JSON first, then marked published only after an editor review. Newsletter delivery is pluggable and disabled for the MVP.
+          Report records are generated from static JSON first, then marked published only after an editor review. Newsletter delivery is enabled only when a provider is configured on Vercel.
         </p>
       </div>
       <div className="mt-6 grid gap-4 md:grid-cols-[1fr_320px]">
@@ -66,25 +67,7 @@ export default async function ReportsPage() {
             ) : null}
           </div>
         </section>
-        <form className="surface p-5">
-          <h2 className="text-lg font-semibold">Email signup</h2>
-          <p className="mt-3 text-sm leading-6 text-paper/60">
-            Provider: {reportsPayload.newsletterProvider}. Signup is {reportsPayload.signupEnabled ? "enabled" : "disabled"} for this deployment.
-          </p>
-          <input
-            className="surface mt-4 w-full px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50"
-            type="email"
-            placeholder="you@example.com"
-            disabled={!reportsPayload.signupEnabled}
-          />
-          <button
-            className="mt-3 w-full rounded bg-amber px-3 py-2 text-sm font-semibold text-ink disabled:cursor-not-allowed disabled:opacity-40"
-            type="button"
-            disabled={!reportsPayload.signupEnabled}
-          >
-            Join
-          </button>
-        </form>
+        <NewsletterSignup enabled={reportsPayload.signupEnabled} provider={reportsPayload.newsletterProvider} />
       </div>
       <RelatedPages definitionId="reports" />
     </div>

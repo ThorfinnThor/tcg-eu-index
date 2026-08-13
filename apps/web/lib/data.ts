@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
 import { deriveRebalanceHistory } from "./constituents";
-import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
+import type { ArchiveHealthPayload, Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
 
@@ -211,6 +211,40 @@ export async function getDataQuality(): Promise<DataQualityPayload> {
       ],
       checks: [{ id: "fallback", label: "Fallback fixture mode", status: "warn", detail: "Public data export was not found." }],
       gaps: []
+    };
+  }
+}
+
+export async function getArchiveHealth(): Promise<ArchiveHealthPayload> {
+  try {
+    return await readJson<ArchiveHealthPayload>("archive-health/latest.json");
+  } catch {
+    return {
+      schemaVersion: 1,
+      generatedFor: null,
+      status: "pending_first_audit",
+      since: null,
+      until: null,
+      expectedDays: null,
+      manifestCount: null,
+      coverageRatio: null,
+      verifiedFileCount: null,
+      integrityErrorCount: null,
+      warningCount: null,
+      gapCount: null,
+      gaps: [],
+      storage: { bytes: null, freeTierBytes: 10_000_000_000, usageRatio: null, status: "pending" },
+      operations: {
+        billingMonth: null,
+        classA: { projected: null, freeTier: 1_000_000, usageRatio: null, status: "pending" },
+        classB: { projected: null, freeTier: 10_000_000, usageRatio: null, status: "pending" }
+      },
+      cutoverProjection: {
+        firstFullObservationDate: null,
+        firstEligibleEffectiveDate: null,
+        firstMonthlyRebalanceDate: null,
+        assumesNoGaps: true
+      }
     };
   }
 }

@@ -1,17 +1,94 @@
-name: report-future
+name: weekly-report-draft
 
 on:
+  schedule:
+    - cron: "0 7 * * 1"
   workflow_dispatch:
     inputs:
       week:
-        description: ISO week, for example 2026-W35
+        description: ISO week, for example 2026-W35; defaults to the previous UTC week
         required: false
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
-  report_future:
+  report:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
-      - name: MVP note
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: uv sync --all-packages
+      - run: npm ci --prefix apps/web
+      - name: Select report week
+        id: target
+        env:
+          REQUESTED_WEEK: ${{ inputs.week }}
         run: |
-          echo "Weekly report automation is intentionally parked for the MVP."
-          echo "Enable this after real daily data is flowing."
+          week="$REQUESTED_WEEK"
+          if test -z "$week"; then
+            week="$(date -u -d '7 days ago' +%G-W%V)"
+          fi
+          if ! printf '%s' "$week" | grep -Eq '^[0-9]{4}-W[0-9]{2}$'; then
+            echo "Invalid ISO week: $week" >&2
+            exit 1
+          fi
+          echo "week=$week" >> "$GITHUB_OUTPUT"
+      - name: Generate review draft
+        run: npm --prefix apps/web run reports:generate -- --week "${{ steps.target.outputs.week }}" --allow-empty
+      - name: Stop when no published indexes exist
+        id: changes
+        run: |
+          if git diff --quiet -- apps/web/source-data/reports docs/reports; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "No published index data is available; no draft was created." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Render report charts
+        if: steps.changes.outputs.available == 'true'
+        run: npm --prefix apps/web run reports:charts -- --week "${{ steps.target.outputs.week }}"
+      - name: Validate draft and production build
+        if: steps.changes.outputs.available == 'true'
+        run: |
+          npm --prefix apps/web run data:export
+          npm --prefix apps/web run data:validate
+          npm --prefix apps/web run test
+          npm --prefix apps/web run build
+      - name: Open or update review pull request
+        if: steps.changes.outputs.available == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEEK: ${{ steps.target.outputs.week }}
+        run: |
+          branch="automation/report-${WEEK}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add apps/web/source-data/reports/index.json "apps/web/source-data/report-assets/${WEEK}" docs/reports
+          git commit -m "report: draft ${WEEK}"
+          git push --force origin "$branch"
+          if gh pr view "$branch" >/dev/null 2>&1; then
+            gh pr edit "$branch" --title "Weekly report draft ${WEEK}" --body-file .github/report-pr-body.md
+          else
+            gh pr create --base main --head "$branch" --draft \
+              --title "Weekly report draft ${WEEK}" --body-file .github/report-pr-body.md
+          fi
+          echo "A draft pull request was created for human editorial review." >> "$GITHUB_STEP_SUMMARY"
+      - name: Post report failure
+        if: failure()
+        run: uv run python scripts/notify_pipeline.py --level CRITICAL --message "Weekly report draft workflow failed."

@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { formatPct } from "@/components/Metric";
-import { getReport } from "@/lib/data";
+import { getReport, getReports } from "@/lib/data";
 import { reportPageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
-export const dynamic = "force-dynamic";
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const reports = await getReports();
+  return reports.reports.map((report) => ({ week: report.week }));
+}
 
 export async function generateMetadata({ params }: { params: { week: string } }): Promise<Metadata> {
   const report = await getReport(params.week);
@@ -73,6 +79,15 @@ export default async function ReportPage({ params }: { params: { week: string } 
                 <div className="mt-1 font-semibold">{highlight.observations ?? "unavailable"}</div>
               </div>
             </div>
+            {highlight.chartPath ? (
+              <Image
+                className="mt-5 h-auto w-full border border-line"
+                src={highlight.chartPath}
+                alt={`${highlight.code} weekly index chart`}
+                width={1200}
+                height={630}
+              />
+            ) : null}
             {highlight.notableEvents?.length ? (
               <div className="mt-4">
                 <h3 className="text-sm font-semibold">Notable events</h3>

@@ -12,6 +12,8 @@ jobs:
   source_check:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    env:
+      ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
@@ -20,9 +22,15 @@ jobs:
           python-version: "3.12"
       - run: uv sync --all-packages
       - name: Validate official Cardmarket downloads
-        run: uv run --package tcg-eu-index-ingest python -m ingest.source_check | tee source-check.json
+        run: |
+          set -o pipefail
+          uv run --package tcg-eu-index-ingest python -m ingest.source_check | tee source-check.json
       - uses: actions/upload-artifact@v7
+        if: always()
         with:
           name: cardmarket-source-check-${{ github.run_id }}
           path: source-check.json
           retention-days: 14
+      - name: Post source-check failure
+        if: failure()
+        run: uv run python scripts/notify_pipeline.py --level CRITICAL --message "Daily official Cardmarket source/schema check failed."

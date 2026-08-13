@@ -17,8 +17,6 @@ GitHub repository
 Deferred until product validation:
 
 - Supabase master/admin database,
-- Discord alerts,
-- weekly report automation,
 - portfolio persistence.
 
 Activated data-collection extension:
@@ -27,6 +25,11 @@ Activated data-collection extension:
 - daily Cardmarket archive workflow,
 - deterministic private catalogue and price normalization,
 - weekly archive integrity audit.
+- aggregate public archive-health and readiness receipts,
+- Discord workflow digests and a manual delivery test,
+- weekly report drafts with human-reviewed pull-request publication,
+- optional newsletter delivery through a configured HTTPS provider,
+- browser-local portfolio CSV storage after index publication.
 
 Reasoning:
 

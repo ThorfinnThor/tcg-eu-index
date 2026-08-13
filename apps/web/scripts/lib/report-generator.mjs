@@ -33,6 +33,7 @@ export function weeklyIndexHighlight(index, history, week) {
   const direction = weeklyReturn >= 0 ? "rose" : "fell";
   return {
     code: index.code,
+    chartPath: `/reports/${week}/${index.code}.png`,
     headline: `${index.name} ${direction} ${Math.abs(weeklyReturn * 100).toFixed(2)}%`,
     weeklyReturn: Number(weeklyReturn.toFixed(8)),
     breadth: index.breadth,
@@ -71,6 +72,8 @@ export function reportMarkdown(report) {
     `- Index value: ${highlight.startValue.toFixed(2)} to ${highlight.endValue.toFixed(2)}`,
     `- Breadth: ${(highlight.breadth * 100).toFixed(0)}%`,
     `- Daily observations: ${highlight.observations}`,
+    "",
+    `![${highlight.code} weekly index chart](${highlight.chartPath})`,
     "",
     "Notable events:",
     "",

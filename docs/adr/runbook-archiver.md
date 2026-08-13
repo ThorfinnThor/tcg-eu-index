@@ -67,6 +67,16 @@ The manifest records checksums, byte sizes, source timestamps, fetch timestamps,
 
 The operation figures are deliberately labeled projections. The S3-compatible R2 API does not expose account billing counters; Cloudflare's dashboard remains authoritative. The watchdog uses the R2 Standard monthly free allocation documented in [Cloudflare's R2 pricing](https://developers.cloudflare.com/r2/pricing/), warns at 80% of those limits, and does not convert a cost warning into an archive-integrity failure.
 
+After every weekly audit, an aggregate archive-health receipt is committed and shown on `/data-quality`. The receipt contains no R2 object keys or source data. If the audit fails, the workflow still writes the receipt when possible, retains the full private audit artifact, and remains red.
+
+Test Discord delivery after adding or rotating the secret:
+
+1. Open **GitHub → Actions → discord-notification-test**.
+2. Select **Run workflow**, keep `main`, and confirm.
+3. Verify the run is green and the test message arrived in the intended Discord channel.
+
+Production notifications are best-effort. GitHub Actions remains the authoritative run status if Discord is unavailable.
+
 Replay normalization after a code or category-map change:
 
 ```bash

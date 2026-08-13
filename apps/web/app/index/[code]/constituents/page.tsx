@@ -4,12 +4,17 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConstituentsTable } from "@/components/ConstituentsTable";
 import { latestCompositionDate } from "@/lib/constituents";
-import { getConstituents, getIndex, getRebalanceHistory } from "@/lib/data";
+import { getConstituents, getIndex, getRebalanceHistory, getSearchIndex } from "@/lib/data";
 import type { IndexCode } from "@/lib/types";
 import { utilityPageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
-export const dynamic = "force-dynamic";
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const indexes = await getSearchIndex();
+  return indexes.map((index) => ({ code: index.id }));
+}
 
 export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
   const index = await getIndex(params.code);
@@ -23,13 +28,7 @@ export async function generateMetadata({ params }: { params: { code: string } })
   );
 }
 
-export default async function ConstituentsPage({
-  params,
-  searchParams
-}: {
-  params: { code: string };
-  searchParams: { asOf?: string; q?: string; inactive?: string };
-}) {
+export default async function ConstituentsPage({ params }: { params: { code: string } }) {
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (index.status !== "published") {
@@ -65,8 +64,6 @@ export default async function ConstituentsPage({
     getRebalanceHistory(params.code as IndexCode)
   ]);
   const maxDate = latestCompositionDate(constituents, index.history.at(-1)?.value_date ?? index.base_date);
-  const requestedAsOf = searchParams.asOf;
-  const asOf = requestedAsOf && requestedAsOf >= index.base_date && requestedAsOf <= maxDate ? requestedAsOf : maxDate;
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       <Breadcrumbs items={[
@@ -84,9 +81,9 @@ export default async function ConstituentsPage({
       <ConstituentsTable
         constituents={constituents}
         rebalances={rebalances}
-        initialAsOf={asOf}
-        initialSearch={searchParams.q ?? ""}
-        initialIncludeInactive={searchParams.inactive === "1"}
+        initialAsOf={maxDate}
+        initialSearch=""
+        initialIncludeInactive={false}
         minDate={index.base_date}
         maxDate={maxDate}
         targetSize={index.target_size}

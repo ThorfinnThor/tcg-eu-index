@@ -6,6 +6,7 @@ import { GET as comparePortfolio } from "../app/api/portfolios/[token]/vs/[code]
 import { GET as downloadHistory } from "../app/api/public/[code]/history.csv/route";
 
 describe("public API contracts", () => {
+  const token = "0123456789abcdef0123456789abcdef";
   it("returns status freshness with cache headers", async () => {
     const response = await getStatus();
     const payload = await response.json();
@@ -39,7 +40,7 @@ describe("public API contracts", () => {
       "999999,nonfoil,1,4"
     ].join("\n");
     const response = await uploadHoldings(new Request("http://localhost", { method: "PUT", body: csv }), {
-      params: { token: "contract-token" }
+      params: { token }
     });
     const payload = await response.json();
     expect(response.status).toBe(409);
@@ -48,13 +49,13 @@ describe("public API contracts", () => {
 
   it("rejects unpublished and unknown benchmark comparisons", async () => {
     const valid = await comparePortfolio(new Request("http://localhost"), {
-      params: { token: "contract-token", code: "OPEU100" }
+      params: { token, code: "OPEU100" }
     });
     expect(valid.status).toBe(409);
     expect(await valid.json()).toEqual({ error: "Benchmark has not been published" });
 
     const missing = await comparePortfolio(new Request("http://localhost"), {
-      params: { token: "contract-token", code: "UNKNOWN" }
+      params: { token, code: "UNKNOWN" }
     });
     expect(missing.status).toBe(404);
   });

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "generatedFor": null,
+  "status": "pending_first_audit",
+  "since": null,
+  "until": null,
+  "expectedDays": null,
+  "manifestCount": null,
+  "coverageRatio": null,
+  "verifiedFileCount": null,
+  "integrityErrorCount": null,
+  "warningCount": null,
+  "gapCount": null,
+  "gaps": [],
+  "storage": {
+    "bytes": null,
+    "freeTierBytes": 10000000000,
+    "usageRatio": null,
+    "status": "pending"
+  },
+  "operations": {
+    "billingMonth": null,
+    "classA": {
+      "projected": null,
+      "freeTier": 1000000,
+      "usageRatio": null,
+      "status": "pending"
+    },
+    "classB": {
+      "projected": null,
+      "freeTier": 10000000,
+      "usageRatio": null,
+      "status": "pending"
+    }
+  },
+  "cutoverProjection": {
+    "firstFullObservationDate": "2026-10-10",
+    "firstEligibleEffectiveDate": "2026-10-11",
+    "firstMonthlyRebalanceDate": "2026-11-01",
+    "assumesNoGaps": true
+  }
+}

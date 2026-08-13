@@ -94,6 +94,26 @@ const sourceQuality = await readSourceFile("data-quality.json");
 if (!Array.isArray(sourceQuality.limitations) || !Array.isArray(sourceQuality.checks) || !Array.isArray(sourceQuality.gaps)) {
   fail("source-data/data-quality.json must define limitations, checks, and gaps arrays");
 }
+const sourceArchiveHealth = await readSourceFile("archive-health.json");
+if (
+  sourceArchiveHealth.schemaVersion !== 1 ||
+  !["pending_first_audit", "healthy", "attention_required"].includes(sourceArchiveHealth.status) ||
+  !Array.isArray(sourceArchiveHealth.gaps) ||
+  typeof sourceArchiveHealth.storage !== "object" ||
+  typeof sourceArchiveHealth.operations !== "object" ||
+  typeof sourceArchiveHealth.cutoverProjection !== "object"
+) {
+  fail("source-data/archive-health.json has an invalid contract");
+}
+if (
+  sourceArchiveHealth.coverageRatio !== null &&
+  (typeof sourceArchiveHealth.coverageRatio !== "number" || sourceArchiveHealth.coverageRatio < 0 || sourceArchiveHealth.coverageRatio > 1)
+) {
+  fail("archive health coverageRatio must be null or between 0 and 1");
+}
+if (sourceArchiveHealth.gapCount !== null && sourceArchiveHealth.gapCount !== sourceArchiveHealth.gaps.length) {
+  fail("archive health gapCount does not match gaps");
+}
 if (typeof sourceQuality.datasetCompleteness !== "number" || sourceQuality.datasetCompleteness < 0 || sourceQuality.datasetCompleteness > 1) {
   fail("source-data/data-quality.json datasetCompleteness must be between 0 and 1");
 }
@@ -153,6 +173,17 @@ for (const report of sourceReports.reports) {
     fail(`${report.week} generated highlights require values and observation counts`);
   }
   if (report.status === "published" && !report.publishedAt) fail(`${report.week} is published without publishedAt`);
+  for (const highlight of report.indexHighlights) {
+    if (highlight.chartPath !== undefined) {
+      const expectedPath = `/reports/${report.week}/${highlight.code}.png`;
+      if (highlight.chartPath !== expectedPath) fail(`${report.week} has invalid chart path ${highlight.chartPath}`);
+      if (report.status === "published") {
+        await stat(path.join(sourceDataRoot, "report-assets", report.week, `${highlight.code}.png`)).catch(() => {
+          fail(`${report.week} is published without chart ${highlight.chartPath}`);
+        });
+      }
+    }
+  }
 }
 
 const generatedAt = new Date(manifest.generatedAt);
@@ -167,6 +198,10 @@ if (!Array.isArray(dataQuality.checks) || !Array.isArray(dataQuality.gaps)) {
 const readiness = await readJson("readiness/latest.json");
 if (JSON.stringify(readiness) !== JSON.stringify(sourceReadiness)) {
   fail("readiness/latest.json does not match its source contract");
+}
+const archiveHealth = await readJson("archive-health/latest.json");
+if (JSON.stringify(archiveHealth) !== JSON.stringify(sourceArchiveHealth)) {
+  fail("archive-health/latest.json does not match its source contract");
 }
 const reports = await readJson("reports/index.json");
 if (!Array.isArray(reports.reports)) fail("reports/index.json has invalid shape");

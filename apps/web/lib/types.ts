@@ -95,6 +95,46 @@ export type DataQualityPayload = {
   gaps: Array<{ date: string; game?: string; reason: string; detected_at?: string }>;
 };
 
+export type ArchiveHealthPayload = {
+  schemaVersion: 1;
+  generatedFor: string | null;
+  status: "pending_first_audit" | "healthy" | "attention_required";
+  since: string | null;
+  until: string | null;
+  expectedDays: number | null;
+  manifestCount: number | null;
+  coverageRatio: number | null;
+  verifiedFileCount: number | null;
+  integrityErrorCount: number | null;
+  warningCount: number | null;
+  gapCount: number | null;
+  gaps: Array<{ date: string; game: string | null; reason: string }>;
+  storage: {
+    bytes: number | null;
+    freeTierBytes: number;
+    usageRatio: number | null;
+    status: string;
+  };
+  operations: {
+    billingMonth: string | null;
+    classA: OperationBudget;
+    classB: OperationBudget;
+  };
+  cutoverProjection: {
+    firstFullObservationDate: string | null;
+    firstEligibleEffectiveDate: string | null;
+    firstMonthlyRebalanceDate: string | null;
+    assumesNoGaps: boolean;
+  };
+};
+
+type OperationBudget = {
+  projected: number | null;
+  freeTier: number;
+  usageRatio: number | null;
+  status: string;
+};
+
 export type IndexReadiness = {
   code: IndexCode;
   state: "pending_receipt" | "accumulating" | "eligible_for_human_review";
@@ -121,6 +161,7 @@ export type ReadinessPayload = {
 
 export type ReportHighlight = {
   code: IndexCode;
+  chartPath?: string;
   headline: string;
   weeklyReturn: number;
   breadth: number;
