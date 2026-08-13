@@ -6,19 +6,14 @@ import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { RelatedPages } from "@/components/RelatedPages";
 import { StructuredData } from "@/components/StructuredData";
-import { changes, getIndex, getReadiness, getSearchIndex, postInceptionHistory } from "@/lib/data";
+import { changes, getIndex, getReadiness, postInceptionHistory } from "@/lib/data";
 import { calculateIndexAnalytics } from "@/lib/index-analytics";
 import { pageMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 import { breadcrumbStructuredData, indexDatasetStructuredData } from "@/lib/structured-data";
 
 export const revalidate = 3600;
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-  const indexes = await getSearchIndex();
-  return indexes.map((index) => ({ code: index.id }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
   const index = await getIndex(params.code);
