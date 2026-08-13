@@ -132,6 +132,9 @@ if (
 ) {
   fail("source-data/readiness.json has an invalid top-level contract");
 }
+if (sourceReadiness.generatedFor !== null && !/^\d{4}-\d{2}-\d{2}$/.test(sourceReadiness.generatedFor)) {
+  fail("readiness generatedFor must be null or an ISO date");
+}
 const readinessCodes = new Set(sourceReadiness.indexes.map((item) => item.code));
 if (
   readinessCodes.size !== configuredIndexCodes.size ||
@@ -455,9 +458,9 @@ const exportedLatestDates = await Promise.all(indexes.map(async (index) => {
   const history = await readJson(`indexes/${index.id}/history.json`);
   return history.at(-1)?.value_date ?? null;
 }));
-const expectedLatestDate = exportedLatestDates.filter(Boolean).sort().at(-1) ?? null;
+const expectedLatestDate = sourceReadiness.generatedFor ?? exportedLatestDates.filter(Boolean).sort().at(-1) ?? null;
 if (statusPayload.last_snapshot_date !== expectedLatestDate || statusPayload.last_calc_date !== expectedLatestDate) {
-  fail("status latest dates do not match exported index history");
+  fail("status latest dates do not match readiness or exported index history");
 }
 
 const totalPublicJsonBytes = (manifest.files ?? []).reduce((total, file) => total + file.bytes, 0);
