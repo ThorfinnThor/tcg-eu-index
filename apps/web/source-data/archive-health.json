@@ -1,42 +1,42 @@
 {
-  "schemaVersion": 1,
-  "generatedFor": null,
-  "status": "pending_first_audit",
-  "since": null,
-  "until": null,
-  "expectedDays": null,
-  "manifestCount": null,
-  "coverageRatio": null,
-  "verifiedFileCount": null,
-  "integrityErrorCount": null,
-  "warningCount": null,
-  "gapCount": null,
-  "gaps": [],
-  "storage": {
-    "bytes": null,
-    "freeTierBytes": 10000000000,
-    "usageRatio": null,
-    "status": "pending"
+  "coverageRatio": 1.0,
+  "cutoverProjection": {
+    "assumesNoGaps": true,
+    "firstEligibleEffectiveDate": "2026-10-11",
+    "firstFullObservationDate": "2026-10-10",
+    "firstMonthlyRebalanceDate": "2026-11-01"
   },
+  "expectedDays": 4,
+  "gapCount": 0,
+  "gaps": [],
+  "generatedFor": "2026-08-13",
+  "integrityErrorCount": 0,
+  "manifestCount": 4,
   "operations": {
-    "billingMonth": null,
+    "billingMonth": "2026-08",
     "classA": {
-      "projected": null,
       "freeTier": 1000000,
-      "usageRatio": null,
-      "status": "pending"
+      "projected": 31000,
+      "status": "within_free_tier",
+      "usageRatio": 0.031
     },
     "classB": {
-      "projected": null,
       "freeTier": 10000000,
-      "usageRatio": null,
-      "status": "pending"
+      "projected": 124000,
+      "status": "within_free_tier",
+      "usageRatio": 0.0124
     }
   },
-  "cutoverProjection": {
-    "firstFullObservationDate": "2026-10-10",
-    "firstEligibleEffectiveDate": "2026-10-11",
-    "firstMonthlyRebalanceDate": "2026-11-01",
-    "assumesNoGaps": true
-  }
+  "schemaVersion": 1,
+  "since": "2026-08-10",
+  "status": "healthy",
+  "storage": {
+    "bytes": 55165440,
+    "freeTierBytes": 10000000000,
+    "status": "within_free_tier",
+    "usageRatio": 0.00551654
+  },
+  "until": "2026-08-13",
+  "verifiedFileCount": 3,
+  "warningCount": 0
 }
