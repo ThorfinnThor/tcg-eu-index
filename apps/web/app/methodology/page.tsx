@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function MethodologyPage() {
-  const markdown = await readFile(path.join(process.cwd(), "../../docs/methodology/v1.2.0.md"), "utf8").catch(
+  const markdown = await readFile(path.join(process.cwd(), "../../docs/methodology/v1.3.0.md"), "utf8").catch(
     () => "# Methodology\n\nMethodology document will be available after build packaging."
   );
   return (

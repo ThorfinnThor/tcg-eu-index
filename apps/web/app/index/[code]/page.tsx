@@ -6,7 +6,7 @@ import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { RelatedPages } from "@/components/RelatedPages";
 import { StructuredData } from "@/components/StructuredData";
-import { changes, getIndex, postInceptionHistory } from "@/lib/data";
+import { changes, getIndex, getReadiness, postInceptionHistory } from "@/lib/data";
 import { calculateIndexAnalytics } from "@/lib/index-analytics";
 import { pageMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
@@ -28,8 +28,9 @@ export async function generateMetadata({ params }: { params: { code: string } })
 }
 
 export default async function IndexPage({ params }: { params: { code: string } }) {
-  const index = await getIndex(params.code);
+  const [index, readiness] = await Promise.all([getIndex(params.code), getReadiness()]);
   if (!index) notFound();
+  const indexReadiness = readiness.indexes.find((item) => item.code === index.code);
   const siteUrl = getSiteUrl();
   const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
   const published = index.status === "published" && index.history.length > 0;
@@ -49,6 +50,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
           <div className="mt-4 flex flex-wrap gap-2 text-xs text-paper/55">
             <span className="chip border-amber text-amber">collecting data</span>
             <span className="chip">target {index.target_size} {memberLabel}</span>
+            <span className="chip">all Cardmarket Europe languages</span>
           </div>
         </div>
         <section className="mt-6 grid gap-4 md:grid-cols-3">
@@ -59,8 +61,16 @@ export default async function IndexPage({ params }: { params: { code: string } }
             </p>
           </div>
           <div className="surface p-5">
-            <div className="text-xs uppercase text-paper/45">Public index value</div>
-            <div className="mt-2 text-2xl font-semibold">Pending</div>
+            <div className="text-xs uppercase text-paper/45">Archive readiness</div>
+            <div className="mt-2 text-2xl font-semibold tabular-nums">
+              {indexReadiness?.availableArchiveDays ?? "Pending"}
+              {indexReadiness ? ` / ${indexReadiness.requiredLookbackDays} days` : ""}
+            </div>
+            <div className="mt-2 text-xs text-paper/45">
+              {indexReadiness?.daysRemaining == null
+                ? "Waiting for the next daily readiness receipt."
+                : `${indexReadiness.daysRemaining} archive days still required.`}
+            </div>
             <Link className="mt-5 inline-block text-sm font-semibold text-amber hover:text-paper" href={`/index/${index.code}/constituents`}>
               Constituent status
             </Link>
@@ -102,6 +112,7 @@ export default async function IndexPage({ params }: { params: { code: string } }
           <div className="mt-3 flex flex-wrap gap-2 text-xs text-paper/50">
             <span className="chip">Repo-managed MVP data</span>
             <span className="chip">Latest calculation {latest?.value_date ?? "pending"}</span>
+            <span className="chip">All Cardmarket Europe languages</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">

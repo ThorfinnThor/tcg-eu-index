@@ -3,6 +3,7 @@
 European listing-price indexes for ten active trading card games under development. Public values remain unavailable while the Cardmarket observation history accumulates.
 
 Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
+The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
 
 ## Local development
 
@@ -57,6 +58,8 @@ uv run python scripts/verify_archive.py \
 The audit includes archive integrity, exact object-storage usage, conservative R2 operation projections, and per-index readiness for the eventual human cutover review.
 
 No fixture index values or constituents are published. Production values remain pending until enough verified daily snapshots exist for the methodology's observation windows and the cutover review passes.
+
+Each new daily calculation also updates a small aggregate readiness receipt for the static site. It contains archive-day counts and gate states only, never card prices. After all gates pass, prepare an isolated review candidate with `scripts/prepare_cutover.py`; the command cannot write into the public source directories and never publishes automatically.
 
 ## Private normalization
 

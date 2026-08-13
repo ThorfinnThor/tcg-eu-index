@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 1,
+  "generatedFor": null,
+  "methodologyVersion": "1.3.0",
+  "state": "collecting",
+  "publicationStatus": "blocked_until_human_cutover",
+  "humanReviewRequired": true,
+  "source": "awaiting-next-daily-shadow-receipt",
+  "indexes": [
+    {
+      "code": "MTEU500",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 500,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "MTEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "YGEU250",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 250,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "YGEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "OPEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "OPEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "PKEU250",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 250,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "PKEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "DBSEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "DBSEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "FABEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "FABEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "DGEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "DGEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "LCEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "LCEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "SWUEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "SWUEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "RBEU100",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 100,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    },
+    {
+      "code": "RBEUSLD",
+      "state": "pending_receipt",
+      "availableArchiveDays": null,
+      "requiredLookbackDays": 60,
+      "daysRemaining": null,
+      "selectedConstituents": null,
+      "targetSize": 25,
+      "languageScope": "all-cardmarket-europe-languages",
+      "gates": {
+        "snapshot_verified": false,
+        "lookback_complete": false,
+        "target_size_filled": false,
+        "language_scope_resolved": true,
+        "shadow_calculation_ready": false
+      },
+      "blockers": [
+        "daily_readiness_receipt_pending"
+      ]
+    }
+  ]
+}

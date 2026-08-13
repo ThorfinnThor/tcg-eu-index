@@ -95,6 +95,30 @@ export type DataQualityPayload = {
   gaps: Array<{ date: string; game?: string; reason: string; detected_at?: string }>;
 };
 
+export type IndexReadiness = {
+  code: IndexCode;
+  state: "pending_receipt" | "accumulating" | "eligible_for_human_review";
+  availableArchiveDays: number | null;
+  requiredLookbackDays: number;
+  daysRemaining: number | null;
+  selectedConstituents: number | null;
+  targetSize: number;
+  languageScope: "all-cardmarket-europe-languages";
+  gates: Record<string, boolean>;
+  blockers: string[];
+};
+
+export type ReadinessPayload = {
+  schemaVersion: 1;
+  generatedFor: string | null;
+  methodologyVersion: string;
+  state: "collecting" | "eligible_for_human_review";
+  publicationStatus: "blocked_until_human_cutover";
+  humanReviewRequired: true;
+  source: string;
+  indexes: IndexReadiness[];
+};
+
 export type ReportHighlight = {
   code: IndexCode;
   headline: string;

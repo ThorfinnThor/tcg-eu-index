@@ -6,6 +6,8 @@ from typing import Any
 
 import yaml
 
+ALL_CARDMARKET_EUROPE_LANGUAGES = "ALL_CARDMARKET_EUROPE"
+
 
 @dataclass(frozen=True)
 class IndexDefinition:
@@ -18,6 +20,12 @@ class IndexDefinition:
     base_value: float
     status: str
     language_scope: list[str]
+
+    @property
+    def language_scope_status(self) -> str:
+        if self.language_scope == [ALL_CARDMARKET_EUROPE_LANGUAGES]:
+            return "resolved_all_cardmarket_europe_languages"
+        return "pending_source_field"
 
 
 @dataclass(frozen=True)

@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
 import { deriveRebalanceHistory } from "./constituents";
-import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
+import type { Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
 
@@ -211,6 +211,23 @@ export async function getDataQuality(): Promise<DataQualityPayload> {
       ],
       checks: [{ id: "fallback", label: "Fallback fixture mode", status: "warn", detail: "Public data export was not found." }],
       gaps: []
+    };
+  }
+}
+
+export async function getReadiness(): Promise<ReadinessPayload> {
+  try {
+    return await readJson<ReadinessPayload>("readiness/latest.json");
+  } catch {
+    return {
+      schemaVersion: 1,
+      generatedFor: null,
+      methodologyVersion: "unknown",
+      state: "collecting",
+      publicationStatus: "blocked_until_human_cutover",
+      humanReviewRequired: true,
+      source: "fallback",
+      indexes: []
     };
   }
 }

@@ -350,12 +350,14 @@ def _archive_calendar(
             continue
         if manifest_date > run_date:
             continue
-        dates.append(manifest_date)
         price_file = next(
             (item for item in manifest.files if item.game == game and item.kind == "priceguide"),
             None,
         )
-        if price_file is not None and price_file.unchanged_from_previous:
+        if price_file is None:
+            continue
+        dates.append(manifest_date)
+        if price_file.unchanged_from_previous:
             unchanged.add(manifest_date)
     if not dates:
         dates = sorted(set(prices["value_date"].to_list()))
@@ -490,7 +492,7 @@ def run_calc(
                 "latest_analytics_date": analytics[-1].value_date if analytics else None,
                 "latest_rebalance": latest_rebalance.effective_date if latest_rebalance else None,
                 "language_scope": definition.language_scope,
-                "language_scope_status": "pending_source_field",
+                "language_scope_status": definition.language_scope_status,
                 "public_export": "blocked_until_cutover_review",
             }
         )

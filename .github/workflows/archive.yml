@@ -82,6 +82,13 @@ jobs:
           set -o pipefail
           uv run --package tcg-eu-index-engine python -m indexengine.calc \
             --date "${{ inputs.run_date || 'today' }}" | tee calc-result.json
+      - name: Update aggregate public readiness receipt
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          uv run python scripts/update_public_readiness.py \
+            --calc-result calc-result.json \
+            --manifest data/manifest-latest.json \
+            --output apps/web/source-data/readiness.json
       - name: Retain pipeline receipt
         uses: actions/upload-artifact@v7
         with:
@@ -91,16 +98,17 @@ jobs:
             normalize-result.json
             calc-result.json
             data/manifest-latest.json
+            apps/web/source-data/readiness.json
           retention-days: 30
       - name: Commit archive heartbeat
         run: |
-          if git diff --quiet -- data/manifest-latest.json; then
+          if git diff --quiet -- data/manifest-latest.json apps/web/source-data/readiness.json; then
             echo "Archive already recorded; no heartbeat change."
             exit 0
           fi
           archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/manifest-latest.json
+          git add data/manifest-latest.json apps/web/source-data/readiness.json
           git commit -m "chore(archive): ${archive_date}"
           git push origin HEAD:main

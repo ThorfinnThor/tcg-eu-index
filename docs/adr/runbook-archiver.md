@@ -79,6 +79,21 @@ Each successful game/day produces `derived/ingest_runs/YYYY-MM-DD-<game>.json`. 
 
 Each successful calculation produces `derived/calc_runs/YYYY-MM-DD.json`. An `accumulating` result is expected before the full lookback and target-size gates pass. It is not a pipeline failure and does not publish shadow values to the web application.
 
+The first successful calculation for a date also writes `apps/web/source-data/readiness.json` from the aggregate calculation receipt. The heartbeat commit includes this file. It exposes only archive-day counts, target counts, and pass/fail gates; no raw or normalized price is copied into the repository.
+
+## Cutover Rehearsal
+
+The review tool can be exercised before launch. It requires a successful archive-audit JSON file and writes only into a new, empty review directory:
+
+```bash
+uv run python scripts/prepare_cutover.py \
+  --date YYYY-MM-DD \
+  --audit-report archive-audit.json \
+  --output-root work/cutover/YYYY-MM-DD
+```
+
+Before all gates pass, the command exits non-zero and writes only `cutover-review.json` with the blockers. Once every gate passes, it additionally creates a checksummed `candidate/` tree containing aggregate history, constituent lifecycle data, rebalances, analytics, and metadata patches. The tool refuses output paths inside `apps/web/source-data` and `apps/web/public/data`. It never changes an index to `published`; human sign-off and a separate reviewed commit remain mandatory.
+
 ## Missed Day
 
 Cardmarket daily downloads are point-in-time. A missed day is treated as a permanent incident:

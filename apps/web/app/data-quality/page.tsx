@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
-import { getDataQuality, getManifest, getStatus } from "@/lib/data";
+import { getDataQuality, getManifest, getReadiness, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessTextClass } from "@/lib/freshness";
 import { pageMetadata } from "@/lib/seo";
 
@@ -20,7 +20,12 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function DataQualityPage() {
-  const [quality, status, manifest] = await Promise.all([getDataQuality(), getStatus(), getManifest()]);
+  const [quality, status, manifest, readiness] = await Promise.all([
+    getDataQuality(),
+    getStatus(),
+    getManifest(),
+    getReadiness()
+  ]);
   const freshness = assessFreshness(status.last_snapshot_date);
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -79,6 +84,54 @@ export default async function DataQualityPage() {
                 <td className="px-4 py-3 text-paper">{check.label}</td>
                 <td className="px-4 py-3"><span className={`chip ${statusClass(check.status)}`}>{check.status}</span></td>
                 <td className="px-4 py-3 text-paper/65">{check.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="surface mt-6 overflow-x-auto">
+        <div className="border-b border-line px-5 py-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-lg font-semibold">Index readiness</h2>
+            <span className="text-xs text-paper/45">
+              Receipt {readiness.generatedFor ?? "pending"} · Methodology {readiness.methodologyVersion}
+            </span>
+          </div>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/60">
+            This surface contains aggregate gate results only. Even a fully eligible index still requires human review before publication.
+          </p>
+        </div>
+        <table className="w-full min-w-[840px] border-collapse text-sm">
+          <thead className="text-left text-paper/50">
+            <tr>
+              <th className="px-4 py-3">Index</th>
+              <th className="px-4 py-3">State</th>
+              <th className="px-4 py-3 text-right">Archive</th>
+              <th className="px-4 py-3 text-right">Remaining</th>
+              <th className="px-4 py-3 text-right">Selection</th>
+              <th className="px-4 py-3">Open gates</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-line">
+            {readiness.indexes.map((item) => (
+              <tr key={item.code}>
+                <td className="px-4 py-3 text-paper">{item.code}</td>
+                <td className="px-4 py-3">
+                  <span className={`chip ${item.state === "eligible_for_human_review" ? "border-teal text-teal" : "border-amber text-amber"}`}>
+                    {item.state.replaceAll("_", " ")}
+                  </span>
+                </td>
+                <td className="px-4 py-3 text-right tabular-nums">
+                  {item.availableArchiveDays ?? "pending"} / {item.requiredLookbackDays}
+                </td>
+                <td className="px-4 py-3 text-right tabular-nums">{item.daysRemaining ?? "pending"}</td>
+                <td className="px-4 py-3 text-right tabular-nums">
+                  {item.selectedConstituents ?? "pending"} / {item.targetSize}
+                </td>
+                <td className="px-4 py-3 text-paper/55">
+                  {item.blockers.length ? item.blockers.join(", ").replaceAll("_", " ") : "Human review"}
+                </td>
               </tr>
             ))}
           </tbody>

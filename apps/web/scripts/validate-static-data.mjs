@@ -104,6 +104,34 @@ if (!Array.isArray(sourceReports.reports)) {
 const reportWeeks = new Set();
 const reportIds = new Set();
 const configuredIndexCodes = new Set(sourceData.indexes.map((index) => index.code));
+const sourceReadiness = await readSourceFile("readiness.json");
+if (
+  sourceReadiness.schemaVersion !== 1 || sourceReadiness.methodologyVersion !== sourceData.methodologyVersion ||
+  sourceReadiness.publicationStatus !== "blocked_until_human_cutover" || sourceReadiness.humanReviewRequired !== true ||
+  !["collecting", "eligible_for_human_review"].includes(sourceReadiness.state) || !Array.isArray(sourceReadiness.indexes)
+) {
+  fail("source-data/readiness.json has an invalid top-level contract");
+}
+const readinessCodes = new Set(sourceReadiness.indexes.map((item) => item.code));
+if (
+  readinessCodes.size !== configuredIndexCodes.size ||
+  [...configuredIndexCodes].some((code) => !readinessCodes.has(code))
+) {
+  fail("readiness indexes do not match configured indexes");
+}
+for (const item of sourceReadiness.indexes) {
+  if (
+    !["pending_receipt", "accumulating", "eligible_for_human_review"].includes(item.state) ||
+    !Number.isInteger(item.requiredLookbackDays) || !Number.isInteger(item.targetSize) ||
+    (item.availableArchiveDays !== null && !Number.isInteger(item.availableArchiveDays)) ||
+    (item.daysRemaining !== null && !Number.isInteger(item.daysRemaining)) ||
+    (item.selectedConstituents !== null && !Number.isInteger(item.selectedConstituents)) ||
+    item.languageScope !== "all-cardmarket-europe-languages" ||
+    typeof item.gates !== "object" || item.gates === null || !Array.isArray(item.blockers)
+  ) {
+    fail(`invalid readiness item: ${JSON.stringify(item)}`);
+  }
+}
 for (const report of sourceReports.reports) {
   if (!/^\d{4}-W\d{2}$/.test(report.week) || !["draft", "published"].includes(report.status)) {
     fail(`invalid report identity: ${JSON.stringify(report)}`);
@@ -135,6 +163,10 @@ if (!Array.isArray(indexes) || indexes.length === 0) fail("search/indexes.json i
 const dataQuality = await readJson("data-quality/latest.json");
 if (!Array.isArray(dataQuality.checks) || !Array.isArray(dataQuality.gaps)) {
   fail("data-quality/latest.json has invalid shape");
+}
+const readiness = await readJson("readiness/latest.json");
+if (JSON.stringify(readiness) !== JSON.stringify(sourceReadiness)) {
+  fail("readiness/latest.json does not match its source contract");
 }
 const reports = await readJson("reports/index.json");
 if (!Array.isArray(reports.reports)) fail("reports/index.json has invalid shape");

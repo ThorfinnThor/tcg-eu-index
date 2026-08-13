@@ -255,8 +255,13 @@ def audit_archive(
         )
         for code in index_codes
     ]
-    first_full_observation = start + timedelta(days=required_lookback_days - 1)
-    first_eligible_effective_date = start + timedelta(days=required_lookback_days)
+    latest_game_inception = max(game_inceptions.values())
+    first_full_observation = latest_game_inception + timedelta(
+        days=required_lookback_days - 1
+    )
+    first_eligible_effective_date = latest_game_inception + timedelta(
+        days=required_lookback_days
+    )
     automated_ready = not errors and all(
         item["state"] == "eligible_for_human_review" for item in readiness
     )

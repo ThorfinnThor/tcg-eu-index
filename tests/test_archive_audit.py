@@ -131,6 +131,8 @@ def test_archive_audit_applies_per_game_inception_dates(tmp_path: Path) -> None:
 
     assert report["status"] == "pass"
     assert report["game_inceptions"]["magic"] == "2026-07-21"
+    assert report["cutover"]["first_full_observation_date_if_gapless"] == "2026-09-18"
+    assert report["cutover"]["first_monthly_rebalance_date_if_gapless"] == "2026-10-01"
 
 
 def test_archive_audit_reports_malformed_manifest_metadata(tmp_path: Path) -> None:

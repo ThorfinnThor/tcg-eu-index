@@ -74,6 +74,7 @@ const generatedAt = new Date().toISOString();
 const fileStats = [];
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
 const dataQuality = await readSourceFile("data-quality.json");
+const readiness = await readSourceFile("readiness.json");
 const reports = await readSourceFile("reports/index.json");
 const indexes = await Promise.all(
   sourceData.indexes.map(async (index) => {
@@ -106,12 +107,12 @@ const status = {
   dataset_version: sourceData.datasetVersion,
   generated_at: generatedAt,
   source: sourceData.source,
-  last_snapshot_date: indexes
+  last_snapshot_date: readiness.generatedFor ?? indexes
     .map((index) => index.history.at(-1)?.value_date)
     .filter(Boolean)
     .sort()
     .at(-1) ?? null,
-  last_calc_date: indexes
+  last_calc_date: readiness.generatedFor ?? indexes
     .map((index) => index.history.at(-1)?.value_date)
     .filter(Boolean)
     .sort()
@@ -126,6 +127,7 @@ const status = {
 
 fileStats.push(await writeJson("status/latest.json", status));
 fileStats.push(await writeJson("data-quality/latest.json", dataQuality));
+fileStats.push(await writeJson("readiness/latest.json", readiness));
 fileStats.push(await writeJson("reports/index.json", {
   ...reports,
   reports: reports.reports.filter((report) => report.status === "published")

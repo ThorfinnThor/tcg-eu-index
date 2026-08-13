@@ -22,7 +22,8 @@ def render(payload: dict[object, object]) -> str:
     for item in payload["indexes"]:  # type: ignore[index]
         lines.append(
             f"- `{item['code']}`: {item['name']} "
-            f"({item['game_key']}, {item['universe']}, N={item['target_size']})"
+            f"({item['game_key']}, {item['universe']}, N={item['target_size']}, "
+            f"languages={','.join(item['language_scope'])})"
         )
     return "\n".join(lines) + "\n"
 

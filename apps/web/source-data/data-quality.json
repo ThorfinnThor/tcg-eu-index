@@ -20,6 +20,10 @@
       "body": "After publication, public files will expose derived index values, summaries, constituents, status, and reports only."
     },
     {
+      "title": "Language coverage",
+      "body": "Each index includes every language represented in the official Cardmarket Europe catalogue. The source files do not provide a reliable language field, so no unsupported EN/DE-only claim is made."
+    },
+    {
       "title": "Carry-forward rule",
       "body": "Missing constituent observations may be carried forward for a limited window and are counted in the public status surface."
     }
@@ -42,6 +46,12 @@
       "label": "Cardmarket source confirmation",
       "status": "pass",
       "detail": "Official price-guide and catalogue URLs for all ten configured games are verified by a scheduled schema and coverage check."
+    },
+    {
+      "id": "language-universe",
+      "label": "Language universe",
+      "status": "pass",
+      "detail": "The methodology includes all languages represented in Cardmarket Europe and does not depend on an unavailable language field."
     },
     {
       "id": "manual-mvp-cadence",

@@ -9,10 +9,11 @@ import pytest
 from core.r2 import LocalObjectStore
 from core.settings import Settings
 from indexengine.analytics import calculate_analytics
-from indexengine.calc import Rebalance, calculate_chain_linked, run_calc
+from indexengine.calc import Rebalance, _archive_calendar, calculate_chain_linked, run_calc
 from indexengine.methodology import IndexDefinition, Methodology
 from indexengine.public_export import build_public_membership_contract
 from indexengine.selection import Constituent, RemovedConstituent, select_constituents
+from ingest.manifest import Manifest, ManifestFile
 
 
 def methodology(**overrides: object) -> Methodology:
@@ -279,6 +280,44 @@ def settings() -> Settings:
         supabase_anon_key="",
         alert_discord_webhook=None,
     )
+
+
+def test_archive_calendar_counts_only_days_containing_the_game(tmp_path: Path) -> None:
+    store = LocalObjectStore(tmp_path / "r2")
+    first_day = date(2026, 8, 10)
+    second_day = first_day + timedelta(days=1)
+
+    def price_file(game: str, value_date: date, unchanged: bool = False) -> ManifestFile:
+        return ManifestFile(
+            game=game,
+            kind="priceguide",
+            key=f"cardmarket/priceguide/{game}/{value_date.isoformat()}.json.gz",
+            sha256_uncompressed="0" * 64,
+            size_uncompressed=1,
+            fetched_at=f"{value_date.isoformat()}T00:00:00+00:00",
+            headers={},
+            unchanged_from_previous=unchanged,
+        )
+
+    store.write_bytes(
+        f"manifests/{first_day.isoformat()}.json",
+        Manifest(first_day.isoformat(), [price_file("onepiece", first_day)]).to_json_bytes(),
+        "application/json",
+    )
+    store.write_bytes(
+        f"manifests/{second_day.isoformat()}.json",
+        Manifest(
+            second_day.isoformat(),
+            [price_file("onepiece", second_day), price_file("pokemon", second_day, True)],
+        ).to_json_bytes(),
+        "application/json",
+    )
+    prices = pl.DataFrame({"value_date": [second_day]})
+
+    dates, unchanged = _archive_calendar(store, "pokemon", second_day, prices)
+
+    assert dates == [second_day]
+    assert unchanged == {second_day}
 
 
 def test_shadow_run_is_private_accumulating_and_idempotent(tmp_path: Path) -> None:
