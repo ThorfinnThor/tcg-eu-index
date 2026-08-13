@@ -4,17 +4,12 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConstituentsTable } from "@/components/ConstituentsTable";
 import { latestCompositionDate } from "@/lib/constituents";
-import { getConstituents, getIndex, getRebalanceHistory, getSearchIndex } from "@/lib/data";
+import { getConstituents, getIndex, getRebalanceHistory } from "@/lib/data";
 import type { IndexCode } from "@/lib/types";
 import { utilityPageMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-  const indexes = await getSearchIndex();
-  return indexes.map((index) => ({ code: index.id }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
   const index = await getIndex(params.code);
