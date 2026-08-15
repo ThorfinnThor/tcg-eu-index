@@ -1,16 +1,16 @@
 {
-  "generatedFor": "2026-08-14",
+  "generatedFor": "2026-08-15",
   "humanReviewRequired": true,
   "indexes": [
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "MTEU500",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -25,14 +25,14 @@
       "targetSize": 500
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "MTEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -47,14 +47,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "YGEU250",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -69,14 +69,14 @@
       "targetSize": 250
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "YGEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -91,14 +91,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 5,
+      "availableArchiveDays": 6,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "OPEU100",
-      "daysRemaining": 55,
+      "daysRemaining": 54,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -113,14 +113,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 5,
+      "availableArchiveDays": 6,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "OPEUSLD",
-      "daysRemaining": 55,
+      "daysRemaining": 54,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -135,14 +135,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 5,
+      "availableArchiveDays": 6,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "PKEU250",
-      "daysRemaining": 55,
+      "daysRemaining": 54,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -157,14 +157,14 @@
       "targetSize": 250
     },
     {
-      "availableArchiveDays": 5,
+      "availableArchiveDays": 6,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "PKEUSLD",
-      "daysRemaining": 55,
+      "daysRemaining": 54,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -179,14 +179,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "DBSEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -201,14 +201,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "DBSEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -223,14 +223,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "FABEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -245,14 +245,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "FABEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -267,14 +267,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "DGEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -289,14 +289,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "DGEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -311,14 +311,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "LCEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -333,14 +333,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "LCEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -355,14 +355,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "SWUEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -377,14 +377,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "SWUEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -399,14 +399,14 @@
       "targetSize": 25
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "RBEU100",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
@@ -421,14 +421,14 @@
       "targetSize": 100
     },
     {
-      "availableArchiveDays": 3,
+      "availableArchiveDays": 4,
       "blockers": [
         "lookback_complete",
         "target_size_filled",
         "shadow_calculation_ready"
       ],
       "code": "RBEUSLD",
-      "daysRemaining": 57,
+      "daysRemaining": 56,
       "gates": {
         "language_scope_resolved": true,
         "lookback_complete": false,
