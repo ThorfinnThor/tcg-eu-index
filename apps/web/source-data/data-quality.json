@@ -1,64 +1,58 @@
 {
-  "datasetCompleteness": 0,
-  "sourceCoverage": "Private Cardmarket archive accumulating; no public index dataset",
-  "licensingPosture": "derived-aggregates-only",
-  "limitations": [
-    {
-      "title": "Listing-price basis",
-      "body": "Benchmarks use daily guide-style listing prices, not executed transaction prices."
-    },
-    {
-      "title": "Index publication pending",
-      "body": "Official Cardmarket downloads are archived and checked daily. No index values, constituents, returns, or rankings are published until the required history and cutover review are complete."
-    },
-    {
-      "title": "Internal validation only",
-      "body": "Synthetic fixtures may be used in automated software tests, but they are excluded from every public data export and user-facing calculation."
-    },
-    {
-      "title": "No raw price exposure",
-      "body": "After publication, public files will expose derived index values, summaries, constituents, status, and reports only."
-    },
-    {
-      "title": "Language coverage",
-      "body": "Each index includes every language represented in the official Cardmarket Europe catalogue. The source files do not provide a reliable language field, so no unsupported EN/DE-only claim is made."
-    },
-    {
-      "title": "Carry-forward rule",
-      "body": "Missing constituent observations may be carried forward for a limited window and are counted in the public status surface."
-    }
-  ],
   "checks": [
     {
-      "id": "manifest-checksums",
-      "label": "Manifest checksums",
-      "status": "pass",
-      "detail": "Every exported public JSON file is listed with a SHA-256 checksum."
+      "detail": "Every exported preview is verified against its private calculation manifest before repository files are written.",
+      "id": "preview-output-checksums",
+      "label": "Preview output checksums",
+      "status": "pass"
     },
     {
-      "id": "static-json-contract",
-      "label": "Static JSON contract",
-      "status": "pass",
-      "detail": "The first page load reads generated static files and does not require Supabase."
+      "detail": "Preview calculations use a dedicated R2 prefix and preview data state.",
+      "id": "official-history-separation",
+      "label": "Official history separation",
+      "status": "pass"
     },
     {
+      "detail": "Official price-guide and catalogue downloads are archived and schema-checked for all configured games.",
       "id": "cardmarket-source-confirmation",
       "label": "Cardmarket source confirmation",
-      "status": "pass",
-      "detail": "Official price-guide and catalogue URLs for all ten configured games are verified by a scheduled schema and coverage check."
+      "status": "pass"
     },
     {
-      "id": "language-universe",
-      "label": "Language universe",
-      "status": "pass",
-      "detail": "The methodology includes all languages represented in Cardmarket Europe and does not depend on an unavailable language field."
-    },
-    {
-      "id": "manual-mvp-cadence",
-      "label": "Public index publication",
-      "status": "pending",
-      "detail": "No public index dataset exists yet. Publication requires sufficient archived history and a successful human cutover review."
+      "detail": "The 60-day lookback, target-size gates, and human cutover review remain required for official publication.",
+      "id": "official-cutover",
+      "label": "Official index publication",
+      "status": "pending"
     }
   ],
-  "gaps": []
+  "datasetCompleteness": 1.0,
+  "gaps": [],
+  "licensingPosture": "derived-preview-contract",
+  "limitations": [
+    {
+      "body": "Provisional index based on the Cardmarket history available so far. Composition and index values may change materially during the 60-day observation period. This is not the official index and is not investment advice.",
+      "title": "Preview index"
+    },
+    {
+      "body": "Preview observations are retained as a labelled preparation phase. They are not silently merged into the official history after the 60-day review and human cutover.",
+      "title": "Official history remains separate"
+    },
+    {
+      "body": "Benchmarks and constituent reference prices use daily guide-style listing prices, not executed transaction prices.",
+      "title": "Listing-price basis"
+    },
+    {
+      "body": "Preview membership is recalculated daily from the history available at that time and may change more often than the official monthly rebalance schedule.",
+      "title": "Daily provisional composition"
+    },
+    {
+      "body": "Each index includes every language represented in the official Cardmarket Europe catalogue; the source has no reliable language field.",
+      "title": "Language coverage"
+    },
+    {
+      "body": "Missing constituent observations may be carried forward for a limited window and are counted in the public status surface.",
+      "title": "Carry-forward rule"
+    }
+  ],
+  "sourceCoverage": "20 of 20 indexes expose Cardmarket-derived preview data"
 }
