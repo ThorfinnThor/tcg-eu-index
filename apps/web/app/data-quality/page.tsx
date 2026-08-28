@@ -147,7 +147,7 @@ export default async function DataQualityPage() {
             </span>
           </div>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/60">
-            This surface contains aggregate gate results only. Even a fully eligible index still requires human review before publication.
+            This surface contains the official launch gates. Preview publication does not waive them; even a fully eligible index still requires human review before it becomes official.
           </p>
         </div>
         <table className="w-full min-w-[840px] border-collapse text-sm">

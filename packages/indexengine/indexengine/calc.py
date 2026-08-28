@@ -5,7 +5,7 @@ import logging
 import math
 import os
 from dataclasses import asdict, dataclass
-from datetime import date
+from datetime import date, timedelta
 from io import BytesIO
 from pathlib import Path
 from typing import Any
@@ -297,6 +297,52 @@ def monthly_rebalances(
     return rebalances
 
 
+def daily_preview_rebalances(
+    prices: pl.DataFrame,
+    products: pl.DataFrame,
+    definition: IndexDefinition,
+    methodology: Methodology,
+    calendar_dates: list[date],
+    existing: list[Rebalance] | None = None,
+) -> list[Rebalance]:
+    """Build provisional daily selections without weakening official launch gates."""
+    rebalances = sorted(existing or [], key=lambda item: item.effective_date)
+    incumbents = {
+        item.identity for item in rebalances[-1].constituents
+    } if rebalances else set()
+    latest_existing = date.fromisoformat(rebalances[-1].effective_date) if rebalances else None
+    official_start = date.fromisoformat(definition.base_date)
+
+    for effective_date in sorted(set(calendar_dates)):
+        if effective_date < official_start or (
+            latest_existing is not None and effective_date <= latest_existing
+        ):
+            continue
+        lookback_start = effective_date - timedelta(days=methodology.selection_lookback_days)
+        observed_days = sum(
+            lookback_start <= observed_date < effective_date
+            for observed_date in calendar_dates
+        )
+        if observed_days <= 0:
+            continue
+        selection = select_constituents(
+            prices,
+            products,
+            definition,
+            methodology,
+            effective_date,
+            incumbents,
+            expected_days=observed_days,
+            minimum_history_days=min(methodology.min_history_days, observed_days),
+        )
+        if not selection.constituents:
+            continue
+        rebalance = _rebalance_from_selection(effective_date, methodology, selection)
+        rebalances.append(rebalance)
+        incumbents = {item.identity for item in rebalance.constituents}
+    return rebalances
+
+
 def _rebalance_from_selection(
     effective_date: date,
     methodology: Methodology,
@@ -362,6 +408,35 @@ def _archive_calendar(
     if not dates:
         dates = sorted(set(prices["value_date"].to_list()))
     return sorted(set(dates)), unchanged
+
+
+def _load_preview_rebalances(
+    store: ObjectStore,
+    key: str,
+    methodology_version: str,
+    run_date: date,
+) -> list[Rebalance]:
+    if not store.exists(key):
+        return []
+    try:
+        payload = json.loads(store.read_bytes(key))
+        if payload.get("methodology_version") != methodology_version:
+            return []
+        return [
+            Rebalance(
+                effective_date=str(item["effective_date"]),
+                methodology_version=str(item["methodology_version"]),
+                selection_snapshot_sha256=str(item["selection_snapshot_sha256"]),
+                eligible_count=int(item["eligible_count"]),
+                constituents=[Constituent(**value) for value in item.get("constituents", [])],
+                removed=[RemovedConstituent(**value) for value in item.get("removed", [])],
+            )
+            for item in payload.get("rebalances", [])
+            if date.fromisoformat(str(item["effective_date"])) <= run_date
+        ]
+    except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+        logger.warning("preview_rebalances_invalid", extra={"extra": {"key": key}})
+        return []
 
 
 def _json_bytes(payload: object) -> bytes:
@@ -534,6 +609,147 @@ def run_calc(
         )
         if _write_if_changed(store, manifest_key, manifest_body, "application/json"):
             changed.append(manifest_key)
+
+        preview_prefix = f"derived/preview/indexes/{definition.code}"
+        preview_rebalances_key = f"{preview_prefix}/rebalances.json"
+        preview_rebalances = daily_preview_rebalances(
+            prices,
+            products,
+            definition,
+            methodology,
+            calendar_dates,
+            _load_preview_rebalances(
+                store,
+                preview_rebalances_key,
+                methodology.methodology_version,
+                run_date,
+            ),
+        )
+        preview_values, preview_contributions = calculate_chain_linked(
+            prices,
+            definition,
+            methodology,
+            preview_rebalances,
+            calendar_dates,
+            unchanged_dates,
+        )
+        preview_analytics = calculate_analytics(
+            preview_values, preview_contributions, products
+        )
+        preview_latest = preview_rebalances[-1] if preview_rebalances else None
+        preview_selected = len(preview_latest.constituents) if preview_latest else 0
+        preview_status = "preview" if preview_selected > 0 and preview_values else "accumulating"
+        preview_values_key = f"{preview_prefix}/daily-values.parquet"
+        preview_contributions_key = f"{preview_prefix}/contributions.parquet"
+        preview_analytics_key = f"{preview_prefix}/analytics.json"
+        preview_quality_key = f"{preview_prefix}/quality/{run_date.isoformat()}.json"
+        preview_rebalances_body = _json_bytes(
+            {
+                "schema_version": 1,
+                "index_code": definition.code,
+                "methodology_version": methodology.methodology_version,
+                "data_state": "preview",
+                "cadence": "daily_preview",
+                "rebalances": [asdict(item) for item in preview_rebalances],
+            }
+        )
+        preview_values_body = _parquet_bytes(
+            [asdict(item) for item in preview_values], DAILY_SCHEMA
+        )
+        preview_contributions_body = _parquet_bytes(
+            [asdict(item) for item in preview_contributions], CONTRIBUTION_SCHEMA
+        )
+        preview_analytics_body = _json_bytes(
+            {
+                "schema_version": 1,
+                "index_code": definition.code,
+                "methodology_version": methodology.methodology_version,
+                "data_state": "preview",
+                "generated_for": run_date.isoformat(),
+                "windows": ["1d", "7d", "30d"],
+                "volatility_label": "annualized listing-price volatility",
+                "records": [asdict(item) for item in preview_analytics],
+            }
+        )
+        preview_quality_body = _json_bytes(
+            {
+                "schema_version": 1,
+                "index_code": definition.code,
+                "run_date": run_date.isoformat(),
+                "status": preview_status,
+                "data_state": "preview",
+                "available_archive_days": len(calendar_dates),
+                "official_required_lookback_days": methodology.selection_lookback_days,
+                "days_remaining_before_official_review": max(
+                    methodology.selection_lookback_days - len(calendar_dates), 0
+                ),
+                "target_size": definition.target_size,
+                "selected_constituents": preview_selected,
+                "daily_values": len(preview_values),
+                "analytics_days": len(preview_analytics),
+                "latest_analytics_date": (
+                    preview_analytics[-1].value_date if preview_analytics else None
+                ),
+                "latest_rebalance": (
+                    preview_latest.effective_date if preview_latest else None
+                ),
+                "public_export": "preview_allowed",
+                "official_history_separate": True,
+            }
+        )
+        preview_outputs = {
+            preview_rebalances_key: (
+                preview_rebalances_body,
+                "application/json",
+                len(preview_rebalances),
+            ),
+            preview_values_key: (
+                preview_values_body,
+                "application/vnd.apache.parquet",
+                len(preview_values),
+            ),
+            preview_contributions_key: (
+                preview_contributions_body,
+                "application/vnd.apache.parquet",
+                len(preview_contributions),
+            ),
+            preview_analytics_key: (
+                preview_analytics_body,
+                "application/json",
+                len(preview_analytics),
+            ),
+            preview_quality_key: (preview_quality_body, "application/json", 1),
+        }
+        for key, (body, content_type, _) in preview_outputs.items():
+            if _write_if_changed(store, key, body, content_type):
+                changed.append(key)
+        preview_manifest_key = f"{preview_prefix}/manifest.json"
+        preview_manifest_body = _json_bytes(
+            {
+                "schema_version": 1,
+                "index_code": definition.code,
+                "generated_for": run_date.isoformat(),
+                "status": preview_status,
+                "data_state": "preview",
+                "methodology_version": methodology.methodology_version,
+                "methodology_sha256": sha256_hex(methodology_body),
+                "engine_revision": engine_revision,
+                "official_history_separate": True,
+                "source": {
+                    "price_history_sha256": price_source_sha,
+                    "catalogue_key": products_key,
+                    "catalogue_sha256": sha256_hex(products_body),
+                },
+                "outputs": {
+                    key: _metadata(key, body, rows)
+                    for key, (body, _, rows) in preview_outputs.items()
+                },
+            }
+        )
+        if _write_if_changed(
+            store, preview_manifest_key, preview_manifest_body, "application/json"
+        ):
+            changed.append(preview_manifest_key)
         result = CalcRunResult(
             index_code=definition.code,
             run_date=run_date.isoformat(),

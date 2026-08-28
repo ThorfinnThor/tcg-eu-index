@@ -89,6 +89,13 @@ jobs:
             --calc-result calc-result.json \
             --manifest data/manifest-latest.json \
             --output apps/web/source-data/readiness.json
+      - name: Export verified preview indexes
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
+          uv run python scripts/export_preview_data.py \
+            --date "$archive_date" \
+            --output-root apps/web/source-data | tee preview-export-result.json
       - name: Retain pipeline receipt
         uses: actions/upload-artifact@v7
         with:
@@ -97,19 +104,20 @@ jobs:
             archive-result.json
             normalize-result.json
             calc-result.json
+            preview-export-result.json
             data/manifest-latest.json
             apps/web/source-data/readiness.json
           retention-days: 30
       - name: Commit archive heartbeat
         run: |
-          if git diff --quiet -- data/manifest-latest.json apps/web/source-data/readiness.json; then
+          if git diff --quiet -- data/manifest-latest.json apps/web/source-data; then
             echo "Archive already recorded; no heartbeat change."
             exit 0
           fi
           archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/manifest-latest.json apps/web/source-data/readiness.json
+          git add data/manifest-latest.json apps/web/source-data
           git commit -m "chore(archive): ${archive_date}"
           git pull --rebase origin main
           git push origin HEAD:main

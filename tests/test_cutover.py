@@ -161,6 +161,16 @@ def test_cutover_prepares_review_candidate_without_publishing(tmp_path: Path) ->
     store = LocalObjectStore(tmp_path / "r2")
     run_date = "2026-10-10"
     _write_ready_shadow(store, run_date)
+    official_prefix = "derived/indexes/TEST100"
+    preview_prefix = "derived/preview/indexes/TEST100"
+    store.write_bytes(
+        f"{preview_prefix}/rebalances.json",
+        store.read_bytes(f"{official_prefix}/rebalances.json"),
+    )
+    store.write_bytes(
+        f"{preview_prefix}/daily-values.parquet",
+        store.read_bytes(f"{official_prefix}/daily-values.parquet"),
+    )
     audit = {
         "status": "pass",
         "cutover": {
@@ -186,6 +196,13 @@ def test_cutover_prepares_review_candidate_without_publishing(tmp_path: Path) ->
         (output / "candidate/indexes/TEST100/constituents.json").read_text()
     )
     assert constituents[0]["name"] == "Real Card"
+    metadata = json.loads(
+        (output / "candidate/indexes/TEST100/metadata.json").read_text()
+    )
+    assert metadata["preview_history_retained_separately"] is True
+    assert (output / "candidate/indexes/TEST100/preview-history.json").exists()
+    assert (output / "candidate/indexes/TEST100/preview-constituents.json").exists()
+    assert (output / "candidate/indexes/TEST100/preview-rebalances.json").exists()
     assert (output / "candidate/manifest.json").exists()
     assert not store.exists("derived/public/TEST100/history.json")
 

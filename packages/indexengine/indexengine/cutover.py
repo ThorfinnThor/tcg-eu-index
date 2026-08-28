@@ -227,6 +227,9 @@ def _generate_candidate(
             "methodology_version": methodology.methodology_version,
             "breadth": latest_analytics.get("breadth_7d"),
             "volatility_30d": latest_analytics.get("volatility_30d"),
+            "preview_history_retained_separately": store.exists(
+                f"derived/preview/indexes/{definition.code}/daily-values.parquet"
+            ),
         }
         base = f"indexes/{definition.code}"
         _write_candidate_file(output_root, f"{base}/history.json", history, files)
@@ -238,6 +241,42 @@ def _generate_candidate(
         )
         _write_candidate_file(output_root, f"{base}/analytics.json", analytics, files)
         _write_candidate_file(output_root, f"{base}/metadata.json", metadata, files)
+        preview_prefix = f"derived/preview/indexes/{definition.code}"
+        preview_rebalance_payload = _read_json(
+            store, f"{preview_prefix}/rebalances.json"
+        )
+        if preview_rebalance_payload and store.exists(
+            f"{preview_prefix}/daily-values.parquet"
+        ):
+            preview_rebalances = _rebalances(preview_rebalance_payload)
+            if preview_rebalances:
+                preview_history = pl.read_parquet(
+                    BytesIO(store.read_bytes(f"{preview_prefix}/daily-values.parquet"))
+                ).to_dicts()
+                preview_membership = build_public_membership_contract(
+                    definition.code,
+                    preview_rebalances[-1].effective_date,
+                    preview_rebalances,
+                    products,
+                    sets,
+                    data_state="preview",
+                    cadence="daily_preview",
+                )
+                _write_candidate_file(
+                    output_root, f"{base}/preview-history.json", preview_history, files
+                )
+                _write_candidate_file(
+                    output_root,
+                    f"{base}/preview-constituents.json",
+                    preview_membership["constituents"],
+                    files,
+                )
+                _write_candidate_file(
+                    output_root,
+                    f"{base}/preview-rebalances.json",
+                    preview_membership["rebalances"],
+                    files,
+                )
     return files
 
 

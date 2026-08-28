@@ -77,6 +77,9 @@ def select_constituents(
     methodology: Methodology,
     effective_date: date,
     incumbents: set[tuple[int, str]] | None = None,
+    *,
+    expected_days: int | None = None,
+    minimum_history_days: int | None = None,
 ) -> SelectionResult:
     incumbents = incumbents or set()
     if prices.is_empty():
@@ -112,7 +115,13 @@ def select_constituents(
         )
 
     min_price = methodology.min_price_eur[definition.universe]
-    scores = score_liquidity(window, methodology.selection_lookback_days, min_price)
+    scoring_days = expected_days or methodology.selection_lookback_days
+    required_history_days = (
+        minimum_history_days
+        if minimum_history_days is not None
+        else methodology.min_history_days
+    )
+    scores = score_liquidity(window, scoring_days, min_price)
     seasoning_cutoff = effective_date - timedelta(days=methodology.seasoning_days)
     product_dates = _catalogue_dates(products)
     eligible_rows = []
@@ -120,7 +129,7 @@ def select_constituents(
         added_on = product_dates.get(int(row["cm_product_id"]))
         if added_on is None or added_on > seasoning_cutoff:
             continue
-        if int(row["history_days"]) < methodology.min_history_days:
+        if int(row["history_days"]) < required_history_days:
             continue
         if float(row["observation_ratio"]) < methodology.min_observation_ratio:
             continue

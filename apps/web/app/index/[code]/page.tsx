@@ -22,7 +22,7 @@ export async function generateMetadata(props: { params: Promise<{ code: string }
   return pageMetadata(
     `${index.code.toLowerCase()}-index`,
     index.name,
-    index.status === "published"
+    ["preview", "published"].includes(index.status)
       ? `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`
       : `${index.name} is collecting Cardmarket history before its first public index composition and value are released.`
   );
@@ -35,10 +35,11 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
   const indexReadiness = readiness.indexes.find((item) => item.code === index.code);
   const siteUrl = getSiteUrl();
   const breadcrumbs = [{ label: "Overview", href: "/" }, { label: index.name }];
-  const published = index.status === "published" && index.history.length > 0;
+  const visible = ["preview", "published"].includes(index.status) && index.history.length > 0;
+  const preview = index.status === "preview";
   const memberLabel = index.universe === "sealed" ? "products" : "cards";
 
-  if (!published) {
+  if (!visible) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-8">
         <StructuredData value={breadcrumbStructuredData(siteUrl, breadcrumbs)} />
@@ -88,7 +89,9 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
   const formalHistory = postInceptionHistory(index);
   const analytics = calculateIndexAnalytics(formalHistory);
   const validationObservations = index.history.length - formalHistory.length;
-  const description = `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`;
+  const description = preview
+    ? `${index.name} is a provisional Cardmarket-derived preview index during its 60-day observation phase.`
+    : `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -104,12 +107,25 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
         })
       ]} />
       <Breadcrumbs items={breadcrumbs} />
+      {preview ? (
+        <section className="mb-6 border-l-2 border-amber bg-amber/[0.07] px-5 py-4" role="status">
+          <div className="text-sm font-semibold text-amber">Preview index · not official</div>
+          <p className="mt-2 max-w-4xl text-sm leading-6 text-paper/70">
+            Provisional index based on the Cardmarket history available so far. Composition and index values may change materially during the 60-day observation period. This is not the official index and is not investment advice.
+          </p>
+          <p className="mt-2 text-xs leading-5 text-paper/50">
+            Preview observations remain labelled as a preparation phase and will not be silently merged into the official history after cutover.
+          </p>
+        </section>
+      ) : null}
       <div className="mb-6 flex flex-col gap-4 border-b border-line pb-5 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="text-sm text-paper/50">{index.code}</div>
           <h1 className="mt-1 text-3xl font-semibold text-paper">{index.name}</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-paper/60">
-            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. Validation history begins {index.history_start_date}; formal MVP inception is {index.base_date}.
+            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. {preview
+              ? `Preview history begins ${index.history_start_date}; the official base date and history remain separate.`
+              : `Official history begins ${index.history_start_date}.`}
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs text-paper/50">
             <span className="chip">Repo-managed MVP data</span>
@@ -139,12 +155,25 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
           </div>
         </aside>
       </section>
+      {index.status === "published" && index.preview_history?.length ? (
+        <section className="surface mt-4 p-4">
+          <h2 className="text-lg font-semibold">Preview preparation phase</h2>
+          <p className="mt-2 max-w-3xl text-xs leading-5 text-paper/50">
+            This separately stored series shows the provisional observation phase before official cutover. It is labelled preview data and is not part of the official performance history above.
+          </p>
+          <div className="mt-4">
+            <IndexChartExplorer history={index.preview_history} baseDate={index.preview_history[0].value_date} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-4 grid gap-4 lg:grid-cols-2">
         <div className="surface p-4">
-          <h2 className="text-lg font-semibold">Post-inception analytics</h2>
+          <h2 className="text-lg font-semibold">{preview ? "Preview analytics" : "Post-inception analytics"}</h2>
           <p className="mt-2 text-xs leading-5 text-paper/45">
-            Calculated from {analytics.startDate} through {analytics.endDate}. Pre-inception validation values and executed transactions are excluded.
+            Calculated from {analytics.startDate} through {analytics.endDate}. {preview
+              ? "These figures use only the labelled preview phase and remain provisional."
+              : "Pre-inception validation values and executed transactions are excluded."}
           </p>
           <div className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-3">
             <Metric label="Period return" value={formatPct(analytics.periodReturn)} tone={analytics.periodReturn >= 0 ? "up" : "down"} />
@@ -159,12 +188,12 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
           <h2 className="text-lg font-semibold">Calculation coverage</h2>
           <div className="mt-4 divide-y divide-line text-sm">
             <div className="flex items-center justify-between py-3">
-              <span className="text-paper/60">Post-inception observations</span>
+              <span className="text-paper/60">{preview ? "Preview observations" : "Post-inception observations"}</span>
               <span>{analytics.observationCount}</span>
             </div>
             <div className="flex items-center justify-between py-3">
-              <span className="text-paper/60">Validation observations</span>
-              <span>{validationObservations}</span>
+              <span className="text-paper/60">{preview ? "Days until official review" : "Validation observations"}</span>
+              <span>{preview ? indexReadiness?.daysRemaining ?? "pending" : validationObservations}</span>
             </div>
             <div className="flex items-center justify-between py-3">
               <span className="text-paper/60">Days with caps</span>
