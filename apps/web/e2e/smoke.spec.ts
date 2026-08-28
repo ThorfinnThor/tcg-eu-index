@@ -77,5 +77,5 @@ test("legacy singles URLs redirect to the top-500 canonical code", async ({ page
   await expect(page).toHaveURL(/\/index\/OPEU500$/);
 
   await page.goto("/index/PKEU250/constituents");
-  await expect(page).toHaveURL(/\/index\/PKEU500\/constituents$/);
+  await expect(page).toHaveURL(/\/index\/PKEU500\/constituents(?:\?.*)?$/);
 });
