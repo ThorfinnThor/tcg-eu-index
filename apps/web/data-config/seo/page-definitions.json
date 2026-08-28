@@ -14,17 +14,17 @@
     "minimumInsights": 3,
     "canonical": "/",
     "relationships": [
-      { "type": "child", "targetId": "opeu100-index" },
-      { "type": "child", "targetId": "pkeu250-index" },
+      { "type": "child", "targetId": "opeu500-index" },
+      { "type": "child", "targetId": "pkeu500-index" },
       { "type": "child", "targetId": "opeusld-index" },
       { "type": "child", "targetId": "mteu500-index" },
-      { "type": "child", "targetId": "ygeu250-index" },
-      { "type": "child", "targetId": "dbseu100-index" },
-      { "type": "child", "targetId": "fabeu100-index" },
-      { "type": "child", "targetId": "dgeu100-index" },
-      { "type": "child", "targetId": "lceu100-index" },
-      { "type": "child", "targetId": "swueu100-index" },
-      { "type": "child", "targetId": "rbeu100-index" },
+      { "type": "child", "targetId": "ygeu500-index" },
+      { "type": "child", "targetId": "dbseu500-index" },
+      { "type": "child", "targetId": "fabeu500-index" },
+      { "type": "child", "targetId": "dgeu500-index" },
+      { "type": "child", "targetId": "lceu500-index" },
+      { "type": "child", "targetId": "swueu500-index" },
+      { "type": "child", "targetId": "rbeu500-index" },
       { "type": "child", "targetId": "mteusld-index" },
       { "type": "child", "targetId": "ygeusld-index" },
       { "type": "child", "targetId": "pkeusld-index" },
@@ -41,52 +41,52 @@
     "status": "draft"
   },
   {
-    "id": "opeu100-index",
-    "linkLabel": "One Piece Europe 100",
-    "slug": "index/OPEU100",
+    "id": "opeu500-index",
+    "linkLabel": "One Piece Europe 500",
+    "slug": "index/OPEU500",
     "keywordId": "en-one-piece-cardmarket-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "OPEU100" },
+    "filters": { "code": "OPEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/OPEU100",
+    "canonical": "/index/OPEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" },
-      { "type": "related", "targetId": "pkeu250-index" }
+      { "type": "related", "targetId": "pkeu500-index" }
     ],
     "indexable": false,
     "status": "draft"
   },
   {
-    "id": "pkeu250-index",
-    "linkLabel": "Pokemon Europe 250",
-    "slug": "index/PKEU250",
+    "id": "pkeu500-index",
+    "linkLabel": "Pokemon Europe 500",
+    "slug": "index/PKEU500",
     "keywordId": "en-pokemon-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "PKEU250" },
+    "filters": { "code": "PKEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/PKEU250",
+    "canonical": "/index/PKEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" },
-      { "type": "related", "targetId": "opeu100-index" }
+      { "type": "related", "targetId": "opeu500-index" }
     ],
     "indexable": false,
     "status": "draft"
   },
   {
     "id": "opeusld-index",
-    "linkLabel": "One Piece Sealed Europe 25",
+    "linkLabel": "One Piece Sealed Europe 100",
     "slug": "index/OPEUSLD",
     "keywordId": "en-one-piece-sealed-index",
     "locale": "en",
@@ -101,7 +101,7 @@
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" },
-      { "type": "related", "targetId": "opeu100-index" }
+      { "type": "related", "targetId": "opeu500-index" }
     ],
     "indexable": false,
     "status": "draft"
@@ -128,19 +128,19 @@
     "status": "draft"
   },
   {
-    "id": "ygeu250-index",
-    "linkLabel": "Yu-Gi-Oh! Europe 250",
-    "slug": "index/YGEU250",
+    "id": "ygeu500-index",
+    "linkLabel": "Yu-Gi-Oh! Europe 500",
+    "slug": "index/YGEU500",
     "keywordId": "en-yugioh-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "YGEU250" },
+    "filters": { "code": "YGEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/YGEU250",
+    "canonical": "/index/YGEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -149,19 +149,19 @@
     "status": "draft"
   },
   {
-    "id": "dbseu100-index",
-    "linkLabel": "Dragon Ball Super Europe 100",
-    "slug": "index/DBSEU100",
+    "id": "dbseu500-index",
+    "linkLabel": "Dragon Ball Super Europe 500",
+    "slug": "index/DBSEU500",
     "keywordId": "en-dragon-ball-super-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "DBSEU100" },
+    "filters": { "code": "DBSEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/DBSEU100",
+    "canonical": "/index/DBSEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -170,19 +170,19 @@
     "status": "draft"
   },
   {
-    "id": "fabeu100-index",
-    "linkLabel": "Flesh and Blood Europe 100",
-    "slug": "index/FABEU100",
+    "id": "fabeu500-index",
+    "linkLabel": "Flesh and Blood Europe 500",
+    "slug": "index/FABEU500",
     "keywordId": "en-flesh-and-blood-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "FABEU100" },
+    "filters": { "code": "FABEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/FABEU100",
+    "canonical": "/index/FABEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -191,19 +191,19 @@
     "status": "draft"
   },
   {
-    "id": "dgeu100-index",
-    "linkLabel": "Digimon Europe 100",
-    "slug": "index/DGEU100",
+    "id": "dgeu500-index",
+    "linkLabel": "Digimon Europe 500",
+    "slug": "index/DGEU500",
     "keywordId": "en-digimon-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "DGEU100" },
+    "filters": { "code": "DGEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/DGEU100",
+    "canonical": "/index/DGEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -212,19 +212,19 @@
     "status": "draft"
   },
   {
-    "id": "lceu100-index",
-    "linkLabel": "Disney Lorcana Europe 100",
-    "slug": "index/LCEU100",
+    "id": "lceu500-index",
+    "linkLabel": "Disney Lorcana Europe 500",
+    "slug": "index/LCEU500",
     "keywordId": "en-lorcana-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "LCEU100" },
+    "filters": { "code": "LCEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/LCEU100",
+    "canonical": "/index/LCEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -233,19 +233,19 @@
     "status": "draft"
   },
   {
-    "id": "swueu100-index",
-    "linkLabel": "Star Wars Unlimited Europe 100",
-    "slug": "index/SWUEU100",
+    "id": "swueu500-index",
+    "linkLabel": "Star Wars Unlimited Europe 500",
+    "slug": "index/SWUEU500",
     "keywordId": "en-star-wars-unlimited-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "SWUEU100" },
+    "filters": { "code": "SWUEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/SWUEU100",
+    "canonical": "/index/SWUEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -254,19 +254,19 @@
     "status": "draft"
   },
   {
-    "id": "rbeu100-index",
-    "linkLabel": "Riftbound Europe 100",
-    "slug": "index/RBEU100",
+    "id": "rbeu500-index",
+    "linkLabel": "Riftbound Europe 500",
+    "slug": "index/RBEU500",
     "keywordId": "en-riftbound-europe-price-index",
     "locale": "en",
     "intent": "reference",
     "cluster": "tcg-market-benchmarks",
     "template": "index-detail",
-    "filters": { "code": "RBEU100" },
+    "filters": { "code": "RBEU500" },
     "minimumResults": 1,
     "minimumDataCompleteness": 0,
     "minimumInsights": 3,
-    "canonical": "/index/RBEU100",
+    "canonical": "/index/RBEU500",
     "relationships": [
       { "type": "parent", "targetId": "overview" },
       { "type": "next_step", "targetId": "methodology" }
@@ -339,7 +339,7 @@
   },
   {
     "id": "dbseusld-index",
-    "linkLabel": "Dragon Ball Super Sealed Europe 25",
+    "linkLabel": "Dragon Ball Super Sealed Europe 100",
     "slug": "index/DBSEUSLD",
     "keywordId": "en-dragon-ball-super-sealed-europe-price-index",
     "locale": "en",
@@ -360,7 +360,7 @@
   },
   {
     "id": "fabeusld-index",
-    "linkLabel": "Flesh and Blood Sealed Europe 25",
+    "linkLabel": "Flesh and Blood Sealed Europe 100",
     "slug": "index/FABEUSLD",
     "keywordId": "en-flesh-and-blood-sealed-europe-price-index",
     "locale": "en",
@@ -381,7 +381,7 @@
   },
   {
     "id": "dgeusld-index",
-    "linkLabel": "Digimon Sealed Europe 25",
+    "linkLabel": "Digimon Sealed Europe 100",
     "slug": "index/DGEUSLD",
     "keywordId": "en-digimon-sealed-europe-price-index",
     "locale": "en",
@@ -402,7 +402,7 @@
   },
   {
     "id": "lceusld-index",
-    "linkLabel": "Disney Lorcana Sealed Europe 25",
+    "linkLabel": "Disney Lorcana Sealed Europe 100",
     "slug": "index/LCEUSLD",
     "keywordId": "en-lorcana-sealed-europe-price-index",
     "locale": "en",
@@ -423,7 +423,7 @@
   },
   {
     "id": "swueusld-index",
-    "linkLabel": "Star Wars Unlimited Sealed Europe 25",
+    "linkLabel": "Star Wars Unlimited Sealed Europe 100",
     "slug": "index/SWUEUSLD",
     "keywordId": "en-star-wars-unlimited-sealed-europe-price-index",
     "locale": "en",
@@ -444,7 +444,7 @@
   },
   {
     "id": "rbeusld-index",
-    "linkLabel": "Riftbound Sealed Europe 25",
+    "linkLabel": "Riftbound Sealed Europe 100",
     "slug": "index/RBEUSLD",
     "keywordId": "en-riftbound-sealed-europe-price-index",
     "locale": "en",

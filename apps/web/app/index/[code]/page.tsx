@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { IndexChartExplorer } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
@@ -8,6 +8,7 @@ import { RelatedPages } from "@/components/RelatedPages";
 import { StructuredData } from "@/components/StructuredData";
 import { changes, getIndex, getReadiness, postInceptionHistory } from "@/lib/data";
 import { calculateIndexAnalytics } from "@/lib/index-analytics";
+import { canonicalIndexCode } from "@/lib/index-codes";
 import { pageMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 import { breadcrumbStructuredData, indexDatasetStructuredData } from "@/lib/structured-data";
@@ -30,6 +31,8 @@ export async function generateMetadata(props: { params: Promise<{ code: string }
 
 export default async function IndexPage(props: { params: Promise<{ code: string }> }) {
   const params = await props.params;
+  const canonicalCode = canonicalIndexCode(params.code);
+  if (canonicalCode !== params.code) permanentRedirect(`/index/${canonicalCode}`);
   const [index, readiness] = await Promise.all([getIndex(params.code), getReadiness()]);
   if (!index) notFound();
   const indexReadiness = readiness.indexes.find((item) => item.code === index.code);
@@ -112,6 +115,9 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
           <div className="text-sm font-semibold text-amber">Preview index · not official</div>
           <p className="mt-2 max-w-4xl text-sm leading-6 text-paper/70">
             Provisional index based on the Cardmarket history available so far. Composition and index values may change materially during the 60-day observation period. This is not the official index and is not investment advice.
+          </p>
+          <p className="mt-2 text-xs leading-5 text-paper/55">
+            After eligibility checks, this index selects the {index.target_size} highest-priced {memberLabel} by Cardmarket avg30 reference price.
           </p>
           <p className="mt-2 text-xs leading-5 text-paper/50">
             Preview observations remain labelled as a preparation phase and will not be silently merged into the official history after cutover.

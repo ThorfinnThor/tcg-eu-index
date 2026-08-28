@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { IndexChart } from "@/components/IndexChart";
 import { changes, getIndex, getSearchIndex } from "@/lib/data";
 import { formatPct } from "@/components/Metric";
+import { canonicalIndexCode } from "@/lib/index-codes";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -17,6 +18,8 @@ export async function generateStaticParams() {
 
 export default async function EmbedPage(props: { params: Promise<{ code: string }> }) {
   const params = await props.params;
+  const canonicalCode = canonicalIndexCode(params.code);
+  if (canonicalCode !== params.code) permanentRedirect(`/embed/index/${canonicalCode}`);
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (!["preview", "published"].includes(index.status) || index.history.length === 0) {

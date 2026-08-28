@@ -31,8 +31,8 @@ def methodology(**overrides: object) -> Methodology:
         carry_forward_max_days=1,
         rebalance="monthly",
         selection_lookback_days=5,
-        buffer_retention_multiplier=1.2,
-        buffer_entry_multiplier=0.9,
+        selection_rank="reference_price_descending",
+        ranking_price_field="avg30",
         indexes=[],
     )
     return replace(value, **overrides)
@@ -128,6 +128,56 @@ def test_selection_uses_complete_calendar_window_and_price_floor() -> None:
     assert [item.cm_product_id for item in buffered.constituents] == [1, 2]
     assert buffered.removed[0].cm_product_id == 3
     assert "eligibility gates" in buffered.removed[0].reason
+
+
+def test_selection_ranks_by_reference_price_and_keeps_one_variant_per_product() -> None:
+    effective_date = date(2026, 8, 2)
+    prices = pl.DataFrame(
+        [
+            {
+                "value_date": date(2026, 8, 1),
+                "stable_variant_id": stable_id,
+                "cm_product_id": product_id,
+                "variant_key": variant,
+                "product_kind": "single",
+                "price_avg": ref_price,
+                "price_low": ref_price,
+                "avg30": ref_price,
+            }
+            for product_id, variant, ref_price, stable_id in (
+                (1, "nonfoil", 20.0, "cardmarket:onepiece:product:1:nonfoil"),
+                (1, "foil", 80.0, "cardmarket:onepiece:product:1:foil"),
+                (2, "nonfoil", 50.0, "cardmarket:onepiece:product:2:nonfoil"),
+                (3, "nonfoil", 10.0, "cardmarket:onepiece:product:3:nonfoil"),
+            )
+        ]
+    )
+    products = pl.DataFrame(
+        [
+            {
+                "cm_product_id": product_id,
+                "source_date_added": "2020-01-01 00:00:00",
+                "first_seen": "2026-08-01",
+            }
+            for product_id in (1, 2, 3)
+        ]
+    )
+
+    result = select_constituents(
+        prices,
+        products,
+        definition(target_size=2),
+        methodology(selection_lookback_days=1),
+        effective_date,
+    )
+
+    assert [(item.cm_product_id, item.variant_key) for item in result.constituents] == [
+        (1, "foil"),
+        (2, "nonfoil"),
+    ]
+    assert [item.ref_price for item in result.constituents] == [80.0, 50.0]
+    assert result.eligible_count == 3
+    assert "reference-price rank 1" in result.constituents[0].reason
 
 
 def test_golden_chain_linked_index_covers_caps_carry_suspension_and_rebalance() -> None:
@@ -380,7 +430,7 @@ def test_shadow_run_is_private_accumulating_and_idempotent(tmp_path: Path) -> No
     assert all(item.analytics_days == 0 for item in first)
     assert all(
         store.exists(f"derived/indexes/{code}/analytics.json")
-        for code in ("OPEU100", "OPEUSLD", "PKEU250", "PKEUSLD")
+        for code in ("OPEU500", "OPEUSLD", "PKEU500", "PKEUSLD")
     )
     assert store.list_keys("derived/public") == []
 
@@ -408,7 +458,7 @@ def test_public_membership_contract_preserves_removal_and_reentry_history() -> N
                 2,
                 "nonfoil",
                 "removed",
-                "outside selection buffer",
+                "outside top price rank",
                 "cardmarket:onepiece:product:2:nonfoil",
             )
         ],
@@ -468,6 +518,6 @@ def test_public_membership_contract_preserves_removal_and_reentry_history() -> N
             "cm_product_id": 2,
             "variant_key": "nonfoil",
             "action": "removed",
-            "reason": "outside selection buffer",
+            "reason": "outside top price rank",
         },
     ]

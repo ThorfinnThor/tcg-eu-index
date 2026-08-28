@@ -20,11 +20,13 @@ export function filterConstituents(constituents: Constituent[], asOf: string, se
   const available = includeInactive
     ? constituents.filter((item) => item.member_since <= asOf)
     : activeConstituentsAsOf(constituents, asOf);
-  return available.filter((item) => {
-    if (!query) return true;
-    return [item.name, item.set, item.variant_key, String(item.cm_product_id)]
-      .some((value) => value.toLocaleLowerCase().includes(query));
-  });
+  return available
+    .filter((item) => {
+      if (!query) return true;
+      return [item.name, item.set, item.variant_key, String(item.cm_product_id)]
+        .some((value) => value.toLocaleLowerCase().includes(query));
+    })
+    .sort((left, right) => right.ref_price - left.ref_price || left.name.localeCompare(right.name));
 }
 
 export function latestCompositionDate(constituents: Constituent[], fallback: string) {
@@ -67,7 +69,7 @@ export function deriveRebalanceHistory(
   constituents: Constituent[],
   dataState: RebalanceHistory["data_state"],
   generatedFor: string,
-  methodologyVersion = "1.3.0"
+  methodologyVersion = "1.4.0"
 ): RebalanceHistory {
   const dates = compositionDates(constituents, constituents[0]?.member_since ?? generatedFor);
   const rebalances = dates.map<RebalanceRecord>((effectiveDate, index) => {

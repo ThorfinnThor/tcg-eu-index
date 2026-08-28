@@ -51,6 +51,10 @@ describe("filterConstituents", () => {
     expect(filterConstituents(constituents, "2026-08-02", "", true)).toHaveLength(2);
     expect(filterConstituents(constituents, "2026-08-02", "", false)).toHaveLength(1);
   });
+
+  it("orders the composition by reference price descending", () => {
+    expect(filterConstituents(constituents, "2026-08-02", "", true).map((item) => item.ref_price)).toEqual([20, 10]);
+  });
 });
 
 describe("constituentActions", () => {
@@ -86,7 +90,7 @@ describe("compositionDelta", () => {
 
 describe("rebalance history", () => {
   it("derives auditable changes and groups them without inventing weekly rebalances", () => {
-    const history = deriveRebalanceHistory("OPEU100", constituents, "validation", "2026-08-01");
+    const history = deriveRebalanceHistory("OPEU500", constituents, "validation", "2026-08-01");
     expect(history.rebalances).toHaveLength(2);
     expect(history.rebalances[1]).toMatchObject({
       effective_date: "2026-08-01",

@@ -1,6 +1,6 @@
 # TCG Europe Index
 
-European listing-price indexes for ten active trading card games under development. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
+European listing-price indexes for ten active trading card games under development. Singles indexes track the 500 highest Cardmarket `avg30` reference-price cards that pass the data-quality gates; sealed indexes use the top 100 products. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
 
 Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
 The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
@@ -84,7 +84,7 @@ The Sunday audit publishes a separate aggregate archive-health receipt with cove
 
 Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
 
-The same workflow recomputes both the official shadow calculation and a separately labelled preview calculation. Official shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. Preview outputs use daily provisional selections based only on the history available at that time and may be exported to repository-managed public JSON after manifest verification.
+The same workflow recomputes both the official shadow calculation and a separately labelled preview calculation. Official shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. Preview outputs use daily provisional price-ranked selections—top 500 eligible singles or top 100 eligible sealed products—based only on the history available at that time and may be exported to repository-managed public JSON after manifest verification.
 
 Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published. Preview history and composition archives remain separate from the later official history and are carried into the cutover candidate as labelled preparation-phase files.
 

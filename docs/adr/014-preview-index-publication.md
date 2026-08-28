@@ -12,7 +12,7 @@ Synthetic repository fixtures remain excluded from every public export.
 
 ## Calculation separation
 
-The official methodology remains unchanged: the 60-day lookback, target-size gates, monthly rebalance cadence, archive audit, and human cutover review are still mandatory. Preview selection uses only the observations available before each effective date, scales observation ratios to that available calendar, and recalculates provisionally each day. A preview may contain fewer members than the eventual target.
+The official launch controls remain unchanged: the 60-day lookback, target-size gates, monthly rebalance cadence, archive audit, and human cutover review are still mandatory. Under methodology v1.4.0, preview selection uses only the observations available before each effective date, scales observation ratios to that available calendar, applies the same eligibility gates, and then selects the 500 highest-`avg30` distinct singles or 100 highest-`avg30` distinct sealed products. It recalculates provisionally each day. A preview may contain fewer members than the eventual target when fewer products pass the gates.
 
 Official calculations remain under `derived/indexes/<code>`. Preview calculations use `derived/preview/indexes/<code>`, their own manifests, `data_state: preview`, and `cadence: daily_preview`. The public exporter verifies every referenced object checksum before writing repository JSON. Raw and normalized Cardmarket source files remain private.
 

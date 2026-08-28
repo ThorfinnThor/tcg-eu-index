@@ -29,10 +29,10 @@ describe("SEO publication registry", () => {
     const urls = entries.map((entry) => entry.url);
     expect(urls).toContain("https://tcg-eu-index-web.shuu9599.workers.dev/methodology");
     expect(urls).toContain("https://tcg-eu-index-web.shuu9599.workers.dev/data-quality");
-    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU100");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU500");
     expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/reports");
     expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/portfolio");
-    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU100/constituents");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU500/constituents");
   });
 });
 
@@ -40,7 +40,7 @@ describe("structured data", () => {
   it("describes index datasets and breadcrumbs without raw price claims", () => {
     const dataset = indexDatasetStructuredData({
       siteUrl: "https://example.com",
-      code: "OPEU100",
+      code: "OPEU500",
       name: "One Piece Europe 100",
       description: "Listing-price benchmark",
       startDate: "2026-07-20",
@@ -48,7 +48,7 @@ describe("structured data", () => {
     });
     expect(dataset["@type"]).toBe("Dataset");
     expect(dataset.temporalCoverage).toBe("2026-07-20/2026-08-01");
-    expect(dataset.distribution.contentUrl).toBe("https://example.com/api/public/OPEU100/history.csv");
+    expect(dataset.distribution.contentUrl).toBe("https://example.com/api/public/OPEU500/history.csv");
 
     const breadcrumbs = breadcrumbStructuredData("https://example.com", [
       { label: "Overview", href: "/" },
