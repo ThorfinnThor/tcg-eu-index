@@ -93,7 +93,7 @@ export default async function ConstituentsPage(props: ConstituentsPageProps) {
         <section className="mb-6 border-l-2 border-amber bg-amber/[0.07] px-5 py-4" role="status">
           <h2 className="text-sm font-semibold text-amber">Daily preview composition</h2>
           <p className="mt-2 max-w-4xl text-sm leading-6 text-paper/70">
-            These are real Cardmarket-derived provisional members and reference prices. After eligibility checks, the {index.target_size} highest-priced {index.universe === "sealed" ? "products" : "cards"} by Cardmarket avg30 are selected. The ranking is recalculated daily and may change materially before the official 60-day cutover.
+            These are real Cardmarket-derived provisional members and reference prices. After eligibility checks, the {index.target_size} highest-priced {index.universe === "sealed" ? "products" : "cards"} by Cardmarket AVG30 are selected. Cardmarket defines AVG30 as the average sale price over the last 30 days; the daily feed does not expose individual sold articles or order records. The ranking is recalculated daily and may change materially before the official 60-day cutover.
           </p>
         </section>
       ) : null}
@@ -106,6 +106,8 @@ export default async function ConstituentsPage(props: ConstituentsPageProps) {
         minDate={index.base_date}
         maxDate={maxDate}
         targetSize={index.target_size}
+        game={index.game}
+        memberLabel={index.universe === "sealed" ? "products" : "cards"}
       />
     </div>
   );

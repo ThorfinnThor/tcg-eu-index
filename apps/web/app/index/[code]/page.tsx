@@ -24,7 +24,7 @@ export async function generateMetadata(props: { params: Promise<{ code: string }
     `${index.code.toLowerCase()}-index`,
     index.name,
     ["preview", "published"].includes(index.status)
-      ? `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`
+      ? `${index.name} tracks aggregated 30-day Cardmarket sale prices for ${index.game} ${index.universe} in Europe with transparent methodology and daily history.`
       : `${index.name} is collecting Cardmarket history before its first public index composition and value are released.`
   );
 }
@@ -94,7 +94,7 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
   const validationObservations = index.history.length - formalHistory.length;
   const description = preview
     ? `${index.name} is a provisional Cardmarket-derived preview index during its 60-day observation phase.`
-    : `${index.name} tracks ${index.game} ${index.universe} listing prices in Europe with transparent methodology and daily history.`;
+    : `${index.name} tracks aggregated 30-day Cardmarket sale prices for ${index.game} ${index.universe} in Europe with transparent methodology and daily history.`;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -117,7 +117,7 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
             Provisional index based on the Cardmarket history available so far. Composition and index values may change materially during the 60-day observation period. This is not the official index and is not investment advice.
           </p>
           <p className="mt-2 text-xs leading-5 text-paper/55">
-            After eligibility checks, this index selects the {index.target_size} highest-priced {memberLabel} by Cardmarket avg30 reference price.
+            After eligibility checks, this index selects the {index.target_size} highest-priced {memberLabel} by Cardmarket AVG30—the average sale price over the last 30 days. The source does not expose individual sold articles or orders.
           </p>
           <p className="mt-2 text-xs leading-5 text-paper/50">
             Preview observations remain labelled as a preparation phase and will not be silently merged into the official history after cutover.
@@ -129,7 +129,7 @@ export default async function IndexPage(props: { params: Promise<{ code: string 
           <div className="text-sm text-paper/50">{index.code}</div>
           <h1 className="mt-1 text-3xl font-semibold text-paper">{index.name}</h1>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-paper/60">
-            Chain-linked equal-weight index on a listing-price basis, currently {index.status}. {preview
+            Chain-linked equal-weight index on an aggregated 30-day sale-price basis, currently {index.status}. {preview
               ? `Preview history begins ${index.history_start_date}; the official base date and history remain separate.`
               : `Official history begins ${index.history_start_date}.`}
           </p>

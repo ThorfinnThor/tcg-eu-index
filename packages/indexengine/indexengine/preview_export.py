@@ -276,10 +276,12 @@ def export_preview_dataset(
                     ),
                 },
                 {
-                    "title": "Listing-price basis",
+                    "title": "Aggregated sale-price basis",
                     "body": (
-                        "Benchmarks and constituent reference prices use daily "
-                        "guide-style listing prices, not executed transaction prices."
+                        "Cardmarket defines AVG30 as the average sale price over the "
+                        "last 30 days. The daily price-guide feed is aggregated and "
+                        "does not expose individual idArticle or order records, so "
+                        "this project cannot independently audit each transaction."
                     ),
                 },
                 {

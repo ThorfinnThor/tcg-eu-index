@@ -39,8 +39,8 @@ export function indexDatasetStructuredData({
     url: new URL(`/index/${code}`, siteUrl).toString(),
     temporalCoverage: `${startDate}/${endDate ?? ".."}`,
     creator: { "@type": "Organization", name: "European TCG Index" },
-    measurementTechnique: "Liquidity-screened, equal-weighted, chain-linked listing-price index",
-    variableMeasured: ["Index value", "Daily return", "Breadth", "Listing-price volatility"],
+    measurementTechnique: "Eligibility-screened, Cardmarket AVG30-ranked, equal-weighted, chain-linked sale-price index",
+    variableMeasured: ["Index value", "Daily return", "Breadth", "Aggregated sale-price volatility"],
     distribution: {
       "@type": "DataDownload",
       encodingFormat: "text/csv",

@@ -35,6 +35,8 @@ Catalogue paths use the base `https://downloads.s3.cardmarket.com/productCatalog
 
 Price-guide payloads have top-level fields `version`, `createdAt`, and `priceGuides`. Every row contains `idProduct` and `idCategory`. Depending on the product category, a row exposes the nonfoil family (`avg`, `low`, `trend`, `avg1`, `avg7`, and `avg30`), a variant family, or both. The normalizer skips an unavailable family instead of creating an empty price row.
 
+Cardmarket defines `avg30` as the average sale price over the last 30 days. This is an aggregate price-guide field: the public download does not contain the underlying `idArticle` or order records, conditions, languages, timestamps, or transaction-level prices. Public constituent links therefore target the stable Cardmarket product page by game and `idProduct`, optionally filtered to foil, rather than claiming to identify a specific sold article.
+
 All configured games except Pokemon use the `-foil` suffix, including `avg-foil`, `low-foil`, `avg1-foil`, `avg7-foil`, and `avg30-foil`. Pokemon uses the corresponding `-holo` suffix. Both families are normalized to the internal `foil` variant key.
 
 Catalogue payloads have top-level fields `version`, `createdAt`, and `products`. Each product contains `idProduct`, `name`, `idCategory`, `categoryName`, and, where applicable, `idExpansion`, `idMetacard`, and `dateAdded`. The public catalogue does not provide expansion names, so the normalized fallback is `Expansion <idExpansion>`.

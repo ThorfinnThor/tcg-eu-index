@@ -1,6 +1,6 @@
 # TCG Europe Index
 
-European listing-price indexes for ten active trading card games under development. Singles indexes track the 500 highest Cardmarket `avg30` reference-price cards that pass the data-quality gates; sealed indexes use the top 100 products. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
+European sale-price indexes for ten active trading card games under development. Singles indexes track the 500 highest Cardmarket `avg30` cards that pass the data-quality gates; sealed indexes use the top 100 products. Cardmarket defines `avg30` as the average sale price over the last 30 days. The public daily feed is aggregated and does not contain individual sold-article or order records. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
 
 Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
 The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
