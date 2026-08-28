@@ -38,8 +38,8 @@
       "title": "Official history remains separate"
     },
     {
-      "body": "Benchmarks and constituent reference prices use daily guide-style listing prices, not executed transaction prices.",
-      "title": "Listing-price basis"
+      "body": "Cardmarket defines AVG30 as the average sale price over the last 30 days. The daily price-guide feed is aggregated and does not expose individual idArticle or order records, so this project cannot independently audit each transaction.",
+      "title": "Aggregated sale-price basis"
     },
     {
       "body": "After history and data-quality eligibility gates, preview membership selects the 500 highest Cardmarket avg30 reference-price singles or the 100 highest sealed products. It is recalculated daily and may change more often than the official monthly rebalance schedule.",

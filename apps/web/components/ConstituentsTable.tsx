@@ -10,6 +10,7 @@ import {
   filterConstituents,
   groupRebalances
 } from "@/lib/constituents";
+import { cardmarketProductUrl } from "@/lib/cardmarket";
 import type { Constituent, RebalanceChange, RebalanceHistory, RebalanceRecord } from "@/lib/types";
 
 type Props = {
@@ -21,7 +22,26 @@ type Props = {
   minDate: string;
   maxDate: string;
   targetSize: number;
+  game: string;
+  memberLabel: "cards" | "products";
 };
+
+function CardmarketProductLink({ game, item }: { game: string; item: Pick<Constituent, "cm_product_id" | "name" | "variant_key"> }) {
+  return (
+    <a
+      href={cardmarketProductUrl(game, item.cm_product_id, item.variant_key)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-block max-w-full hover:text-amber"
+      aria-label={`Open ${item.name} on Cardmarket (product ${item.cm_product_id})`}
+    >
+      <span className="block truncate">{item.name} <span aria-hidden="true">↗</span></span>
+      <span className="mt-1 block text-xs text-paper/35 group-hover:text-amber/70">
+        Cardmarket ID {item.cm_product_id}
+      </span>
+    </a>
+  );
+}
 
 function findChangedConstituent(constituents: Constituent[], change: RebalanceChange, record: RebalanceRecord) {
   return constituents.find((item) =>
@@ -33,11 +53,13 @@ function findChangedConstituent(constituents: Constituent[], change: RebalanceCh
 function ChangeList({
   title,
   items,
-  tone
+  tone,
+  game
 }: {
   title: string;
   items: Constituent[];
   tone: "mint" | "coral";
+  game: string;
 }) {
   return (
     <section className="border-t border-line pt-4">
@@ -50,7 +72,7 @@ function ChangeList({
           {items.map((item) => (
             <li key={`${constituentKey(item)}:${item.member_since}`} className="flex items-start justify-between gap-4 py-3">
               <div className="min-w-0">
-                <div className="truncate text-paper">{item.name}</div>
+                <div className="text-paper"><CardmarketProductLink game={game} item={item} /></div>
                 <div className="mt-1 truncate text-xs text-paper/45">{item.set}</div>
               </div>
               <span className="shrink-0 text-xs text-paper/45">{item.variant_key}</span>
@@ -76,7 +98,9 @@ export function ConstituentsTable({
   initialIncludeInactive,
   minDate,
   maxDate,
-  targetSize
+  targetSize,
+  game,
+  memberLabel
 }: Props) {
   const [view, setView] = useState<"composition" | "changes">("composition");
   const [period, setPeriod] = useState<"week" | "month">("month");
@@ -192,8 +216,7 @@ export function ConstituentsTable({
                         {priceRanks.get(constituentKey(item)) ? `#${priceRanks.get(constituentKey(item))}` : "—"}
                       </td>
                       <td className="px-4 py-3 text-paper">
-                        <div>{item.name}</div>
-                        <div className="mt-1 text-xs text-paper/35">CM {item.cm_product_id}</div>
+                        <CardmarketProductLink game={game} item={item} />
                       </td>
                       <td className="px-4 py-3 text-paper/65">{item.set}</td>
                       <td className="px-4 py-3 text-paper/65">{item.variant_key}</td>
@@ -227,7 +250,7 @@ export function ConstituentsTable({
             <div className="mb-5 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <h2 className="text-lg font-medium">Compare composition dates</h2>
-                <p className="mt-1 text-sm text-paper/50">See exactly which cards entered, left, or remained between two snapshots.</p>
+                <p className="mt-1 text-sm text-paper/50">See exactly which {memberLabel} entered, left, or remained between two snapshots.</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <label className="text-xs text-paper/55">
@@ -261,8 +284,8 @@ export function ConstituentsTable({
               <div><div className="text-xl font-semibold text-paper">{delta.retained.length}</div><div className="mt-1 text-xs text-paper/45">Retained</div></div>
             </div>
             <div className="mt-6 grid gap-8 md:grid-cols-2">
-              <ChangeList title="Added cards" items={delta.additions} tone="mint" />
-              <ChangeList title="Removed cards" items={delta.removals} tone="coral" />
+              <ChangeList title={`Added ${memberLabel}`} items={delta.additions} tone="mint" game={game} />
+              <ChangeList title={`Removed ${memberLabel}`} items={delta.removals} tone="coral" game={game} />
             </div>
           </section>
 
@@ -312,7 +335,18 @@ export function ConstituentsTable({
                           return (
                             <div key={`${change.action}:${change.cm_product_id}:${change.variant_key}`} className="grid gap-1 py-3 text-sm sm:grid-cols-[90px_1fr_1fr] sm:gap-4">
                               <span className={change.action === "added" ? "text-mint" : "text-coral"}>{change.action}</span>
-                              <span className="text-paper">{item?.name ?? `CM ${change.cm_product_id}`} <span className="text-paper/40">({change.variant_key})</span></span>
+                              <span className="text-paper">
+                                <a
+                                  href={cardmarketProductUrl(game, change.cm_product_id, change.variant_key)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:text-amber"
+                                  aria-label={`Open ${item?.name ?? `product ${change.cm_product_id}`} on Cardmarket`}
+                                >
+                                  {item?.name ?? `Cardmarket ID ${change.cm_product_id}`} <span aria-hidden="true">↗</span>
+                                </a>{" "}
+                                <span className="text-paper/40">({change.variant_key})</span>
+                              </span>
                               <span className="text-paper/50">{change.reason}</span>
                             </div>
                           );
