@@ -1,13 +1,15 @@
 import { NextResponse } from "next/server";
 import { codes, getConstituents, getIndexes } from "@/lib/data";
 import { validatePortfolioCsv } from "@/lib/portfolio";
-import { isRateLimited, requestIp, validPortfolioToken } from "@/lib/request-guards";
+import { requestIp, validPortfolioToken } from "@/lib/request-guards";
+import { isRateLimited } from "@rate-limit";
 
-export async function PUT(request: Request, { params }: { params: { token: string } }) {
+export async function PUT(request: Request, props: { params: Promise<{ token: string }> }) {
+  const params = await props.params;
   if (!validPortfolioToken(params.token)) {
     return NextResponse.json({ error: "Invalid portfolio token" }, { status: 400 });
   }
-  if (isRateLimited(`portfolio-holdings:${requestIp(request)}`)) {
+  if (await isRateLimited(`portfolio-holdings:${requestIp(request)}`)) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
   if (Number(request.headers.get("content-length") ?? 0) > 1_000_000) {

@@ -3,7 +3,8 @@ import { getIndex } from "@/lib/data";
 
 export const revalidate = 3600;
 
-export async function GET(_request: Request, { params }: { params: { code: string } }) {
+export async function GET(_request: Request, props: { params: Promise<{ code: string }> }) {
+  const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) return NextResponse.json({ error: "Unknown index" }, { status: 404 });
   if (index.status !== "published" || index.history.length === 0) {

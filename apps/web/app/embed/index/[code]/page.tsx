@@ -15,7 +15,8 @@ export async function generateStaticParams() {
   return indexes.map((index) => ({ code: index.id }));
 }
 
-export default async function EmbedPage({ params }: { params: { code: string } }) {
+export default async function EmbedPage(props: { params: Promise<{ code: string }> }) {
+  const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (index.status !== "published" || index.history.length === 0) {

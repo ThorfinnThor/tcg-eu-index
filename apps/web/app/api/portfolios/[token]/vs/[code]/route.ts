@@ -1,13 +1,18 @@
 import { NextResponse } from "next/server";
 import { getIndex } from "@/lib/data";
 import { buildBenchmarkSeries } from "@/lib/portfolio";
-import { isRateLimited, requestIp, validPortfolioToken } from "@/lib/request-guards";
+import { requestIp, validPortfolioToken } from "@/lib/request-guards";
+import { isRateLimited } from "@rate-limit";
 
-export async function GET(_request: Request, { params }: { params: { token: string; code: string } }) {
+export async function GET(
+  _request: Request,
+  props: { params: Promise<{ token: string; code: string }> }
+) {
+  const params = await props.params;
   if (!validPortfolioToken(params.token)) {
     return NextResponse.json({ error: "Invalid portfolio token" }, { status: 400 });
   }
-  if (isRateLimited(`portfolio-compare:${requestIp(_request)}`)) {
+  if (await isRateLimited(`portfolio-compare:${requestIp(_request)}`)) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
   const index = await getIndex(params.code);

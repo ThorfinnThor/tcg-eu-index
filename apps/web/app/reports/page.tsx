@@ -23,7 +23,7 @@ export default async function ReportsPage() {
         <p className="text-sm text-amber">Human-reviewed weekly archive</p>
         <h1 className="mt-2 text-3xl font-semibold">Weekly reports</h1>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-paper/65">
-          Report records are generated from static JSON first, then marked published only after an editor review. Newsletter delivery is enabled only when a provider is configured on Vercel.
+          Report records are generated from static JSON first, then marked published only after an editor review. Newsletter delivery is enabled only when a provider is configured on Cloudflare Workers.
         </p>
       </div>
       <div className="mt-6 grid gap-4 md:grid-cols-[1fr_320px]">

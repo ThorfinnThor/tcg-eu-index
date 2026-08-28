@@ -10,6 +10,7 @@ __pycache__/
 node_modules/
 .next/
 apps/web/public/data/
+apps/web/public/methodology/
 apps/web/generated/
 dist/
 coverage/

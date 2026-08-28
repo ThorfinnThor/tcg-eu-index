@@ -40,7 +40,7 @@ describe("public API contracts", () => {
       "999999,nonfoil,1,4"
     ].join("\n");
     const response = await uploadHoldings(new Request("http://localhost", { method: "PUT", body: csv }), {
-      params: { token }
+      params: Promise.resolve({ token })
     });
     const payload = await response.json();
     expect(response.status).toBe(409);
@@ -49,23 +49,27 @@ describe("public API contracts", () => {
 
   it("rejects unpublished and unknown benchmark comparisons", async () => {
     const valid = await comparePortfolio(new Request("http://localhost"), {
-      params: { token, code: "OPEU100" }
+      params: Promise.resolve({ token, code: "OPEU100" })
     });
     expect(valid.status).toBe(409);
     expect(await valid.json()).toEqual({ error: "Benchmark has not been published" });
 
     const missing = await comparePortfolio(new Request("http://localhost"), {
-      params: { token, code: "UNKNOWN" }
+      params: Promise.resolve({ token, code: "UNKNOWN" })
     });
     expect(missing.status).toBe(404);
   });
 
   it("does not expose validation history through the public CSV route", async () => {
-    const response = await downloadHistory(new Request("http://localhost"), { params: { code: "OPEU100" } });
+    const response = await downloadHistory(new Request("http://localhost"), {
+      params: Promise.resolve({ code: "OPEU100" })
+    });
     expect(response.status).toBe(409);
     expect(await response.json()).toEqual({ error: "Index history has not been published", status: "accumulating" });
 
-    const missing = await downloadHistory(new Request("http://localhost"), { params: { code: "UNKNOWN" } });
+    const missing = await downloadHistory(new Request("http://localhost"), {
+      params: Promise.resolve({ code: "UNKNOWN" })
+    });
     expect(missing.status).toBe(404);
   });
 });

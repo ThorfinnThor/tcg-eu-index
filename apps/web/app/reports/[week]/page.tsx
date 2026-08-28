@@ -15,13 +15,15 @@ export async function generateStaticParams() {
   return reports.reports.map((report) => ({ week: report.week }));
 }
 
-export async function generateMetadata({ params }: { params: { week: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ week: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const report = await getReport(params.week);
   if (!report) return { title: "Report not found" };
   return reportPageMetadata(`reports/${report.week}`, report.title, report.summary);
 }
 
-export default async function ReportPage({ params }: { params: { week: string } }) {
+export default async function ReportPage(props: { params: Promise<{ week: string }> }) {
+  const params = await props.params;
   const report = await getReport(params.week);
   if (!report) notFound();
 

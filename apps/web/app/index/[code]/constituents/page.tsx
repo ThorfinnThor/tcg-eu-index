@@ -11,7 +11,8 @@ import { utilityPageMetadata } from "@/lib/seo";
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ code: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) return { title: "Constituents not found" };
   return utilityPageMetadata(
@@ -23,7 +24,13 @@ export async function generateMetadata({ params }: { params: { code: string } })
   );
 }
 
-export default async function ConstituentsPage({ params }: { params: { code: string } }) {
+type ConstituentsPageProps = {
+  params: Promise<{ code: string }>;
+  searchParams: Promise<{ asOf?: string | string[]; q?: string | string[]; inactive?: string | string[] }>;
+};
+
+export default async function ConstituentsPage(props: ConstituentsPageProps) {
+  const [params, searchParams] = await Promise.all([props.params, props.searchParams]);
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (index.status !== "published") {
@@ -59,6 +66,12 @@ export default async function ConstituentsPage({ params }: { params: { code: str
     getRebalanceHistory(params.code as IndexCode)
   ]);
   const maxDate = latestCompositionDate(constituents, index.history.at(-1)?.value_date ?? index.base_date);
+  const requestedAsOf = typeof searchParams.asOf === "string" ? searchParams.asOf : null;
+  const initialAsOf = requestedAsOf && requestedAsOf >= index.base_date && requestedAsOf <= maxDate
+    ? requestedAsOf
+    : maxDate;
+  const initialSearch = typeof searchParams.q === "string" ? searchParams.q : "";
+  const initialIncludeInactive = searchParams.inactive === "1";
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       <Breadcrumbs items={[
@@ -76,9 +89,9 @@ export default async function ConstituentsPage({ params }: { params: { code: str
       <ConstituentsTable
         constituents={constituents}
         rebalances={rebalances}
-        initialAsOf={maxDate}
-        initialSearch=""
-        initialIncludeInactive={false}
+        initialAsOf={initialAsOf}
+        initialSearch={initialSearch}
+        initialIncludeInactive={initialIncludeInactive}
         minDate={index.base_date}
         maxDate={maxDate}
         targetSize={index.target_size}

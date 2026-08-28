@@ -1,5 +1,4 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
+import { readAssetText } from "@runtime-data";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
 import { deriveRebalanceHistory } from "./constituents";
 import type { ArchiveHealthPayload, Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
@@ -39,8 +38,6 @@ type ManifestPayload = {
   files: Array<{ path: string; checksum: string; bytes: number }>;
 };
 
-const dataRoot = path.join(process.cwd(), "public", "data");
-
 export function codes(): IndexCode[] {
   return [
     "MTEU500",
@@ -67,7 +64,7 @@ export function codes(): IndexCode[] {
 }
 
 async function readJson<T>(relativePath: string): Promise<T> {
-  const body = await readFile(path.join(dataRoot, relativePath), "utf8");
+  const body = await readAssetText(`data/${relativePath}`);
   return JSON.parse(body) as T;
 }
 

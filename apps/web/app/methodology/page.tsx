@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
 import { pageMetadata } from "@/lib/seo";
+import { readAssetText } from "@runtime-data";
 
 export const revalidate = 3600;
 export const metadata: Metadata = pageMetadata(
@@ -13,7 +12,7 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function MethodologyPage() {
-  const markdown = await readFile(path.join(process.cwd(), "../../docs/methodology/v1.3.0.md"), "utf8").catch(
+  const markdown = await readAssetText("methodology/v1.3.0.md").catch(
     () => "# Methodology\n\nMethodology document will be available after build packaging."
   );
   return (

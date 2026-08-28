@@ -6,6 +6,8 @@ const root = process.cwd();
 const dataRoot = path.join(root, "public", "data");
 const sourceDataRoot = path.join(root, "source-data");
 const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
+const methodologySource = path.join(root, "..", "..", "docs", "methodology", "v1.3.0.md");
+const methodologyDestination = path.join(root, "public", "methodology", "v1.3.0.md");
 
 async function readSourceJson(indexCode, fileName) {
   return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
@@ -72,6 +74,8 @@ function deriveRebalances(index, constituents, methodologyVersion) {
 
 const generatedAt = new Date().toISOString();
 const fileStats = [];
+await mkdir(path.dirname(methodologyDestination), { recursive: true });
+await copyFile(methodologySource, methodologyDestination);
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));
 const dataQuality = await readSourceFile("data-quality.json");
 const readiness = await readSourceFile("readiness.json");

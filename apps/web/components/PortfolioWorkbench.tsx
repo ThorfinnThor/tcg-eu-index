@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import {
   CartesianGrid,
   Line,
@@ -22,11 +22,58 @@ type Props = {
 const sampleCsv = "cm_product_id,variant_key,quantity,cost_basis_eur\n750001,nonfoil,3,9.50\n750007,foil,1,10.00\n999999,nonfoil,2,5.00";
 const storageKey = "tcg-eu-index:portfolio-preview:v1";
 
+type StoredPortfolio = {
+  selectedCode?: string;
+  csv?: string;
+  basisDate?: string;
+};
+
+function subscribeToStorage(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  return () => window.removeEventListener("storage", onStoreChange);
+}
+
+function subscribeToHydration() {
+  return () => undefined;
+}
+
+function getStoredPortfolio() {
+  try {
+    return window.localStorage.getItem(storageKey);
+  } catch {
+    return null;
+  }
+}
+
+function parseStoredPortfolio(value: string | null): StoredPortfolio | null {
+  if (!value) return null;
+  try {
+    const parsed: unknown = JSON.parse(value);
+    if (!parsed || typeof parsed !== "object") return null;
+    const stored: StoredPortfolio = {};
+    if ("selectedCode" in parsed && typeof parsed.selectedCode === "string") stored.selectedCode = parsed.selectedCode;
+    if ("csv" in parsed && typeof parsed.csv === "string") stored.csv = parsed.csv;
+    if ("basisDate" in parsed && typeof parsed.basisDate === "string") stored.basisDate = parsed.basisDate;
+    return stored;
+  } catch {
+    return null;
+  }
+}
+
 export function PortfolioWorkbench({ indexes, constituentsByCode }: Props) {
-  const [selectedCode, setSelectedCode] = useState<IndexCode>(indexes[0]?.code ?? "OPEU100");
-  const [csv, setCsv] = useState(sampleCsv);
-  const [basisDate, setBasisDate] = useState(indexes[0]?.history.at(0)?.value_date ?? "");
-  const [hydrated, setHydrated] = useState(false);
+  const storedPayload = useSyncExternalStore(subscribeToStorage, getStoredPortfolio, () => null);
+  const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
+  const stored = useMemo(() => parseStoredPortfolio(storedPayload), [storedPayload]);
+  const defaultCode = indexes[0]?.code ?? "OPEU100";
+  const storedCode = stored?.selectedCode && indexes.some((index) => index.code === stored.selectedCode)
+    ? stored.selectedCode as IndexCode
+    : null;
+  const [selectedCodeOverride, setSelectedCode] = useState<IndexCode | null>(null);
+  const [csvOverride, setCsv] = useState<string | null>(null);
+  const [basisDateOverride, setBasisDate] = useState<string | null>(null);
+  const selectedCode = selectedCodeOverride ?? storedCode ?? defaultCode;
+  const csv = csvOverride ?? stored?.csv ?? sampleCsv;
+  const basisDate = basisDateOverride ?? stored?.basisDate ?? indexes[0]?.history.at(0)?.value_date ?? "";
   const fileInput = useRef<HTMLInputElement>(null);
   const selectedIndex = indexes.find((index) => index.code === selectedCode) ?? indexes[0];
   const constituents = useMemo(() => constituentsByCode[selectedCode] ?? [], [constituentsByCode, selectedCode]);
@@ -41,20 +88,6 @@ export function PortfolioWorkbench({ indexes, constituentsByCode }: Props) {
     [selectedIndex, validation, basisDate]
   );
   const latest = series.at(-1);
-
-  useEffect(() => {
-    try {
-      const stored = JSON.parse(window.localStorage.getItem(storageKey) ?? "null");
-      if (stored?.selectedCode && indexes.some((index) => index.code === stored.selectedCode)) {
-        setSelectedCode(stored.selectedCode);
-      }
-      if (typeof stored?.csv === "string") setCsv(stored.csv);
-      if (typeof stored?.basisDate === "string") setBasisDate(stored.basisDate);
-    } catch {
-      // Corrupt or unavailable browser storage should not block the preview.
-    }
-    setHydrated(true);
-  }, [indexes]);
 
   useEffect(() => {
     if (!hydrated) return;

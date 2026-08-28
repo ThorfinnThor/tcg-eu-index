@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false,
+    "lib": ["esnext"],
+    "plugins": []
+  },
+  "include": [
+    "worker-configuration.d.ts",
+    "lib/rate-limit.cloudflare.ts",
+    "lib/runtime-data.cloudflare.ts"
+  ],
+  "exclude": ["node_modules"]
+}

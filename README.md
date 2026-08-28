@@ -28,8 +28,25 @@ npm --prefix apps/web run data:validate
 npm --prefix apps/web run lint
 npm --prefix apps/web run test
 npm --prefix apps/web run build
+npm --prefix apps/web run typecheck:worker
+npm --prefix apps/web run build:vinext
+npm --prefix apps/web run deploy:dry-run
 npm --prefix apps/web run test:e2e
 ```
+
+## Cloudflare deployment
+
+The Next.js 16 application is packaged for Cloudflare Workers with vinext. Static public data and the versioned methodology are served through the Workers Assets binding; API routes and dynamic pages execute in the Worker runtime.
+
+```bash
+npm ci --prefix apps/web
+npm --prefix apps/web run build
+npm --prefix apps/web run build:vinext
+npm --prefix apps/web run deploy:dry-run
+npm --prefix apps/web run deploy:vinext
+```
+
+`apps/web/wrangler.jsonc` defines the assets, cache, observability, and rate-limit bindings. Configure `NEXT_PUBLIC_SITE_URL` and `NEWSLETTER_ENDPOINT` as Worker variables, and store `NEWSLETTER_API_KEY` as a Wrangler secret. Cloudflare Workers Builds can use `apps/web` as the root directory, `npm run build && npm run build:vinext` as the build command, and `npm run deploy:vinext` as the deploy command.
 
 Verify the current official Cardmarket downloads without writing data:
 
@@ -41,7 +58,7 @@ The public source paths and confirmed JSON schema are recorded in `docs/adr/001-
 
 ## Daily source archive
 
-The private Cardmarket archive uses GitHub Actions and Cloudflare R2. It is not a runtime dependency of the Vercel site, and Supabase is not required. Activate it only after following `docs/adr/runbook-archiver.md`.
+The private Cardmarket archive uses GitHub Actions and Cloudflare R2. It is not a runtime dependency of the Cloudflare Worker site, and Supabase is not required. Activate it only after following `docs/adr/runbook-archiver.md`.
 
 The daily archive covers Magic: The Gathering, Yu-Gi-Oh!, Pokemon, One Piece, Dragon Ball Super, Flesh and Blood, Digimon, Disney Lorcana, Star Wars: Unlimited, and Riftbound.
 
@@ -75,7 +92,7 @@ Private shadow outputs include chain-linked values, constituent contributions, r
 
 Once real indexes are published, the Monday workflow generates the prior week's report and charts in a draft pull request. Drafts are excluded from the public export until an editor changes the status to `published` and supplies `publishedAt`.
 
-Newsletter signup activates only when `NEWSLETTER_ENDPOINT` is configured on Vercel. Portfolio CSV files remain in the visitor's browser; the tool validates up to 5,000 rows and never fabricates a daily collection series when only cost basis and current reference values are available.
+Newsletter signup activates only when `NEWSLETTER_ENDPOINT` is configured on Cloudflare Workers. Portfolio CSV files remain in the visitor's browser; the tool validates up to 5,000 rows and never fabricates a daily collection series when only cost basis and current reference values are available.
 
 Replay an archived range in production:
 

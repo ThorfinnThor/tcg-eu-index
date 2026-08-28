@@ -36,5 +36,8 @@ jobs:
       - run: npm --prefix apps/web run lint
       - run: npm --prefix apps/web run test
       - run: npm --prefix apps/web run build
+      - run: npm --prefix apps/web run typecheck:worker
+      - run: npm --prefix apps/web run build:vinext
+      - run: npm --prefix apps/web run deploy:dry-run
       - run: npx --prefix apps/web playwright install --with-deps chromium
       - run: npm --prefix apps/web run test:e2e

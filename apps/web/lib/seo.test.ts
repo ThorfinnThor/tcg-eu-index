@@ -27,12 +27,12 @@ describe("SEO publication registry", () => {
   it("builds the sitemap only from published indexable definitions", async () => {
     const entries = await sitemap();
     const urls = entries.map((entry) => entry.url);
-    expect(urls).toContain("https://tcg-eu-index.vercel.app/methodology");
-    expect(urls).toContain("https://tcg-eu-index.vercel.app/data-quality");
-    expect(urls).not.toContain("https://tcg-eu-index.vercel.app/index/OPEU100");
-    expect(urls).not.toContain("https://tcg-eu-index.vercel.app/reports");
-    expect(urls).not.toContain("https://tcg-eu-index.vercel.app/portfolio");
-    expect(urls).not.toContain("https://tcg-eu-index.vercel.app/index/OPEU100/constituents");
+    expect(urls).toContain("https://tcg-eu-index-web.shuu9599.workers.dev/methodology");
+    expect(urls).toContain("https://tcg-eu-index-web.shuu9599.workers.dev/data-quality");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU100");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/reports");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/portfolio");
+    expect(urls).not.toContain("https://tcg-eu-index-web.shuu9599.workers.dev/index/OPEU100/constituents");
   });
 });
 
