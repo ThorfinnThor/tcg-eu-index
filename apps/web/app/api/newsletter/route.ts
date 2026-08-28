@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { isRateLimited, requestIp } from "@/lib/request-guards";
+import { requestIp } from "@/lib/request-guards";
+import { isRateLimited } from "@rate-limit";
 
 const signupSchema = z.object({
   email: z.string().trim().email().max(254),
@@ -21,7 +22,7 @@ export async function POST(request: Request) {
   if (!endpoint) {
     return NextResponse.json({ error: "Newsletter signup is not configured" }, { status: 503 });
   }
-  if (isRateLimited(`newsletter:${requestIp(request)}`, 5)) {
+  if (await isRateLimited(`newsletter:${requestIp(request)}`, 5)) {
     return NextResponse.json({ error: "Too many signup attempts" }, { status: 429 });
   }
   const contentLength = Number(request.headers.get("content-length") ?? 0);

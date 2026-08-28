@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { getIndexes } from "@/lib/data";
-import { isRateLimited, requestIp } from "@/lib/request-guards";
+import { requestIp } from "@/lib/request-guards";
+import { isRateLimited } from "@rate-limit";
 
 export async function POST(request: Request) {
-  if (isRateLimited(`portfolio-create:${requestIp(request)}`)) {
+  if (await isRateLimited(`portfolio-create:${requestIp(request)}`)) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
   const indexes = await getIndexes();

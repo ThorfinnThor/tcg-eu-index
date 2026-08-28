@@ -15,7 +15,8 @@ import { breadcrumbStructuredData, indexDatasetStructuredData } from "@/lib/stru
 export const revalidate = 3600;
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { code: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ code: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) return { title: "Index not found" };
   return pageMetadata(
@@ -27,7 +28,8 @@ export async function generateMetadata({ params }: { params: { code: string } })
   );
 }
 
-export default async function IndexPage({ params }: { params: { code: string } }) {
+export default async function IndexPage(props: { params: Promise<{ code: string }> }) {
+  const params = await props.params;
   const [index, readiness] = await Promise.all([getIndex(params.code), getReadiness()]);
   if (!index) notFound();
   const indexReadiness = readiness.indexes.find((item) => item.code === index.code);
