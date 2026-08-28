@@ -243,7 +243,7 @@ def audit_archive(
         errors.extend(f"{manifest.run_date}: {error}" for error in manifest_errors)
 
     expected_days = (end - start).days + 1
-    index_codes = index_codes or ["OPEU100", "PKEU250", "OPEUSLD"]
+    index_codes = index_codes or ["OPEU500", "PKEU500", "OPEUSLD"]
     readiness = [
         _index_readiness(
             store,

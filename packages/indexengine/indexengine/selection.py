@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import math
 from dataclasses import asdict, dataclass
 from datetime import date, timedelta
 from typing import Any
@@ -139,18 +138,32 @@ def select_constituents(
             continue
         eligible_rows.append(row)
 
+    if methodology.selection_rank != "reference_price_descending":
+        raise ValueError(f"unsupported selection rank {methodology.selection_rank}")
+    ranking_field = methodology.ranking_price_field
+    if ranking_field not in scores.columns:
+        raise ValueError(f"ranking price field {ranking_field} is unavailable")
     eligible_rows.sort(
         key=lambda row: (
+            -float(row[ranking_field]),
             -float(row["liquidity_score"]),
-            -float(row["avg30"]),
             str(row["stable_variant_id"]),
         )
     )
+    distinct_products: list[dict[str, Any]] = []
+    seen_product_ids: set[int] = set()
+    for row in eligible_rows:
+        product_id = int(row["cm_product_id"])
+        if product_id in seen_product_ids:
+            continue
+        distinct_products.append(row)
+        seen_product_ids.add(product_id)
+    eligible_rows = distinct_products
     snapshot_rows = [
         {
             "stable_variant_id": str(row["stable_variant_id"]),
+            "reference_price": round(float(row[ranking_field]), 8),
             "liquidity_score": round(float(row["liquidity_score"]), 12),
-            "avg30": round(float(row["avg30"]), 8),
         }
         for row in eligible_rows
     ]
@@ -160,43 +173,18 @@ def select_constituents(
             [], _removed_records(incumbents, {}, definition), 0, snapshot_sha
         )
 
-    target = definition.target_size
-    retention_cutoff = math.ceil(target * methodology.buffer_retention_multiplier)
-    entry_cutoff = max(1, math.floor(target * methodology.buffer_entry_multiplier))
     ranked = [(rank, row) for rank, row in enumerate(eligible_rows, start=1)]
-
-    preferred: set[tuple[int, str]] = set()
-    for rank, row in ranked:
-        identity = (int(row["cm_product_id"]), str(row["variant_key"]))
-        if (identity in incumbents and rank <= retention_cutoff) or (
-            identity not in incumbents and rank <= entry_cutoff
-        ):
-            preferred.add(identity)
-
-    selected_ranked = [item for item in ranked if _identity(item[1]) in preferred][:target]
-    selected_ids = {_identity(row) for _, row in selected_ranked}
-    if len(selected_ranked) < target:
-        for item in ranked:
-            identity = _identity(item[1])
-            if identity in selected_ids:
-                continue
-            selected_ranked.append(item)
-            selected_ids.add(identity)
-            if len(selected_ranked) >= target:
-                break
+    selected_ranked = ranked[: definition.target_size]
 
     constituents: list[Constituent] = []
     for rank, row in selected_ranked:
         identity = _identity(row)
         if identity in incumbents:
             action = "retained"
-            reason = f"incumbent retained at liquidity rank {rank}"
-        elif rank <= entry_cutoff or not incumbents:
-            action = "added"
-            reason = f"entrant selected at liquidity rank {rank}"
+            reason = f"incumbent retained at reference-price rank {rank}"
         else:
             action = "added"
-            reason = f"entrant selected to maintain target size at liquidity rank {rank}"
+            reason = f"entrant selected at reference-price rank {rank}"
         constituents.append(
             Constituent(
                 cm_product_id=identity[0],
@@ -204,7 +192,7 @@ def select_constituents(
                 action=action,
                 reason=reason,
                 liquidity_score=float(row["liquidity_score"]),
-                ref_price=float(row["avg30"]),
+                ref_price=float(row[ranking_field]),
                 stable_variant_id=str(row["stable_variant_id"]),
             )
         )
@@ -231,7 +219,7 @@ def _removed_records(
     for product_id, variant_key in sorted(identities):
         rank = ranks.get((product_id, variant_key))
         reason = (
-            f"incumbent removed at liquidity rank {rank} outside selection buffer"
+            f"incumbent removed at reference-price rank {rank} outside top {definition.target_size}"
             if rank is not None
             else "incumbent removed after failing current eligibility gates"
         )

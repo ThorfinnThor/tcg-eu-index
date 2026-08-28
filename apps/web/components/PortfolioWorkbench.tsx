@@ -64,7 +64,7 @@ export function PortfolioWorkbench({ indexes, constituentsByCode }: Props) {
   const storedPayload = useSyncExternalStore(subscribeToStorage, getStoredPortfolio, () => null);
   const hydrated = useSyncExternalStore(subscribeToHydration, () => true, () => false);
   const stored = useMemo(() => parseStoredPortfolio(storedPayload), [storedPayload]);
-  const defaultCode = indexes[0]?.code ?? "OPEU100";
+  const defaultCode = indexes[0]?.code ?? "OPEU500";
   const storedCode = stored?.selectedCode && indexes.some((index) => index.code === stored.selectedCode)
     ? stored.selectedCode as IndexCode
     : null;

@@ -114,23 +114,23 @@ def test_preview_calculation_does_not_weaken_official_gates(tmp_path: Path) -> N
 
     results = run_calc(run_date, _settings(), store=store)
 
-    one_piece = next(item for item in results if item.index_code == "OPEU100")
+    one_piece = next(item for item in results if item.index_code == "OPEU500")
     assert one_piece.status == "accumulating"
     assert one_piece.selected_constituents == 0
     preview_quality = json.loads(
         store.read_bytes(
-            f"derived/preview/indexes/OPEU100/quality/{run_date.isoformat()}.json"
+            f"derived/preview/indexes/OPEU500/quality/{run_date.isoformat()}.json"
         )
     )
     assert preview_quality["status"] == "preview"
     assert preview_quality["selected_constituents"] == 3
     assert preview_quality["days_remaining_before_official_review"] == 56
-    assert store.exists("derived/preview/indexes/OPEU100/daily-values.parquet")
+    assert store.exists("derived/preview/indexes/OPEU500/daily-values.parquet")
     official_values = pl.read_parquet(
-        store.root / "derived/indexes/OPEU100/daily-values.parquet"
+        store.root / "derived/indexes/OPEU500/daily-values.parquet"
     )
     preview_values = pl.read_parquet(
-        store.root / "derived/preview/indexes/OPEU100/daily-values.parquet"
+        store.root / "derived/preview/indexes/OPEU500/daily-values.parquet"
     )
     assert official_values.is_empty()
     assert preview_values.height == 3
@@ -148,21 +148,24 @@ def test_preview_export_publishes_only_verified_derived_data(tmp_path: Path) -> 
     result = export_preview_dataset(store, run_date, output_root)
 
     metadata = json.loads((output_root / "indexes.json").read_text())
-    one_piece = next(item for item in metadata["indexes"] if item["code"] == "OPEU100")
+    one_piece = next(item for item in metadata["indexes"] if item["code"] == "OPEU500")
     history = json.loads(
-        (output_root / "indexes/OPEU100/history.json").read_text()
+        (output_root / "indexes/OPEU500/history.json").read_text()
     )
     constituents = json.loads(
-        (output_root / "indexes/OPEU100/constituents.json").read_text()
+        (output_root / "indexes/OPEU500/constituents.json").read_text()
     )
     rebalances = json.loads(
-        (output_root / "indexes/OPEU100/rebalances.json").read_text()
+        (output_root / "indexes/OPEU500/rebalances.json").read_text()
     )
     archived_preview = json.loads(
-        (output_root / "indexes/OPEU100/preview-history.json").read_text()
+        (output_root / "indexes/OPEU500/preview-history.json").read_text()
     )
     assert result["officialHistorySeparate"] is True
     assert one_piece["status"] == "preview"
+    assert one_piece["name"] == "One Piece Europe 500"
+    assert one_piece["target_size"] == 500
+    assert one_piece["slug"] == "one-piece-europe-500"
     assert one_piece["history_start_kind"] == "preview"
     assert one_piece["official_base_date"] == "2026-07-20"
     assert history[0]["index_value"] == 1000

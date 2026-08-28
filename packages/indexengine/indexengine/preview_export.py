@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import re
+import shutil
 from datetime import date
 from io import BytesIO
 from pathlib import Path
@@ -11,7 +13,7 @@ from core.r2 import sha256_hex
 from core.store import ObjectStore
 
 from indexengine.calc import Rebalance
-from indexengine.methodology import Methodology
+from indexengine.methodology import IndexDefinition, Methodology
 from indexengine.public_export import build_public_membership_contract
 from indexengine.selection import Constituent, RemovedConstituent
 
@@ -20,6 +22,18 @@ PREVIEW_DISCLAIMER = (
     "and index values may change materially during the 60-day observation period. "
     "This is not the official index and is not investment advice."
 )
+
+LEGACY_INDEX_CODES = {
+    "YGEU500": "YGEU250",
+    "OPEU500": "OPEU100",
+    "PKEU500": "PKEU250",
+    "DBSEU500": "DBSEU100",
+    "FABEU500": "FABEU100",
+    "DGEU500": "DGEU100",
+    "LCEU500": "LCEU100",
+    "SWUEU500": "SWUEU100",
+    "RBEU500": "RBEU100",
+}
 
 
 def _read_json(store: ObjectStore, key: str) -> dict[str, Any] | None:
@@ -85,6 +99,30 @@ def _empty_index(metadata: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _current_metadata(
+    definition: IndexDefinition, current_by_code: dict[str, dict[str, Any]]
+) -> tuple[dict[str, Any], str]:
+    source_code = (
+        definition.code
+        if definition.code in current_by_code
+        else LEGACY_INDEX_CODES.get(definition.code, definition.code)
+    )
+    if source_code not in current_by_code:
+        raise ValueError(f"missing preview export metadata for {definition.code}")
+    metadata = current_by_code[source_code]
+    slug = re.sub(r"-\d+$", f"-{definition.target_size}", str(metadata["slug"]))
+    return (
+        {
+            **metadata,
+            "code": definition.code,
+            "name": definition.name,
+            "slug": slug,
+            "target_size": definition.target_size,
+        },
+        source_code,
+    )
+
+
 def export_preview_dataset(
     store: ObjectStore,
     run_date: date,
@@ -97,13 +135,13 @@ def export_preview_dataset(
     current_by_code = {
         str(item["code"]): item for item in current.get("indexes", [])
     }
-    if {item.code for item in methodology.indexes} != set(current_by_code):
-        raise ValueError("preview export metadata does not match methodology indexes")
-
     exported_indexes: list[dict[str, Any]] = []
     preview_codes: list[str] = []
+    migrated_source_codes: set[str] = set()
     for definition in methodology.indexes:
-        metadata = current_by_code[definition.code]
+        metadata, source_code = _current_metadata(definition, current_by_code)
+        if source_code != definition.code:
+            migrated_source_codes.add(source_code)
         prefix = f"derived/preview/indexes/{definition.code}"
         manifest = _read_json(store, f"{prefix}/manifest.json")
         quality = _read_json(store, f"{prefix}/quality/{run_date.isoformat()}.json")
@@ -200,6 +238,9 @@ def export_preview_dataset(
         )
         preview_codes.append(definition.code)
 
+    for source_code in migrated_source_codes:
+        shutil.rmtree(output_root / "indexes" / source_code, ignore_errors=True)
+
     dataset_version = (
         f"{run_date.isoformat()}.preview.{methodology.methodology_version}"
     )
@@ -242,11 +283,13 @@ def export_preview_dataset(
                     ),
                 },
                 {
-                    "title": "Daily provisional composition",
+                    "title": "Price-ranked provisional composition",
                     "body": (
-                        "Preview membership is recalculated daily from the history "
-                        "available at that time and may change more often than the "
-                        "official monthly rebalance schedule."
+                        "After history and data-quality eligibility gates, preview "
+                        "membership selects the 500 highest Cardmarket avg30 reference-"
+                        "price singles or the 100 highest sealed products. It is "
+                        "recalculated daily and may change more often than the official "
+                        "monthly rebalance schedule."
                     ),
                 },
                 {

@@ -43,8 +43,8 @@ class Methodology:
     carry_forward_max_days: int
     rebalance: str
     selection_lookback_days: int
-    buffer_retention_multiplier: float
-    buffer_entry_multiplier: float
+    selection_rank: str
+    ranking_price_field: str
     indexes: list[IndexDefinition]
 
     @classmethod
@@ -64,8 +64,8 @@ class Methodology:
             carry_forward_max_days=int(payload["carry_forward_max_days"]),
             rebalance=str(payload["rebalance"]),
             selection_lookback_days=int(payload["selection_lookback_days"]),
-            buffer_retention_multiplier=float(payload["buffer_retention_multiplier"]),
-            buffer_entry_multiplier=float(payload["buffer_entry_multiplier"]),
+            selection_rank=str(payload["selection_rank"]),
+            ranking_price_field=str(payload["ranking_price_field"]),
             indexes=[IndexDefinition(**item) for item in payload["indexes"]],
         )
 

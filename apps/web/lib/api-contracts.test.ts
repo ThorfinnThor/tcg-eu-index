@@ -49,7 +49,7 @@ describe("public API contracts", () => {
 
   it("rejects unpublished and unknown benchmark comparisons", async () => {
     const valid = await comparePortfolio(new Request("http://localhost"), {
-      params: Promise.resolve({ token, code: "OPEU100" })
+      params: Promise.resolve({ token, code: "OPEU500" })
     });
     expect(valid.status).toBe(409);
     expect(await valid.json()).toEqual({ error: "Benchmark has not been published" });
@@ -62,7 +62,7 @@ describe("public API contracts", () => {
 
   it("exposes labelled preview history through the public CSV route", async () => {
     const response = await downloadHistory(new Request("http://localhost"), {
-      params: Promise.resolve({ code: "OPEU100" })
+      params: Promise.resolve({ code: "OPEU500" })
     });
     expect(response.status).toBe(200);
     expect(response.headers.get("x-index-status")).toBe("preview");

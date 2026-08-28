@@ -25,8 +25,8 @@ daily_return_cap: 0.25
 carry_forward_max_days: 5
 rebalance: monthly
 selection_lookback_days: 60
-buffer_retention_multiplier: 1.2
-buffer_entry_multiplier: 0.9
+selection_rank: reference_price_descending
+ranking_price_field: avg30
 indexes:
   - code: TEST100
     name: Test Europe 100

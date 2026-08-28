@@ -16,7 +16,7 @@ derived/indexes/<code>/manifest.json
 derived/calc_runs/YYYY-MM-DD.json
 ```
 
-The engine recomputes from the available normalized history on every run. Rebalances are monthly, selection is liquidity-screened and buffer-controlled, and daily values are equal-weighted and chain-linked. Missing archive dates remain gaps. Constituent prices can be carried for the configured number of days, after which that constituent is suspended until a fresh observation arrives. Daily returns are capped according to the versioned methodology.
+The engine recomputes from the available normalized history on every run. Rebalances are monthly. History, observation coverage, seasoning, price-floor, and suspect-zero checks determine eligibility; eligible products are then ranked by the latest Cardmarket `avg30` reference price in descending order. The exact top N distinct products are selected when enough eligible products exist, with no retention buffer. Daily values are equal-weighted and chain-linked. Missing archive dates remain gaps. Constituent prices can be carried for the configured number of days, after which that constituent is suspended until a fresh observation arrives. Daily returns are capped according to the versioned methodology.
 
 The completion manifest is written last and contains source and output checksums. Re-running unchanged inputs must produce byte-identical output and no object writes. Per-card contributions and constituent selections remain private in R2. Only a later, explicitly approved export may generate the small aggregate JSON contract consumed by Vercel.
 

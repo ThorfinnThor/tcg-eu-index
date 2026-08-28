@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConstituentsTable } from "@/components/ConstituentsTable";
 import { latestCompositionDate } from "@/lib/constituents";
 import { getConstituents, getIndex, getRebalanceHistory } from "@/lib/data";
+import { canonicalIndexCode } from "@/lib/index-codes";
 import type { IndexCode } from "@/lib/types";
 import { utilityPageMetadata } from "@/lib/seo";
 
@@ -31,6 +32,8 @@ type ConstituentsPageProps = {
 
 export default async function ConstituentsPage(props: ConstituentsPageProps) {
   const [params, searchParams] = await Promise.all([props.params, props.searchParams]);
+  const canonicalCode = canonicalIndexCode(params.code);
+  if (canonicalCode !== params.code) permanentRedirect(`/index/${canonicalCode}/constituents`);
   const index = await getIndex(params.code);
   if (!index) notFound();
   if (!["preview", "published"].includes(index.status)) {
@@ -90,7 +93,7 @@ export default async function ConstituentsPage(props: ConstituentsPageProps) {
         <section className="mb-6 border-l-2 border-amber bg-amber/[0.07] px-5 py-4" role="status">
           <h2 className="text-sm font-semibold text-amber">Daily preview composition</h2>
           <p className="mt-2 max-w-4xl text-sm leading-6 text-paper/70">
-            These are real Cardmarket-derived provisional members and reference prices. The selection is recalculated daily from the available history and may change materially before the official 60-day cutover.
+            These are real Cardmarket-derived provisional members and reference prices. After eligibility checks, the {index.target_size} highest-priced {index.universe === "sealed" ? "products" : "cards"} by Cardmarket avg30 are selected. The ranking is recalculated daily and may change materially before the official 60-day cutover.
           </p>
         </section>
       ) : null}

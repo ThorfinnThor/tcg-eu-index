@@ -1,6 +1,7 @@
 import { readAssetText } from "@runtime-data";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
 import { deriveRebalanceHistory } from "./constituents";
+import { applyPublicIndexMetadata, applyPublicSearchMetadata, canonicalIndexCode, indexAssetCandidates } from "./index-codes";
 import type { ArchiveHealthPayload, Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
@@ -42,23 +43,23 @@ export function codes(): IndexCode[] {
   return [
     "MTEU500",
     "MTEUSLD",
-    "YGEU250",
+    "YGEU500",
     "YGEUSLD",
-    "OPEU100",
+    "OPEU500",
     "OPEUSLD",
-    "PKEU250",
+    "PKEU500",
     "PKEUSLD",
-    "DBSEU100",
+    "DBSEU500",
     "DBSEUSLD",
-    "FABEU100",
+    "FABEU500",
     "FABEUSLD",
-    "DGEU100",
+    "DGEU500",
     "DGEUSLD",
-    "LCEU100",
+    "LCEU500",
     "LCEUSLD",
-    "SWUEU100",
+    "SWUEU500",
     "SWUEUSLD",
-    "RBEU100",
+    "RBEU500",
     "RBEUSLD"
   ];
 }
@@ -89,14 +90,28 @@ export function changes(index: IndexSummary) {
 }
 
 function fixtureByCode(code: string) {
-  return fixtureIndexes.find((item) => item.code === code) ?? null;
+  const candidates = indexAssetCandidates(code);
+  const fixture = fixtureIndexes.find((item) => candidates.includes(item.code));
+  return fixture ? applyPublicIndexMetadata(fixture) : null;
+}
+
+async function readCodeJson<T>(code: string, fileName: string): Promise<{ payload: T; assetCode: string }> {
+  let lastError: unknown;
+  for (const assetCode of indexAssetCandidates(code)) {
+    try {
+      return { payload: await readJson<T>(`indexes/${assetCode}/${fileName}`), assetCode };
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError;
 }
 
 export async function getSearchIndex(): Promise<SearchRecord[]> {
   try {
-    return await readJson<SearchRecord[]>("search/indexes.json");
+    return (await readJson<SearchRecord[]>("search/indexes.json")).map(applyPublicSearchMetadata);
   } catch {
-    return fixtureIndexes.map((index) => ({
+    return fixtureIndexes.map((index) => applyPublicSearchMetadata({
       id: index.code,
       slug: index.slug,
       name: index.name,
@@ -122,12 +137,12 @@ export async function getIndexes(): Promise<IndexSummary[]> {
 export async function getIndex(code: string): Promise<IndexSummary | null> {
   const fixture = fixtureByCode(code);
   try {
-    const [summary, history, previewHistory] = await Promise.all([
-      readJson<Omit<IndexSummary, "history">>(`indexes/${code}/summary.json`),
-      readJson<DailyIndexValue[]>(`indexes/${code}/history.json`),
-      readJson<DailyIndexValue[]>(`indexes/${code}/preview-history.json`).catch(() => [])
+    const summaryResult = await readCodeJson<Omit<IndexSummary, "history">>(code, "summary.json");
+    const [history, previewHistory] = await Promise.all([
+      readJson<DailyIndexValue[]>(`indexes/${summaryResult.assetCode}/history.json`),
+      readJson<DailyIndexValue[]>(`indexes/${summaryResult.assetCode}/preview-history.json`).catch(() => [])
     ]);
-    return { ...summary, history, preview_history: previewHistory };
+    return applyPublicIndexMetadata({ ...summaryResult.payload, history, preview_history: previewHistory });
   } catch {
     return fixture;
   }
@@ -135,15 +150,16 @@ export async function getIndex(code: string): Promise<IndexSummary | null> {
 
 export async function getConstituents(code: string): Promise<Constituent[]> {
   try {
-    return await readJson<Constituent[]>(`indexes/${code}/constituents.json`);
+    return (await readCodeJson<Constituent[]>(code, "constituents.json")).payload;
   } catch {
-    return fixtureConstituents[code] ?? [];
+    return indexAssetCandidates(code).flatMap((candidate) => fixtureConstituents[candidate] ?? []);
   }
 }
 
 export async function getRebalanceHistory(code: IndexCode): Promise<RebalanceHistory> {
   try {
-    return await readJson<RebalanceHistory>(`indexes/${code}/rebalances.json`);
+    const payload = (await readCodeJson<RebalanceHistory>(code, "rebalances.json")).payload;
+    return { ...payload, index_code: canonicalIndexCode(payload.index_code) as IndexCode };
   } catch {
     const [index, constituents] = await Promise.all([getIndex(code), getConstituents(code)]);
     const generatedFor = latestDate(constituents, index?.base_date ?? "1970-01-01");
@@ -169,7 +185,11 @@ function latestDate(constituents: Constituent[], fallback: string) {
 
 export async function getStatus(): Promise<StatusPayload> {
   try {
-    return await readJson<StatusPayload>("status/latest.json");
+    const status = await readJson<StatusPayload>("status/latest.json");
+    return {
+      ...status,
+      indexes: status.indexes.map((index) => ({ ...index, code: canonicalIndexCode(index.code) }))
+    };
   } catch {
     const indexes = await getIndexes();
     const latestDates = indexes.map((index) => index.history.at(-1)?.value_date).filter(Boolean);
@@ -253,7 +273,14 @@ export async function getArchiveHealth(): Promise<ArchiveHealthPayload> {
 
 export async function getReadiness(): Promise<ReadinessPayload> {
   try {
-    return await readJson<ReadinessPayload>("readiness/latest.json");
+    const readiness = await readJson<ReadinessPayload>("readiness/latest.json");
+    return {
+      ...readiness,
+      indexes: readiness.indexes.map((index) => ({
+        ...index,
+        code: canonicalIndexCode(index.code) as IndexCode
+      }))
+    };
   } catch {
     return {
       schemaVersion: 1,

@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 // @ts-expect-error The repository intentionally does not emit declarations for build scripts.
 import { buildWeeklyReport, isoWeekBounds, reportMarkdown, weeklyIndexHighlight } from "../scripts/lib/report-generator.mjs";
 
-const index = { code: "OPEU100", name: "One Piece Europe 100", breadth: 0.58 };
+const index = { code: "OPEU500", name: "One Piece Europe 500", breadth: 0.58 };
 const history = [
   { value_date: "2026-08-02", index_value: 1000, n_capped: 0, n_carried_forward: 0 },
   { value_date: "2026-08-03", index_value: 1010, n_capped: 1, n_carried_forward: 0 },
@@ -20,11 +20,11 @@ describe("weekly report generator", () => {
     expect(highlight.weeklyReturn).toBe(0.05);
     expect(highlight.observations).toBe(2);
     expect(highlight.notableEvents).toHaveLength(2);
-    expect(highlight.chartPath).toBe("/reports/2026-W32/OPEU100.png");
+    expect(highlight.chartPath).toBe("/reports/2026-W32/OPEU500.png");
   });
 
   it("produces a draft with an editor placeholder", () => {
-    const report = buildWeeklyReport([index], { OPEU100: history }, "2026-W32");
+    const report = buildWeeklyReport([index], { OPEU500: history }, "2026-W32");
     expect(report.status).toBe("draft");
     expect(reportMarkdown(report)).toContain("## Editor's notes");
   });

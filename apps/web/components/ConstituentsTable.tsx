@@ -86,7 +86,16 @@ export function ConstituentsTable({
   const dates = useMemo(() => compositionDates(constituents, minDate), [constituents, minDate]);
   const [compareFrom, setCompareFrom] = useState(dates[0] ?? minDate);
   const [compareTo, setCompareTo] = useState(dates.at(-1) ?? maxDate);
-  const activeCount = useMemo(() => activeConstituentsAsOf(constituents, asOf).length, [asOf, constituents]);
+  const activeConstituents = useMemo(
+    () => activeConstituentsAsOf(constituents, asOf)
+      .sort((left, right) => right.ref_price - left.ref_price || left.name.localeCompare(right.name)),
+    [asOf, constituents]
+  );
+  const activeCount = activeConstituents.length;
+  const priceRanks = useMemo(
+    () => new Map(activeConstituents.map((item, index) => [constituentKey(item), index + 1])),
+    [activeConstituents]
+  );
   const visible = useMemo(
     () => filterConstituents(constituents, asOf, search, includeInactive),
     [asOf, constituents, includeInactive, search]
@@ -164,13 +173,14 @@ export function ConstituentsTable({
             <table className="w-full min-w-[1020px] border-collapse text-sm">
               <thead className="text-left text-paper/50">
                 <tr>
+                  <th className="px-4 py-3 text-right">Price rank</th>
                   <th className="px-4 py-3">Name</th>
                   <th className="px-4 py-3">Set</th>
                   <th className="px-4 py-3">Variant</th>
                   <th className="px-4 py-3">Member since</th>
                   <th className="px-4 py-3">Action history</th>
                   <th className="px-4 py-3 text-right">Ref. price</th>
-                  <th className="px-4 py-3 text-right">Liquidity</th>
+                  <th className="px-4 py-3 text-right">Data score</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
@@ -178,6 +188,9 @@ export function ConstituentsTable({
                   const inactive = Boolean(item.removed_at && item.removed_at <= asOf);
                   return (
                     <tr key={`${constituentKey(item)}:${item.member_since}`} className={inactive ? "bg-paper/[0.02] text-paper/50" : undefined}>
+                      <td className="px-4 py-3 text-right font-medium tabular-nums text-amber">
+                        {priceRanks.get(constituentKey(item)) ? `#${priceRanks.get(constituentKey(item))}` : "—"}
+                      </td>
                       <td className="px-4 py-3 text-paper">
                         <div>{item.name}</div>
                         <div className="mt-1 text-xs text-paper/35">CM {item.cm_product_id}</div>
