@@ -1,6 +1,6 @@
 # TCG Europe Index
 
-European listing-price indexes for ten active trading card games under development. Public values remain unavailable while the Cardmarket observation history accumulates.
+European listing-price indexes for ten active trading card games under development. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
 
 Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
 The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
@@ -74,7 +74,7 @@ uv run python scripts/verify_archive.py \
 
 The audit includes archive integrity, exact object-storage usage, conservative R2 operation projections, and per-index readiness for the eventual human cutover review.
 
-No fixture index values or constituents are published. Production values remain pending until enough verified daily snapshots exist for the methodology's observation windows and the cutover review passes.
+No fixture index values or constituents are published. A checksum-verified preview export publishes provisional aggregate values, current reference prices, and daily composition changes from a dedicated `derived/preview` R2 prefix. Official publication remains pending until enough verified daily snapshots exist for the methodology's observation windows and the cutover review passes.
 
 Each new daily calculation also updates a small aggregate readiness receipt for the static site. It contains archive-day counts and gate states only, never card prices. After all gates pass, prepare an isolated review candidate with `scripts/prepare_cutover.py`; the command cannot write into the public source directories and never publishes automatically.
 
@@ -84,9 +84,9 @@ The Sunday audit publishes a separate aggregate archive-health receipt with cove
 
 Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
 
-The same workflow then recomputes private shadow indexes. Shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. They do not replace the repository-managed public JSON automatically.
+The same workflow recomputes both the official shadow calculation and a separately labelled preview calculation. Official shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. Preview outputs use daily provisional selections based only on the history available at that time and may be exported to repository-managed public JSON after manifest verification.
 
-Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published.
+Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published. Preview history and composition archives remain separate from the later official history and are carried into the cutover candidate as labelled preparation-phase files.
 
 ## Editorial and optional user features
 

@@ -7,7 +7,7 @@ export async function GET(_request: Request, props: { params: Promise<{ code: st
   const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) return NextResponse.json({ error: "Unknown index" }, { status: 404 });
-  if (index.status !== "published" || index.history.length === 0) {
+  if (!["preview", "published"].includes(index.status) || index.history.length === 0) {
     return NextResponse.json(
       { error: "Index history has not been published", status: index.status },
       { status: 409, headers: { "Cache-Control": "public, max-age=3600" } }
@@ -32,7 +32,9 @@ export async function GET(_request: Request, props: { params: Promise<{ code: st
       "Content-Type": "text/csv; charset=utf-8",
       "Cache-Control": "public, max-age=3600",
       "Content-Disposition": `attachment; filename="${index.code}-history.csv"`,
-      "X-Data-Source": "repo-managed-mvp-json"
+      "X-Data-Source": "cardmarket-derived-index-json",
+      "X-Index-Status": index.status,
+      ...(index.status === "preview" ? { "X-Preview-Warning": "Provisional-not-official-not-investment-advice" } : {})
     }
   });
 }

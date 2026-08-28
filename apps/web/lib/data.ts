@@ -14,7 +14,7 @@ type SearchRecord = {
   filterValues: {
     game: string;
     universe: "singles" | "sealed";
-    status: "accumulating" | "published";
+    status: "accumulating" | "preview" | "published";
     target_size: number;
     breadth: number;
   };
@@ -122,11 +122,12 @@ export async function getIndexes(): Promise<IndexSummary[]> {
 export async function getIndex(code: string): Promise<IndexSummary | null> {
   const fixture = fixtureByCode(code);
   try {
-    const [summary, history] = await Promise.all([
+    const [summary, history, previewHistory] = await Promise.all([
       readJson<Omit<IndexSummary, "history">>(`indexes/${code}/summary.json`),
-      readJson<DailyIndexValue[]>(`indexes/${code}/history.json`)
+      readJson<DailyIndexValue[]>(`indexes/${code}/history.json`),
+      readJson<DailyIndexValue[]>(`indexes/${code}/preview-history.json`).catch(() => [])
     ]);
-    return { ...summary, history };
+    return { ...summary, history, preview_history: previewHistory };
   } catch {
     return fixture;
   }
@@ -149,7 +150,11 @@ export async function getRebalanceHistory(code: IndexCode): Promise<RebalanceHis
     return deriveRebalanceHistory(
       code,
       constituents,
-      index?.history_start_kind === "published" ? "published" : "validation",
+      index?.history_start_kind === "published"
+        ? "published"
+        : index?.history_start_kind === "preview"
+          ? "preview"
+          : "validation",
       generatedFor
     );
   }

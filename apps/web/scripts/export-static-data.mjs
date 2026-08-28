@@ -17,6 +17,14 @@ async function readSourceFile(relativePath) {
   return JSON.parse(await readFile(path.join(sourceDataRoot, relativePath), "utf8"));
 }
 
+async function readOptionalSourceJson(indexCode, fileName, fallback) {
+  try {
+    return await readSourceJson(indexCode, fileName);
+  } catch {
+    return fallback;
+  }
+}
+
 async function writeJson(relativePath, payload) {
   const destination = path.join(dataRoot, relativePath);
   await mkdir(path.dirname(destination), { recursive: true });
@@ -39,8 +47,8 @@ function deriveRebalances(index, constituents, methodologyVersion) {
   return {
     schema_version: 1,
     index_code: index.code,
-    data_state: index.history_start_kind === "published" ? "published" : "validation",
-    cadence: "monthly",
+    data_state: index.history_start_kind,
+    cadence: index.history_start_kind === "preview" ? "daily_preview" : "monthly",
     generated_for: generatedFor,
     rebalances: dates.map((effectiveDate, position) => {
       const additions = constituents.filter((item) => item.member_since === effectiveDate);
@@ -84,13 +92,24 @@ const reports = await readSourceFile("reports/index.json");
 const publishedReports = reports.reports.filter((report) => report.status === "published");
 const indexes = await Promise.all(
   sourceData.indexes.map(async (index) => {
-    const published = index.status === "published" && index.history_start_kind === "published";
+    const visible = ["preview", "published"].includes(index.status)
+      && index.status === index.history_start_kind;
+    let rebalances;
+    try {
+      rebalances = await readSourceJson(index.code, "rebalances.json");
+    } catch {
+      rebalances = null;
+    }
     return {
       ...index,
-      breadth: published ? index.breadth : 0,
-      volatility_30d: published ? index.volatility_30d : 0,
-      history: published ? await readSourceJson(index.code, "history.json") : [],
-      constituents: published ? await readSourceJson(index.code, "constituents.json") : []
+      breadth: visible ? index.breadth : 0,
+      volatility_30d: visible ? index.volatility_30d : 0,
+      history: visible ? await readSourceJson(index.code, "history.json") : [],
+      constituents: visible ? await readSourceJson(index.code, "constituents.json") : [],
+      previewHistory: await readOptionalSourceJson(index.code, "preview-history.json", []),
+      previewConstituents: await readOptionalSourceJson(index.code, "preview-constituents.json", []),
+      previewRebalances: await readOptionalSourceJson(index.code, "preview-rebalances.json", null),
+      rebalances
     };
   })
 );
@@ -102,7 +121,7 @@ fileStats.push(
       id: code,
       slug,
       name,
-      score: status === "published" ? history.at(-1)?.index_value ?? null : null,
+      score: ["preview", "published"].includes(status) ? history.at(-1)?.index_value ?? null : null,
       category: universe,
       filterValues: { game, universe, status, target_size, breadth }
     }))
@@ -157,12 +176,29 @@ for (const index of indexes) {
   const summary = { ...index };
   delete summary.history;
   delete summary.constituents;
+  delete summary.rebalances;
+  delete summary.previewHistory;
+  delete summary.previewConstituents;
+  delete summary.previewRebalances;
   fileStats.push(await writeJson(`indexes/${index.code}/summary.json`, summary));
   fileStats.push(await writeJson(`indexes/${index.code}/history.json`, index.history));
   fileStats.push(await writeJson(`indexes/${index.code}/constituents.json`, index.constituents));
+  fileStats.push(await writeJson(`indexes/${index.code}/preview-history.json`, index.previewHistory));
+  fileStats.push(await writeJson(`indexes/${index.code}/preview-constituents.json`, index.previewConstituents));
+  fileStats.push(await writeJson(
+    `indexes/${index.code}/preview-rebalances.json`,
+    index.previewRebalances ?? {
+      schema_version: 1,
+      index_code: index.code,
+      data_state: "preview",
+      cadence: "daily_preview",
+      generated_for: index.base_date,
+      rebalances: []
+    }
+  ));
   fileStats.push(await writeJson(
     `indexes/${index.code}/rebalances.json`,
-    deriveRebalances(index, index.constituents, sourceData.methodologyVersion)
+    index.rebalances ?? deriveRebalances(index, index.constituents, sourceData.methodologyVersion)
   ));
 }
 

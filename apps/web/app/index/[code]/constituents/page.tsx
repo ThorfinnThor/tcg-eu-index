@@ -17,7 +17,7 @@ export async function generateMetadata(props: { params: Promise<{ code: string }
   if (!index) return { title: "Constituents not found" };
   return utilityPageMetadata(
     `${index.name} constituents`,
-    index.status === "published"
+    ["preview", "published"].includes(index.status)
       ? `Search and replay the historical constituent composition of ${index.name}.`
       : `${index.name} constituents will be published after the Cardmarket archive and cutover review are complete.`,
     `/index/${index.code}/constituents`
@@ -33,7 +33,7 @@ export default async function ConstituentsPage(props: ConstituentsPageProps) {
   const [params, searchParams] = await Promise.all([props.params, props.searchParams]);
   const index = await getIndex(params.code);
   if (!index) notFound();
-  if (index.status !== "published") {
+  if (!["preview", "published"].includes(index.status)) {
     const memberLabel = index.universe === "sealed" ? "products" : "cards";
     return (
       <div className="mx-auto max-w-5xl px-4 py-8">
@@ -86,6 +86,14 @@ export default async function ConstituentsPage(props: ConstituentsPageProps) {
           Inspect every available composition, compare two snapshots, and audit additions and removals by week or month.
         </p>
       </div>
+      {index.status === "preview" ? (
+        <section className="mb-6 border-l-2 border-amber bg-amber/[0.07] px-5 py-4" role="status">
+          <h2 className="text-sm font-semibold text-amber">Daily preview composition</h2>
+          <p className="mt-2 max-w-4xl text-sm leading-6 text-paper/70">
+            These are real Cardmarket-derived provisional members and reference prices. The selection is recalculated daily from the available history and may change materially before the official 60-day cutover.
+          </p>
+        </section>
+      ) : null}
       <ConstituentsTable
         constituents={constituents}
         rebalances={rebalances}

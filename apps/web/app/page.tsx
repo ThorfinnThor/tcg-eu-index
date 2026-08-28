@@ -54,13 +54,13 @@ export default async function Page() {
           </div>
         </div>
         <p className="mt-4 max-w-3xl text-sm leading-6 text-paper/65">
-          Official Cardmarket files are archived and checked daily. Public index values and constituent lists remain unavailable until sufficient history has accumulated and the cutover review is complete.
+          Official Cardmarket files are archived and checked daily. Provisional index values and compositions are published during the 60-day observation phase; official indexes still require the full history window and human cutover review.
         </p>
       </section>
 
       <div className="grid gap-4 lg:grid-cols-2">
         {indexes.map((index) => {
-          const published = index.status === "published" && index.history.length > 0;
+          const visible = ["preview", "published"].includes(index.status) && index.history.length > 0;
           const memberLabel = index.universe === "sealed" ? "products" : "cards";
           const latest = index.history.at(-1);
           const delta = changes(index);
@@ -75,9 +75,11 @@ export default async function Page() {
                     <span className="chip">{index.universe}</span>
                   </div>
                 </div>
-                <span className="chip border-teal text-teal">{index.status}</span>
+                <span className={`chip ${index.status === "published" ? "border-teal text-teal" : "border-amber text-amber"}`}>
+                  {index.status === "preview" ? "Preview index" : index.status}
+                </span>
               </div>
-              {published ? (
+              {visible ? (
                 <>
                   <div className="mt-5 grid grid-cols-2 gap-4">
                     <Metric label="Latest" value={latest?.index_value.toFixed(2) ?? "pending"} />
@@ -91,6 +93,11 @@ export default async function Page() {
                     <span>7d {formatPct(delta.d7)}</span>
                     <span>Breadth {(index.breadth * 100).toFixed(0)}%</span>
                   </div>
+                  {index.status === "preview" ? (
+                    <p className="mt-4 border-t border-line pt-3 text-xs leading-5 text-amber/85">
+                      Provisional values and composition; not the official index or investment advice.
+                    </p>
+                  ) : null}
                 </>
               ) : (
                 <div className="mt-6 border-t border-line pt-5">

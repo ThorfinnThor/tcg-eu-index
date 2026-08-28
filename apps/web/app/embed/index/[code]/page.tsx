@@ -19,7 +19,7 @@ export default async function EmbedPage(props: { params: Promise<{ code: string 
   const params = await props.params;
   const index = await getIndex(params.code);
   if (!index) notFound();
-  if (index.status !== "published" || index.history.length === 0) {
+  if (!["preview", "published"].includes(index.status) || index.history.length === 0) {
     return (
       <div className="min-h-screen bg-ink p-3">
         <div className="surface p-4">
@@ -38,6 +38,7 @@ export default async function EmbedPage(props: { params: Promise<{ code: string 
           <div>
             <div className="text-xs text-paper/45">{index.code}</div>
             <h1 className="text-base font-semibold">{index.name}</h1>
+            {index.status === "preview" ? <div className="mt-1 text-xs text-amber">Preview · not official</div> : null}
           </div>
           <span className={delta.d30 >= 0 ? "text-mint" : "text-coral"}>{formatPct(delta.d30)}</span>
         </div>

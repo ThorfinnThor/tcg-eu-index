@@ -13,7 +13,8 @@ def build_public_membership_contract(
     rebalances: list[Rebalance],
     products: pl.DataFrame,
     sets: pl.DataFrame,
-    data_state: Literal["validation", "published"] = "validation",
+    data_state: Literal["validation", "preview", "published"] = "validation",
+    cadence: Literal["monthly", "daily_preview"] = "monthly",
 ) -> dict[str, object]:
     """Build the small public membership contract without writing or publishing it."""
     product_by_id = {
@@ -112,7 +113,7 @@ def build_public_membership_contract(
             "schema_version": 1,
             "index_code": index_code,
             "data_state": data_state,
-            "cadence": "monthly",
+            "cadence": cadence,
             "generated_for": generated_for,
             "rebalances": public_rebalances,
         },

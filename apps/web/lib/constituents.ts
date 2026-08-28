@@ -101,7 +101,7 @@ export function deriveRebalanceHistory(
     schema_version: 1,
     index_code: code,
     data_state: dataState,
-    cadence: "monthly",
+    cadence: dataState === "preview" ? "daily_preview" : "monthly",
     generated_for: generatedFor,
     rebalances
   };

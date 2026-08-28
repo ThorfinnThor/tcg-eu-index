@@ -37,13 +37,15 @@ export type IndexSummary = {
   game: string;
   universe: "singles" | "sealed";
   history_start_date: string;
-  history_start_kind: "validation" | "published";
+  history_start_kind: "validation" | "preview" | "published";
   base_date: string;
-  status: "accumulating" | "published";
+  official_base_date?: string;
+  status: "accumulating" | "preview" | "published";
   target_size: number;
   breadth: number;
   volatility_30d: number;
   history: DailyIndexValue[];
+  preview_history?: DailyIndexValue[];
 };
 
 export type Constituent = {
@@ -80,8 +82,8 @@ export type RebalanceRecord = {
 export type RebalanceHistory = {
   schema_version: 1;
   index_code: IndexCode;
-  data_state: "validation" | "published";
-  cadence: "monthly";
+  data_state: "validation" | "preview" | "published";
+  cadence: "monthly" | "daily_preview";
   generated_for: string;
   rebalances: RebalanceRecord[];
 };

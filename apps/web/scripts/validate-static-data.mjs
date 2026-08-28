@@ -52,11 +52,20 @@ for (const index of sourceData.indexes) {
   const sourceHistory = await readSourceJson(index.code, "history.json");
   const sourceConstituents = await readSourceJson(index.code, "constituents.json");
   if (!Array.isArray(sourceHistory)) fail(`${index.code} source history must be an array`);
-  if (index.history_start_kind !== "validation" && index.history_start_kind !== "published") {
+  if (!["accumulating", "preview", "published"].includes(index.status)) {
+    fail(`${index.code} has invalid status`);
+  }
+  if (!["validation", "preview", "published"].includes(index.history_start_kind)) {
     fail(`${index.code} has invalid history_start_kind`);
   }
-  if (index.status === "published" && sourceHistory.length === 0) {
-    fail(`${index.code} published source history is empty`);
+  if (
+    ["preview", "published"].includes(index.status) &&
+    index.status !== index.history_start_kind
+  ) {
+    fail(`${index.code} status does not match history_start_kind`);
+  }
+  if (["preview", "published"].includes(index.status) && sourceHistory.length === 0) {
+    fail(`${index.code} visible source history is empty`);
   }
   if (sourceHistory.length > 0) {
     if (sourceHistory[0].value_date !== index.history_start_date) {
@@ -319,7 +328,7 @@ for (const page of pageDefinitions.filter((definition) => definition.indexable))
 
 const slugs = new Set();
 for (const item of indexes) {
-  const published = item.filterValues?.status === "published";
+  const published = ["preview", "published"].includes(item.filterValues?.status);
   if (
     !item.id || !item.slug || !item.name ||
     (published ? typeof item.score !== "number" : item.score !== null)
@@ -354,20 +363,22 @@ for (const index of indexes) {
   }
   if (!Array.isArray(history)) fail(`${index.id} history must be an array`);
   if (!Array.isArray(constituents)) fail(`${index.id} constituents must be an array`);
-  if (summary.status === "published" && (history.length === 0 || constituents.length === 0)) {
-    fail(`${index.id} published data must include history and constituents`);
+  const visible = ["preview", "published"].includes(summary.status);
+  if (visible && (history.length === 0 || constituents.length === 0)) {
+    fail(`${index.id} visible data must include history and constituents`);
   }
-  if (summary.status !== "published" && (history.length > 0 || constituents.length > 0)) {
+  if (!visible && (history.length > 0 || constituents.length > 0)) {
     fail(`${index.id} accumulating data must not expose validation history or constituents`);
   }
   if (
-    rebalances.schema_version !== 1 || rebalances.index_code !== index.id || rebalances.cadence !== "monthly" ||
-    !["validation", "published"].includes(rebalances.data_state) || !Array.isArray(rebalances.rebalances)
+    rebalances.schema_version !== 1 || rebalances.index_code !== index.id ||
+    !["monthly", "daily_preview"].includes(rebalances.cadence) ||
+    !["validation", "preview", "published"].includes(rebalances.data_state) || !Array.isArray(rebalances.rebalances)
   ) {
     fail(`${index.id} rebalances have an invalid contract`);
   }
   if (
-    rebalances.data_state !== (summary.history_start_kind === "published" ? "published" : "validation") ||
+    rebalances.data_state !== summary.history_start_kind ||
     !rebalances.generated_for
   ) {
     fail(`${index.id} rebalance provenance does not match its summary`);
