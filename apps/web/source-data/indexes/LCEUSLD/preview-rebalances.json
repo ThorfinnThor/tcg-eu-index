@@ -5,755 +5,812 @@
   "index_code": "LCEUSLD",
   "rebalances": [
     {
-      "active_count": 25,
+      "active_count": 100,
       "changes": [
         {
           "action": "added",
-          "cm_product_id": 861900,
-          "reason": "entrant selected at liquidity rank 1",
+          "cm_product_id": 731687,
+          "reason": "entrant selected at reference-price rank 1",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 870098,
-          "reason": "entrant selected at liquidity rank 2",
+          "cm_product_id": 830058,
+          "reason": "entrant selected at reference-price rank 2",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 748259,
-          "reason": "entrant selected at liquidity rank 3",
+          "cm_product_id": 730470,
+          "reason": "entrant selected at reference-price rank 3",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 846510,
-          "reason": "entrant selected at liquidity rank 4",
+          "cm_product_id": 800159,
+          "reason": "entrant selected at reference-price rank 4",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 861517,
-          "reason": "entrant selected at liquidity rank 5",
+          "cm_product_id": 852851,
+          "reason": "entrant selected at reference-price rank 5",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 845707,
-          "reason": "entrant selected at liquidity rank 6",
+          "cm_product_id": 882159,
+          "reason": "entrant selected at reference-price rank 6",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 800160,
-          "reason": "entrant selected at liquidity rank 7",
+          "cm_product_id": 830057,
+          "reason": "entrant selected at reference-price rank 7",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 818322,
-          "reason": "entrant selected at liquidity rank 8",
+          "cm_product_id": 883493,
+          "reason": "entrant selected at reference-price rank 8",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 882175,
-          "reason": "entrant selected at liquidity rank 9",
+          "cm_product_id": 861849,
+          "reason": "entrant selected at reference-price rank 9",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 814538,
-          "reason": "entrant selected at liquidity rank 10",
+          "cm_product_id": 807386,
+          "reason": "entrant selected at reference-price rank 10",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 816986,
+          "reason": "entrant selected at reference-price rank 11",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 874544,
+          "reason": "entrant selected at reference-price rank 12",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 864937,
+          "reason": "entrant selected at reference-price rank 13",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 778427,
+          "reason": "entrant selected at reference-price rank 14",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 774472,
+          "reason": "entrant selected at reference-price rank 15",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 761833,
+          "reason": "entrant selected at reference-price rank 16",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
           "cm_product_id": 737342,
-          "reason": "entrant selected at liquidity rank 11",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 857541,
-          "reason": "entrant selected at liquidity rank 12",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 761833,
-          "reason": "entrant selected at liquidity rank 13",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 883493,
-          "reason": "entrant selected at liquidity rank 14",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 814268,
-          "reason": "entrant selected at liquidity rank 15",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 846504,
-          "reason": "entrant selected at liquidity rank 16",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 731688,
-          "reason": "entrant selected at liquidity rank 17",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 828110,
-          "reason": "entrant selected at liquidity rank 18",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 846518,
-          "reason": "entrant selected at liquidity rank 19",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 814534,
-          "reason": "entrant selected at liquidity rank 20",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 737343,
-          "reason": "entrant selected at liquidity rank 21",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 778427,
-          "reason": "entrant selected at liquidity rank 22",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 730487,
-          "reason": "entrant selected at liquidity rank 23",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 814536,
-          "reason": "entrant selected at liquidity rank 24",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 765789,
-          "reason": "entrant selected at liquidity rank 25",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-13",
-      "eligible_count": 149,
-      "methodology_version": "1.3.0",
-      "retained_count": 0,
-      "selection_snapshot_sha256": "8b8a003f013b5c269e45a5b8cf81d47cb272616634d23292ce771bfb03660e07"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 816989,
-          "reason": "entrant selected at liquidity rank 1",
+          "reason": "entrant selected at reference-price rank 17",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
           "cm_product_id": 787720,
-          "reason": "entrant selected at liquidity rank 2",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 761834,
-          "reason": "entrant selected at liquidity rank 3",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 807389,
-          "reason": "entrant selected at liquidity rank 4",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 816986,
-          "reason": "entrant selected at liquidity rank 5",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 730487,
-          "reason": "incumbent removed at liquidity rank 28 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 737343,
-          "reason": "incumbent removed at liquidity rank 26 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 765789,
-          "reason": "incumbent removed at liquidity rank 30 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 778427,
-          "reason": "incumbent removed at liquidity rank 27 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 814536,
-          "reason": "incumbent removed at liquidity rank 29 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-14",
-      "eligible_count": 149,
-      "methodology_version": "1.3.0",
-      "retained_count": 20,
-      "selection_snapshot_sha256": "6594681df2d46418da1502d284efdf3dad20b655405911d2882bca032953b74d"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 816998,
-          "reason": "entrant selected at liquidity rank 1",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 807396,
-          "reason": "entrant selected at liquidity rank 4",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 807397,
-          "reason": "entrant selected at liquidity rank 6",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 807385,
-          "reason": "entrant selected at liquidity rank 7",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 816991,
-          "reason": "entrant selected at liquidity rank 8",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 861848,
-          "reason": "entrant selected at liquidity rank 9",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 816985,
-          "reason": "entrant selected at liquidity rank 10",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 861861,
-          "reason": "entrant selected at liquidity rank 13",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 852850,
-          "reason": "entrant selected at liquidity rank 14",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 731688,
-          "reason": "incumbent removed at liquidity rank 31 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 761833,
-          "reason": "incumbent removed at liquidity rank 27 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 814268,
-          "reason": "incumbent removed at liquidity rank 29 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 814534,
-          "reason": "incumbent removed at liquidity rank 34 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 828110,
-          "reason": "incumbent removed at liquidity rank 32 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 846504,
-          "reason": "incumbent removed at liquidity rank 30 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 846518,
-          "reason": "incumbent removed at liquidity rank 33 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 857541,
-          "reason": "incumbent removed at liquidity rank 26 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 883493,
-          "reason": "incumbent removed at liquidity rank 28 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-15",
-      "eligible_count": 148,
-      "methodology_version": "1.3.0",
-      "retained_count": 16,
-      "selection_snapshot_sha256": "a7e5e1c7fa85672590d56832e6d14b3d9fce9f88cc8a9a07acee51674026928e"
-    },
-    {
-      "active_count": 25,
-      "changes": [],
-      "effective_date": "2026-08-16",
-      "eligible_count": 148,
-      "methodology_version": "1.3.0",
-      "retained_count": 25,
-      "selection_snapshot_sha256": "00dfd432259c74689688e1d14a04ac0dc8002a7f903f18049c5a50f1bea2611d"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 737388,
-          "reason": "entrant selected at liquidity rank 6",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 748258,
-          "reason": "entrant selected at liquidity rank 7",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 852850,
-          "reason": "incumbent removed at liquidity rank 34 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 861861,
-          "reason": "incumbent removed at liquidity rank 39 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-17",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 23,
-      "selection_snapshot_sha256": "ab8faced774024245fb3984fbb293e2875047c5663b5f057aa05031d716a05b6"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 737343,
-          "reason": "entrant selected at liquidity rank 3",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 737391,
-          "reason": "entrant selected at liquidity rank 9",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 857541,
-          "reason": "entrant selected to maintain target size at liquidity rank 23",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 816985,
-          "reason": "incumbent removed at liquidity rank 36 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 816986,
-          "reason": "incumbent removed at liquidity rank 38 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 861848,
-          "reason": "incumbent removed at liquidity rank 32 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-18",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 22,
-      "selection_snapshot_sha256": "182b1e0d18164383d288ad43cd55fba65a3488c6010572a79e6cb1239d3a2641"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 778427,
-          "reason": "entrant selected at liquidity rank 5",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 882164,
-          "reason": "entrant selected at liquidity rank 8",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 787733,
-          "reason": "entrant selected at liquidity rank 15",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 883493,
-          "reason": "entrant selected to maintain target size at liquidity rank 24",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 807385,
-          "reason": "incumbent removed at liquidity rank 34 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 807389,
-          "reason": "incumbent removed at liquidity rank 41 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 816991,
-          "reason": "incumbent removed at liquidity rank 38 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 882175,
-          "reason": "incumbent removed at liquidity rank 60 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-19",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 21,
-      "selection_snapshot_sha256": "6e64d496b34fe79733b0da6435b583a80c5db55ac77513e1f2bd4a9dec9e5b9c"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 846504,
-          "reason": "entrant selected to maintain target size at liquidity rank 24",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 731688,
-          "reason": "entrant selected to maintain target size at liquidity rank 25",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 857541,
-          "reason": "incumbent removed at liquidity rank 53 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 861517,
-          "reason": "incumbent removed at liquidity rank 35 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-20",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 23,
-      "selection_snapshot_sha256": "0177c34a16309e788caaecbec664fe777c82cf553236446c0c6929eb492e6f71"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 737364,
-          "reason": "entrant selected at liquidity rank 6",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 787733,
-          "reason": "incumbent removed at liquidity rank 30 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-21",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 24,
-      "selection_snapshot_sha256": "229731ef005f1156e5a9352aa58d0d38e307288986f9158ef32a587058af619e"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 765789,
-          "reason": "entrant selected at liquidity rank 4",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 861520,
-          "reason": "entrant selected at liquidity rank 18",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 761836,
-          "reason": "entrant selected at liquidity rank 21",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 731688,
-          "reason": "incumbent removed at liquidity rank 26 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 807397,
-          "reason": "incumbent removed at liquidity rank 27 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 883493,
-          "reason": "incumbent removed at liquidity rank 32 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-22",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 22,
-      "selection_snapshot_sha256": "f21f2018b231a4d5a71f8c673f4b29304f3c79a7fd8fa9d296c7e5a533a5408d"
-    },
-    {
-      "active_count": 25,
-      "changes": [],
-      "effective_date": "2026-08-23",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 25,
-      "selection_snapshot_sha256": "21a8552ab8261fc76ee68effee9e0804884018233002b234bc7e486e3108b51c"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 852853,
-          "reason": "entrant selected at liquidity rank 12",
+          "reason": "entrant selected at reference-price rank 18",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
           "cm_product_id": 748254,
-          "reason": "entrant selected at liquidity rank 13",
+          "reason": "entrant selected at reference-price rank 19",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
-          "cm_product_id": 846512,
-          "reason": "entrant selected to maintain target size at liquidity rank 23",
+          "cm_product_id": 730469,
+          "reason": "entrant selected at reference-price rank 20",
           "variant_key": "nonfoil"
         },
-        {
-          "action": "removed",
-          "cm_product_id": 737391,
-          "reason": "incumbent removed at liquidity rank 37 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 846504,
-          "reason": "incumbent removed at liquidity rank 31 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 861520,
-          "reason": "incumbent removed at liquidity rank 36 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-24",
-      "eligible_count": 151,
-      "methodology_version": "1.3.0",
-      "retained_count": 22,
-      "selection_snapshot_sha256": "bdf057884d6e38a2e9100edcb2bf8ca46022ea4c185f7044b40f5eecb4faab0a"
-    },
-    {
-      "active_count": 25,
-      "changes": [],
-      "effective_date": "2026-08-25",
-      "eligible_count": 152,
-      "methodology_version": "1.3.0",
-      "retained_count": 25,
-      "selection_snapshot_sha256": "576a7978bd639903175779a2612d4bb754c1748cf1eeb02717d6d638a7db1fee"
-    },
-    {
-      "active_count": 25,
-      "changes": [
-        {
-          "action": "added",
-          "cm_product_id": 748253,
-          "reason": "entrant selected at liquidity rank 20",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "added",
-          "cm_product_id": 846518,
-          "reason": "entrant selected at liquidity rank 21",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 761834,
-          "reason": "incumbent removed at liquidity rank 29 outside selection buffer",
-          "variant_key": "nonfoil"
-        },
-        {
-          "action": "removed",
-          "cm_product_id": 761836,
-          "reason": "incumbent removed at liquidity rank 30 outside selection buffer",
-          "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-26",
-      "eligible_count": 152,
-      "methodology_version": "1.3.0",
-      "retained_count": 23,
-      "selection_snapshot_sha256": "ecdaf32585e3ee5b85aa03572f94c3eaae44868863e0bb37e0f3260366caa18d"
-    },
-    {
-      "active_count": 25,
-      "changes": [
         {
           "action": "added",
           "cm_product_id": 730487,
-          "reason": "entrant selected at liquidity rank 5",
+          "reason": "entrant selected at reference-price rank 21",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 830065,
+          "reason": "entrant selected at reference-price rank 22",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 760002,
+          "reason": "entrant selected at reference-price rank 23",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 852850,
+          "reason": "entrant selected at reference-price rank 24",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 861520,
+          "reason": "entrant selected at reference-price rank 25",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 861900,
+          "reason": "entrant selected at reference-price rank 26",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 816990,
+          "reason": "entrant selected at reference-price rank 27",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 857541,
+          "reason": "entrant selected at reference-price rank 28",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 782228,
+          "reason": "entrant selected at reference-price rank 29",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 845707,
+          "reason": "entrant selected at reference-price rank 30",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 870098,
+          "reason": "entrant selected at reference-price rank 31",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 814536,
+          "reason": "entrant selected at reference-price rank 32",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 787724,
+          "reason": "entrant selected at reference-price rank 33",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882157,
+          "reason": "entrant selected at reference-price rank 34",
           "variant_key": "nonfoil"
         },
         {
           "action": "added",
           "cm_product_id": 731688,
-          "reason": "entrant selected at liquidity rank 21",
+          "reason": "entrant selected at reference-price rank 35",
           "variant_key": "nonfoil"
         },
         {
-          "action": "removed",
-          "cm_product_id": 748258,
-          "reason": "incumbent removed at liquidity rank 27 outside selection buffer",
+          "action": "added",
+          "cm_product_id": 861848,
+          "reason": "entrant selected at reference-price rank 36",
           "variant_key": "nonfoil"
         },
         {
-          "action": "removed",
-          "cm_product_id": 852853,
-          "reason": "incumbent removed at liquidity rank 29 outside selection buffer",
+          "action": "added",
+          "cm_product_id": 845710,
+          "reason": "entrant selected at reference-price rank 37",
           "variant_key": "nonfoil"
-        }
-      ],
-      "effective_date": "2026-08-27",
-      "eligible_count": 152,
-      "methodology_version": "1.3.0",
-      "retained_count": 23,
-      "selection_snapshot_sha256": "7c5ea05a5925e6121f199abe02e0655c793ba03344c00fe41272ec5e8221b13f"
-    },
-    {
-      "active_count": 25,
-      "changes": [
+        },
+        {
+          "action": "added",
+          "cm_product_id": 774482,
+          "reason": "entrant selected at reference-price rank 38",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 852856,
+          "reason": "entrant selected at reference-price rank 39",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 830062,
+          "reason": "entrant selected at reference-price rank 40",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 732356,
+          "reason": "entrant selected at reference-price rank 41",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 816985,
+          "reason": "entrant selected at reference-price rank 42",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882178,
+          "reason": "entrant selected at reference-price rank 43",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 870097,
+          "reason": "entrant selected at reference-price rank 44",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 814268,
+          "reason": "entrant selected at reference-price rank 45",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 807385,
+          "reason": "entrant selected at reference-price rank 46",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 787719,
+          "reason": "entrant selected at reference-price rank 47",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 761832,
+          "reason": "entrant selected at reference-price rank 48",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 774471,
+          "reason": "entrant selected at reference-price rank 49",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 874545,
+          "reason": "entrant selected at reference-price rank 50",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 737343,
+          "reason": "entrant selected at reference-price rank 51",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 748253,
+          "reason": "entrant selected at reference-price rank 52",
+          "variant_key": "nonfoil"
+        },
         {
           "action": "added",
           "cm_product_id": 828110,
-          "reason": "entrant selected at liquidity rank 22",
+          "reason": "entrant selected at reference-price rank 53",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 771944,
+          "reason": "entrant selected at reference-price rank 54",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 864938,
+          "reason": "entrant selected at reference-price rank 55",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 800160,
+          "reason": "entrant selected at reference-price rank 56",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 737391,
+          "reason": "entrant selected at reference-price rank 57",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 737388,
+          "reason": "entrant selected at reference-price rank 58",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 765789,
+          "reason": "entrant selected at reference-price rank 59",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 814538,
+          "reason": "entrant selected at reference-price rank 60",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 746202,
+          "reason": "entrant selected at reference-price rank 61",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 771940,
+          "reason": "entrant selected at reference-price rank 62",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 761835,
+          "reason": "entrant selected at reference-price rank 63",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 735807,
+          "reason": "entrant selected at reference-price rank 64",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882176,
+          "reason": "entrant selected at reference-price rank 65",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 730486,
+          "reason": "entrant selected at reference-price rank 66",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882164,
+          "reason": "entrant selected at reference-price rank 67",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882163,
+          "reason": "entrant selected at reference-price rank 68",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 782230,
+          "reason": "entrant selected at reference-price rank 69",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 852857,
+          "reason": "entrant selected at reference-price rank 70",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 864936,
+          "reason": "entrant selected at reference-price rank 71",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 775949,
+          "reason": "entrant selected at reference-price rank 72",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 771941,
+          "reason": "entrant selected at reference-price rank 73",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 861861,
+          "reason": "entrant selected at reference-price rank 74",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846515,
+          "reason": "entrant selected at reference-price rank 75",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846506,
+          "reason": "entrant selected at reference-price rank 76",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882175,
+          "reason": "entrant selected at reference-price rank 77",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 800156,
+          "reason": "entrant selected at reference-price rank 78",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 774473,
+          "reason": "entrant selected at reference-price rank 79",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 748259,
+          "reason": "entrant selected at reference-price rank 80",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 732352,
+          "reason": "entrant selected at reference-price rank 81",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846518,
+          "reason": "entrant selected at reference-price rank 82",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 737364,
+          "reason": "entrant selected at reference-price rank 83",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 787733,
+          "reason": "entrant selected at reference-price rank 84",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 761836,
+          "reason": "entrant selected at reference-price rank 85",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 748258,
+          "reason": "entrant selected at reference-price rank 86",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 830063,
+          "reason": "entrant selected at reference-price rank 87",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 816991,
+          "reason": "entrant selected at reference-price rank 88",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846520,
+          "reason": "entrant selected at reference-price rank 89",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 828106,
+          "reason": "entrant selected at reference-price rank 90",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 807389,
+          "reason": "entrant selected at reference-price rank 91",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 882174,
+          "reason": "entrant selected at reference-price rank 92",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 807397,
+          "reason": "entrant selected at reference-price rank 93",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846512,
+          "reason": "entrant selected at reference-price rank 94",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 732353,
+          "reason": "entrant selected at reference-price rank 95",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846511,
+          "reason": "entrant selected at reference-price rank 96",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 787723,
+          "reason": "entrant selected at reference-price rank 97",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 846521,
+          "reason": "entrant selected at reference-price rank 98",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 746198,
+          "reason": "entrant selected at reference-price rank 99",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 830061,
+          "reason": "entrant selected at reference-price rank 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-08-13",
+      "eligible_count": 149,
+      "methodology_version": "1.4.0",
+      "retained_count": 0,
+      "selection_snapshot_sha256": "596c022d59c9a18e5b67de7d91bb8e78f7dcdce57b3c74f618da1621fc910ed4"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-14",
+      "eligible_count": 149,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "e30b6debad2eff8c023a5576cdd7c4487c23bdf2d86d400286c7e68fd4d8bcf2"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-15",
+      "eligible_count": 148,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "c80c9a193ef83441fbbab71a7d0abc8e5a2419c53e12516f442ccc7081591f0a"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-16",
+      "eligible_count": 148,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "e02c1f973b367f4c4c2938adf7f13cc8ab07bd476ac26858059d55d8a12e4560"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 888292,
+          "reason": "entrant selected at reference-price rank 28",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 888293,
+          "reason": "entrant selected at reference-price rank 71",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 888296,
+          "reason": "entrant selected at reference-price rank 77",
           "variant_key": "nonfoil"
         },
         {
           "action": "removed",
-          "cm_product_id": 737388,
-          "reason": "incumbent removed at liquidity rank 27 outside selection buffer",
+          "cm_product_id": 746198,
+          "reason": "incumbent removed at reference-price rank 102 outside top 100",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 830061,
+          "reason": "incumbent removed at reference-price rank 103 outside top 100",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 846521,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
           "variant_key": "nonfoil"
         }
       ],
+      "effective_date": "2026-08-17",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 97,
+      "selection_snapshot_sha256": "163bb203850934a338a618ae08f43f62945af0e8554977b50033d7f4623ff6d2"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-18",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "307ffd8a113ff469e99dde1432c96d2259e248b985d5a756088b666cf7871a13"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-19",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "c287b51573d86a62c996359f9dfada97bfb36cefe875eb6d352eb5e8de66b519"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-20",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "d901ff8bc81ad4654fdb86adfa636b851114f4d2a5cc49b27aa26e561b25a18d"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-21",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "a1bd8ec72a805da7a6bf047bfe1e7c3d8786e7b1d03d6f57008a93b6ad1f7a66"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 830061,
+          "reason": "entrant selected at reference-price rank 97",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 807389,
+          "reason": "incumbent removed at reference-price rank 102 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-08-22",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 99,
+      "selection_snapshot_sha256": "4cb670ac0d37c7dfb0d5735dff2512e165cf0fced472e4b7633e05bacf497f97"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-23",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "3bf383f7f41c338b7aee9df84dc6bd3239206e8feaf15776ec3336d6705fb743"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-24",
+      "eligible_count": 151,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "59add1f083064eb976ae68918da9d64ea8bba7ec2f7a7a349cab013507d67827"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 889384,
+          "reason": "entrant selected at reference-price rank 7",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 787723,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-08-25",
+      "eligible_count": 152,
+      "methodology_version": "1.4.0",
+      "retained_count": 99,
+      "selection_snapshot_sha256": "c71d90c2a1b08f623039e2a2de1a1b7b7859dfba0db6fdb6d624c6cd7a348db2"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-26",
+      "eligible_count": 152,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "63cf41b4e47596dfa36950491d4e26daf00f9f32098c0a8d09bdc589d54b05ea"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-27",
+      "eligible_count": 152,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "fc26eabfd3c112809ae9e90aa8f025353c5133c6e5890205532e065e3353326e"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
       "effective_date": "2026-08-28",
       "eligible_count": 152,
-      "methodology_version": "1.3.0",
-      "retained_count": 24,
-      "selection_snapshot_sha256": "376f0b9deb10e5c37ed61a973b3e25d11250d00725d6d796c48c875fc89f143e"
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "de8713803c4da1e944ba5c006e883555f3fd6a6346f1f52bdaf81519787e3e15"
     }
   ],
   "schema_version": 1

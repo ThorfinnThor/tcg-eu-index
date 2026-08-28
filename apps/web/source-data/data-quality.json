@@ -42,8 +42,8 @@
       "title": "Listing-price basis"
     },
     {
-      "body": "Preview membership is recalculated daily from the history available at that time and may change more often than the official monthly rebalance schedule.",
-      "title": "Daily provisional composition"
+      "body": "After history and data-quality eligibility gates, preview membership selects the 500 highest Cardmarket avg30 reference-price singles or the 100 highest sealed products. It is recalculated daily and may change more often than the official monthly rebalance schedule.",
+      "title": "Price-ranked provisional composition"
     },
     {
       "body": "Each index includes every language represented in the official Cardmarket Europe catalogue; the source has no reliable language field.",

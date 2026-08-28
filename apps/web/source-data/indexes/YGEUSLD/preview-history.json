@@ -1,6 +1,6 @@
 [
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
     "index_value": 1000.0,
     "n_capped": 0,
@@ -12,10 +12,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0,
-    "index_value": 1000.0,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0017538172715894874,
+    "index_value": 1001.7538172715894,
+    "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
     "n_stale": 0,
@@ -24,22 +24,22 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
-    "index_value": 1000.0,
+    "index_value": 1001.7538172715894,
     "n_capped": 0,
-    "n_carried_forward": 80,
-    "n_constituents_active": 80,
+    "n_carried_forward": 99,
+    "n_constituents_active": 99,
     "n_stale": 0,
     "rebalance_effective_date": "2026-08-15",
     "value_date": "2026-08-15",
     "whole_market_carried_forward": true
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0031271036315323286,
-    "index_value": 1003.1271036315323,
-    "n_capped": 1,
+    "calc_version": "1.4.0",
+    "daily_return": -0.0018397231796791092,
+    "index_value": 999.9108675536228,
+    "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
     "n_stale": 0,
@@ -48,9 +48,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0008594960753201675,
-    "index_value": 1003.9892874401509,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0005455823706954033,
+    "index_value": 1000.4564012952269,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -60,9 +60,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 9.091735612321017e-07,
-    "index_value": 1003.9902002406668,
+    "index_value": 1000.4573108837362,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -72,10 +72,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0014302043149021304,
-    "index_value": 1005.4261113571705,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -0.004398993802341096,
+    "index_value": 996.0563053736519,
+    "n_capped": 2,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
     "n_stale": 0,
@@ -84,10 +84,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0025,
-    "index_value": 1007.9396766355634,
-    "n_capped": 1,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0,
+    "index_value": 996.0563053736519,
+    "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
     "n_stale": 0,
@@ -96,9 +96,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.00045454545454545417,
-    "index_value": 1008.3978310340341,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0,
+    "index_value": 996.0563053736519,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -108,9 +108,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0006667555674089875,
-    "index_value": 1009.0701859020392,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0,
+    "index_value": 996.0563053736519,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -120,9 +120,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
-    "index_value": 1009.0701859020392,
+    "index_value": 996.0563053736519,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -132,10 +132,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0,
-    "index_value": 1009.0701859020392,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0025,
+    "index_value": 998.5464461370859,
+    "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
     "n_stale": 0,
@@ -144,9 +144,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0,
-    "index_value": 1009.0701859020392,
+    "calc_version": "1.4.0",
+    "daily_return": 9.090991736293574e-08,
+    "index_value": 998.5465369148608,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -156,9 +156,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 9.090991736293574e-08,
-    "index_value": 1009.0702776365264,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0,
+    "index_value": 998.5465369148608,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -168,9 +168,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
-    "index_value": 1009.0702776365264,
+    "index_value": 998.5465369148608,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,
@@ -180,9 +180,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
-    "index_value": 1009.0702776365264,
+    "index_value": 998.5465369148608,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 100,

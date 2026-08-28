@@ -53,7 +53,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "YGEU250",
+      "code": "YGEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -66,7 +66,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 250
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -97,7 +97,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "OPEU100",
+      "code": "OPEU500",
       "daysRemaining": 41,
       "gates": {
         "language_scope_resolved": true,
@@ -110,7 +110,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 19,
@@ -132,7 +132,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 19,
@@ -141,7 +141,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "PKEU250",
+      "code": "PKEU500",
       "daysRemaining": 41,
       "gates": {
         "language_scope_resolved": true,
@@ -154,7 +154,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 250
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 19,
@@ -185,7 +185,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "DBSEU100",
+      "code": "DBSEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -198,7 +198,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -220,7 +220,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 17,
@@ -229,7 +229,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "FABEU100",
+      "code": "FABEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -242,7 +242,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -264,7 +264,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 17,
@@ -273,7 +273,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "DGEU100",
+      "code": "DGEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -286,7 +286,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -308,7 +308,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 17,
@@ -317,7 +317,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "LCEU100",
+      "code": "LCEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -330,7 +330,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -352,7 +352,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 17,
@@ -361,7 +361,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "SWUEU100",
+      "code": "SWUEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -374,7 +374,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -396,7 +396,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     },
     {
       "availableArchiveDays": 17,
@@ -405,7 +405,7 @@
         "target_size_filled",
         "shadow_calculation_ready"
       ],
-      "code": "RBEU100",
+      "code": "RBEU500",
       "daysRemaining": 43,
       "gates": {
         "language_scope_resolved": true,
@@ -418,7 +418,7 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 100
+      "targetSize": 500
     },
     {
       "availableArchiveDays": 17,
@@ -440,10 +440,10 @@
       "requiredLookbackDays": 60,
       "selectedConstituents": 0,
       "state": "accumulating",
-      "targetSize": 25
+      "targetSize": 100
     }
   ],
-  "methodologyVersion": "1.3.0",
+  "methodologyVersion": "1.4.0",
   "publicationStatus": "blocked_until_human_cutover",
   "schemaVersion": 1,
   "source": "daily-private-shadow-receipt",

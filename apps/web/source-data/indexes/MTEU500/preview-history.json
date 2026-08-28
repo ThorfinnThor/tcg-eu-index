@@ -1,6 +1,6 @@
 [
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
     "index_value": 1000.0,
     "n_capped": 0,
@@ -12,10 +12,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0,
-    "index_value": 1000.0,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -0.0001125968115502476,
+    "index_value": 999.8874031884498,
+    "n_capped": 2,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -24,22 +24,22 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
+    "calc_version": "1.4.0",
     "daily_return": 0.0,
-    "index_value": 1000.0,
+    "index_value": 999.8874031884498,
     "n_capped": 0,
-    "n_carried_forward": 267,
-    "n_constituents_active": 267,
+    "n_carried_forward": 500,
+    "n_constituents_active": 500,
     "n_stale": 0,
     "rebalance_effective_date": "2026-08-15",
     "value_date": "2026-08-15",
     "whole_market_carried_forward": true
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0005859999999999998,
-    "index_value": 1000.586,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -0.0011401676506251999,
+    "index_value": 998.7473639170667,
+    "n_capped": 4,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -48,10 +48,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0009116216410091841,
-    "index_value": 1001.4981558512909,
-    "n_capped": 1,
+    "calc_version": "1.4.0",
+    "daily_return": -0.0008348191570328835,
+    "index_value": 997.9135904846326,
+    "n_capped": 5,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -60,10 +60,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.001216571428571429,
-    "index_value": 1002.7165498934665,
-    "n_capped": 1,
+    "calc_version": "1.4.0",
+    "daily_return": 0.001888736764005308,
+    "index_value": 999.7983865702813,
+    "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -72,9 +72,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0007725603238866392,
-    "index_value": 1003.4912089160188,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0006536916944014608,
+    "index_value": 1000.4519464716584,
     "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
@@ -84,10 +84,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.001724979591836735,
-    "index_value": 1005.2222107719865,
-    "n_capped": 2,
+    "calc_version": "1.4.0",
+    "daily_return": 0.001530350391043715,
+    "index_value": 1001.9829884991618,
+    "n_capped": 3,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -96,10 +96,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.00048138081000271795,
-    "index_value": 1005.7061054540408,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": 0.001990006300266049,
+    "index_value": 1003.9769409590346,
+    "n_capped": 6,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -108,10 +108,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0004295224719101127,
-    "index_value": 1006.1380788264705,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -0.00033725671539320623,
+    "index_value": 1003.6383429935962,
+    "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -120,10 +120,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 3.877206936423328e-05,
-    "index_value": 1006.1770888818528,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -3.618517920753539e-05,
+    "index_value": 1003.6020261602954,
+    "n_capped": 2,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -132,9 +132,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 7.147962830593713e-07,
-    "index_value": 1006.177808093496,
+    "calc_version": "1.4.0",
+    "daily_return": 7.424671654820037e-05,
+    "index_value": 1003.676540315459,
     "n_capped": 0,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
@@ -144,10 +144,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0,
-    "index_value": 1006.177808093496,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": 0.00020459793512548342,
+    "index_value": 1003.8818904631414,
+    "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -156,10 +156,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 8.039618168350526e-05,
-    "index_value": 1006.2587009473614,
-    "n_capped": 0,
+    "calc_version": "1.4.0",
+    "daily_return": -0.0004247554055700638,
+    "index_value": 1003.4554862036133,
+    "n_capped": 4,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
@@ -168,9 +168,9 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.0009500395256916996,
-    "index_value": 1007.2146864863324,
+    "calc_version": "1.4.0",
+    "daily_return": 0.00019680844579446878,
+    "index_value": 1003.6529747182769,
     "n_capped": 2,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
@@ -180,10 +180,10 @@
     "whole_market_carried_forward": false
   },
   {
-    "calc_version": "1.3.0",
-    "daily_return": 0.001,
-    "index_value": 1008.2219011728187,
-    "n_capped": 2,
+    "calc_version": "1.4.0",
+    "daily_return": 0.0008636019122668572,
+    "index_value": 1004.5197313464959,
+    "n_capped": 1,
     "n_carried_forward": 0,
     "n_constituents_active": 500,
     "n_stale": 0,
