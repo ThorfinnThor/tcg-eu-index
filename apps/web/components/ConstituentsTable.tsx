@@ -93,6 +93,7 @@ export function ConstituentsTable({
   );
   const delta = useMemo(() => compositionDelta(constituents, compareFrom, compareTo), [compareFrom, compareTo, constituents]);
   const groups = useMemo(() => groupRebalances(rebalances.rebalances, period), [period, rebalances.rebalances]);
+  const isPreview = rebalances.cadence === "daily_preview";
 
   useEffect(() => {
     if (view !== "composition") return;
@@ -160,7 +161,7 @@ export function ConstituentsTable({
           </div>
 
           <div className="surface overflow-x-auto">
-            <table className="w-full min-w-[900px] border-collapse text-sm">
+            <table className="w-full min-w-[1020px] border-collapse text-sm">
               <thead className="text-left text-paper/50">
                 <tr>
                   <th className="px-4 py-3">Name</th>
@@ -168,6 +169,7 @@ export function ConstituentsTable({
                   <th className="px-4 py-3">Variant</th>
                   <th className="px-4 py-3">Member since</th>
                   <th className="px-4 py-3">Action history</th>
+                  <th className="px-4 py-3 text-right">Ref. price</th>
                   <th className="px-4 py-3 text-right">Liquidity</th>
                 </tr>
               </thead>
@@ -192,6 +194,7 @@ export function ConstituentsTable({
                           ))}
                         </div>
                       </td>
+                      <td className="px-4 py-3 text-right text-paper/75">EUR {item.ref_price.toFixed(2)}</td>
                       <td className="px-4 py-3 text-right text-paper/75">{item.liquidity_score.toFixed(3)}</td>
                     </tr>
                   );
@@ -255,7 +258,9 @@ export function ConstituentsTable({
               <div>
                 <h2 className="text-lg font-medium">Rebalance history</h2>
                 <p className="mt-1 max-w-2xl text-sm leading-6 text-paper/50">
-                  The methodology rebalances monthly. Weekly view groups actual events by calendar week; weeks without a rebalance have no membership changes.
+                  {isPreview
+                    ? "Preview composition is recalculated daily. Weekly and monthly views group the actual provisional additions and removals."
+                    : "The official methodology rebalances monthly. Weekly view groups actual events by calendar week; weeks without a rebalance have no membership changes."}
                 </p>
               </div>
               <div className="surface inline-flex self-start p-1" aria-label="History grouping">

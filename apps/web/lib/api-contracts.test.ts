@@ -13,7 +13,7 @@ describe("public API contracts", () => {
     expect(response.status).toBe(200);
     expect(response.headers.get("cache-control")).toContain("max-age=3600");
     expect(payload).toMatchObject({
-      source: "repo-managed-mvp-json",
+      source: "cardmarket-derived-preview-json",
       dataset_version: expect.any(String),
       generated_at: expect.any(String),
       gap_count: expect.any(Number),
@@ -60,12 +60,14 @@ describe("public API contracts", () => {
     expect(missing.status).toBe(404);
   });
 
-  it("does not expose validation history through the public CSV route", async () => {
+  it("exposes labelled preview history through the public CSV route", async () => {
     const response = await downloadHistory(new Request("http://localhost"), {
       params: Promise.resolve({ code: "OPEU100" })
     });
-    expect(response.status).toBe(409);
-    expect(await response.json()).toEqual({ error: "Index history has not been published", status: "accumulating" });
+    expect(response.status).toBe(200);
+    expect(response.headers.get("x-index-status")).toBe("preview");
+    expect(response.headers.get("x-preview-warning")).toBe("Provisional-not-official-not-investment-advice");
+    expect(await response.text()).toMatch(/^value_date,index_value,daily_return/);
 
     const missing = await downloadHistory(new Request("http://localhost"), {
       params: Promise.resolve({ code: "UNKNOWN" })

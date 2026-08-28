@@ -9,33 +9,37 @@ test("market overview and index exploration", async ({ page }) => {
   await onePieceIndex.click();
   await expect(page).toHaveURL(/\/index\/OPEU100$/);
   await expect(page.getByRole("heading", { name: "One Piece Europe 100" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Publication pending" })).toBeVisible();
-  await expect(page.getByText(/No public index level/)).toBeVisible();
+  await expect(page.getByText("Preview index · not official", { exact: true })).toBeVisible();
+  await expect(page.getByText(/Provisional index based on the Cardmarket history/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Preview analytics" })).toBeVisible();
 });
 
 test("constituents, embed, reports, and public CSV remain reachable", async ({ page, request }) => {
-  await page.goto("/index/OPEU100/constituents?asOf=2026-07-29&q=Benchmark&inactive=1");
+  await page.goto("/index/OPEU100/constituents");
   await expect(page.getByRole("heading", { name: "Constituents" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "No cards published yet" })).toBeVisible();
-  await expect(page.getByText(/Synthetic development products are not public index members/)).toBeVisible();
-  await expect(page.getByRole("searchbox", { name: /search/i })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Daily preview composition" })).toBeVisible();
+  await expect(page.getByText("100 active / 100 target", { exact: true })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Ref. price" })).toBeVisible();
+  await expect(page.getByRole("searchbox", { name: /search/i })).toBeVisible();
 
   await page.goto("/embed/index/OPEU100");
   await expect(page.getByText("OPEU100", { exact: true })).toBeVisible();
-  await expect(page.getByText(/No public value has been published/)).toBeVisible();
+  await expect(page.getByText(/Preview/)).toBeVisible();
 
   await page.goto("/reports");
   await expect(page.getByRole("heading", { name: "Weekly reports" })).toBeVisible();
 
   const csv = await request.get("/api/public/OPEU100/history.csv");
-  expect(csv.status()).toBe(409);
-  expect(await csv.json()).toMatchObject({ error: "Index history has not been published" });
+  expect(csv.status()).toBe(200);
+  expect(csv.headers()["x-index-status"]).toBe("preview");
+  expect(await csv.text()).toMatch(/^value_date,index_value,daily_return/);
 });
 
 test("sealed indexes describe constituents as products", async ({ page }) => {
   await page.goto("/index/OPEUSLD/constituents");
-  await expect(page.getByRole("heading", { name: "No products published yet" })).toBeVisible();
-  await expect(page.getByText("Target composition: 25 products.", { exact: false })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Daily preview composition" })).toBeVisible();
+  await expect(page.getByText("25 active / 25 target", { exact: true })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Ref. price" })).toBeVisible();
 });
 
 test("primary pages do not overflow the viewport", async ({ page }) => {
