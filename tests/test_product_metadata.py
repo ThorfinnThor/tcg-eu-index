@@ -1,3 +1,7 @@
+from io import BytesIO
+
+import polars as pl
+from ingest.normalize import _parquet_bytes
 from ingest.product_metadata import catalogue_identity
 
 
@@ -21,3 +25,22 @@ def test_decodes_catalogue_html_entities() -> None:
     identity = catalogue_identity("Whis&#39;s Coercion")
 
     assert identity.display_name == "Whis's Coercion"
+
+
+def test_parquet_schema_sees_late_nullable_metadata_value() -> None:
+    records = [
+        {"stable_product_id": f"product-{index:03d}", "collector_number": None}
+        for index in range(100)
+    ]
+    records.append(
+        {"stable_product_id": "product-100", "collector_number": "Red 1/1"}
+    )
+
+    body = _parquet_bytes(
+        records,
+        ["stable_product_id", "collector_number"],
+        "stable_product_id",
+    )
+
+    frame = pl.read_parquet(BytesIO(body))
+    assert frame["collector_number"].to_list()[-1] == "Red 1/1"

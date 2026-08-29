@@ -362,7 +362,11 @@ def _parquet_bytes(
     sort_by: str,
 ) -> bytes:
     normalized = [{column: record.get(column) for column in columns} for record in records]
-    frame = pl.DataFrame(normalized).sort(sort_by) if normalized else pl.DataFrame()
+    frame = (
+        pl.DataFrame(normalized, infer_schema_length=None).sort(sort_by)
+        if normalized
+        else pl.DataFrame()
+    )
     buffer = BytesIO()
     frame.write_parquet(buffer, compression="zstd", statistics=True)
     return buffer.getvalue()
