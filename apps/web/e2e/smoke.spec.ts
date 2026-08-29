@@ -48,7 +48,7 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.getByRole("heading", { name: "One Piece Europe Collector Index" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Card" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
-  await expect(page.getByText("Roronoa Zoro", { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open Roronoa Zoro on Cardmarket" }).first()).toBeVisible();
   await expect(page.getByText(/No\. OP01-001/).first()).toBeVisible();
   await expect(page.getByText("Romance Dawn").first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on eBay/ }).first()).toBeVisible();
