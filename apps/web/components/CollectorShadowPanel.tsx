@@ -36,20 +36,20 @@ export function CollectorShadowPanel({ summary, history, rebalances, diagnostics
     <div className="mx-auto max-w-7xl px-4 py-8">
       <section className="mb-6 border-l-2 border-amber bg-amber/[0.07] px-5 py-4" role="status">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="chip border-amber text-amber">Private shadow</span>
+          <span className="chip border-amber text-amber">Preview index</span>
           <span className="chip">{summary.methodology_version}</span>
-          <span className="chip">Not public</span>
+          <span className="chip">60-day observation phase</span>
         </div>
         <h1 className="mt-4 text-3xl font-semibold text-paper">{summary.name}</h1>
         <p className="mt-3 max-w-4xl text-sm leading-6 text-paper/70">
-          This is a private v1.5 development series. It is not linked from public navigation, has no public alias, and must not be presented as the official index before the 60-day history, calibration, and human cutover review are complete.
+          Provisional index based on the Cardmarket history available so far. Composition and values can change materially during the 60-day observation phase. This is not the official index and is not investment advice. The preparation period remains separate from any later official history.
         </p>
       </section>
 
       <section className="grid gap-4 lg:grid-cols-[1fr_320px]">
         <div className="surface p-5">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <Metric label="Latest shadow value" value={latest?.index_value?.toFixed(2) ?? "pending"} />
+            <Metric label="Latest preview value" value={latest?.index_value?.toFixed(2) ?? "pending"} />
             <Metric label="Eligible variants" value={latestRebalance ? String(latestRebalance.active_count) : "pending"} />
             <Metric label="Last effective date" value={latestRebalance?.effective_date ?? "pending"} />
             <Metric label="Cadence" value="Monthly" />
@@ -111,7 +111,7 @@ export function CollectorShadowPanel({ summary, history, rebalances, diagnostics
       </section>
 
       <section className="surface mt-4 p-5">
-        <h2 className="text-lg font-semibold">Recent calculation state</h2>
+        <h2 className="text-lg font-semibold">Recent preview calculation state</h2>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[760px] border-collapse text-sm">
             <thead className="text-left text-paper/50">

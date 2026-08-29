@@ -3,6 +3,7 @@ import type {
   CollectorDiagnostics,
   CollectorHistory,
   CollectorIndexCode,
+  CollectorPreviewIndexPayload,
   CollectorIndexSummary,
   CollectorOutputManifest,
   CollectorRebalances
@@ -187,6 +188,38 @@ export function validateCollectorDiagnostics(value: unknown): asserts value is C
   isoDate(payload.generated_for, "collector diagnostics.generated_for");
   array(payload.daily, "collector diagnostics.daily");
   array(payload.eligibility, "collector diagnostics.eligibility");
+  if (payload.summary !== undefined) {
+    const summary = object(payload.summary, "collector diagnostics.summary");
+    integer(summary.count, "collector diagnostics.summary.count");
+    integer(summary.positive_activity_rows, "collector diagnostics.summary.positive_activity_rows");
+    for (const field of ["average_quality", "average_activity_ratio"]) {
+      if (summary[field] !== null) number(summary[field], `collector diagnostics.summary.${field}`);
+    }
+  }
+}
+
+export function validateCollectorPreviewIndex(
+  value: unknown
+): asserts value is CollectorPreviewIndexPayload {
+  const payload = object(value, "collector preview index");
+  if (payload.schema_version !== 1 || payload.publication_state !== "preview_noindex") {
+    throw new Error("collector preview index has an invalid publication contract");
+  }
+  isoDate(payload.generated_for, "collector preview index.generated_for");
+  string(payload.methodology_version, "collector preview index.methodology_version");
+  for (const [index, itemValue] of array(payload.indexes, "collector preview index.indexes").entries()) {
+    const item = object(itemValue, `collector preview index.indexes[${index}]`);
+    const indexCode = code(item.code, "collector preview index code");
+    if (indexCode.endsWith("SCOL")) throw new Error("sealed collector previews cannot be published");
+    string(item.name, "collector preview index name");
+    string(item.game_key, "collector preview index game_key");
+    if (item.status !== "accumulating" && item.status !== "preview") {
+      throw new Error("collector preview index has an invalid status");
+    }
+    if (item.latest_index_value !== null) number(item.latest_index_value, "collector preview latest value");
+    if (item.latest_value_date !== null) isoDate(item.latest_value_date, "collector preview latest date");
+    integer(item.constituent_count, "collector preview constituent count");
+  }
 }
 
 export function validateCollectorDataset(value: {

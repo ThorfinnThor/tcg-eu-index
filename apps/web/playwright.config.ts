@@ -31,7 +31,7 @@ export default defineConfig({
     timeout: 120_000,
     env: {
       ...process.env,
-      COLLECTOR_SHADOW_UI_ENABLED: "true",
+      COLLECTOR_PREVIEW_UI_ENABLED: "true",
       COLLECTOR_SHADOW_FIXTURES_ENABLED: "true"
     }
   }

@@ -51,7 +51,7 @@ The schedule remains inert while `ARCHIVE_ENABLED` is not exactly `true`.
 
 ## Daily Operation
 
-`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices, recalculates the private shadow indexes, and commits `data/manifest-latest.json` as a visible heartbeat. Later attempts validate the completed archive and skip the expensive normalization and calculation when the repository heartbeat already records that date. A manual run can select `force_reprocess` after a normalization or engine change.
+`archive.yml` runs at 05:10, 08:10, 11:10, and 14:10 UTC. The first successful attempt validates and writes immutable gzipped snapshots, writes `manifests/YYYY-MM-DD.json` last as the completion marker, normalizes the verified catalogue and prices, recalculates the private shadow indexes, exports the checksum-verified noindex collector-singles projection, and commits `data/manifest-latest.json` plus `apps/web/source-data` as a visible heartbeat. Later attempts validate the completed archive and skip the expensive normalization and calculation when the repository heartbeat already records that date. A manual run can select `force_reprocess` after a normalization or engine change.
 
 The expansion from two to ten games starts with the 2026-08-12 UTC snapshot. Earlier manifests intentionally retain their original two-game scope and are not rewritten. The weekly audit passes explicit per-game inception dates, so it validates the historical scope and still fails on any missing new-game snapshot from 2026-08-12 onward.
 

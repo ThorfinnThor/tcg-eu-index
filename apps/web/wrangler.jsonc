@@ -7,7 +7,8 @@
   ],
   "main": "vinext/server/fetch-handler",
   "vars": {
-    "NEXT_PUBLIC_SITE_URL": "https://tcg-eu-index-web.shuu9599.workers.dev"
+    "NEXT_PUBLIC_SITE_URL": "https://tcg-eu-index-web.shuu9599.workers.dev",
+    "COLLECTOR_PREVIEW_UI_ENABLED": "true"
   },
   "assets": {
     "directory": "dist/client",

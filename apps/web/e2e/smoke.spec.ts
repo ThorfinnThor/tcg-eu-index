@@ -3,6 +3,8 @@ import { expect, test } from "@playwright/test";
 test("market overview and index exploration", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Market overview" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Collector preview indexes" })).toBeVisible();
+  await expect(page.getByRole("link", { name: /One Piece Europe Collector Index/ })).toBeVisible();
 
   const onePieceIndex = page.getByRole("link", { name: /One Piece Europe 500/ });
   await expect(onePieceIndex).toBeVisible();
@@ -46,6 +48,8 @@ test("sealed indexes describe constituents as products", async ({ page }) => {
 test("collector singles expose clear card identity and commerce destinations", async ({ page }) => {
   await page.goto("/collector/OPEUCOL");
   await expect(page.getByRole("heading", { name: "One Piece Europe Collector Index" })).toBeVisible();
+  await expect(page.getByText("Preview index", { exact: true })).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   await expect(page.getByRole("columnheader", { name: "Card" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
   await expect(page.getByRole("link", { name: "Open Roronoa Zoro on Cardmarket" }).first()).toBeVisible();
@@ -53,6 +57,9 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.getByText("Romance Dawn").first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on eBay/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on TCGplayer/ }).first()).toBeVisible();
+
+  const sealed = await page.request.get("/collector/OPEUSCOL");
+  expect(sealed.status()).toBe(404);
 });
 
 test("primary pages do not overflow the viewport", async ({ page }) => {

@@ -205,6 +205,30 @@ export type CollectorDiagnostics = {
   generated_for: string;
   daily: CollectorDailyIndexValue[];
   eligibility: CollectorEligibilityDiagnostic[];
+  summary?: {
+    count: number;
+    average_quality: number | null;
+    average_activity_ratio: number | null;
+    positive_activity_rows: number;
+  };
+};
+
+export type CollectorPreviewIndex = {
+  code: CollectorIndexCode;
+  name: string;
+  game_key: string;
+  status: "accumulating" | "preview";
+  latest_index_value: number | null;
+  latest_value_date: string | null;
+  constituent_count: number;
+};
+
+export type CollectorPreviewIndexPayload = {
+  schema_version: 1;
+  publication_state: "preview_noindex";
+  generated_for: string;
+  methodology_version: string;
+  indexes: CollectorPreviewIndex[];
 };
 
 export type DailyIndexValue = {

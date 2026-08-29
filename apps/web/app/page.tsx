@@ -3,6 +3,8 @@ import Link from "next/link";
 import { IndexChart } from "@/components/IndexChart";
 import { Metric, formatPct } from "@/components/Metric";
 import { StructuredData } from "@/components/StructuredData";
+import { getCollectorPreviewIndex } from "@/lib/collector-data";
+import { collectorGameName } from "@/lib/collector-ui";
 import { changes, getIndexes, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessClass } from "@/lib/freshness";
 import { pageMetadata } from "@/lib/seo";
@@ -16,8 +18,11 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function Page() {
-  const indexes = await getIndexes();
-  const status = await getStatus();
+  const [indexes, status, collectorPreview] = await Promise.all([
+    getIndexes(),
+    getStatus(),
+    getCollectorPreviewIndex()
+  ]);
   const freshness = assessFreshness(status.last_snapshot_date);
   const siteUrl = getSiteUrl();
   return (
@@ -57,6 +62,46 @@ export default async function Page() {
           Official Cardmarket files are archived and checked daily. Provisional index values and compositions are published during the 60-day observation phase; official indexes still require the full history window and human cutover review.
         </p>
       </section>
+
+      {collectorPreview.indexes.length > 0 ? (
+        <section className="mb-8">
+          <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm text-amber">New collector methodology · singles only</p>
+              <h2 className="mt-1 text-2xl font-semibold text-paper">Collector preview indexes</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/60">
+                Every eligible Cardmarket single-card variant with AVG30 of at least €10. Preview values and monthly compositions are provisional throughout the observation phase.
+              </p>
+            </div>
+            <span className="chip border-amber text-amber">Not official</span>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {collectorPreview.indexes.map((index) => (
+              <Link
+                key={index.code}
+                href={`/collector/${index.code}`}
+                className="surface block p-4 transition hover:border-amber"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="text-xs text-paper/45">{index.code}</div>
+                    <h3 className="mt-1 font-semibold text-paper">{index.name}</h3>
+                    <div className="mt-2 text-xs text-paper/50">{collectorGameName(index.game_key)}</div>
+                  </div>
+                  <span className="chip border-amber text-amber">Preview</span>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-4">
+                  <Metric label="Latest" value={index.latest_index_value?.toFixed(2) ?? "pending"} />
+                  <Metric label="Variants" value={index.constituent_count.toLocaleString("en-GB")} />
+                </div>
+                <p className="mt-4 border-t border-line pt-3 text-xs leading-5 text-paper/45">
+                  Provisional · no target size · AVG30 ≥ €10
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="grid gap-4 lg:grid-cols-2">
         {indexes.map((index) => {

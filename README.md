@@ -2,7 +2,7 @@
 
 European sale-price indexes for ten active trading card games under development. The current v1.4 preview retains reproducible Top-500 singles and Top-100 sealed price-leader series. The new v1.5 collector singles series includes every eligible Cardmarket variant with positive `avg30` of at least EUR 10; it has no target count, ranking, quota, or concentration cap. Cardmarket defines `avg30` as the average sale price over the last 30 days. The public daily feed is aggregated and does not contain individual sold-article or order records.
 
-The v1.5 singles series remains a private shadow until the 60-day and human-cutover controls pass. The v1.5 sealed family is explicitly deferred because the bulk source does not provide rolling sold-price fields for sealed products.
+The v1.5 singles calculation remains a versioned private shadow until the 60-day and human-cutover controls pass. A bounded, `noindex` public preview projects its values, aggregate diagnostics, and monthly card composition without enabling an official public alias. The v1.5 sealed family is explicitly deferred because the bulk source does not provide rolling sold-price fields for sealed products.
 The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
 
 ## Local development
@@ -89,6 +89,11 @@ Every successful daily archive run also normalizes the verified catalogue and pr
 The same workflow preserves the separate v1.4 calculation and preview outputs. The v1.5 collector runner uses monthly frozen all-eligible singles membership and writes enriched constituent identity fields for presentation. Public export or alias switching is still a separate human action.
 
 Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published. Preview history and composition archives remain separate from the later official history and are carried into the cutover candidate as labelled preparation-phase files.
+
+The daily archive exports a checksum-verified public projection for the ten enabled
+singles collector indexes. Collector routes are enabled in Cloudflare with
+`COLLECTOR_PREVIEW_UI_ENABLED=true`, remain excluded from search indexing, and do not
+expose raw eligibility diagnostics or per-card price history.
 
 ## Editorial and optional user features
 
