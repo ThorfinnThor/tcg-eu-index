@@ -18,6 +18,8 @@ const gameNames: Record<string, string> = {
   riftbound: "Riftbound"
 };
 
+export type CollectorPriceBand = "all" | "10-100" | "100-1000" | "1000-10000" | "10000-plus";
+
 export function collectorGameName(gameKey: string) {
   return gameNames[gameKey] ?? gameKey;
 }
@@ -38,6 +40,14 @@ export function formatCollectorEur(value: number | null) {
 export function formatCollectorPct(value: number | null) {
   if (value === null) return "—";
   return `${(value * 100).toFixed(1)}%`;
+}
+
+export function matchesCollectorPriceBand(price: number, band: CollectorPriceBand) {
+  if (band === "10-100") return price >= 10 && price < 100;
+  if (band === "100-1000") return price >= 100 && price < 1_000;
+  if (band === "1000-10000") return price >= 1_000 && price < 10_000;
+  if (band === "10000-plus") return price >= 10_000;
+  return true;
 }
 
 export function latestCollectorRecord(history: CollectorHistory) {

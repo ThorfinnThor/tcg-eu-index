@@ -1,19 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-test("market overview and index exploration", async ({ page }) => {
+test("collector overview excludes retired fixed-size and sealed cards", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "Market overview" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Collector preview indexes" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "European collector card indexes" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Choose a card game" })).toBeVisible();
   await expect(page.getByRole("link", { name: /One Piece Europe Collector Index/ })).toBeVisible();
-
-  const onePieceIndex = page.getByRole("link", { name: /One Piece Europe 500/ });
-  await expect(onePieceIndex).toBeVisible();
-  await onePieceIndex.click();
-  await expect(page).toHaveURL(/\/index\/OPEU500$/);
-  await expect(page.getByRole("heading", { name: "One Piece Europe 500" })).toBeVisible();
-  await expect(page.getByText("Preview index · not official", { exact: true })).toBeVisible();
-  await expect(page.getByText(/Provisional index based on the Cardmarket history/)).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Preview analytics" })).toBeVisible();
+  await expect(page.getByText("One Piece Europe 500", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Magic Sealed Europe 100", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Latest", { exact: true })).toHaveCount(0);
 });
 
 test("constituents, embed, reports, and public CSV remain reachable", async ({ page, request }) => {
@@ -57,6 +51,17 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.getByText(/CM \d+/).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on eBay/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on TCGplayer/ }).first()).toBeVisible();
+  await expect(page.getByText("Eligible variants", { exact: true })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Data Quality Score" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Trading Activity Proxy" })).toHaveCount(0);
+
+  await page.getByLabel("Price range").selectOption("1000-10000");
+  await expect(page.getByText(/cards found/)).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "30-day average price" })).toBeVisible();
+
+  await page.getByLabel("Price range").selectOption("all");
+  await page.getByRole("searchbox", { name: "Search the entire index" }).fill("Monkey");
+  await expect(page.getByText(/cards found/)).toBeVisible();
 
   const sealed = await page.request.get("/collector/OPEUSCOL");
   expect(sealed.status()).toBe(404);
