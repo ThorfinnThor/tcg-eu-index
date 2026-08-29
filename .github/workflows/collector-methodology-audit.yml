@@ -1,0 +1,45 @@
+name: collector-methodology-audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      through_date:
+        description: Last archived UTC date (YYYY-MM-DD)
+        required: true
+        default: "2026-08-29"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ vars.R2_BUCKET || 'tcg-raw' }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --all-packages
+      - name: Audit collector methodology against normalized archives
+        run: |
+          uv run python scripts/audit_collector_methodology.py \
+            --through "${{ inputs.through_date }}" \
+            --output collector-methodology-audit.json \
+            --summary-output collector-methodology-audit.md
+      - name: Publish aggregate audit summary
+        run: cat collector-methodology-audit.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain private aggregate audit report
+        uses: actions/upload-artifact@v7
+        with:
+          name: collector-methodology-audit-${{ github.run_id }}
+          path: |
+            collector-methodology-audit.json
+            collector-methodology-audit.md
+          retention-days: 90
