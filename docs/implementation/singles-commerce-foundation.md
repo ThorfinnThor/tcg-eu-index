@@ -20,6 +20,27 @@ The daily collector runner now:
 
 No public alias, v1.4 artifact, or official history is changed by the runner.
 
+## Real archive evidence
+
+GitHub Actions run
+[`33267738854`](https://github.com/ThorfinnThor/tcg-eu-index/actions/runs/33267738854)
+completed successfully against the real 2026-08-29 archive after the implementation
+merged. It normalized all configured catalogues, ran the existing shadow indexes, and
+wrote all ten enabled collector-singles bundles to private R2 paths.
+
+The retained `collector-result.json` receipt reports:
+
+- 10 preview indexes and 36,536 active EUR 10+ variants in total;
+- 18 to 20 observable archive days and 11 to 13 calculated value days;
+- 14,608 Magic, 5,377 Yu-Gi-Oh!, 2,126 One Piece, 8,695 Pokemon, 1,781
+  Dragon Ball Super, 1,582 Flesh and Blood, 829 Digimon, 506 Lorcana, 730
+  Star Wars: Unlimited, and 302 Riftbound variants;
+- one deterministic monthly rebalance and six versioned output objects per index.
+
+The first production run exposed a late nullable-metadata schema-inference edge case.
+PR #20 fixed it with full-record schema inference and a regression test before the
+successful rerun. The current complete Python suite contains 95 passing tests.
+
 ## Identity and image provenance
 
 The official Cardmarket product download exposes product ID, product name, category,
