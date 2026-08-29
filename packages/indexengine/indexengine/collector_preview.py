@@ -51,8 +51,11 @@ def repack_existing_collector_preview(output_root: Path) -> CollectorPreviewExpo
             and isinstance(source_records, list)
             and all(record.get("constituents") == [] for record in source_records)
         ):
-            variants += int(index_row["constituent_count"])
-            continue
+            source_rebalances = _restore_paginated_constituents(
+                index_root,
+                source_rebalances,
+                _path_json(index_root / "composition.json"),
+            )
         rebalances, composition, page_payloads = _paginate_rebalances(
             source_rebalances,
             code,
@@ -91,7 +94,10 @@ def repack_existing_collector_preview(output_root: Path) -> CollectorPreviewExpo
         for filename, payload in projection.items():
             if _write_json_if_changed(index_root / filename, payload):
                 changed.append(f"collector/{code}/{filename}")
+        index_row["base_value"] = summary["base_value"]
         variants += int(index_row["constituent_count"])
+    if _write_json_if_changed(collector_root / "index.json", index_payload):
+        changed.append("collector/index.json")
     return CollectorPreviewExportResult(
         generated_for=generated_for,
         indexes=len(index_rows),
@@ -136,6 +142,7 @@ def export_collector_preview(
                 "name": definition.name,
                 "game_key": definition.game_key,
                 "status": summary["status"],
+                "base_value": summary["base_value"],
                 "latest_index_value": summary["latest_index_value"],
                 "latest_value_date": summary["latest_value_date"],
                 "constituent_count": count,
@@ -253,6 +260,13 @@ def _paginate_rebalances(
         constituents = source_record.get("constituents")
         if not isinstance(constituents, list):
             raise ValueError(f"{code} rebalance constituents are invalid")
+        constituents = sorted(
+            constituents,
+            key=lambda item: (
+                float(item["selection_price"]),
+                str(item["stable_variant_id"]),
+            ),
+        )
         page_count = max(
             1,
             (len(constituents) + COMPOSITION_PAGE_SIZE - 1) // COMPOSITION_PAGE_SIZE,
@@ -308,6 +322,46 @@ def _paginate_rebalances(
         "rebalances": composition_records,
     }
     return rebalances, composition, page_payloads
+
+
+def _restore_paginated_constituents(
+    index_root: Path,
+    source_rebalances: dict[str, Any],
+    composition: dict[str, Any],
+) -> dict[str, Any]:
+    records = source_rebalances.get("rebalances")
+    composition_records = composition.get("rebalances")
+    if not isinstance(records, list) or not isinstance(composition_records, list):
+        raise ValueError(f"{index_root.name} composition is invalid")
+    composition_by_date = {
+        str(record["effective_date"]): record for record in composition_records
+    }
+    restored = deepcopy(source_rebalances)
+    for record in restored["rebalances"]:
+        effective_date = str(record["effective_date"])
+        composition_record = composition_by_date.get(effective_date)
+        if not isinstance(composition_record, dict):
+            raise ValueError(f"{index_root.name} composition is missing {effective_date}")
+        pages = composition_record.get("pages")
+        if not isinstance(pages, list):
+            raise ValueError(f"{index_root.name} composition pages are invalid")
+        constituents: list[dict[str, Any]] = []
+        for page_metadata in pages:
+            if not isinstance(page_metadata, dict):
+                raise ValueError(f"{index_root.name} composition page metadata is invalid")
+            page = _path_json(index_root / str(page_metadata["path"]))
+            page_constituents = page.get("constituents")
+            if page.get("effective_date") != effective_date or not isinstance(
+                page_constituents, list
+            ):
+                raise ValueError(f"{index_root.name} composition page is invalid")
+            constituents.extend(page_constituents)
+        if len(constituents) != int(record["active_count"]):
+            raise ValueError(
+                f"{index_root.name} composition does not reconcile on {effective_date}"
+            )
+        record["constituents"] = constituents
+    return restored
 
 
 def _compact_diagnostics(source: dict[str, Any]) -> dict[str, Any]:

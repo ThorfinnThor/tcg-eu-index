@@ -145,6 +145,7 @@ export async function getCollectorPreviewIndex(): Promise<CollectorPreviewIndexP
           name: collectorFixtureSummary.name,
           game_key: collectorFixtureSummary.game_key,
           status: collectorFixtureSummary.status,
+          base_value: collectorFixtureSummary.base_value,
           latest_index_value: collectorFixtureSummary.latest_index_value,
           latest_value_date: collectorFixtureSummary.latest_value_date,
           constituent_count: collectorFixtureSummary.product_metadata.constituent_count

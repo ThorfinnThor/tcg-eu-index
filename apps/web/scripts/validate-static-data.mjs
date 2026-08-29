@@ -71,6 +71,7 @@ async function validateCollectorPreview() {
       typeof code !== "string" || !/^[A-Z]+COL$/.test(code) || code.endsWith("SCOL") ||
       seenCodes.has(code) || !item.name || !item.game_key ||
       !["accumulating", "preview"].includes(item.status) ||
+      typeof item.base_value !== "number" || !Number.isFinite(item.base_value) || item.base_value <= 0 ||
       !Number.isInteger(item.constituent_count)
     ) {
       fail(`invalid collector preview record: ${JSON.stringify(item)}`);
@@ -141,6 +142,7 @@ async function validateCollectorPreview() {
         fail(`${code} has invalid composition pagination for ${rebalance.effective_date}`);
       }
       let constituentCount = 0;
+      let previousPrice = Number.NEGATIVE_INFINITY;
       for (const [pageIndex, pageMetadata] of compositionRecord.pages.entries()) {
         if (
           pageMetadata.page !== pageIndex + 1 ||
@@ -162,6 +164,15 @@ async function validateCollectorPreview() {
           !Array.isArray(page.constituents) || page.constituents.length > compositionRecord.page_size
         ) {
           fail(`${code} composition page ${pageMetadata.page} has an invalid contract`);
+        }
+        for (const member of page.constituents) {
+          if (
+            typeof member.selection_price !== "number" || !Number.isFinite(member.selection_price) ||
+            member.selection_price < previousPrice
+          ) {
+            fail(`${code} composition is not globally sorted by ascending price on ${rebalance.effective_date}`);
+          }
+          previousPrice = member.selection_price;
         }
         constituentCount += page.constituents.length;
       }

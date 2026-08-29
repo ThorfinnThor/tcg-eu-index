@@ -8,6 +8,7 @@ import yaml
 from core.r2 import LocalObjectStore
 from indexengine.collector_calc import CollectorDailyValue, CollectorMember, CollectorRebalance
 from indexengine.collector_preview import (
+    _paginate_rebalances,
     export_collector_preview,
     repack_existing_collector_preview,
 )
@@ -120,6 +121,8 @@ def test_exports_compact_noindex_single_preview(tmp_path: Path) -> None:
 
     assert result.indexes == 1
     assert result.variants == 1
+    index_payload = json.loads((output_root / "collector/index.json").read_text())
+    assert index_payload["indexes"][0]["base_value"] == 1000
     diagnostics = json.loads((output_root / "collector/OPEUCOL/diagnostics.json").read_text())
     assert diagnostics["eligibility"] == []
     assert diagnostics["summary"] == {
@@ -150,3 +153,40 @@ def test_exports_compact_noindex_single_preview(tmp_path: Path) -> None:
     )
     assert repeated.changed_files == []
     assert repack_existing_collector_preview(output_root).changed_files == []
+
+
+def test_paginates_compositions_in_global_ascending_price_order() -> None:
+    source = {
+        "schema_version": 2,
+        "series_id": "OPEUCOL:1.5.0-preview.2:private_shadow",
+        "index_code": "OPEUCOL",
+        "methodology_version": "1.5.0-preview.2",
+        "data_state": "private_shadow",
+        "cadence": "monthly",
+        "generated_for": "2026-08-29",
+        "rebalances": [{
+            "effective_date": "2026-08-29",
+            "selection_as_of": "2026-08-28",
+            "methodology_version": "1.5.0-preview.2",
+            "selection_snapshot_sha256": "a" * 64,
+            "eligible_count": 3,
+            "active_count": 3,
+            "constituents": [
+                {"selection_price": 100.0, "stable_variant_id": "third"},
+                {"selection_price": 10.0, "stable_variant_id": "second"},
+                {"selection_price": 10.0, "stable_variant_id": "first"},
+            ],
+        }],
+    }
+
+    _, _, pages = _paginate_rebalances(
+        source,
+        "OPEUCOL",
+        "1.5.0-preview.2",
+        date(2026, 8, 29),
+    )
+
+    assert [
+        item["stable_variant_id"]
+        for item in pages["composition/2026-08-29/0001.json"]["constituents"]
+    ] == ["first", "second", "third"]
