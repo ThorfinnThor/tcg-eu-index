@@ -4241,13 +4241,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 857144,
     "entry_reason": "entrant selected at reference-price rank 78",
     "liquidity_score": 0.67778,
     "member_since": "2026-08-13",
     "name": "Mina Bonteri, Stop This War",
     "ref_price": 132.29,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-29",
     "set": "Expansion 6364",
     "variant_key": "foil"
   },
@@ -5105,13 +5107,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 876468,
     "entry_reason": "entrant selected at reference-price rank 133",
     "liquidity_score": 0.6866666666666666,
     "member_since": "2026-08-13",
     "name": "Sebulba, Especially Dangerous Dug",
     "ref_price": 92.85,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-29",
     "set": "Expansion 6452",
     "variant_key": "foil"
   },
@@ -5810,5 +5814,27 @@
     "ref_price": 12.22,
     "set": "Expansion 6101",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 815025,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.511578387010913,
+    "member_since": "2026-08-29",
+    "name": "Darth Vader, Scourge of Squadrons",
+    "ref_price": 12.19,
+    "set": "Expansion 6074",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 848223,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6833598304186539,
+    "member_since": "2026-08-29",
+    "name": "Darth Malak, Covetous Apprentice",
+    "ref_price": 12.15,
+    "set": "Expansion 6101",
+    "variant_key": "nonfoil"
   }
 ]

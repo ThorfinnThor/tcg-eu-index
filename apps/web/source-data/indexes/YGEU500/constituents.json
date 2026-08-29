@@ -4228,13 +4228,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 738420,
     "entry_reason": "entrant selected at reference-price rank 329",
     "liquidity_score": 0.5974358974358974,
     "member_since": "2026-08-13",
     "name": "WANTED: Seeker of Sinful Spoils",
     "ref_price": 116.62,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-29",
     "set": "Expansion 5403",
     "variant_key": "nonfoil"
   },
@@ -5031,13 +5033,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 845459,
     "entry_reason": "entrant selected at reference-price rank 29",
     "liquidity_score": 0.504,
     "member_since": "2026-08-13",
     "name": "Exodia the Forbidden One",
     "ref_price": 653.62,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-29",
     "set": "Expansion 6212",
     "variant_key": "nonfoil"
   },
@@ -5731,6 +5735,28 @@
     "name": "Dominus Impulse",
     "ref_price": 333.32,
     "set": "Expansion 6537",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 242729,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.5903360344313519,
+    "member_since": "2026-08-29",
+    "name": "Foolish Burial",
+    "ref_price": 82.7,
+    "set": "Expansion 1207",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 654325,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6799266422140714,
+    "member_since": "2026-08-29",
+    "name": "Dark Magician Girl",
+    "ref_price": 83.34,
+    "set": "Expansion 5036",
     "variant_key": "nonfoil"
   }
 ]

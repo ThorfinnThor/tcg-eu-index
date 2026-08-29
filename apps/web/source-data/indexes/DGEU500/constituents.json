@@ -2830,13 +2830,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 786240,
     "entry_reason": "entrant selected at reference-price rank 324",
     "liquidity_score": 0.7,
     "member_since": "2026-08-13",
     "name": "GeoGreymon (BT13-012)",
     "ref_price": 26.72,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-29",
     "set": "Expansion 5011",
     "variant_key": "nonfoil"
   },
@@ -5731,6 +5733,17 @@
     "name": "ShineGreymon (AD1-016)",
     "ref_price": 15.58,
     "set": "Expansion 6482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 721940,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6465518221316584,
+    "member_since": "2026-08-29",
+    "name": "Omnimon (BT13-112)",
+    "ref_price": 15.56,
+    "set": "Expansion 5394",
     "variant_key": "nonfoil"
   }
 ]
