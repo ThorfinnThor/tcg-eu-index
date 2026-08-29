@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   collectorDataState,
+  validateCollectorCompositionIndex,
+  validateCollectorCompositionPage,
   validateCollectorDataset,
   validateCollectorHistory,
   validateCollectorPreviewIndex,
@@ -16,10 +18,43 @@ import {
 
 describe("v1.5 collector contracts", () => {
   it("accepts the private schema-v2 fixture with uncapped membership", () => {
+    const fixtureRebalance = collectorFixtureRebalances.rebalances[0];
+    const composition = {
+      schema_version: 2 as const,
+      series_id: collectorFixtureSummary.series_id,
+      index_code: collectorFixtureSummary.index_code,
+      methodology_version: collectorFixtureSummary.methodology_version,
+      data_state: "private_shadow" as const,
+      publication_state: "preview_noindex" as const,
+      generated_for: collectorFixtureSummary.generated_for,
+      rebalances: [{
+        effective_date: fixtureRebalance.effective_date,
+        selection_as_of: fixtureRebalance.selection_as_of,
+        active_count: fixtureRebalance.active_count,
+        page_size: 250,
+        page_count: 1,
+        pages: [{ page: 1, path: `composition/${fixtureRebalance.effective_date}/0001.json`, sha256: "fixture", bytes: 1 }]
+      }]
+    };
+    const compositionPage = {
+      schema_version: 2 as const,
+      series_id: collectorFixtureSummary.series_id,
+      index_code: collectorFixtureSummary.index_code,
+      methodology_version: collectorFixtureSummary.methodology_version,
+      data_state: "private_shadow" as const,
+      publication_state: "preview_noindex" as const,
+      generated_for: collectorFixtureSummary.generated_for,
+      effective_date: fixtureRebalance.effective_date,
+      page: 1,
+      page_count: 1,
+      constituents: fixtureRebalance.constituents
+    };
     expect(collectorDataState).toBe("private_shadow");
     expect(() => validateCollectorSummary(collectorFixtureSummary)).not.toThrow();
     expect(() => validateCollectorHistory(collectorFixtureHistory)).not.toThrow();
     expect(() => validateCollectorRebalances(collectorFixtureRebalances)).not.toThrow();
+    expect(() => validateCollectorCompositionIndex(composition)).not.toThrow();
+    expect(() => validateCollectorCompositionPage(compositionPage)).not.toThrow();
     expect(() => validateCollectorDataset({
       manifest: {
         schema_version: 2,
@@ -42,7 +77,9 @@ describe("v1.5 collector contracts", () => {
       summary: collectorFixtureSummary,
       history: collectorFixtureHistory,
       rebalances: collectorFixtureRebalances,
-      diagnostics: collectorFixtureDiagnostics
+      diagnostics: collectorFixtureDiagnostics,
+      composition,
+      compositionPage
     })).not.toThrow();
   });
 

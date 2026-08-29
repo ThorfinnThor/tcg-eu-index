@@ -95,6 +95,8 @@ published.
 - collector routes expose a feature-flagged, `noindex` public preview;
 - the web projection contains summary, history, monthly composition, and aggregate
   diagnostics, but no raw per-card price history or raw eligibility diagnostics;
+- public composition snapshots are split into checksum-verified pages of 250
+  variants and reconcile exactly to each rebalance's active count;
 - v1.5 outputs remain under `private_shadow` R2 prefixes;
 - no affiliate template is configured in repository defaults;
 - the official public alias/cutover still requires 60 observable days, two monthly compositions, final

@@ -1,4 +1,6 @@
 import type {
+  CollectorCompositionIndex,
+  CollectorCompositionPage,
   CollectorDataState,
   CollectorDiagnostics,
   CollectorHistory,
@@ -66,6 +68,26 @@ function code(value: unknown, label: string): CollectorIndexCode {
     throw new Error(`${label} is not a number-free collector index code`);
   }
   return text as CollectorIndexCode;
+}
+
+function validateCollectorMember(memberValue: unknown, label: string) {
+  const member = object(memberValue, label);
+  integer(member.cm_product_id, `${label}.cm_product_id`);
+  string(member.variant_key, `${label}.variant_key`);
+  string(member.stable_variant_id, `${label}.stable_variant_id`);
+  number(member.selection_price, `${label}.selection_price`);
+  string(member.name, `${label}.name`);
+  string(member.metadata_status, `${label}.metadata_status`);
+  for (const field of ["set_name", "collector_number", "image_url", "image_source", "tcgplayer_product_url"]) {
+    if (member[field] !== null) string(member[field], `${label}.${field}`);
+  }
+  if (member.cm_expansion_id !== null) integer(member.cm_expansion_id, `${label}.cm_expansion_id`);
+  if (member.image_url !== null && !String(member.image_url).startsWith("https://")) {
+    throw new Error("collector constituent image_url must use HTTPS");
+  }
+  if (member.tcgplayer_product_url !== null && !String(member.tcgplayer_product_url).startsWith("https://www.tcgplayer.com/")) {
+    throw new Error("collector constituent tcgplayer_product_url must use TCGplayer HTTPS");
+  }
 }
 
 export function validateCollectorManifest(value: unknown): asserts value is CollectorOutputManifest {
@@ -158,24 +180,65 @@ export function validateCollectorRebalances(value: unknown): asserts value is Co
     integer(rebalance.eligible_count, "collector rebalance eligible_count");
     integer(rebalance.active_count, "collector rebalance active_count");
     for (const [memberIndex, memberValue] of array(rebalance.constituents, "collector rebalance constituents").entries()) {
-      const member = object(memberValue, `collector rebalance constituents[${memberIndex}]`);
-      integer(member.cm_product_id, "collector constituent cm_product_id");
-      string(member.variant_key, "collector constituent variant_key");
-      string(member.stable_variant_id, "collector constituent stable_variant_id");
-      number(member.selection_price, "collector constituent selection_price");
-      string(member.name, "collector constituent name");
-      string(member.metadata_status, "collector constituent metadata_status");
-      for (const field of ["set_name", "collector_number", "image_url", "image_source", "tcgplayer_product_url"]) {
-        if (member[field] !== null) string(member[field], `collector constituent ${field}`);
+      validateCollectorMember(memberValue, `collector rebalance constituents[${memberIndex}]`);
+    }
+  }
+}
+
+export function validateCollectorCompositionIndex(
+  value: unknown
+): asserts value is CollectorCompositionIndex {
+  const payload = object(value, "collector composition index");
+  const indexCode = code(payload.index_code, "collector composition index.index_code");
+  const version = string(payload.methodology_version, "collector composition index.methodology_version");
+  const series = string(payload.series_id, "collector composition index.series_id");
+  identity(payload, { code: indexCode, version, series }, "collector composition index");
+  if (payload.publication_state !== "preview_noindex") throw new Error("collector composition index must be noindex");
+  isoDate(payload.generated_for, "collector composition index.generated_for");
+  for (const [index, recordValue] of array(payload.rebalances, "collector composition index.rebalances").entries()) {
+    const record = object(recordValue, `collector composition index.rebalances[${index}]`);
+    isoDate(record.effective_date, "collector composition effective_date");
+    isoDate(record.selection_as_of, "collector composition selection_as_of");
+    integer(record.active_count, "collector composition active_count");
+    const pageSize = integer(record.page_size, "collector composition page_size");
+    const pageCount = integer(record.page_count, "collector composition page_count");
+    if (pageSize < 1 || pageCount < 1) throw new Error("collector composition pagination must be positive");
+    const pages = array(record.pages, "collector composition pages");
+    if (pages.length !== pageCount) throw new Error("collector composition page count mismatch");
+    for (const [pageIndex, pageValue] of pages.entries()) {
+      const page = object(pageValue, `collector composition pages[${pageIndex}]`);
+      if (integer(page.page, "collector composition page") !== pageIndex + 1) {
+        throw new Error("collector composition pages must be contiguous");
       }
-      if (member.cm_expansion_id !== null) integer(member.cm_expansion_id, "collector constituent cm_expansion_id");
-      if (member.image_url !== null && !String(member.image_url).startsWith("https://")) {
-        throw new Error("collector constituent image_url must use HTTPS");
+      const pagePath = string(page.path, "collector composition page path");
+      const expectedPath = `composition/${record.effective_date}/${String(pageIndex + 1).padStart(4, "0")}.json`;
+      if (pagePath !== expectedPath) {
+        throw new Error("collector composition page path is invalid");
       }
-      if (member.tcgplayer_product_url !== null && !String(member.tcgplayer_product_url).startsWith("https://www.tcgplayer.com/")) {
-        throw new Error("collector constituent tcgplayer_product_url must use TCGplayer HTTPS");
+      string(page.sha256, "collector composition page sha256");
+      if (integer(page.bytes, "collector composition page bytes") < 1) {
+        throw new Error("collector composition page bytes must be positive");
       }
     }
+  }
+}
+
+export function validateCollectorCompositionPage(
+  value: unknown
+): asserts value is CollectorCompositionPage {
+  const payload = object(value, "collector composition page");
+  const indexCode = code(payload.index_code, "collector composition page.index_code");
+  const version = string(payload.methodology_version, "collector composition page.methodology_version");
+  const series = string(payload.series_id, "collector composition page.series_id");
+  identity(payload, { code: indexCode, version, series }, "collector composition page");
+  if (payload.publication_state !== "preview_noindex") throw new Error("collector composition page must be noindex");
+  isoDate(payload.generated_for, "collector composition page.generated_for");
+  isoDate(payload.effective_date, "collector composition page.effective_date");
+  const page = integer(payload.page, "collector composition page.page");
+  const pageCount = integer(payload.page_count, "collector composition page.page_count");
+  if (page < 1 || page > pageCount) throw new Error("collector composition page is out of range");
+  for (const [index, member] of array(payload.constituents, "collector composition page.constituents").entries()) {
+    validateCollectorMember(member, `collector composition page.constituents[${index}]`);
   }
 }
 
@@ -228,24 +291,46 @@ export function validateCollectorDataset(value: {
   history: unknown;
   rebalances: unknown;
   diagnostics: unknown;
+  composition: unknown;
+  compositionPage: unknown;
 }): asserts value is {
   manifest: CollectorOutputManifest;
   summary: CollectorIndexSummary;
   history: CollectorHistory;
   rebalances: CollectorRebalances;
   diagnostics: CollectorDiagnostics;
+  composition: CollectorCompositionIndex;
+  compositionPage: CollectorCompositionPage;
 } {
   validateCollectorManifest(value.manifest);
   validateCollectorSummary(value.summary);
   validateCollectorHistory(value.history);
   validateCollectorRebalances(value.rebalances);
   validateCollectorDiagnostics(value.diagnostics);
+  validateCollectorCompositionIndex(value.composition);
+  validateCollectorCompositionPage(value.compositionPage);
   const manifest = value.manifest;
-  for (const payload of [value.summary, value.history, value.rebalances, value.diagnostics]) {
+  const compositionPage = value.compositionPage;
+  for (const payload of [value.summary, value.history, value.rebalances, value.diagnostics, value.composition, value.compositionPage]) {
     const item = object(payload, "collector dataset object");
     if (item.series_id !== manifest.series_id || item.index_code !== manifest.index_code || item.methodology_version !== manifest.methodology_version) {
       throw new Error("collector dataset objects do not share manifest identity");
     }
+  }
+  const compositionRecord = value.composition.rebalances.find(
+    (record) => record.effective_date === compositionPage.effective_date
+  );
+  const rebalanceRecord = value.rebalances.rebalances.find(
+    (record) => record.effective_date === compositionPage.effective_date
+  );
+  if (
+    !compositionRecord || !rebalanceRecord ||
+    compositionRecord.active_count !== rebalanceRecord.active_count ||
+    compositionRecord.page_count !== compositionPage.page_count ||
+    !compositionRecord.pages.some((page) => page.page === compositionPage.page) ||
+    compositionPage.constituents.length > compositionRecord.page_size
+  ) {
+    throw new Error("collector composition page does not match its rebalance metadata");
   }
 }
 

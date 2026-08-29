@@ -52,14 +52,21 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   await expect(page.getByRole("columnheader", { name: "Card" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Open Roronoa Zoro on Cardmarket" }).first()).toBeVisible();
-  await expect(page.getByText(/No\. OP01-001/).first()).toBeVisible();
-  await expect(page.getByText("Romance Dawn").first()).toBeVisible();
-  await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on eBay/ }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on TCGplayer/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Open .+ on Cardmarket/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Open .+ on Cardmarket/ }).first()).toHaveAttribute("href", /idProduct=\d+/);
+  await expect(page.getByText(/CM \d+/).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Search for .+ on eBay/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Search for .+ on TCGplayer/ }).first()).toBeVisible();
 
   const sealed = await page.request.get("/collector/OPEUSCOL");
   expect(sealed.status()).toBe(404);
+
+  await page.goto("/collector/MTEUCOL");
+  const compositionPages = page.getByRole("navigation", { name: "Composition pages" });
+  await expect(compositionPages).toContainText(/Page 1 of \d+/);
+  await compositionPages.getByRole("link", { name: "Next" }).click();
+  await expect(page).toHaveURL(/page=2/);
+  await expect(page.getByRole("navigation", { name: "Composition pages" })).toContainText(/Page 2 of \d+/);
 });
 
 test("primary pages do not overflow the viewport", async ({ page }) => {

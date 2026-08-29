@@ -9,7 +9,6 @@ const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 const seoDataRoot = path.join(root, "data-config", "seo");
 const reportsRoot = path.join(root, "generated", "reports");
 const maxBytes = 1_000_000;
-const collectorMaxBytes = 20 * 1024 * 1024;
 const preferredMaxBytes = 250_000;
 const allowedRelationshipTypes = new Set(["parent", "child", "related", "comparison", "next_step"]);
 
@@ -78,7 +77,7 @@ async function validateCollectorPreview() {
     }
     seenCodes.add(code);
     const payloads = Object.fromEntries(await Promise.all(
-      ["manifest", "summary", "history", "rebalances", "diagnostics"].map(async (name) => [
+      ["manifest", "summary", "history", "rebalances", "diagnostics", "composition"].map(async (name) => [
         name,
         await readJson(`collector/${code}/${name}.json`)
       ])
@@ -92,7 +91,8 @@ async function validateCollectorPreview() {
       payloads.summary.public_alias_enabled !== false || payloads.summary.universe !== "singles" ||
       payloads.diagnostics.publication_state !== "preview_noindex" ||
       !Array.isArray(payloads.diagnostics.eligibility) || payloads.diagnostics.eligibility.length !== 0 ||
-      !Array.isArray(payloads.history.records) || !Array.isArray(payloads.rebalances.rebalances)
+      !Array.isArray(payloads.history.records) || !Array.isArray(payloads.rebalances.rebalances) ||
+      payloads.composition.publication_state !== "preview_noindex" || !Array.isArray(payloads.composition.rebalances)
     ) {
       fail(`${code} is not a bounded singles-only noindex preview`);
     }
@@ -101,7 +101,9 @@ async function validateCollectorPreview() {
       fail(`${code} constituent count does not match its latest rebalance`);
     }
     const outputEntries = Object.entries(payloads.manifest.outputs ?? {});
-    const expectedOutputFiles = new Set(["summary.json", "history.json", "rebalances.json", "diagnostics.json"]);
+    const expectedOutputFiles = new Set([
+      "summary.json", "history.json", "rebalances.json", "diagnostics.json", "composition.json"
+    ]);
     if (outputEntries.length !== expectedOutputFiles.size) {
       fail(`${code} collector manifest must expose exactly four bounded outputs`);
     }
@@ -119,6 +121,54 @@ async function validateCollectorPreview() {
       }
     }
     if (expectedOutputFiles.size !== 0) fail(`${code} collector manifest is incomplete`);
+    if (payloads.rebalances.rebalances.some((rebalance) => !Array.isArray(rebalance.constituents) || rebalance.constituents.length !== 0)) {
+      fail(`${code} rebalances must not embed the full public composition`);
+    }
+    const compositionByDate = new Map(
+      payloads.composition.rebalances.map((rebalance) => [rebalance.effective_date, rebalance])
+    );
+    if (compositionByDate.size !== payloads.rebalances.rebalances.length) {
+      fail(`${code} composition dates do not match rebalances`);
+    }
+    for (const rebalance of payloads.rebalances.rebalances) {
+      const compositionRecord = compositionByDate.get(rebalance.effective_date);
+      if (
+        !compositionRecord || compositionRecord.active_count !== rebalance.active_count ||
+        !Number.isInteger(compositionRecord.page_size) || compositionRecord.page_size < 1 ||
+        !Number.isInteger(compositionRecord.page_count) || compositionRecord.page_count < 1 ||
+        !Array.isArray(compositionRecord.pages) || compositionRecord.pages.length !== compositionRecord.page_count
+      ) {
+        fail(`${code} has invalid composition pagination for ${rebalance.effective_date}`);
+      }
+      let constituentCount = 0;
+      for (const [pageIndex, pageMetadata] of compositionRecord.pages.entries()) {
+        if (
+          pageMetadata.page !== pageIndex + 1 ||
+          !new RegExp(`^composition/${rebalance.effective_date}/\\d{4}\\.json$`).test(pageMetadata.path)
+        ) {
+          fail(`${code} has an invalid composition page path`);
+        }
+        const pagePath = path.join(dataRoot, "collector", code, pageMetadata.path);
+        const body = await readFile(pagePath);
+        const checksum = createHash("sha256").update(body).digest("hex");
+        if (pageMetadata.sha256 !== checksum || pageMetadata.bytes !== body.byteLength) {
+          fail(`${code} composition page ${pageMetadata.page} checksum mismatch`);
+        }
+        const page = JSON.parse(body.toString("utf8"));
+        assertCollectorIdentity(page, code, collectorIndex.methodology_version, "composition page");
+        if (
+          page.publication_state !== "preview_noindex" || page.effective_date !== rebalance.effective_date ||
+          page.page !== pageMetadata.page || page.page_count !== compositionRecord.page_count ||
+          !Array.isArray(page.constituents) || page.constituents.length > compositionRecord.page_size
+        ) {
+          fail(`${code} composition page ${pageMetadata.page} has an invalid contract`);
+        }
+        constituentCount += page.constituents.length;
+      }
+      if (constituentCount !== rebalance.active_count) {
+        fail(`${code} paginated composition does not reconcile on ${rebalance.effective_date}`);
+      }
+    }
   }
   return collectorIndex.indexes.length;
 }
@@ -434,8 +484,7 @@ for (const file of manifest.files ?? []) {
   const relativePath = file.path.replace(/^data\//, "");
   const absolutePath = path.join(dataRoot, relativePath);
   const info = await stat(absolutePath);
-  const hardMaxBytes = relativePath.startsWith("collector/") ? collectorMaxBytes : maxBytes;
-  if (info.size > hardMaxBytes) fail(`${file.path} exceeds ${hardMaxBytes} bytes`);
+  if (info.size > maxBytes) fail(`${file.path} exceeds ${maxBytes} bytes`);
   if (info.size > preferredMaxBytes) {
     console.warn(`${file.path} exceeds preferred ${preferredMaxBytes} byte target`);
   }
@@ -576,8 +625,7 @@ const buildReport = {
     totalBytes: totalPublicJsonBytes,
     largestFile: largestPublicFile ? { path: largestPublicFile.path, bytes: largestPublicFile.bytes } : null,
     preferredMaxBytes,
-    hardMaxBytes: maxBytes,
-    collectorHardMaxBytes: collectorMaxBytes
+    hardMaxBytes: maxBytes
   },
   seo: {
     keywordCount: keywords.length,

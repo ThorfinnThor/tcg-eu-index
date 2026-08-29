@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import suppress
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import date
@@ -13,6 +14,7 @@ from core.store import ObjectStore
 from indexengine.methodology import IndexDefinition, Methodology
 
 DEFAULT_METHODOLOGY = Path("packages/indexengine/methodologies/v1.5.0-preview.2.yaml")
+COMPOSITION_PAGE_SIZE = 250
 
 
 @dataclass(frozen=True)
@@ -21,6 +23,81 @@ class CollectorPreviewExportResult:
     indexes: int
     variants: int
     changed_files: list[str]
+
+
+def repack_existing_collector_preview(output_root: Path) -> CollectorPreviewExportResult:
+    """Paginate an already exported collector projection without private-store access."""
+    collector_root = output_root / "collector"
+    index_payload = _path_json(collector_root / "index.json")
+    generated_for = str(index_payload["generated_for"])
+    run_date = date.fromisoformat(generated_for)
+    version = str(index_payload["methodology_version"])
+    changed: list[str] = []
+    variants = 0
+    index_rows = index_payload.get("indexes")
+    if not isinstance(index_rows, list):
+        raise ValueError("collector preview index has no indexes")
+    for index_row in index_rows:
+        code = str(index_row["code"])
+        index_root = collector_root / code
+        source_manifest = _path_json(index_root / "manifest.json")
+        summary = _path_json(index_root / "summary.json")
+        history = _path_json(index_root / "history.json")
+        source_rebalances = _path_json(index_root / "rebalances.json")
+        diagnostics = _path_json(index_root / "diagnostics.json")
+        source_records = source_rebalances.get("rebalances")
+        if (
+            (index_root / "composition.json").exists()
+            and isinstance(source_records, list)
+            and all(record.get("constituents") == [] for record in source_records)
+        ):
+            variants += int(index_row["constituent_count"])
+            continue
+        rebalances, composition, page_payloads = _paginate_rebalances(
+            source_rebalances,
+            code,
+            version,
+            run_date,
+        )
+        public_payloads = {
+            "summary.json": summary,
+            "history.json": history,
+            "rebalances.json": rebalances,
+            "composition.json": composition,
+            "diagnostics.json": diagnostics,
+        }
+        prefix = f"derived/indexes/{version}/private_shadow/{code}"
+        manifest_outputs: dict[str, dict[str, object]] = {}
+        for filename, payload in public_payloads.items():
+            body = _json_bytes(payload)
+            logical_key = (
+                f"derived/diagnostics/{version}/{code}/public-preview.json"
+                if filename == "diagnostics.json"
+                else f"{prefix}/{filename}"
+            )
+            manifest_outputs[logical_key] = {
+                "key": logical_key,
+                "sha256": sha256_hex(body),
+                "bytes": len(body),
+            }
+        public_payloads["manifest.json"] = {
+            **source_manifest,
+            "publication_state": "preview_noindex",
+            "outputs": manifest_outputs,
+        }
+        projection = {**public_payloads, **page_payloads}
+        for removed in _remove_stale_json(index_root, set(projection)):
+            changed.append(f"collector/{code}/{removed}")
+        for filename, payload in projection.items():
+            if _write_json_if_changed(index_root / filename, payload):
+                changed.append(f"collector/{code}/{filename}")
+        variants += int(index_row["constituent_count"])
+    return CollectorPreviewExportResult(
+        generated_for=generated_for,
+        indexes=len(index_rows),
+        variants=variants,
+        changed_files=changed,
+    )
 
 
 def export_collector_preview(
@@ -42,6 +119,9 @@ def export_collector_preview(
     for definition in definitions:
         projection = _projection(store, definition, methodology, run_date)
         index_root = output_root / "collector" / definition.code
+        expected_files = set(projection)
+        for removed in _remove_stale_json(index_root, expected_files):
+            changed.append(f"collector/{definition.code}/{removed}")
         for filename, payload in projection.items():
             if _write_json_if_changed(index_root / filename, payload):
                 changed.append(f"collector/{definition.code}/{filename}")
@@ -113,17 +193,18 @@ def _projection(
         if payload.get("generated_for") != run_date.isoformat():
             raise ValueError(f"{definition.code} {label} is stale for {run_date.isoformat()}")
 
-    rebalances = deepcopy(source_payloads["rebalances.json"])
-    records = rebalances.get("rebalances")
-    if not isinstance(records, list):
-        raise ValueError(f"{definition.code} rebalances are invalid")
-    if records:
-        rebalances["generated_for"] = records[-1]["effective_date"]
+    rebalances, composition, page_payloads = _paginate_rebalances(
+        source_payloads["rebalances.json"],
+        definition.code,
+        version,
+        run_date,
+    )
     diagnostics = _compact_diagnostics(source_diagnostics)
     public_payloads = {
         "summary.json": source_payloads["summary.json"],
         "history.json": source_payloads["history.json"],
         "rebalances.json": rebalances,
+        "composition.json": composition,
         "diagnostics.json": diagnostics,
     }
     manifest_outputs: dict[str, dict[str, object]] = {}
@@ -152,7 +233,81 @@ def _projection(
         "source_hashes": source_manifest.get("source_hashes", {}),
         "outputs": manifest_outputs,
     }
-    return public_payloads
+    return {**public_payloads, **page_payloads}
+
+
+def _paginate_rebalances(
+    source_rebalances: dict[str, Any],
+    code: str,
+    version: str,
+    run_date: date,
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]]]:
+    records = source_rebalances.get("rebalances")
+    if not isinstance(records, list):
+        raise ValueError(f"{code} rebalances are invalid")
+    rebalances = deepcopy(source_rebalances)
+    public_records = rebalances["rebalances"]
+    page_payloads: dict[str, dict[str, Any]] = {}
+    composition_records: list[dict[str, Any]] = []
+    for source_record, public_record in zip(records, public_records, strict=True):
+        constituents = source_record.get("constituents")
+        if not isinstance(constituents, list):
+            raise ValueError(f"{code} rebalance constituents are invalid")
+        page_count = max(
+            1,
+            (len(constituents) + COMPOSITION_PAGE_SIZE - 1) // COMPOSITION_PAGE_SIZE,
+        )
+        pages: list[dict[str, object]] = []
+        for page_number in range(1, page_count + 1):
+            start = (page_number - 1) * COMPOSITION_PAGE_SIZE
+            page_path = f"composition/{source_record['effective_date']}/{page_number:04d}.json"
+            page_payload = {
+                "schema_version": 2,
+                "series_id": source_rebalances["series_id"],
+                "index_code": code,
+                "methodology_version": version,
+                "data_state": "private_shadow",
+                "publication_state": "preview_noindex",
+                "generated_for": run_date.isoformat(),
+                "effective_date": source_record["effective_date"],
+                "page": page_number,
+                "page_count": page_count,
+                "constituents": constituents[start : start + COMPOSITION_PAGE_SIZE],
+            }
+            page_body = _json_bytes(page_payload)
+            page_payloads[page_path] = page_payload
+            pages.append(
+                {
+                    "page": page_number,
+                    "path": page_path,
+                    "sha256": sha256_hex(page_body),
+                    "bytes": len(page_body),
+                }
+            )
+        public_record["constituents"] = []
+        composition_records.append(
+            {
+                "effective_date": source_record["effective_date"],
+                "selection_as_of": source_record["selection_as_of"],
+                "active_count": source_record["active_count"],
+                "page_size": COMPOSITION_PAGE_SIZE,
+                "page_count": page_count,
+                "pages": pages,
+            }
+        )
+    if records:
+        rebalances["generated_for"] = records[-1]["effective_date"]
+    composition = {
+        "schema_version": 2,
+        "series_id": source_rebalances["series_id"],
+        "index_code": code,
+        "methodology_version": version,
+        "data_state": "private_shadow",
+        "publication_state": "preview_noindex",
+        "generated_for": run_date.isoformat(),
+        "rebalances": composition_records,
+    }
+    return rebalances, composition, page_payloads
 
 
 def _compact_diagnostics(source: dict[str, Any]) -> dict[str, Any]:
@@ -194,6 +349,12 @@ def _read_json(store: ObjectStore, key: str) -> dict[str, Any]:
     return _json_object(store.read_bytes(key), key)
 
 
+def _path_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        raise ValueError(f"missing collector projection file {path}")
+    return _json_object(path.read_bytes(), str(path))
+
+
 def _json_object(body: bytes, label: str) -> dict[str, Any]:
     payload = json.loads(body)
     if not isinstance(payload, dict):
@@ -228,6 +389,26 @@ def _write_json_if_changed(path: Path, payload: object) -> bool:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(body)
     return True
+
+
+def _remove_stale_json(root: Path, expected: set[str]) -> list[str]:
+    if not root.exists():
+        return []
+    removed: list[str] = []
+    for path in sorted(root.rglob("*.json")):
+        relative = path.relative_to(root).as_posix()
+        if relative in expected:
+            continue
+        path.unlink()
+        removed.append(f"{relative} (removed)")
+    for directory in sorted(
+        (path for path in root.rglob("*") if path.is_dir()),
+        key=lambda path: len(path.parts),
+        reverse=True,
+    ):
+        with suppress(OSError):
+            directory.rmdir()
+    return removed
 
 
 def _json_bytes(payload: object) -> bytes:
