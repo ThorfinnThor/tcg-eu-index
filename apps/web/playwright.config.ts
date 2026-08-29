@@ -28,6 +28,11 @@ export default defineConfig({
     command: "npm run start -- --hostname 127.0.0.1 --port 3100",
     url: baseURL,
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000
+    timeout: 120_000,
+    env: {
+      ...process.env,
+      COLLECTOR_SHADOW_UI_ENABLED: "true",
+      COLLECTOR_SHADOW_FIXTURES_ENABLED: "true"
+    }
   }
 });

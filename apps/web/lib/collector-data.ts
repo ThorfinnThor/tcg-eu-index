@@ -1,5 +1,12 @@
 import { readAssetText } from "@runtime-data";
 import { validateCollectorDataset } from "./collector-contracts";
+import {
+  collectorFixtureDiagnostics,
+  collectorFixtureHistory,
+  collectorFixtureManifest,
+  collectorFixtureRebalances,
+  collectorFixtureSummary
+} from "./collector-fixtures";
 import type {
   CollectorDiagnostics,
   CollectorHistory,
@@ -46,6 +53,17 @@ export async function getCollectorDataset(code: CollectorIndexCode): Promise<Col
     validateCollectorDataset(dataset);
     return dataset;
   } catch {
+    if (process.env.COLLECTOR_SHADOW_FIXTURES_ENABLED === "true" && code === "OPEUCOL") {
+      const fixture = {
+        manifest: collectorFixtureManifest,
+        summary: collectorFixtureSummary,
+        history: collectorFixtureHistory,
+        rebalances: collectorFixtureRebalances,
+        diagnostics: collectorFixtureDiagnostics
+      };
+      validateCollectorDataset(fixture);
+      return fixture;
+    }
     return null;
   }
 }

@@ -1,8 +1,8 @@
 # TCG Europe Index
 
-European sale-price indexes for ten active trading card games under development. Singles indexes track the 500 highest Cardmarket `avg30` cards that pass the data-quality gates; sealed indexes use the top 100 products. Cardmarket defines `avg30` as the average sale price over the last 30 days. The public daily feed is aggregated and does not contain individual sold-article or order records. Cardmarket-derived preview values and compositions are published while the official 60-day observation history accumulates.
+European sale-price indexes for ten active trading card games under development. The current v1.4 preview retains reproducible Top-500 singles and Top-100 sealed price-leader series. The new v1.5 collector singles series includes every eligible Cardmarket variant with positive `avg30` of at least EUR 10; it has no target count, ranking, quota, or concentration cap. Cardmarket defines `avg30` as the average sale price over the last 30 days. The public daily feed is aggregated and does not contain individual sold-article or order records.
 
-Every covered game has separate singles and sealed-product indexes. The same daily source archive feeds both universes.
+The v1.5 singles series remains a private shadow until the 60-day and human-cutover controls pass. The v1.5 sealed family is explicitly deferred because the bulk source does not provide rolling sold-price fields for sealed products.
 The language universe includes every language represented in the official Cardmarket Europe catalogue because the confirmed downloads do not expose a reliable language field.
 
 ## Local development
@@ -48,6 +48,8 @@ npm --prefix apps/web run deploy:vinext
 
 `apps/web/wrangler.jsonc` defines the assets, cache, observability, and rate-limit bindings. Configure `NEXT_PUBLIC_SITE_URL` and `NEWSLETTER_ENDPOINT` as Worker variables, and store `NEWSLETTER_API_KEY` as a Wrangler secret. Cloudflare Workers Builds can use `apps/web` as the root directory, `npm run build && npm run build:vinext` as the build command, and `npm run deploy:vinext` as the deploy command.
 
+Marketplace buttons support optional affiliate wrapping through `NEXT_PUBLIC_EBAY_AFFILIATE_URL_TEMPLATE` and `NEXT_PUBLIC_TCGPLAYER_AFFILIATE_URL_TEMPLATE`. Each template must produce HTTPS and may contain `{url}` for the encoded destination and `{custom_id}` for the stable Cardmarket variant identifier. Until a template is configured, the buttons remain ordinary non-affiliate marketplace searches. Affiliate activation requires approved eBay Partner Network and TCGplayer Impact accounts plus a visible disclosure.
+
 Verify the current official Cardmarket downloads without writing data:
 
 ```bash
@@ -82,9 +84,9 @@ The Sunday audit publishes a separate aggregate archive-health receipt with cove
 
 ## Private normalization
 
-Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. No raw or normalized per-card feed is exposed by the web application.
+Every successful daily archive run also normalizes the verified catalogue and prices into private R2 Parquet datasets. The daily workflow now calculates the enabled v1.5 collector singles definitions into methodology-versioned private R2 objects. Sealed definitions are skipped, not emitted as zero-member indexes. No raw or normalized per-card feed is exposed by the web application.
 
-The same workflow recomputes both the official shadow calculation and a separately labelled preview calculation. Official shadow outputs remain in R2 and report `accumulating` until the methodology's observation and constituent gates pass. Preview outputs use daily provisional price-ranked selections—top 500 eligible singles or top 100 eligible sealed products—based only on the history available at that time and may be exported to repository-managed public JSON after manifest verification.
+The same workflow preserves the separate v1.4 calculation and preview outputs. The v1.5 collector runner uses monthly frozen all-eligible singles membership and writes enriched constituent identity fields for presentation. Public export or alias switching is still a separate human action.
 
 Private shadow outputs include chain-linked values, constituent contributions, rebalance audits, and aggregate analytics for movers, breadth, drawdown, and listing-price volatility. No raw per-card price history is published. Preview history and composition archives remain separate from the later official history and are carried into the cutover candidate as labelled preparation-phase files.
 

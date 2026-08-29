@@ -19,6 +19,7 @@ from core.store import ObjectStore
 
 from ingest.cardmarket import game_config
 from ingest.manifest import Manifest, manifest_key, validate_manifest
+from ingest.product_metadata import catalogue_identity
 
 logger = logging.getLogger(__name__)
 ALLOWED_PRODUCT_KINDS = {"single", "sealed", "other"}
@@ -31,6 +32,12 @@ PRODUCT_COLUMNS = [
     "cm_category_id",
     "cm_expansion_id",
     "name",
+    "display_name",
+    "collector_number",
+    "image_url",
+    "image_source",
+    "tcgplayer_product_url",
+    "metadata_status",
     "product_kind",
     "raw_category",
     "source_date_added",
@@ -199,6 +206,10 @@ def normalize_catalogue(
                 "last_seen": observed_on,
             }
 
+        source_name = str(
+            _first(record, "name", "productName", default=f"Product {product_id}")
+        )
+        identity = catalogue_identity(source_name)
         products.append(
             {
                 "stable_product_id": stable_product_id(game, product_id),
@@ -207,7 +218,13 @@ def normalize_catalogue(
                 "cm_metacard_id": _optional_int(_first(record, "idMetacard")),
                 "cm_category_id": _optional_int(_first(record, "idCategory")),
                 "cm_expansion_id": expansion_id,
-                "name": str(_first(record, "name", "productName", default=f"Product {product_id}")),
+                "name": source_name,
+                "display_name": identity.display_name,
+                "collector_number": identity.collector_number,
+                "image_url": None,
+                "image_source": None,
+                "tcgplayer_product_url": None,
+                "metadata_status": identity.metadata_status,
                 "product_kind": kind,
                 "raw_category": raw_category,
                 "source_date_added": _source_date(_first(record, "dateAdded")),

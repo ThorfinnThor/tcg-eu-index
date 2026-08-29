@@ -43,6 +43,18 @@ test("sealed indexes describe constituents as products", async ({ page }) => {
   await expect(page.getByRole("columnheader", { name: "Ref. price" })).toBeVisible();
 });
 
+test("collector singles expose clear card identity and commerce destinations", async ({ page }) => {
+  await page.goto("/collector/OPEUCOL");
+  await expect(page.getByRole("heading", { name: "One Piece Europe Collector Index" })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Card" })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open Roronoa Zoro on Cardmarket" }).first()).toBeVisible();
+  await expect(page.getByText(/No\. OP01-001/).first()).toBeVisible();
+  await expect(page.getByText("Romance Dawn").first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on eBay/ }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /Search for Roronoa Zoro on TCGplayer/ }).first()).toBeVisible();
+});
+
 test("primary pages do not overflow the viewport", async ({ page }) => {
   for (const path of ["/", "/index/PKEU500", "/index/OPEU500/constituents", "/portfolio", "/data-quality"]) {
     await page.goto(path);
