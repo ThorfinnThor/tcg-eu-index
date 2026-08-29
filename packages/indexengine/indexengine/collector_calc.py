@@ -353,6 +353,11 @@ def _validate_contract(
         family = methodology.families[definition.family]
     except KeyError as exc:
         raise MethodologyConfigError(f"unknown collector family {definition.family}") from exc
+    if not family.calculation_enabled:
+        raise MethodologyConfigError(
+            f"index {definition.code} is deferred because family source status is "
+            f"{family.source_status!r}"
+        )
     if family.valuation_price_field != calculation.valuation_price_field:
         raise MethodologyConfigError("family and calculation valuation fields must match")
     return calculation

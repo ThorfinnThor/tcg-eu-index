@@ -17,6 +17,7 @@ from ingest.manifest import Manifest, ManifestFile
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 V15_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.1.yaml"
+V152_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.2.yaml"
 
 
 def _write_parquet(store: LocalObjectStore, key: str, frame: pl.DataFrame) -> None:
@@ -193,6 +194,54 @@ def test_collector_methodology_audit_blocks_missing_sealed_sold_prices(
         "sealed_indexes_without_positive_avg30": ["OPEUSCOL"]
     }
     assert "sold_price_avg30_source_unavailable" in sealed["review_flags"]
+
+
+def test_preview2_audit_records_sealed_as_deferred_without_requesting_preview3(
+    tmp_path: Path,
+) -> None:
+    methodology = Methodology.load(V152_PATH)
+    methodology = replace(
+        methodology,
+        indexes=[item for item in methodology.indexes if item.game_key == "onepiece"],
+    )
+    store = LocalObjectStore(tmp_path / "r2")
+    days = [date(2026, 8, 1) + timedelta(days=offset) for offset in range(8)]
+    _write_parquet(
+        store,
+        "derived/catalogue/onepiece/products.parquet",
+        pl.DataFrame(
+            [
+                {
+                    "stable_product_id": "cardmarket:onepiece:product:3",
+                    "game_key": "onepiece",
+                    "cm_product_id": 3,
+                    "product_kind": "sealed",
+                    "first_seen": days[0],
+                }
+            ]
+        ),
+    )
+    _write_parquet(
+        store,
+        "derived/prices/onepiece/2026-08.parquet",
+        pl.DataFrame(
+            [_price_row(value_date, 3, "sealed", None, None, None) for value_date in days]
+        ),
+    )
+    for value_date in days:
+        _write_manifest(store, value_date)
+
+    report = build_collector_methodology_audit(store, methodology, days[-1])
+    sealed = next(item for item in report["indexes"] if item["index_code"] == "OPEUSCOL")
+
+    assert sealed["calculation_status"] == "deferred"
+    assert sealed["source_status"] == "rolling_sold_price_unavailable"
+    assert report["decision"]["new_preview_methodology_version_required"] is False
+    assert report["decision"]["methodology_correction_required_before_publication"] is False
+    assert report["decision"]["audit_status"] == (
+        "preliminary_complete_with_deferred_family"
+    )
+    assert report["decision"]["deferred_indexes"] == ["OPEUSCOL"]
 
 
 def test_collector_methodology_audit_requires_avg7_calibration(tmp_path: Path) -> None:

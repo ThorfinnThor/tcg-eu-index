@@ -11,12 +11,13 @@ from core.r2 import LocalObjectStore
 from indexengine.activity import score_trading_activity_proxy
 from indexengine.activity_audit import build_activity_audit
 from indexengine.eligibility import evaluate_collector_eligibility
-from indexengine.methodology import Methodology
+from indexengine.methodology import Methodology, MethodologyConfigError
 from indexengine.quality import score_data_quality
 from ingest.manifest import Manifest, ManifestFile
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 V15_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.1.yaml"
+V152_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.2.yaml"
 
 
 def _row(
@@ -201,6 +202,21 @@ def test_official_history_gate_is_not_relaxed_by_shadow_availability() -> None:
     assert result.required_history_days == 60
     assert result.eligible_variants == ()
     assert result.diagnostics[0].exclusion_reasons == ("history_days",)
+
+
+def test_preview2_rejects_deferred_sealed_calculation() -> None:
+    methodology = Methodology.load(V152_PATH)
+    definition = methodology.index_by_code("OPEUSCOL")
+
+    with pytest.raises(MethodologyConfigError, match="rolling_sold_price_unavailable"):
+        evaluate_collector_eligibility(
+            pl.DataFrame(),
+            pl.DataFrame(),
+            definition,
+            methodology,
+            date(2026, 8, 29),
+            data_state="shadow",
+        )
 
 
 def test_private_activity_audit_uses_real_archive_calendar_semantics(tmp_path: Path) -> None:
