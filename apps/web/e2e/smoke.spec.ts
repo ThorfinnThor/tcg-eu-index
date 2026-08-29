@@ -42,7 +42,7 @@ test("sealed indexes describe constituents as products", async ({ page }) => {
 test("collector singles expose clear card identity and commerce destinations", async ({ page }) => {
   await page.goto("/collector/OPEUCOL");
   await expect(page.getByRole("heading", { name: "One Piece Europe Collector Index" })).toBeVisible();
-  await expect(page.getByText("Preview index", { exact: true })).toBeVisible();
+  await expect(page.getByText("Preview", { exact: true })).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
   await expect(page.getByRole("columnheader", { name: "Card" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
