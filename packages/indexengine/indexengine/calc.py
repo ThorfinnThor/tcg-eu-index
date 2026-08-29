@@ -289,7 +289,7 @@ def monthly_rebalances(
                 cursor,
                 incumbents,
             )
-            if len(selection.constituents) >= definition.target_size:
+            if len(selection.constituents) >= definition.required_target_size():
                 rebalance = _rebalance_from_selection(cursor, methodology, selection)
                 rebalances.append(rebalance)
                 incumbents = {item.identity for item in rebalance.constituents}
