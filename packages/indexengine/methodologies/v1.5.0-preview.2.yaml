@@ -1,0 +1,208 @@
+schema_version: 2
+methodology_version: "1.5.0-preview.2"
+methodology_state: "private_shadow"
+base_value: 1000
+
+source:
+  provider: "cardmarket"
+  reference_price_field: "avg30"
+  activity_signal_field: "avg1"
+
+calculation:
+  valuation_price_field: "avg30"
+  price_fallback: null
+  weighting: "equal_weight_at_monthly_rebalance"
+  rebalance: "monthly"
+  rebalance_effective_day: "first_observable_source_day"
+  daily_constituent_return_cap: 0.25
+  carry_forward_max_days: 5
+  stale_policy: "suspend_at_last_valid_price"
+
+quality:
+  selection_lookback_days: 60
+  seasoning_days: 90
+  official_min_history_days: 60
+  shadow_min_history_days: 7
+  min_valuation_observation_ratio: 0.80
+  min_selection_price_observation_ratio: 0.80
+  max_suspect_zero_ratio: 0.05
+  score_name: "data_quality_score"
+
+activity:
+  proxy_name: "trading_activity_proxy"
+  signal_field: "avg1"
+  lookback_days: 60
+  exclude_source_gaps: true
+  exclude_unchanged_snapshots: true
+  eligibility_gate_enabled: false
+  candidate_min_ratio:
+    singles: 0.30
+    sealed: 0.10
+  candidate_max_days_since_signal:
+    singles: 7
+    sealed: 14
+
+families:
+  collector_singles:
+    universe: "singles"
+    membership_mode: "all_eligible_variants"
+    constituent_identity: ["cm_product_id", "variant_key"]
+    target_size: null
+    min_latest_avg30_eur: 10.00
+    reference_price_field: "avg30"
+    valuation_price_field: "avg30"
+    price_fallback: null
+    selection_rank: null
+    concentration_caps: null
+    price_band_targets: null
+    calculation_enabled: true
+    source_status: "available"
+
+  collector_sealed:
+    universe: "sealed"
+    membership_mode: "all_eligible_variants"
+    constituent_identity: ["cm_product_id", "variant_key"]
+    target_size: null
+    min_latest_avg30_eur: 30.00
+    reference_price_field: "avg30"
+    valuation_price_field: "avg30"
+    price_fallback: null
+    selection_rank: null
+    concentration_caps: null
+    price_band_targets: null
+    calculation_enabled: false
+    source_status: "rolling_sold_price_unavailable"
+
+indexes:
+  - code: "MTEUCOL"
+    name: "Magic Europe Collector Index"
+    game_key: "magic"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "MTEUSCOL"
+    name: "Magic Sealed Europe Collector Index"
+    game_key: "magic"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "YGEUCOL"
+    name: "Yu-Gi-Oh! Europe Collector Index"
+    game_key: "yugioh"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "YGEUSCOL"
+    name: "Yu-Gi-Oh! Sealed Europe Collector Index"
+    game_key: "yugioh"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "OPEUCOL"
+    name: "One Piece Europe Collector Index"
+    game_key: "onepiece"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "OPEUSCOL"
+    name: "One Piece Sealed Europe Collector Index"
+    game_key: "onepiece"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "PKEUCOL"
+    name: "Pokemon Europe Collector Index"
+    game_key: "pokemon"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "PKEUSCOL"
+    name: "Pokemon Sealed Europe Collector Index"
+    game_key: "pokemon"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "DBSEUCOL"
+    name: "Dragon Ball Super Europe Collector Index"
+    game_key: "dragonballsuper"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "DBSEUSCOL"
+    name: "Dragon Ball Super Sealed Europe Collector Index"
+    game_key: "dragonballsuper"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "FABEUCOL"
+    name: "Flesh and Blood Europe Collector Index"
+    game_key: "fleshandblood"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "FABEUSCOL"
+    name: "Flesh and Blood Sealed Europe Collector Index"
+    game_key: "fleshandblood"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "DGEUCOL"
+    name: "Digimon Europe Collector Index"
+    game_key: "digimon"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "DGEUSCOL"
+    name: "Digimon Sealed Europe Collector Index"
+    game_key: "digimon"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "LCEUCOL"
+    name: "Disney Lorcana Europe Collector Index"
+    game_key: "lorcana"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "LCEUSCOL"
+    name: "Disney Lorcana Sealed Europe Collector Index"
+    game_key: "lorcana"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "SWUEUCOL"
+    name: "Star Wars: Unlimited Europe Collector Index"
+    game_key: "starwarsunlimited"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "SWUEUSCOL"
+    name: "Star Wars: Unlimited Sealed Europe Collector Index"
+    game_key: "starwarsunlimited"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "RBEUCOL"
+    name: "Riftbound Europe Collector Index"
+    game_key: "riftbound"
+    family: "collector_singles"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: "RBEUSCOL"
+    name: "Riftbound Sealed Europe Collector Index"
+    game_key: "riftbound"
+    family: "collector_sealed"
+    public: false
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+
+output:
+  index_prefix: "derived/indexes/{methodology_version}/{data_state}/{index_code}"
+  diagnostics_prefix: "derived/diagnostics/{methodology_version}/{index_code}"
+  series_id: "{index_code}:{methodology_version}:{data_state}"
+  public_alias_enabled: false
+
+calibration:
+  alternate_valuation_fields: ["avg7"]
+  require_activity_proxy_validation: true
+  require_human_cutover: true
+  splice_with_prior_methodology: false

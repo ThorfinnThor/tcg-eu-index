@@ -31,8 +31,8 @@ describe("v1.5 collector contracts", () => {
         engine_revision: "fixture",
         source_hashes: {},
         outputs: {
-          "derived/indexes/1.5.0-preview.1/private_shadow/OPEUCOL/history.json": {
-            key: "derived/indexes/1.5.0-preview.1/private_shadow/OPEUCOL/history.json",
+          "derived/indexes/1.5.0-preview.2/private_shadow/OPEUCOL/history.json": {
+            key: "derived/indexes/1.5.0-preview.2/private_shadow/OPEUCOL/history.json",
             sha256: "a".repeat(64),
             bytes: 1
           }

@@ -51,19 +51,33 @@ def build_collector_methodology_audit(
         calendar_dates, unchanged_dates = _archive_calendar(store, game, through_date)
         archive_days_by_game[game] = len(calendar_dates)
         for definition in definitions:
-            reports.append(
-                _audit_definition(
-                    store,
-                    prices,
-                    products,
-                    calendar_dates,
-                    unchanged_dates,
-                    definition,
-                    methodology,
-                    alternate,
-                    through_date,
+            family = methodology.families[cast(str, definition.family)]
+            if family.calculation_enabled:
+                reports.append(
+                    _audit_definition(
+                        store,
+                        prices,
+                        products,
+                        calendar_dates,
+                        unchanged_dates,
+                        definition,
+                        methodology,
+                        alternate,
+                        through_date,
+                    )
                 )
-            )
+            else:
+                reports.append(
+                    _deferred_definition_report(
+                        store,
+                        prices,
+                        calendar_dates,
+                        unchanged_dates,
+                        definition,
+                        methodology,
+                        through_date,
+                    )
+                )
 
     complete_monthly_histories = sum(
         int(cast(dict[str, Any], item["turnover"])["observations"] > 0) for item in reports
@@ -77,7 +91,15 @@ def build_collector_methodology_audit(
         ]
         == 0
     ]
-    methodology_correction_required = bool(sealed_without_avg30)
+    deferred_indexes = [
+        str(item["index_code"])
+        for item in reports
+        if item["calculation_status"] == "deferred"
+    ]
+    enabled_sealed_without_avg30 = [
+        code for code in sealed_without_avg30 if code not in deferred_indexes
+    ]
+    methodology_correction_required = bool(enabled_sealed_without_avg30)
     decision = {
         "new_preview_methodology_version_required": methodology_correction_required,
         "methodology_correction_required_before_publication": methodology_correction_required,
@@ -86,12 +108,20 @@ def build_collector_methodology_audit(
         "activity_gate_enabled": False,
         "publication_state": "remain_private_shadow",
         "audit_status": (
-            "preliminary_blocked" if methodology_correction_required else "preliminary_complete"
+            "preliminary_blocked"
+            if methodology_correction_required
+            else (
+                "preliminary_complete_with_deferred_family"
+                if deferred_indexes
+                else "preliminary_complete"
+            )
         ),
+        "publication_scope": "enabled_families_only",
+        "deferred_indexes": deferred_indexes,
         "source_blockers": {
             "sealed_indexes_without_positive_avg30": sealed_without_avg30,
         },
-        "reason": _decision_reason(methodology_correction_required),
+        "reason": _decision_reason(methodology_correction_required, bool(deferred_indexes)),
     }
     return {
         "schema_version": 1,
@@ -106,6 +136,8 @@ def build_collector_methodology_audit(
         "coverage": {
             "games": len(games),
             "indexes": len(reports),
+            "enabled_indexes": len(reports) - len(deferred_indexes),
+            "deferred_indexes": len(deferred_indexes),
             "archive_days_by_game": archive_days_by_game,
             "indexes_with_monthly_turnover_observations": complete_monthly_histories,
         },
@@ -140,9 +172,9 @@ def render_collector_audit_summary(report: dict[str, object]) -> str:
         "",
         "## Index evidence",
         "",
-        "| Index | Days | Members | AVG30 return | AVG7 return | Return corr. | "
+        "| Index | Status | Days | Members | AVG30 return | AVG7 return | Return corr. | "
         "Turnover obs. | Max cap weight | Max carried | Max suspended | v1.4 overlap |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for item in cast(list[dict[str, Any]], report["indexes"]):
         canonical = cast(dict[str, Any], item["canonical"])
@@ -152,7 +184,8 @@ def render_collector_audit_summary(report: dict[str, object]) -> str:
         missing = cast(dict[str, Any], item["missing_data"])
         legacy = cast(dict[str, Any], item["legacy_comparison"])
         lines.append(
-            f"| {item['index_code']} | {item['archive_days']} | "
+            f"| {item['index_code']} | {item['calculation_status']} | "
+            f"{item['archive_days']} | "
             f"{canonical['latest_constituent_count']} | {_pct(canonical['period_return'])} | "
             f"{_pct(alternate['period_return'])} | {_number(comparison['return_correlation'])} | "
             f"{turnover['observations']} | {_pct(canonical['max_capped_weight_share'])} | "
@@ -238,6 +271,7 @@ def _audit_definition(
         "index_code": definition.code,
         "game_key": definition.game_key,
         "universe": definition.universe,
+        "calculation_status": "enabled",
         "archive_days": len(calendar_dates),
         "excluded_unchanged_days": len(set(calendar_dates) & unchanged_dates),
         "price_fields": _price_field_report(prices, definition, methodology, through_date),
@@ -262,7 +296,66 @@ def _audit_definition(
     return report
 
 
-def _decision_reason(methodology_correction_required: bool) -> str:
+def _deferred_definition_report(
+    store: ObjectStore,
+    prices: pl.DataFrame,
+    calendar_dates: list[date],
+    unchanged_dates: set[date],
+    definition: IndexDefinition,
+    methodology: Methodology,
+    through_date: date,
+) -> dict[str, object]:
+    family = methodology.families[cast(str, definition.family)]
+    empty_rebalances: list[CollectorRebalance] = []
+    empty_values: list[CollectorDailyValue] = []
+    empty_contributions: list[CollectorContribution] = []
+    report: dict[str, object] = {
+        "index_code": definition.code,
+        "game_key": definition.game_key,
+        "universe": definition.universe,
+        "calculation_status": "deferred",
+        "source_status": family.source_status,
+        "archive_days": len(calendar_dates),
+        "excluded_unchanged_days": len(set(calendar_dates) & unchanged_dates),
+        "price_fields": _price_field_report(prices, definition, methodology, through_date),
+        "data_quality": {
+            "diagnostic_variants": 0,
+            "eligible_variants": 0,
+            "score_all": _distribution([]),
+            "score_eligible": _distribution([]),
+            "exclusion_reason_counts": {"family_deferred": 1},
+        },
+        "activity_proxy": {
+            "semantics": "not_evaluated_for_deferred_family",
+            "hard_gate_enabled": False,
+            "eligible_variants": 0,
+            "counterfactual_candidate_pass_count": 0,
+            "counterfactual_candidate_pass_rate": 0.0,
+        },
+        "canonical": _series_report(
+            empty_rebalances, empty_values, empty_contributions
+        ),
+        "alternate": _series_report(
+            empty_rebalances, empty_values, empty_contributions
+        ),
+        "valuation_comparison": _series_comparison(empty_values, empty_values),
+        "turnover": _turnover_report(empty_rebalances),
+        "missing_data": _missing_data_report(empty_values),
+        "legacy_comparison": _legacy_comparison(
+            store, definition, empty_rebalances, empty_values, through_date
+        ),
+        "review_flags": [
+            "family_deferred",
+            "sold_price_avg30_source_unavailable",
+            "monthly_turnover_not_yet_observable",
+        ],
+    }
+    return report
+
+
+def _decision_reason(
+    methodology_correction_required: bool, deferred_family_present: bool
+) -> str:
     if methodology_correction_required:
         return (
             "At least one sealed index has no positive sold-price AVG30 observations. "
@@ -271,6 +364,14 @@ def _decision_reason(methodology_correction_required: bool) -> str:
             "remains prohibited. Singles keep AVG30 as canonical, activity remains "
             "diagnostic-only, and final launch review must be repeated after at least 60 "
             "observable days and two monthly compositions."
+        )
+    if deferred_family_present:
+        return (
+            "The sealed family is explicitly deferred because the bulk source does not expose "
+            "rolling sold-price AVG30 observations for non-singles. Lifetime SELL, TREND, "
+            "listing prices, and per-product page scraping are not substituted. Singles keep "
+            "AVG30 as canonical, activity remains diagnostic-only, and final launch review "
+            "must be repeated after at least 60 observable days and two monthly compositions."
         )
     return (
         "No contract change is justified by the currently available history. Activity remains "
@@ -694,7 +795,7 @@ def _number(value: object) -> str:
     "--methodology",
     "methodology_path",
     type=click.Path(path_type=Path),
-    default=Path("packages/indexengine/methodologies/v1.5.0-preview.1.yaml"),
+    default=Path("packages/indexengine/methodologies/v1.5.0-preview.2.yaml"),
 )
 @click.option("--output", type=click.Path(path_type=Path), required=True)
 @click.option("--summary-output", type=click.Path(path_type=Path), required=True)

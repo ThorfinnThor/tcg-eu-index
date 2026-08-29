@@ -10,6 +10,7 @@ from indexengine.methodology import Methodology, MethodologyConfigError
 REPO_ROOT = Path(__file__).resolve().parents[1]
 V14_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.4.0.yaml"
 V15_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.1.yaml"
+V152_PATH = REPO_ROOT / "packages/indexengine/methodologies/v1.5.0-preview.2.yaml"
 
 
 def _v15_payload() -> dict[str, Any]:
@@ -67,6 +68,20 @@ def test_loader_parses_typed_v15_schema_with_nullable_targets() -> None:
     assert methodology.output.public_alias_enabled is False
 
 
+def test_loader_parses_preview2_with_sealed_explicitly_deferred() -> None:
+    methodology = Methodology.load(V152_PATH)
+
+    assert methodology.methodology_version == "1.5.0-preview.2"
+    singles = methodology.families["collector_singles"]
+    sealed = methodology.families["collector_sealed"]
+    assert singles.calculation_enabled is True
+    assert singles.source_status == "available"
+    assert sealed.calculation_enabled is False
+    assert sealed.source_status == "rolling_sold_price_unavailable"
+    assert len(methodology.indexes) == 20
+    assert all(not definition.public for definition in methodology.indexes)
+
+
 @pytest.mark.parametrize(
     ("mutation", "message"),
     [
@@ -87,6 +102,15 @@ def test_loader_parses_typed_v15_schema_with_nullable_targets() -> None:
         (
             lambda payload: payload["output"].update({"public_alias_enabled": True}),
             "must be false for private_shadow",
+        ),
+        (
+            lambda payload: payload["families"]["collector_sealed"].update(
+                {
+                    "calculation_enabled": False,
+                    "source_status": "available",
+                }
+            ),
+            "deferred families require source_status",
         ),
     ],
 )

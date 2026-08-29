@@ -200,7 +200,7 @@ def _percentile(values: list[int], fraction: float) -> int | None:
     "--methodology",
     "methodology_path",
     type=click.Path(path_type=Path),
-    default=Path("packages/indexengine/methodologies/v1.5.0-preview.1.yaml"),
+    default=Path("packages/indexengine/methodologies/v1.5.0-preview.2.yaml"),
 )
 @click.option("--output", type=click.Path(path_type=Path), required=True)
 @click.option("--summary-output", type=click.Path(path_type=Path), required=True)

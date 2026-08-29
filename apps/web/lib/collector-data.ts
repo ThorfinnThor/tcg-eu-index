@@ -17,7 +17,7 @@ export type CollectorDataset = {
   diagnostics: CollectorDiagnostics;
 };
 
-const methodologyVersion = "1.5.0-preview.1";
+const methodologyVersion = "1.5.0-preview.2";
 
 function privateIndexPrefix(code: CollectorIndexCode) {
   return `data/derived/indexes/${methodologyVersion}/private_shadow/${code}`;

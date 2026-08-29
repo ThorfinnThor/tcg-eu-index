@@ -74,6 +74,10 @@ v1.5 starts at 1000 on its own first shadow effective date. It is never spliced 
 
 ## Superseded decisions
 
+ADR 017 supersedes this ADR for the v1.5 sealed collector family from
+`1.5.0-preview.2` onward. The intended EUR 30 threshold remains reserved, but sealed
+calculation is deferred until a stable rolling sold-price source exists.
+
 ADR 015 remains authoritative for methodology v1.4.0 price-leader series. It is superseded only as the design for the new collector-market benchmark.
 
 ADR 014 remains the historical description of v1.4 preview publication. Its daily public preview cadence is superseded for v1.5 collector series by monthly frozen membership.

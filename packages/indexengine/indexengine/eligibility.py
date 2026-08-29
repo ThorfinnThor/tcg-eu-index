@@ -83,7 +83,7 @@ def evaluate_collector_eligibility(
         raise MethodologyConfigError("collector eligibility requires v1.5 quality/activity/source")
     if activity.eligibility_gate_enabled:
         raise MethodologyConfigError(
-            "trading activity proxy is diagnostic-only in v1.5.0-preview.1"
+            "trading activity proxy is diagnostic-only in collector preview methodologies"
         )
 
     lookback_start = effective_date - timedelta(days=quality.selection_lookback_days)
@@ -247,6 +247,11 @@ def _collector_family(
     if family.membership_mode != "all_eligible_variants" or family.target_size is not None:
         raise MethodologyConfigError(
             f"index {definition.code} is not an uncapped all-eligible-variants family"
+        )
+    if not family.calculation_enabled:
+        raise MethodologyConfigError(
+            f"index {definition.code} is deferred because family source status is "
+            f"{family.source_status!r}"
         )
     return family
 

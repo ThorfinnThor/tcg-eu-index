@@ -27,6 +27,8 @@ class MethodologyFamily:
     selection_rank: str | None
     concentration_caps: dict[str, float] | None
     price_band_targets: dict[str, float] | None
+    calculation_enabled: bool = True
+    source_status: str = "available"
 
 
 @dataclass(frozen=True)
@@ -587,6 +589,8 @@ def _parse_families(item: dict[str, Any], path: str) -> dict[str, MethodologyFam
                 "selection_rank",
                 "concentration_caps",
                 "price_band_targets",
+                "calculation_enabled",
+                "source_status",
             },
             family_path,
         )
@@ -615,21 +619,45 @@ def _parse_families(item: dict[str, Any], path: str) -> dict[str, MethodologyFam
                 raise MethodologyConfigError(
                     f"{family_path}.{nullable_field}: only null is supported for collector families"
                 )
+        calculation_enabled = _bool(
+            family.get("calculation_enabled", True),
+            f"{family_path}.calculation_enabled",
+        )
+        source_status = _string(
+            family.get("source_status", "available"), f"{family_path}.source_status"
+        )
+        if calculation_enabled and source_status != "available":
+            raise MethodologyConfigError(
+                f"{family_path}: enabled families require source_status 'available'"
+            )
+        if not calculation_enabled and source_status != "rolling_sold_price_unavailable":
+            raise MethodologyConfigError(
+                f"{family_path}: deferred families require source_status "
+                "'rolling_sold_price_unavailable'"
+            )
         result = MethodologyFamily(
-            key,
-            universe,
-            _string(family.get("membership_mode"), f"{family_path}.membership_mode"),
-            tuple(identity),
-            target,
-            _number(
+            key=key,
+            universe=universe,
+            membership_mode=_string(
+                family.get("membership_mode"), f"{family_path}.membership_mode"
+            ),
+            constituent_identity=tuple(identity),
+            target_size=target,
+            min_latest_avg30_eur=_number(
                 family.get("min_latest_avg30_eur"), f"{family_path}.min_latest_avg30_eur", minimum=0
             ),
-            _string(family.get("reference_price_field"), f"{family_path}.reference_price_field"),
-            _string(family.get("valuation_price_field"), f"{family_path}.valuation_price_field"),
-            None,
-            None,
-            None,
-            None,
+            reference_price_field=_string(
+                family.get("reference_price_field"), f"{family_path}.reference_price_field"
+            ),
+            valuation_price_field=_string(
+                family.get("valuation_price_field"), f"{family_path}.valuation_price_field"
+            ),
+            price_fallback=None,
+            selection_rank=None,
+            concentration_caps=None,
+            price_band_targets=None,
+            calculation_enabled=calculation_enabled,
+            source_status=source_status,
         )
         if (
             result.membership_mode != "all_eligible_variants"

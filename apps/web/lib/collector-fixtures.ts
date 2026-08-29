@@ -7,9 +7,9 @@ import type {
 
 export const collectorFixtureSummary: CollectorIndexSummary = {
   schema_version: 2,
-  series_id: "OPEUCOL:1.5.0-preview.1:private_shadow",
+  series_id: "OPEUCOL:1.5.0-preview.2:private_shadow",
   index_code: "OPEUCOL",
-  methodology_version: "1.5.0-preview.1",
+  methodology_version: "1.5.0-preview.2",
   data_state: "private_shadow",
   public_alias_enabled: false,
   name: "One Piece Europe Collector Index",
@@ -50,7 +50,7 @@ export const collectorFixtureHistory: CollectorHistory = {
       whole_market_carried_forward: false,
       rebalance_effective_date: "2026-08-20",
       selection_as_of: "2026-08-19",
-      methodology_version: "1.5.0-preview.1"
+      methodology_version: "1.5.0-preview.2"
     },
     {
       value_date: "2026-08-21",
@@ -69,7 +69,7 @@ export const collectorFixtureHistory: CollectorHistory = {
       whole_market_carried_forward: false,
       rebalance_effective_date: "2026-08-20",
       selection_as_of: "2026-08-19",
-      methodology_version: "1.5.0-preview.1"
+      methodology_version: "1.5.0-preview.2"
     }
   ]
 };
@@ -86,7 +86,7 @@ export const collectorFixtureRebalances: CollectorRebalances = {
     {
       effective_date: "2026-08-20",
       selection_as_of: "2026-08-19",
-      methodology_version: "1.5.0-preview.1",
+      methodology_version: "1.5.0-preview.2",
       selection_snapshot_sha256: "a".repeat(64),
       eligible_count: 2,
       active_count: 2,
