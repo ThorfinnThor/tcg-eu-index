@@ -279,6 +279,7 @@ export function validateCollectorPreviewIndex(
     if (item.status !== "accumulating" && item.status !== "preview") {
       throw new Error("collector preview index has an invalid status");
     }
+    number(item.base_value, "collector preview base value");
     if (item.latest_index_value !== null) number(item.latest_index_value, "collector preview latest value");
     if (item.latest_value_date !== null) isoDate(item.latest_value_date, "collector preview latest date");
     integer(item.constituent_count, "collector preview constituent count");

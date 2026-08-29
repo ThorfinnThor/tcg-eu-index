@@ -17,16 +17,27 @@ const ebayAffiliateTemplate = process.env.NEXT_PUBLIC_EBAY_AFFILIATE_URL_TEMPLAT
 const tcgplayerAffiliateTemplate = process.env.NEXT_PUBLIC_TCGPLAYER_AFFILIATE_URL_TEMPLATE;
 
 export function cardCommerceQuery(card: CommerceCard): string {
-  return [card.name, card.collector_number, card.set_name]
+  const name = card.name
+    .replace(/(?:\s*\[[^\]]*\])+\s*$/u, "")
+    .replace(/\s+/gu, " ")
+    .trim();
+  const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
+    ? card.set_name.trim()
+    : null;
+
+  return [name, card.collector_number?.trim(), setName]
     .filter((value): value is string => Boolean(value))
     .join(" ");
 }
 
-export function commerceTargets(card: CommerceCard): CommerceTarget[] {
+export function commerceTargets(card: CommerceCard, gameName?: string): CommerceTarget[] {
   const query = cardCommerceQuery(card);
   const customId = card.stable_variant_id.replaceAll(":", "-").slice(0, 256);
   const ebayDestination = new URL("https://www.ebay.de/sch/i.html");
-  ebayDestination.searchParams.set("_nkw", query);
+  ebayDestination.searchParams.set(
+    "_nkw",
+    [query, gameName, gameName ? "card" : null].filter(Boolean).join(" "),
+  );
   const tcgplayerDestination = card.tcgplayer_product_url
     ? new URL(card.tcgplayer_product_url)
     : new URL("https://www.tcgplayer.com/search/all/product");

@@ -54,6 +54,16 @@ function matchesSearch(member: Member, query: string) {
   ].some((value) => value?.toLocaleLowerCase().includes(query));
 }
 
+function displaySetName(value: string | null) {
+  if (!value || /^Expansion\s+\d+$/iu.test(value.trim())) return "Set details pending";
+  return value;
+}
+
+function byAscendingPrice(left: Member, right: Member) {
+  return left.selection_price - right.selection_price
+    || left.stable_variant_id.localeCompare(right.stable_variant_id);
+}
+
 function supportedImageUrl(value: string | null): string | null {
   if (!value) return null;
   try {
@@ -157,9 +167,11 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
     ? (wholeIndexReady ? loadedIndex.members : noMembers)
     : compositionPage.constituents;
   const filteredMembers = useMemo(
-    () => sourceMembers.filter(
-      (member) => matchesCollectorPriceBand(member.selection_price, priceBand) && matchesSearch(member, query)
-    ),
+    () => sourceMembers
+      .filter(
+        (member) => matchesCollectorPriceBand(member.selection_price, priceBand) && matchesSearch(member, query)
+      )
+      .sort(byAscendingPrice),
     [priceBand, query, sourceMembers]
   );
 
@@ -289,14 +301,23 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
                       </div>
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-paper/65">{member.set_name ?? "Set name pending"}</td>
+                  <td className="px-4 py-3 text-paper/65">{displaySetName(member.set_name)}</td>
                   <td className="px-4 py-3 text-paper/70">{member.variant_key}</td>
                   <td className="px-4 py-3 text-right tabular-nums text-paper/80">
                     {formatCollectorEur(member.selection_price)}
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex flex-wrap gap-2">
-                      {commerceTargets(member).map((target) => (
+                      <a
+                        href={cardmarketProductUrl(gameName, member.cm_product_id, member.variant_key)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="chip hover:border-amber hover:text-amber"
+                        aria-label={`Open ${member.name} on Cardmarket`}
+                      >
+                        Cardmarket
+                      </a>
+                      {commerceTargets(member, gameName).map((target) => (
                         <a
                           key={target.marketplace}
                           href={target.href}

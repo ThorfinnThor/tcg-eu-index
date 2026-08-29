@@ -255,6 +255,7 @@ export type CollectorPreviewIndex = {
   name: string;
   game_key: string;
   status: "accumulating" | "preview";
+  base_value: number;
   latest_index_value: number | null;
   latest_value_date: string | null;
   constituent_count: number;

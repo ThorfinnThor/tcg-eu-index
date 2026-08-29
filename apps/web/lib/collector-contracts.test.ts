@@ -107,6 +107,7 @@ describe("v1.5 collector contracts", () => {
         name: "One Piece Europe Collector Index",
         game_key: "onepiece",
         status: "preview",
+        base_value: 1000,
         latest_index_value: 1000,
         latest_value_date: "2026-08-29",
         constituent_count: 2126

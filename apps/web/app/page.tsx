@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Metric } from "@/components/Metric";
+import { formatPct, Metric } from "@/components/Metric";
 import { StructuredData } from "@/components/StructuredData";
 import { getCollectorPreviewIndex } from "@/lib/collector-data";
 import { collectorGameName } from "@/lib/collector-ui";
@@ -67,31 +67,42 @@ export default async function Page() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {collectorPreview.indexes.map((index) => (
-            <Link
-              key={index.code}
-              href={`/collector/${index.code}`}
-              className="surface block p-5 transition hover:border-amber"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <div className="text-xs text-paper/45">{collectorGameName(index.game_key)}</div>
-                  <h3 className="mt-1 text-lg font-semibold text-paper">{index.name}</h3>
+          {collectorPreview.indexes.map((index) => {
+            const changeSinceStart = index.latest_index_value === null
+              ? null
+              : index.latest_index_value / index.base_value - 1;
+            return (
+              <Link
+                key={index.code}
+                href={`/collector/${index.code}`}
+                className="surface block p-5 transition hover:border-amber"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div className="text-xs text-paper/45">{collectorGameName(index.game_key)}</div>
+                    <h3 className="mt-1 text-lg font-semibold text-paper">{index.name}</h3>
+                  </div>
+                  <span className="chip border-amber text-amber">Preview</span>
                 </div>
-                <span className="chip border-amber text-amber">Preview</span>
-              </div>
-              <div className="mt-5 grid grid-cols-2 gap-4">
-                <Metric
-                  label={`Index value · ${index.latest_value_date ?? "pending"}`}
-                  value={index.latest_index_value?.toFixed(2) ?? "pending"}
-                />
-                <Metric label="Cards tracked" value={index.constituent_count.toLocaleString("en-GB")} />
-              </div>
-              <p className="mt-4 border-t border-line pt-3 text-xs leading-5 text-paper/45">
-                Singles priced from €10 · basket updated monthly
-              </p>
-            </Link>
-          ))}
+                <div className="mt-5 grid grid-cols-2 gap-4">
+                  <Metric
+                    label="Index value"
+                    value={index.latest_index_value?.toFixed(2) ?? "pending"}
+                  />
+                  <Metric
+                    label="Since start"
+                    value={changeSinceStart === null ? "pending" : formatPct(changeSinceStart)}
+                    tone={changeSinceStart === null || changeSinceStart === 0
+                      ? "neutral"
+                      : changeSinceStart > 0 ? "up" : "down"}
+                  />
+                </div>
+                <p className="mt-4 border-t border-line pt-3 text-xs leading-5 text-paper/45">
+                  {index.constituent_count.toLocaleString("en-GB")} cards · updated {index.latest_value_date ?? "pending"}
+                </p>
+              </Link>
+            );
+          })}
         </div>
 
         {collectorPreview.indexes.length === 0 ? (

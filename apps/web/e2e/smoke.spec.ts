@@ -8,6 +8,7 @@ test("collector overview excludes retired fixed-size and sealed cards", async ({
   await expect(page.getByText("One Piece Europe 500", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Magic Sealed Europe 100", { exact: true })).toHaveCount(0);
   await expect(page.getByText("Latest", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("Since start", { exact: true }).first()).toBeVisible();
 });
 
 test("constituents, embed, reports, and public CSV remain reachable", async ({ page, request }) => {
@@ -48,6 +49,7 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.getByRole("columnheader", { name: "Marketplaces" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Open .+ on Cardmarket/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Open .+ on Cardmarket/ }).first()).toHaveAttribute("href", /idProduct=\d+/);
+  await expect(page.locator('a[href*="cardmarket.com"]', { hasText: "Cardmarket" }).first()).toBeVisible();
   await expect(page.getByText(/CM \d+/).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on eBay/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on TCGplayer/ }).first()).toBeVisible();
@@ -58,6 +60,10 @@ test("collector singles expose clear card identity and commerce destinations", a
   await page.getByLabel("Price range").selectOption("1000-10000");
   await expect(page.getByText(/cards found/)).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "30-day average price" })).toBeVisible();
+  const filteredPrices = await page.locator("tbody tr td:nth-child(4)").evaluateAll((cells) =>
+    cells.map((cell) => Number(cell.textContent?.replace(/[^\d.-]/g, "")))
+  );
+  expect(filteredPrices).toEqual([...filteredPrices].sort((left, right) => left - right));
 
   await page.getByLabel("Price range").selectOption("all");
   await page.getByRole("searchbox", { name: "Search the entire index" }).fill("Monkey");

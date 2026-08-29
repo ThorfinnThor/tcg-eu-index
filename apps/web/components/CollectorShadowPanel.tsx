@@ -62,7 +62,9 @@ export function CollectorShadowPanel({
           <Metric
             label="Change since start"
             value={changeSinceStart == null ? "pending" : `${changeSinceStart >= 0 ? "+" : ""}${changeSinceStart.toFixed(2)}%`}
-            tone={changeSinceStart == null || changeSinceStart >= 0 ? "up" : "down"}
+            tone={changeSinceStart == null || changeSinceStart === 0
+              ? "neutral"
+              : changeSinceStart > 0 ? "up" : "down"}
           />
           <Metric
             label="Cards tracked"
@@ -71,7 +73,7 @@ export function CollectorShadowPanel({
           <Metric label="Price rule" value={`From €${threshold}`} />
         </div>
         <p className="mt-5 border-t border-line pt-4 text-xs leading-5 text-paper/50">
-          The index started at {summary.base_value.toLocaleString("en-GB")}. Card membership is reviewed monthly; the index value is calculated from the latest daily price data.
+          The index started at {summary.base_value.toLocaleString("en-GB")}. Card membership is reviewed monthly; the index value is calculated from the latest daily price data. Cardmarket does not provide transaction counts in this feed, so this preview does not label cards as liquid or illiquid.
         </p>
       </section>
 
