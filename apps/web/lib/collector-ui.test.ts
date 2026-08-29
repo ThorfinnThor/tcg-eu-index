@@ -31,4 +31,21 @@ describe("collector UI labels", () => {
       positiveActivityRows: 0
     });
   });
+
+  it("uses the bounded public diagnostic aggregate", () => {
+    expect(collectorDiagnosticSummary({
+      ...collectorFixtureDiagnostics,
+      summary: {
+        count: 12,
+        average_quality: 0.8,
+        average_activity_ratio: 0.4,
+        positive_activity_rows: 9
+      }
+    })).toEqual({
+      count: 12,
+      averageQuality: 0.8,
+      averageActivityRatio: 0.4,
+      positiveActivityRows: 9
+    });
+  });
 });

@@ -49,6 +49,14 @@ export function latestCollectorRebalance(rebalances: CollectorRebalances) {
 }
 
 export function collectorDiagnosticSummary(diagnostics: CollectorDiagnostics) {
+  if (diagnostics.summary) {
+    return {
+      count: diagnostics.summary.count,
+      averageQuality: diagnostics.summary.average_quality,
+      averageActivityRatio: diagnostics.summary.average_activity_ratio,
+      positiveActivityRows: diagnostics.summary.positive_activity_rows
+    };
+  }
   const rows = diagnostics.eligibility;
   if (rows.length === 0) {
     return {

@@ -33,6 +33,95 @@ async function readSeoFile(fileName) {
   return JSON.parse(await readFile(path.join(seoDataRoot, fileName), "utf8"));
 }
 
+async function fileExists(filePath) {
+  return stat(filePath)
+    .then(() => true)
+    .catch((error) => {
+      if (error?.code === "ENOENT") return false;
+      throw error;
+    });
+}
+
+function assertCollectorIdentity(payload, code, version, label) {
+  if (
+    payload.schema_version !== 2 || payload.index_code !== code ||
+    payload.methodology_version !== version || payload.data_state !== "private_shadow" ||
+    payload.series_id !== `${code}:${version}:private_shadow`
+  ) {
+    fail(`${code} ${label} has invalid collector identity`);
+  }
+}
+
+async function validateCollectorPreview() {
+  const collectorIndexPath = path.join(dataRoot, "collector", "index.json");
+  if (!await fileExists(collectorIndexPath)) return 0;
+  const collectorIndex = await readJson("collector/index.json");
+  if (
+    collectorIndex.schema_version !== 1 || collectorIndex.publication_state !== "preview_noindex" ||
+    !/^\d{4}-\d{2}-\d{2}$/.test(collectorIndex.generated_for) ||
+    typeof collectorIndex.methodology_version !== "string" || !Array.isArray(collectorIndex.indexes) ||
+    collectorIndex.indexes.length === 0
+  ) {
+    fail("collector preview index has an invalid publication contract");
+  }
+  const seenCodes = new Set();
+  for (const item of collectorIndex.indexes) {
+    const code = item.code;
+    if (
+      typeof code !== "string" || !/^[A-Z]+COL$/.test(code) || code.endsWith("SCOL") ||
+      seenCodes.has(code) || !item.name || !item.game_key ||
+      !["accumulating", "preview"].includes(item.status) ||
+      !Number.isInteger(item.constituent_count)
+    ) {
+      fail(`invalid collector preview record: ${JSON.stringify(item)}`);
+    }
+    seenCodes.add(code);
+    const payloads = Object.fromEntries(await Promise.all(
+      ["manifest", "summary", "history", "rebalances", "diagnostics"].map(async (name) => [
+        name,
+        await readJson(`collector/${code}/${name}.json`)
+      ])
+    ));
+    for (const [label, payload] of Object.entries(payloads)) {
+      assertCollectorIdentity(payload, code, collectorIndex.methodology_version, label);
+    }
+    if (
+      payloads.manifest.public_alias_enabled !== false ||
+      payloads.manifest.publication_state !== "preview_noindex" ||
+      payloads.summary.public_alias_enabled !== false || payloads.summary.universe !== "singles" ||
+      payloads.diagnostics.publication_state !== "preview_noindex" ||
+      !Array.isArray(payloads.diagnostics.eligibility) || payloads.diagnostics.eligibility.length !== 0 ||
+      !Array.isArray(payloads.history.records) || !Array.isArray(payloads.rebalances.rebalances)
+    ) {
+      fail(`${code} is not a bounded singles-only noindex preview`);
+    }
+    const latestRebalance = payloads.rebalances.rebalances.at(-1);
+    if ((latestRebalance?.active_count ?? 0) !== item.constituent_count) {
+      fail(`${code} constituent count does not match its latest rebalance`);
+    }
+    const outputEntries = Object.entries(payloads.manifest.outputs ?? {});
+    const expectedOutputFiles = new Set(["summary.json", "history.json", "rebalances.json", "diagnostics.json"]);
+    if (outputEntries.length !== expectedOutputFiles.size) {
+      fail(`${code} collector manifest must expose exactly four bounded outputs`);
+    }
+    for (const [logicalKey, metadata] of outputEntries) {
+      const fileName = logicalKey.endsWith("public-preview.json")
+        ? "diagnostics.json"
+        : logicalKey.split("/").at(-1);
+      if (!expectedOutputFiles.delete(fileName)) {
+        fail(`${code} collector manifest exposes an unexpected output ${logicalKey}`);
+      }
+      const body = await readFile(path.join(dataRoot, "collector", code, fileName));
+      const checksum = createHash("sha256").update(body).digest("hex");
+      if (metadata.sha256 !== checksum || metadata.bytes !== body.byteLength) {
+        fail(`${code} ${fileName} does not match its collector manifest`);
+      }
+    }
+    if (expectedOutputFiles.size !== 0) fail(`${code} collector manifest is incomplete`);
+  }
+  return collectorIndex.indexes.length;
+}
+
 const manifest = await readJson("manifest.json");
 if (!manifest.datasetVersion || !manifest.generatedAt || manifest.schemaVersion !== 1) {
   fail("manifest is missing required version fields");
@@ -200,6 +289,7 @@ for (const report of sourceReports.reports) {
 
 const generatedAt = new Date(manifest.generatedAt);
 if (Number.isNaN(generatedAt.valueOf())) fail("manifest generatedAt is invalid");
+const collectorPreviewCount = await validateCollectorPreview();
 
 const indexes = await readJson("search/indexes.json");
 if (!Array.isArray(indexes) || indexes.length === 0) fail("search/indexes.json is empty");
@@ -494,6 +584,10 @@ const buildReport = {
     skippedPages: pageDefinitions.filter((page) => page.status === "retired").map((page) => page.id),
     duplicateCandidates: [],
     failedQualityChecks: []
+  },
+  collectorPreview: {
+    indexCount: collectorPreviewCount,
+    publicationState: collectorPreviewCount > 0 ? "preview_noindex" : "not_exported"
   }
 };
 await mkdir(reportsRoot, { recursive: true });

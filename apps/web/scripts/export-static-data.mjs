@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { copyFile, cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -8,6 +8,8 @@ const sourceDataRoot = path.join(root, "source-data");
 const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 const methodologySource = path.join(root, "..", "..", "docs", "methodology", "v1.4.0.md");
 const methodologyDestination = path.join(root, "public", "methodology", "v1.4.0.md");
+const collectorSource = path.join(sourceDataRoot, "collector");
+const collectorDestination = path.join(dataRoot, "collector");
 
 async function readSourceJson(indexCode, fileName) {
   return JSON.parse(await readFile(path.join(sourceDataRoot, "indexes", indexCode, fileName), "utf8"));
@@ -35,6 +37,25 @@ async function writeJson(relativePath, payload) {
     checksum: createHash("sha256").update(body).digest("hex"),
     bytes: Buffer.byteLength(body)
   };
+}
+
+async function collectCopiedJsonFiles(directory, relativeRoot) {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const absolutePath = path.join(directory, entry.name);
+    const relativePath = path.join(relativeRoot, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await collectCopiedJsonFiles(absolutePath, relativePath));
+    } else if (entry.isFile() && entry.name.endsWith(".json")) {
+      const body = await readFile(absolutePath);
+      files.push({
+        path: `data/${relativePath.split(path.sep).join("/")}`,
+        checksum: createHash("sha256").update(body).digest("hex"),
+        bytes: body.byteLength
+      });
+    }
+  }
+  return files;
 }
 
 function activeAsOf(constituents, asOf) {
@@ -82,6 +103,17 @@ function deriveRebalances(index, constituents, methodologyVersion) {
 
 const generatedAt = new Date().toISOString();
 const fileStats = [];
+await rm(collectorDestination, { recursive: true, force: true });
+const collectorAvailable = await stat(collectorSource)
+  .then((value) => value.isDirectory())
+  .catch((error) => {
+    if (error?.code === "ENOENT") return false;
+    throw error;
+  });
+if (collectorAvailable) {
+  await cp(collectorSource, collectorDestination, { recursive: true });
+  fileStats.push(...await collectCopiedJsonFiles(collectorDestination, "collector"));
+}
 await mkdir(path.dirname(methodologyDestination), { recursive: true });
 await copyFile(methodologySource, methodologyDestination);
 const sourceData = JSON.parse(await readFile(sourceDataPath, "utf8"));

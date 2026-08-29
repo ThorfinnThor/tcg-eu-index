@@ -3,6 +3,7 @@ import {
   collectorDataState,
   validateCollectorDataset,
   validateCollectorHistory,
+  validateCollectorPreviewIndex,
   validateCollectorRebalances,
   validateCollectorSummary
 } from "./collector-contracts";
@@ -56,5 +57,28 @@ describe("v1.5 collector contracts", () => {
       ...collectorFixtureRebalances,
       rebalances: [{ ...collectorFixtureRebalances.rebalances[0], selection_as_of: "2026-08-20" }]
     })).toThrow();
+  });
+
+  it("accepts only singles in the public noindex preview directory", () => {
+    const payload = {
+      schema_version: 1,
+      publication_state: "preview_noindex",
+      generated_for: "2026-08-29",
+      methodology_version: "1.5.0-preview.2",
+      indexes: [{
+        code: "OPEUCOL",
+        name: "One Piece Europe Collector Index",
+        game_key: "onepiece",
+        status: "preview",
+        latest_index_value: 1000,
+        latest_value_date: "2026-08-29",
+        constituent_count: 2126
+      }]
+    };
+    expect(() => validateCollectorPreviewIndex(payload)).not.toThrow();
+    expect(() => validateCollectorPreviewIndex({
+      ...payload,
+      indexes: [{ ...payload.indexes[0], code: "OPEUSCOL" }]
+    })).toThrow(/sealed/);
   });
 });

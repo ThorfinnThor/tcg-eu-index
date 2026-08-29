@@ -63,6 +63,9 @@ jobs:
         run: npx --prefix apps/web playwright install --with-deps chromium
       - name: Build Next.js for browser regression
         if: matrix.check == 'e2e'
+        env:
+          COLLECTOR_PREVIEW_UI_ENABLED: "true"
+          COLLECTOR_SHADOW_FIXTURES_ENABLED: "true"
         run: npm --prefix apps/web run build
       - name: Run browser regression
         if: matrix.check == 'e2e'

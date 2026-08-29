@@ -6,15 +6,15 @@ import type { CollectorIndexCode } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-const collectorCodePattern = /^(?:MTEU|YGEU|OPEU|PKEU|DBSEU|FABEU|DGEU|LCEU|SWUEU|RBEU)(?:COL|SCOL)$/;
+const collectorCodePattern = /^(?:MTEU|YGEU|OPEU|PKEU|DBSEU|FABEU|DGEU|LCEU|SWUEU|RBEU)COL$/;
 
 export const metadata: Metadata = {
-  title: "Collector shadow",
+  title: "Collector preview",
   robots: { index: false, follow: false }
 };
 
 export default async function CollectorShadowPage(props: { params: Promise<{ code: string }> }) {
-  if (process.env.COLLECTOR_SHADOW_UI_ENABLED !== "true") notFound();
+  if (process.env.COLLECTOR_PREVIEW_UI_ENABLED !== "true") notFound();
   const params = await props.params;
   if (!collectorCodePattern.test(params.code)) notFound();
   const dataset = await getCollectorDataset(params.code as CollectorIndexCode);
