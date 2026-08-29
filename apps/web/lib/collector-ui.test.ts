@@ -5,7 +5,8 @@ import {
   collectorThreshold,
   collectorUniverseLabel,
   formatCollectorEur,
-  formatCollectorPct
+  formatCollectorPct,
+  matchesCollectorPriceBand
 } from "./collector-ui";
 import { collectorFixtureDiagnostics, collectorFixtureSummary } from "./collector-fixtures";
 
@@ -19,6 +20,16 @@ describe("collector UI labels", () => {
   it("uses the sealed threshold independently", () => {
     expect(collectorThreshold({ universe: "sealed" })).toBe(30);
     expect(collectorUniverseLabel("sealed")).toBe("sealed products");
+  });
+
+  it("assigns boundary prices to one unambiguous display group", () => {
+    expect(matchesCollectorPriceBand(10, "10-100")).toBe(true);
+    expect(matchesCollectorPriceBand(99.99, "10-100")).toBe(true);
+    expect(matchesCollectorPriceBand(100, "10-100")).toBe(false);
+    expect(matchesCollectorPriceBand(100, "100-1000")).toBe(true);
+    expect(matchesCollectorPriceBand(1_000, "1000-10000")).toBe(true);
+    expect(matchesCollectorPriceBand(10_000, "10000-plus")).toBe(true);
+    expect(matchesCollectorPriceBand(50_000, "all")).toBe(true);
   });
 
   it("formats missing diagnostics without inventing values", () => {

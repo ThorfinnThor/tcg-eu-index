@@ -96,6 +96,11 @@ singles collector indexes. Collector routes are enabled in Cloudflare with
 expose raw eligibility diagnostics or per-card price history. Monthly compositions
 are checksum-verified and served in pages of 250 variants so every qualifying card
 remains reachable without loading a game's entire basket into one Worker response.
+The public overview presents only these singles collector previews; the former
+fixed-size and sealed series are no longer shown there. The card table offers
+price-range views (`EUR 10-100`, `100-1,000`, `1,000-10,000`, and `10,000+`) and an
+on-demand search across the complete game index. These are presentation filters over
+one benchmark, not separately calculated sub-index series.
 
 ## Editorial and optional user features
 

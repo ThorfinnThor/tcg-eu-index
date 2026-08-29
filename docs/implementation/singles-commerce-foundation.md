@@ -97,6 +97,10 @@ published.
   diagnostics, but no raw per-card price history or raw eligibility diagnostics;
 - public composition snapshots are split into checksum-verified pages of 250
   variants and reconcile exactly to each rebalance's active count;
+- the public card browser can filter the complete composition by four price bands
+  and search all pages on demand without changing benchmark membership or values;
+- technical diagnostics remain validated data outputs but are not shown in the
+  simplified visitor-facing index page;
 - v1.5 outputs remain under `private_shadow` R2 prefixes;
 - no affiliate template is configured in repository defaults;
 - the official public alias/cutover still requires 60 observable days, two monthly compositions, final

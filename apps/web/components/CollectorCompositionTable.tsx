@@ -3,15 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useDeferredValue, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { cardmarketProductUrl } from "@/lib/cardmarket";
 import { affiliateCommerceConfigured, commerceTargets } from "@/lib/commerce";
+import {
+  formatCollectorEur,
+  matchesCollectorPriceBand,
+  type CollectorPriceBand
+} from "@/lib/collector-ui";
 import type {
   CollectorCompositionIndex,
   CollectorCompositionPage,
   CollectorRebalanceRecord
 } from "@/lib/types";
-import { formatCollectorEur } from "@/lib/collector-ui";
 
 type Props = {
   composition: CollectorCompositionIndex;
@@ -20,7 +24,8 @@ type Props = {
 };
 
 type Member = CollectorRebalanceRecord["constituents"][number];
-
+const resultPageSize = 250;
+const noMembers: Member[] = [];
 const supportedImageHosts = new Set([
   "product-images.s3.cardmarket.com",
   "cards.scryfall.io",
@@ -28,6 +33,14 @@ const supportedImageHosts = new Set([
   "images.ygoprodeck.com",
   "product-images.tcgplayer.com",
 ]);
+
+const priceBands: Array<{ value: CollectorPriceBand; label: string }> = [
+  { value: "all", label: "All prices from €10" },
+  { value: "10-100", label: "€10–100" },
+  { value: "100-1000", label: "€100–1,000" },
+  { value: "1000-10000", label: "€1,000–10,000" },
+  { value: "10000-plus", label: "€10,000+" }
+];
 
 function matchesSearch(member: Member, query: string) {
   if (!query) return true;
@@ -49,6 +62,31 @@ function supportedImageUrl(value: string | null): string | null {
   } catch {
     return null;
   }
+}
+
+async function loadWholeIndex(
+  code: string,
+  effectiveDate: string,
+  pages: Array<{ path: string }>,
+  signal: AbortSignal
+) {
+  const members: Member[] = [];
+  const batchSize = 8;
+  for (let start = 0; start < pages.length; start += batchSize) {
+    const batch = await Promise.all(
+      pages.slice(start, start + batchSize).map(async (page) => {
+        const response = await fetch(`/data/collector/${code}/${page.path}`, { signal });
+        if (!response.ok) throw new Error(`Could not load composition page ${page.path}`);
+        const payload = await response.json() as CollectorCompositionPage;
+        if (payload.effective_date !== effectiveDate || !Array.isArray(payload.constituents)) {
+          throw new Error(`Composition page ${page.path} has invalid data`);
+        }
+        return payload.constituents;
+      })
+    );
+    for (const pageMembers of batch) members.push(...pageMembers);
+  }
+  return members;
 }
 
 function CardArtwork({ member }: { member: Member }) {
@@ -77,6 +115,10 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
   const pathname = usePathname();
   const router = useRouter();
   const [search, setSearch] = useState("");
+  const [priceBand, setPriceBand] = useState<CollectorPriceBand>("all");
+  const [resultPage, setResultPage] = useState(1);
+  const [loadedIndex, setLoadedIndex] = useState<{ key: string; members: Member[] } | null>(null);
+  const [loadErrorKey, setLoadErrorKey] = useState<string | null>(null);
   const deferredSearch = useDeferredValue(search);
   const selectedRebalance = useMemo(
     () => composition.rebalances.find(
@@ -86,23 +128,68 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
     [composition.rebalances, compositionPage.effective_date]
   );
   const query = deferredSearch.trim().toLocaleLowerCase();
+  const wholeIndexMode = priceBand !== "all" || query.length > 0;
+  const selectionKey = selectedRebalance
+    ? `${composition.index_code}:${selectedRebalance.effective_date}`
+    : "none";
+
+  useEffect(() => {
+    if (!wholeIndexMode || !selectedRebalance || loadedIndex?.key === selectionKey) return;
+    const controller = new AbortController();
+    loadWholeIndex(
+      composition.index_code,
+      selectedRebalance.effective_date,
+      selectedRebalance.pages,
+      controller.signal
+    ).then((members) => {
+      setLoadedIndex({ key: selectionKey, members });
+      setLoadErrorKey(null);
+    }).catch((error: unknown) => {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      setLoadErrorKey(selectionKey);
+    });
+    return () => controller.abort();
+  }, [composition.index_code, loadedIndex?.key, selectedRebalance, selectionKey, wholeIndexMode]);
+
+  const wholeIndexReady = loadedIndex?.key === selectionKey;
+  const wholeIndexError = loadErrorKey === selectionKey;
+  const sourceMembers = wholeIndexMode
+    ? (wholeIndexReady ? loadedIndex.members : noMembers)
+    : compositionPage.constituents;
   const filteredMembers = useMemo(
-    () => compositionPage.constituents.filter((member) => matchesSearch(member, query)),
-    [compositionPage.constituents, query]
+    () => sourceMembers.filter(
+      (member) => matchesCollectorPriceBand(member.selection_price, priceBand) && matchesSearch(member, query)
+    ),
+    [priceBand, query, sourceMembers]
   );
 
   if (!selectedRebalance) {
-    return <p className="py-8 text-sm text-paper/50">No monthly composition is available yet.</p>;
+    return <p className="py-8 text-sm text-paper/50">No card list is available yet.</p>;
   }
+
+  const resultPageCount = Math.max(1, Math.ceil(filteredMembers.length / resultPageSize));
+  const visibleMembers = wholeIndexMode
+    ? filteredMembers.slice((resultPage - 1) * resultPageSize, resultPage * resultPageSize)
+    : filteredMembers;
+
+  const resultSummary = wholeIndexMode
+    ? wholeIndexError
+      ? "Could not load the full card list"
+      : !wholeIndexReady
+        ? `Searching all ${selectedRebalance.active_count.toLocaleString("en-GB")} cards…`
+        : `${filteredMembers.length.toLocaleString("en-GB")} cards found`
+    : `${visibleMembers.length.toLocaleString("en-GB")} shown · ${selectedRebalance.active_count.toLocaleString("en-GB")} total`;
 
   return (
     <div>
-      <div className="mb-4 grid gap-3 sm:grid-cols-[220px_1fr_auto] sm:items-end">
+      <div className="mb-4 grid gap-3 lg:grid-cols-[180px_220px_1fr_auto] lg:items-end">
         <label className="text-xs text-paper/55">
-          Composition effective
+          Card list from
           <select
             value={selectedRebalance.effective_date}
             onChange={(event) => {
+              setResultPage(1);
+              setLoadErrorKey(null);
               router.push(`${pathname}?date=${encodeURIComponent(event.target.value)}&page=1`);
             }}
             className="surface mt-1 block w-full px-3 py-2 text-sm text-paper"
@@ -114,28 +201,46 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
             ))}
           </select>
         </label>
+
         <label className="text-xs text-paper/55">
-          Search this page
+          Price range
+          <select
+            value={priceBand}
+            onChange={(event) => {
+              setPriceBand(event.target.value as CollectorPriceBand);
+              setResultPage(1);
+              setLoadErrorKey(null);
+            }}
+            className="surface mt-1 block w-full px-3 py-2 text-sm text-paper"
+          >
+            {priceBands.map((band) => (
+              <option key={band.value} value={band.value}>{band.label}</option>
+            ))}
+          </select>
+        </label>
+
+        <label className="text-xs text-paper/55">
+          Search the entire index
           <input
             type="search"
             value={search}
             onChange={(event) => {
               setSearch(event.target.value);
+              setResultPage(1);
+              setLoadErrorKey(null);
             }}
             placeholder="Card name, set, number, variant, or Cardmarket ID"
             className="surface mt-1 block w-full px-3 py-2 text-sm text-paper placeholder:text-paper/30"
           />
         </label>
-        <div className="pb-2 text-xs text-paper/55" aria-live="polite">
-          {filteredMembers.length} matching on this page · {selectedRebalance.active_count} total variants
-        </div>
+
+        <div className="pb-2 text-xs text-paper/55" aria-live="polite">{resultSummary}</div>
       </div>
 
       <div className="mb-4 flex flex-wrap gap-2 text-xs text-paper/50">
-        <span className="chip">Selection as of {selectedRebalance.selection_as_of}</span>
-        <span className="chip">{selectedRebalance.active_count} active variants</span>
-        <span className="chip">No target size</span>
-        <span className="chip">AVG30 ≥ €10</span>
+        <span className="chip">Cards priced from €10</span>
+        <span className="chip">Basket updated monthly</span>
+        <span className="chip">Foil and nonfoil shown separately</span>
       </div>
 
       {affiliateCommerceConfigured() ? (
@@ -144,74 +249,102 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
         </p>
       ) : null}
 
-      <div className="surface overflow-x-auto">
-        <table className="w-full min-w-[980px] border-collapse text-sm">
-          <thead className="text-left text-paper/50">
-            <tr>
-              <th className="px-4 py-3">Card</th>
-              <th className="px-4 py-3">Set</th>
-              <th className="px-4 py-3">Variant</th>
-              <th className="px-4 py-3 text-right">Selection AVG30</th>
-              <th className="px-4 py-3">Marketplaces</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-line">
-            {filteredMembers.map((member) => (
-              <tr key={member.stable_variant_id}>
-                <td className="px-4 py-3 text-paper">
-                  <div className="flex items-center gap-3">
-                    <CardArtwork member={member} />
-                    <div className="min-w-0">
-                      <a
-                        href={cardmarketProductUrl(gameName, member.cm_product_id, member.variant_key)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-medium hover:text-amber"
-                        aria-label={`Open ${member.name} on Cardmarket`}
-                      >
-                        {member.name} <span aria-hidden="true">↗</span>
-                      </a>
-                      <span className="mt-1 block text-xs text-paper/40">
-                        {member.collector_number ? `No. ${member.collector_number} · ` : ""}CM {member.cm_product_id}
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-4 py-3 text-paper/65">
-                  {member.set_name ?? "Set metadata pending"}
-                </td>
-                <td className="px-4 py-3 text-paper/70">{member.variant_key}</td>
-                <td className="px-4 py-3 text-right tabular-nums text-paper/80">
-                  {formatCollectorEur(member.selection_price)}
-                </td>
-                <td className="px-4 py-3">
-                  <div className="flex flex-wrap gap-2">
-                    {commerceTargets(member).map((target) => (
-                      <a
-                        key={target.marketplace}
-                        href={target.href}
-                        target="_blank"
-                        rel={target.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
-                        className="chip hover:border-amber hover:text-amber"
-                        aria-label={`Search for ${member.name} on ${target.label}${target.affiliate ? " (affiliate link)" : ""}`}
-                      >
-                        {target.label}{target.affiliate ? " · Ad" : ""}
-                      </a>
-                    ))}
-                  </div>
-                </td>
+      {wholeIndexMode && !wholeIndexReady ? (
+        <div className="surface px-4 py-10 text-center text-sm text-paper/55">
+          {wholeIndexError
+            ? "The full card list could not be loaded. Clear the filter and try again."
+            : "Loading the full index for this search…"}
+        </div>
+      ) : (
+        <div className="surface overflow-x-auto">
+          <table className="w-full min-w-[980px] border-collapse text-sm">
+            <thead className="text-left text-paper/50">
+              <tr>
+                <th className="px-4 py-3">Card</th>
+                <th className="px-4 py-3">Set</th>
+                <th className="px-4 py-3">Variant</th>
+                <th className="px-4 py-3 text-right">30-day average price</th>
+                <th className="px-4 py-3">Marketplaces</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {filteredMembers.length === 0 ? (
-          <div className="border-t border-line px-4 py-8 text-center text-sm text-paper/50">
-            No variants match this search.
-          </div>
-        ) : null}
-      </div>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {visibleMembers.map((member) => (
+                <tr key={member.stable_variant_id}>
+                  <td className="px-4 py-3 text-paper">
+                    <div className="flex items-center gap-3">
+                      <CardArtwork member={member} />
+                      <div className="min-w-0">
+                        <a
+                          href={cardmarketProductUrl(gameName, member.cm_product_id, member.variant_key)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium hover:text-amber"
+                          aria-label={`Open ${member.name} on Cardmarket`}
+                        >
+                          {member.name} <span aria-hidden="true">↗</span>
+                        </a>
+                        <span className="mt-1 block text-xs text-paper/40">
+                          {member.collector_number ? `No. ${member.collector_number} · ` : ""}CM {member.cm_product_id}
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3 text-paper/65">{member.set_name ?? "Set name pending"}</td>
+                  <td className="px-4 py-3 text-paper/70">{member.variant_key}</td>
+                  <td className="px-4 py-3 text-right tabular-nums text-paper/80">
+                    {formatCollectorEur(member.selection_price)}
+                  </td>
+                  <td className="px-4 py-3">
+                    <div className="flex flex-wrap gap-2">
+                      {commerceTargets(member).map((target) => (
+                        <a
+                          key={target.marketplace}
+                          href={target.href}
+                          target="_blank"
+                          rel={target.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
+                          className="chip hover:border-amber hover:text-amber"
+                          aria-label={`Search for ${member.name} on ${target.label}${target.affiliate ? " (affiliate link)" : ""}`}
+                        >
+                          {target.label}{target.affiliate ? " · Ad" : ""}
+                        </a>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {visibleMembers.length === 0 ? (
+            <div className="border-t border-line px-4 py-8 text-center text-sm text-paper/50">
+              No cards match these filters.
+            </div>
+          ) : null}
+        </div>
+      )}
 
-      {selectedRebalance.page_count > 1 ? (
+      {wholeIndexMode && wholeIndexReady && resultPageCount > 1 ? (
+        <nav className="mt-4 flex items-center justify-between gap-4 text-xs text-paper/55" aria-label="Filtered result pages">
+          <button
+            type="button"
+            disabled={resultPage === 1}
+            onClick={() => setResultPage((page) => Math.max(1, page - 1))}
+            className="chip disabled:opacity-35"
+          >
+            Previous
+          </button>
+          <span>Results page {resultPage} of {resultPageCount}</span>
+          <button
+            type="button"
+            disabled={resultPage === resultPageCount}
+            onClick={() => setResultPage((page) => Math.min(resultPageCount, page + 1))}
+            className="chip disabled:opacity-35"
+          >
+            Next
+          </button>
+        </nav>
+      ) : null}
+
+      {!wholeIndexMode && selectedRebalance.page_count > 1 ? (
         <nav className="mt-4 flex items-center justify-between gap-4 text-xs text-paper/55" aria-label="Composition pages">
           {compositionPage.page > 1 ? (
             <Link
@@ -234,7 +367,7 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
       ) : null}
 
       <p className="mt-3 text-xs leading-5 text-paper/45">
-        Card names and sets come from the official Cardmarket catalogue. Collector numbers are shown only when an explicit source value is available. Images require a licensed or explicitly permitted metadata source and otherwise remain marked as pending. Foil and nonfoil are independent index constituents when both qualify.
+        Card names and sets come from the Cardmarket catalogue. Images are shown only when a licensed or permitted source is available. Foil and nonfoil variants count as separate cards when both meet the €10 rule.
       </p>
     </div>
   );
