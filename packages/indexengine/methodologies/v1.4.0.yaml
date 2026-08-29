@@ -1,0 +1,198 @@
+methodology_version: "1.4.0"
+price_field_primary: "price_avg"
+price_field_fallback: "price_low"
+min_price_eur:
+  singles: 2.00
+  sealed: 10.00
+seasoning_days: 90
+min_history_days: 60
+min_observation_ratio: 0.80
+price_floor_observation_ratio: 0.80
+max_suspect_zero_ratio: 0.05
+daily_return_cap: 0.25
+carry_forward_max_days: 5
+rebalance: monthly
+selection_lookback_days: 60
+selection_rank: "reference_price_descending"
+ranking_price_field: "avg30"
+indexes:
+  - code: MTEU500
+    name: Magic Europe 500
+    game_key: magic
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: MTEUSLD
+    name: Magic Sealed Europe 100
+    game_key: magic
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: YGEU500
+    name: Yu-Gi-Oh! Europe 500
+    game_key: yugioh
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: YGEUSLD
+    name: Yu-Gi-Oh! Sealed Europe 100
+    game_key: yugioh
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: OPEU500
+    name: One Piece Europe 500
+    game_key: onepiece
+    universe: singles
+    target_size: 500
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: OPEUSLD
+    name: One Piece Sealed Europe 100
+    game_key: onepiece
+    universe: sealed
+    target_size: 100
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: PKEU500
+    name: Pokemon Europe 500
+    game_key: pokemon
+    universe: singles
+    target_size: 500
+    base_date: "2026-07-20"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: PKEUSLD
+    name: Pokemon Sealed Europe 100
+    game_key: pokemon
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: DBSEU500
+    name: Dragon Ball Super Europe 500
+    game_key: dragonballsuper
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: DBSEUSLD
+    name: Dragon Ball Super Sealed Europe 100
+    game_key: dragonballsuper
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: FABEU500
+    name: Flesh and Blood Europe 500
+    game_key: fleshandblood
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: FABEUSLD
+    name: Flesh and Blood Sealed Europe 100
+    game_key: fleshandblood
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: DGEU500
+    name: Digimon Europe 500
+    game_key: digimon
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: DGEUSLD
+    name: Digimon Sealed Europe 100
+    game_key: digimon
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: LCEU500
+    name: Disney Lorcana Europe 500
+    game_key: lorcana
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: LCEUSLD
+    name: Disney Lorcana Sealed Europe 100
+    game_key: lorcana
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: SWUEU500
+    name: Star Wars Unlimited Europe 500
+    game_key: starwarsunlimited
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: SWUEUSLD
+    name: Star Wars Unlimited Sealed Europe 100
+    game_key: starwarsunlimited
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: RBEU500
+    name: Riftbound Europe 500
+    game_key: riftbound
+    universe: singles
+    target_size: 500
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
+  - code: RBEUSLD
+    name: Riftbound Sealed Europe 100
+    game_key: riftbound
+    universe: sealed
+    target_size: 100
+    base_date: "2026-08-12"
+    base_value: 1000
+    status: accumulating
+    language_scope: ["ALL_CARDMARKET_EUROPE"]
