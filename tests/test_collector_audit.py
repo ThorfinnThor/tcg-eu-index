@@ -142,6 +142,7 @@ def test_collector_methodology_audit_is_aggregate_and_keeps_activity_diagnostic(
     assert sealed["alternate"]["latest_constituent_count"] == 0
     assert "avg7_alternate_unavailable" in sealed["review_flags"]
     assert report["decision"]["new_preview_methodology_version_required"] is False
+    assert report["decision"]["methodology_correction_required_before_publication"] is False
     assert report["decision"]["publication_state"] == "remain_private_shadow"
     assert report["privacy"]["contains_product_identities"] is False
     serialized = json.dumps(report, sort_keys=True)
@@ -151,6 +152,47 @@ def test_collector_methodology_audit_is_aggregate_and_keeps_activity_diagnostic(
     summary = render_collector_audit_summary(report)
     assert "OPEUCOL" in summary
     assert "AVG1 remains a Trading Activity Proxy only" in summary
+
+
+def test_collector_methodology_audit_blocks_missing_sealed_sold_prices(
+    tmp_path: Path,
+) -> None:
+    methodology = Methodology.load(V15_PATH)
+    methodology = replace(
+        methodology,
+        indexes=[item for item in methodology.indexes if item.game_key == "onepiece"],
+    )
+    store = LocalObjectStore(tmp_path / "r2")
+    days = [date(2026, 8, 1) + timedelta(days=offset) for offset in range(8)]
+    products = pl.DataFrame(
+        [
+            {
+                "stable_product_id": "cardmarket:onepiece:product:3",
+                "game_key": "onepiece",
+                "cm_product_id": 3,
+                "product_kind": "sealed",
+                "first_seen": days[0],
+            }
+        ]
+    )
+    _write_parquet(store, "derived/catalogue/onepiece/products.parquet", products)
+    prices = pl.DataFrame(
+        [_price_row(value_date, 3, "sealed", None, None, None) for value_date in days]
+    )
+    _write_parquet(store, "derived/prices/onepiece/2026-08.parquet", prices)
+    for value_date in days:
+        _write_manifest(store, value_date)
+
+    report = build_collector_methodology_audit(store, methodology, days[-1])
+    sealed = next(item for item in report["indexes"] if item["index_code"] == "OPEUSCOL")
+
+    assert report["decision"]["new_preview_methodology_version_required"] is True
+    assert report["decision"]["methodology_correction_required_before_publication"] is True
+    assert report["decision"]["audit_status"] == "preliminary_blocked"
+    assert report["decision"]["source_blockers"] == {
+        "sealed_indexes_without_positive_avg30": ["OPEUSCOL"]
+    }
+    assert "sold_price_avg30_source_unavailable" in sealed["review_flags"]
 
 
 def test_collector_methodology_audit_requires_avg7_calibration(tmp_path: Path) -> None:
