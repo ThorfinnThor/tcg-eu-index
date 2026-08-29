@@ -53,6 +53,7 @@ test("collector singles expose clear card identity and commerce destinations", a
   await expect(page.getByText(/CM \d+/).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on eBay/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /Search for .+ on TCGplayer/ }).first()).toBeVisible();
+  await expect(page.getByText("Search TCGplayer", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("Eligible variants", { exact: true })).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Data Quality Score" })).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Trading Activity Proxy" })).toHaveCount(0);
@@ -78,6 +79,15 @@ test("collector singles expose clear card identity and commerce destinations", a
   await compositionPages.getByRole("link", { name: "Next" }).click();
   await expect(page).toHaveURL(/page=2/);
   await expect(page.getByRole("navigation", { name: "Composition pages" })).toContainText(/Page 2 of \d+/);
+
+  await page.goto("/collector/PKEUCOL");
+  const primalGroudonSearch = page.getByRole("link", {
+    name: "Search for Primal Groudon EX [Gaia Volcano] on TCGplayer"
+  });
+  await expect(primalGroudonSearch).toHaveAttribute(
+    "href",
+    /q=Primal\+Groudon\+EX\+Gaia\+Volcano/
+  );
 });
 
 test("primary pages do not overflow the viewport", async ({ page }) => {
