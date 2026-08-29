@@ -145,9 +145,9 @@ export function validateCollectorRebalances(value: unknown): asserts value is Co
   isoDate(payload.generated_for, "collector rebalances.generated_for");
   for (const [index, rebalanceValue] of array(payload.rebalances, "collector rebalances.rebalances").entries()) {
     const rebalance = object(rebalanceValue, `collector rebalances[${index}]`);
-    isoDate(rebalance.effective_date, "collector rebalance effective_date");
-    isoDate(rebalance.selection_as_of, "collector rebalance selection_as_of");
-    if (rebalance.selection_as_of >= rebalance.effective_date) throw new Error("collector selection_as_of must precede effective_date");
+    const effectiveDate = isoDate(rebalance.effective_date, "collector rebalance effective_date");
+    const selectionAsOf = isoDate(rebalance.selection_as_of, "collector rebalance selection_as_of");
+    if (selectionAsOf >= effectiveDate) throw new Error("collector selection_as_of must precede effective_date");
     if (rebalance.methodology_version !== version) throw new Error("collector rebalance has inconsistent methodology version");
     string(rebalance.selection_snapshot_sha256, "collector rebalance selection_snapshot_sha256");
     integer(rebalance.eligible_count, "collector rebalance eligible_count");
