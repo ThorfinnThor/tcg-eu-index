@@ -20,6 +20,178 @@ export type IndexCode =
   | "RBEU500"
   | "RBEUSLD";
 
+export type CollectorIndexCode =
+  | "MTEUCOL"
+  | "MTEUSCOL"
+  | "YGEUCOL"
+  | "YGEUSCOL"
+  | "OPEUCOL"
+  | "OPEUSCOL"
+  | "PKEUCOL"
+  | "PKEUSCOL"
+  | "DBSEUCOL"
+  | "DBSEUSCOL"
+  | "FABEUCOL"
+  | "FABEUSCOL"
+  | "DGEUCOL"
+  | "DGEUSCOL"
+  | "LCEUCOL"
+  | "LCEUSCOL"
+  | "SWUEUCOL"
+  | "SWUEUSCOL"
+  | "RBEUCOL"
+  | "RBEUSCOL";
+
+export type CollectorDataState = "private_shadow";
+
+export type CollectorPriceState =
+  | "initialized"
+  | "fresh"
+  | "fresh_after_carry"
+  | "fresh_after_suspension"
+  | "spike_capped"
+  | "carried_forward"
+  | "suspended_stale"
+  | "snapshot_unchanged";
+
+export type CollectorDailyIndexValue = {
+  value_date: string;
+  index_value: number | null;
+  daily_return: number | null;
+  status: "active" | "empty_eligible_universe";
+  constituent_count: number;
+  fresh_count: number;
+  capped_count: number;
+  carried_count: number;
+  suspended_count: number;
+  capped_weight_share: number;
+  carried_weight_share: number;
+  suspended_weight_share: number;
+  largest_end_weight: number;
+  whole_market_carried_forward: boolean;
+  rebalance_effective_date: string;
+  selection_as_of: string;
+  methodology_version: string;
+};
+
+export type CollectorContribution = {
+  value_date: string;
+  stable_variant_id: string;
+  cm_product_id: number;
+  variant_key: string;
+  target_weight: number | null;
+  weight_before: number;
+  raw_return: number | null;
+  used_return: number;
+  contribution: number;
+  weight_after: number;
+  valuation_price: number | null;
+  price_state: CollectorPriceState;
+  capped: boolean;
+};
+
+export type CollectorRebalanceRecord = {
+  effective_date: string;
+  selection_as_of: string;
+  methodology_version: string;
+  selection_snapshot_sha256: string;
+  eligible_count: number;
+  active_count: number;
+  constituents: Array<{
+    cm_product_id: number;
+    variant_key: string;
+    stable_variant_id: string;
+    selection_price: number;
+  }>;
+};
+
+export type CollectorEligibilityDiagnostic = {
+  cm_product_id: number;
+  variant_key: string;
+  stable_variant_id: string;
+  eligible: boolean;
+  exclusion_reasons: string[];
+  reference_price: number | null;
+  history_days: number;
+  valuation_observation_ratio: number;
+  selection_price_observation_ratio: number;
+  suspect_zero_ratio: number;
+  price_update_frequency: number;
+  inverse_dispersion: number;
+  data_quality_score: number;
+  activity_days: number;
+  activity_ratio: number;
+  observable_activity_days: number;
+  last_positive_avg1_date: string | null;
+  days_since_positive_avg1: number | null;
+  repeated_positive_avg1_days: number;
+};
+
+export type CollectorOutputManifest = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  public_alias_enabled: false;
+  generated_for: string;
+  engine_revision: string;
+  source_hashes: Record<string, string>;
+  outputs: Record<string, { key: string; sha256: string; bytes: number }>;
+};
+
+export type CollectorIndexSummary = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  public_alias_enabled: false;
+  name: string;
+  game_key: string;
+  universe: "singles" | "sealed";
+  target_size: null;
+  base_value: number;
+  status: "accumulating" | "preview";
+  history_start_date: string | null;
+  latest_value_date: string | null;
+  latest_index_value: number | null;
+  latest_rebalance: string | null;
+  generated_for: string;
+};
+
+export type CollectorHistory = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  generated_for: string;
+  records: CollectorDailyIndexValue[];
+};
+
+export type CollectorRebalances = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  cadence: "monthly";
+  generated_for: string;
+  rebalances: CollectorRebalanceRecord[];
+};
+
+export type CollectorDiagnostics = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  generated_for: string;
+  daily: CollectorDailyIndexValue[];
+  eligibility: CollectorEligibilityDiagnostic[];
+};
+
 export type DailyIndexValue = {
   value_date: string;
   index_value: number;
