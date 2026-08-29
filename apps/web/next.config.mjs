@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "product-images.s3.cardmarket.com" },
+      { protocol: "https", hostname: "cards.scryfall.io" },
+      { protocol: "https", hostname: "images.pokemontcg.io" },
+      { protocol: "https", hostname: "images.ygoprodeck.com" },
+      { protocol: "https", hostname: "product-images.tcgplayer.com" }
+    ]
+  },
   async headers() {
     return [
       {

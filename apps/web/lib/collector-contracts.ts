@@ -111,6 +111,10 @@ export function validateCollectorSummary(value: unknown): asserts value is Colle
     if (payload[field] !== null) isoDate(payload[field], `collector summary.${field}`);
   }
   if (payload.latest_index_value !== null) number(payload.latest_index_value, "collector summary.latest_index_value");
+  const productMetadata = object(payload.product_metadata, "collector summary.product_metadata");
+  for (const field of ["constituent_count", "named_count", "set_name_count", "collector_number_count", "image_count"]) {
+    integer(productMetadata[field], `collector summary.product_metadata.${field}`);
+  }
   isoDate(payload.generated_for, "collector summary.generated_for");
 }
 
@@ -152,7 +156,25 @@ export function validateCollectorRebalances(value: unknown): asserts value is Co
     string(rebalance.selection_snapshot_sha256, "collector rebalance selection_snapshot_sha256");
     integer(rebalance.eligible_count, "collector rebalance eligible_count");
     integer(rebalance.active_count, "collector rebalance active_count");
-    array(rebalance.constituents, "collector rebalance constituents");
+    for (const [memberIndex, memberValue] of array(rebalance.constituents, "collector rebalance constituents").entries()) {
+      const member = object(memberValue, `collector rebalance constituents[${memberIndex}]`);
+      integer(member.cm_product_id, "collector constituent cm_product_id");
+      string(member.variant_key, "collector constituent variant_key");
+      string(member.stable_variant_id, "collector constituent stable_variant_id");
+      number(member.selection_price, "collector constituent selection_price");
+      string(member.name, "collector constituent name");
+      string(member.metadata_status, "collector constituent metadata_status");
+      for (const field of ["set_name", "collector_number", "image_url", "image_source", "tcgplayer_product_url"]) {
+        if (member[field] !== null) string(member[field], `collector constituent ${field}`);
+      }
+      if (member.cm_expansion_id !== null) integer(member.cm_expansion_id, "collector constituent cm_expansion_id");
+      if (member.image_url !== null && !String(member.image_url).startsWith("https://")) {
+        throw new Error("collector constituent image_url must use HTTPS");
+      }
+      if (member.tcgplayer_product_url !== null && !String(member.tcgplayer_product_url).startsWith("https://www.tcgplayer.com/")) {
+        throw new Error("collector constituent tcgplayer_product_url must use TCGplayer HTTPS");
+      }
+    }
   }
 }
 

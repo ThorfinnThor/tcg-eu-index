@@ -102,6 +102,14 @@ export type CollectorRebalanceRecord = {
     variant_key: string;
     stable_variant_id: string;
     selection_price: number;
+    name: string;
+    set_name: string | null;
+    collector_number: string | null;
+    cm_expansion_id: number | null;
+    image_url: string | null;
+    image_source: string | null;
+    tcgplayer_product_url: string | null;
+    metadata_status: string;
   }>;
 };
 
@@ -157,6 +165,13 @@ export type CollectorIndexSummary = {
   latest_value_date: string | null;
   latest_index_value: number | null;
   latest_rebalance: string | null;
+  product_metadata: {
+    constituent_count: number;
+    named_count: number;
+    set_name_count: number;
+    collector_number_count: number;
+    image_count: number;
+  };
   generated_for: string;
 };
 

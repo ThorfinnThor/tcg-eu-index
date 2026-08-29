@@ -15,6 +15,7 @@ from indexengine.collector_calc import (
 )
 from indexengine.eligibility import CollectorVariantDiagnostic
 from indexengine.methodology import IndexDefinition, Methodology, MethodologyConfigError
+from indexengine.product_identity import CollectorProductMetadata
 
 
 @dataclass(frozen=True)
@@ -35,6 +36,7 @@ def build_collector_output_bundle(
     contributions: list[CollectorContribution],
     diagnostics: list[CollectorVariantDiagnostic],
     *,
+    product_metadata: dict[int, CollectorProductMetadata] | None = None,
     source_hashes: dict[str, str] | None = None,
     engine_revision: str = "local-working-tree",
 ) -> CollectorOutputBundle:
@@ -47,6 +49,7 @@ def build_collector_output_bundle(
     if any(item.methodology_version != methodology.methodology_version for item in daily_values):
         raise ValueError("collector daily value methodology version mismatch")
 
+    metadata_by_product = product_metadata or {}
     history = [_json_record(item) for item in daily_values]
     rebalances_payload = [
         {
@@ -56,7 +59,10 @@ def build_collector_output_bundle(
             "selection_snapshot_sha256": item.selection_snapshot_sha256,
             "eligible_count": item.eligible_count,
             "active_count": len(item.constituents),
-            "constituents": [_json_record(member) for member in item.constituents],
+            "constituents": [
+                _constituent_record(member, metadata_by_product)
+                for member in item.constituents
+            ],
         }
         for item in rebalances
     ]
@@ -72,6 +78,8 @@ def build_collector_output_bundle(
         None,
     )
     latest = daily_values[-1] if daily_values else None
+    latest_members = list(rebalances[-1].constituents) if rebalances else []
+    metadata_coverage = _metadata_coverage(latest_members, metadata_by_product)
     summary = {
         "schema_version": 2,
         "series_id": series_id,
@@ -89,6 +97,7 @@ def build_collector_output_bundle(
         "latest_value_date": latest.value_date.isoformat() if latest else None,
         "latest_index_value": latest.index_value if latest else None,
         "latest_rebalance": latest.rebalance_effective_date.isoformat() if latest else None,
+        "product_metadata": metadata_coverage,
         "generated_for": run_date.isoformat(),
     }
     daily_diagnostics = {
@@ -275,6 +284,46 @@ def _validate_identity(payload: dict[str, Any], bundle: CollectorOutputBundle, k
 def _json_record(value: Any) -> dict[str, Any]:
     record = asdict(value)
     return cast(dict[str, Any], json.loads(json.dumps(record, default=_json_default)))
+
+
+def _constituent_record(
+    member: Any,
+    product_metadata: dict[int, CollectorProductMetadata],
+) -> dict[str, Any]:
+    record = _json_record(member)
+    metadata = product_metadata.get(int(record["cm_product_id"]))
+    if metadata is None:
+        record.update(
+            {
+                "name": f"Cardmarket product {record['cm_product_id']}",
+                "set_name": None,
+                "collector_number": None,
+                "cm_expansion_id": None,
+                "image_url": None,
+                "image_source": None,
+                "tcgplayer_product_url": None,
+                "metadata_status": "missing_catalogue_metadata",
+            }
+        )
+        return record
+    record.update(_json_record(metadata))
+    return record
+
+
+def _metadata_coverage(
+    members: list[Any],
+    product_metadata: dict[int, CollectorProductMetadata],
+) -> dict[str, int]:
+    records = [product_metadata.get(int(item.cm_product_id)) for item in members]
+    return {
+        "constituent_count": len(members),
+        "named_count": sum(item is not None and bool(item.name) for item in records),
+        "set_name_count": sum(item is not None and item.set_name is not None for item in records),
+        "collector_number_count": sum(
+            item is not None and item.collector_number is not None for item in records
+        ),
+        "image_count": sum(item is not None and item.image_url is not None for item in records),
+    }
 
 
 def _json_bytes(payload: object) -> bytes:

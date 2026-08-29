@@ -2,8 +2,33 @@ import type {
   CollectorDiagnostics,
   CollectorHistory,
   CollectorIndexSummary,
+  CollectorOutputManifest,
   CollectorRebalances
 } from "./types";
+
+export const collectorFixtureManifest: CollectorOutputManifest = {
+  schema_version: 2,
+  series_id: "OPEUCOL:1.5.0-preview.2:private_shadow",
+  index_code: "OPEUCOL",
+  methodology_version: "1.5.0-preview.2",
+  data_state: "private_shadow",
+  public_alias_enabled: false,
+  generated_for: "2026-08-21",
+  engine_revision: "browser-fixture",
+  source_hashes: {},
+  outputs: {
+    "derived/indexes/1.5.0-preview.2/private_shadow/OPEUCOL/history.json": {
+      key: "derived/indexes/1.5.0-preview.2/private_shadow/OPEUCOL/history.json",
+      sha256: "a".repeat(64),
+      bytes: 1
+    },
+    "derived/diagnostics/1.5.0-preview.2/OPEUCOL/daily/2026-08-21.json": {
+      key: "derived/diagnostics/1.5.0-preview.2/OPEUCOL/daily/2026-08-21.json",
+      sha256: "b".repeat(64),
+      bytes: 1
+    }
+  }
+};
 
 export const collectorFixtureSummary: CollectorIndexSummary = {
   schema_version: 2,
@@ -22,6 +47,13 @@ export const collectorFixtureSummary: CollectorIndexSummary = {
   latest_value_date: "2026-08-21",
   latest_index_value: 1005,
   latest_rebalance: "2026-08-20",
+  product_metadata: {
+    constituent_count: 2,
+    named_count: 2,
+    set_name_count: 2,
+    collector_number_count: 2,
+    image_count: 0
+  },
   generated_for: "2026-08-21"
 };
 
@@ -91,8 +123,34 @@ export const collectorFixtureRebalances: CollectorRebalances = {
       eligible_count: 2,
       active_count: 2,
       constituents: [
-        { cm_product_id: 1, variant_key: "foil", stable_variant_id: "cardmarket:onepiece:product:1:foil", selection_price: 20 },
-        { cm_product_id: 1, variant_key: "nonfoil", stable_variant_id: "cardmarket:onepiece:product:1:nonfoil", selection_price: 10 }
+        {
+          cm_product_id: 1,
+          variant_key: "foil",
+          stable_variant_id: "cardmarket:onepiece:product:1:foil",
+          selection_price: 20,
+          name: "Roronoa Zoro",
+          set_name: "Romance Dawn",
+          collector_number: "OP01-001",
+          cm_expansion_id: 10,
+          image_url: null,
+          image_source: null,
+          tcgplayer_product_url: "https://www.tcgplayer.com/product/123/zoro",
+          metadata_status: "complete"
+        },
+        {
+          cm_product_id: 1,
+          variant_key: "nonfoil",
+          stable_variant_id: "cardmarket:onepiece:product:1:nonfoil",
+          selection_price: 10,
+          name: "Roronoa Zoro",
+          set_name: "Romance Dawn",
+          collector_number: "OP01-001",
+          cm_expansion_id: 10,
+          image_url: null,
+          image_source: null,
+          tcgplayer_product_url: null,
+          metadata_status: "collector_number_from_catalogue_name"
+        }
       ]
     }
   ]

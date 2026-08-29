@@ -29,6 +29,8 @@ export function CollectorShadowPanel({ summary, history, rebalances, diagnostics
   const diagnosticSummary = collectorDiagnosticSummary(diagnostics);
   const gameName = collectorGameName(summary.game_key);
   const threshold = collectorThreshold(summary);
+  const metadataTotal = summary.product_metadata.constituent_count;
+  const metadataRate = (count: number) => metadataTotal ? formatCollectorPct(count / metadataTotal) : "—";
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -65,6 +67,9 @@ export function CollectorShadowPanel({ summary, history, rebalances, diagnostics
             <div className="flex justify-between gap-3"><span>Threshold</span><span className="text-paper/75">AVG30 ≥ €{threshold}</span></div>
             <div className="flex justify-between gap-3"><span>Valuation</span><span className="text-paper/75">AVG30 only</span></div>
             <div className="flex justify-between gap-3"><span>Target size</span><span className="text-paper/75">None</span></div>
+            <div className="flex justify-between gap-3"><span>Named cards</span><span className="text-paper/75">{metadataRate(summary.product_metadata.named_count)}</span></div>
+            <div className="flex justify-between gap-3"><span>Card numbers</span><span className="text-paper/75">{metadataRate(summary.product_metadata.collector_number_count)}</span></div>
+            <div className="flex justify-between gap-3"><span>Artwork</span><span className="text-paper/75">{metadataRate(summary.product_metadata.image_count)}</span></div>
           </div>
         </aside>
       </section>

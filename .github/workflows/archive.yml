@@ -82,6 +82,12 @@ jobs:
           set -o pipefail
           uv run --package tcg-eu-index-engine python -m indexengine.calc \
             --date "${{ inputs.run_date || 'today' }}" | tee calc-result.json
+      - name: Calculate v1.5 collector singles shadow indexes
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          set -o pipefail
+          uv run --package tcg-eu-index-engine python -m indexengine.collector_run \
+            --date "${{ inputs.run_date || 'today' }}" | tee collector-result.json
       - name: Update aggregate public readiness receipt
         if: steps.archive_state.outputs.already_processed != 'true'
         run: |
@@ -104,6 +110,7 @@ jobs:
             archive-result.json
             normalize-result.json
             calc-result.json
+            collector-result.json
             preview-export-result.json
             data/manifest-latest.json
             apps/web/source-data/readiness.json
