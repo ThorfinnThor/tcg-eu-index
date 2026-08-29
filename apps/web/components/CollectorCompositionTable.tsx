@@ -324,7 +324,7 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
                           target="_blank"
                           rel={target.affiliate ? "sponsored nofollow noopener noreferrer" : "noopener noreferrer"}
                           className="chip hover:border-amber hover:text-amber"
-                          aria-label={`Search for ${member.name} on ${target.label}${target.affiliate ? " (affiliate link)" : ""}`}
+                          aria-label={`${target.action === "open" ? "Open" : "Search for"} ${member.name} on ${target.marketplace === "tcgplayer" ? "TCGplayer" : target.label}${target.affiliate ? " (affiliate link)" : ""}`}
                         >
                           {target.label}{target.affiliate ? " · Ad" : ""}
                         </a>

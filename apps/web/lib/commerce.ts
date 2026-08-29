@@ -11,6 +11,7 @@ export type CommerceTarget = {
   label: string;
   href: string;
   affiliate: boolean;
+  action: "open" | "search";
 };
 
 const ebayAffiliateTemplate = process.env.NEXT_PUBLIC_EBAY_AFFILIATE_URL_TEMPLATE;
@@ -19,6 +20,20 @@ const tcgplayerAffiliateTemplate = process.env.NEXT_PUBLIC_TCGPLAYER_AFFILIATE_U
 export function cardCommerceQuery(card: CommerceCard): string {
   const name = card.name
     .replace(/(?:\s*\[[^\]]*\])+\s*$/u, "")
+    .replace(/\s+/gu, " ")
+    .trim();
+  const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
+    ? card.set_name.trim()
+    : null;
+
+  return [name, card.collector_number?.trim(), setName]
+    .filter((value): value is string => Boolean(value))
+    .join(" ");
+}
+
+export function tcgplayerCommerceQuery(card: CommerceCard): string {
+  const name = card.name
+    .replace(/[\[\]|]/gu, " ")
     .replace(/\s+/gu, " ")
     .trim();
   const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
@@ -42,7 +57,7 @@ export function commerceTargets(card: CommerceCard, gameName?: string): Commerce
     ? new URL(card.tcgplayer_product_url)
     : new URL("https://www.tcgplayer.com/search/all/product");
   if (!card.tcgplayer_product_url) {
-    tcgplayerDestination.searchParams.set("q", query);
+    tcgplayerDestination.searchParams.set("q", tcgplayerCommerceQuery(card));
     tcgplayerDestination.searchParams.set("view", "grid");
   }
 
@@ -53,13 +68,15 @@ export function commerceTargets(card: CommerceCard, gameName?: string): Commerce
       ebayDestination.toString(),
       ebayAffiliateTemplate,
       customId,
+      "search",
     ),
     target(
       "tcgplayer",
-      "TCGplayer",
+      card.tcgplayer_product_url ? "TCGplayer" : "Search TCGplayer",
       tcgplayerDestination.toString(),
       tcgplayerAffiliateTemplate,
       customId,
+      card.tcgplayer_product_url ? "open" : "search",
     ),
   ];
 }
@@ -74,8 +91,9 @@ function target(
   destination: string,
   template: string | undefined,
   customId: string,
+  action: CommerceTarget["action"],
 ): CommerceTarget {
-  if (!template) return { marketplace, label, href: destination, affiliate: false };
+  if (!template) return { marketplace, label, href: destination, affiliate: false, action };
   const href = template
     .replaceAll("{url}", encodeURIComponent(destination))
     .replaceAll("{custom_id}", encodeURIComponent(customId));
@@ -83,5 +101,5 @@ function target(
   if (parsed.protocol !== "https:") {
     throw new Error(`${marketplace} affiliate template must produce an HTTPS URL`);
   }
-  return { marketplace, label, href: parsed.toString(), affiliate: true };
+  return { marketplace, label, href: parsed.toString(), affiliate: true, action };
 }
