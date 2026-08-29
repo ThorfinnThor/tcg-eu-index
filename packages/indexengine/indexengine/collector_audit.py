@@ -68,18 +68,30 @@ def build_collector_methodology_audit(
     complete_monthly_histories = sum(
         int(cast(dict[str, Any], item["turnover"])["observations"] > 0) for item in reports
     )
+    sealed_without_avg30 = [
+        str(item["index_code"])
+        for item in reports
+        if item["universe"] == "sealed"
+        and cast(dict[str, Any], cast(dict[str, Any], item["price_fields"])["avg30"])[
+            "positive_rate"
+        ]
+        == 0
+    ]
+    methodology_correction_required = bool(sealed_without_avg30)
     decision = {
-        "new_preview_methodology_version_required": False,
+        "new_preview_methodology_version_required": methodology_correction_required,
+        "methodology_correction_required_before_publication": methodology_correction_required,
         "canonical_valuation_field": "avg30",
         "alternate_valuation_field": "avg7",
         "activity_gate_enabled": False,
         "publication_state": "remain_private_shadow",
-        "audit_status": "preliminary_complete",
-        "reason": (
-            "No contract change is justified by the currently available history. "
-            "Activity remains diagnostic-only, AVG30 remains canonical, and final launch review "
-            "must be repeated after at least 60 observable days and two monthly compositions."
+        "audit_status": (
+            "preliminary_blocked" if methodology_correction_required else "preliminary_complete"
         ),
+        "source_blockers": {
+            "sealed_indexes_without_positive_avg30": sealed_without_avg30,
+        },
+        "reason": _decision_reason(methodology_correction_required),
     }
     return {
         "schema_version": 1,
@@ -117,6 +129,8 @@ def render_collector_audit_summary(report: dict[str, object]) -> str:
         "",
         "- New preview version required now: "
         f"`{decision['new_preview_methodology_version_required']}`",
+        "- Methodology correction required before publication: "
+        f"`{decision['methodology_correction_required_before_publication']}`",
         f"- Canonical valuation: `{decision['canonical_valuation_field']}`",
         f"- Activity gate enabled: `{decision['activity_gate_enabled']}`",
         f"- Publication: `{decision['publication_state']}`",
@@ -246,6 +260,23 @@ def _audit_definition(
     }
     report["review_flags"] = _review_flags(report)
     return report
+
+
+def _decision_reason(methodology_correction_required: bool) -> str:
+    if methodology_correction_required:
+        return (
+            "At least one sealed index has no positive sold-price AVG30 observations. "
+            "The sealed family cannot be published under the current source contract, and a "
+            "versioned source or methodology correction is required. Listing-price fallback "
+            "remains prohibited. Singles keep AVG30 as canonical, activity remains "
+            "diagnostic-only, and final launch review must be repeated after at least 60 "
+            "observable days and two monthly compositions."
+        )
+    return (
+        "No contract change is justified by the currently available history. Activity remains "
+        "diagnostic-only, AVG30 remains canonical, and final launch review must be repeated "
+        "after at least 60 observable days and two monthly compositions."
+    )
 
 
 def _with_valuation_field(methodology: Methodology, field: str) -> Methodology:
@@ -560,7 +591,10 @@ def _review_flags(report: dict[str, object]) -> list[str]:
     activity = cast(dict[str, Any], report["activity_proxy"])
     turnover = cast(dict[str, Any], report["turnover"])
     missing = cast(dict[str, Any], report["missing_data"])
+    price_fields = cast(dict[str, Any], report["price_fields"])
     flags: list[str] = []
+    if cast(dict[str, Any], price_fields["avg30"])["positive_rate"] == 0:
+        flags.append("sold_price_avg30_source_unavailable")
     if canonical["latest_constituent_count"] == 0:
         flags.append("empty_canonical_eligible_universe")
     if alternate["latest_constituent_count"] == 0:
