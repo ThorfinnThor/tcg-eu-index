@@ -122,10 +122,12 @@ jobs:
             preview-export-result.json
             data/manifest-latest.json
             apps/web/source-data/readiness.json
+            apps/web/source-data/collector
           retention-days: 30
       - name: Commit archive heartbeat
         run: |
-          if git diff --quiet -- data/manifest-latest.json apps/web/source-data; then
+          changes="$(git status --porcelain -- data/manifest-latest.json apps/web/source-data)"
+          if test -z "$changes"; then
             echo "Archive already recorded; no heartbeat change."
             exit 0
           fi

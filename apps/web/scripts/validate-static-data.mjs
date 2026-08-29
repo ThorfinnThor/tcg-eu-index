@@ -9,6 +9,7 @@ const sourceDataPath = path.join(sourceDataRoot, "indexes.json");
 const seoDataRoot = path.join(root, "data-config", "seo");
 const reportsRoot = path.join(root, "generated", "reports");
 const maxBytes = 1_000_000;
+const collectorMaxBytes = 20 * 1024 * 1024;
 const preferredMaxBytes = 250_000;
 const allowedRelationshipTypes = new Set(["parent", "child", "related", "comparison", "next_step"]);
 
@@ -433,7 +434,8 @@ for (const file of manifest.files ?? []) {
   const relativePath = file.path.replace(/^data\//, "");
   const absolutePath = path.join(dataRoot, relativePath);
   const info = await stat(absolutePath);
-  if (info.size > maxBytes) fail(`${file.path} exceeds ${maxBytes} bytes`);
+  const hardMaxBytes = relativePath.startsWith("collector/") ? collectorMaxBytes : maxBytes;
+  if (info.size > hardMaxBytes) fail(`${file.path} exceeds ${hardMaxBytes} bytes`);
   if (info.size > preferredMaxBytes) {
     console.warn(`${file.path} exceeds preferred ${preferredMaxBytes} byte target`);
   }
@@ -574,7 +576,8 @@ const buildReport = {
     totalBytes: totalPublicJsonBytes,
     largestFile: largestPublicFile ? { path: largestPublicFile.path, bytes: largestPublicFile.bytes } : null,
     preferredMaxBytes,
-    hardMaxBytes: maxBytes
+    hardMaxBytes: maxBytes,
+    collectorHardMaxBytes: collectorMaxBytes
   },
   seo: {
     keywordCount: keywords.length,
