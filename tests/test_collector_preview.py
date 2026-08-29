@@ -7,7 +7,10 @@ from pathlib import Path
 import yaml
 from core.r2 import LocalObjectStore
 from indexengine.collector_calc import CollectorDailyValue, CollectorMember, CollectorRebalance
-from indexengine.collector_preview import export_collector_preview
+from indexengine.collector_preview import (
+    export_collector_preview,
+    repack_existing_collector_preview,
+)
 from indexengine.eligibility import CollectorVariantDiagnostic
 from indexengine.methodology import Methodology
 from indexengine.product_identity import CollectorProductMetadata
@@ -127,10 +130,17 @@ def test_exports_compact_noindex_single_preview(tmp_path: Path) -> None:
     }
     rebalances = json.loads((output_root / "collector/OPEUCOL/rebalances.json").read_text())
     assert rebalances["generated_for"] == effective.isoformat()
-    assert rebalances["rebalances"][0]["constituents"][0]["name"] == "Roronoa Zoro"
+    assert rebalances["rebalances"][0]["constituents"] == []
+    composition = json.loads((output_root / "collector/OPEUCOL/composition.json").read_text())
+    assert composition["rebalances"][0]["page_count"] == 1
+    composition_page = json.loads(
+        (output_root / "collector/OPEUCOL/composition/2026-08-29/0001.json").read_text()
+    )
+    assert composition_page["constituents"][0]["name"] == "Roronoa Zoro"
     manifest = json.loads((output_root / "collector/OPEUCOL/manifest.json").read_text())
     assert manifest["publication_state"] == "preview_noindex"
     assert manifest["public_alias_enabled"] is False
+    assert len(manifest["outputs"]) == 5
 
     repeated = export_collector_preview(
         store,
@@ -139,3 +149,4 @@ def test_exports_compact_noindex_single_preview(tmp_path: Path) -> None:
         methodology_path=methodology_path,
     )
     assert repeated.changed_files == []
+    assert repack_existing_collector_preview(output_root).changed_files == []

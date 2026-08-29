@@ -1,20 +1,26 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useDeferredValue, useMemo, useState } from "react";
 import { cardmarketProductUrl } from "@/lib/cardmarket";
 import { affiliateCommerceConfigured, commerceTargets } from "@/lib/commerce";
-import type { CollectorRebalanceRecord, CollectorRebalances } from "@/lib/types";
+import type {
+  CollectorCompositionIndex,
+  CollectorCompositionPage,
+  CollectorRebalanceRecord
+} from "@/lib/types";
 import { formatCollectorEur } from "@/lib/collector-ui";
 
 type Props = {
-  rebalances: CollectorRebalances;
+  composition: CollectorCompositionIndex;
+  compositionPage: CollectorCompositionPage;
   gameName: string;
 };
 
 type Member = CollectorRebalanceRecord["constituents"][number];
 
-const PAGE_SIZE = 100;
 const supportedImageHosts = new Set([
   "product-images.s3.cardmarket.com",
   "cards.scryfall.io",
@@ -67,24 +73,23 @@ function CardArtwork({ member }: { member: Member }) {
   );
 }
 
-export function CollectorCompositionTable({ rebalances, gameName }: Props) {
-  const [selectedDate, setSelectedDate] = useState(rebalances.rebalances.at(-1)?.effective_date ?? "");
+export function CollectorCompositionTable({ composition, compositionPage, gameName }: Props) {
+  const pathname = usePathname();
+  const router = useRouter();
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(1);
   const deferredSearch = useDeferredValue(search);
   const selectedRebalance = useMemo(
-    () => rebalances.rebalances.find((rebalance) => rebalance.effective_date === selectedDate)
-      ?? rebalances.rebalances.at(-1)
+    () => composition.rebalances.find(
+      (rebalance) => rebalance.effective_date === compositionPage.effective_date
+    ) ?? composition.rebalances.at(-1)
       ?? null,
-    [rebalances.rebalances, selectedDate]
+    [composition.rebalances, compositionPage.effective_date]
   );
   const query = deferredSearch.trim().toLocaleLowerCase();
   const filteredMembers = useMemo(
-    () => selectedRebalance?.constituents.filter((member) => matchesSearch(member, query)) ?? [],
-    [query, selectedRebalance]
+    () => compositionPage.constituents.filter((member) => matchesSearch(member, query)),
+    [compositionPage.constituents, query]
   );
-  const pageCount = Math.max(1, Math.ceil(filteredMembers.length / PAGE_SIZE));
-  const visibleMembers = filteredMembers.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   if (!selectedRebalance) {
     return <p className="py-8 text-sm text-paper/50">No monthly composition is available yet.</p>;
@@ -98,12 +103,11 @@ export function CollectorCompositionTable({ rebalances, gameName }: Props) {
           <select
             value={selectedRebalance.effective_date}
             onChange={(event) => {
-              setSelectedDate(event.target.value);
-              setPage(1);
+              router.push(`${pathname}?date=${encodeURIComponent(event.target.value)}&page=1`);
             }}
             className="surface mt-1 block w-full px-3 py-2 text-sm text-paper"
           >
-            {rebalances.rebalances.map((rebalance) => (
+            {composition.rebalances.map((rebalance) => (
               <option key={rebalance.effective_date} value={rebalance.effective_date}>
                 {rebalance.effective_date}
               </option>
@@ -111,20 +115,19 @@ export function CollectorCompositionTable({ rebalances, gameName }: Props) {
           </select>
         </label>
         <label className="text-xs text-paper/55">
-          Search cards
+          Search this page
           <input
             type="search"
             value={search}
             onChange={(event) => {
               setSearch(event.target.value);
-              setPage(1);
             }}
             placeholder="Card name, set, number, variant, or Cardmarket ID"
             className="surface mt-1 block w-full px-3 py-2 text-sm text-paper placeholder:text-paper/30"
           />
         </label>
         <div className="pb-2 text-xs text-paper/55" aria-live="polite">
-          {filteredMembers.length} of {selectedRebalance.constituents.length} variants
+          {filteredMembers.length} matching on this page · {selectedRebalance.active_count} total variants
         </div>
       </div>
 
@@ -153,7 +156,7 @@ export function CollectorCompositionTable({ rebalances, gameName }: Props) {
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
-            {visibleMembers.map((member) => (
+            {filteredMembers.map((member) => (
               <tr key={member.stable_variant_id}>
                 <td className="px-4 py-3 text-paper">
                   <div className="flex items-center gap-3">
@@ -208,25 +211,25 @@ export function CollectorCompositionTable({ rebalances, gameName }: Props) {
         ) : null}
       </div>
 
-      {filteredMembers.length > PAGE_SIZE ? (
+      {selectedRebalance.page_count > 1 ? (
         <nav className="mt-4 flex items-center justify-between gap-4 text-xs text-paper/55" aria-label="Composition pages">
-          <button
-            type="button"
-            onClick={() => setPage((value) => Math.max(1, value - 1))}
-            disabled={page === 1}
-            className="chip disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            Previous
-          </button>
-          <span>Page {page} of {pageCount}</span>
-          <button
-            type="button"
-            onClick={() => setPage((value) => Math.min(pageCount, value + 1))}
-            disabled={page === pageCount}
-            className="chip disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            Next
-          </button>
+          {compositionPage.page > 1 ? (
+            <Link
+              href={`${pathname}?date=${encodeURIComponent(selectedRebalance.effective_date)}&page=${compositionPage.page - 1}`}
+              className="chip"
+            >
+              Previous
+            </Link>
+          ) : <span className="chip opacity-35">Previous</span>}
+          <span>Page {compositionPage.page} of {selectedRebalance.page_count}</span>
+          {compositionPage.page < selectedRebalance.page_count ? (
+            <Link
+              href={`${pathname}?date=${encodeURIComponent(selectedRebalance.effective_date)}&page=${compositionPage.page + 1}`}
+              className="chip"
+            >
+              Next
+            </Link>
+          ) : <span className="chip opacity-35">Next</span>}
         </nav>
       ) : null}
 

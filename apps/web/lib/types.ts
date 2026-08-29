@@ -196,6 +196,43 @@ export type CollectorRebalances = {
   rebalances: CollectorRebalanceRecord[];
 };
 
+export type CollectorCompositionIndex = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  publication_state: "preview_noindex";
+  generated_for: string;
+  rebalances: Array<{
+    effective_date: string;
+    selection_as_of: string;
+    active_count: number;
+    page_size: number;
+    page_count: number;
+    pages: Array<{
+      page: number;
+      path: string;
+      sha256: string;
+      bytes: number;
+    }>;
+  }>;
+};
+
+export type CollectorCompositionPage = {
+  schema_version: 2;
+  series_id: string;
+  index_code: CollectorIndexCode;
+  methodology_version: string;
+  data_state: CollectorDataState;
+  publication_state: "preview_noindex";
+  generated_for: string;
+  effective_date: string;
+  page: number;
+  page_count: number;
+  constituents: CollectorRebalanceRecord["constituents"];
+};
+
 export type CollectorDiagnostics = {
   schema_version: 2;
   series_id: string;

@@ -93,7 +93,9 @@ Private shadow outputs include chain-linked values, constituent contributions, r
 The daily archive exports a checksum-verified public projection for the ten enabled
 singles collector indexes. Collector routes are enabled in Cloudflare with
 `COLLECTOR_PREVIEW_UI_ENABLED=true`, remain excluded from search indexing, and do not
-expose raw eligibility diagnostics or per-card price history.
+expose raw eligibility diagnostics or per-card price history. Monthly compositions
+are checksum-verified and served in pages of 250 variants so every qualifying card
+remains reachable without loading a game's entire basket into one Worker response.
 
 ## Editorial and optional user features
 

@@ -10,6 +10,8 @@ import {
   latestCollectorRebalance
 } from "@/lib/collector-ui";
 import type {
+  CollectorCompositionIndex,
+  CollectorCompositionPage,
   CollectorDiagnostics,
   CollectorHistory,
   CollectorIndexSummary,
@@ -21,9 +23,18 @@ type Props = {
   history: CollectorHistory;
   rebalances: CollectorRebalances;
   diagnostics: CollectorDiagnostics;
+  composition: CollectorCompositionIndex;
+  compositionPage: CollectorCompositionPage;
 };
 
-export function CollectorShadowPanel({ summary, history, rebalances, diagnostics }: Props) {
+export function CollectorShadowPanel({
+  summary,
+  history,
+  rebalances,
+  diagnostics,
+  composition,
+  compositionPage
+}: Props) {
   const latest = latestCollectorRecord(history);
   const latestRebalance = latestCollectorRebalance(rebalances);
   const diagnosticSummary = collectorDiagnosticSummary(diagnostics);
@@ -107,7 +118,11 @@ export function CollectorShadowPanel({ summary, history, rebalances, diagnostics
           </div>
           <span className="text-xs text-paper/40">{gameName} · all Cardmarket Europe languages</span>
         </div>
-        <CollectorCompositionTable rebalances={rebalances} gameName={gameName} />
+        <CollectorCompositionTable
+          composition={composition}
+          compositionPage={compositionPage}
+          gameName={gameName}
+        />
       </section>
 
       <section className="surface mt-4 p-5">
