@@ -1854,13 +1854,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866750,
     "entry_reason": "entrant selected at reference-price rank 366",
     "liquidity_score": 0.5356363636363637,
     "member_since": "2026-08-13",
     "name": "Rumble, Hotheaded",
     "ref_price": 2.25,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -2033,13 +2035,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866813,
     "entry_reason": "entrant selected at reference-price rank 387",
     "liquidity_score": 0.55,
     "member_since": "2026-08-13",
     "name": "Ezreal, Dashing",
     "ref_price": 2.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },

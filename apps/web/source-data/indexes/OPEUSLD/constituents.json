@@ -1141,14 +1141,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 692260,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.5620144317543545,
     "member_since": "2026-08-26",
     "name": "Super PreRelease Starter Deck: Animal Kingdom Pirates",
     "ref_price": 238.05,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-08-30",
     "set": "Expansion 5240",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 858372,
+    "entry_reason": "entrant selected at reference-price rank 32",
+    "liquidity_score": 0.5519012675116745,
+    "member_since": "2026-08-30",
+    "name": "Heroines Edition Booster Box Case (12x Booster Box) (Asia Region Legal)",
+    "ref_price": 1489.0,
+    "set": "Expansion 6379",
     "variant_key": "nonfoil"
   }
 ]

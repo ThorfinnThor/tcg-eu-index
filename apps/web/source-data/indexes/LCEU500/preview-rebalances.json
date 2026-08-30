@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-08-29",
+  "generated_for": "2026-08-30",
   "index_code": "LCEU500",
   "rebalances": [
     {
@@ -3526,6 +3526,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "1d5faecb805551ff22e72fae4aa05632a920ed0cb740c0437b99b7988ff0ccb3"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 840565,
+          "reason": "entrant selected at reference-price rank 6",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 840565,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-08-30",
+      "eligible_count": 689,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "f283309625cec5b611522b0f18f3eb13a7da42958b1a206b988a0663b7085eb0"
     }
   ],
   "schema_version": 1

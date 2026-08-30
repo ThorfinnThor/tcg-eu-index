@@ -266,13 +266,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 4795,
     "entry_reason": "entrant selected at reference-price rank 34",
     "liquidity_score": 0.6496691611526859,
     "member_since": "2026-08-13",
     "name": "Time Walk",
     "ref_price": 3104.2,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 3",
     "variant_key": "nonfoil"
   },
@@ -5588,6 +5590,17 @@
     "name": "Academy Rector",
     "ref_price": 341.56,
     "set": "Expansion 28",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 685227,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6999822218271518,
+    "member_since": "2026-08-30",
+    "name": "Ornithopter",
+    "ref_price": 338.25,
+    "set": "Expansion 5170",
     "variant_key": "foil"
   }
 ]

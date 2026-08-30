@@ -523,13 +523,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 573472,
     "entry_reason": "entrant selected at reference-price rank 125",
     "liquidity_score": 0.635,
     "member_since": "2026-08-13",
     "name": "SS Son Goku & Frieza, Miraculous Conclusion",
     "ref_price": 215.84,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 4336",
     "variant_key": "nonfoil"
   },
@@ -5887,6 +5889,17 @@
     "name": "Son Goku // Kaio-Ken Son Goku, Turning the Tide",
     "ref_price": 36.8,
     "set": "Expansion 2876",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 573472,
+    "entry_reason": "entrant selected at reference-price rank 171",
+    "liquidity_score": 0.6929706102936936,
+    "member_since": "2026-08-30",
+    "name": "SS Son Goku & Frieza, Miraculous Conclusion",
+    "ref_price": 153.32,
+    "set": "Expansion 4336",
     "variant_key": "foil"
   }
 ]

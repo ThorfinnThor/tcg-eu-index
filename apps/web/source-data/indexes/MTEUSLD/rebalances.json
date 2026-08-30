@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-08-29",
+  "generated_for": "2026-08-30",
   "index_code": "MTEUSLD",
   "rebalances": [
     {
@@ -783,6 +783,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "1b3aa00d50e8df3da2ab59c15d494299433c4219760bd336300c233aa7fb55f4"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-08-30",
+      "eligible_count": 3136,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "6b34ead4e2e1071fc5b608a72162f3bdf28fed8c31d7b2964298bfe7a0c38552"
     }
   ],
   "schema_version": 1

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-08-29",
+  "generated_for": "2026-08-30",
   "index_code": "SWUEU500",
   "rebalances": [
     {
@@ -3483,6 +3483,64 @@
       "methodology_version": "1.4.0",
       "retained_count": 498,
       "selection_snapshot_sha256": "1705ac4351554b5cadffe2f44fdebb324a7cbfd57174edc6e2ded526a5400a40"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 854939,
+          "reason": "entrant selected at reference-price rank 432",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 856637,
+          "reason": "entrant selected at reference-price rank 498",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 868656,
+          "reason": "entrant selected at reference-price rank 499",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 876545,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 757589,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 815025,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 854939,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 876558,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-08-30",
+      "eligible_count": 1337,
+      "methodology_version": "1.4.0",
+      "retained_count": 496,
+      "selection_snapshot_sha256": "3688e2b9cc070c3289f77327b52655ec37c484f30a22ec327aa7b070d4980fdf"
     }
   ],
   "schema_version": 1

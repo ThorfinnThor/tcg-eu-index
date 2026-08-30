@@ -1138,13 +1138,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 604810,
     "entry_reason": "entrant selected at reference-price rank 484",
     "liquidity_score": 0.6460110713122762,
     "member_since": "2026-08-13",
     "name": "Ursur, the Soul Reaper",
     "ref_price": 52.49,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-08-30",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -2097,13 +2099,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 682051,
     "entry_reason": "entrant selected at reference-price rank 492",
     "liquidity_score": 0.6917162032598274,
     "member_since": "2026-08-13",
     "name": "Blacktek Whisperers",
     "ref_price": 51.43,
+    "removal_reason": "incumbent removed at reference-price rank 504 outside top 500",
+    "removed_at": "2026-08-30",
     "set": "Expansion 5147",
     "variant_key": "nonfoil"
   },
@@ -3392,13 +3396,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 770859,
     "entry_reason": "entrant selected at reference-price rank 485",
     "liquidity_score": 0.6836083310792535,
     "member_since": "2026-08-13",
     "name": "Stonewall Gauntlet",
     "ref_price": 52.23,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-08-30",
     "set": "Expansion 5756",
     "variant_key": "nonfoil"
   },
@@ -4673,13 +4679,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 840686,
     "entry_reason": "entrant selected at reference-price rank 66",
     "liquidity_score": 0.6560015600156002,
     "member_since": "2026-08-13",
     "name": "Ley Line of the Old Ones",
     "ref_price": 302.61,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6191",
     "variant_key": "nonfoil"
   },
@@ -4772,13 +4780,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 841147,
     "entry_reason": "entrant selected at reference-price rank 300",
     "liquidity_score": 0.6920256034137885,
     "member_since": "2026-08-13",
     "name": "Seismic Surge",
     "ref_price": 83.17,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6191",
     "variant_key": "nonfoil"
   },
@@ -4893,13 +4903,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 850049,
     "entry_reason": "entrant selected at reference-price rank 483",
     "liquidity_score": 0.5,
     "member_since": "2026-08-13",
     "name": "Numbskull Charm",
     "ref_price": 52.5,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-08-30",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -5900,6 +5912,72 @@
     "name": "Gate to i'Arathael",
     "ref_price": 328.8,
     "set": "Expansion 6521",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890071,
+    "entry_reason": "entrant selected at reference-price rank 302",
+    "liquidity_score": 0.6984357225809266,
+    "member_since": "2026-08-30",
+    "name": "Cut to the Chase (Red)",
+    "ref_price": 86.23,
+    "set": "Expansion 6490",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890079,
+    "entry_reason": "entrant selected at reference-price rank 487",
+    "liquidity_score": 0.676969696969697,
+    "member_since": "2026-08-30",
+    "name": "Boulder Drop (Blue)",
+    "ref_price": 55.0,
+    "set": "Expansion 6490",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890091,
+    "entry_reason": "entrant selected at reference-price rank 353",
+    "liquidity_score": 0.6656296296296296,
+    "member_since": "2026-08-30",
+    "name": "T-Bone (Red)",
+    "ref_price": 75.0,
+    "set": "Expansion 6490",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890092,
+    "entry_reason": "entrant selected at reference-price rank 488",
+    "liquidity_score": 0.6697303921568628,
+    "member_since": "2026-08-30",
+    "name": "T-Bone (Yellow)",
+    "ref_price": 55.0,
+    "set": "Expansion 6490",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890093,
+    "entry_reason": "entrant selected at reference-price rank 374",
+    "liquidity_score": 0.7117560228600297,
+    "member_since": "2026-08-30",
+    "name": "T-Bone (Blue)",
+    "ref_price": 72.0,
+    "set": "Expansion 6490",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890097,
+    "entry_reason": "entrant selected at reference-price rank 207",
+    "liquidity_score": 0.6256250349704527,
+    "member_since": "2026-08-30",
+    "name": "Read the Runes (Red)",
+    "ref_price": 115.0,
+    "set": "Expansion 6490",
     "variant_key": "nonfoil"
   }
 ]

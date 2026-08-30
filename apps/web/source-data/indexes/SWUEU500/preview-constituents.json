@@ -334,13 +334,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757589,
     "entry_reason": "entrant selected at reference-price rank 434",
     "liquidity_score": 0.66025,
     "member_since": "2026-08-13",
     "name": "Command",
     "ref_price": 15.32,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -3575,13 +3577,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 854939,
     "entry_reason": "entrant selected at reference-price rank 399",
     "liquidity_score": 0.6902608695652174,
     "member_since": "2026-08-13",
     "name": "HK-47, Exclamation: Die, Meatbag!",
     "ref_price": 18.08,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6101",
     "variant_key": "nonfoil"
   },
@@ -5230,13 +5234,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 876558,
     "entry_reason": "entrant selected at reference-price rank 222",
     "liquidity_score": 0.5000333333333333,
     "member_since": "2026-08-13",
     "name": "Latts Razzi, Deadly Whipmaster",
     "ref_price": 60.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6452",
     "variant_key": "foil"
   },
@@ -5816,13 +5822,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 815025,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.511578387010913,
     "member_since": "2026-08-29",
     "name": "Darth Vader, Scourge of Squadrons",
     "ref_price": 12.19,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6074",
     "variant_key": "nonfoil"
   },
@@ -5836,5 +5844,49 @@
     "ref_price": 12.15,
     "set": "Expansion 6101",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 854939,
+    "entry_reason": "entrant selected at reference-price rank 432",
+    "liquidity_score": 0.5176470588235295,
+    "member_since": "2026-08-30",
+    "name": "HK-47, Exclamation: Die, Meatbag!",
+    "ref_price": 14.91,
+    "set": "Expansion 6101",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 856637,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.6712701358328316,
+    "member_since": "2026-08-30",
+    "name": "Queen Amidala, Championing Her People",
+    "ref_price": 12.14,
+    "set": "Expansion 6364",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 868656,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6463444292445661,
+    "member_since": "2026-08-30",
+    "name": "Always Two",
+    "ref_price": 12.14,
+    "set": "Expansion 6472",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 876545,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6878687290013609,
+    "member_since": "2026-08-30",
+    "name": "The Mandalorian, Let's See the Puck",
+    "ref_price": 12.13,
+    "set": "Expansion 6452",
+    "variant_key": "foil"
   }
 ]

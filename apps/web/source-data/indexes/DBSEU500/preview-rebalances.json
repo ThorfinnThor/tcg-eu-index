@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-08-29",
+  "generated_for": "2026-08-30",
   "index_code": "DBSEU500",
   "rebalances": [
     {
@@ -3529,6 +3529,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "dee3fda50f24d88843ad446e98ec5aa193037654198e5d964d5272d0787b6ac1"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 573472,
+          "reason": "entrant selected at reference-price rank 171",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 573472,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-08-30",
+      "eligible_count": 2740,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "d6ca01ff7e6020c3f199bf477fa7ca8ca37a5f2162a87ca1a0f805c49052fef2"
     }
   ],
   "schema_version": 1

@@ -5610,13 +5610,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 690824,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.6409208824562846,
     "member_since": "2026-08-24",
     "name": "Monkey.D.Luffy (OP01-024)",
     "ref_price": 151.33,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-08-30",
     "set": "Expansion 5229",
     "variant_key": "nonfoil"
   },
@@ -5640,6 +5642,17 @@
     "name": "Enel (OP15-060)",
     "ref_price": 2900.0,
     "set": "Expansion 5262",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 857352,
+    "entry_reason": "entrant selected at reference-price rank 18",
+    "liquidity_score": 0.4483367700465444,
+    "member_since": "2026-08-30",
+    "name": "Sabo (OP13-120)",
+    "ref_price": 3318.68,
+    "set": "Expansion 6187",
     "variant_key": "nonfoil"
   }
 ]

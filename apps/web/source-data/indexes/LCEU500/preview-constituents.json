@@ -3221,13 +3221,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 840565,
     "entry_reason": "entrant selected at reference-price rank 2",
     "liquidity_score": 0.59995,
     "member_since": "2026-08-13",
     "name": "Mickey Mouse - Brave Little Prince",
     "ref_price": 4000.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6170",
     "variant_key": "nonfoil"
   },
@@ -5887,6 +5889,17 @@
     "name": "Simba - King in the Making",
     "ref_price": 4.34,
     "set": "Expansion 6339",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 840565,
+    "entry_reason": "entrant selected at reference-price rank 6",
+    "liquidity_score": 0.612826773556586,
+    "member_since": "2026-08-30",
+    "name": "Mickey Mouse - Brave Little Prince",
+    "ref_price": 1602.6,
+    "set": "Expansion 6170",
     "variant_key": "foil"
   }
 ]

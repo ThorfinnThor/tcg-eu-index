@@ -1082,13 +1082,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 858379,
     "entry_reason": "entrant selected at reference-price rank 83",
     "liquidity_score": 0.6304901825327377,
     "member_since": "2026-08-12",
     "name": "MEGA Dream ex Booster Box Case",
     "ref_price": 2605.56,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-08-30",
     "set": "Expansion 6380",
     "variant_key": "nonfoil"
   },
@@ -1123,6 +1125,17 @@
     "name": "2010 Fall Collector's Tins: Raikou Tin",
     "ref_price": 2397.6923076923076,
     "set": "Expansion 1645",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 816809,
+    "entry_reason": "entrant selected at reference-price rank 97",
+    "liquidity_score": 0.562125810020547,
+    "member_since": "2026-08-30",
+    "name": "Generations: Fabulous Pokémon Collection 2-Pack Blister - Darkrai",
+    "ref_price": 2430.65,
+    "set": "Expansion 1693",
     "variant_key": "nonfoil"
   }
 ]
