@@ -33,11 +33,11 @@
       "total_rows": 1582,
       "unique_cardmarket_products": 1582,
       "with_artwork_variant": 0,
-      "with_collector_number": 228,
+      "with_collector_number": 287,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 228
+      "with_set_name": 287
     },
     {
       "game": "lorcana",
@@ -85,11 +85,11 @@
       "total_rows": 8695,
       "unique_cardmarket_products": 8547,
       "with_artwork_variant": 0,
-      "with_collector_number": 2053,
+      "with_collector_number": 2210,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 2051
+      "with_set_name": 2208
     },
     {
       "game": "riftbound",
@@ -124,11 +124,11 @@
       "total_rows": 5377,
       "unique_cardmarket_products": 5377,
       "with_artwork_variant": 0,
-      "with_collector_number": 569,
+      "with_collector_number": 1686,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 569
+      "with_set_name": 1686
     }
   ],
   "generated_for": "2026-08-30",

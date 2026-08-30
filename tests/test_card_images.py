@@ -20,11 +20,14 @@ from indexengine.card_images.catalogs import (
 )
 from indexengine.card_images.contracts import (
     CanonicalCardIdentity,
+    CardImageFace,
+    ImageVariant,
     PublicCardImage,
     normalize_card_name,
     public_image_from_match,
     source_row_key,
 )
+from indexengine.card_images.pipeline import materialize_magic_images
 from indexengine.card_images.policy import ProviderPolicy
 from indexengine.card_images.qa import (
     MagicQaCandidate,
@@ -245,6 +248,170 @@ def test_public_card_image_defaults_to_machine_readable_disabled_status() -> Non
 
     assert image.to_dict()["status"] == "disabled"
     assert image.normal_url is None
+
+
+def test_materialization_refreshes_latest_metadata_summary(tmp_path: Path) -> None:
+    source_data = tmp_path / "source-data"
+    collector = source_data / "collector"
+    index_root = collector / "YGEUCOL"
+    page = index_root / "composition" / "2026-08-30" / "0001.json"
+    page.parent.mkdir(parents=True)
+
+    def write(path: Path, payload: object) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(payload))
+
+    identity = {
+        "schema_version": 2,
+        "series_id": "YGEUCOL:1.5.0-preview.2:private_shadow",
+        "index_code": "YGEUCOL",
+        "methodology_version": "1.5.0-preview.2",
+        "data_state": "private_shadow",
+        "publication_state": "preview_noindex",
+        "generated_for": "2026-08-30",
+    }
+    member = {
+        "cm_product_id": 7,
+        "variant_key": "nonfoil",
+        "stable_variant_id": "cardmarket:yugioh:product:7:nonfoil",
+        "selection_price": 42.0,
+        "name": "Chaos Nephthys",
+        "set_name": "Expansion 123",
+        "collector_number": None,
+        "image": {"status": "disabled"},
+        "image_url": None,
+        "image_source": None,
+    }
+    write(
+        collector / "index.json",
+        {
+            "schema_version": 1,
+            "generated_for": "2026-08-30",
+            "methodology_version": "1.5.0-preview.2",
+            "indexes": [
+                {
+                    "code": "YGEUCOL",
+                    "game_key": "yugioh",
+                    "constituent_count": 1,
+                }
+            ],
+        },
+    )
+    write(index_root / "manifest.json", {**identity, "outputs": {}})
+    write(
+        index_root / "summary.json",
+        {
+            **identity,
+            "base_value": 1000.0,
+            "product_metadata": {
+                "constituent_count": 1,
+                "named_count": 1,
+                "set_name_count": 1,
+                "collector_number_count": 0,
+                "image_count": 0,
+                "image_status_counts": {"disabled": 1},
+            },
+        },
+    )
+    write(index_root / "history.json", identity)
+    write(index_root / "diagnostics.json", identity)
+    write(
+        index_root / "rebalances.json",
+        {
+            **identity,
+            "rebalances": [
+                {
+                    "effective_date": "2026-08-30",
+                    "selection_as_of": "2026-08-29",
+                    "active_count": 1,
+                    "constituents": [],
+                }
+            ],
+        },
+    )
+    write(
+        index_root / "composition.json",
+        {
+            **identity,
+            "rebalances": [
+                {
+                    "effective_date": "2026-08-30",
+                    "selection_as_of": "2026-08-29",
+                    "active_count": 1,
+                    "pages": [
+                        {
+                            "page": 1,
+                            "path": "composition/2026-08-30/0001.json",
+                        }
+                    ],
+                }
+            ],
+        },
+    )
+    write(
+        page,
+        {
+            **identity,
+            "effective_date": "2026-08-30",
+            "page": 1,
+            "page_count": 1,
+            "constituents": [member],
+        },
+    )
+
+    image = PublicCardImage(
+        status="exact",
+        provider="ygoprodeck",
+        match_method="inferred_set_name_unique",
+        front=CardImageFace(
+            face="front",
+            thumb=None,
+            normal=ImageVariant(
+                "https://example.test/chaos-nephthys.jpg",
+                421,
+                614,
+                "image/jpeg",
+            ),
+            large=None,
+        ),
+        verified_at="2026-08-30T00:00:00Z",
+    )
+    store = LocalObjectStore(tmp_path / "store")
+    store.write_bytes(
+        "derived/card-images/yugioh/public-manifest.json",
+        json.dumps(
+            {
+                "schema_version": 1,
+                "game": "yugioh",
+                "rows": [
+                    {
+                        "cardmarket_product_id": 7,
+                        "finish": "nonfoil",
+                        "set_name": "Battle of Chaos",
+                        "collector_number": "BACH-EN025",
+                        "image": image.to_dict(),
+                    }
+                ],
+            }
+        ).encode(),
+        "application/json",
+    )
+
+    materialize_magic_images(store, source_data)
+
+    summary = json.loads((index_root / "summary.json").read_text())
+    assert summary["product_metadata"] == {
+        "collector_number_count": 1,
+        "constituent_count": 1,
+        "image_count": 1,
+        "image_status_counts": {"exact": 1},
+        "named_count": 1,
+        "set_name_count": 1,
+    }
+    projected = json.loads(page.read_text())["constituents"][0]
+    assert projected["set_name"] == "Battle of Chaos"
+    assert projected["collector_number"] == "BACH-EN025"
+    assert projected["image_source"] == "ygoprodeck"
 
 
 def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None:

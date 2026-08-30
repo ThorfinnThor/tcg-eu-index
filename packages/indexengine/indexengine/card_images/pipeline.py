@@ -425,7 +425,21 @@ def materialize_magic_images(
         game_metadata = load_public_card_metadata(store, game)
         index_root = collector_root / code
         game_statuses: dict[str, int] = {}
-        game_published = 0
+        latest_statuses: dict[str, int] = {}
+        latest_rows = 0
+        latest_named = 0
+        latest_set_names = 0
+        latest_collector_numbers = 0
+        latest_published = 0
+        composition_index = json.loads((index_root / "composition.json").read_text())
+        composition_rebalances = composition_index.get("rebalances")
+        if not isinstance(composition_rebalances, list) or not composition_rebalances:
+            raise ValueError(f"{code} collector composition has no rebalances")
+        latest_effective_date = max(
+            str(rebalance["effective_date"])
+            for rebalance in composition_rebalances
+            if isinstance(rebalance, dict) and "effective_date" in rebalance
+        )
         credential_games = {"onepiece", "dragonballsuper", "riftbound"}
         default_status = (
             "blocked_credentials" if game in credential_games else "missing_prerequisite"
@@ -434,6 +448,7 @@ def materialize_magic_images(
             payload = json.loads(page_path.read_text())
             if not isinstance(payload, dict) or not isinstance(payload.get("constituents"), list):
                 raise ValueError(f"invalid collector composition page {page_path}")
+            is_latest_page = str(payload.get("effective_date")) == latest_effective_date
             page_changed = False
             for member in payload["constituents"]:
                 if not isinstance(member, dict):
@@ -482,7 +497,13 @@ def materialize_magic_images(
                 rows += 1
                 is_published = image.status in {"exact", "manual"} and image.normal_url is not None
                 published += is_published
-                game_published += is_published
+                if is_latest_page:
+                    latest_rows += 1
+                    latest_named += bool(member.get("name"))
+                    latest_set_names += bool(member.get("set_name"))
+                    latest_collector_numbers += bool(member.get("collector_number"))
+                    latest_published += is_published
+                    latest_statuses[image.status] = latest_statuses.get(image.status, 0) + 1
             if page_changed:
                 page_path.write_bytes(_compact_json_bytes(payload))
                 changed.append(str(page_path.relative_to(source_data_root)))
@@ -491,8 +512,16 @@ def materialize_magic_images(
         product_metadata = summary.get("product_metadata")
         if not isinstance(product_metadata, dict):
             raise ValueError(f"{code} collector summary has no product metadata")
-        product_metadata["image_count"] = game_published
-        product_metadata["image_status_counts"] = dict(sorted(game_statuses.items()))
+        expected_rows = int(product_metadata.get("constituent_count", -1))
+        if latest_rows != expected_rows:
+            raise ValueError(
+                f"{code} latest composition has {latest_rows} rows, expected {expected_rows}"
+            )
+        product_metadata["named_count"] = latest_named
+        product_metadata["set_name_count"] = latest_set_names
+        product_metadata["collector_number_count"] = latest_collector_numbers
+        product_metadata["image_count"] = latest_published
+        product_metadata["image_status_counts"] = dict(sorted(latest_statuses.items()))
         summary_body = _compact_json_bytes(summary)
         if summary_path.read_bytes() != summary_body:
             summary_path.write_bytes(summary_body)

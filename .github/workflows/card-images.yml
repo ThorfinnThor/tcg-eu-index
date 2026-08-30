@@ -65,6 +65,11 @@ jobs:
         run: >-
           uv run python -m indexengine.card_images.cli materialize-web
           --source-data-root apps/web/source-data
+      - name: Refresh readiness reports from the materialized projection
+        run: >-
+          uv run python -m indexengine.card_images.cli audit
+          --collector-root apps/web/source-data/collector
+          --output-root reports/images
       - name: Commit the validated card-image projection
         run: |
           changes="$(git status --porcelain -- apps/web/source-data reports/images)"
