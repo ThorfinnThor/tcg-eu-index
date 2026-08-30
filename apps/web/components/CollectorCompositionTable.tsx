@@ -41,6 +41,17 @@ const supportedImageHosts = new Set([
   "d2wlb52bya4y8z.cloudfront.net",
   "tcg-eu-index-web.shuu9599.workers.dev",
 ]);
+const providerAttributions: Record<string, { name: string; url: string }> = {
+  tcgdex: { name: "TCGdex", url: "https://tcgdex.dev/" },
+  ygoprodeck: { name: "YGOPRODeck", url: "https://ygoprodeck.com/" },
+  digimon: { name: "DigimonCard.io", url: "https://digimoncard.io/" },
+  lorcast: { name: "Lorcast", url: "https://lorcast.com/" },
+  swudb: { name: "SWU DB", url: "https://www.swu-db.com/" },
+  fab_dataset: {
+    name: "Flesh and Blood Cards",
+    url: "https://github.com/the-fab-cube/flesh-and-blood-cards"
+  },
+};
 
 const priceBands: Array<{ value: CollectorPriceBand; label: string }> = [
   { value: "all", label: "All prices from €10" },
@@ -219,6 +230,14 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
     member.image?.provider === "scryfall"
     && (member.image.status === "exact" || member.image.status === "manual")
   );
+  const visibleProviderAttributions = [...new Set(
+    visibleMembers
+      .filter((member) => member.image?.status === "exact" || member.image?.status === "manual")
+      .map((member) => member.image?.provider)
+      .filter((provider): provider is string => Boolean(provider && provider !== "scryfall"))
+  )]
+    .map((provider) => providerAttributions[provider])
+    .filter((provider): provider is { name: string; url: string } => Boolean(provider));
 
   return (
     <div>
@@ -288,6 +307,12 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
           Card imagery and metadata provided by <a href="https://scryfall.com" target="_blank" rel="noopener noreferrer" className="text-amber hover:text-paper">Scryfall</a>. TCG EU Index is unofficial Fan Content permitted under the Fan Content Policy. Not approved or endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
         </p>
       ) : null}
+
+      {visibleProviderAttributions.map((provider) => (
+        <p key={provider.name} className="mb-4 border-l-2 border-amber/70 pl-3 text-xs leading-5 text-paper/55">
+          Card imagery and metadata provided by <a href={provider.url} target="_blank" rel="noopener noreferrer" className="text-amber hover:text-paper">{provider.name}</a>. Card names and artwork belong to their respective rights holders. TCG EU Index is unofficial and is not endorsed by the game publisher.
+        </p>
+      ))}
 
       {affiliateCommerceConfigured() ? (
         <p className="mb-4 border-l-2 border-amber/70 pl-3 text-xs leading-5 text-paper/55">
