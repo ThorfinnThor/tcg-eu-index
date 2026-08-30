@@ -88,6 +88,59 @@ function validateCollectorMember(memberValue: unknown, label: string) {
   if (member.tcgplayer_product_url !== null && !String(member.tcgplayer_product_url).startsWith("https://www.tcgplayer.com/")) {
     throw new Error("collector constituent tcgplayer_product_url must use TCGplayer HTTPS");
   }
+  if (member.image !== undefined) validatePublicCardImage(member.image, `${label}.image`);
+}
+
+const imageStatuses = new Set([
+  "exact", "manual", "probable", "ambiguous", "missing_prerequisite",
+  "provider_missing", "provider_error", "blocked_legal", "blocked_credentials", "disabled"
+]);
+
+function validateImageVariant(value: unknown, label: string) {
+  if (value === null) return;
+  const variant = object(value, label);
+  const url = string(variant.url, `${label}.url`);
+  if (!url.startsWith("https://")) throw new Error(`${label}.url must use HTTPS`);
+  for (const field of ["width", "height"]) {
+    if (variant[field] !== undefined && variant[field] !== null) integer(variant[field], `${label}.${field}`);
+  }
+  if (variant.mime_type !== undefined && variant.mime_type !== null) string(variant.mime_type, `${label}.mime_type`);
+  if (variant.storage_mode !== "remote" && variant.storage_mode !== "r2") {
+    throw new Error(`${label}.storage_mode is invalid`);
+  }
+  for (const field of ["r2_key", "content_sha256"]) {
+    if (variant[field] !== undefined && variant[field] !== null) string(variant[field], `${label}.${field}`);
+  }
+}
+
+function validateImageFace(value: unknown, label: string) {
+  if (value === null) return;
+  const face = object(value, label);
+  if (face.face !== "front" && face.face !== "back" && face.face !== "other") {
+    throw new Error(`${label}.face is invalid`);
+  }
+  for (const field of ["thumb", "normal", "large"]) {
+    if (face[field] !== undefined) validateImageVariant(face[field], `${label}.${field}`);
+  }
+}
+
+function validatePublicCardImage(value: unknown, label: string) {
+  const image = object(value, label);
+  const status = string(image.status, `${label}.status`);
+  if (!imageStatuses.has(status)) throw new Error(`${label}.status is invalid`);
+  if (image.provider !== undefined && image.provider !== null) string(image.provider, `${label}.provider`);
+  if (image.front !== undefined) validateImageFace(image.front, `${label}.front`);
+  if (image.back !== undefined) validateImageFace(image.back, `${label}.back`);
+  const front = image.front && typeof image.front === "object" && !Array.isArray(image.front)
+    ? image.front as JsonObject
+    : null;
+  const hasPublishedUrl = front?.normal && typeof front.normal === "object";
+  if ((status === "exact" || status === "manual") && !hasPublishedUrl) {
+    throw new Error(`${label} publishable status requires a normal front image`);
+  }
+  if (status !== "exact" && status !== "manual" && hasPublishedUrl) {
+    throw new Error(`${label} unresolved status cannot publish an image URL`);
+  }
 }
 
 export function validateCollectorManifest(value: unknown): asserts value is CollectorOutputManifest {
@@ -137,6 +190,13 @@ export function validateCollectorSummary(value: unknown): asserts value is Colle
   const productMetadata = object(payload.product_metadata, "collector summary.product_metadata");
   for (const field of ["constituent_count", "named_count", "set_name_count", "collector_number_count", "image_count"]) {
     integer(productMetadata[field], `collector summary.product_metadata.${field}`);
+  }
+  if (productMetadata.image_status_counts !== undefined) {
+    const counts = object(productMetadata.image_status_counts, "collector summary.product_metadata.image_status_counts");
+    for (const [status, count] of Object.entries(counts)) {
+      if (!imageStatuses.has(status)) throw new Error("collector summary has an invalid image status");
+      integer(count, `collector summary.product_metadata.image_status_counts.${status}`);
+    }
   }
   isoDate(payload.generated_for, "collector summary.generated_for");
 }

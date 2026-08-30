@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tcg-eu-index.example/schemas/public-card-image.schema.json",
+  "title": "Public card image",
+  "type": "object",
+  "required": ["status"],
+  "properties": {
+    "status": {
+      "enum": ["exact", "manual", "probable", "ambiguous", "missing_prerequisite", "provider_missing", "provider_error", "blocked_legal", "blocked_credentials", "disabled"]
+    },
+    "provider": { "type": ["string", "null"] },
+    "match_method": { "type": "string" },
+    "language": { "type": ["string", "null"] },
+    "language_match": { "enum": ["exact", "fallback", "unknown", null] },
+    "artwork_variant": { "type": ["string", "null"] },
+    "front": { "$ref": "#/$defs/face" },
+    "back": { "anyOf": [{ "$ref": "#/$defs/face" }, { "type": "null" }] },
+    "verified_at": { "type": ["string", "null"] }
+  },
+  "$defs": {
+    "variant": {
+      "type": ["object", "null"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^https://" },
+        "width": { "type": ["integer", "null"], "minimum": 1 },
+        "height": { "type": ["integer", "null"], "minimum": 1 },
+        "mime_type": { "type": ["string", "null"] },
+        "storage_mode": { "enum": ["remote", "r2"] },
+        "r2_key": { "type": ["string", "null"] },
+        "content_sha256": { "type": ["string", "null"] }
+      }
+    },
+    "face": {
+      "type": ["object", "null"],
+      "properties": {
+        "face": { "enum": ["front", "back", "other"] },
+        "thumb": { "$ref": "#/$defs/variant" },
+        "normal": { "$ref": "#/$defs/variant" },
+        "large": { "$ref": "#/$defs/variant" }
+      }
+    }
+  }
+}

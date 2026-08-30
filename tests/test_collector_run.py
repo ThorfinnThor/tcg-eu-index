@@ -113,4 +113,5 @@ def test_runs_enabled_single_family_and_enriches_private_output(tmp_path: Path) 
     assert member["set_name"] == "Romance Dawn"
     assert member["collector_number"] == "OP01-001"
     assert member["image_url"] == "https://images.example.test/zoro.jpg"
+    assert member["image"] == {"status": "disabled"}
     assert member["tcgplayer_product_url"] == "https://www.tcgplayer.com/product/123/zoro"

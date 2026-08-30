@@ -1,0 +1,107 @@
+version: 1
+
+providers:
+  scryfall:
+    games: [magic]
+    metadata_access: approved
+    artwork_publication: pending
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: null
+    evidence:
+      - "https://scryfall.com/docs/api/images"
+      - "Commercial publication review is still required before CARD_IMAGES_MAGIC is enabled."
+
+  tcgdex:
+    games: [pokemon]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  ygoprodeck:
+    games: [yugioh]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: false
+    may_mirror: true
+    attribution_required: null
+    reviewed_at: null
+    evidence:
+      - "https://ygoprodeck.com/api-guide/"
+
+  optcg:
+    games: [onepiece]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  digimon:
+    games: [digimon]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  lorcast:
+    games: [lorcana]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  swudb:
+    games: [starwarsunlimited]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  fab_dataset:
+    games: [fleshandblood]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  dragonball:
+    games: [dragonballsuper]
+    metadata_access: pending
+    artwork_publication: pending
+    may_hotlink: null
+    may_mirror: null
+    attribution_required: null
+    reviewed_at: null
+    evidence: []
+
+  riot_riftbound:
+    games: [riftbound]
+    metadata_access: blocked_credentials
+    artwork_publication: blocked_credentials
+    may_hotlink: false
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://developer.riotgames.com/docs/riftbound"
+      - "An approved app-specific API key or written license is required."

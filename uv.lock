@@ -1471,14 +1471,18 @@ name = "tcg-eu-index-engine"
 version = "0.1.0"
 source = { editable = "packages/indexengine" }
 dependencies = [
+    { name = "click" },
     { name = "polars" },
     { name = "pyyaml" },
+    { name = "requests" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "click", specifier = ">=8.1" },
     { name = "polars", specifier = ">=1.9" },
     { name = "pyyaml", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.32" },
 ]
 
 [[package]]

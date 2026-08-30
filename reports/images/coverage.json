@@ -1,0 +1,18 @@
+{
+  "changed_keys": [
+    "image-matches/2026-08-29/magic/manifest.json",
+    "public-image-manifests/2026-08-29-magic.json",
+    "derived/card-images/magic/public-manifest.json"
+  ],
+  "dataset_version": "2026-08-29",
+  "exact_coverage_ratio": 0.939553669222344,
+  "exact_matches": 13725,
+  "published_images": 0,
+  "rows": 14608,
+  "snapshot_id": "scryfall-20260830090538",
+  "statuses": {
+    "ambiguous": 65,
+    "blocked_legal": 13725,
+    "provider_missing": 818
+  }
+}

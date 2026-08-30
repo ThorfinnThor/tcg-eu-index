@@ -1,0 +1,48 @@
+name: card-image-pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      dataset_version:
+        description: Collector dataset version (normally YYYY-MM-DD)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  magic_snapshot_and_match:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET: ${{ vars.R2_BUCKET }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --all-packages
+      - name: Audit image prerequisites
+        run: >-
+          uv run python -m indexengine.card_images.cli audit
+          --collector-root apps/web/source-data/collector
+          --output-root reports/images
+      - name: Sync immutable Scryfall bulk snapshot
+        run: uv run python -m indexengine.card_images.cli sync-scryfall
+      - name: Match Magic offline against active snapshot
+        run: >-
+          uv run python -m indexengine.card_images.cli match-magic
+          --dataset-version "${{ inputs.dataset_version }}"
+          --collector-root apps/web/source-data/collector
+          --report-root reports/images
+      - name: Retain image quality reports
+        uses: actions/upload-artifact@v7
+        with:
+          name: card-image-reports-${{ inputs.dataset_version }}-${{ github.run_id }}
+          path: reports/images
+          retention-days: 90

@@ -8,6 +8,7 @@ from typing import Any, cast
 from core.r2 import sha256_hex
 from core.store import ObjectStore
 
+from indexengine.card_images.contracts import PublicCardImage
 from indexengine.collector_calc import (
     CollectorContribution,
     CollectorDailyValue,
@@ -37,6 +38,7 @@ def build_collector_output_bundle(
     diagnostics: list[CollectorVariantDiagnostic],
     *,
     product_metadata: dict[int, CollectorProductMetadata] | None = None,
+    card_images: dict[tuple[int, str], PublicCardImage] | None = None,
     source_hashes: dict[str, str] | None = None,
     engine_revision: str = "local-working-tree",
 ) -> CollectorOutputBundle:
@@ -50,6 +52,7 @@ def build_collector_output_bundle(
         raise ValueError("collector daily value methodology version mismatch")
 
     metadata_by_product = product_metadata or {}
+    images_by_variant = card_images or {}
     history = [_json_record(item) for item in daily_values]
     rebalances_payload = [
         {
@@ -60,7 +63,7 @@ def build_collector_output_bundle(
             "eligible_count": item.eligible_count,
             "active_count": len(item.constituents),
             "constituents": [
-                _constituent_record(member, metadata_by_product)
+                _constituent_record(member, metadata_by_product, images_by_variant)
                 for member in item.constituents
             ],
         }
@@ -79,7 +82,11 @@ def build_collector_output_bundle(
     )
     latest = daily_values[-1] if daily_values else None
     latest_members = list(rebalances[-1].constituents) if rebalances else []
-    metadata_coverage = _metadata_coverage(latest_members, metadata_by_product)
+    metadata_coverage = _metadata_coverage(
+        latest_members,
+        metadata_by_product,
+        images_by_variant,
+    )
     summary = {
         "schema_version": 2,
         "series_id": series_id,
@@ -289,8 +296,10 @@ def _json_record(value: Any) -> dict[str, Any]:
 def _constituent_record(
     member: Any,
     product_metadata: dict[int, CollectorProductMetadata],
+    card_images: dict[tuple[int, str], PublicCardImage],
 ) -> dict[str, Any]:
     record = _json_record(member)
+    image = card_images.get((int(record["cm_product_id"]), str(record["variant_key"])))
     metadata = product_metadata.get(int(record["cm_product_id"]))
     if metadata is None:
         record.update(
@@ -301,20 +310,35 @@ def _constituent_record(
                 "cm_expansion_id": None,
                 "image_url": None,
                 "image_source": None,
+                "image": (image or PublicCardImage(status="disabled")).to_dict(),
                 "tcgplayer_product_url": None,
                 "metadata_status": "missing_catalogue_metadata",
             }
         )
-        return record
-    record.update(_json_record(metadata))
+    else:
+        record.update(_json_record(metadata))
+    public_image = image or PublicCardImage(status="disabled")
+    record["image"] = public_image.to_dict()
+    if public_image.normal_url:
+        record["image_url"] = public_image.normal_url
+        record["image_source"] = public_image.provider
     return record
 
 
 def _metadata_coverage(
     members: list[Any],
     product_metadata: dict[int, CollectorProductMetadata],
-) -> dict[str, int]:
+    card_images: dict[tuple[int, str], PublicCardImage],
+) -> dict[str, Any]:
     records = [product_metadata.get(int(item.cm_product_id)) for item in members]
+    images = [
+        card_images.get((int(item.cm_product_id), str(item.variant_key)))
+        for item in members
+    ]
+    status_counts: dict[str, int] = {}
+    for image in images:
+        status = image.status if image else "disabled"
+        status_counts[status] = status_counts.get(status, 0) + 1
     return {
         "constituent_count": len(members),
         "named_count": sum(item is not None and bool(item.name) for item in records),
@@ -322,7 +346,12 @@ def _metadata_coverage(
         "collector_number_count": sum(
             item is not None and item.collector_number is not None for item in records
         ),
-        "image_count": sum(item is not None and item.image_url is not None for item in records),
+        "image_count": sum(
+            (image is not None and image.normal_url is not None)
+            or (image is None and item is not None and item.image_url is not None)
+            for item, image in zip(records, images, strict=True)
+        ),
+        "image_status_counts": dict(sorted(status_counts.items())),
     }
 
 

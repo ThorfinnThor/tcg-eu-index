@@ -119,4 +119,48 @@ describe("v1.5 collector contracts", () => {
       indexes: [{ ...payload.indexes[0], code: "OPEUSCOL" }]
     })).toThrow(/sealed/);
   });
+
+  it("publishes image URLs only for exact or manual matches", () => {
+    const member = collectorFixtureRebalances.rebalances[0].constituents[0];
+    const image = {
+      status: "exact",
+      provider: "scryfall",
+      match_method: "direct_marketplace_id",
+      language: "en",
+      language_match: "unknown",
+      artwork_variant: "base",
+      front: {
+        face: "front",
+        thumb: null,
+        normal: {
+          url: "https://cards.scryfall.io/normal/front.jpg",
+          width: 488,
+          height: 680,
+          mime_type: "image/jpeg",
+          storage_mode: "remote",
+          r2_key: null,
+          content_sha256: null
+        },
+        large: null
+      },
+      back: null,
+      verified_at: "2026-08-30T00:00:00Z"
+    };
+    const payload = {
+      ...collectorFixtureRebalances,
+      rebalances: [{
+        ...collectorFixtureRebalances.rebalances[0],
+        constituents: [{ ...member, image }]
+      }]
+    };
+
+    expect(() => validateCollectorRebalances(payload)).not.toThrow();
+    expect(() => validateCollectorRebalances({
+      ...payload,
+      rebalances: [{
+        ...payload.rebalances[0],
+        constituents: [{ ...member, image: { ...image, status: "ambiguous" } }]
+      }]
+    })).toThrow(/unresolved status/);
+  });
 });

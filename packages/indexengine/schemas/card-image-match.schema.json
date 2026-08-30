@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tcg-eu-index.example/schemas/card-image-match.schema.json",
+  "title": "Card image match",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "source_row_key", "asset_id", "provider", "provider_card_id",
+    "provider_art_id", "status", "match_method", "score", "candidate_count",
+    "evidence", "reason_code", "matched_at", "matcher_version", "provider_snapshot_id"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "source_row_key": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "asset_id": { "type": ["string", "null"] },
+    "provider": { "type": ["string", "null"] },
+    "provider_card_id": { "type": ["string", "null"] },
+    "provider_art_id": { "type": ["string", "null"] },
+    "status": {
+      "enum": ["exact", "manual", "probable", "ambiguous", "missing_prerequisite", "provider_missing", "provider_error", "blocked_legal", "blocked_credentials", "disabled"]
+    },
+    "match_method": {
+      "enum": ["manual_override", "direct_marketplace_id", "exact_provider_id", "set_number_name_variant", "set_number_name_unique", "parsed_identifier_verified", "name_candidate_only", "none"]
+    },
+    "score": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
+    "candidate_count": { "type": "integer", "minimum": 0 },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "reason_code": { "type": ["string", "null"] },
+    "matched_at": { "type": "string" },
+    "matcher_version": { "type": "string" },
+    "provider_snapshot_id": { "type": ["string", "null"] }
+  }
+}

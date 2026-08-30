@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 from core.r2 import LocalObjectStore
+from indexengine.card_images.contracts import CardImageFace, ImageVariant, PublicCardImage
 from indexengine.collector_calc import CollectorDailyValue, CollectorMember, CollectorRebalance
 from indexengine.methodology import Methodology
 from indexengine.versioned_outputs import (
@@ -62,6 +63,28 @@ def test_collector_bundle_is_versioned_private_and_idempotent(tmp_path: Path) ->
         [daily],
         [],
         [],
+        card_images={
+            (1, "nonfoil"): PublicCardImage(
+                status="exact",
+                provider="scryfall",
+                match_method="direct_marketplace_id",
+                language="en",
+                language_match="unknown",
+                artwork_variant="base",
+                front=CardImageFace(
+                    face="front",
+                    thumb=None,
+                    normal=ImageVariant(
+                        "https://cards.scryfall.io/normal/test.jpg",
+                        488,
+                        680,
+                        "image/jpeg",
+                    ),
+                    large=None,
+                ),
+                verified_at="2026-08-30T00:00:00Z",
+            )
+        },
         source_hashes={"price_history": "b" * 64},
         engine_revision="test",
     )
@@ -77,6 +100,10 @@ def test_collector_bundle_is_versioned_private_and_idempotent(tmp_path: Path) ->
     assert manifest["schema_version"] == 2
     assert manifest["public_alias_enabled"] is False
     assert manifest["outputs"]
+    rebalances_payload = json.loads(bundle.objects[f"{expected_prefix}rebalances.json"])
+    public_member = rebalances_payload["rebalances"][0]["constituents"][0]
+    assert public_member["image"]["status"] == "exact"
+    assert public_member["image_url"] == "https://cards.scryfall.io/normal/test.jpg"
 
     validate_collector_output_bundle(bundle)
     store = LocalObjectStore(tmp_path / "r2")
