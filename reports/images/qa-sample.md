@@ -2,7 +2,7 @@
 
 Dataset `2026-08-29`, snapshot `scryfall-20260830090538`.
 
-This deterministic sample contains no direct artwork URLs. Reviewers compare the linked Cardmarket product with the linked Scryfall card and record decisions in the versioned manual-review YAML.
+This deterministic human-review sample contains no direct artwork URLs. It does not limit publication: the full match report covers every Magic row. Reviewers compare the linked Cardmarket product with the linked Scryfall card and record decisions in the versioned manual-review YAML.
 
 | Sample reason | Rows |
 |---|---:|

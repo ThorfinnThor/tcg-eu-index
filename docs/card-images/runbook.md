@@ -8,7 +8,7 @@ UV_CACHE_DIR=/private/tmp/tcg-uv-cache uv run python -m indexengine.card_images.
   --output-root reports/images
 ```
 
-The command is deterministic for the same collector projection. Review `missing-prerequisites.csv` before implementing another provider.
+The command is deterministic for the same collector projection. Review `missing-prerequisites.csv` before implementing another provider. The audit also writes `all-rows.csv`: one row for every current non-sealed variant across every game, including its image status and whether a public image URL is present. This is the complete inventory, not a sample.
 
 ## Scryfall snapshot
 
@@ -39,7 +39,7 @@ This step reads only the pinned local snapshot. It performs no provider request 
 1. Review current Scryfall and underlying artwork terms for this commercial/affiliate-funded use.
 2. Record reviewer, review date, evidence URLs, attribution, retention, and takedown process in `publication-policy.yaml`.
 3. Change `artwork_publication` to `approved` only after that review.
-4. Run at least 100 manually verified Magic samples, including two-faced cards, tokens, promos, and unusual layouts.
+4. Run the automated match and safety checks over every Magic row. Separately, manually verify at least 100 unique products, including two-faced cards, tokens, promos, and unusual layouts. The manual sample is a visual QA control; it is not a cap on the number of cards that may be published.
 5. Upload the validated snapshot and match bundle to R2.
 6. Enable `CARD_IMAGES_ENABLED=true` and `CARD_IMAGES_MAGIC=true` for the calculation job.
 7. Recalculate and export the collector preview.
@@ -59,7 +59,7 @@ UV_CACHE_DIR=/private/tmp/tcg-uv-cache uv run python -m indexengine.card_images.
   --report-root reports/images
 ```
 
-`qa-sample.csv` contains 100 unique Cardmarket products selected across multi-face cards, unusual layouts, foil variants, languages, and a deterministic coverage fill. It contains links to the external Cardmarket and Scryfall product pages, but no direct artwork URL.
+`all-matches.csv` contains the match outcome for every Magic row, including exact, ambiguous, and provider-missing results. It contains Cardmarket product links, but no direct artwork URL. `qa-sample.csv` contains 100 unique Cardmarket products selected across multi-face cards, unusual layouts, foil variants, languages, and a deterministic coverage fill. It is only the human-review subset and does not limit publication of rows that pass the full automated gates. It contains links to the external Cardmarket and Scryfall product pages, but no direct artwork URL.
 
 Manual decisions belong in a separate versioned YAML file with `version`, `dataset_version`, and a `reviews` list containing `source_row_key` and `status: approved|rejected`. Pass it with `--reviews`. Use `--require-ready` only for an activation run; it fails until every gate, including legal policy and all sample reviews, passes.
 

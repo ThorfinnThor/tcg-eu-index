@@ -217,6 +217,9 @@ def test_readiness_audit_uses_latest_pages_and_marks_synthetic_sets_missing(
     assert result.games[0].missing_prerequisite == 1
     missing = (tmp_path / "reports/missing-prerequisites.csv").read_text()
     assert "set_code,collector_number" in missing
+    all_rows = (tmp_path / "reports/all-rows.csv").read_text()
+    assert "image_status,has_public_image_url" in all_rows
+    assert "not_materialized,false" in all_rows
 
 
 def test_public_card_image_defaults_to_machine_readable_disabled_status() -> None:

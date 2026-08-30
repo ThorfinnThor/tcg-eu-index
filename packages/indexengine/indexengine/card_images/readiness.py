@@ -50,6 +50,7 @@ def audit_public_collector(
     game_results: list[ImageReadinessRow] = []
     missing_rows: list[dict[str, str]] = []
     parsed_rows: list[dict[str, str]] = []
+    all_rows: list[dict[str, str]] = []
     for index in sorted(index_payload["indexes"], key=lambda item: str(item["game_key"])):
         code = str(index["code"])
         if code.endswith("SCOL"):
@@ -89,6 +90,23 @@ def audit_public_collector(
                 game,
                 product_id,
                 str(member.get("variant_key", "unknown")),
+            )
+            image = member.get("image")
+            image_status = (
+                str(image.get("status", "invalid"))
+                if isinstance(image, dict)
+                else "not_materialized"
+            )
+            all_rows.append(
+                {
+                    "game": game,
+                    "source_row_key": row_key,
+                    "cardmarket_product_id": str(product_id),
+                    "cardmarket_name_raw": str(member.get("name", "")),
+                    "variant_key": str(member.get("variant_key", "unknown")),
+                    "image_status": image_status,
+                    "has_public_image_url": str(bool(member.get("image_url"))).lower(),
+                }
             )
             if missing:
                 missing_rows.append(
@@ -157,6 +175,19 @@ def audit_public_collector(
             "parser",
             "parser_version",
             "confidence",
+        ),
+    )
+    _write_csv(
+        output_root / "all-rows.csv",
+        all_rows,
+        (
+            "game",
+            "source_row_key",
+            "cardmarket_product_id",
+            "cardmarket_name_raw",
+            "variant_key",
+            "image_status",
+            "has_public_image_url",
         ),
     )
     return result

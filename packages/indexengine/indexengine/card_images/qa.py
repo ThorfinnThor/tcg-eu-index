@@ -157,6 +157,7 @@ def build_magic_activation_qa(
         publication_ready=all(gates.values()),
     )
     output_root.mkdir(parents=True, exist_ok=True)
+    _write_all_matches_csv(output_root / "all-matches.csv", matches, identity_by_key)
     _write_sample_csv(output_root / "qa-sample.csv", sample, reviews)
     (output_root / "qa-sample.md").write_text(_sample_markdown(result, sample))
     (output_root / "activation.json").write_text(
@@ -351,6 +352,60 @@ def _write_sample_csv(
             )
 
 
+def _write_all_matches_csv(
+    path: Path,
+    matches: list[CardImageMatch],
+    identities: dict[str, CanonicalCardIdentity],
+) -> None:
+    fields = (
+        "source_row_key",
+        "status",
+        "match_method",
+        "cardmarket_product_id",
+        "cardmarket_name",
+        "finish",
+        "provider_card_id",
+        "candidate_count",
+        "reason_code",
+        "evidence",
+        "cardmarket_url",
+    )
+    with path.open("w", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer.writeheader()
+        for match in matches:
+            identity = identities[match.source_row_key]
+            writer.writerow(
+                {
+                    "source_row_key": identity.source_row_key,
+                    "status": match.status,
+                    "match_method": match.match_method,
+                    "cardmarket_product_id": identity.cardmarket_product_id,
+                    "cardmarket_name": _csv_safe(identity.cardmarket_name_raw),
+                    "finish": identity.finish,
+                    "provider_card_id": match.provider_card_id or "",
+                    "candidate_count": match.candidate_count,
+                    "reason_code": match.reason_code or "",
+                    "evidence": ";".join(match.evidence),
+                    "cardmarket_url": _cardmarket_url(
+                        MagicQaCandidate(
+                            source_row_key=identity.source_row_key,
+                            cardmarket_product_id=identity.cardmarket_product_id,
+                            cardmarket_name=identity.cardmarket_name_raw,
+                            finish=identity.finish,
+                            provider_card_id=match.provider_card_id or "",
+                            provider_name="",
+                            set_code=None,
+                            collector_number=None,
+                            language=None,
+                            layout=None,
+                            face_count=1,
+                        )
+                    ),
+                }
+            )
+
+
 def _csv_safe(value: object) -> object:
     if isinstance(value, str) and value.startswith(("=", "+", "-", "@")):
         return f"'{value}"
@@ -369,7 +424,9 @@ def _sample_markdown(
         "",
         f"Dataset `{result.dataset_version}`, snapshot `{result.provider_snapshot_id}`.",
         "",
-        "This deterministic sample contains no direct artwork URLs. Reviewers compare "
+        "This deterministic human-review sample contains no direct artwork URLs. It "
+        "does not limit publication: the full match report covers every Magic row. "
+        "Reviewers compare "
         "the linked Cardmarket product with the linked Scryfall card and record "
         "decisions in the versioned manual-review YAML.",
         "",
