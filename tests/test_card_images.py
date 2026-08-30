@@ -630,6 +630,69 @@ def test_catalog_matcher_uses_full_marketplace_set_basket_for_sparse_index() -> 
     assert matches[0].provider_card_id == "a-hero"
 
 
+def test_catalog_matcher_reuses_unanimous_direct_product_set_mapping() -> None:
+    cards = {
+        "cards": [
+            {
+                "id": card_id,
+                "name": name,
+                "collector_number": number,
+                "lang": "en",
+                "set": {"code": set_code, "name": set_name},
+                "image_uris": {
+                    "digital": {"normal": f"https://cards.lorcast.io/card/{card_id}.avif"}
+                },
+            }
+            for card_id, name, number, set_code, set_name in (
+                ("a-hero", "Hero", "1", "A", "Alpha"),
+                ("a-ally", "Ally", "2", "A", "Alpha"),
+                ("b-ally", "Ally", "2", "B", "Beta"),
+            )
+        ]
+    }
+    parsed = parse_lorcast_payload(json.dumps(cards).encode())
+    records = tuple(
+        replace(record, cardmarket_id=101 if record.provider_card_id == "a-hero" else None)
+        for record in parsed
+    )
+    snapshot = CatalogSnapshot(
+        provider="lorcast",
+        game="lorcana",
+        snapshot_id="lorcast-direct-set-test",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://api.lorcast.com/v0/cards",
+        source_version="test",
+        raw_sha256="d" * 64,
+        records=records,
+    )
+    identities = [
+        replace(
+            _identity(),
+            game="lorcana",
+            source_row_key=source_row_key("lorcana", product_id, "nonfoil"),
+            cardmarket_product_id=product_id,
+            cardmarket_name_raw=name,
+            name_normalized=normalize_card_name(name),
+            set_provider_id="9001",
+            collector_number_raw=None,
+            collector_number_canonical=None,
+        )
+        for product_id, name in ((101, "Hero"), (102, "Ally"))
+    ]
+    policy = replace(_policy(), provider="lorcast", games=("lorcana",))
+
+    matches, _ = match_catalog_identities(identities, snapshot, policy)
+
+    assert {match.status for match in matches} == {"exact"}
+    by_product = {
+        identity.cardmarket_product_id: match
+        for identity, match in zip(identities, matches, strict=True)
+    }
+    assert by_product[101].match_method == "direct_marketplace_id"
+    assert by_product[102].match_method == "inferred_set_name_unique"
+    assert by_product[102].provider_card_id == "a-ally"
+
+
 def test_credentialed_provider_parsers_preserve_printing_numbers_and_images() -> None:
     one_piece = parse_optcg_payload(
         json.dumps(

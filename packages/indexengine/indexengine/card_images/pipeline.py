@@ -138,7 +138,7 @@ def run_catalog_image_matching(
         "dataset_version": dataset_version,
         "provider": provider,
         "provider_snapshot_id": snapshot.snapshot_id,
-        "matcher_version": "1.0.0",
+        "matcher_version": "1.1.0",
         "publication_policy": policy.artwork_publication,
         "rows": rows,
     }

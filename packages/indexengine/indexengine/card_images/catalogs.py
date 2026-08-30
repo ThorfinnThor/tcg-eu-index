@@ -30,7 +30,7 @@ from indexengine.card_images.contracts import (
 from indexengine.card_images.policy import ProviderPolicy
 
 ADAPTER_VERSION = "1.2.0"
-MATCHER_VERSION = "1.0.0"
+MATCHER_VERSION = "1.1.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
 PROVIDER_GAMES = {
@@ -426,15 +426,39 @@ def _infer_marketplace_sets(
     *,
     marketplace_set_names: Mapping[int, Iterable[str]] | None = None,
 ) -> dict[int, tuple[tuple[str, str], int, int]]:
-    """Infer a provider set only from a strongly corroborated expansion signature.
+    """Infer a provider set from direct product links or a corroborated signature.
 
     Cardmarket's public product catalogue supplies expansion IDs but no expansion
-    names. A single card name is never enough because reprints are common. This
-    resolver requires at least three shared names, a two-name lead over the next
-    provider set, and 60% coverage of the observable expansion basket. The full
-    Cardmarket singles catalogue should be supplied when available; collector-only
-    baskets are retained as a safe fallback for local and historical runs.
+    names. A direct Cardmarket product ID establishes the provider set for that
+    expansion when every direct record agrees. Otherwise, a single card name is
+    never enough because reprints are common: signature inference requires at
+    least three shared names, a two-name lead over the next provider set, and 60%
+    coverage of the observable expansion basket. The full Cardmarket singles
+    catalogue should be supplied when available; collector-only baskets are
+    retained as a safe fallback for local and historical runs.
     """
+    expansion_by_product = {
+        identity.cardmarket_product_id: int(identity.set_provider_id)
+        for identity in identities
+        if identity.set_provider_id and identity.set_provider_id.isdigit()
+    }
+    direct_set_products: dict[int, dict[tuple[str, str], set[int]]] = defaultdict(
+        lambda: defaultdict(set)
+    )
+    for record in records:
+        if record.cardmarket_id is None or record.cardmarket_id not in expansion_by_product:
+            continue
+        provider_set = _provider_set_key(record)
+        if any(provider_set):
+            direct_set_products[expansion_by_product[record.cardmarket_id]][provider_set].add(
+                record.cardmarket_id
+            )
+    inferred: dict[int, tuple[tuple[str, str], int, int]] = {}
+    for expansion_id, provider_sets in direct_set_products.items():
+        if len(provider_sets) == 1:
+            provider_set, product_ids = next(iter(provider_sets.items()))
+            inferred[expansion_id] = (provider_set, len(product_ids), 0)
+
     marketplace_names: dict[int, set[str]] = defaultdict(set)
     for expansion_id, names in (marketplace_set_names or {}).items():
         marketplace_names[int(expansion_id)].update(
@@ -450,8 +474,9 @@ def _infer_marketplace_sets(
         provider_set = _provider_set_key(record)
         if any(provider_set):
             provider_names[provider_set].add(_loose_name(record.name_raw))
-    inferred: dict[int, tuple[tuple[str, str], int, int]] = {}
     for expansion_id, names in marketplace_names.items():
+        if expansion_id in inferred:
+            continue
         scored = sorted(
             (
                 (len(names & candidate_names), provider_set)
