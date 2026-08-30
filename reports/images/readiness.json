@@ -33,15 +33,15 @@
       "total_rows": 1582,
       "unique_cardmarket_products": 1582,
       "with_artwork_variant": 0,
-      "with_collector_number": 287,
+      "with_collector_number": 300,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 287,
-      "with_set_name": 287
+      "with_set_code": 300,
+      "with_set_name": 300
     },
     {
       "game": "lorcana",
-      "missing_prerequisite": 390,
+      "missing_prerequisite": 387,
       "parsed_identifier_candidates": 0,
       "total_rows": 506,
       "unique_cardmarket_products": 365,
@@ -49,7 +49,7 @@
       "with_collector_number": 119,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 116,
+      "with_set_code": 119,
       "with_set_name": 119
     },
     {
@@ -75,21 +75,21 @@
       "with_collector_number": 1971,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_code": 248,
+      "with_set_name": 573
     },
     {
       "game": "pokemon",
-      "missing_prerequisite": 5472,
+      "missing_prerequisite": 5370,
       "parsed_identifier_candidates": 2,
       "total_rows": 8695,
       "unique_cardmarket_products": 8547,
       "with_artwork_variant": 0,
-      "with_collector_number": 3369,
+      "with_collector_number": 3420,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 3223,
-      "with_set_name": 3367
+      "with_set_code": 3325,
+      "with_set_name": 3418
     },
     {
       "game": "riftbound",
@@ -98,11 +98,11 @@
       "total_rows": 302,
       "unique_cardmarket_products": 196,
       "with_artwork_variant": 0,
-      "with_collector_number": 0,
+      "with_collector_number": 73,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_code": 73,
+      "with_set_name": 73
     },
     {
       "game": "starwarsunlimited",
@@ -124,11 +124,11 @@
       "total_rows": 5377,
       "unique_cardmarket_products": 5377,
       "with_artwork_variant": 0,
-      "with_collector_number": 1686,
+      "with_collector_number": 1729,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 1345,
-      "with_set_name": 1686
+      "with_set_code": 1388,
+      "with_set_name": 1729
     }
   ],
   "generated_for": "2026-08-30",

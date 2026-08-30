@@ -132,3 +132,16 @@ providers:
       - "https://playriftbound.com/en-us/card-gallery/"
       - "The official public card gallery embeds card metadata and Riot-hosted image URLs."
       - "Operator confirmed publication clearance on 2026-08-30."
+
+  bandai_onepiece:
+    games: [onepiece]
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: false
+    may_mirror: true
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://en.onepiece-cardgame.com/cardlist/"
+      - "The official public Bandai card list publishes card numbers, product series, variants, and Bandai-hosted artwork. Images are mirrored to R2 because the origin returns Cross-Origin-Resource-Policy: same-site."
+      - "Operator confirmed publication clearance on 2026-08-30."

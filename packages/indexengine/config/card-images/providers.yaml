@@ -35,3 +35,6 @@ providers:
   riot_riftbound:
     enabled: true
     games: [riftbound]
+  bandai_onepiece:
+    enabled: true
+    games: [onepiece]

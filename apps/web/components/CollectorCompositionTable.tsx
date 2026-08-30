@@ -41,6 +41,7 @@ const supportedImageHosts = new Set([
   "legendstory-production-s3-public.s3.amazonaws.com",
   "d2wlb52bya4y8z.cloudfront.net",
   "cmsassets.rgpub.io",
+  "en.onepiece-cardgame.com",
   "tcg-eu-index-web.shuu9599.workers.dev",
 ]);
 const providerAttributions: Record<string, { name: string; url: string }> = {
@@ -56,6 +57,10 @@ const providerAttributions: Record<string, { name: string; url: string }> = {
   riot_riftbound: {
     name: "Riot Games Riftbound Card Gallery",
     url: "https://playriftbound.com/en-us/card-gallery/"
+  },
+  bandai_onepiece: {
+    name: "ONE PIECE CARD GAME Official Card List",
+    url: "https://en.onepiece-cardgame.com/cardlist/"
   },
 };
 

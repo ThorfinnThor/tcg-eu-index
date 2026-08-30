@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import gzip
 import hashlib
+import html as html_lib
 import io
 import json
 import os
@@ -14,6 +15,7 @@ from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import PurePosixPath
 from typing import Any, Protocol, cast
+from urllib.parse import urljoin
 
 import requests
 from core.r2 import gzip_body, sha256_hex
@@ -29,7 +31,7 @@ from indexengine.card_images.contracts import (
 )
 from indexengine.card_images.policy import ProviderPolicy
 
-ADAPTER_VERSION = "1.4.0"
+ADAPTER_VERSION = "1.5.0"
 MATCHER_VERSION = "1.2.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
@@ -41,6 +43,7 @@ PROVIDER_GAMES = {
     "swudb": "starwarsunlimited",
     "fab_dataset": "fleshandblood",
     "riot_riftbound": "riftbound",
+    "bandai_onepiece": "onepiece",
     "optcg": "onepiece",
     "dragonball": "dragonballsuper",
 }
@@ -53,6 +56,7 @@ PUBLIC_PROVIDERS = (
     "swudb",
     "fab_dataset",
     "riot_riftbound",
+    "bandai_onepiece",
 )
 
 SWU_SET_CODES = (
@@ -563,6 +567,21 @@ def _fetch_provider(
         url = "https://playriftbound.com/en-us/card-gallery/"
         raw = _get(session, url, timeout=180)
         return url, _today_version(), raw, parse_riot_riftbound_page(raw)
+    if provider == "bandai_onepiece":
+        url = "https://en.onepiece-cardgame.com/cardlist/"
+        listing = _get(session, url, timeout=120).decode("utf-8", errors="replace")
+        packs = _bandai_onepiece_packs(listing)
+        bandai_cards: list[dict[str, str]] = []
+        for pack_id, pack_name in packs:
+            time.sleep(0.05)
+            pack_page = _get(session, f"{url}?series={pack_id}", timeout=120).decode(
+                "utf-8", errors="replace"
+            )
+            bandai_cards.extend(
+                _bandai_onepiece_page_cards(pack_page, pack_id, pack_name)
+            )
+        raw = _json_bytes({"packs": packs, "cards": bandai_cards})
+        return url, _today_version(), raw, parse_bandai_onepiece_payload(raw)
     if provider == "ygoprodeck":
         url = "https://db.ygoprodeck.com/api/v7/cardinfo.php"
         raw = _get(session, url, timeout=240)
@@ -975,6 +994,98 @@ def parse_riot_riftbound_page(raw: bytes) -> list[CatalogCardRecord]:
             )
         )
     return result
+
+
+def parse_bandai_onepiece_payload(raw: bytes) -> list[CatalogCardRecord]:
+    """Parse the normalized official Bandai ONE PIECE card-list payload."""
+    payload = _json_object(raw)
+    result: list[CatalogCardRecord] = []
+    for card in cast(list[dict[str, Any]], payload.get("cards", [])):
+        provider_id = _text(card.get("id"))
+        name = _text(card.get("name"))
+        image_url = _text(card.get("image_url"))
+        if not provider_id or not name or not image_url:
+            continue
+        result.append(
+            _record(
+                provider="bandai_onepiece",
+                game="onepiece",
+                provider_card_id=provider_id,
+                provider_art_id=provider_id,
+                cardmarket_id=None,
+                name=name,
+                set_code=_text(card.get("set_code")),
+                set_name=_text(card.get("set_name")),
+                number=_base_onepiece_number(provider_id),
+                language="en",
+                variant=_text(card.get("variant")),
+                image_url=image_url,
+                raw=card,
+                mime_type="image/png",
+            )
+        )
+    return result
+
+
+def _bandai_onepiece_packs(page: str) -> list[tuple[str, str]]:
+    packs = {
+        pack_id: _html_text(label)
+        for pack_id, label in re.findall(
+            r'<option[^>]+value=["\'](569\d+)["\'][^>]*>(.*?)</option>',
+            page,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+    }
+    if not packs:
+        raise ValueError("Bandai ONE PIECE card list contains no product series")
+    return sorted(packs.items())
+
+
+def _bandai_onepiece_page_cards(
+    page: str, pack_id: str, pack_name: str
+) -> list[dict[str, str]]:
+    set_match = re.search(r"\[([A-Z]+-?\d+)\]", pack_name)
+    set_code = set_match.group(1) if set_match else ""
+    cards: list[dict[str, str]] = []
+    for provider_id, body in re.findall(
+        r'<dl[^>]+class=["\'][^"\']*modalCol[^"\']*["\'][^>]+id=["\']([^"\']+)["\'][^>]*>(.*?)</dl>',
+        page,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        name_match = re.search(
+            r'<div[^>]+class=["\'][^"\']*cardName[^"\']*["\'][^>]*>(.*?)</div>',
+            body,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        image_match = re.search(
+            r'<img[^>]+(?:data-src|src)=["\']([^"\']+)["\']',
+            body,
+            flags=re.IGNORECASE,
+        )
+        name = _html_text(name_match.group(1)) if name_match else ""
+        if not name or image_match is None:
+            continue
+        base_number = _base_onepiece_number(provider_id)
+        variant = provider_id[len(base_number) :].lstrip("_")
+        cards.append(
+            {
+                "id": provider_id,
+                "name": name,
+                "set_code": set_code,
+                "set_name": pack_name,
+                "variant": variant,
+                "image_url": urljoin(
+                    "https://en.onepiece-cardgame.com/cardlist/", image_match.group(1)
+                ),
+                "pack_id": pack_id,
+            }
+        )
+    return cards
+
+
+def _html_text(value: str) -> str:
+    decoded = html_lib.unescape(value)
+    return " ".join(re.sub(r"<[^>]+>", " ", decoded).split())
 
 
 def parse_optcg_payload(raw: bytes) -> list[CatalogCardRecord]:

@@ -136,6 +136,7 @@ def match_catalogs_command(
         "fleshandblood": "FABEUCOL",
         "onepiece": "OPEUCOL",
         "dragonballsuper": "DBSEUCOL",
+        "riftbound": "RBEUCOL",
     }
     results = []
     selected = list(PUBLIC_PROVIDERS)

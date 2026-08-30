@@ -14,6 +14,7 @@ from indexengine.card_images.catalogs import (
     CatalogSnapshot,
     match_catalog_identities,
     parse_apitcg_payload,
+    parse_bandai_onepiece_payload,
     parse_lorcast_payload,
     parse_optcg_payload,
     parse_riot_riftbound_page,
@@ -816,6 +817,30 @@ def test_credentialed_provider_parsers_preserve_printing_numbers_and_images() ->
     )[0]
     assert dragon_ball.collector_number == "FB04-059"
     assert dragon_ball.set_name == "Ultra Limit"
+
+
+def test_bandai_onepiece_parser_preserves_art_variant_and_base_number() -> None:
+    record = parse_bandai_onepiece_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "id": "OP17-001_p1",
+                        "name": "Monkey.D.Luffy",
+                        "set_code": "OP-17",
+                        "set_name": "[OP-17] Carrying On His Will",
+                        "variant": "p1",
+                        "image_url": "https://en.onepiece-cardgame.com/images/card.png",
+                    }
+                ]
+            }
+        ).encode()
+    )[0]
+
+    assert record.collector_number == "OP17-001"
+    assert record.provider_art_id == "OP17-001_p1"
+    assert record.variant_raw == "p1"
+    assert record.faces[0].normal.url.endswith("/images/card.png")
 
 
 def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:

@@ -442,7 +442,7 @@ def materialize_magic_images(
             for rebalance in composition_rebalances
             if isinstance(rebalance, dict) and "effective_date" in rebalance
         )
-        credential_games = {"onepiece", "dragonballsuper"}
+        credential_games = {"dragonballsuper"}
         default_status = (
             "blocked_credentials" if game in credential_games else "missing_prerequisite"
         )
