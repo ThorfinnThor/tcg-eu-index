@@ -76,7 +76,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add apps/web/source-data
           git commit -m "chore(images): refresh ${DATASET_VERSION}"
-          git pull --rebase origin main
+          # Catalogue sync also refreshes tracked reports outside source-data.
+          # Keep those runner-only changes out of the projection commit while
+          # still allowing a concurrent main update to be rebased safely.
+          git pull --rebase --autostash origin main
           git push origin HEAD:main
         env:
           DATASET_VERSION: ${{ inputs.dataset_version }}
