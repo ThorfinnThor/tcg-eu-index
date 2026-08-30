@@ -164,6 +164,7 @@ export type CollectorRebalanceRecord = {
     selection_price: number;
     name: string;
     set_name: string | null;
+    set_code?: string | null;
     collector_number: string | null;
     cm_expansion_id: number | null;
     image_url: string | null;

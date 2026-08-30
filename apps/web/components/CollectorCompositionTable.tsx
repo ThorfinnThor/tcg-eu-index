@@ -67,6 +67,7 @@ function matchesSearch(member: Member, query: string) {
   return [
     member.name,
     member.set_name,
+    member.set_code,
     member.collector_number,
     String(member.cm_product_id),
     member.variant_key,
@@ -362,7 +363,9 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
                           {member.name} <span aria-hidden="true">↗</span>
                         </a>
                         <span className="mt-1 block text-xs text-paper/40">
-                          {member.collector_number ? `No. ${member.collector_number} · ` : ""}CM {member.cm_product_id}
+                          {member.collector_number ? `No. ${member.collector_number} · ` : ""}
+                          {member.set_code ? `Set ${member.set_code} · ` : ""}
+                          CM {member.cm_product_id}
                         </span>
                       </div>
                     </div>

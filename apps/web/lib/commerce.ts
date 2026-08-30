@@ -2,6 +2,7 @@ export type CommerceCard = {
   stable_variant_id: string;
   name: string;
   set_name: string | null;
+  set_code?: string | null;
   collector_number: string | null;
   tcgplayer_product_url: string | null;
 };
@@ -25,8 +26,14 @@ export function cardCommerceQuery(card: CommerceCard): string {
   const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
     ? card.set_name.trim()
     : null;
+  const collectorNumber = card.collector_number?.trim() || null;
+  const setCode = card.set_code?.trim() || null;
+  const distinctSetCode = setCode && collectorNumber
+    && collectorNumber.toLocaleLowerCase().startsWith(setCode.toLocaleLowerCase())
+    ? null
+    : setCode;
 
-  return [name, card.collector_number?.trim(), setName]
+  return [name, distinctSetCode, collectorNumber, setName]
     .filter((value): value is string => Boolean(value))
     .join(" ");
 }
@@ -39,8 +46,14 @@ export function tcgplayerCommerceQuery(card: CommerceCard): string {
   const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
     ? card.set_name.trim()
     : null;
+  const collectorNumber = card.collector_number?.trim() || null;
+  const setCode = card.set_code?.trim() || null;
+  const distinctSetCode = setCode && collectorNumber
+    && collectorNumber.toLocaleLowerCase().startsWith(setCode.toLocaleLowerCase())
+    ? null
+    : setCode;
 
-  return [name, card.collector_number?.trim(), setName]
+  return [name, distinctSetCode, collectorNumber, setName]
     .filter((value): value is string => Boolean(value))
     .join(" ");
 }

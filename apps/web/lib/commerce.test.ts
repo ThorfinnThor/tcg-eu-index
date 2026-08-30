@@ -41,6 +41,26 @@ describe("commerce destinations", () => {
     })).toBe("Primal Groudon EX XY7-86");
   });
 
+  it("adds a distinct set code before the printing number", () => {
+    expect(cardCommerceQuery({
+      ...card,
+      name: "Togepi & Cleffa & Igglybuff GX [Rolling Panic | Supreme Puff GX]",
+      set_name: "TAG TEAM GX タッグオールスターズ",
+      set_code: "SM12a",
+      collector_number: "186"
+    })).toBe("Togepi & Cleffa & Igglybuff GX SM12a 186 TAG TEAM GX タッグオールスターズ");
+  });
+
+  it("does not duplicate a set code already contained in the printing number", () => {
+    expect(cardCommerceQuery({
+      ...card,
+      name: "Chaos Nephthys",
+      set_name: "Battle of Chaos",
+      set_code: "BACH-EN025",
+      collector_number: "BACH-EN025"
+    })).toBe("Chaos Nephthys BACH-EN025 Battle of Chaos");
+  });
+
   it("keeps marketplace destinations non-affiliate until templates are configured", () => {
     const targets = commerceTargets(card, "One Piece");
 

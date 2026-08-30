@@ -381,14 +381,14 @@ def load_public_card_images(
 def load_public_card_metadata(
     store: ObjectStore,
     game: str,
-) -> dict[tuple[int, str], tuple[str | None, str | None]]:
+) -> dict[tuple[int, str], tuple[str | None, str | None, str | None]]:
     key = f"derived/card-images/{game}/public-manifest.json"
     if not store.exists(key):
         return {}
     payload = json.loads(store.read_bytes(key))
     if not isinstance(payload, dict) or not isinstance(payload.get("rows"), list):
         raise ValueError(f"{game} public image manifest has no rows")
-    result: dict[tuple[int, str], tuple[str | None, str | None]] = {}
+    result: dict[tuple[int, str], tuple[str | None, str | None, str | None]] = {}
     for raw in payload["rows"]:
         if not isinstance(raw, dict):
             raise ValueError(f"{game} public image manifest has an invalid metadata row")
@@ -397,6 +397,7 @@ def load_public_card_metadata(
             raise ValueError(f"duplicate public metadata row for {game} {key_tuple}")
         result[key_tuple] = (
             raw.get("set_name") if isinstance(raw.get("set_name"), str) else None,
+            raw.get("set_code") if isinstance(raw.get("set_code"), str) else None,
             raw.get("collector_number") if isinstance(raw.get("collector_number"), str) else None,
         )
     return result
@@ -482,9 +483,12 @@ def materialize_magic_images(
                     page_changed = True
                 metadata = game_metadata.get(key)
                 if metadata is not None:
-                    provider_set_name, provider_collector_number = metadata
+                    provider_set_name, provider_set_code, provider_collector_number = metadata
                     if provider_set_name and member.get("set_name") != provider_set_name:
                         member["set_name"] = provider_set_name
+                        page_changed = True
+                    if provider_set_code and member.get("set_code") != provider_set_code:
+                        member["set_code"] = provider_set_code
                         page_changed = True
                     if (
                         provider_collector_number
