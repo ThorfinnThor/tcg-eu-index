@@ -1,6 +1,6 @@
 # Magic card-image QA sample
 
-Dataset `2026-08-30`, snapshot `scryfall-20260830090538`.
+Dataset `2026-08-30`, snapshot `scryfall-20260830210537`.
 
 This deterministic human-review sample contains no direct artwork URLs. It does not limit publication: the full match report covers every Magic row. Reviewers compare the linked Cardmarket product with the linked Scryfall card and record decisions in the versioned manual-review YAML.
 
