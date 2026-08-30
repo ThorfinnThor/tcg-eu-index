@@ -289,6 +289,7 @@ def match_catalog_identities(
     timestamp = matched_at or snapshot.fetched_at
     matches: list[CardImageMatch] = []
     assets: dict[str, CardImageAsset] = {}
+    mirror_cache: dict[str, ImageVariant] = {}
     for identity in identities:
         candidates: list[CatalogCardRecord]
         method = "none"
@@ -372,7 +373,14 @@ def match_catalog_identities(
         # Name-only matches are exact only when the provider catalogue itself has one
         # printing/art record for the complete marketplace display name.
         candidate = candidates[0]
-        asset = _asset(candidate, snapshot, policy, timestamp, store=store)
+        asset = _asset(
+            candidate,
+            snapshot,
+            policy,
+            timestamp,
+            store=store,
+            mirror_cache=mirror_cache,
+        )
         assets[asset.asset_id] = asset
         matches.append(
             CardImageMatch(
@@ -879,12 +887,13 @@ def _asset(
     timestamp: str,
     *,
     store: ObjectStore | None,
+    mirror_cache: dict[str, ImageVariant],
 ) -> CardImageAsset:
     faces = record.faces
     if policy.may_hotlink is False and policy.may_mirror:
         if store is None:
             raise ValueError(f"{record.provider} requires an object store for mirrored images")
-        faces = tuple(_mirror_face(store, record, face) for face in faces)
+        faces = tuple(_mirror_face(store, record, face, mirror_cache) for face in faces)
     asset_id = hashlib.sha256(
         f"{record.provider}\x1f{record.provider_card_id}\x1f{record.provider_art_id or ''}".encode()
     ).hexdigest()
@@ -908,7 +917,10 @@ def _asset(
 
 
 def _mirror_face(
-    store: ObjectStore, record: CatalogCardRecord, face: CardImageFace
+    store: ObjectStore,
+    record: CatalogCardRecord,
+    face: CardImageFace,
+    cache: dict[str, ImageVariant],
 ) -> CardImageFace:
     def mirror(variant: ImageVariant | None, _label: str) -> ImageVariant | None:
         if variant is None:
@@ -918,13 +930,15 @@ def _mirror_face(
         source_hash = hashlib.sha256(variant.url.encode()).hexdigest()[:12]
         filename = f"{record.provider_card_id}-{art}-{face.face}-{source_hash}{extension}"
         key = f"card-images/{record.provider}/{filename}"
+        if key in cache:
+            return cache[key]
         if not store.exists(key):
             response = requests.get(variant.url, timeout=60)
             response.raise_for_status()
             store.write_bytes(
                 key, response.content, variant.mime_type or "application/octet-stream"
             )
-        return ImageVariant(
+        mirrored = ImageVariant(
             url=f"{SITE_URL}/api/card-images/{key.removeprefix('card-images/')}",
             width=variant.width,
             height=variant.height,
@@ -932,6 +946,8 @@ def _mirror_face(
             storage_mode="r2",
             r2_key=key,
         )
+        cache[key] = mirrored
+        return mirrored
 
     return CardImageFace(
         face=face.face,
