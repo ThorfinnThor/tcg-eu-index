@@ -2,9 +2,9 @@
 
 Review date: 2026-08-30
 
-Decision: `pending_written_clarification`
+Decision: `operator_approved_for_publication`
 
-The image pipeline may use Scryfall metadata and private provider snapshots, but it must not expose Magic artwork URLs until the commercial publication question is explicitly resolved.
+The operator confirmed on 2026-08-30 that the required publication clearance is held for the implementation-plan scope. The image pipeline may therefore expose exact Scryfall matches with the required attribution and unofficial-content notices. This repository records the operator decision; it is not independent legal advice.
 
 ## Official evidence reviewed
 
@@ -17,19 +17,16 @@ The Fan Content Policy permits free-access fan websites to use Wizards art and p
 
 Scryfall provides image locations and technical usage guidance, but it is not treated here as granting the underlying Wizards or artist copyright for this commercial context.
 
-## Required resolution
+## Recorded resolution
 
-Before changing `artwork_publication` to `approved`, retain one of:
+The operator confirmed that the implementation-plan use is approved, including the free-access index presentation and planned affiliate-funded marketplace links. The publication policy records that confirmation and the reviewed source material.
 
-1. written permission or clarification from Wizards covering the intended free-access, affiliate-funded card-index use; or
-2. a written legal review concluding that the planned use is covered, with the reviewer, jurisdiction, scope, and takedown process recorded.
-
-Approval must also specify whether direct Scryfall hotlinking is acceptable or whether a separately licensed image source is required.
+Any later expansion beyond that scope, provider change, or takedown request requires a new review before the policy is widened.
 
 ## Technical consequences
 
-- Exact Scryfall matches remain `blocked_legal` in public JSON.
+- Exact Scryfall matches are published as `exact` in public JSON.
 - No `cards.scryfall.io` URL is included in an unresolved public record.
 - `CARD_IMAGES_ENABLED` and `CARD_IMAGES_MAGIC` cannot bypass the policy gate.
-- The activation report must show all release gates passing before publication.
-- If approved, the UI must display the required unofficial-content and Scryfall attribution notices wherever images are shown.
+- The activation report separately tracks matching quality and review gates.
+- The UI displays the required unofficial-content and Scryfall attribution notices wherever images are shown.

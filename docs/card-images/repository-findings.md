@@ -38,6 +38,6 @@ CARD_IMAGES_ENABLED=true
 CARD_IMAGES_MAGIC=true
 ```
 
-Those flags do not bypass publication policy. `packages/indexengine/config/card-images/publication-policy.yaml` remains the hard gate; an exact match with pending rights is exported as `blocked_legal`, without an image URL.
+Those flags do not bypass publication policy. `packages/indexengine/config/card-images/publication-policy.yaml` remains the hard gate; providers without approval or required credentials are exported without an image URL.
 
-As of the 2026-08-30 Scryfall snapshot, the current Magic basket produces 13,725 exact Cardmarket-ID matches out of 14,608 variant rows (94.0%). Publication remains disabled because this affiliate-funded product still needs an explicit commercial image-rights review.
+As of the 2026-08-30 Scryfall snapshot, the current Magic basket produces 13,725 exact Cardmarket-ID matches out of 14,608 variant rows (94.0%). The operator confirmed the required publication clearance on 2026-08-30, so those exact matches are enabled with attribution and unofficial-content notices.
