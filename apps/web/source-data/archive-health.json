@@ -6,12 +6,12 @@
     "firstFullObservationDate": "2026-10-10",
     "firstMonthlyRebalanceDate": "2026-11-01"
   },
-  "expectedDays": 14,
+  "expectedDays": 21,
   "gapCount": 0,
   "gaps": [],
-  "generatedFor": "2026-08-23",
+  "generatedFor": "2026-08-30",
   "integrityErrorCount": 0,
-  "manifestCount": 14,
+  "manifestCount": 21,
   "operations": {
     "billingMonth": "2026-08",
     "classA": {
@@ -31,12 +31,12 @@
   "since": "2026-08-10",
   "status": "healthy",
   "storage": {
-    "bytes": 200971276,
+    "bytes": 2089481804,
     "freeTierBytes": 10000000000,
     "status": "within_free_tier",
-    "usageRatio": 0.02009713
+    "usageRatio": 0.20894818
   },
-  "until": "2026-08-23",
-  "verifiedFileCount": 13,
+  "until": "2026-08-30",
+  "verifiedFileCount": 20,
   "warningCount": 0
 }
