@@ -33,5 +33,5 @@ providers:
     enabled: false
     games: [dragonballsuper]
   riot_riftbound:
-    enabled: false
+    enabled: true
     games: [riftbound]

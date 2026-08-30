@@ -332,7 +332,7 @@ def _missing_prerequisites(
         "starwarsunlimited": ["set_code", "collector_number", "artwork_variant"],
         "fleshandblood": ["set_code", "collector_number", "artwork_variant"],
         "dragonballsuper": ["collector_number", "artwork_variant", "subgame"],
-        "riftbound": ["provider_card_id", "approved_credentials"],
+        "riftbound": ["set_code", "collector_number", "artwork_variant"],
     }.get(game, ["provider_card_id"])
     values = {
         "set_name": set_name,
@@ -347,8 +347,6 @@ def _missing_prerequisites(
 
 
 def _next_step(game: str, missing: list[str]) -> str:
-    if game == "riftbound":
-        return "Obtain Riot approval and an app-specific API key"
     if "artwork_variant" in missing:
         return "Enrich the exact printing/artwork variant before provider matching"
     if "set_code" in missing or "collector_number" in missing:

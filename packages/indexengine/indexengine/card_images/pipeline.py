@@ -14,6 +14,7 @@ from core.r2 import sha256_hex
 from core.store import ObjectStore
 
 from indexengine.card_images.catalogs import (
+    MATCHER_VERSION,
     CatalogCardRecord,
     load_catalog_snapshot,
     match_catalog_identities,
@@ -138,7 +139,7 @@ def run_catalog_image_matching(
         "dataset_version": dataset_version,
         "provider": provider,
         "provider_snapshot_id": snapshot.snapshot_id,
-        "matcher_version": "1.1.0",
+        "matcher_version": MATCHER_VERSION,
         "publication_policy": policy.artwork_publication,
         "rows": rows,
     }
@@ -441,7 +442,7 @@ def materialize_magic_images(
             for rebalance in composition_rebalances
             if isinstance(rebalance, dict) and "effective_date" in rebalance
         )
-        credential_games = {"onepiece", "dragonballsuper", "riftbound"}
+        credential_games = {"onepiece", "dragonballsuper"}
         default_status = (
             "blocked_credentials" if game in credential_games else "missing_prerequisite"
         )

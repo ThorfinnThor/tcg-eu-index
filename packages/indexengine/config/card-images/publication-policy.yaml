@@ -122,12 +122,13 @@ providers:
 
   riot_riftbound:
     games: [riftbound]
-    metadata_access: blocked_credentials
-    artwork_publication: blocked_credentials
-    may_hotlink: false
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
     may_mirror: false
     attribution_required: true
     reviewed_at: "2026-08-30"
     evidence:
-      - "https://developer.riotgames.com/docs/riftbound"
-      - "An approved app-specific API key or written license is required."
+      - "https://playriftbound.com/en-us/card-gallery/"
+      - "The official public card gallery embeds card metadata and Riot-hosted image URLs."
+      - "Operator confirmed publication clearance on 2026-08-30."

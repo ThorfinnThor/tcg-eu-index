@@ -29,8 +29,8 @@ from indexengine.card_images.contracts import (
 )
 from indexengine.card_images.policy import ProviderPolicy
 
-ADAPTER_VERSION = "1.3.0"
-MATCHER_VERSION = "1.1.0"
+ADAPTER_VERSION = "1.4.0"
+MATCHER_VERSION = "1.2.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
 PROVIDER_GAMES = {
@@ -40,6 +40,7 @@ PROVIDER_GAMES = {
     "lorcast": "lorcana",
     "swudb": "starwarsunlimited",
     "fab_dataset": "fleshandblood",
+    "riot_riftbound": "riftbound",
     "optcg": "onepiece",
     "dragonball": "dragonballsuper",
 }
@@ -51,6 +52,7 @@ PUBLIC_PROVIDERS = (
     "lorcast",
     "swudb",
     "fab_dataset",
+    "riot_riftbound",
 )
 
 SWU_SET_CODES = (
@@ -489,9 +491,41 @@ def _infer_marketplace_sets(
             continue
         overlap, provider_set = scored[0]
         runner_up = scored[1][0] if len(scored) > 1 else 0
-        if overlap >= 3 and overlap >= runner_up + 2 and overlap / len(names) >= 0.6:
+        provider_size = len(provider_names[provider_set])
+        if _signature_is_corroborated(
+            records[0].provider if records else "",
+            overlap,
+            runner_up,
+            len(names),
+            provider_size,
+        ):
             inferred[expansion_id] = (provider_set, overlap, runner_up)
     return inferred
+
+
+def _signature_is_corroborated(
+    provider: str,
+    overlap: int,
+    runner_up: int,
+    marketplace_size: int,
+    provider_size: int,
+) -> bool:
+    """Accept only signatures that are both distinctive and sufficiently complete."""
+    if overlap < 3 or overlap < runner_up + 2:
+        return False
+    if overlap / marketplace_size >= 0.6:
+        return True
+    # Cardmarket promotional and parallel-art expansions can contain many more
+    # products than a provider's base set. Cross-validation against existing
+    # exact rows showed this provider-side rule adds coverage without changing
+    # any known Yu-Gi-Oh!, Lorcana, or Flesh and Blood set assignments.
+    return (
+        provider in {"ygoprodeck", "lorcast", "fab_dataset"}
+        and overlap >= 8
+        and overlap >= runner_up + 4
+        and overlap / provider_size >= 0.5
+        and (runner_up == 0 or overlap / runner_up >= 1.5)
+    )
 
 
 def _provider_set_key(record: CatalogCardRecord) -> tuple[str, str]:
@@ -525,6 +559,10 @@ def _fetch_provider(
         sets = _get(session, f"{base}/set.json", timeout=60)
         raw = _json_bytes({"cards": json.loads(flattened), "sets": json.loads(sets)})
         return str(commit["html_url"]), sha, raw, parse_fab_payload(raw)
+    if provider == "riot_riftbound":
+        url = "https://playriftbound.com/en-us/card-gallery/"
+        raw = _get(session, url, timeout=180)
+        return url, _today_version(), raw, parse_riot_riftbound_page(raw)
     if provider == "ygoprodeck":
         url = "https://db.ygoprodeck.com/api/v7/cardinfo.php"
         raw = _get(session, url, timeout=240)
@@ -871,6 +909,69 @@ def parse_fab_payload(raw: bytes) -> list[CatalogCardRecord]:
                 image_url=image,
                 raw=printing,
                 mime_type="image/png",
+            )
+        )
+    return result
+
+
+def parse_riot_riftbound_page(raw: bytes) -> list[CatalogCardRecord]:
+    """Parse the official Riot card gallery embedded Next.js catalogue."""
+    text = raw.decode("utf-8", errors="replace")
+    match = re.search(
+        r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
+        text,
+        re.DOTALL,
+    )
+    if match is None:
+        raise ValueError("Riftbound card gallery has no __NEXT_DATA__ payload")
+    payload = json.loads(match.group(1))
+    card_lists: list[list[dict[str, Any]]] = []
+
+    def find_cards(value: object) -> None:
+        if isinstance(value, list):
+            cards = [item for item in value if isinstance(item, dict)]
+            if cards and all("publicCode" in item and "cardImage" in item for item in cards):
+                card_lists.append(cast(list[dict[str, Any]], cards))
+                return
+            for item in value:
+                find_cards(item)
+        elif isinstance(value, dict):
+            for item in value.values():
+                find_cards(item)
+
+    find_cards(payload)
+    if not card_lists:
+        raise ValueError("Riftbound card gallery contains no card catalogue")
+    cards = max(card_lists, key=len)
+    result: list[CatalogCardRecord] = []
+    for card in cards:
+        provider_id = _text(card.get("id"))
+        name = _text(card.get("name"))
+        public_code = _text(card.get("publicCode"))
+        card_set = cast(dict[str, Any], card.get("set") or {})
+        set_value = cast(dict[str, Any], card_set.get("value") or {})
+        card_image = cast(dict[str, Any], card.get("cardImage") or {})
+        image_url = _text(card_image.get("url"))
+        if not provider_id or not name or not public_code or not image_url:
+            continue
+        rarity = cast(dict[str, Any], card.get("rarity") or {})
+        rarity_value = cast(dict[str, Any], rarity.get("value") or {})
+        result.append(
+            _record(
+                provider="riot_riftbound",
+                game="riftbound",
+                provider_card_id=provider_id,
+                provider_art_id=provider_id,
+                cardmarket_id=None,
+                name=name,
+                set_code=_text(set_value.get("id")),
+                set_name=_text(set_value.get("label")),
+                number=public_code,
+                language="en",
+                variant=_text(rarity_value.get("label")),
+                image_url=image_url,
+                raw=card,
+                mime_type=_text(card_image.get("mimeType")) or "image/png",
             )
         )
     return result

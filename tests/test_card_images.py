@@ -16,6 +16,7 @@ from indexengine.card_images.catalogs import (
     parse_apitcg_payload,
     parse_lorcast_payload,
     parse_optcg_payload,
+    parse_riot_riftbound_page,
     parse_tcgdex_tarball,
 )
 from indexengine.card_images.contracts import (
@@ -644,6 +645,77 @@ def test_catalog_matcher_uses_full_marketplace_set_basket_for_sparse_index() -> 
     assert matches[0].provider_card_id == "a-hero"
 
 
+def test_catalog_matcher_accepts_provider_complete_parallel_heavy_set() -> None:
+    provider_names = [f"Card {index}" for index in range(1, 11)]
+    cards = {
+        "cards": [
+            {
+                "id": f"a-{index}",
+                "name": name,
+                "collector_number": f"A-{index:03d}",
+                "lang": "en",
+                "set": {"code": f"A-{index:03d}", "name": "Alpha"},
+                "image_uris": {
+                    "digital": {"normal": f"https://cards.example/a-{index}.avif"}
+                },
+            }
+            for index, name in enumerate(provider_names, start=1)
+        ]
+        + [
+            {
+                "id": f"b-{index}",
+                "name": f"Card {index}",
+                "collector_number": f"B-{index:03d}",
+                "lang": "en",
+                "set": {"code": f"B-{index:03d}", "name": "Beta"},
+                "image_uris": {
+                    "digital": {"normal": f"https://cards.example/b-{index}.avif"}
+                },
+            }
+            for index in range(1, 4)
+        ],
+    }
+    records = tuple(
+        replace(record, provider="ygoprodeck")
+        for record in parse_lorcast_payload(json.dumps(cards).encode())
+    )
+    snapshot = CatalogSnapshot(
+        provider="ygoprodeck",
+        game="yugioh",
+        snapshot_id="ygoprodeck-provider-coverage-test",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://db.ygoprodeck.com/api/v7/cardinfo.php",
+        source_version="test",
+        raw_sha256="e" * 64,
+        records=records,
+    )
+    identity = replace(
+        _identity(),
+        game="yugioh",
+        source_row_key=source_row_key("yugioh", 101, "nonfoil"),
+        cardmarket_product_id=101,
+        cardmarket_name_raw="Card 8",
+        name_normalized=normalize_card_name("Card 8"),
+        set_provider_id="9001",
+        collector_number_raw=None,
+        collector_number_canonical=None,
+    )
+    marketplace_names = tuple(provider_names[:8]) + tuple(
+        f"Parallel {index}" for index in range(1, 13)
+    )
+
+    matches, _ = match_catalog_identities(
+        [identity],
+        snapshot,
+        replace(_policy(), provider="ygoprodeck", games=("yugioh",)),
+        marketplace_set_names={9001: marketplace_names},
+    )
+
+    assert matches[0].status == "exact"
+    assert matches[0].match_method == "inferred_set_name_unique"
+    assert matches[0].provider_card_id == "a-8"
+
+
 def test_catalog_matcher_reuses_unanimous_direct_product_set_mapping() -> None:
     cards = {
         "cards": [
@@ -744,6 +816,52 @@ def test_credentialed_provider_parsers_preserve_printing_numbers_and_images() ->
     )[0]
     assert dragon_ball.collector_number == "FB04-059"
     assert dragon_ball.set_name == "Ultra Limit"
+
+
+def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:
+    page = {
+        "props": {
+            "pageProps": {
+                "page": {
+                    "blades": [
+                        {
+                            "cards": {
+                                "items": [
+                                    {
+                                        "id": "unl-131-219",
+                                        "collectorNumber": 131,
+                                        "name": "Abandon",
+                                        "publicCode": "UNL-131/219",
+                                        "set": {
+                                            "value": {"id": "UNL", "label": "Unleashed"}
+                                        },
+                                        "rarity": {"value": {"label": "Uncommon"}},
+                                        "cardImage": {
+                                            "url": "https://cmsassets.rgpub.io/card.png",
+                                            "mimeType": "image/png",
+                                        },
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    raw = (
+        '<html><script id="__NEXT_DATA__" type="application/json">'
+        + json.dumps(page)
+        + "</script></html>"
+    ).encode()
+
+    record = parse_riot_riftbound_page(raw)[0]
+
+    assert record.provider_card_id == "unl-131-219"
+    assert record.set_code == "UNL"
+    assert record.set_name == "Unleashed"
+    assert record.collector_number == "UNL-131/219"
+    assert record.faces[0].normal.url == "https://cmsassets.rgpub.io/card.png"
 
 
 class _Response:
