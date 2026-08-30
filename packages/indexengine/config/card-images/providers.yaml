@@ -1,0 +1,37 @@
+version: 1
+providers:
+  scryfall:
+    enabled: true
+    games: [magic]
+    mode: bulk
+    max_concurrency: 1
+    timeout_seconds: 180
+    retries: 4
+    image_hosts: [cards.scryfall.io]
+  tcgdex:
+    enabled: false
+    games: [pokemon]
+  ygoprodeck:
+    enabled: false
+    games: [yugioh]
+  optcg:
+    enabled: false
+    games: [onepiece]
+  digimon:
+    enabled: false
+    games: [digimon]
+  lorcast:
+    enabled: false
+    games: [lorcana]
+  swudb:
+    enabled: false
+    games: [starwarsunlimited]
+  fab_dataset:
+    enabled: false
+    games: [fleshandblood]
+  dragonball:
+    enabled: false
+    games: [dragonballsuper]
+  riot_riftbound:
+    enabled: false
+    games: [riftbound]

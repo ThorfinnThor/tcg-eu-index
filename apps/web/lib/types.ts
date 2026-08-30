@@ -54,6 +54,47 @@ export type CollectorPriceState =
   | "suspended_stale"
   | "snapshot_unchanged";
 
+export type CardImageStatus =
+  | "exact"
+  | "manual"
+  | "probable"
+  | "ambiguous"
+  | "missing_prerequisite"
+  | "provider_missing"
+  | "provider_error"
+  | "blocked_legal"
+  | "blocked_credentials"
+  | "disabled";
+
+export type CardImageVariant = {
+  url: string;
+  width: number | null;
+  height: number | null;
+  mime_type: string | null;
+  storage_mode: "remote" | "r2";
+  r2_key: string | null;
+  content_sha256: string | null;
+};
+
+export type CardImageFace = {
+  face: "front" | "back" | "other";
+  thumb: CardImageVariant | null;
+  normal: CardImageVariant | null;
+  large: CardImageVariant | null;
+};
+
+export type PublicCardImage = {
+  status: CardImageStatus;
+  provider?: string | null;
+  match_method?: string;
+  language?: string | null;
+  language_match?: "exact" | "fallback" | "unknown" | null;
+  artwork_variant?: string | null;
+  front?: CardImageFace | null;
+  back?: CardImageFace | null;
+  verified_at?: string | null;
+};
+
 export type CollectorDailyIndexValue = {
   value_date: string;
   index_value: number | null;
@@ -108,6 +149,7 @@ export type CollectorRebalanceRecord = {
     cm_expansion_id: number | null;
     image_url: string | null;
     image_source: string | null;
+    image?: PublicCardImage;
     tcgplayer_product_url: string | null;
     metadata_status: string;
   }>;
@@ -171,6 +213,7 @@ export type CollectorIndexSummary = {
     set_name_count: number;
     collector_number_count: number;
     image_count: number;
+    image_status_counts?: Record<string, number>;
   };
   generated_for: string;
 };

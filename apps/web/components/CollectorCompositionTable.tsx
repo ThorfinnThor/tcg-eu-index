@@ -100,21 +100,37 @@ async function loadWholeIndex(
 }
 
 function CardArtwork({ member }: { member: Member }) {
-  const imageUrl = supportedImageUrl(member.image_url);
+  const structuredImage = member.image;
+  const publishable = structuredImage?.status === "exact" || structuredImage?.status === "manual";
+  const preferredUrl = publishable ? structuredImage.front?.normal?.url ?? null : null;
+  const imageUrl = supportedImageUrl(preferredUrl ?? (structuredImage ? null : member.image_url));
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  const visibleUrl = imageUrl === failedUrl ? null : imageUrl;
+  const setLabel = displaySetName(member.set_name);
+  const altParts = [member.name];
+  if (setLabel !== "Set details pending") altParts.push(setLabel);
+  if (member.collector_number) altParts.push(member.collector_number);
+  if (structuredImage?.artwork_variant && structuredImage.artwork_variant !== "base") {
+    altParts.push(structuredImage.artwork_variant.replaceAll("_", " "));
+  }
+  const placeholder = failedUrl || structuredImage?.status === "provider_error"
+    ? "Image unavailable"
+    : "Image not assigned";
   return (
-    <div className="relative h-[68px] w-12 shrink-0 overflow-hidden rounded border border-line bg-ink/70">
-      {imageUrl ? (
+    <div className="relative aspect-[488/680] w-12 shrink-0 overflow-hidden rounded border border-line bg-ink/70">
+      {visibleUrl ? (
         <Image
-          src={imageUrl}
-          alt={`${member.name} card artwork`}
+          src={visibleUrl}
+          alt={altParts.join(" – ")}
           fill
           sizes="48px"
-          className="object-cover"
+          className="object-contain"
           unoptimized
+          onError={() => setFailedUrl(visibleUrl)}
         />
       ) : (
         <div className="flex h-full items-center justify-center px-1 text-center text-[9px] leading-3 text-paper/30">
-          Image pending
+          {placeholder}
         </div>
       )}
     </div>

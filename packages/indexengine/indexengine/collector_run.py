@@ -15,6 +15,8 @@ from core.settings import Settings, parse_run_date
 from core.store import ObjectStore
 from ingest.manifest import Manifest
 
+from indexengine.card_images.contracts import PublicCardImage
+from indexengine.card_images.pipeline import load_public_card_images
 from indexengine.collector_calc import (
     build_monthly_collector_rebalances,
     calculate_collector_chain_linked,
@@ -71,6 +73,7 @@ def run_collector_shadow(
         )
         products = pl.read_parquet(BytesIO(products_body))
         sets = pl.read_parquet(BytesIO(sets_body))
+        card_images = _card_images(store, definition.game_key)
         calendar_dates, unchanged_dates = _archive_calendar(
             store, definition.game_key, run_date
         )
@@ -114,11 +117,17 @@ def run_collector_shadow(
             contributions,
             diagnostics,
             product_metadata=build_collector_product_metadata(products, sets),
+            card_images=card_images,
             source_hashes={
                 "methodology": sha256_hex(methodology_path.read_bytes()),
                 "price_history": price_hash,
                 "products": sha256_hex(products_body),
                 "sets": sha256_hex(sets_body),
+                **(
+                    _card_image_source_hash(store, definition.game_key)
+                    if card_images
+                    else {}
+                ),
             },
             engine_revision=os.getenv("GITHUB_SHA", "local-working-tree"),
         )
@@ -142,6 +151,31 @@ def run_collector_shadow(
             )
         )
     return results
+
+
+def _card_images(
+    store: ObjectStore,
+    game: str,
+) -> dict[tuple[int, str], PublicCardImage]:
+    if os.getenv("CARD_IMAGES_ENABLED", "false").casefold() != "true":
+        return {}
+    game_flag = {
+        "onepiece": "ONE_PIECE",
+        "starwarsunlimited": "SWU",
+        "fleshandblood": "FAB",
+        "dragonballsuper": "DRAGON_BALL",
+    }.get(game, game.upper())
+    flag = f"CARD_IMAGES_{game_flag}"
+    if os.getenv(flag, "false").casefold() != "true":
+        return {}
+    return load_public_card_images(store, game)
+
+
+def _card_image_source_hash(store: ObjectStore, game: str) -> dict[str, str]:
+    key = f"derived/card-images/{game}/public-manifest.json"
+    if not store.exists(key):
+        return {}
+    return {"card_images": sha256_hex(store.read_bytes(key))}
 
 
 def _load_prices(
