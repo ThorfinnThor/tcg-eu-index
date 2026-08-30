@@ -11,7 +11,7 @@
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 347
     },
     {
       "game": "dragonballsuper",
@@ -33,11 +33,11 @@
       "total_rows": 1582,
       "unique_cardmarket_products": 1582,
       "with_artwork_variant": 0,
-      "with_collector_number": 0,
+      "with_collector_number": 228,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 228
     },
     {
       "game": "lorcana",
@@ -46,11 +46,11 @@
       "total_rows": 506,
       "unique_cardmarket_products": 365,
       "with_artwork_variant": 0,
-      "with_collector_number": 0,
+      "with_collector_number": 119,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 119
     },
     {
       "game": "magic",
@@ -59,11 +59,11 @@
       "total_rows": 14608,
       "unique_cardmarket_products": 11793,
       "with_artwork_variant": 0,
-      "with_collector_number": 90,
+      "with_collector_number": 13777,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 13725
     },
     {
       "game": "onepiece",
@@ -85,11 +85,11 @@
       "total_rows": 8695,
       "unique_cardmarket_products": 8547,
       "with_artwork_variant": 0,
-      "with_collector_number": 2,
+      "with_collector_number": 2053,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 2051
     },
     {
       "game": "riftbound",
@@ -111,11 +111,11 @@
       "total_rows": 730,
       "unique_cardmarket_products": 656,
       "with_artwork_variant": 0,
-      "with_collector_number": 0,
+      "with_collector_number": 58,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 58
     },
     {
       "game": "yugioh",
@@ -124,13 +124,13 @@
       "total_rows": 5377,
       "unique_cardmarket_products": 5377,
       "with_artwork_variant": 0,
-      "with_collector_number": 0,
+      "with_collector_number": 569,
       "with_language": 0,
       "with_provider_card_id": 0,
       "with_set_code": 0,
-      "with_set_name": 0
+      "with_set_name": 569
     }
   ],
-  "generated_for": "2026-08-29",
+  "generated_for": "2026-08-30",
   "schema_version": 1
 }

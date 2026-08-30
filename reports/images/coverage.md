@@ -4,4 +4,4 @@ Dataset `2026-08-30`, snapshot `scryfall-20260830090538`.
 
 | Game | Rows | Exact matches | Published | Exact coverage |
 |---|---:|---:|---:|---:|
-| magic | 14608 | 13725 | 0 | 94.0% |
+| magic | 14608 | 13725 | 13725 | 94.0% |

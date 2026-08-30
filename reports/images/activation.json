@@ -2,13 +2,13 @@
   "ambiguous_matches": 65,
   "ambiguous_ratio": 0.004449616648411829,
   "approved_sample_rows": 0,
-  "dataset_version": "2026-08-29",
+  "dataset_version": "2026-08-30",
   "exact_coverage_ratio": 0.939553669222344,
   "exact_matches": 13725,
   "gates": {
     "ambiguous_ratio": true,
     "exact_coverage": true,
-    "legal_policy": false,
+    "legal_policy": true,
     "manual_sample_review": false,
     "no_unresolved_public_urls": true,
     "sample_size": true

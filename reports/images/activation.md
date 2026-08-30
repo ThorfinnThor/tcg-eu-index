@@ -12,5 +12,5 @@ Manual sample: 0/100 approved (minimum 100).
 | ambiguous ratio | pass |
 | sample size | pass |
 | manual sample review | blocked |
-| legal policy | blocked |
+| legal policy | pass |
 | no unresolved public urls | pass |
