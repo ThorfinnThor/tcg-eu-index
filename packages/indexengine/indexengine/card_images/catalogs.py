@@ -29,7 +29,7 @@ from indexengine.card_images.contracts import (
 )
 from indexengine.card_images.policy import ProviderPolicy
 
-ADAPTER_VERSION = "1.2.0"
+ADAPTER_VERSION = "1.3.0"
 MATCHER_VERSION = "1.1.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
@@ -599,17 +599,19 @@ def _fetch_provider(
 
 def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
     records: list[CatalogCardRecord] = []
-    set_info: dict[str, tuple[str, str, int | None]] = {}
-    card_files: list[tuple[str, bytes]] = []
+    set_info: dict[tuple[str, str], tuple[str, str, int | None]] = {}
+    card_files: list[tuple[str, str, bytes]] = []
     with tarfile.open(fileobj=io.BytesIO(raw), mode="r:gz") as archive:
         for member in archive.getmembers():
-            if (
-                not member.isfile()
-                or "/data/" not in member.name
-                or not member.name.endswith(".ts")
-            ):
+            if not member.isfile() or not member.name.endswith(".ts"):
                 continue
-            relative = member.name.split("/data/", 1)[1]
+            if "/data-asia/" in member.name:
+                catalogue = "data-asia"
+            elif "/data/" in member.name:
+                catalogue = "data"
+            else:
+                continue
+            relative = member.name.split(f"/{catalogue}/", 1)[1]
             parts = PurePosixPath(relative).parts
             if len(parts) not in {2, 3}:
                 continue
@@ -620,25 +622,27 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
             if len(parts) == 2:
                 text = body.decode(errors="replace")
                 set_id = _ts_string(text, "id")
-                set_name = _ts_english_name(text)
+                set_name = _ts_display_name(text)
                 if set_id and set_name:
-                    set_info[f"{parts[0]}/{PurePosixPath(parts[1]).stem}"] = (
+                    set_info[(catalogue, f"{parts[0]}/{PurePosixPath(parts[1]).stem}")] = (
                         set_id,
                         set_name,
                         _ts_cardmarket_id(text),
                     )
             else:
-                card_files.append((relative, body))
-    for relative, body in card_files:
+                card_files.append((catalogue, relative, body))
+    for catalogue, relative, body in card_files:
         path = PurePosixPath(relative)
-        info = set_info.get(f"{path.parts[0]}/{path.parts[1]}")
+        info = set_info.get((catalogue, f"{path.parts[0]}/{path.parts[1]}"))
         if info is None:
             continue
         set_id, set_name, market_set_id = info
         number = path.stem
         text = body.decode(errors="replace")
-        name = _ts_english_name(text) or f"{set_id} {number}"
+        name = _ts_display_name(text) or f"{set_id} {number}"
         market_ids = {int(item) for item in re.findall(r"cardmarket\s*:\s*(\d+)", text)}
+        if catalogue == "data-asia" and not market_ids:
+            continue
         # Keep the complete provider catalogue. Direct Cardmarket IDs are the
         # strongest match, but cards without one are still required for safe
         # expansion-signature and set/number matching.
@@ -647,7 +651,11 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
         if not market_ids_or_none:
             market_ids_or_none.append(None)
         for market_id in market_ids_or_none:
-            image = f"https://images.pokemontcg.io/{set_id}/{number}.png"
+            image = (
+                f"https://images.pokemontcg.io/{set_id}/{number}.png"
+                if catalogue == "data"
+                else None
+            )
             records.append(
                 _record(
                     provider="tcgdex",
@@ -660,10 +668,14 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
                     set_code=set_id,
                     set_name=set_name,
                     number=number,
-                    language="en",
+                    language="en" if catalogue == "data" else "ja",
                     variant=None,
                     image_url=image,
-                    raw={"path": relative, "cardmarket_id": market_id},
+                    raw={
+                        "catalogue": catalogue,
+                        "path": relative,
+                        "cardmarket_id": market_id,
+                    },
                     mime_type="image/png",
                 )
             )
@@ -1037,7 +1049,7 @@ def _record(
     number: str | None,
     language: str | None,
     variant: str | None,
-    image_url: str,
+    image_url: str | None,
     raw: object,
     mime_type: str,
     thumb_url: str | None = None,
@@ -1045,13 +1057,16 @@ def _record(
     back_url: str | None = None,
     cardmarket_expansion_id: int | None = None,
 ) -> CatalogCardRecord:
-    front = CardImageFace(
-        face="front",
-        thumb=_variant(thumb_url or image_url, mime_type),
-        normal=_variant(image_url, mime_type),
-        large=_variant(large_url or image_url, mime_type),
-    )
-    faces = [front]
+    faces: list[CardImageFace] = []
+    if image_url:
+        faces.append(
+            CardImageFace(
+                face="front",
+                thumb=_variant(thumb_url or image_url, mime_type),
+                normal=_variant(image_url, mime_type),
+                large=_variant(large_url or image_url, mime_type),
+            )
+        )
     if back_url:
         faces.append(
             CardImageFace(
@@ -1207,7 +1222,29 @@ def _ts_string(text: str, field: str) -> str | None:
 
 def _ts_english_name(text: str) -> str | None:
     match = re.search(r"\bname\s*:\s*\{\s*en\s*:\s*(['\"])(.*?)\1", text, re.S)
-    return bytes(match.group(2), "utf-8").decode("unicode_escape") if match else None
+    return _decode_ts_value(match.group(2)) if match else None
+
+
+def _ts_display_name(text: str) -> str | None:
+    english = _ts_english_name(text)
+    if english:
+        return english
+    block = re.search(r"\bname\s*:\s*\{(.*?)\}", text, re.S)
+    if block is None:
+        return None
+    preferred = re.search(
+        r"(?:\bid\b|\bja\b|\bko\b|['\"]zh-tw['\"]|\bth\b)\s*:\s*(['\"])(.*?)\1",
+        block.group(1),
+        re.S,
+    )
+    if preferred:
+        return _decode_ts_value(preferred.group(2))
+    fallback = re.search(r"(?:\w+|['\"][^'\"]+['\"])\s*:\s*(['\"])(.*?)\1", block.group(1), re.S)
+    return _decode_ts_value(fallback.group(2)) if fallback else None
+
+
+def _decode_ts_value(value: str) -> str:
+    return bytes(value, "utf-8").decode("unicode_escape") if "\\" in value else value
 
 
 def _ts_cardmarket_id(text: str) -> int | None:

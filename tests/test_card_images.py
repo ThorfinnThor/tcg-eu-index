@@ -429,6 +429,14 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
             "repo/data/Base/Test Set/002.ts": (
                 'const card = { name: { en: "Raichu" }, variants: [] }'
             ),
+            "repo/data-asia/SM/SM12a.ts": (
+                'const set = { id: "SM12a", name: { ja: "タッグオールスターズ" }, '
+                "thirdParty: { cardmarket: 3776 } }"
+            ),
+            "repo/data-asia/SM/SM12a/186.ts": (
+                'const card = { name: { ja: "トゲピー&ピィ&ププリンGX" }, variants: ['
+                "{ thirdParty: { cardmarket: 544676 } }] }"
+            ),
         }
         for name, body in files.items():
             encoded = body.encode()
@@ -438,7 +446,7 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
 
     records = parse_tcgdex_tarball(archive_body.getvalue())
 
-    assert len(records) == 2
+    assert len(records) == 3
     by_number = {record.collector_number: record for record in records}
     assert by_number["001"].cardmarket_id == 9876
     assert by_number["001"].cardmarket_expansion_id == 1234
@@ -449,6 +457,12 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
     assert by_number["002"].cardmarket_id is None
     assert by_number["002"].cardmarket_expansion_id == 1234
     assert by_number["002"].set_name == "Test Set"
+    assert by_number["186"].cardmarket_id == 544676
+    assert by_number["186"].cardmarket_expansion_id == 3776
+    assert by_number["186"].set_code == "SM12a"
+    assert by_number["186"].set_name == "タッグオールスターズ"
+    assert by_number["186"].language == "ja"
+    assert by_number["186"].faces == ()
 
 
 def test_catalog_matcher_uses_unique_complete_name_and_rejects_reprints() -> None:
