@@ -10,6 +10,7 @@ from core.r2 import LocalObjectStore, R2Client
 from core.settings import Settings
 
 from indexengine.card_images.pipeline import materialize_magic_images, run_magic_image_matching
+from indexengine.card_images.qa import build_magic_activation_qa
 from indexengine.card_images.readiness import audit_public_collector
 from indexengine.card_images.scryfall import sync_scryfall_snapshot
 
@@ -101,6 +102,45 @@ def match_magic_command(
 def materialize_web_command(local_store: Path, source_data_root: Path) -> None:
     result = materialize_magic_images(LocalObjectStore(local_store), source_data_root)
     click.echo(json.dumps(asdict(result), indent=2, sort_keys=True))
+
+
+@main.command("qa-magic")
+@click.option("--dataset-version", required=True)
+@click.option("--snapshot")
+@click.option("--local-store", type=click.Path(path_type=Path))
+@click.option("--reviews", type=click.Path(path_type=Path))
+@click.option("--require-ready", is_flag=True)
+@click.option(
+    "--collector-root",
+    type=click.Path(path_type=Path),
+    default=Path("apps/web/source-data/collector"),
+)
+@click.option(
+    "--report-root",
+    type=click.Path(path_type=Path),
+    default=Path("reports/images"),
+)
+def qa_magic_command(
+    dataset_version: str,
+    snapshot: str | None,
+    local_store: Path | None,
+    reviews: Path | None,
+    require_ready: bool,
+    collector_root: Path,
+    report_root: Path,
+) -> None:
+    store = LocalObjectStore(local_store) if local_store else R2Client(Settings.from_env())
+    result = build_magic_activation_qa(
+        store,
+        collector_root,
+        dataset_version,
+        report_root,
+        snapshot_id=snapshot,
+        reviews_path=reviews,
+    )
+    click.echo(json.dumps(asdict(result), indent=2, sort_keys=True))
+    if require_ready and not result.publication_ready:
+        raise click.ClickException("Magic card-image publication gates are not ready")
 
 
 if __name__ == "__main__":

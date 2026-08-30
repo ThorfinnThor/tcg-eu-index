@@ -1,0 +1,7 @@
+version: 1
+
+games:
+  magic:
+    minimum_exact_coverage: 0.93
+    maximum_ambiguous_ratio: 0.005
+    minimum_manual_sample: 100

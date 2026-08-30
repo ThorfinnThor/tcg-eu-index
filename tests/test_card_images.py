@@ -15,6 +15,11 @@ from indexengine.card_images.contracts import (
     source_row_key,
 )
 from indexengine.card_images.policy import ProviderPolicy
+from indexengine.card_images.qa import (
+    MagicQaCandidate,
+    load_manual_reviews,
+    select_magic_qa_sample,
+)
 from indexengine.card_images.readiness import audit_public_collector
 from indexengine.card_images.scryfall import (
     ScryfallSnapshot,
@@ -278,3 +283,58 @@ def test_snapshot_activation_is_idempotent_and_keeps_last_valid_snapshot(
             client=_Client(_listing("2026-08-31T00:00:00Z"), invalid_download),
         )
     assert store.read_bytes("provider-snapshots/scryfall/latest.json") == latest_before
+
+
+def test_magic_qa_sample_is_deterministic_stratified_and_product_unique() -> None:
+    candidates = [
+        MagicQaCandidate(
+            source_row_key=f"row-{index}",
+            cardmarket_product_id=index,
+            cardmarket_name=f"Card {index}",
+            finish="foil" if index % 2 else "nonfoil",
+            provider_card_id=f"provider-{index}",
+            provider_name=f"Card {index}",
+            set_code="tst",
+            collector_number=str(index),
+            language="ja" if index % 7 == 0 else "en",
+            layout="split" if index % 11 == 0 else "normal",
+            face_count=2 if index % 13 == 0 else 1,
+        )
+        for index in range(1, 151)
+    ]
+
+    first = select_magic_qa_sample(candidates, 100, seed="2026-08-30")
+    second = select_magic_qa_sample(list(reversed(candidates)), 100, seed="2026-08-30")
+
+    assert first == second
+    assert len(first) == 100
+    assert len({item.cardmarket_product_id for item, _ in first}) == 100
+    reasons = {reason for _, reason in first}
+    assert {"multi_face", "special_layout", "foil", "non_english"} <= reasons
+
+
+def test_manual_reviews_are_versioned_and_reject_duplicates(tmp_path: Path) -> None:
+    reviews = tmp_path / "reviews.yaml"
+    reviews.write_text(
+        "version: 1\n"
+        "dataset_version: '2026-08-30'\n"
+        "reviews:\n"
+        "  - source_row_key: row-1\n"
+        "    status: approved\n"
+    )
+    assert load_manual_reviews(reviews, "2026-08-30") == {"row-1": "approved"}
+
+    reviews.write_text(
+        "version: 1\n"
+        "dataset_version: '2026-08-30'\n"
+        "reviews:\n"
+        "  - source_row_key: row-1\n"
+        "    status: approved\n"
+        "  - source_row_key: row-1\n"
+        "    status: rejected\n"
+    )
+    with pytest.raises(ValueError, match="duplicate"):
+        load_manual_reviews(reviews, "2026-08-30")
+
+    with pytest.raises(FileNotFoundError):
+        load_manual_reviews(tmp_path / "missing.yaml", "2026-08-30")

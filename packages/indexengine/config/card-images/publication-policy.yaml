@@ -8,10 +8,13 @@ providers:
     may_hotlink: true
     may_mirror: false
     attribution_required: true
-    reviewed_at: null
+    reviewed_at: "2026-08-30"
     evidence:
       - "https://scryfall.com/docs/api/images"
-      - "Commercial publication review is still required before CARD_IMAGES_MAGIC is enabled."
+      - "https://company.wizards.com/en/legal/fancontentpolicy"
+      - "https://company.wizards.com/en/legal/terms"
+      - "docs/card-images/legal-review-magic.md"
+      - "Written clarification is still required before CARD_IMAGES_MAGIC is enabled."
 
   tcgdex:
     games: [pokemon]
