@@ -18,6 +18,12 @@
   "cache": {
     "enabled": true
   },
+  "r2_buckets": [
+    {
+      "binding": "CARD_IMAGES",
+      "bucket_name": "tcg-raw"
+    }
+  ],
   "ratelimits": [
     {
       "name": "NEWSLETTER_RATE_LIMITER",

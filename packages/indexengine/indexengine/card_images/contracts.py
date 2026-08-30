@@ -25,6 +25,7 @@ MatchMethod = Literal[
     "exact_provider_id",
     "set_number_name_variant",
     "set_number_name_unique",
+    "inferred_set_name_unique",
     "parsed_identifier_verified",
     "name_candidate_only",
     "none",

@@ -4,7 +4,7 @@ providers:
   scryfall:
     games: [magic]
     metadata_access: approved
-    artwork_publication: pending
+    artwork_publication: approved
     may_hotlink: true
     may_mirror: false
     attribution_required: true
@@ -14,88 +14,107 @@ providers:
       - "https://company.wizards.com/en/legal/fancontentpolicy"
       - "https://company.wizards.com/en/legal/terms"
       - "docs/card-images/legal-review-magic.md"
-      - "Written clarification is still required before CARD_IMAGES_MAGIC is enabled."
+      - "Operator confirmed written publication clearance on 2026-08-30."
 
   tcgdex:
     games: [pokemon]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://tcgdex.dev/rest/cards"
+      - "https://tcgdex.dev/assets"
+      - "https://github.com/tcgdex/cards-database"
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   ygoprodeck:
     games: [yugioh]
-    metadata_access: pending
-    artwork_publication: pending
+    metadata_access: approved
+    artwork_publication: approved
     may_hotlink: false
     may_mirror: true
-    attribution_required: null
-    reviewed_at: null
+    attribution_required: true
+    reviewed_at: "2026-08-30"
     evidence:
       - "https://ygoprodeck.com/api-guide/"
+      - "Images are mirrored to R2; continual provider hotlinking is disabled."
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   optcg:
     games: [onepiece]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: blocked_credentials
+    artwork_publication: blocked_credentials
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://github.com/arjunkai/optcg-api"
+      - "The deployed API requires an approved X-API-Key for external services."
 
   digimon:
     games: [digimon]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://digimoncard.io/api-documentation"
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   lorcast:
     games: [lorcana]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://lorcast.com/docs/api"
+      - "https://lorcast.com/docs/api/images"
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   swudb:
     games: [starwarsunlimited]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://www.swu-db.com/api"
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   fab_dataset:
     games: [fleshandblood]
-    metadata_access: pending
-    artwork_publication: pending
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
-    reviewed_at: null
-    evidence: []
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://github.com/the-fab-cube/flesh-and-blood-cards"
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   dragonball:
     games: [dragonballsuper]
-    metadata_access: pending
-    artwork_publication: pending
+    metadata_access: blocked_credentials
+    artwork_publication: blocked_credentials
     may_hotlink: null
     may_mirror: null
     attribution_required: null
-    reviewed_at: null
-    evidence: []
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "https://docs.apitcg.com/"
+      - "The selected provider requires an API key; none is configured."
 
   riot_riftbound:
     games: [riftbound]

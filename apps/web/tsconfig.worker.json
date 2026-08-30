@@ -8,7 +8,8 @@
   "include": [
     "worker-configuration.d.ts",
     "lib/rate-limit.cloudflare.ts",
-    "lib/runtime-data.cloudflare.ts"
+    "lib/runtime-data.cloudflare.ts",
+    "lib/card-image-store.cloudflare.ts"
   ],
   "exclude": ["node_modules"]
 }

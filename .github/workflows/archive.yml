@@ -37,6 +37,8 @@ jobs:
       R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       R2_BUCKET: ${{ vars.R2_BUCKET || 'tcg-raw' }}
+      OPTCG_API_KEY: ${{ secrets.OPTCG_API_KEY }}
+      APITCG_API_KEY: ${{ secrets.APITCG_API_KEY }}
       ALERT_DISCORD_WEBHOOK: ${{ secrets.ALERT_DISCORD_WEBHOOK }}
     steps:
       - uses: actions/checkout@v6
@@ -95,6 +97,17 @@ jobs:
           uv run python scripts/export_collector_preview.py \
             --date "$archive_date" \
             --output-root apps/web/source-data | tee collector-preview-export-result.json
+      - name: Refresh immutable public card catalogues
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          uv run python -m indexengine.card_images.cli sync-scryfall
+          uv run python -m indexengine.card_images.cli sync-catalogs
+      - name: Refresh credentialed One Piece catalogue
+        if: steps.archive_state.outputs.already_processed != 'true' && env.OPTCG_API_KEY != ''
+        run: uv run python -m indexengine.card_images.cli sync-catalogs --provider optcg
+      - name: Refresh credentialed Dragon Ball catalogues
+        if: steps.archive_state.outputs.already_processed != 'true' && env.APITCG_API_KEY != ''
+        run: uv run python -m indexengine.card_images.cli sync-catalogs --provider dragonball
       - name: Refresh validated Magic match metadata
         if: steps.archive_state.outputs.already_processed != 'true'
         run: |
@@ -103,6 +116,14 @@ jobs:
             --dataset-version "$archive_date" \
             --collector-root apps/web/source-data/collector \
             --report-root /tmp/card-image-reports > card-image-match-result.json
+      - name: Refresh validated public-catalogue matches
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
+          uv run python -m indexengine.card_images.cli match-catalogs \
+            --dataset-version "$archive_date" \
+            --collector-root apps/web/source-data/collector \
+            > card-image-catalogue-match-result.json
       - name: Restore card-image statuses from the validated R2 manifest
         if: steps.archive_state.outputs.already_processed != 'true'
         run: |
@@ -133,6 +154,7 @@ jobs:
             collector-result.json
             collector-preview-export-result.json
             card-image-match-result.json
+            card-image-catalogue-match-result.json
             card-image-materialize-result.json
             preview-export-result.json
             data/manifest-latest.json

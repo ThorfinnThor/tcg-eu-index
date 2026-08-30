@@ -29,6 +29,9 @@
       "@runtime-data": [
         "./lib/runtime-data.ts"
       ],
+      "@card-image-store": [
+        "./lib/card-image-store.ts"
+      ],
       "@/*": [
         "./*"
       ]
@@ -45,6 +48,7 @@
     "node_modules",
     "worker-configuration.d.ts",
     "lib/rate-limit.cloudflare.ts",
-    "lib/runtime-data.cloudflare.ts"
+    "lib/runtime-data.cloudflare.ts",
+    "lib/card-image-store.cloudflare.ts"
   ]
 }

@@ -32,6 +32,14 @@ const supportedImageHosts = new Set([
   "images.pokemontcg.io",
   "images.ygoprodeck.com",
   "product-images.tcgplayer.com",
+  "assets.tcgdex.net",
+  "cards.lorcast.io",
+  "cdn.swu-db.com",
+  "images.digimoncard.io",
+  "storage.googleapis.com",
+  "legendstory-production-s3-public.s3.amazonaws.com",
+  "d2wlb52bya4y8z.cloudfront.net",
+  "tcg-eu-index-web.shuu9599.workers.dev",
 ]);
 
 const priceBands: Array<{ value: CollectorPriceBand; label: string }> = [

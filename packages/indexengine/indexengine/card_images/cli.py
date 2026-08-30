@@ -9,7 +9,16 @@ from core.logging import configure_logging
 from core.r2 import LocalObjectStore, R2Client
 from core.settings import Settings
 
-from indexengine.card_images.pipeline import materialize_magic_images, run_magic_image_matching
+from indexengine.card_images.catalogs import (
+    PROVIDER_GAMES,
+    PUBLIC_PROVIDERS,
+    sync_catalog_snapshot,
+)
+from indexengine.card_images.pipeline import (
+    materialize_magic_images,
+    run_catalog_image_matching,
+    run_magic_image_matching,
+)
 from indexengine.card_images.qa import build_magic_activation_qa
 from indexengine.card_images.readiness import audit_public_collector
 from indexengine.card_images.scryfall import sync_scryfall_snapshot
@@ -45,6 +54,22 @@ def sync_scryfall_command(local_store: Path | None) -> None:
     click.echo(json.dumps(asdict(result), indent=2, sort_keys=True))
 
 
+@main.command("sync-catalogs")
+@click.option(
+    "--provider",
+    "providers",
+    multiple=True,
+    type=click.Choice(tuple(PROVIDER_GAMES)),
+    help="Provider to sync; repeat the option. Defaults to every public provider.",
+)
+@click.option("--local-store", type=click.Path(path_type=Path))
+def sync_catalogs_command(providers: tuple[str, ...], local_store: Path | None) -> None:
+    store = LocalObjectStore(local_store) if local_store else R2Client(Settings.from_env())
+    selected = providers or PUBLIC_PROVIDERS
+    results = [asdict(sync_catalog_snapshot(store, provider)) for provider in selected]
+    click.echo(json.dumps(results, indent=2, sort_keys=True))
+
+
 @main.command("match-magic")
 @click.option("--dataset-version", required=True)
 @click.option("--snapshot")
@@ -75,12 +100,8 @@ def match_magic_command(
     )
     report_root.mkdir(parents=True, exist_ok=True)
     report = asdict(result)
-    report["exact_coverage_ratio"] = (
-        result.exact_matches / result.rows if result.rows else 0.0
-    )
-    (report_root / "coverage.json").write_text(
-        json.dumps(report, indent=2, sort_keys=True) + "\n"
-    )
+    report["exact_coverage_ratio"] = result.exact_matches / result.rows if result.rows else 0.0
+    (report_root / "coverage.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     (report_root / "coverage.md").write_text(
         "# Card image coverage\n\n"
         f"Dataset `{result.dataset_version}`, snapshot `{result.snapshot_id}`.\n\n"
@@ -90,6 +111,54 @@ def match_magic_command(
         f"{result.published_images} | {report['exact_coverage_ratio']:.1%} |\n"
     )
     click.echo(json.dumps(asdict(result), indent=2, sort_keys=True))
+
+
+@main.command("match-catalogs")
+@click.option("--dataset-version", required=True)
+@click.option("--local-store", type=click.Path(path_type=Path))
+@click.option(
+    "--collector-root",
+    type=click.Path(path_type=Path),
+    default=Path("apps/web/source-data/collector"),
+)
+def match_catalogs_command(
+    dataset_version: str,
+    local_store: Path | None,
+    collector_root: Path,
+) -> None:
+    store = LocalObjectStore(local_store) if local_store else R2Client(Settings.from_env())
+    code_by_game = {
+        "pokemon": "PKEUCOL",
+        "yugioh": "YGEUCOL",
+        "digimon": "DGEUCOL",
+        "lorcana": "LCEUCOL",
+        "starwarsunlimited": "SWUEUCOL",
+        "fleshandblood": "FABEUCOL",
+        "onepiece": "OPEUCOL",
+        "dragonballsuper": "DBSEUCOL",
+    }
+    results = []
+    selected = list(PUBLIC_PROVIDERS)
+    selected.extend(
+        provider
+        for provider in ("optcg", "dragonball")
+        if store.exists(f"provider-snapshots/{provider}/latest.json")
+    )
+    for provider in selected:
+        game = PROVIDER_GAMES[provider]
+        results.append(
+            asdict(
+                run_catalog_image_matching(
+                    store,
+                    collector_root,
+                    dataset_version,
+                    game=game,
+                    code=code_by_game[game],
+                    provider=provider,
+                )
+            )
+        )
+    click.echo(json.dumps(results, indent=2, sort_keys=True))
 
 
 @main.command("materialize-web")

@@ -254,6 +254,62 @@ def magic_identities_from_public_collector(
     return identities
 
 
+def identities_from_public_collector(
+    collector_root: Path,
+    code: str,
+    game: str,
+    *,
+    source_updated_at: str,
+) -> list[CanonicalCardIdentity]:
+    """Build stable source identities for any collector singles index."""
+    members = latest_composition_rows(collector_root, code)
+    identities: list[CanonicalCardIdentity] = []
+    seen: set[str] = set()
+    for member in members:
+        product_id = int(member["cm_product_id"])
+        finish_raw = str(member.get("variant_key", "unknown"))
+        finish = finish_raw if finish_raw in {"foil", "nonfoil"} else "unknown"
+        row_key = source_row_key(game, product_id, finish_raw)
+        if row_key in seen:
+            continue
+        seen.add(row_key)
+        collector_number = _optional_text(member.get("collector_number"))
+        set_code = _optional_text(member.get("set_code"))
+        if set_code is None and collector_number and "-" in collector_number:
+            set_code = collector_number.rsplit("-", 1)[0]
+        set_name = _real_set_name(member.get("set_name"))
+        name = str(member["name"])
+        identities.append(
+            CanonicalCardIdentity(
+                schema_version=1,
+                game=game,
+                subgame=_optional_text(member.get("subgame")),
+                source_row_key=row_key,
+                cardmarket_product_id=product_id,
+                cardmarket_name_raw=name,
+                name_normalized=normalize_card_name(name),
+                set_name_raw=set_name,
+                set_code_raw=set_code,
+                set_code_canonical=set_code,
+                set_provider_id=(
+                    str(member["cm_expansion_id"])
+                    if member.get("cm_expansion_id") is not None
+                    else None
+                ),
+                collector_number_raw=collector_number,
+                collector_number_canonical=collector_number,
+                language=_optional_text(member.get("language")),
+                finish=cast(Finish, finish),
+                source_variant_raw=finish_raw,
+                edition=_optional_text(member.get("edition")),
+                artwork_variant=None,
+                source_updated_at=source_updated_at,
+            )
+        )
+    identities.sort(key=lambda item: item.source_row_key)
+    return identities
+
+
 def _missing_prerequisites(
     game: str,
     *,

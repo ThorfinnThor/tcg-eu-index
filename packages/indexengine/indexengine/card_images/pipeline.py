@@ -10,9 +10,16 @@ from typing import Any, cast
 from core.r2 import sha256_hex
 from core.store import ObjectStore
 
+from indexengine.card_images.catalogs import (
+    load_catalog_snapshot,
+    match_catalog_identities,
+)
 from indexengine.card_images.contracts import PublicCardImage, public_image_from_match
 from indexengine.card_images.policy import load_publication_policy
-from indexengine.card_images.readiness import magic_identities_from_public_collector
+from indexengine.card_images.readiness import (
+    identities_from_public_collector,
+    magic_identities_from_public_collector,
+)
 from indexengine.card_images.scryfall import load_scryfall_snapshot, match_magic_identities
 from indexengine.collector_preview import repack_existing_collector_preview
 
@@ -36,6 +43,118 @@ class MaterializeImagesResult:
     published_images: int
     statuses: dict[str, int]
     changed_files: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class CatalogImageRunResult:
+    game: str
+    provider: str
+    dataset_version: str
+    snapshot_id: str
+    rows: int
+    exact_matches: int
+    published_images: int
+    statuses: dict[str, int]
+    changed_keys: tuple[str, ...]
+
+
+def run_catalog_image_matching(
+    store: ObjectStore,
+    collector_root: Path,
+    dataset_version: str,
+    *,
+    game: str,
+    code: str,
+    provider: str,
+    snapshot_id: str | None = None,
+    policy_path: Path = DEFAULT_POLICY,
+) -> CatalogImageRunResult:
+    policy = load_publication_policy(policy_path)[provider]
+    snapshot = load_catalog_snapshot(store, provider, snapshot_id)
+    if snapshot.game != game or game not in policy.games:
+        raise ValueError(f"{provider} snapshot/policy does not support {game}")
+    identities = identities_from_public_collector(
+        collector_root,
+        code,
+        game,
+        source_updated_at=dataset_version,
+    )
+    matches, assets = match_catalog_identities(
+        identities,
+        snapshot,
+        policy,
+        store=store,
+    )
+    records_by_key = {
+        (record.provider_card_id, record.provider_art_id): record for record in snapshot.records
+    }
+    identity_by_key = {identity.source_row_key: identity for identity in identities}
+    rows: list[dict[str, object]] = []
+    statuses: dict[str, int] = {}
+    for match in matches:
+        identity = identity_by_key[match.source_row_key]
+        public = public_image_from_match(
+            match,
+            assets.get(match.asset_id) if match.asset_id else None,
+        )
+        record = records_by_key.get((match.provider_card_id or "", match.provider_art_id))
+        statuses[public.status] = statuses.get(public.status, 0) + 1
+        rows.append(
+            {
+                "source_row_key": identity.source_row_key,
+                "cardmarket_product_id": identity.cardmarket_product_id,
+                "finish": identity.finish,
+                "set_name": record.set_name if record is not None else None,
+                "set_code": record.set_code if record is not None else None,
+                "collector_number": record.collector_number if record is not None else None,
+                "provider_card_id": record.provider_card_id if record is not None else None,
+                "image": public.to_dict(),
+            }
+        )
+    rows.sort(key=lambda item: (cast(int, item["cardmarket_product_id"]), str(item["finish"])))
+    published = sum(count for status, count in statuses.items() if status in {"exact", "manual"})
+    prefix = f"image-matches/{dataset_version}/{game}"
+    public_payload = {
+        "schema_version": 1,
+        "game": game,
+        "dataset_version": dataset_version,
+        "provider": provider,
+        "provider_snapshot_id": snapshot.snapshot_id,
+        "matcher_version": "1.0.0",
+        "publication_policy": policy.artwork_publication,
+        "rows": rows,
+    }
+    public_body = _json_bytes(public_payload)
+    bodies = {
+        f"{prefix}/exact.ndjson": _ndjson(asdict(match) for match in matches),
+        f"{prefix}/unresolved.ndjson": _ndjson(
+            asdict(match) for match in matches if match.status not in {"exact", "manual"}
+        ),
+        f"{prefix}/assets.ndjson": _ndjson(asdict(asset) for asset in assets.values()),
+        f"public-image-manifests/{dataset_version}-{game}.json": public_body,
+        f"derived/card-images/{game}/public-manifest.json": public_body,
+    }
+    changed: list[str] = []
+    for key, body in bodies.items():
+        if store.exists(key) and store.read_bytes(key) == body:
+            continue
+        store.write_bytes(
+            key,
+            body,
+            "application/x-ndjson" if key.endswith(".ndjson") else "application/json",
+        )
+        changed.append(key)
+    return CatalogImageRunResult(
+        game=game,
+        provider=provider,
+        dataset_version=dataset_version,
+        snapshot_id=snapshot.snapshot_id,
+        rows=len(matches),
+        exact_matches=sum(match.status == "exact" for match in matches),
+        published_images=published,
+        statuses=dict(sorted(statuses.items())),
+        changed_keys=tuple(changed),
+    )
 
 
 def run_magic_image_matching(
@@ -141,9 +260,7 @@ def run_magic_image_matching(
     for key, body in bodies.items():
         if store.exists(key) and store.read_bytes(key) == body:
             continue
-        content_type = (
-            "application/x-ndjson" if key.endswith(".ndjson") else "application/json"
-        )
+        content_type = "application/x-ndjson" if key.endswith(".ndjson") else "application/json"
         store.write_bytes(key, body, content_type)
         changed.append(key)
     return MagicImageRunResult(
@@ -200,9 +317,7 @@ def load_public_card_metadata(
             raise ValueError(f"duplicate public metadata row for {game} {key_tuple}")
         result[key_tuple] = (
             raw.get("set_name") if isinstance(raw.get("set_name"), str) else None,
-            raw.get("collector_number")
-            if isinstance(raw.get("collector_number"), str)
-            else None,
+            raw.get("collector_number") if isinstance(raw.get("collector_number"), str) else None,
         )
     return result
 
@@ -212,9 +327,7 @@ def materialize_magic_images(
     source_data_root: Path,
 ) -> MaterializeImagesResult:
     """Add machine-readable image status to the checked-in static projection."""
-    magic_images = load_public_card_images(store, "magic")
     collector_root = source_data_root / "collector"
-    magic_metadata = load_public_card_metadata(store, "magic")
     collector_index = json.loads((collector_root / "index.json").read_text())
     indexes = collector_index.get("indexes")
     if not isinstance(indexes, list):
@@ -228,26 +341,38 @@ def materialize_magic_images(
         if code.endswith("SCOL"):
             continue
         game = str(index["game_key"])
+        game_images = load_public_card_images(store, game)
+        game_metadata = load_public_card_metadata(store, game)
         index_root = collector_root / code
         game_statuses: dict[str, int] = {}
         game_published = 0
-        default_status = "blocked_credentials" if game == "riftbound" else "missing_prerequisite"
+        credential_games = {"onepiece", "dragonballsuper", "riftbound"}
+        default_status = (
+            "blocked_credentials" if game in credential_games else "missing_prerequisite"
+        )
         for page_path in sorted((index_root / "composition").rglob("*.json")):
             payload = json.loads(page_path.read_text())
-            if not isinstance(payload, dict) or not isinstance(
-                payload.get("constituents"), list
-            ):
+            if not isinstance(payload, dict) or not isinstance(payload.get("constituents"), list):
                 raise ValueError(f"invalid collector composition page {page_path}")
             page_changed = False
             for member in payload["constituents"]:
                 if not isinstance(member, dict):
                     raise ValueError(f"invalid collector constituent in {page_path}")
                 key = (int(member["cm_product_id"]), str(member["variant_key"]))
-                image = (
-                    magic_images.get(key, PublicCardImage(status="provider_missing"))
-                    if game == "magic"
-                    else PublicCardImage(status=default_status)  # type: ignore[arg-type]
-                )
+                existing_image = member.get("image")
+                if (
+                    not game_images
+                    and game not in credential_games
+                    and isinstance(existing_image, dict)
+                ):
+                    image = _public_image(existing_image)
+                else:
+                    image = game_images.get(
+                        key,
+                        PublicCardImage(
+                            status=("provider_missing" if game_images else default_status)  # type: ignore[arg-type]
+                        ),
+                    )
                 public_payload = image.to_dict()
                 if member.get("image") != public_payload:
                     member["image"] = public_payload
@@ -260,7 +385,7 @@ def materialize_magic_images(
                 if member.get("image_source") != legacy_source:
                     member["image_source"] = legacy_source
                     page_changed = True
-                metadata = magic_metadata.get(key)
+                metadata = game_metadata.get(key)
                 if metadata is not None:
                     provider_set_name, provider_collector_number = metadata
                     if provider_set_name and member.get("set_name") != provider_set_name:
@@ -275,9 +400,7 @@ def materialize_magic_images(
                 statuses[image.status] = statuses.get(image.status, 0) + 1
                 game_statuses[image.status] = game_statuses.get(image.status, 0) + 1
                 rows += 1
-                is_published = (
-                    image.status in {"exact", "manual"} and image.normal_url is not None
-                )
+                is_published = image.status in {"exact", "manual"} and image.normal_url is not None
                 published += is_published
                 game_published += is_published
             if page_changed:
@@ -303,6 +426,7 @@ def materialize_magic_images(
         changed_files=tuple(sorted(set(changed))),
     )
 
+
 def _load_raw_set_names(store: ObjectStore, snapshot_id: str) -> dict[str, str]:
     """Backfill set names for older immutable snapshots without normalized set_name."""
     key = f"provider-snapshots/scryfall/{snapshot_id}/raw.jsonl.gz"
@@ -326,7 +450,17 @@ def _public_image(payload: dict[str, Any]) -> PublicCardImage:
             return None
         if not isinstance(value, dict):
             raise ValueError("public image variant must be an object")
-        return ImageVariant(**value)
+        return ImageVariant(
+            url=str(value["url"]),
+            width=int(value["width"]) if value.get("width") is not None else None,
+            height=int(value["height"]) if value.get("height") is not None else None,
+            mime_type=(str(value["mime_type"]) if value.get("mime_type") is not None else None),
+            storage_mode=value.get("storage_mode", "remote"),
+            r2_key=str(value["r2_key"]) if value.get("r2_key") is not None else None,
+            content_sha256=(
+                str(value["content_sha256"]) if value.get("content_sha256") is not None else None
+            ),
+        )
 
     def face(value: object) -> CardImageFace | None:
         if value is None:

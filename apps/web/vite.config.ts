@@ -15,6 +15,9 @@ const workerAdapters = {
     if (source === "@runtime-data" || normalized.endsWith("/lib/runtime-data.ts")) {
       return fileURLToPath(new URL("./lib/runtime-data.cloudflare.ts", import.meta.url));
     }
+    if (source === "@card-image-store" || normalized.endsWith("/lib/card-image-store.ts")) {
+      return fileURLToPath(new URL("./lib/card-image-store.cloudflare.ts", import.meta.url));
+    }
     return null;
   },
 };

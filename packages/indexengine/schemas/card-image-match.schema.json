@@ -20,7 +20,7 @@
       "enum": ["exact", "manual", "probable", "ambiguous", "missing_prerequisite", "provider_missing", "provider_error", "blocked_legal", "blocked_credentials", "disabled"]
     },
     "match_method": {
-      "enum": ["manual_override", "direct_marketplace_id", "exact_provider_id", "set_number_name_variant", "set_number_name_unique", "parsed_identifier_verified", "name_candidate_only", "none"]
+      "enum": ["manual_override", "direct_marketplace_id", "exact_provider_id", "set_number_name_variant", "set_number_name_unique", "inferred_set_name_unique", "parsed_identifier_verified", "name_candidate_only", "none"]
     },
     "score": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
     "candidate_count": { "type": "integer", "minimum": 0 },
