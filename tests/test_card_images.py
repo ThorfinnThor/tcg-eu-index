@@ -29,6 +29,10 @@ from indexengine.card_images.contracts import (
     public_image_from_match,
     source_row_key,
 )
+from indexengine.card_images.overrides import (
+    ManualCardImageOverride,
+    load_manual_overrides,
+)
 from indexengine.card_images.pipeline import materialize_magic_images
 from indexengine.card_images.policy import ProviderPolicy
 from indexengine.card_images.qa import (
@@ -841,6 +845,97 @@ def test_bandai_onepiece_parser_preserves_art_variant_and_base_number() -> None:
     assert record.provider_art_id == "OP17-001_p1"
     assert record.variant_raw == "p1"
     assert record.faces[0].normal.url.endswith("/images/card.png")
+
+
+def test_manual_override_publishes_only_the_reviewed_provider_art() -> None:
+    record = parse_bandai_onepiece_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "id": "OP17-001_p1",
+                        "name": "Monkey.D.Luffy",
+                        "set_code": "OP-17",
+                        "set_name": "[OP-17] Carrying On His Will",
+                        "variant": "p1",
+                        "image_url": "https://en.onepiece-cardgame.com/images/card.png",
+                    }
+                ]
+            }
+        ).encode()
+    )[0]
+    snapshot = CatalogSnapshot(
+        provider="bandai_onepiece",
+        game="onepiece",
+        snapshot_id="bandai-onepiece-test",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://en.onepiece-cardgame.com/cardlist/",
+        source_version="test",
+        raw_sha256="f" * 64,
+        records=(record,),
+    )
+    identity = replace(
+        _identity(product_id=99),
+        game="onepiece",
+        source_row_key=source_row_key("onepiece", 99, "nonfoil"),
+        cardmarket_product_id=99,
+        cardmarket_name_raw="Monkey.D.Luffy",
+        name_normalized=normalize_card_name("Monkey.D.Luffy"),
+        collector_number_raw="OP17-001",
+        collector_number_canonical="OP17-001",
+    )
+    override = ManualCardImageOverride(
+        source_row_key=identity.source_row_key,
+        game="onepiece",
+        cardmarket_product_id=99,
+        finish="nonfoil",
+        provider="bandai_onepiece",
+        provider_card_id="OP17-001_p1",
+        provider_art_id="OP17-001_p1",
+        reviewed_at="2026-08-30",
+        evidence=("reviewed against the exact Cardmarket product",),
+    )
+    policy = replace(
+        _policy(),
+        provider="bandai_onepiece",
+        games=("onepiece",),
+    )
+
+    matches, assets = match_catalog_identities(
+        [identity],
+        snapshot,
+        policy,
+        manual_overrides={identity.source_row_key: override},
+    )
+
+    assert matches[0].status == "manual"
+    assert matches[0].match_method == "manual_override"
+    assert matches[0].provider_art_id == "OP17-001_p1"
+    assert matches[0].asset_id in assets
+
+
+def test_manual_override_loader_derives_keys_and_rejects_duplicates(tmp_path: Path) -> None:
+    path = tmp_path / "overrides.yaml"
+    mapping = (
+        "  - game: onepiece\n"
+        "    cardmarket_product_id: 99\n"
+        "    finish: nonfoil\n"
+        "    provider: bandai_onepiece\n"
+        "    provider_card_id: OP17-001_p1\n"
+        "    provider_art_id: OP17-001_p1\n"
+        "    reviewed_at: '2026-08-30'\n"
+        "    evidence:\n"
+        "      - reviewed against the exact Cardmarket product\n"
+    )
+    path.write_text("version: 1\nmappings:\n" + mapping)
+
+    loaded = load_manual_overrides(path)
+    key = (source_row_key("onepiece", 99, "nonfoil"), "bandai_onepiece")
+    assert loaded[key].provider_art_id == "OP17-001_p1"
+
+    path.write_text("version: 1\nmappings:\n" + mapping + mapping)
+    with pytest.raises(ValueError, match="duplicate manual override"):
+        load_manual_overrides(path)
 
 
 def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:

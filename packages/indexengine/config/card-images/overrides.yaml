@@ -1,2 +1,15 @@
 version: 1
-mappings: []
+# Add only mappings that have been visually reviewed against the exact
+# Cardmarket product and the active provider artwork. Automatic matching never
+# writes this file.
+mappings:
+  - game: onepiece
+    cardmarket_product_id: 747880
+    finish: nonfoil
+    provider: bandai_onepiece
+    provider_card_id: ST01-012_p3
+    provider_art_id: ST01-012_p3
+    reviewed_at: "2026-08-30"
+    evidence:
+      - "Cardmarket product 747880 is labeled ST01-012 (V.2)."
+      - "Visually matched to the official Bandai ST01-012_p3 gold signature artwork."

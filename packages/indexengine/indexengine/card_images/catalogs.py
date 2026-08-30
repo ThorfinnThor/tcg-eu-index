@@ -29,6 +29,7 @@ from indexengine.card_images.contracts import (
     ImageVariant,
     normalize_card_name,
 )
+from indexengine.card_images.overrides import ManualCardImageOverride
 from indexengine.card_images.policy import ProviderPolicy
 
 ADAPTER_VERSION = "1.5.0"
@@ -270,6 +271,7 @@ def match_catalog_identities(
     store: ObjectStore | None = None,
     matched_at: str | None = None,
     marketplace_set_names: Mapping[int, Iterable[str]] | None = None,
+    manual_overrides: Mapping[str, ManualCardImageOverride] | None = None,
 ) -> tuple[list[CardImageMatch], dict[str, CardImageAsset]]:
     by_market: dict[int, list[CatalogCardRecord]] = defaultdict(list)
     by_market_set_name: dict[tuple[int, str], list[CatalogCardRecord]] = defaultdict(list)
@@ -308,6 +310,21 @@ def match_catalog_identities(
         else set()
     )
     for identity in identities:
+        override = (manual_overrides or {}).get(identity.source_row_key)
+        if override is not None:
+            match, asset = _match_manual_override(
+                identity,
+                override,
+                snapshot,
+                policy,
+                timestamp,
+                store=store,
+                mirror_cache=mirror_cache,
+                existing_mirror_keys=existing_mirror_keys,
+            )
+            assets[asset.asset_id] = asset
+            matches.append(match)
+            continue
         candidates: list[CatalogCardRecord]
         method = "none"
         evidence: tuple[str, ...] = ()
@@ -424,6 +441,99 @@ def match_catalog_identities(
             )
         )
     return sorted(matches, key=lambda item: item.source_row_key), dict(sorted(assets.items()))
+
+
+def _match_manual_override(
+    identity: CanonicalCardIdentity,
+    override: ManualCardImageOverride,
+    snapshot: CatalogSnapshot,
+    policy: ProviderPolicy,
+    timestamp: str,
+    *,
+    store: ObjectStore | None,
+    mirror_cache: dict[str, ImageVariant],
+    existing_mirror_keys: set[str],
+) -> tuple[CardImageMatch, CardImageAsset]:
+    if override.game != identity.game or override.provider != snapshot.provider:
+        raise ValueError("manual card-image override targets the wrong game or provider")
+    if (
+        override.cardmarket_product_id != identity.cardmarket_product_id
+        or override.finish != identity.finish
+    ):
+        raise ValueError("manual card-image override targets the wrong source row")
+    candidates = [
+        record
+        for record in snapshot.records
+        if record.provider_card_id == override.provider_card_id
+        and record.provider_art_id == override.provider_art_id
+    ]
+    if not candidates:
+        raise ValueError(
+            "manual card-image override references a provider card/art ID "
+            "that is absent from the active snapshot"
+        )
+    if any(
+        _loose_name(candidate.name_raw) != _loose_name(identity.cardmarket_name_raw)
+        for candidate in candidates
+    ):
+        raise ValueError("manual card-image override card name does not match the source row")
+    if identity.collector_number_canonical and any(
+        not candidate.collector_number
+        or candidate.collector_number.casefold()
+        != identity.collector_number_canonical.casefold()
+        for candidate in candidates
+    ):
+        raise ValueError("manual card-image override collector number does not match")
+    face_signatures = {
+        tuple(
+            (
+                face.face,
+                face.thumb.url if face.thumb else None,
+                face.normal.url if face.normal else None,
+                face.large.url if face.large else None,
+            )
+            for face in candidate.faces
+        )
+        for candidate in candidates
+    }
+    if len(face_signatures) != 1:
+        raise ValueError("manual card-image override resolves to conflicting image assets")
+    candidate = sorted(candidates, key=_record_sort_key)[0]
+    asset = _asset(
+        candidate,
+        snapshot,
+        policy,
+        timestamp,
+        store=store,
+        mirror_cache=mirror_cache,
+        existing_mirror_keys=existing_mirror_keys,
+    )
+    return (
+        CardImageMatch(
+            schema_version=1,
+            source_row_key=identity.source_row_key,
+            asset_id=asset.asset_id,
+            provider=snapshot.provider,
+            provider_card_id=candidate.provider_card_id,
+            provider_art_id=candidate.provider_art_id,
+            status="manual",
+            match_method="manual_override",
+            score=100,
+            candidate_count=len(candidates),
+            evidence=(
+                f"cardmarket_id={identity.cardmarket_product_id}",
+                f"provider_card_id={candidate.provider_card_id}",
+                f"provider_art_id={candidate.provider_art_id or ''}",
+                f"reviewed_at={override.reviewed_at}",
+                *override.evidence,
+            ),
+            reason_code=None,
+            matched_at=timestamp,
+            matcher_version=MATCHER_VERSION,
+            provider_snapshot_id=snapshot.snapshot_id,
+        ),
+        asset,
+    )
 
 
 def _infer_marketplace_sets(

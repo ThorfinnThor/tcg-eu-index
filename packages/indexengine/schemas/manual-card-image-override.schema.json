@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manual-card-image-override.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "mappings"],
+  "properties": {
+    "version": { "const": 1 },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "game",
+          "cardmarket_product_id",
+          "finish",
+          "provider",
+          "provider_card_id",
+          "reviewed_at",
+          "evidence"
+        ],
+        "properties": {
+          "game": { "type": "string", "minLength": 1 },
+          "cardmarket_product_id": { "type": "integer", "minimum": 1 },
+          "finish": {
+            "enum": [
+              "nonfoil",
+              "foil",
+              "holo",
+              "reverse_holo",
+              "cold_foil",
+              "rainbow_foil",
+              "gold_foil",
+              "etched",
+              "serialized",
+              "other",
+              "unknown"
+            ]
+          },
+          "provider": { "type": "string", "minLength": 1 },
+          "provider_card_id": { "type": "string", "minLength": 1 },
+          "provider_art_id": { "type": ["string", "null"], "minLength": 1 },
+          "reviewed_at": { "type": "string", "format": "date" },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    }
+  }
+}

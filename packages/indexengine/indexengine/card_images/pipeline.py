@@ -25,6 +25,7 @@ from indexengine.card_images.contracts import (
     PublicCardImage,
     public_image_from_match,
 )
+from indexengine.card_images.overrides import load_manual_overrides
 from indexengine.card_images.policy import load_publication_policy
 from indexengine.card_images.readiness import (
     identities_from_public_collector,
@@ -34,6 +35,7 @@ from indexengine.card_images.scryfall import load_scryfall_snapshot, match_magic
 from indexengine.collector_preview import repack_existing_collector_preview
 
 DEFAULT_POLICY = Path("packages/indexengine/config/card-images/publication-policy.yaml")
+DEFAULT_OVERRIDES = Path("packages/indexengine/config/card-images/overrides.yaml")
 
 
 @dataclass(frozen=True)
@@ -78,6 +80,7 @@ def run_catalog_image_matching(
     provider: str,
     snapshot_id: str | None = None,
     policy_path: Path = DEFAULT_POLICY,
+    overrides_path: Path = DEFAULT_OVERRIDES,
 ) -> CatalogImageRunResult:
     policy = load_publication_policy(policy_path)[provider]
     snapshot = load_catalog_snapshot(store, provider, snapshot_id)
@@ -89,12 +92,19 @@ def run_catalog_image_matching(
         game,
         source_updated_at=dataset_version,
     )
+    loaded_overrides = load_manual_overrides(overrides_path)
+    manual_overrides = {
+        row_key: override
+        for (row_key, override_provider), override in loaded_overrides.items()
+        if override_provider == provider and override.game == game
+    }
     matches, assets = match_catalog_identities(
         identities,
         snapshot,
         policy,
         store=store,
         marketplace_set_names=_load_marketplace_set_names(store, game),
+        manual_overrides=manual_overrides,
     )
     records_by_key: dict[tuple[str, str | None], list[CatalogCardRecord]] = defaultdict(list)
     for record in snapshot.records:
