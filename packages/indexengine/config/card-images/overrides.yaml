@@ -3,13 +3,583 @@ version: 1
 # Cardmarket product and the active provider artwork. Automatic matching never
 # writes this file.
 mappings:
-  - game: onepiece
-    cardmarket_product_id: 747880
-    finish: nonfoil
-    provider: bandai_onepiece
-    provider_card_id: ST01-012_p3
-    provider_art_id: ST01-012_p3
-    reviewed_at: "2026-08-30"
-    evidence:
-      - "Cardmarket product 747880 is labeled ST01-012 (V.2)."
-      - "Visually matched to the official Bandai ST01-012_p3 gold signature artwork."
+- game: onepiece
+  cardmarket_product_id: 747438
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-001_p1
+  provider_art_id: OP05-001_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747438/747438.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.480; runner-up 164.678 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747440
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-002_p1
+  provider_art_id: OP05-002_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747440/747440.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.258; runner-up 162.135 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747466
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-022_p1
+  provider_art_id: OP05-022_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747466/747466.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.710; runner-up 173.126 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747495
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-041_p1
+  provider_art_id: OP05-041_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747495/747495.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.443; runner-up 186.606 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747518
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-060_p1
+  provider_art_id: OP05-060_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747518/747518.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.791; runner-up 159.475 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747526
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-067_p1
+  provider_art_id: OP05-067_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747526/747526.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.410; runner-up 136.344 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747529
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-069_p1
+  provider_art_id: OP05-069_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747529/747529.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.010; runner-up 118.023 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747530
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-069_p2
+  provider_art_id: OP05-069_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747530/747530.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.503; runner-up 132.562 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747537
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-074_p2
+  provider_art_id: OP05-074_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747537/747537.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.074; runner-up 120.766 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747778
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-091_p1
+  provider_art_id: OP05-091_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747778/747778.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.011; runner-up 106.100 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747800
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-098_p1
+  provider_art_id: OP05-098_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747800/747800.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.496; runner-up 170.317 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747817
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-100_p2
+  provider_art_id: OP05-100_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747817/747817.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 18.008; runner-up 128.653 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747877
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-119_p1
+  provider_art_id: OP05-119_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747877/747877.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.758; runner-up 117.533 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747878
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP05-119_p2
+  provider_art_id: OP05-119_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747878/747878.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.369; runner-up 127.575 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747879
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: ST01-012_p2
+  provider_art_id: ST01-012_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP05/747879/747879.png visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.914; runner-up 130.441 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 747880
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: ST01-012_p3
+  provider_art_id: ST01-012_p3
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket product 747880 is labeled ST01-012 (V.2).
+  - Visually matched to the official Bandai ST01-012_p3 gold signature artwork.
+- game: onepiece
+  cardmarket_product_id: 857188
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-001_p1
+  provider_art_id: OP13-001_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857188/857188.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.131; runner-up 174.856 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857190
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-002_p1
+  provider_art_id: OP13-002_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857190/857190.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.603; runner-up 204.358 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857192
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-003_p1
+  provider_art_id: OP13-003_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857192/857192.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.651; runner-up 182.478 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857194
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-004_p1
+  provider_art_id: OP13-004_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857194/857194.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.048; runner-up 197.796 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857198
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-007_p1
+  provider_art_id: OP13-007_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857198/857198.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.490; runner-up 136.778 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857208
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-016_p1
+  provider_art_id: OP13-016_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857208/857208.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.690; runner-up 171.214 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857223
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-028_p1
+  provider_art_id: OP13-028_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857223/857223.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.045; runner-up 127.921 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857238
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-042_p1
+  provider_art_id: OP13-042_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857238/857238.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.676; runner-up 137.668 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857248
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-051_p1
+  provider_art_id: OP13-051_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857248/857248.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.666; runner-up 145.566 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857252
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-054_p1
+  provider_art_id: OP13-054_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857252/857252.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.274; runner-up 123.069 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857263
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-064_p1
+  provider_art_id: OP13-064_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857263/857263.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.466; runner-up 161.801 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857278
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-076_p1
+  provider_art_id: OP13-076_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857278/857278.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.430; runner-up 173.682 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857282
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-079_p1
+  provider_art_id: OP13-079_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857282/857282.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.818; runner-up 179.443 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857284
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-080_p1
+  provider_art_id: OP13-080_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857284/857284.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.328; runner-up 63.843 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857285
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-080_p2
+  provider_art_id: OP13-080_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857285/857285.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.449; runner-up 63.744 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857288
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-082_p1
+  provider_art_id: OP13-082_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857288/857288.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.606; runner-up 172.469 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857290
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-083_p1
+  provider_art_id: OP13-083_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857290/857290.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.964; runner-up 73.866 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857291
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-083_p2
+  provider_art_id: OP13-083_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857291/857291.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.057; runner-up 74.220 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857293
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-084_p1
+  provider_art_id: OP13-084_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857293/857293.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.044; runner-up 91.886 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857294
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-084_p2
+  provider_art_id: OP13-084_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857294/857294.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.122; runner-up 92.199 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857300
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-089_p1
+  provider_art_id: OP13-089_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857300/857300.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.514; runner-up 101.364 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857301
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-089_p2
+  provider_art_id: OP13-089_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857301/857301.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.844; runner-up 102.198 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857304
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-091_p1
+  provider_art_id: OP13-091_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857304/857304.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.443; runner-up 77.588 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857305
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-091_p2
+  provider_art_id: OP13-091_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857305/857305.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.405; runner-up 77.664 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857315
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-100_p1
+  provider_art_id: OP13-100_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857315/857315.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.727; runner-up 181.327 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857324
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-108_p1
+  provider_art_id: OP13-108_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857324/857324.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.879; runner-up 129.254 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857327
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-110_p1
+  provider_art_id: OP13-110_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857327/857327.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.483; runner-up 148.695 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857337
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-118
+  provider_art_id: OP13-118
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857337/857337.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.252; runner-up 124.994 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857338
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-118_p1
+  provider_art_id: OP13-118_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857338/857338.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.498; runner-up 116.301 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857339
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-118_p2
+  provider_art_id: OP13-118_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857339/857339.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.051; runner-up 126.046 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857340
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-118_p3
+  provider_art_id: OP13-118_p3
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857340/857340.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.761; runner-up 115.916 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857341
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-118_p4
+  provider_art_id: OP13-118_p4
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857341/857341.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.411; runner-up 145.561 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857343
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-119_p1
+  provider_art_id: OP13-119_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857343/857343.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.754; runner-up 117.825 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857344
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-119_p4
+  provider_art_id: OP13-119_p4
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857344/857344.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 9.518; runner-up 140.861 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857346
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-119_p2
+  provider_art_id: OP13-119_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857346/857346.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.185; runner-up 119.969 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857347
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-119_p3
+  provider_art_id: OP13-119_p3
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857347/857347.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.024; runner-up 111.651 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857349
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-120_p1
+  provider_art_id: OP13-120_p1
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857349/857349.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 13.373; runner-up 124.043 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857350
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-120_p4
+  provider_art_id: OP13-120_p4
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857350/857350.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.454; runner-up 158.806 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857351
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-120_p2
+  provider_art_id: OP13-120_p2
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857351/857351.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 14.050; runner-up 117.340 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857352
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP13-120_p3
+  provider_art_id: OP13-120_p3
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857352/857352.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.707; runner-up 115.980 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857356
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP09-004_p5
+  provider_art_id: OP09-004_p5
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857356/857356.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.680; runner-up 45.090 at 128x179 pixels.
+- game: onepiece
+  cardmarket_product_id: 857357
+  finish: nonfoil
+  provider: bandai_onepiece
+  provider_card_id: OP09-004_p6
+  provider_art_id: OP09-004_p6
+  reviewed_at: '2026-08-30'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/OP13/857357/857357.jpg visually matched to the official Bandai artwork.
+  - Normalized RGB RMS 12.759; runner-up 46.392 at 128x179 pixels.
