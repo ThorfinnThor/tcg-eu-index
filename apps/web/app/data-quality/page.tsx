@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
-import { getArchiveHealth, getDataQuality, getManifest, getReadiness, getStatus } from "@/lib/data";
+import { getArchiveHealth, getCardImageCoverage, getDataQuality, getManifest, getReadiness, getStatus } from "@/lib/data";
 import { assessFreshness, freshnessTextClass } from "@/lib/freshness";
 import { pageMetadata } from "@/lib/seo";
 
@@ -20,12 +20,13 @@ export const metadata: Metadata = pageMetadata(
 );
 
 export default async function DataQualityPage() {
-  const [quality, status, manifest, readiness, archiveHealth] = await Promise.all([
+  const [quality, status, manifest, readiness, archiveHealth, cardImageCoverage] = await Promise.all([
     getDataQuality(),
     getStatus(),
     getManifest(),
     getReadiness(),
-    getArchiveHealth()
+    getArchiveHealth(),
+    getCardImageCoverage()
   ]);
   const freshness = assessFreshness(status.last_snapshot_date);
   const archiveGaps = archiveHealth.generatedFor ? archiveHealth.gaps : quality.gaps;
@@ -136,6 +137,64 @@ export default async function DataQualityPage() {
             ))}
           </tbody>
         </table>
+      </section>
+
+      <section className="surface mt-6 overflow-x-auto">
+        <div className="border-b border-line px-5 py-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-lg font-semibold">Card image coverage</h2>
+            <span className="text-xs text-paper/45">Dataset {cardImageCoverage.generatedFor ?? "pending"}</span>
+          </div>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-paper/60">
+            “Identified” means that an exact provider identity exists. “Published” is stricter: artwork is shown only after provider rights, manual QA, and every release gate pass. An identified card can therefore remain legally blocked without exposing an image URL.
+          </p>
+        </div>
+        {cardImageCoverage.rows.length ? (
+          <table className="w-full min-w-[900px] border-collapse text-sm">
+            <thead className="text-left text-paper/50">
+              <tr>
+                <th className="px-4 py-3">Index</th>
+                <th className="px-4 py-3 text-right">Variants</th>
+                <th className="px-4 py-3 text-right">Identified</th>
+                <th className="px-4 py-3 text-right">Published</th>
+                <th className="px-4 py-3 text-right">Legal block</th>
+                <th className="px-4 py-3 text-right">Ambiguous</th>
+                <th className="px-4 py-3 text-right">Missing identity</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-line">
+              {cardImageCoverage.rows.map((item) => (
+                <tr key={item.code}>
+                  <td className="px-4 py-3 text-paper">
+                    <span className="block">{item.name}</span>
+                    <span className="text-xs text-paper/40">{item.code}</span>
+                  </td>
+                  <td className="px-4 py-3 text-right tabular-nums">{item.totalRows.toLocaleString("en-GB")}</td>
+                  <td className="px-4 py-3 text-right tabular-nums">
+                    <span className={item.identifiedRows ? "text-amber" : "text-paper/45"}>
+                      {(item.identifiedRatio * 100).toFixed(1)}%
+                    </span>
+                    <span className="ml-2 text-xs text-paper/40">{item.identifiedRows.toLocaleString("en-GB")}</span>
+                  </td>
+                  <td className={`px-4 py-3 text-right tabular-nums ${item.publishedRows ? "text-teal" : "text-paper/45"}`}>
+                    {item.publishedRows.toLocaleString("en-GB")}
+                  </td>
+                  <td className={`px-4 py-3 text-right tabular-nums ${item.blockedLegalRows ? "text-amber" : "text-paper/45"}`}>
+                    {item.blockedLegalRows.toLocaleString("en-GB")}
+                  </td>
+                  <td className={`px-4 py-3 text-right tabular-nums ${item.ambiguousRows ? "text-coral" : "text-paper/45"}`}>
+                    {item.ambiguousRows.toLocaleString("en-GB")}
+                  </td>
+                  <td className="px-4 py-3 text-right tabular-nums text-paper/55">
+                    {(item.missingRows + item.blockedCredentialRows).toLocaleString("en-GB")}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="px-5 py-6 text-sm text-paper/55">Card-image coverage is pending its first validated export.</p>
+        )}
       </section>
 
       <section className="surface mt-6 overflow-x-auto">

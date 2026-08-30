@@ -207,6 +207,10 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
         ? `Searching all ${selectedRebalance.active_count.toLocaleString("en-GB")} cards…`
         : `${filteredMembers.length.toLocaleString("en-GB")} cards found`
     : `${visibleMembers.length.toLocaleString("en-GB")} shown · ${selectedRebalance.active_count.toLocaleString("en-GB")} total`;
+  const showsScryfallImages = visibleMembers.some((member) =>
+    member.image?.provider === "scryfall"
+    && (member.image.status === "exact" || member.image.status === "manual")
+  );
 
   return (
     <div>
@@ -270,6 +274,12 @@ export function CollectorCompositionTable({ composition, compositionPage, gameNa
         <span className="chip">Basket updated monthly</span>
         <span className="chip">Foil and nonfoil shown separately</span>
       </div>
+
+      {showsScryfallImages ? (
+        <p className="mb-4 border-l-2 border-amber/70 pl-3 text-xs leading-5 text-paper/55">
+          Card imagery and metadata provided by <a href="https://scryfall.com" target="_blank" rel="noopener noreferrer" className="text-amber hover:text-paper">Scryfall</a>. TCG EU Index is unofficial Fan Content permitted under the Fan Content Policy. Not approved or endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+        </p>
+      ) : null}
 
       {affiliateCommerceConfigured() ? (
         <p className="mb-4 border-l-2 border-amber/70 pl-3 text-xs leading-5 text-paper/55">

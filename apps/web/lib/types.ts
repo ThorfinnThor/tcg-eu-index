@@ -95,6 +95,25 @@ export type PublicCardImage = {
   verified_at?: string | null;
 };
 
+export type CardImageCoverageRow = {
+  code: CollectorIndexCode;
+  name: string;
+  gameKey: string;
+  totalRows: number;
+  identifiedRows: number;
+  publishedRows: number;
+  blockedLegalRows: number;
+  blockedCredentialRows: number;
+  ambiguousRows: number;
+  missingRows: number;
+  identifiedRatio: number;
+};
+
+export type CardImageCoveragePayload = {
+  generatedFor: string | null;
+  rows: CardImageCoverageRow[];
+};
+
 export type CollectorDailyIndexValue = {
   value_date: string;
   index_value: number | null;

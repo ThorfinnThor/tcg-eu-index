@@ -2,7 +2,7 @@ import { readAssetText } from "@runtime-data";
 import { fixtureConstituents, fixtureIndexes } from "./fixtures";
 import { deriveRebalanceHistory } from "./constituents";
 import { applyPublicIndexMetadata, applyPublicSearchMetadata, canonicalIndexCode, indexAssetCandidates } from "./index-codes";
-import type { ArchiveHealthPayload, Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
+import type { ArchiveHealthPayload, CardImageCoveragePayload, CollectorIndexCode, CollectorIndexSummary, Constituent, DailyIndexValue, DataQualityPayload, IndexCode, IndexSummary, ReadinessPayload, RebalanceHistory, ReportsPayload, WeeklyReport } from "./types";
 
 export const revalidate = 3600;
 
@@ -268,6 +268,41 @@ export async function getArchiveHealth(): Promise<ArchiveHealthPayload> {
         assumesNoGaps: true
       }
     };
+  }
+}
+
+export async function getCardImageCoverage(): Promise<CardImageCoveragePayload> {
+  try {
+    const index = await readJson<{
+      generated_for: string;
+      indexes: Array<{ code: CollectorIndexCode; name: string; game_key: string }>;
+    }>("collector/index.json");
+    const rows = await Promise.all(index.indexes.map(async (item) => {
+      const summary = await readJson<CollectorIndexSummary>(`collector/${item.code}/summary.json`);
+      const counts = summary.product_metadata.image_status_counts ?? {};
+      const count = (status: string) => counts[status] ?? 0;
+      const identifiedRows = count("exact") + count("manual") + count("blocked_legal");
+      const missingRows = count("missing_prerequisite") + count("provider_missing")
+        + count("provider_error") + count("disabled");
+      return {
+        code: item.code,
+        name: item.name,
+        gameKey: item.game_key,
+        totalRows: summary.product_metadata.constituent_count,
+        identifiedRows,
+        publishedRows: count("exact") + count("manual"),
+        blockedLegalRows: count("blocked_legal"),
+        blockedCredentialRows: count("blocked_credentials"),
+        ambiguousRows: count("ambiguous") + count("probable"),
+        missingRows,
+        identifiedRatio: summary.product_metadata.constituent_count
+          ? identifiedRows / summary.product_metadata.constituent_count
+          : 0
+      };
+    }));
+    return { generatedFor: index.generated_for, rows };
+  } catch {
+    return { generatedFor: null, rows: [] };
   }
 }
 

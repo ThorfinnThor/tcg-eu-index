@@ -40,6 +40,12 @@ jobs:
           --dataset-version "${{ inputs.dataset_version }}"
           --collector-root apps/web/source-data/collector
           --report-root reports/images
+      - name: Build deterministic activation QA
+        run: >-
+          uv run python -m indexengine.card_images.cli qa-magic
+          --dataset-version "${{ inputs.dataset_version }}"
+          --collector-root apps/web/source-data/collector
+          --report-root reports/images
       - name: Retain image quality reports
         uses: actions/upload-artifact@v7
         with:
