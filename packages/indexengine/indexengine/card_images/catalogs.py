@@ -296,6 +296,11 @@ def match_catalog_identities(
     matches: list[CardImageMatch] = []
     assets: dict[str, CardImageAsset] = {}
     mirror_cache: dict[str, ImageVariant] = {}
+    existing_mirror_keys = (
+        set(store.list_keys(f"card-images/{snapshot.provider}/"))
+        if store is not None and policy.may_hotlink is False and policy.may_mirror
+        else set()
+    )
     for identity in identities:
         candidates: list[CatalogCardRecord]
         method = "none"
@@ -386,6 +391,7 @@ def match_catalog_identities(
             timestamp,
             store=store,
             mirror_cache=mirror_cache,
+            existing_mirror_keys=existing_mirror_keys,
         )
         assets[asset.asset_id] = asset
         matches.append(
@@ -911,12 +917,16 @@ def _asset(
     *,
     store: ObjectStore | None,
     mirror_cache: dict[str, ImageVariant],
+    existing_mirror_keys: set[str],
 ) -> CardImageAsset:
     faces = record.faces
     if policy.may_hotlink is False and policy.may_mirror:
         if store is None:
             raise ValueError(f"{record.provider} requires an object store for mirrored images")
-        faces = tuple(_mirror_face(store, record, face, mirror_cache) for face in faces)
+        faces = tuple(
+            _mirror_face(store, record, face, mirror_cache, existing_mirror_keys)
+            for face in faces
+        )
     asset_id = hashlib.sha256(
         f"{record.provider}\x1f{record.provider_card_id}\x1f{record.provider_art_id or ''}".encode()
     ).hexdigest()
@@ -944,6 +954,7 @@ def _mirror_face(
     record: CatalogCardRecord,
     face: CardImageFace,
     cache: dict[str, ImageVariant],
+    existing_keys: set[str],
 ) -> CardImageFace:
     def mirror(variant: ImageVariant | None, _label: str) -> ImageVariant | None:
         if variant is None:
@@ -955,12 +966,13 @@ def _mirror_face(
         key = f"card-images/{record.provider}/{filename}"
         if key in cache:
             return cache[key]
-        if not store.exists(key):
+        if key not in existing_keys:
             response = requests.get(variant.url, timeout=60)
             response.raise_for_status()
             store.write_bytes(
                 key, response.content, variant.mime_type or "application/octet-stream"
             )
+            existing_keys.add(key)
         mirrored = ImageVariant(
             url=f"{SITE_URL}/api/card-images/{key.removeprefix('card-images/')}",
             width=variant.width,
