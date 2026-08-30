@@ -95,6 +95,11 @@ jobs:
           uv run python scripts/export_collector_preview.py \
             --date "$archive_date" \
             --output-root apps/web/source-data | tee collector-preview-export-result.json
+      - name: Restore card-image statuses from the validated R2 manifest
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          uv run python -m indexengine.card_images.cli materialize-web \
+            --source-data-root apps/web/source-data | tee card-image-materialize-result.json
       - name: Update aggregate public readiness receipt
         if: steps.archive_state.outputs.already_processed != 'true'
         run: |
@@ -119,6 +124,7 @@ jobs:
             calc-result.json
             collector-result.json
             collector-preview-export-result.json
+            card-image-materialize-result.json
             preview-export-result.json
             data/manifest-latest.json
             apps/web/source-data/readiness.json

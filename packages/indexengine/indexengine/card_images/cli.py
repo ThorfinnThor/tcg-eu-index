@@ -93,14 +93,18 @@ def match_magic_command(
 
 
 @main.command("materialize-web")
-@click.option("--local-store", type=click.Path(path_type=Path), required=True)
+@click.option("--local-store", type=click.Path(path_type=Path))
 @click.option(
     "--source-data-root",
     type=click.Path(path_type=Path),
     default=Path("apps/web/source-data"),
 )
-def materialize_web_command(local_store: Path, source_data_root: Path) -> None:
-    result = materialize_magic_images(LocalObjectStore(local_store), source_data_root)
+def materialize_web_command(
+    local_store: Path | None,
+    source_data_root: Path,
+) -> None:
+    store = LocalObjectStore(local_store) if local_store else R2Client(Settings.from_env())
+    result = materialize_magic_images(store, source_data_root)
     click.echo(json.dumps(asdict(result), indent=2, sort_keys=True))
 
 

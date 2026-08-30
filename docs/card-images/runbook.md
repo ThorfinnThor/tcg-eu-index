@@ -61,6 +61,8 @@ UV_CACHE_DIR=/private/tmp/tcg-uv-cache uv run python -m indexengine.card_images.
 
 `all-matches.csv` contains the match outcome for every Magic row, including exact, ambiguous, and provider-missing results. It contains Cardmarket product links, but no direct artwork URL. `qa-sample.csv` contains 100 unique Cardmarket products selected across multi-face cards, unusual layouts, foil variants, languages, and a deterministic coverage fill. It is only the human-review subset and does not limit publication of rows that pass the full automated gates. It contains links to the external Cardmarket and Scryfall product pages, but no direct artwork URL.
 
+The daily archive workflow must rematerialize card-image statuses after exporting a fresh collector projection. In CI, `materialize-web` reads the validated public manifest from R2. For local development, pass `--local-store /private/tmp/tcg-card-images`. This prevents the archive export from silently replacing exact or legally blocked statuses with missing prerequisites.
+
 Manual decisions belong in a separate versioned YAML file with `version`, `dataset_version`, and a `reviews` list containing `source_row_key` and `status: approved|rejected`. Pass it with `--reviews`. Use `--require-ready` only for an activation run; it fails until every gate, including legal policy and all sample reviews, passes.
 
 ## Rollback
