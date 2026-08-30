@@ -40,6 +40,7 @@ const supportedImageHosts = new Set([
   "storage.googleapis.com",
   "legendstory-production-s3-public.s3.amazonaws.com",
   "d2wlb52bya4y8z.cloudfront.net",
+  "cmsassets.rgpub.io",
   "tcg-eu-index-web.shuu9599.workers.dev",
 ]);
 const providerAttributions: Record<string, { name: string; url: string }> = {
@@ -51,6 +52,10 @@ const providerAttributions: Record<string, { name: string; url: string }> = {
   fab_dataset: {
     name: "Flesh and Blood Cards",
     url: "https://github.com/the-fab-cube/flesh-and-blood-cards"
+  },
+  riot_riftbound: {
+    name: "Riot Games Riftbound Card Gallery",
+    url: "https://playriftbound.com/en-us/card-gallery/"
   },
 };
 
