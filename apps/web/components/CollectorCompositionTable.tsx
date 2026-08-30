@@ -7,6 +7,7 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { cardmarketProductUrl } from "@/lib/cardmarket";
 import { affiliateCommerceConfigured, commerceTargets } from "@/lib/commerce";
 import {
+  cardImageDeliveryUrl,
   formatCollectorEur,
   matchesCollectorPriceBand,
   type CollectorPriceBand
@@ -42,7 +43,7 @@ const supportedImageHosts = new Set([
   "tcg-eu-index-web.shuu9599.workers.dev",
 ]);
 const providerAttributions: Record<string, { name: string; url: string }> = {
-  tcgdex: { name: "TCGdex", url: "https://tcgdex.dev/" },
+  tcgdex: { name: "TCGdex / Pokemon TCG API", url: "https://pokemontcg.io/" },
   ygoprodeck: { name: "YGOPRODeck", url: "https://ygoprodeck.com/" },
   digimon: { name: "DigimonCard.io", url: "https://digimoncard.io/" },
   lorcast: { name: "Lorcast", url: "https://lorcast.com/" },
@@ -122,7 +123,9 @@ function CardArtwork({ member }: { member: Member }) {
   const structuredImage = member.image;
   const publishable = structuredImage?.status === "exact" || structuredImage?.status === "manual";
   const preferredUrl = publishable ? structuredImage.front?.normal?.url ?? null : null;
-  const imageUrl = supportedImageUrl(preferredUrl ?? (structuredImage ? null : member.image_url));
+  const imageUrl = supportedImageUrl(
+    cardImageDeliveryUrl(preferredUrl ?? (structuredImage ? null : member.image_url))
+  );
   const [failedUrl, setFailedUrl] = useState<string | null>(null);
   const visibleUrl = imageUrl === failedUrl ? null : imageUrl;
   const setLabel = displaySetName(member.set_name);

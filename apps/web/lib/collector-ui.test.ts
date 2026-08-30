@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  cardImageDeliveryUrl,
   collectorDiagnosticSummary,
   collectorGameName,
   collectorThreshold,
@@ -30,6 +31,14 @@ describe("collector UI labels", () => {
     expect(matchesCollectorPriceBand(1_000, "1000-10000")).toBe(true);
     expect(matchesCollectorPriceBand(10_000, "10000-plus")).toBe(true);
     expect(matchesCollectorPriceBand(50_000, "all")).toBe(true);
+  });
+
+  it("delivers TCGdex Pokemon matches through the responsive image host", () => {
+    expect(cardImageDeliveryUrl("https://assets.tcgdex.net/en/xy7/97/high.webp"))
+      .toBe("https://images.pokemontcg.io/xy7/97.png");
+    expect(cardImageDeliveryUrl("https://cards.scryfall.io/normal/example.jpg"))
+      .toBe("https://cards.scryfall.io/normal/example.jpg");
+    expect(cardImageDeliveryUrl(null)).toBeNull();
   });
 
   it("formats missing diagnostics without inventing values", () => {

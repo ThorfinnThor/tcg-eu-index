@@ -50,6 +50,20 @@ export function matchesCollectorPriceBand(price: number, band: CollectorPriceBan
   return true;
 }
 
+export function cardImageDeliveryUrl(value: string | null) {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    if (url.hostname !== "assets.tcgdex.net") return value;
+    const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+    if (parts.length !== 4 || parts[0] !== "en" || parts[3] !== "high.webp") return value;
+    const [, setId, collectorNumber] = parts;
+    return `https://images.pokemontcg.io/${encodeURIComponent(setId)}/${encodeURIComponent(collectorNumber)}.png`;
+  } catch {
+    return value;
+  }
+}
+
 export function latestCollectorRecord(history: CollectorHistory) {
   return history.records.at(-1) ?? null;
 }

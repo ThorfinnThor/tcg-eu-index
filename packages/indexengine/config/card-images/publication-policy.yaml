@@ -28,6 +28,8 @@ providers:
       - "https://tcgdex.dev/rest/cards"
       - "https://tcgdex.dev/assets"
       - "https://github.com/tcgdex/cards-database"
+      - "https://pokemontcg.io/"
+      - "TCGdex supplies the catalogue match; Pokemon TCG API supplies the browser image when the TCGdex asset host is unavailable."
       - "Operator confirmed publication clearance on 2026-08-30."
 
   ygoprodeck:
