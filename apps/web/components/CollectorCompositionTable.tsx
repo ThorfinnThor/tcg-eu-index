@@ -129,7 +129,11 @@ function CardArtwork({ member }: { member: Member }) {
   const altParts = [member.name];
   if (setLabel !== "Set details pending") altParts.push(setLabel);
   if (member.collector_number) altParts.push(member.collector_number);
-  if (structuredImage?.artwork_variant && structuredImage.artwork_variant !== "base") {
+  if (
+    structuredImage?.artwork_variant
+    && structuredImage.artwork_variant !== "base"
+    && structuredImage.artwork_variant !== "unknown"
+  ) {
     altParts.push(structuredImage.artwork_variant.replaceAll("_", " "));
   }
   const placeholder = failedUrl || structuredImage?.status === "provider_error"
