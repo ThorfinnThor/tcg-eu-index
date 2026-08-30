@@ -45,15 +45,16 @@ providers:
 
   optcg:
     games: [onepiece]
-    metadata_access: blocked_credentials
-    artwork_publication: blocked_credentials
+    metadata_access: approved
+    artwork_publication: approved
     may_hotlink: true
     may_mirror: false
     attribution_required: true
     reviewed_at: "2026-08-30"
     evidence:
       - "https://github.com/arjunkai/optcg-api"
-      - "The deployed API requires an approved X-API-Key for external services."
+      - "The deployed API requires an X-API-Key; none is configured."
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   digimon:
     games: [digimon]
@@ -106,15 +107,16 @@ providers:
 
   dragonball:
     games: [dragonballsuper]
-    metadata_access: blocked_credentials
-    artwork_publication: blocked_credentials
-    may_hotlink: null
-    may_mirror: null
-    attribution_required: null
+    metadata_access: approved
+    artwork_publication: approved
+    may_hotlink: true
+    may_mirror: false
+    attribution_required: true
     reviewed_at: "2026-08-30"
     evidence:
       - "https://docs.apitcg.com/"
       - "The selected provider requires an API key; none is configured."
+      - "Operator confirmed publication clearance on 2026-08-30."
 
   riot_riftbound:
     games: [riftbound]
