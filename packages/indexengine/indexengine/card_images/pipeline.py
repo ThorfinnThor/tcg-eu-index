@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import gzip
 import json
 from collections.abc import Iterable
 from dataclasses import asdict, dataclass
@@ -52,6 +53,8 @@ def run_magic_image_matching(
         source_updated_at=dataset_version,
     )
     matches, assets = match_magic_identities(identities, snapshot, policy)
+    records_by_id = {record.provider_card_id: record for record in snapshot.records}
+    raw_set_names = _load_raw_set_names(store, snapshot.snapshot_id)
     assets_by_id = assets
     rows: list[dict[str, object]] = []
     statuses: dict[str, int] = {}
@@ -62,12 +65,19 @@ def run_magic_image_matching(
             match,
             assets_by_id.get(match.asset_id) if match.asset_id else None,
         )
+        record = records_by_id.get(match.provider_card_id or "")
         statuses[public.status] = statuses.get(public.status, 0) + 1
         rows.append(
             {
                 "source_row_key": identity.source_row_key,
                 "cardmarket_product_id": identity.cardmarket_product_id,
                 "finish": identity.finish,
+                "set_name": (
+                    record.set_name
+                    if record is not None and record.set_name
+                    else raw_set_names.get(match.provider_card_id or "")
+                ),
+                "collector_number": record.collector_number if record is not None else None,
                 "image": public.to_dict(),
             }
         )
@@ -171,6 +181,32 @@ def load_public_card_images(
     return result
 
 
+def load_public_card_metadata(
+    store: ObjectStore,
+    game: str,
+) -> dict[tuple[int, str], tuple[str | None, str | None]]:
+    key = f"derived/card-images/{game}/public-manifest.json"
+    if not store.exists(key):
+        return {}
+    payload = json.loads(store.read_bytes(key))
+    if not isinstance(payload, dict) or not isinstance(payload.get("rows"), list):
+        raise ValueError(f"{game} public image manifest has no rows")
+    result: dict[tuple[int, str], tuple[str | None, str | None]] = {}
+    for raw in payload["rows"]:
+        if not isinstance(raw, dict):
+            raise ValueError(f"{game} public image manifest has an invalid metadata row")
+        key_tuple = (int(raw["cardmarket_product_id"]), str(raw["finish"]))
+        if key_tuple in result:
+            raise ValueError(f"duplicate public metadata row for {game} {key_tuple}")
+        result[key_tuple] = (
+            raw.get("set_name") if isinstance(raw.get("set_name"), str) else None,
+            raw.get("collector_number")
+            if isinstance(raw.get("collector_number"), str)
+            else None,
+        )
+    return result
+
+
 def materialize_magic_images(
     store: ObjectStore,
     source_data_root: Path,
@@ -178,6 +214,7 @@ def materialize_magic_images(
     """Add machine-readable image status to the checked-in static projection."""
     magic_images = load_public_card_images(store, "magic")
     collector_root = source_data_root / "collector"
+    magic_metadata = load_public_card_metadata(store, "magic")
     collector_index = json.loads((collector_root / "index.json").read_text())
     indexes = collector_index.get("indexes")
     if not isinstance(indexes, list):
@@ -223,6 +260,18 @@ def materialize_magic_images(
                 if member.get("image_source") != legacy_source:
                     member["image_source"] = legacy_source
                     page_changed = True
+                metadata = magic_metadata.get(key)
+                if metadata is not None:
+                    provider_set_name, provider_collector_number = metadata
+                    if provider_set_name and member.get("set_name") != provider_set_name:
+                        member["set_name"] = provider_set_name
+                        page_changed = True
+                    if (
+                        provider_collector_number
+                        and member.get("collector_number") != provider_collector_number
+                    ):
+                        member["collector_number"] = provider_collector_number
+                        page_changed = True
                 statuses[image.status] = statuses.get(image.status, 0) + 1
                 game_statuses[image.status] = game_statuses.get(image.status, 0) + 1
                 rows += 1
@@ -253,6 +302,20 @@ def materialize_magic_images(
         statuses=dict(sorted(statuses.items())),
         changed_files=tuple(sorted(set(changed))),
     )
+
+def _load_raw_set_names(store: ObjectStore, snapshot_id: str) -> dict[str, str]:
+    """Backfill set names for older immutable snapshots without normalized set_name."""
+    key = f"provider-snapshots/scryfall/{snapshot_id}/raw.jsonl.gz"
+    if not store.exists(key):
+        return {}
+    result: dict[str, str] = {}
+    for line in gzip.decompress(store.read_bytes(key)).splitlines():
+        raw = json.loads(line)
+        provider_id = raw.get("id")
+        set_name = raw.get("set_name")
+        if isinstance(provider_id, str) and isinstance(set_name, str) and set_name.strip():
+            result[provider_id] = set_name.strip()
+    return result
 
 
 def _public_image(payload: dict[str, Any]) -> PublicCardImage:

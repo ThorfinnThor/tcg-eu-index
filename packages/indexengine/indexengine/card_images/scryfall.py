@@ -60,6 +60,7 @@ class ScryfallCardRecord:
     name_raw: str
     name_normalized: str
     set_code: str | None
+    set_name: str | None
     collector_number: str | None
     language: str | None
     layout: str | None
@@ -386,6 +387,7 @@ def _normalize_scryfall_card(card: dict[str, Any]) -> ScryfallCardRecord | None:
         name_raw=name,
         name_normalized=normalize_card_name(name),
         set_code=_optional_text(card.get("set")),
+        set_name=_optional_text(card.get("set_name")),
         collector_number=_optional_text(card.get("collector_number")),
         language=_optional_text(card.get("lang")),
         layout=_optional_text(card.get("layout")),
@@ -491,6 +493,7 @@ def _record_from_dict(payload: dict[str, Any]) -> ScryfallCardRecord:
         name_raw=str(payload["name_raw"]),
         name_normalized=str(payload["name_normalized"]),
         set_code=_optional_text(payload.get("set_code")),
+        set_name=_optional_text(payload.get("set_name")),
         collector_number=_optional_text(payload.get("collector_number")),
         language=_optional_text(payload.get("language")),
         layout=_optional_text(payload.get("layout")),

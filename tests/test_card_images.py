@@ -73,6 +73,7 @@ def _bulk_record(product_id: int = 42, provider_id: str = "scryfall-card") -> di
         "cardmarket_id": product_id,
         "name": "Delver of Secrets",
         "set": "mid",
+        "set_name": "Midnight Hunt",
         "collector_number": "001a",
         "lang": "en",
         "layout": "transform",
@@ -118,6 +119,14 @@ def test_source_key_and_identifiers_preserve_strings() -> None:
     assert identity.source_row_key == source_row_key("magic", 42, "nonfoil")
     assert identity.source_row_key != source_row_key("magic", 42, "foil")
     assert normalize_card_name("  Foo\u2013Bar  ") == "foo-bar"
+
+
+def test_scryfall_metadata_preserves_set_name() -> None:
+    record = parse_scryfall_bulk(
+        gzip.compress(json.dumps(_bulk_record()).encode() + b"\n"),
+        "https://data.scryfall.io/default.jsonl.gz",
+    )[0]
+    assert record.set_name == "Midnight Hunt"
 
 
 def test_scryfall_direct_cardmarket_match_supports_two_faces() -> None:

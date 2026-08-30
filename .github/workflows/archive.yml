@@ -95,6 +95,14 @@ jobs:
           uv run python scripts/export_collector_preview.py \
             --date "$archive_date" \
             --output-root apps/web/source-data | tee collector-preview-export-result.json
+      - name: Refresh validated Magic match metadata
+        if: steps.archive_state.outputs.already_processed != 'true'
+        run: |
+          archive_date="$(python -c 'import json; print(json.load(open("data/manifest-latest.json"))["date"])')"
+          uv run python -m indexengine.card_images.cli match-magic \
+            --dataset-version "$archive_date" \
+            --collector-root apps/web/source-data/collector \
+            --report-root /tmp/card-image-reports > card-image-match-result.json
       - name: Restore card-image statuses from the validated R2 manifest
         if: steps.archive_state.outputs.already_processed != 'true'
         run: |
@@ -124,6 +132,7 @@ jobs:
             calc-result.json
             collector-result.json
             collector-preview-export-result.json
+            card-image-match-result.json
             card-image-materialize-result.json
             preview-export-result.json
             data/manifest-latest.json
