@@ -1,6 +1,11 @@
 {
   "changed_keys": [
-    "image-matches/2026-08-30/magic/manifest.json"
+    "image-matches/2026-08-30/magic/exact.ndjson",
+    "image-matches/2026-08-30/magic/unresolved.ndjson",
+    "image-matches/2026-08-30/magic/assets.ndjson",
+    "image-matches/2026-08-30/magic/manifest.json",
+    "public-image-manifests/2026-08-30-magic.json",
+    "derived/card-images/magic/public-manifest.json"
   ],
   "dataset_version": "2026-08-30",
   "exact_coverage_ratio": 0.939553669222344,
