@@ -426,6 +426,9 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
                 'const card = { name: { en: "Pikachu" }, variants: ['
                 "{ thirdParty: { cardmarket: 9876 } }] }"
             ),
+            "repo/data/Base/Test Set/002.ts": (
+                'const card = { name: { en: "Raichu" }, variants: [] }'
+            ),
         }
         for name, body in files.items():
             encoded = body.encode()
@@ -435,11 +438,17 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
 
     records = parse_tcgdex_tarball(archive_body.getvalue())
 
-    assert len(records) == 1
-    assert records[0].cardmarket_id == 9876
-    assert records[0].cardmarket_expansion_id == 1234
-    assert records[0].set_name == "Test Set"
-    assert records[0].collector_number == "001"
+    assert len(records) == 2
+    by_number = {record.collector_number: record for record in records}
+    assert by_number["001"].cardmarket_id == 9876
+    assert by_number["001"].cardmarket_expansion_id == 1234
+    assert by_number["001"].set_name == "Test Set"
+    assert by_number["001"].faces[0].normal.url == (
+        "https://images.pokemontcg.io/base-test/001.png"
+    )
+    assert by_number["002"].cardmarket_id is None
+    assert by_number["002"].cardmarket_expansion_id == 1234
+    assert by_number["002"].set_name == "Test Set"
 
 
 def test_catalog_matcher_uses_unique_complete_name_and_rejects_reprints() -> None:

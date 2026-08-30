@@ -29,7 +29,7 @@ from indexengine.card_images.contracts import (
 )
 from indexengine.card_images.policy import ProviderPolicy
 
-ADAPTER_VERSION = "1.1.0"
+ADAPTER_VERSION = "1.2.0"
 MATCHER_VERSION = "1.0.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
@@ -614,8 +614,15 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
         text = body.decode(errors="replace")
         name = _ts_english_name(text) or f"{set_id} {number}"
         market_ids = {int(item) for item in re.findall(r"cardmarket\s*:\s*(\d+)", text)}
-        for market_id in sorted(market_ids):
-            image = f"https://assets.tcgdex.net/en/{set_id}/{number}/high.webp"
+        # Keep the complete provider catalogue. Direct Cardmarket IDs are the
+        # strongest match, but cards without one are still required for safe
+        # expansion-signature and set/number matching.
+        market_ids_or_none: list[int | None] = []
+        market_ids_or_none.extend(sorted(market_ids))
+        if not market_ids_or_none:
+            market_ids_or_none.append(None)
+        for market_id in market_ids_or_none:
+            image = f"https://images.pokemontcg.io/{set_id}/{number}.png"
             records.append(
                 _record(
                     provider="tcgdex",
@@ -632,7 +639,7 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
                     variant=None,
                     image_url=image,
                     raw={"path": relative, "cardmarket_id": market_id},
-                    mime_type="image/webp",
+                    mime_type="image/png",
                 )
             )
     return records
