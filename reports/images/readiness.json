@@ -10,7 +10,7 @@
       "with_collector_number": 829,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 740,
       "with_set_name": 347
     },
     {
@@ -36,12 +36,12 @@
       "with_collector_number": 287,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 287,
       "with_set_name": 287
     },
     {
       "game": "lorcana",
-      "missing_prerequisite": 506,
+      "missing_prerequisite": 390,
       "parsed_identifier_candidates": 0,
       "total_rows": 506,
       "unique_cardmarket_products": 365,
@@ -49,7 +49,7 @@
       "with_collector_number": 119,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 116,
       "with_set_name": 119
     },
     {
@@ -80,7 +80,7 @@
     },
     {
       "game": "pokemon",
-      "missing_prerequisite": 8695,
+      "missing_prerequisite": 5472,
       "parsed_identifier_candidates": 2,
       "total_rows": 8695,
       "unique_cardmarket_products": 8547,
@@ -88,7 +88,7 @@
       "with_collector_number": 3369,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 3223,
       "with_set_name": 3367
     },
     {
@@ -114,7 +114,7 @@
       "with_collector_number": 58,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 58,
       "with_set_name": 58
     },
     {
@@ -127,7 +127,7 @@
       "with_collector_number": 1686,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 0,
+      "with_set_code": 1345,
       "with_set_name": 1686
     }
   ],
