@@ -33,11 +33,11 @@
       "total_rows": 1582,
       "unique_cardmarket_products": 1582,
       "with_artwork_variant": 0,
-      "with_collector_number": 300,
+      "with_collector_number": 301,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 300,
-      "with_set_name": 300
+      "with_set_code": 301,
+      "with_set_name": 301
     },
     {
       "game": "lorcana",
@@ -75,8 +75,8 @@
       "with_collector_number": 1971,
       "with_language": 0,
       "with_provider_card_id": 0,
-      "with_set_code": 248,
-      "with_set_name": 573
+      "with_set_code": 315,
+      "with_set_name": 649
     },
     {
       "game": "pokemon",
