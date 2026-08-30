@@ -9,6 +9,7 @@ import re
 import tarfile
 import time
 from collections import defaultdict
+from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import PurePosixPath
@@ -262,6 +263,7 @@ def match_catalog_identities(
     *,
     store: ObjectStore | None = None,
     matched_at: str | None = None,
+    marketplace_set_names: Mapping[int, Iterable[str]] | None = None,
 ) -> tuple[list[CardImageMatch], dict[str, CardImageAsset]]:
     by_market: dict[int, list[CatalogCardRecord]] = defaultdict(list)
     by_market_set_name: dict[tuple[int, str], list[CatalogCardRecord]] = defaultdict(list)
@@ -277,7 +279,7 @@ def match_catalog_identities(
             by_market_set_name[
                 (record.cardmarket_expansion_id, _loose_name(record.name_raw))
             ].append(record)
-        provider_set = (record.set_code or "", record.set_name or "")
+        provider_set = _provider_set_key(record)
         if any(provider_set):
             by_provider_set_name[(provider_set, _loose_name(record.name_raw))].append(record)
         if record.collector_number:
@@ -285,7 +287,11 @@ def match_catalog_identities(
                 record
             )
         by_name[record.name_normalized].append(record)
-    inferred_market_sets = _infer_marketplace_sets(identities, snapshot.records)
+    inferred_market_sets = _infer_marketplace_sets(
+        identities,
+        snapshot.records,
+        marketplace_set_names=marketplace_set_names,
+    )
     timestamp = matched_at or snapshot.fetched_at
     matches: list[CardImageMatch] = []
     assets: dict[str, CardImageAsset] = {}
@@ -411,15 +417,23 @@ def match_catalog_identities(
 def _infer_marketplace_sets(
     identities: list[CanonicalCardIdentity],
     records: tuple[CatalogCardRecord, ...],
+    *,
+    marketplace_set_names: Mapping[int, Iterable[str]] | None = None,
 ) -> dict[int, tuple[tuple[str, str], int, int]]:
     """Infer a provider set only from a strongly corroborated expansion signature.
 
     Cardmarket's public product catalogue supplies expansion IDs but no expansion
     names. A single card name is never enough because reprints are common. This
     resolver requires at least three shared names, a two-name lead over the next
-    provider set, and 60% coverage of the observable expansion basket.
+    provider set, and 60% coverage of the observable expansion basket. The full
+    Cardmarket singles catalogue should be supplied when available; collector-only
+    baskets are retained as a safe fallback for local and historical runs.
     """
     marketplace_names: dict[int, set[str]] = defaultdict(set)
+    for expansion_id, names in (marketplace_set_names or {}).items():
+        marketplace_names[int(expansion_id)].update(
+            normalized for name in names if (normalized := _loose_name(str(name)))
+        )
     for identity in identities:
         if identity.set_provider_id and identity.set_provider_id.isdigit():
             marketplace_names[int(identity.set_provider_id)].add(
@@ -427,7 +441,7 @@ def _infer_marketplace_sets(
             )
     provider_names: dict[tuple[str, str], set[str]] = defaultdict(set)
     for record in records:
-        provider_set = (record.set_code or "", record.set_name or "")
+        provider_set = _provider_set_key(record)
         if any(provider_set):
             provider_names[provider_set].add(_loose_name(record.name_raw))
     inferred: dict[int, tuple[tuple[str, str], int, int]] = {}
@@ -447,6 +461,15 @@ def _infer_marketplace_sets(
         if overlap >= 3 and overlap >= runner_up + 2 and overlap / len(names) >= 0.6:
             inferred[expansion_id] = (provider_set, overlap, runner_up)
     return inferred
+
+
+def _provider_set_key(record: CatalogCardRecord) -> tuple[str, str]:
+    # YGOPRODeck's set_code is the full printed number (for example
+    # BACH-EN025), not a set-level identifier. Grouping by it would make every
+    # printing look like a one-card set and prevent corroborated set inference.
+    if record.provider == "ygoprodeck":
+        return "", record.set_name or ""
+    return record.set_code or "", record.set_name or ""
 
 
 def _fetch_provider(

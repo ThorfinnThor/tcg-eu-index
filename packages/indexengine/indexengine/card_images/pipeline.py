@@ -2,19 +2,28 @@ from __future__ import annotations
 
 import gzip
 import json
+from collections import defaultdict
 from collections.abc import Iterable
 from dataclasses import asdict, dataclass
+from io import BytesIO
 from pathlib import Path
 from typing import Any, cast
 
+import polars as pl
 from core.r2 import sha256_hex
 from core.store import ObjectStore
 
 from indexengine.card_images.catalogs import (
+    CatalogCardRecord,
     load_catalog_snapshot,
     match_catalog_identities,
 )
-from indexengine.card_images.contracts import PublicCardImage, public_image_from_match
+from indexengine.card_images.contracts import (
+    CanonicalCardIdentity,
+    CardImageMatch,
+    PublicCardImage,
+    public_image_from_match,
+)
 from indexengine.card_images.policy import load_publication_policy
 from indexengine.card_images.readiness import (
     identities_from_public_collector,
@@ -84,10 +93,11 @@ def run_catalog_image_matching(
         snapshot,
         policy,
         store=store,
+        marketplace_set_names=_load_marketplace_set_names(store, game),
     )
-    records_by_key = {
-        (record.provider_card_id, record.provider_art_id): record for record in snapshot.records
-    }
+    records_by_key: dict[tuple[str, str | None], list[CatalogCardRecord]] = defaultdict(list)
+    for record in snapshot.records:
+        records_by_key[(record.provider_card_id, record.provider_art_id)].append(record)
     identity_by_key = {identity.source_row_key: identity for identity in identities}
     rows: list[dict[str, object]] = []
     statuses: dict[str, int] = {}
@@ -97,17 +107,25 @@ def run_catalog_image_matching(
             match,
             assets.get(match.asset_id) if match.asset_id else None,
         )
-        record = records_by_key.get((match.provider_card_id or "", match.provider_art_id))
+        matched_record = _matched_catalog_record(
+            records_by_key.get((match.provider_card_id or "", match.provider_art_id), []),
+            match,
+            identity,
+        )
         statuses[public.status] = statuses.get(public.status, 0) + 1
         rows.append(
             {
                 "source_row_key": identity.source_row_key,
                 "cardmarket_product_id": identity.cardmarket_product_id,
                 "finish": identity.finish,
-                "set_name": record.set_name if record is not None else None,
-                "set_code": record.set_code if record is not None else None,
-                "collector_number": record.collector_number if record is not None else None,
-                "provider_card_id": record.provider_card_id if record is not None else None,
+                "set_name": matched_record.set_name if matched_record is not None else None,
+                "set_code": matched_record.set_code if matched_record is not None else None,
+                "collector_number": (
+                    matched_record.collector_number if matched_record is not None else None
+                ),
+                "provider_card_id": (
+                    matched_record.provider_card_id if matched_record is not None else None
+                ),
                 "image": public.to_dict(),
             }
         )
@@ -155,6 +173,68 @@ def run_catalog_image_matching(
         statuses=dict(sorted(statuses.items())),
         changed_keys=tuple(changed),
     )
+
+
+def _load_marketplace_set_names(
+    store: ObjectStore,
+    game: str,
+) -> dict[int, tuple[str, ...]]:
+    """Load full Cardmarket singles baskets for deterministic set inference."""
+    key = f"derived/catalogue/{game}/products.parquet"
+    if not store.exists(key):
+        return {}
+    products = pl.read_parquet(BytesIO(store.read_bytes(key)))
+    required = ("cm_expansion_id", "product_kind", "name", "display_name")
+    if not set(required).issubset(products.columns):
+        raise ValueError(f"normalized Cardmarket catalogue {key} lacks set-signature columns")
+    names: dict[int, set[str]] = defaultdict(set)
+    for row in products.select(required).iter_rows(named=True):
+        if row["product_kind"] != "single" or row["cm_expansion_id"] is None:
+            continue
+        name = row["display_name"] or row["name"]
+        if name is not None and str(name).strip():
+            names[int(row["cm_expansion_id"])].add(str(name))
+    return {expansion_id: tuple(sorted(values)) for expansion_id, values in names.items()}
+
+
+def _matched_catalog_record(
+    records: list[CatalogCardRecord],
+    match: CardImageMatch,
+    identity: CanonicalCardIdentity,
+) -> CatalogCardRecord | None:
+    """Recover the exact printing row without guessing among provider reprints."""
+    if len(records) == 1:
+        return records[0]
+    candidates = records
+    if identity.collector_number_canonical:
+        number = identity.collector_number_canonical.casefold()
+        numbered = [
+            record
+            for record in candidates
+            if record.collector_number and record.collector_number.casefold() == number
+        ]
+        if numbered:
+            candidates = numbered
+    evidence = {
+        key: value
+        for item in match.evidence
+        if "=" in item
+        for key, value in (item.split("=", 1),)
+    }
+    provider_set_name = evidence.get("provider_set_name")
+    provider_set_code = evidence.get("provider_set_code")
+    if provider_set_name is not None:
+        in_set = [record for record in candidates if (record.set_name or "") == provider_set_name]
+        if provider_set_code is not None:
+            in_set = [
+                record
+                for record in in_set
+                if (record.set_code or "") == provider_set_code
+                or (match.provider == "ygoprodeck" and provider_set_code == "")
+            ]
+        if in_set:
+            candidates = in_set
+    return candidates[0] if len(candidates) == 1 else None
 
 
 def run_magic_image_matching(

@@ -391,6 +391,69 @@ def test_catalog_matcher_infers_set_only_from_corroborated_expansion_signature()
     assert {match.provider_card_id for match in matches} == {"a-hero", "a-ally", "a-spell"}
 
 
+def test_catalog_matcher_uses_full_marketplace_set_basket_for_sparse_index() -> None:
+    cards = {
+        "cards": [
+            {
+                "id": card_id,
+                "name": name,
+                "collector_number": number,
+                "lang": "en",
+                "set": {"code": set_code, "name": set_name},
+                "image_uris": {
+                    "digital": {"normal": f"https://cards.lorcast.io/card/{card_id}.avif"}
+                },
+            }
+            for card_id, name, number, set_code, set_name in (
+                ("a-hero", "Hero", "A-001", "A-001", "Alpha"),
+                ("a-ally", "Ally", "A-002", "A-002", "Alpha"),
+                ("a-spell", "Spell", "A-003", "A-003", "Alpha"),
+                ("b-hero", "Hero", "B-001", "B-001", "Beta"),
+                ("b-other", "Other", "B-002", "B-002", "Beta"),
+            )
+        ]
+    }
+    # Model YGOPRODeck, whose set_code is a card-level printing number. Set
+    # inference therefore has to group by set_name rather than by set_code.
+    records = tuple(
+        replace(record, provider="ygoprodeck")
+        for record in parse_lorcast_payload(json.dumps(cards).encode())
+    )
+    snapshot = CatalogSnapshot(
+        provider="ygoprodeck",
+        game="yugioh",
+        snapshot_id="ygoprodeck-signature-test",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://db.ygoprodeck.com/api/v7/cardinfo.php",
+        source_version="test",
+        raw_sha256="c" * 64,
+        records=records,
+    )
+    identity = replace(
+        _identity(),
+        game="yugioh",
+        source_row_key=source_row_key("yugioh", 101, "nonfoil"),
+        cardmarket_product_id=101,
+        cardmarket_name_raw="Hero",
+        name_normalized=normalize_card_name("Hero"),
+        set_provider_id="9001",
+        collector_number_raw=None,
+        collector_number_canonical=None,
+    )
+    policy = replace(_policy(), provider="ygoprodeck", games=("yugioh",))
+
+    matches, _ = match_catalog_identities(
+        [identity],
+        snapshot,
+        policy,
+        marketplace_set_names={9001: ("Hero", "Ally", "Spell")},
+    )
+
+    assert matches[0].status == "exact"
+    assert matches[0].match_method == "inferred_set_name_unique"
+    assert matches[0].provider_card_id == "a-hero"
+
+
 def test_credentialed_provider_parsers_preserve_printing_numbers_and_images() -> None:
     one_piece = parse_optcg_payload(
         json.dumps(
