@@ -1,5 +1,7 @@
 {
-  "changed_keys": [],
+  "changed_keys": [
+    "image-matches/2026-08-30/magic/manifest.json"
+  ],
   "dataset_version": "2026-08-30",
   "exact_coverage_ratio": 0.939553669222344,
   "exact_matches": 13725,
