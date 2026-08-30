@@ -21485,7 +21485,7 @@ pokemon,01bea41093e85f928f2274b9c412f0bb9d0f31619358ccdc341752dcd22b93dc,560364,
 pokemon,01c084c9cec348bc11107f1f9c62ebc283831cb14e79ea2863709dfa81eec3c3,868150,Kingdra [Spray Splash | Dragon Steam | Prime],nonfoil,provider_missing,false
 pokemon,01c5d14ed7dd9415027af2472267efc5b77d0662c8edb1536ff9bc1ea02954e7,765794,Ancient Mew [Psyche],nonfoil,provider_missing,false
 pokemon,01c929960d57b6de4a69479e388c1b4a6c3a4f2cfd796b947372dc332516e5af,563054,Slowpoke [Spacing Out | Scavenge],nonfoil,exact,true
-pokemon,01dc1265622c3a86b8a07b20be53e4782d07405f77134799f832e21e2e89ec93,553114,MGengar EX [Hollow Geist],nonfoil,provider_missing,false
+pokemon,01dc1265622c3a86b8a07b20be53e4782d07405f77134799f832e21e2e89ec93,553114,MGengar EX [Hollow Geist],nonfoil,exact,true
 pokemon,01e8584b852a08eb82b12236f7eb2a2cc5db6e8b3e51f2cd5cd70c97138eb288,566095,Pikachu [Recharge | Thunderbolt],nonfoil,provider_missing,false
 pokemon,01ef548c79f6f6234e0c2aa7a9b1d4bc138bcba0e6c7a5683a2d5f5cc5091126,570435,Charizard [Collect Fire | Flame Pillar],nonfoil,provider_missing,false
 pokemon,01f4e456f0ddbb2cc3a8132381f8f46a4969839706a93ddc0e590f0ee122c23f,512635,Pokémon Center Lady,nonfoil,exact,true
@@ -21550,7 +21550,7 @@ pokemon,03f3554ce0861b34af7f32aaa0b7968529e40339bb77a01c838b630a28339408,851460,
 pokemon,0418b388cb1be2ee3375bfcabc1196d2b7d76d2721a2080b091e20cec900c3cc,651976,Magneton [Magnetic Flow | Steel Wave],nonfoil,ambiguous,false
 pokemon,041c4f53b681882e8b607c67a75d20b7efc1fe8269be38aedf2bcd5e69faa735,850621,Mega Sharpedo ex [Greedy Fang | Hungry Jaws],nonfoil,provider_missing,false
 pokemon,041d51d60dca4a83365da42cb8f294848b9d04dc88feee93378b26d37e461e38,691737,Radiant Charizard [Excited Heart | Combustion Blast],nonfoil,exact,true
-pokemon,041e61a61e1a08194e9696e2c6a6288f87171b09b8aaa8e17fa9b3d71d30204e,553883,Blastoise EX [Rapid Spin | Splash Bomb],nonfoil,provider_missing,false
+pokemon,041e61a61e1a08194e9696e2c6a6288f87171b09b8aaa8e17fa9b3d71d30204e,553883,Blastoise EX [Rapid Spin | Splash Bomb],nonfoil,ambiguous,false
 pokemon,0426a67b55f2f7e26037b6e30a5fe6c89088cb38da983e72f7fca696bca8817e,570321,PokéPark's Latias [Psywave | Mist Ball],nonfoil,provider_missing,false
 pokemon,042cb95c4eec7728d1540b1a641c7c4017806d2267b7a39e1fdbcd642778e954,660178,Gastly [Sleeping Gas | Destiny Bond],nonfoil,exact,true
 pokemon,0431ac4f22d16742832611df29d228b7ad811116f8c751fb434bf0f0cfbdb2e4,863203,Marshadow [Let Loose | Shadow Punch],nonfoil,provider_missing,false
@@ -21637,7 +21637,7 @@ pokemon,0696f9681a693e4882cfd148283c63b1f88c177ba80c1de459daa5d7d27d5953,448193,
 pokemon,06ac167f442f03b4b6da0ebcfb60a65b4199921fa4e8e9ee3fcb891d920c42a9,297893,Zygarde EX [Land's Pulse | Cell Storm | Land's Wrath],nonfoil,ambiguous,false
 pokemon,06d207a1aa48cc4cbfe9f5d87a438af35e712555b84b24afa46b2078ca8426ec,605328,Blaine's Charmeleon [Fire Claws | Bonfire],nonfoil,exact,true
 pokemon,06d5eaa502af900c9257ad4c6b70a0d760083fe8cd2603ce79309b69b7f5534c,861487,Fezandipiti ex [Flip the Script | Cruel Arrow],nonfoil,provider_missing,false
-pokemon,06dd11bff1468ad4ffdd734d7d6a4fab33f6092f17791910e3ded16fc67f1bab,553778,Charizard EX [Stoke | Fire Blast],nonfoil,provider_missing,false
+pokemon,06dd11bff1468ad4ffdd734d7d6a4fab33f6092f17791910e3ded16fc67f1bab,553778,Charizard EX [Stoke | Fire Blast],nonfoil,ambiguous,false
 pokemon,06e4abda183f3b12f3ac399eeacb0095bcbea4efd88261cb4c77ee7a04374b7f,389027,Garchomp & Giratina GX [Linear Attack | Calamitous Slash | GG End GX],nonfoil,exact,true
 pokemon,06e710ca792daf3a1afc46fcc2d2c7ce33b9dfd54d22080c19039e0d274a1ef4,678114,Fan Rotom Lv.46 [Fan Shift | Spin Storm | Air Slash],foil,provider_missing,false
 pokemon,06ec558ceccc69670b3ad3d811f1988634e8a011aa58920d9427948b2fe59055,762630,Aggron ex [Intimidating Armor | Split Bomb | Mega Burn],nonfoil,exact,true
@@ -21727,7 +21727,7 @@ pokemon,094f362ceb167fb8eecc7e626b75cc744a8e62c12b28df1ccf2ebc3eb4337bdc,660150,
 pokemon,0958cc16f173da66f1fd1b7e24c6b1de2028b7ea2989ee15ffe2d121474b66df,866565,Friends in Paldea,foil,provider_missing,false
 pokemon,095da7f315c80df98aa49c6d37a4847e4785d11ae24790820a782c6f4d81d663,567510,Master Ball,nonfoil,exact,true
 pokemon,09606dfb21340f7c9521cd77e26a5b994959f48d036861ce589e754ab6d415a0,783609,Salamence ex [Dragon Lift | Flame Jet | Bright Flame],nonfoil,exact,true
-pokemon,09660c56428462e18e2936ba6f633561b2c4e055798778d2ffb2ea26f412a23c,553409,MBlaziken EX [Moonsault Blaze],nonfoil,provider_missing,false
+pokemon,09660c56428462e18e2936ba6f633561b2c4e055798778d2ffb2ea26f412a23c,553409,MBlaziken EX [Moonsault Blaze],nonfoil,exact,true
 pokemon,09693ee0ff4e9dc720c27d189198b072a2aa6f3e5f6a3975824bd740a203dba1,783676,Gyarados ex [Twister | Dragon Rage],nonfoil,exact,true
 pokemon,096a4c4a3bfe0dae64deccf1cce83a68ab4e12a203698e0c565b870b24435499,669043,Weavile [Claw Snag | Feint Attack],foil,exact,true
 pokemon,097742618ad4ad2355f1eb212b37048b98c4047b8a4f7b65abd2b98572a0da91,782795,Lugia ex [Silver Sparkle | Elemental Blast],nonfoil,exact,true
@@ -21981,11 +21981,11 @@ pokemon,10feb4314633821389f3d7ab8c441f29e1ddfc9f5be63c296433a5ea3f9eb233,654118,
 pokemon,11193edcaaeae81e7e23eedc2a7b23e636572fffeb2d9e3312a88f9502944e2d,553958,Volcanion [Power Heater | Steam Artillery],nonfoil,ambiguous,false
 pokemon,112684398ab2b67bf530185b2ed7b4e83cc88eb29e50887534babe3747257aed,745015,Squirtle [Withdraw | Skull Bash],nonfoil,provider_missing,false
 pokemon,1130be34d60d062349f02933f24e0abc5885052139b50a75669886e5e127082e,570319,PokéPark's Mudkip [Mud-Slap | Whirlpool],nonfoil,provider_missing,false
-pokemon,11391184707d2d70da2bd77b1de1b22214f992ecfb8c4c0b8b2f6ac826380f06,553264,Mudkip [Tackle | Mud-Slap],nonfoil,provider_missing,false
+pokemon,11391184707d2d70da2bd77b1de1b22214f992ecfb8c4c0b8b2f6ac826380f06,553264,Mudkip [Tackle | Mud-Slap],nonfoil,exact,true
 pokemon,11405fde5f4690ea4379bf90a5ea54473923b2f67fb9530e5de1798bd0983688,738957,Grass Energy,foil,ambiguous,false
 pokemon,11432318d6d8b2a0209454a607e685f51f50c4cbb23c5d017c6249c0681bf4a6,804761,Double Dragon Energy,nonfoil,exact,true
 pokemon,114bf25c6df189f8b0226a0f67a5cf778f9af15affc78aacf95e81ffe8adfd38,355648,Yveltal GX [Absorb Vitality | Sonic Evil | Doom Count GX],nonfoil,exact,true
-pokemon,114e6eae41ee6d95bfe834f73365c15739b4cea44ac52386fa899e33a3016f72,553184,MDiancie EX [Diamond Force],nonfoil,provider_missing,false
+pokemon,114e6eae41ee6d95bfe834f73365c15739b4cea44ac52386fa899e33a3016f72,553184,MDiancie EX [Diamond Force],nonfoil,exact,true
 pokemon,1152c845cbcb4dc0207e58b89c65ba35ec9d82a419080ebe15aa66779141d42e,469764,Ultra Necrozma [Shining Burst],nonfoil,provider_missing,false
 pokemon,11583d5b14d8dbad773314dc75a149ec5dd042e8c0550c52ef1e2b4a27df9750,837357,Weepinbell [Cut | Spray Fluid],foil,exact,true
 pokemon,1165ff3a98ddf25da92a6fd8badac9b733adb0e1d9734af02ffd46d1d5290d29,450383,Shinx Lv.7 [Spark],nonfoil,provider_missing,false
@@ -22033,7 +22033,7 @@ pokemon,12cd3f8df7519a63f530d45fd69ba8c307a31388f0583f8dbdd78af856e00aad,564390,
 pokemon,12d15c8d0d12e13e19e10e3dde284e2c922ba0fd26398df79b5aaca3a7fbdcf4,566532,Pikachu Lv.10 [Call for Family | Agility],nonfoil,provider_missing,false
 pokemon,12db8ad2a1693bf3fece8d95c4aba8c4748a578610a86febe6885f4d45b19d8f,850619,Oricorio ex [Excited Turbo | Fire Wing],nonfoil,provider_missing,false
 pokemon,12dd80c40ac8602577aa2de47c48150a6c2c47128e86f8bd31d457b192fce811,765031,Latios δ Delta Species [Delta Aura | Dragon Claw | Psychic Force],nonfoil,provider_missing,false
-pokemon,12df75f93caf0e322053e5af8e956641aadd42018c68aced22530bc5b0ee411c,553139,Gallade EX [Assault Sword | Cross Slash],nonfoil,provider_missing,false
+pokemon,12df75f93caf0e322053e5af8e956641aadd42018c68aced22530bc5b0ee411c,553139,Gallade EX [Assault Sword | Cross Slash],nonfoil,exact,true
 pokemon,12e2954278147748a684b7029d1e6139d144247b2b09aca92eae2e7120fc6773,450043,Misty's Determination,nonfoil,exact,true
 pokemon,12e673395dad5d081dedfee1e0927a3f98d42da92bb25a7ec45a49b755b9db9f,676434,Mewtwo LV.X [Psybarrier | Giga Burn],nonfoil,provider_missing,false
 pokemon,12e9e141d57de06109120b8ab264ab796add574dccc54ffaa65af31b6e97e58c,311405,M Camerupt EX [Magma Eruption],nonfoil,ambiguous,false
@@ -22055,7 +22055,7 @@ pokemon,1365e186810b0a68004dfd6b2a14aa446cf035606085376739f42a0fcab89ee4,408734,
 pokemon,136993e778596b8fc1828516de621c67ab0198fb3bafe3f985ea3d8b0e94aa39,825062,Bulbasaur [Vine Whip],foil,provider_missing,false
 pokemon,1374cf744ccb2721994be9c08b77e22c322cf79bbbf151ab2ed9071b35434ad4,481669,Salamence VMAX [Sonic Double | Max Wings],nonfoil,ambiguous,false
 pokemon,13750030b38790bbe4ee504312078a7b876290cc5c25d16800e52fd737c8b32b,544641,Trevenant & Dusknoir GX [Night Watch | Pale Moon GX],nonfoil,provider_missing,false
-pokemon,138fa20fcaaf57ce799045dc09964b09b9292f101db7a1b85e859f4afaaa0dfc,553259,Torchic [Ember],nonfoil,provider_missing,false
+pokemon,138fa20fcaaf57ce799045dc09964b09b9292f101db7a1b85e859f4afaaa0dfc,553259,Torchic [Ember],nonfoil,exact,true
 pokemon,1393ba80323f4d6c7661e475effaeebaa805f6a30d53efd7de1bc01187d4c6bc,551661,Scizor GX [Danger Perception | Steel Wing | Cross-Cut GX],nonfoil,provider_missing,false
 pokemon,1394f9070c62449a271dcb9fc28fadbdb635800c804e43c722192a62406509ae,783158,Deoxys ex [Form Change | Energy Burst],nonfoil,exact,true
 pokemon,13990e75f9fe878813360a6e257ecd454a84cf8dd229e446b819a9b3a9737722,707640,Marill [Bubble Drain],nonfoil,provider_missing,false
@@ -22190,7 +22190,7 @@ pokemon,16b3c4c8b3ff0544ebc188515e56cf5306e9284c01b47cbcb7e34bf43e05ffc9,588131,
 pokemon,16be6f545f93560d9d9aceab83840650c2ae1208294ae4e87623a599f9271d2c,562617,Pokémon Ranger,nonfoil,provider_missing,false
 pokemon,16c2aac1597e2559557a11c38d02046018cfe03ce6cec8c737617ed05aa4fa5b,837415,Haunter [Spirit Return | Mumble],foil,exact,true
 pokemon,16c9cd3811579f376a68462eac72abf389909efe29f4ff1aa1654bec9396d897,836229,Braviary [Aerial Ace | Speed Wing],nonfoil,provider_missing,false
-pokemon,16d8df377317f758aa7bcc2718622c47fdfb593890830d3d5d6b3ca50b571447,553873,Rayquaza [Fly | Spiral Rush],nonfoil,provider_missing,false
+pokemon,16d8df377317f758aa7bcc2718622c47fdfb593890830d3d5d6b3ca50b571447,553873,Rayquaza [Fly | Spiral Rush],nonfoil,ambiguous,false
 pokemon,16fb3df67eb03c3b94e84f5f61d873c56a94ae9b70b455bb37d9a99beda8dc31,692087,Lechonk [Collect | Tackle],nonfoil,provider_missing,false
 pokemon,17065c9b0306dca612628a15e021bd07a5215f56432296d4f25ca292e5952907,697096,Pikachu VMAX [G-Max Volt Tackle],nonfoil,provider_missing,false
 pokemon,1706600a86129b9220589442f5c1232a6e83b7fdef648f3bb2c65e3377e8f3db,606859,Dark Espeon [Gouge | Psysplash],nonfoil,exact,true
@@ -22199,7 +22199,7 @@ pokemon,170efa7af2cb0284af974686b0cd19f14828cae10fd32c2cdb8a33257d910bcc,850806,
 pokemon,171e8c579003000a10281e1ef7a221e40742c7a2446b45bae40e1ebaabc1101f,289818,MAerodactyl EX [Rock Drill Dive],nonfoil,exact,true
 pokemon,1721efee140747b30494d2833dedd08448c58decc5c68d7735e28d8470e44446,760812,Minccino [Beat | Cleaning Up],nonfoil,provider_missing,false
 pokemon,172c176db8d359c8157fab657d5553118e99fbb6b4ce5be4bf91dc42b4ae2e52,862471,Reshiram & Charizard GX [Outrage | Flare Strike | Double Blaze GX],nonfoil,provider_missing,false
-pokemon,1734a5a23d702cb14697d41ad4c0864725f6561d2645f6724bf16584bb995b1f,553064,Pikachu [Outbreak!?],nonfoil,provider_missing,false
+pokemon,1734a5a23d702cb14697d41ad4c0864725f6561d2645f6724bf16584bb995b1f,553064,Pikachu [Outbreak!?],nonfoil,ambiguous,false
 pokemon,17549bdfc260ea99373e8efb2923b972d8539ffe81287b9fe1634c7c9eb675d2,567907,Virizion [Double Kick | Mega Drain],nonfoil,provider_missing,false
 pokemon,1755d9e8c21c3e7ae224ada60bfd88c805373228ec9c0a4e42ee57d0e576809a,559804,Dialga GX [Overclock | Shred | Timeless GX],nonfoil,ambiguous,false
 pokemon,175a0645b269166e2d48e2f72eb88be916f02f3c22eac9b41182bbaa6b202301,821941,Team Rocket's Meowth [Paw-cket Pilfer | Fury Swipes],nonfoil,provider_missing,false
@@ -22229,7 +22229,7 @@ pokemon,181892ee54801fcdb07d5757ffae592d209c83676f65301e0a295ffde74e03dd,369353,
 pokemon,181965546853b7707ac237284913e16f67adb01bc369a009b4d84a26cd3522f3,566755,Charmander Lv.9 [Minor Errand-Running | Flamethrower],nonfoil,provider_missing,false
 pokemon,18210a85d38fe4acde140df782c637d906ea5e0854b634409d68de82ea8f33fb,560055,Alolan Vulpix [Roar | Icy Snow],foil,provider_missing,false
 pokemon,1822df29f7fef1d0393dedf3d48c8a60c9ff49b1184e34a512e7a3969038e99b,299541,Guzma,nonfoil,exact,true
-pokemon,182ae8fadf42c2d47bef816c85f05743363b7d137aa30c45181fb06bfadbc642,864132,Crobat BREAK [Silent Bite],nonfoil,provider_missing,false
+pokemon,182ae8fadf42c2d47bef816c85f05743363b7d137aa30c45181fb06bfadbc642,864132,Crobat BREAK [Silent Bite],nonfoil,exact,true
 pokemon,183d7b0b3e631e740f71f24ff873af3522bf6ce90da593faeb0f9aba8769ac2b,562548,Blastoise EX [Rapid Spin | Splash Bomb],nonfoil,exact,true
 pokemon,1858ac1ebfb7b38d754f65f2d09ad2ed4614020da21243725cb0897f6042ced1,561953,Delinquent,foil,ambiguous,false
 pokemon,1863d12d54915226a5ee584b87fd3ea75b9b8df98cf8612c5bcae916702cf19b,670016,Gyarados [Hydro Splash | Hyper Beam],foil,ambiguous,false
@@ -22283,7 +22283,7 @@ pokemon,19809211f96fdf92ba16b47427f22116a30eb12a35d3a27998bf2651871e3d82,561910,
 pokemon,198dbb83d67e90ceaee13006e939b58d5f6cfb8036bc5ba67546be70d59f02af,783425,Dark Steelix [Energy Link | Heavy Impact],nonfoil,exact,true
 pokemon,1990bcd61ebd33d65742105821f328233a5c810c50d52e6f2d276d3068af25c7,570943,Boost Energy,nonfoil,ambiguous,false
 pokemon,19ac7b8106172fb8be3c835e6e7ce27462a438c49be02f205ec997a846e726ca,869409,Mew ex [Versatile | Power Move],nonfoil,provider_missing,false
-pokemon,19b01c79f214a7b78249eeb9c87e930bf04d9e50ebf59806b1952052b5ab7723,553503,Rayquaza EX [Intensifying Burn | Dragon Pulse],nonfoil,provider_missing,false
+pokemon,19b01c79f214a7b78249eeb9c87e930bf04d9e50ebf59806b1952052b5ab7723,553503,Rayquaza EX [Intensifying Burn | Dragon Pulse],nonfoil,ambiguous,false
 pokemon,19b46c060f86355f4f36b8675abf462609f2a69dc5ab15c0778ca1cd540a8654,796963,Victini ex [Strafe | Victory Flame],nonfoil,provider_missing,false
 pokemon,19c121d06e6d20c209a68f6e50bff072ddb5f0fd6eeee5b3e6ff08fb18f92f76,651933,Suicune [Pure Body | Hypno Wave],nonfoil,ambiguous,false
 pokemon,19c4f139645094f9cd2793b576cf25e2681a2a9605f15dbbd65193756682a982,842808,Suicune V [Fleet-Footed | Blizzard Rondo],nonfoil,provider_missing,false
@@ -22322,7 +22322,7 @@ pokemon,1abdca720868897c5b2d0c16ef760963a3344645cf9108a8a38cfad9ee5b8ce5,295193,
 pokemon,1acbeed1a980f7ff542b575f583c8f0f418b7aaaa3f6ae040b4de56a510e18ff,558885,Mimikyu GX [Perplex | Let's Snuggle & Fall | Dream Fear GX],nonfoil,ambiguous,false
 pokemon,1ad542dc450651d9327a9692fa01e12552cdeb30796ce58749abdc4f2b6b05e8,784129,Latias ex [Hypnoblast | Mist Ball],nonfoil,provider_missing,false
 pokemon,1adfcc82a2ac192e34f29843ef0395303a516a58d764adb560f37f9f4031ea71,369090,Gengar & Mimikyu GX [Poltergeist | Horror House GX],nonfoil,exact,true
-pokemon,1aeaa0b76d5bfbafd7689fad603e4f4935c823654fe8ed4d6e661cee1dbf5ba5,553773,Shaymin EX [Aroma of Gratitude | Floral Gain],nonfoil,provider_missing,false
+pokemon,1aeaa0b76d5bfbafd7689fad603e4f4935c823654fe8ed4d6e661cee1dbf5ba5,553773,Shaymin EX [Aroma of Gratitude | Floral Gain],nonfoil,exact,true
 pokemon,1af51a256cbfb0a7bf41515f37ace6e46e8358ca517fe53a4fad4545abe26157,691879,Pikachu [Wild Charge],nonfoil,exact,true
 pokemon,1b01532a60fef30c0babd0056b3ed31cff80b98a29f3f63124c39dc903981408,284275,Lugia EX [Aero Ball | Deep Hurricane],nonfoil,ambiguous,false
 pokemon,1b0330a22f2dd51f59bc476e69f357c0e397a7fec81b565855397f18dc93a21a,410634,Mega Lopunny & Jigglypuff GX [Jumping Balloon | Puffy Smashers GX],nonfoil,exact,true
@@ -22348,7 +22348,7 @@ pokemon,1b991b9e39260b906444528eb46ccb46cd350a20f2c92bae60c9f9024f98b3cc,566414,
 pokemon,1b9b55f2e6e02d7ee7d98217a2d4579edc09a187cb22116bd5937a41d8b81e2b,850146,Gravity Mountain,nonfoil,provider_missing,false
 pokemon,1b9d7aba24e5821a142cffacbdc718682d24572db2aa01d5db982c58c3d60971,705109,Flareon VMAX [Max Detonate],nonfoil,provider_missing,false
 pokemon,1ba24ff0aac309f97a2fa9126782be83d65613ca4fb54566abae4ce9ea7b01e0,299581,Alolan Meowth [Nasty Plot | Scratch],nonfoil,ambiguous,false
-pokemon,1bac689f32745054342d5b00b4fb9a09b1e065a2f0e46640977fdbdcf12d59c0,553487,Pikachu [Let's Eat Together | Quick Attack],nonfoil,provider_missing,false
+pokemon,1bac689f32745054342d5b00b4fb9a09b1e065a2f0e46640977fdbdcf12d59c0,553487,Pikachu [Let's Eat Together | Quick Attack],nonfoil,ambiguous,false
 pokemon,1baed0fa68463d16e4f09018d691e332ee00e8e362b869935fe75f1904b9085a,449313,Call Energy,nonfoil,exact,true
 pokemon,1bb3b76175f039ee5da231a8b6adf2a4d0c3c5dbe05f423cc0e072ce86c68641,882911,Raichu Lv.46 [Boosted Voltage | Thunder Blast],nonfoil,provider_missing,false
 pokemon,1bb5a2e1d49fe1009dbf3d7c4d94b26669f4590d85e59f9450b570199b2f40a2,669032,Gliscor [Ninja Fang | Poison Jab],nonfoil,exact,true
@@ -22427,7 +22427,7 @@ pokemon,1e826b4aef9da3cda2848c9003d528a06edcec07460dc983309a86f628052a26,852651,
 pokemon,1e8287d86d66a6603c2982dd7ae313f0724dbfcff4857d79d28ebfbe6494385b,468774,Lillie,nonfoil,ambiguous,false
 pokemon,1e83671e586a6dc6bc288c4167e558c0e3868e3d939a30453c16b64cbcbfa0bf,850826,Koga's Trap,nonfoil,provider_missing,false
 pokemon,1e875eafeb86255be9227b8b529ce5661ff557a372b8ee78360005720250100e,548966,Vulpix [Foxfire],nonfoil,exact,true
-pokemon,1e9f8b086175c75e72c4de14ac4573d5c8fa52e7e17d68fe9416aed429f9b798,553578,Latios [Supersonic Flight | Psyburn],nonfoil,provider_missing,false
+pokemon,1e9f8b086175c75e72c4de14ac4573d5c8fa52e7e17d68fe9416aed429f9b798,553578,Latios [Supersonic Flight | Psyburn],nonfoil,ambiguous,false
 pokemon,1eaa41bfddc8b4d409431d8dd94cd013b980c8c77ee614c00145f5c5b15a73df,408754,N's Resolve,nonfoil,provider_missing,false
 pokemon,1eb7b24e6aa23541f649341ad10b7a649f2a2bb82c4624a1006f19be39ab6199,836170,Conkeldurr [Craftsmanship | Swing Around],nonfoil,provider_missing,false
 pokemon,1eba585ff34f8f228f5045f475fada70b3508d57d14f90e532fe710a0cccdfde,817320,N's Reshiram [Powerful Rage | Virtuous Flame],nonfoil,provider_missing,false
@@ -22603,7 +22603,7 @@ pokemon,241df7ca306eb1a8ba125ccd85d6798f67e47f4bf2d59f28361a79d2b9b324ca,654041,
 pokemon,241e40533b4986dc30d7026a49d050bb15fa3470ebb2e0cc6bd97c6c115a8837,316081,Leafeon GX [Breath of the Leaves | Solar Beam | Grand Bloom GX],nonfoil,ambiguous,false
 pokemon,2422d616b4776a8ed90cb5d4ef3376bb323ac048946d12699c31a62bc20eaf09,568758,Cresselia EX [Sparkling Particles | Psychic Protection],nonfoil,ambiguous,false
 pokemon,2424751c833b2682c44a1b4a3a66772b551f060ee865be8c44e4b1da42d3623e,825148,Grookey [Smash Kick | Branch Poke],foil,provider_missing,false
-pokemon,243a11a97638060f837322638bb71f3ed1320c7f09b35b0c0aadeb631a5d81d6,553873,Rayquaza [Fly | Spiral Rush],foil,provider_missing,false
+pokemon,243a11a97638060f837322638bb71f3ed1320c7f09b35b0c0aadeb631a5d81d6,553873,Rayquaza [Fly | Spiral Rush],foil,ambiguous,false
 pokemon,244dcd724c3c3147be7687a9fc56c6151ec8276d6e1a2ebcb834f39d572d1763,560390,Mew [Clairvoyance | Psychic],nonfoil,ambiguous,false
 pokemon,244e9dde8c8288c1e89d75a089e02d1a54d95b64455770a8f8836b7aed919821,783679,Raichu [Recharge | Thunder Reflection],nonfoil,exact,true
 pokemon,244f4c23343b4cbb423d9b13d606379aa457a1d048f0ef9871a98a005e2f6ce3,559221,Scizor GX [Danger Perception | Steel Wing | Cross-Cut GX],nonfoil,ambiguous,false
@@ -22629,7 +22629,7 @@ pokemon,251130f8833a342d5f18e069fca5180ed8db28ae440456d3e256cabc5d966891,566515,
 pokemon,2524cb9e0027e1ed31321d8290d6abcc4538de9de0979f0826f7fe49b671995e,573760,Pikachu Gold Star [Thundershock | Spring Back],nonfoil,provider_missing,false
 pokemon,252aa2e278cb0e2c6e194621567a4d1d2813be633ae62798ab58c87731ecfdd6,561997,Bulbasaur [Lunge | Scratch],nonfoil,ambiguous,false
 pokemon,25313844e0de949bf5ff0a3bba884f0da76a6b90381d57114cbac07547ab1773,837711,Sylveon [Mystical Return | Disarming Voice],foil,provider_missing,false
-pokemon,253515ef42edab37a6a20eac137732008b3e10c6cfa160aaac6148eebded679b,554103,Pikachu [Celebration Party! | Mega Thunderbolt],nonfoil,provider_missing,false
+pokemon,253515ef42edab37a6a20eac137732008b3e10c6cfa160aaac6148eebded679b,554103,Pikachu [Celebration Party! | Mega Thunderbolt],nonfoil,ambiguous,false
 pokemon,2536958b6a52f1d354a1e8c48ad48588b8c3106365b197893d07624c66ca7e8c,558636,Cobalion GX [Metal Symbol | Dueling Saber | Iron Rule GX],nonfoil,ambiguous,false
 pokemon,253d601e94240ff30dbdb82d2654b02dd6950fa6df523690dce98dd1a92c084e,882201,Chingling Lv.6 [Baby Evolution | Inviting Bell],nonfoil,provider_missing,false
 pokemon,2551269b6d8e39e13be5060f85fd2bef8b48a1aaa4a729db7f687f8aa77a9586,677649,Moltres Lv.33 [Hyper Flame],nonfoil,provider_missing,false
@@ -22835,7 +22835,7 @@ pokemon,2b065c7c6d2b6687872846a90252f08598dafb754d80059ae6bd97c17c77d94f,584631,
 pokemon,2b11ca18a28925b758120d6c889ad6a925ccaafcb0e1dcf9055ecb5dfd61b9ab,606708,Starmie [Confuse Ray | Core Stream],nonfoil,exact,true
 pokemon,2b280c698b075bb7ca85a6722e08b2018522b2ddd611165b8f7dc16a21ca5eb3,769389,Cornerstone Mask Ogerpon ex [Cornerstone Stance | Demolish],nonfoil,provider_missing,false
 pokemon,2b28b95bd2d393b5286267d4c77a7a90408ece1c508390d66565f690f54b7816,690538,Dialga Lv.70 [Time Aura | Metal Burn],nonfoil,provider_missing,false
-pokemon,2b440186abc8c3a7d2227e519abfd051af29862501e50a419391346d8a629a75,552499,Pikachu [Thunder Shock],nonfoil,provider_missing,false
+pokemon,2b440186abc8c3a7d2227e519abfd051af29862501e50a419391346d8a629a75,552499,Pikachu [Thunder Shock],nonfoil,ambiguous,false
 pokemon,2b451077c2fab311f7c5715cce0024c040dc9899f004dc42627b7197ebb075d5,864059,Sprigatito ex [Scratch | Magical Leaf],nonfoil,provider_missing,false
 pokemon,2b469fb4240a979621420ca4a529fe191148394a920d9342e82079b2b553a4bc,850815,Solgaleo & Lunala GX [Cosmic Burn | Light of the Protector GX],nonfoil,provider_missing,false
 pokemon,2b4a46589d7f1503e6285d076e773bf8e80821ecddee73bc92de17374df4b4d0,697162,Togekiss VMAX [MAX Glide],nonfoil,provider_missing,false
@@ -22844,7 +22844,7 @@ pokemon,2b5a482ba2d0741b6e87a10496f9408e00adf7a98e77a99138cea8baaf8e3b11,408159,
 pokemon,2b5ab6acc8fda2175bf50ff0fa7614d7b07761a4d28697f13387ead6e37cb621,653931,Jolteon [Self-healing | Thundershock | Thunderspark],nonfoil,ambiguous,false
 pokemon,2b5c55df08c769e731e728e8093f59d99353b4c65d4c96880ccbfad23c4df376,670010,Typhlosion [Afterburner | Flare Destroy | Prime],nonfoil,ambiguous,false
 pokemon,2b654a01e2b8d17738c0facfe4d64c03a3d4fa3669037812a585cea6628e81c0,864516,Haunter [Spooky Shot],nonfoil,provider_missing,false
-pokemon,2b6d90b6fccb61b5100a2922113d1d43ee29fc8915cf1e5a5311b661d8b36de1,553069,Pikachu [Outbreak!?],nonfoil,provider_missing,false
+pokemon,2b6d90b6fccb61b5100a2922113d1d43ee29fc8915cf1e5a5311b661d8b36de1,553069,Pikachu [Outbreak!?],nonfoil,ambiguous,false
 pokemon,2b7bd8af6f1c0956fc5a9da499d8a709a02e6b112250eebeb18c3517b74259ab,857739,Bianca's Devotion,foil,provider_missing,false
 pokemon,2b83d86949297defcaf3d802b1583f58dec081a7221ea824dba22121d913307c,605341,Rocket's Zapdos [Plasma | Electroburn],nonfoil,exact,true
 pokemon,2b8732f69f760c781aadfff6fd375d3d26fc27b725f8ead566fd5dffd07d42fb,568512,Celebi EX [Time Recall | Wind Whisk],nonfoil,ambiguous,false
@@ -22871,7 +22871,7 @@ pokemon,2be5fc7fff648427e660444c224b86674c5b92f40b8b0a6aabdb95e7248b70eb,571813,
 pokemon,2be82b9afdbe10361b878550c178e8e940e7e014cf1a724a894a02bfb2cb8652,653960,Rhydon [Stomp | Giant Tail],nonfoil,ambiguous,false
 pokemon,2bf9d2dd4d5980c84bd17225679a2760eadc5c95f3f8b27d20f06fd736c1d269,837300,Zubat [Revealing Echo | Bite],foil,exact,true
 pokemon,2bfb5ae20abc26516ec512b555ccec01317993f3b8394be322e00912b3fd7017,868913,Haunter Lv.35 [Smog | Hoodwink],nonfoil,provider_missing,false
-pokemon,2bfda3da5fc6eecc7213b2149051001c40c577f65b80fc59c394b8e83cd832cb,868263,MSwampert EX [Strongarm Impact],nonfoil,provider_missing,false
+pokemon,2bfda3da5fc6eecc7213b2149051001c40c577f65b80fc59c394b8e83cd832cb,868263,MSwampert EX [Strongarm Impact],nonfoil,exact,true
 pokemon,2c027a4fd5bfe6e7757ab0ed684c6d5df4396f145aca8c090b2de033e1796a4a,803322,Jolteon ex [Flashing Spear | Dravite],nonfoil,provider_missing,false
 pokemon,2c02fa625eeec9c5e2efb444decb6710c7e3464bf10bcb437a7d9b2df1415bd5,763496,Armaldo δ Delta Species [Delta Edge | Fossil Charge],nonfoil,provider_missing,false
 pokemon,2c0af730397e13c78ca50ea2ebe05feb8a84cbbc1c9532cec16cf374d43ab3c2,563873,Groudon EX [Rip Claw | Massive Rend],nonfoil,ambiguous,false
@@ -22920,7 +22920,7 @@ pokemon,2d2f657a4133c34097c3c0ec69ad178b08d6fac593c7a151382ae04ab417f4cb,570781,
 pokemon,2d2f733995216cbe042465071561e3d26f02590c51a3027c8467d5559bd67d20,691821,Rayquaza VMAX [Azure Pulse | Max Burst],nonfoil,exact,true
 pokemon,2d320a3a092634d5c323dbca3f9a922f63d9a28868b2ab6864a913e7540ae03e,548856,Onix [Bind | Rock Seal],nonfoil,exact,true
 pokemon,2d356f2e79585431e1cdabbdc2a2aa8cb79f161493c870f5dd4bf7dae0e7dc10,705113,Gengar V [Dark Slumber | Pain Explosion],nonfoil,provider_missing,false
-pokemon,2d3c4fb6ec20291822b07b6647d2f48114787413607d502d1ad763f7a31edf3c,553853,Lugia [Gust | Aeroblast],nonfoil,provider_missing,false
+pokemon,2d3c4fb6ec20291822b07b6647d2f48114787413607d502d1ad763f7a31edf3c,553853,Lugia [Gust | Aeroblast],nonfoil,exact,true
 pokemon,2d421af5a8201eea7d41059fd6c8af0a52df70a244dec1a73d3f6f86d8b125e4,652066,Steelix [Earth Rift | Iron Smash],nonfoil,ambiguous,false
 pokemon,2d465c2ebe2e0ce2d127fc99a02184aa330312733d812c63c49d67afb9832b5f,837411,Cloyster [Protect Charge],foil,exact,true
 pokemon,2d48436f3b7e53ae61b3e1a2c07dc97949359d828269dedb3665eba738754176,566709,Empoleon LV.X [Supreme Command | Hydro Impact],nonfoil,provider_missing,false
@@ -23088,7 +23088,7 @@ pokemon,31972980656ac6b50b71f49d9778ca5f93ee72b46cd4a01540377ced4d8347f7,468814,
 pokemon,3199b5edb48d469b62c2121a8714e57e630d3c3af6ca6925184309ffcb018f17,819539,Iris's Fighting Spirit,foil,provider_missing,false
 pokemon,319c263f3dd7605a8eb3d1429ca36a9e1196fed8bffb863a2889d1fd41edb551,562014,Larvitar [Headbutt | Comet Punch],nonfoil,exact,true
 pokemon,319ced1455347c3944f70e976e8dcbaab0eaf68f5e98b04a90ccc873a7e4334f,469599,Cherry Blossom Afro Pikachu [Cherry Blossom Bloom | Pika Bolt],nonfoil,provider_missing,false
-pokemon,31a686136deb63bd7a63a17bef8663740064ca83c47301eb33d11bfc38c89de1,553084,Greninja [Water Shuriken | Mist Slash],nonfoil,provider_missing,false
+pokemon,31a686136deb63bd7a63a17bef8663740064ca83c47301eb33d11bfc38c89de1,553084,Greninja [Water Shuriken | Mist Slash],nonfoil,ambiguous,false
 pokemon,31a724ce004784a946d45a63bfe7ecc90a9509bbe550c045973a722f660b9a1e,782798,Tyranitar ex [Shatter | Derail | Mix-Up | Losing Control],nonfoil,exact,true
 pokemon,31a81c7313fc0dc2704364aae6e4a300c9467de6533858da2f0b54fb8087021e,867454,Mew EX [Versatile | Replace],nonfoil,provider_missing,false
 pokemon,31aae8e8148ed6a8265aba9e99fa939f8250051de6db5f1a112f5c780f296da2,783612,Latios Gold Star [Miraculous Light | Shining Star],nonfoil,provider_missing,false
@@ -23219,7 +23219,7 @@ pokemon,35e21726d34ead1e05a8c8d7906099bb3c7ec75e3ae01c26313b79b96b315480,837489,
 pokemon,35e5c0d9247026a1ee1ba1c1763ff3f23590ea39ff017faf0f0ef88cbe8aa6bc,687768,Turtwig [Bite | Headbutt Bounce],nonfoil,provider_missing,false
 pokemon,35ef6d79ba0a8ee0e83cae55f45fb3fedbe26d091497e4b0ebf84f75129aff15,727072,Detective Pikachu [Thorough Investigation | Ride Dash],nonfoil,provider_missing,false
 pokemon,35f0ad9fa622465001e9ac87928440a708db3433f9c023279c530a48dd30f34f,563911,Teammates,nonfoil,ambiguous,false
-pokemon,35f50097cdb834e71c18373e81059bd7190dee7da1709d58ebb5fa882ffbe166,553978,Salamence EX [Beastly Fang | Dragon Strike],nonfoil,provider_missing,false
+pokemon,35f50097cdb834e71c18373e81059bd7190dee7da1709d58ebb5fa882ffbe166,553978,Salamence EX [Beastly Fang | Dragon Strike],nonfoil,exact,true
 pokemon,35f56e17ebac496b8bcead25f48e7f1888e4f87b7520aa7644b158d654107b8e,763473,Latias δ Delta Species [Dual Aura | Spearhead | Dragon Claw],nonfoil,provider_missing,false
 pokemon,35fab40b7bd946c24793778c22b163297ff1ea3bf322b40700aaefaba6ef0c00,566221,Gengar VMAX [Fear and Panic | G-Max Swallow Up],nonfoil,provider_missing,false
 pokemon,360769aebfba20303a319f77671920763f57b39a6f6270c83b2362c795d76e70,549111,20 Damage from Confusion,nonfoil,provider_missing,false
@@ -23308,7 +23308,7 @@ pokemon,38bffd011bffa629246c80d920f83434168e134bbe9ad58abd26db94a34dd633,571050,
 pokemon,38c31b59822bf76fee6d3bd050d6ca8d380bc6b4597aff47ed851096b9852c12,558951,Zeraora GX [Thunderclap Zone | Plasma Fists | Full Voltage GX],nonfoil,ambiguous,false
 pokemon,38c7708b001571ed5994a6dd4f92de517cbc80cbc2644bf4200fce0c868b71dd,761123,Baxcalibur [Super Cold | Buster Tail],nonfoil,provider_missing,false
 pokemon,38cbcc9d2a83c3856202a63b77196ca86a24d5f494c77aaf87f49e8b15b7d583,548786,Articuno [Aurora Veil | Ice Beam],nonfoil,exact,true
-pokemon,38d7b376c53fd339fe7e93cb87c028dd2e19cf49e82deaaf6e7221f03ddb3227,553788,Rayquaza [Dual Claw | Dragon Blast],nonfoil,provider_missing,false
+pokemon,38d7b376c53fd339fe7e93cb87c028dd2e19cf49e82deaaf6e7221f03ddb3227,553788,Rayquaza [Dual Claw | Dragon Blast],nonfoil,ambiguous,false
 pokemon,38dd1cf8917b69a29db2f34c4926ad200b3a994ee57339c3de46b2d3de48df24,570298,Sid's Blastoise [Hydro Pump | Skull Bash],nonfoil,provider_missing,false
 pokemon,38dfcbba6f5d4366603159fd7e4fe242e6cf9cf340c913ec4e4a27caf38d7a0b,860049,Bulbasaur [Bind Down],nonfoil,provider_missing,false
 pokemon,38e00f3b1f2ac9fecd6a1f158851bf032bff05ecc05cf19f0c8c129b96ed6664,825133,Gengar [Poltergeist | Hollow Dive],foil,provider_missing,false
@@ -23400,7 +23400,7 @@ pokemon,3b7a0307b21d94f58670b3c8101a371409da2b6e4a3849a36ea0538713a990b2,299531,
 pokemon,3b841fd9bb9949602db1a84e1fa01dae708d2ebd18b4e5918efc064dd235c352,727069,Espeon [Psychic Assault | Psy Bolt],nonfoil,provider_missing,false
 pokemon,3b87a012ca944bf54597842acbcc53c35fa99982729ece56548ecafa9d9fdab2,606846,Light Slowbro [Fish Out | Splash About],nonfoil,exact,true
 pokemon,3b8f58fba6cff3fc792f5c09140d5806026b056c72fabca3d498f5a8e2c571c2,567601,Serperior [Royal Garden | Solar Beam],nonfoil,ambiguous,false
-pokemon,3b9091b35e40ce45405a9c9a00ae74455a9a5b2bc72af740f35797ff7d930645,553495,Pikachu [Thunder Wave | Electric Ring],nonfoil,provider_missing,false
+pokemon,3b9091b35e40ce45405a9c9a00ae74455a9a5b2bc72af740f35797ff7d930645,553495,Pikachu [Thunder Wave | Electric Ring],nonfoil,ambiguous,false
 pokemon,3b9f9c8ab22c7819fd0998ca98c1a1834bc8d9a6511deee56e7e0d4a0439a6d9,398449,Venusaur & Snivy GX [Shining Vine | Forest Dump | Solar Plant GX],nonfoil,exact,true
 pokemon,3b9ffeca316c6787a4655c3a7490dc257e993726497b1116be292a3f3769fc9c,669939,Feraligatr [Rain Dance | Hydro Crunch | Prime],nonfoil,ambiguous,false
 pokemon,3ba4df3a1b2345c0a5e58cb097fd6415729def2af31ad91e8202b1613dd04081,867160,Gouging Fire ex [Heat Blast | Blaze Blitz],nonfoil,provider_missing,false
@@ -23412,7 +23412,7 @@ pokemon,3bd28924e67062a32070633d99ff64582dbc9035ecdabb50da80da8a0732d9ac,311959,
 pokemon,3bd58c7117bf3b39631ffe3cfc8cedb9b0e3e3e2e919cf3451d435ca2950dad3,554188,Pokémon Card Gym Medal,nonfoil,provider_missing,false
 pokemon,3bd986866c5ec165049b657922b878905900fc899dc1e7065ade60c64cad422f,653938,Alakazam [Energy Jump | Psychic],nonfoil,ambiguous,false
 pokemon,3bde98db22b9f7c3391dd96be7b99ff0152b52ec61f556ca172873b0b525c641,569125,Ho-Oh EX [Rebirth | Rainbow Burn],nonfoil,ambiguous,false
-pokemon,3be7ef2769b076c70ada38ec46627bb976638b4586a0a09870bed2c12b5a3c91,553838,Ho-Oh BREAK [Shining Flame],nonfoil,provider_missing,false
+pokemon,3be7ef2769b076c70ada38ec46627bb976638b4586a0a09870bed2c12b5a3c91,553838,Ho-Oh BREAK [Shining Flame],nonfoil,exact,true
 pokemon,3beb99fb77f372c273d7f010eecd0533fd210cf7409d61b06c1b4693229da7db,572011,_____'s Snivy,nonfoil,provider_missing,false
 pokemon,3bf15392aee597eb2b7eba476b3a4cfcfcf1d6470382ebbda789f0e4db53efa5,691923,Zeraora VSTAR [Crushing Beat | Lightning Storm Star],nonfoil,exact,true
 pokemon,3c0479c3bac374e4ad65f0324757b01864584267c25b6c1e8c76cf7934ed8dd6,849692,Latias & Latios GX [Buster Purge | Aero Unit GX],nonfoil,provider_missing,false
@@ -23518,7 +23518,7 @@ pokemon,3ef7221a2ca15dcb074bd60b8288984cd1079c70785010d61202df74393b1495,569610,
 pokemon,3f00c8ed03796cd74e18a78e82a2ea6e536feffc8500d1f85d84967f76b6790a,569595,Chandelure [Cursed Shadow | Eerie Glow],nonfoil,ambiguous,false
 pokemon,3f064bf93db807c0d58552c3d2f38f9d703fe52ffe61b0b23cba2f63e72cde33,286401,Glalie EX [Ice Breath | Instant Freeze],nonfoil,exact,true
 pokemon,3f08b0d5ad8dbb6343e8e627e5c7aa33c389b36b5b4af36c87acd7f294d2f69b,784329,Magcargo ex [Melting Mountain | Lava Flow],nonfoil,exact,true
-pokemon,3f0b22429447dad97dac28c765a2a04dc2195d259246c0f501086ecb9469d8d7,553658,Mewtwo EX [Photon Wave | Psyburn],nonfoil,provider_missing,false
+pokemon,3f0b22429447dad97dac28c765a2a04dc2195d259246c0f501086ecb9469d8d7,553658,Mewtwo EX [Photon Wave | Psyburn],nonfoil,ambiguous,false
 pokemon,3f2192cefb25e69b07e78b2b875475693f58dc5560c03c82929a0e52d27e1bfb,570270,Sky's Rayquaza [Air Tackle | Hyper Beam],nonfoil,provider_missing,false
 pokemon,3f2e2c6405999a92d3192b59db9ca05d760143b8d6dd60816db94983a6828312,837236,Charmeleon [Combustion | Fire Blast],foil,exact,true
 pokemon,3f375fd2ab5a7437367c24780417ca717f7b93ed98b592057f036547d5e3eb07,369356,Flareon GX [Heat Stage | Bright Flame | Power Burner GX],nonfoil,exact,true
@@ -23777,7 +23777,7 @@ pokemon,4624d462c4fe039dced9cd6edd540baeec15f815ac18377567e4c0a875cd1cd0,567490,
 pokemon,46294b9241bd7418f73a791b789115138de68b009df6cd30d73daab2925e57b3,571466,Dark Ivysaur [Vine Pull | Fury Strikes],nonfoil,provider_missing,false
 pokemon,462eadae4cbe5ccbb4f9661a696e884d1fb7aef9ba6bf13c4feef192c8b2c145,563230,Manaphy EX [Aqua Tube | Mineral Pump],nonfoil,ambiguous,false
 pokemon,4655663d52551c054b992660c24de68949a623b4e9025436be2c812947a24f23,677632,Staraptor [FB] LV.X [Fast Call | Defog],nonfoil,provider_missing,false
-pokemon,46567e0a23cea50a798d05aa7abb7493d45a62c548bd0aca9a76121ae1b721a1,554138,Giratina [Devour Light | Shadow Claw],nonfoil,provider_missing,false
+pokemon,46567e0a23cea50a798d05aa7abb7493d45a62c548bd0aca9a76121ae1b721a1,554138,Giratina [Devour Light | Shadow Claw],nonfoil,exact,true
 pokemon,4656a8eac334cc34458b67a0c8402d2893ee812be3f3e5fcdaa8d3c80c217c83,551546,Ho-Oh GX [Sacred Fire | Phoenix Burn | Eternal Flame GX],nonfoil,provider_missing,false
 pokemon,4657b433f0552757b5eb4381eab5b84213c68f4101d94c83d3351172c558a9df,650668,Cloyster [Lick | Auto Fire],nonfoil,ambiguous,false
 pokemon,465e08eccd887e0887ce545671763f3f61a7623bed6ddd50835ddfc90f20b471,571771,Mewtwo [Energy Control | Telekinesis],foil,provider_missing,false
@@ -23973,7 +23973,7 @@ pokemon,4baa121800acd690dc222c21e941ec48b1d7665fc993ca4fdd9d19a2b8d5a616,829412,
 pokemon,4bb4ff0a355fc2f430fd6d9c5cee137b0aae2010e9a9a4589a2c3d52c0b7a686,561354,Meowth [Filch | Dig Claws],nonfoil,provider_missing,false
 pokemon,4bc56c65a61b739de1c03f9b86df1dac49d56964625fc01d7c75fc3235b110f4,571014,Groudon [Mud Shot | Earthquake],nonfoil,provider_missing,false
 pokemon,4bc972c85cfb4f3ef9a0bc4db8c10299e8fd21dba3cf66c48d22373e959f4c55,705114,Gengar VMAX [Fear and Panic | G-Max Swallow Up],nonfoil,provider_missing,false
-pokemon,4bc9acc149b9c27dd1ade155f52c6da546cf53c9a81f7eae2d82ab3b941c2d4e,709549,Champions Festival [Duckboat],nonfoil,provider_missing,false
+pokemon,4bc9acc149b9c27dd1ade155f52c6da546cf53c9a81f7eae2d82ab3b941c2d4e,709549,Champions Festival [Duckboat],nonfoil,ambiguous,false
 pokemon,4bcd9a898551b8f9b7b5936f8caad42161a24fa145abe2d07d12793a7f3c3e75,559222,Salamence GX [Dragon Lift | Bright Flame | Flame Jet GX],nonfoil,provider_missing,false
 pokemon,4bd2020364ee2b5f676024e108c2b97fc22af6d162c9ec0a70b1d701880710c9,868825,Lightning Energy,nonfoil,ambiguous,false
 pokemon,4be9f74624e39f6f688eccbb50057e78b375f542ea8c2d6360cd9d46c7f05edc,851873,Zapdos ex [Voltaic Float | Multishot Lightning],nonfoil,provider_missing,false
@@ -24327,7 +24327,7 @@ pokemon,5635f8c210404a077d6f6a8e82a8decb7b643529a682492e3a5315688e9cf9b2,651937,
 pokemon,563e96e95722a56bf5a177815a81776e881ae008c8d45b6ee9f9838f149f7092,571488,Dragonite [Special Delivery | Supersonic Flight],nonfoil,provider_missing,false
 pokemon,56400bd49ae009d15857003eea35297997c556b301db9ae59e6d5143fd355477,286400,MHoundoom EX [Inferno Fang],nonfoil,ambiguous,false
 pokemon,5645fdcaae1f3c2bb00f2fb469fa492f620259b283c438adf7590ddbfe3432c3,370789,Lucario & Melmetal GX [Steel Fist | Heavy Impact | Full Metal Wall GX],nonfoil,exact,true
-pokemon,5652a85d8bf32313dd716720654e373986cd4426d328af1734e8a968d15addb9,553029,Pikachu [Tail Whip | Electro Ball],nonfoil,provider_missing,false
+pokemon,5652a85d8bf32313dd716720654e373986cd4426d328af1734e8a968d15addb9,553029,Pikachu [Tail Whip | Electro Ball],nonfoil,ambiguous,false
 pokemon,5661f3940eb8371572bb3b6d0caedcd2993e7ef3394cf289922e24d04013816f,873876,Ultra Ball,nonfoil,ambiguous,false
 pokemon,566bf186a9628f2f3e0bb916fe5dc8db98ebb133f9c5daec80afa5b2562737f4,653910,Flareon [Self-healing | Singe | Burn Booster],nonfoil,ambiguous,false
 pokemon,56709e465d012766e366ee8dd4f8fa16dacfe0720ed3efd1933205775977bcc0,467614,Zamazenta V [Dauntless Shield | Assault Tackle],nonfoil,ambiguous,false
@@ -24405,7 +24405,7 @@ pokemon,587aa20dace55dfd61faad983dff5421ad26fef6577946f58f31769c819bc96c,838361,
 pokemon,587ba186eace4920e8eb37bcaad7e7655c91e058abb12c05e3e627804ca9c3e8,559931,Charizard [Fire Raise | Fire Spin],foil,provider_missing,false
 pokemon,5880ba3453a17ee3c645c27189a5f89f7e7ce55bcd37e3136c62bef4f69d7cdf,573615,Celebration Fanfare,nonfoil,provider_missing,false
 pokemon,58842bdcfcf0f809be0c4f157fb3d35428dd87ab9c8d9a3a2921e62629dcc350,449708,Lucario [Vacuum Wave | Fight Alone],nonfoil,ambiguous,false
-pokemon,5895750226fa81a6add7a4b49612c74ffc1315d1173c21adf04df1df23c2ab18,554098,Charizard EX [Stoke | Fire Blast],nonfoil,provider_missing,false
+pokemon,5895750226fa81a6add7a4b49612c74ffc1315d1173c21adf04df1df23c2ab18,554098,Charizard EX [Stoke | Fire Blast],nonfoil,ambiguous,false
 pokemon,589a5654a9e3a4ff117b3f99c89729f89c5313d5a4f1803a5f7292a10a0bd0e1,468754,Ash's Pikachu [Iron Tail | Thunderbolt],nonfoil,provider_missing,false
 pokemon,589b22e131f4bce2458be47f0f54b5af6d695e8424bee3aaaa43d8f62202c4c6,674191,Giratina V [Abyss Seeking | Shred],nonfoil,exact,true
 pokemon,589bece07531b119795cc5f5918996e030031121ea0cfd6fc3e74b06b6dd669b,652025,Slowpoke [Fishing Tail | Bite],nonfoil,exact,true
@@ -24799,7 +24799,7 @@ pokemon,6415c3527881a8dc80d32fe3b49eae5eac015252c7acb95014b0cad8ea0979ea,571761,
 pokemon,642a7be46e77d59feda879e2e7fa71db8eba64d41d3b0b0642224f6190eef41c,471499,Chikorita [Find | Razor Leaf],nonfoil,provider_missing,false
 pokemon,642c3d26fa51a4db993cde7d9091548554505b44c47cd55d4339b7361eb11ba3,566111,Slowking [Opponent's Choice | Super Psy Bolt | Prime],nonfoil,provider_missing,false
 pokemon,642c9397e9358fa559291abb81adf35c5fc924e83a48e4e556a12e9aabc89a79,558743,Shuckle GX [Protective Shell | Triple Poison | Wrap GX],nonfoil,ambiguous,false
-pokemon,6431144c6e1fe2611c861df37f2a618edc5ac1fe2a8f7259ea7e1746cb352e16,553294,Fearow [Repeating Drill | Nosedive],nonfoil,provider_missing,false
+pokemon,6431144c6e1fe2611c861df37f2a618edc5ac1fe2a8f7259ea7e1746cb352e16,553294,Fearow [Repeating Drill | Nosedive],nonfoil,exact,true
 pokemon,643f2c05a45e32abe647b96692d2ce2bdac320e79d21fc4bd5b7e848c8ff3750,553194,Warm Pikachu [Warm Up | Thunder Shock],nonfoil,provider_missing,false
 pokemon,644a8e736274756528b8f69ca90222a96e73d976a65ad32d36126a41a0df71ad,562799,Korrina,foil,ambiguous,false
 pokemon,6459090292a5ea9d3912c811e4b3041186257446be185d5d9279ad820f76927f,571928,Touch Generation Change!,nonfoil,provider_missing,false
@@ -24929,7 +24929,7 @@ pokemon,67d69451f6a79061cfb8cd78dffb963144559013e516ba270281b1e5acd06109,817335,
 pokemon,67e754ec4291c35856792f712513da0b2222b6972027bdde2e3a30cb0065d501,763503,Cradily δ Delta Species [Harsh Fluid | Poison Tentacles],nonfoil,provider_missing,false
 pokemon,67e963469950d17c6a145576e835b81d2ead1ebaaf2dbe76fc1ba6ce9b9ff174,842789,Lumineon V [Luminous Sign | Aqua Return],nonfoil,provider_missing,false
 pokemon,67eac70820d8f939139f44eae1d0b288180c1b5a99153364a20361eba7e7b571,557168,Lt. Yoshida,nonfoil,provider_missing,false
-pokemon,67f2022cd6c9018e7f540d127eb96831c248f3065a7c4b69ad13c81b7906b3ed,553239,Regirock [Land Maker | Stone Edge],nonfoil,provider_missing,false
+pokemon,67f2022cd6c9018e7f540d127eb96831c248f3065a7c4b69ad13c81b7906b3ed,553239,Regirock [Land Maker | Stone Edge],nonfoil,exact,true
 pokemon,67f89173243c09e9a24a149c55d3ad6fd4ec89cfcc50cedb58312c56bf5b40ba,853778,Cynthia,nonfoil,ambiguous,false
 pokemon,680cf5a81c51aee8624e1d62f330dbbe1336b32c02b92749b73034079fb07ea3,571144,Articuno [Water Immunity | Energy Share | Para-Freeze],nonfoil,provider_missing,false
 pokemon,680f53658c09cae937417989ea9cb7735da757bb418a83d0320da3d3e5e63c77,295183,Mew [Clairvoyance | Psychic],nonfoil,ambiguous,false
@@ -24942,7 +24942,7 @@ pokemon,6828f7ce005ac068de75ba0a84be4ef452a686aab8bbfa052a74371418a33a52,563059,
 pokemon,682c764eaa388fa0b33cbc4c04981303efeedda14d9b781176bd6a19d5bbe3fa,554571,Rocket's Wobbuffet [Clumsy Attack],nonfoil,provider_missing,false
 pokemon,68374069eb76e035beee7ced20270d562ec77f2e32798cc9e53ebad41914948a,854328,Klara,nonfoil,exact,true
 pokemon,683a78d45bdd61e2fa134339eea994e9c351ef2be139a9a0645f6f467191bc35,860009,Bulbasaur [Bind Down],foil,provider_missing,false
-pokemon,683accd03073504ecca7a4adad4cb1b2062af82c631539d00cedd5701751b083,553588,Mewtwo [Psy Bolt | Zen Blade],nonfoil,provider_missing,false
+pokemon,683accd03073504ecca7a4adad4cb1b2062af82c631539d00cedd5701751b083,553588,Mewtwo [Psy Bolt | Zen Blade],nonfoil,ambiguous,false
 pokemon,683c0b9c85fbd71d5db74e2c4d31248c0b47a79f840af5ab5b1fa5bc745fb811,780802,Pikachu [Growl | Pika Bolt],nonfoil,provider_missing,false
 pokemon,683e551a4f6d5b58c3fd04f47bbe0b097e76ccb85782f18b5f182b582b8ea133,708484,Glaceon [Icy Wind],foil,provider_missing,false
 pokemon,6849bf99321a1ad59ff14f947b98ae14145f04b60a990b091bb9574b9306b4c9,355602,Dedenne [Find a Friend | Electrichain],foil,exact,true
@@ -25039,7 +25039,7 @@ pokemon,6af9ce17c9562aab32f35875ef807c6717e10012396eecbc5a0238ec530c9357,561056,
 pokemon,6afea5d6181f101ab8d878b1054c677f3acd05981ac77777f75c42a8c7b9afd4,697131,Galarian Moltres V [Direflame Wings | Aura Burn],nonfoil,provider_missing,false
 pokemon,6b017b0686af4dd0bfc62ba21994e185c715c341b5f2df3e693bf366c4072af7,461684,Snorlax [Rolling Tackle | Heavy Impact],nonfoil,ambiguous,false
 pokemon,6b04fbf4cfa9464b7df59821429153489480c43fb0dabef0fe19158286a8b8c0,711728,Arven,foil,provider_missing,false
-pokemon,6b10374fc1ab3718b8356d230d7cb0bdd7722b309a55aad2470e81f85a836527,553511,Regigigas [Daunt | Heavy Impact],nonfoil,provider_missing,false
+pokemon,6b10374fc1ab3718b8356d230d7cb0bdd7722b309a55aad2470e81f85a836527,553511,Regigigas [Daunt | Heavy Impact],nonfoil,exact,true
 pokemon,6b1602dc7b6a6c2d31599315727b2f3376803ffdee1c447d17afa1d3ecef49a8,561568,Sylveon GX [Magical Ribbon | Fairy Wind | Plea GX],nonfoil,provider_missing,false
 pokemon,6b17bba56f0a49be4692b34e7c6d12c0dea26c44c8c8e1f82cc4fc59dc4d4c48,826066,Blaziken [Heat Blast | Inferno Kick Flurry],nonfoil,provider_missing,false
 pokemon,6b203026496ccc92d85fd537a456cd6355ab2d80f1e386aafb36d02ec36cb526,773438,Lugia [Gust | Aeroblast],nonfoil,exact,true
@@ -25071,7 +25071,7 @@ pokemon,6bc3586124c560aa109ea300d12a156bb57601bd887b1b0584381e55e186f424,399314,
 pokemon,6bc7d390a1e7156a36fbc066194a362981fa783ef1cc1f6b3e8aac90bb080b61,370770,Charizard [Slash | Wild Tackle],nonfoil,exact,true
 pokemon,6bd234c6ea767fbda6f32c3d85984f4572baa97ff42338ccdb7d012ee240dc8c,687778,Lumineon V [Luminous Sign | Aqua Return],nonfoil,provider_missing,false
 pokemon,6bd4882fbf525216f59ab99e0647335a84277363ab94001394f83ba46012b8ff,650685,Tyranitar [Dark Aura | Stamp],nonfoil,ambiguous,false
-pokemon,6bdfbb310bca01f125092318d00b4a16a74f68cc301009280f74dcf40059a8c6,553334,Rayquaza EX [Mega Ascension | Aeroscream],nonfoil,provider_missing,false
+pokemon,6bdfbb310bca01f125092318d00b4a16a74f68cc301009280f74dcf40059a8c6,553334,Rayquaza EX [Mega Ascension | Aeroscream],nonfoil,ambiguous,false
 pokemon,6bed00b806b1fc8a9a7adf6a9f1db8b4456eed4282ff1645d7ba5aa963a6d0c2,741999,Pikachu [Quick Attack | Electro Ball | MFB],nonfoil,exact,true
 pokemon,6c000056b272c650033759d949daba9bb0aa0f8be00a00b4a18667bc8fe31ad2,837509,Aerodactyl [Glide | Devolution Ray],foil,exact,true
 pokemon,6c33fadc13275ceec32b8f71d44f6babf4b4ada73577786ffee871c5ca63b2c1,557066,Misty's Favor,nonfoil,provider_missing,false
@@ -25462,7 +25462,7 @@ pokemon,775a3c4ea0ab558bc4982eb5fc76669bf1097d2b17fd10ecacfa38fe0629bec4,886532,
 pokemon,7768ea62a9a8f50a2a7feed9f2254567690b48622f6d9e37faff6bb49444663c,687785,Deoxys VSTAR [Psychic Javelin | Star Force],nonfoil,provider_missing,false
 pokemon,7770b25dea91132916314c886c6aba9ce2d9b0d0f248792347f51a55768c0276,457313,Frosmoth [Ice Dance | Aurora Beam],nonfoil,exact,true
 pokemon,7773d228f54e411b82871378024868fb2d6d5d770031a802bdf8078489f5965f,836280,Amoonguss [Dangerous Reaction | Seed Bomb],foil,provider_missing,false
-pokemon,77768ffc233d4c9a7769f5549ec4575bbdceba902c4de67c62dc5ac4f7b9e36d,554173,Altaria [Flap | Fairy Friend],nonfoil,provider_missing,false
+pokemon,77768ffc233d4c9a7769f5549ec4575bbdceba902c4de67c62dc5ac4f7b9e36d,554173,Altaria [Flap | Fairy Friend],nonfoil,exact,true
 pokemon,777af819b285343d6cbe7d978af75ecc5001486909bdba03018e47df8352d2af,568916,Snorlax [Double Lariat | Rollout],nonfoil,exact,true
 pokemon,77803876130ab56afb02fb2a0a097d14744c689bfc6c200e95a9127e996cf355,802838,Pikachu [Random Spark],foil,provider_missing,false
 pokemon,7781fc66c0db12483cad93940d4c672fb36f6fcd2dd8839d0df1cba871cd2547,369112,Hoopa GX [Rogue Ring | Dark Strike | Devilish Hands GX],nonfoil,exact,true
@@ -25537,7 +25537,7 @@ pokemon,7971c4f3e6349dc350c5067d9bed89b58806e4beb3b5034e6f3c2892d2e0753f,691921,
 pokemon,7972a33046137342b961c94e3297a333b6373a5546955517e1a45efa4cdea874,291587,Hoopa [Hyperspace Punch | Portal Strike],nonfoil,ambiguous,false
 pokemon,7986fbeb3b5cec1369d6674d598adc88cc82b2cfa348c8f8e83e4d5fef05e540,449568,Garchomp Lv.71 [Dragon Intimidation | Guard Claw | Speed Impact],nonfoil,provider_missing,false
 pokemon,79874f4eb436522e24bfeb26d69496f9b123d26dd02b278336c27965353133ab,561457,Lycanroc GX [Bloodthirsty Eyes | Claw Slash | Dangerous Rogue GX],nonfoil,ambiguous,false
-pokemon,79878016fa75cd4032577dd082db74c16a1c9659da0016a4d0a9fe32f7aae2b2,553019,Pikachu [Tail Whip | Electro Ball],nonfoil,provider_missing,false
+pokemon,79878016fa75cd4032577dd082db74c16a1c9659da0016a4d0a9fe32f7aae2b2,553019,Pikachu [Tail Whip | Electro Ball],nonfoil,ambiguous,false
 pokemon,7988f5f70e4fe61835bb0ea8d6c5be00e1cbbb1c02547a7a17604e6f65fd493a,765039,Gardevoir δ Delta Species [Energy Jump | Psychic Rage | Black Magic],nonfoil,provider_missing,false
 pokemon,798e897659298ccf54f83edef832a45cda31fc079846c90bcb89129e773d0fd0,794911,Pikachu [Charge | Pika Punch],foil,exact,true
 pokemon,7996b954619cc49b261a3be36e6c2ca14c9983dd6ba8d1ca389ce1eae487ce06,861480,Team Rocket's Mewtwo ex [Power Saver | Erasure Ball],nonfoil,provider_missing,false
@@ -25791,7 +25791,7 @@ pokemon,80dec9268236a3cda5101de3c6f7c4ec8a17f68e5b79fc4cc5b09885ae75b39c,469219,
 pokemon,80e18725ddb7e9c1c7b83d5534be3c2de4c4508662cd526a46bf9e6d2d2425e2,567282,Galarian Zapdos V [Fighting Instinct | Thunderous Kick],nonfoil,exact,true
 pokemon,80f31442a2a3c13859dd6d7e7a60e8ebacd3c7b77022d70c5a77f77dd1b92d68,412914,Pikachu [Quick Attack | Thunderbolt],nonfoil,ambiguous,false
 pokemon,80f3ddc7bc84da313ae2b2f9222fb8628b46d45c9eeadeb31f40dcfedd573786,288271,All-Night Party,foil,exact,true
-pokemon,80faae4595ff3be071dbebd156316379e25d95b090c2cb4d48bcec46a1822818,554168,Ash-Greninja EX [Dancing Shuriken | Ninja Blade],nonfoil,provider_missing,false
+pokemon,80faae4595ff3be071dbebd156316379e25d95b090c2cb4d48bcec46a1822818,554168,Ash-Greninja EX [Dancing Shuriken | Ninja Blade],nonfoil,exact,true
 pokemon,8107e5b63c87c79d02884dd2eb028ce0bfb5abc8660b5e70534aa029bad2aeab,566761,Inteleon [Quick Shooting | Waterfall],nonfoil,exact,true
 pokemon,811bc1f20e60af59e556354e5a8439a1fa02e414e87de274cf394f0e0c5ad0f3,733778,Charizard ex [Brave Wing | Explosive Vortex],nonfoil,ambiguous,false
 pokemon,8145d47ae92216ef2f3d99aa7a771b26195c0a6f4066ae0d559989d804a28b10,297607,Kommo-o GX [Adamantine Press | Shred | Ultra Uppercut GX],nonfoil,exact,true
@@ -25863,7 +25863,7 @@ pokemon,838c01e41ff8a17c4a710573fc521f74011005d4c199e207551bae53c5e9809c,555318,
 pokemon,83913b445d7b849ec3bcd9b3835e0aa48053b70287fc2ed790ec93f4bf4c40eb,605207,The Rocket's Trap,nonfoil,exact,true
 pokemon,83a18ad58691f6c82b12d50ae0ba92ea08685ec255a2f58207c587cd98d72b8d,571195,Blastoise [Bubble | Double Cannon],nonfoil,provider_missing,false
 pokemon,83ab1bcf5640764b978dee43c6f47898493aec5ac55217fe6227b33ae7066f3e,449188,Nest Ball,nonfoil,ambiguous,false
-pokemon,83b918d05e05549cfd034b1cc641d6b521582886366648aae256447c4af4c898,553793,Noctowl BREAK [Night Scan],nonfoil,provider_missing,false
+pokemon,83b918d05e05549cfd034b1cc641d6b521582886366648aae256447c4af4c898,553793,Noctowl BREAK [Night Scan],nonfoil,exact,true
 pokemon,83c5c9f7caaa5bf85ad6c5708580bf5c4508e0b839fcbbe35b3f3e6d27238616,534092,Cynthia,nonfoil,ambiguous,false
 pokemon,83c909eb69b73652fb5a38b3d9b71bb2a21c9792b452d12b3a83d10c37e1ac19,691932,Hisuian Samurott VSTAR [Merciless Blade | Moon Cleave Star],nonfoil,exact,true
 pokemon,83d493af28f46aea2fd7f4156ef54d6246fbc6a7b6b9d32c640de99db0c4225c,833326,Mew [Mysterious Tail | Psyshot],nonfoil,provider_missing,false
@@ -26015,7 +26015,7 @@ pokemon,87f60cf8a2edf6c8ae5453997bd25a2e31b720d738143bf02f0ff387980f4489,396722,
 pokemon,87fda3941400c71c2fe6cc6ec7ca3e98757d9c1593f12e16bded1377169d1514,569670,Mewtwo EX [X Ball | Psydrive],nonfoil,exact,true
 pokemon,8800bb44aca23480627405628c40f5c0394bea31ba8cd4cac996df31e535b7af,675944,Ninetales Lv.42 [Flame Tail],nonfoil,provider_missing,false
 pokemon,880236adba5ff447a5b1c6c4d8a6334d95640447683f0a8b597b4f6bfd02f2c1,286406,MMewtwo EX [Psychic Infinity],nonfoil,ambiguous,false
-pokemon,8802922bbb2fd768083ef0c34a38bb8a4a24f1879a9a5a838464f17c696625ac,554212,Pikachu [Do The Wave],nonfoil,provider_missing,false
+pokemon,8802922bbb2fd768083ef0c34a38bb8a4a24f1879a9a5a838464f17c696625ac,554212,Pikachu [Do The Wave],nonfoil,ambiguous,false
 pokemon,88041439d106f0d0e6e440ea70e4062641e36320db450753051f05e7b12721d8,826177,Team Rocket's Articuno [Repelling Veil | Dark Frost],nonfoil,provider_missing,false
 pokemon,8805ab12e6a3547372fc8f54acd6221525161a1cf228a5c04b58c6360a73530f,571186,Larvitar [Call for Friends | Stomp],nonfoil,provider_missing,false
 pokemon,8805fb0d62b05a7ae1996dc471a2309f7545a4a0daf10e434a51bf5639dbc298,557700,Alakazam [Damage Swap | Confuse Ray],nonfoil,exact,true
@@ -26128,7 +26128,7 @@ pokemon,8af670d0d7163e8af1d952263f4d80de0c9b2e83fec21120d682c557f69882a1,289714,
 pokemon,8af6e3f42c93c44a13270aeec22909e41a92703521b88a2ae98056e4479ba583,805552,Iron Crown ex [Cobalt Command | Twin Shotels],nonfoil,provider_missing,false
 pokemon,8b0c183fde78cf1168060e2b57ddbbda5f86e903503deb2bf1f38e2149b11a9f,426041,Venusaur & Snivy GX [Shining Vine | Forest Dump | Solar Plant GX],nonfoil,exact,true
 pokemon,8b0fc1a247b86c160e253affc58f68b220b2764cafc6aba263054ddd480eaf1f,570309,Ho-Oh [Gust | Sacred Fire],nonfoil,ambiguous,false
-pokemon,8b18d589727c824c774ca0fb2df9849e015ebed66d377735ff869719654a734f,553523,Sceptile EX [Agility | Strong Slash],nonfoil,provider_missing,false
+pokemon,8b18d589727c824c774ca0fb2df9849e015ebed66d377735ff869719654a734f,553523,Sceptile EX [Agility | Strong Slash],nonfoil,exact,true
 pokemon,8b21dcb2ffb4bbcb9f2f8a5c99280725846ad3a4463e1b8360111706b9f22112,761553,Lana's Aid,nonfoil,provider_missing,false
 pokemon,8b261c34f698d7f9d944ac1deb7ab4dc0abcf931d8ce7301920e7fe9ca44a3dd,660140,Pokémon Trader,nonfoil,provider_missing,false
 pokemon,8b285b3a806eea8b75d8f36929d18019c05b9e19018d5ea12c65bdf767e1f52b,652071,Traveling Salesman,nonfoil,exact,true
@@ -26256,7 +26256,7 @@ pokemon,8ec362b234aad95ddac3e8af8a2f7641fed58409533fe2dcf5ece7fb8b40efa1,837491,
 pokemon,8ec3e691e509723c712bd4ea21e79f8a803d703e28bc3a91198ffbdd15c04478,825103,Bulbasaur [Leech Seed | 151],nonfoil,provider_missing,false
 pokemon,8ecc4c8d88e08988ac02c290a4ad60c2217fdedd99ec11069aea1c3f6907e8f2,763490,Omastar δ Delta Species [Bind | Vengeful Spikes],nonfoil,provider_missing,false
 pokemon,8ed3bbeed38b76c33f347bfeb3869324b083097665f1c60724f9e594eed407cd,372716,Marshadow & Machamp GX [Revenge | Hundred-Blows Impact | Acme of Heroism GX],nonfoil,exact,true
-pokemon,8eda2bc46cf6eb9e54078e9d1c222a0ea553941aae7f4fbd1658735be05f86e7,554018,Snorlax [Thick Skinned | Body Slam],nonfoil,provider_missing,false
+pokemon,8eda2bc46cf6eb9e54078e9d1c222a0ea553941aae7f4fbd1658735be05f86e7,554018,Snorlax [Thick Skinned | Body Slam],nonfoil,exact,true
 pokemon,8ee906e5372c8f47c9336ca57d4012c7def17a4d537623d05a6877de34f2d227,887955,Cyrano,nonfoil,provider_missing,false
 pokemon,8ee97054cd574618f7534cf433e0104b952c9e9e5bc5af04e7ab9721663fc071,837336,Arcanine [Torrid Torrent | Dynamite Fang],foil,exact,true
 pokemon,8eea2c094954bdb45ec31f99b5f2e799cbe5a1b94a740410d1b57b17aecc040a,576205,Grass Energy,nonfoil,exact,true
@@ -26322,7 +26322,7 @@ pokemon,903a31c73b050ac30ea5d908a916ca723df414cb8f2eec434b1c5cbc81325dc0,886524,
 pokemon,904b06d048d004025a92fa6964024d3e6679f58591095990ca6d9b7973bf495b,561663,Lunala GX [Psychic Transfer | Moongeist Beam | Lunar Fall GX],nonfoil,ambiguous,false
 pokemon,904b757f4eab393f5eb12a059c696b1da248458911da9edcf9c95defdcbe798b,882957,Boss's Orders - Corbeau,nonfoil,provider_missing,false
 pokemon,9061235c3c97c31fbe870e6c5b91cd088710e16cb7f5ce24bd7c52b61796923f,563129,Gulpin [Starvin'],nonfoil,exact,true
-pokemon,9068d713d38638ff63cfbd5eaa5325be3159d654c4120c139cd189264c8663b6,553354,Blaziken EX [Fist of Focus | Flare Storm],nonfoil,provider_missing,false
+pokemon,9068d713d38638ff63cfbd5eaa5325be3159d654c4120c139cd189264c8663b6,553354,Blaziken EX [Fist of Focus | Flare Storm],nonfoil,exact,true
 pokemon,9071b5588945357bdc0a9662a6ad1acda8614d0141b40e6a90bf158377b586e4,674368,Charizard V [Incinerate | Heat Blast],nonfoil,exact,true
 pokemon,90744b97e15631045ead8f002708b17d0f360404680c1cabd640d1b314904194,457373,Sonia,nonfoil,exact,true
 pokemon,908525717845736a3fedb6b177b2e690a5c6de5e84cd28aea31ce164f98fd5fb,715678,Magikarp [Expert Splasher],nonfoil,provider_missing,false
@@ -26362,7 +26362,7 @@ pokemon,9171ab79e11122bbb66c8d597043574bdb1680f5bfc4aff2995f723bd29615c9,563640,
 pokemon,9174923e8845d617c273c678c49f33cbc94e5feeded6abcb2da16565e7f873c3,563698,Wally,nonfoil,ambiguous,false
 pokemon,9175f736b2db344b4c89c854f2cbbf7d4085f40a77140ac5e54c272248eff8f3,564664,Espeon & Deoxys GX [Psychic Club | Cross Division GX],nonfoil,provider_missing,false
 pokemon,9179cf10e46aa0fa565470fa75583186bb565f7adb5e74bbb64ae31ac34d1070,805551,Iron Valiant ex [Tachyon Bits | Laser Blade],nonfoil,provider_missing,false
-pokemon,9181481af1176c356331442cb8158a2151e66d47ef92267bbba7370b6cda667b,553174,Sylveon [Disarming Voice | Fairy Wind],nonfoil,provider_missing,false
+pokemon,9181481af1176c356331442cb8158a2151e66d47ef92267bbba7370b6cda667b,553174,Sylveon [Disarming Voice | Fairy Wind],nonfoil,exact,true
 pokemon,91832b3bc3acb6e84ffa209814133f8e7f3a3a0e27893dbb5df143fc2e3e8dfe,562297,N,nonfoil,ambiguous,false
 pokemon,9184d1f66b4479b0ec27621292f325d18d9a4fb57a7e6dc511e4647fc889efe1,788060,Latias ex [Skyliner | Eon Blade],nonfoil,provider_missing,false
 pokemon,91858a5b64a4135fbced951978666e85d9ba143adda745e38d11116a25e8a586,606857,Unown [X] [XXXXX | Hidden Power],nonfoil,provider_missing,false
@@ -26407,7 +26407,7 @@ pokemon,92a10293a444e4ed343d882c5bf61615283a907f15f7875c11897fc132815f45,554257,
 pokemon,92a141a90209989f486d55a30ccd37c1ac9ef704e843200628dd43053cf9a38c,554461,Erika's Bellossom [Flower Cutter],nonfoil,provider_missing,false
 pokemon,92a4494bac33ceab5c20c7c403e9ee0dff1e6c77b6b604f672b72c4fdc248479,555249,Lillie's Full Force,foil,provider_missing,false
 pokemon,92a6b3118d30558f510808b9105dc4785dc076c84b49755b8e9e3466c40be122,563493,Hoopa EX [Hyperspace Ring | Wonder Trick],nonfoil,provider_missing,false
-pokemon,92b3546aa1818da96e652b9ea48e15021474140272a21e982753353ed9279b3b,553783,Lucario [Bone Rush | Mach Claw],nonfoil,provider_missing,false
+pokemon,92b3546aa1818da96e652b9ea48e15021474140272a21e982753353ed9279b3b,553783,Lucario [Bone Rush | Mach Claw],nonfoil,exact,true
 pokemon,92beeb3b168d17c4f69d1da981e3ab18072a476c4e0efe9ab45950d7cc7e69a8,837471,Mr. Mime [Mimic Barrier | Psypower],foil,exact,true
 pokemon,92c045777b0a1b7f86d560994afde0827cb1a7382ac9fc85010ce22cb4e6cdf2,559227,Copycat,nonfoil,ambiguous,false
 pokemon,92c1092fc3973464b4d314f2672c87e56148c56aebe42977d8e074eb1cf92d1b,561913,MRayquaza EX [Emerald Break],nonfoil,provider_missing,false
@@ -26474,7 +26474,7 @@ pokemon,942fad8d3736d869f8de92c283aa64a4d1d7416795d398d78f61ae08c3c03cef,743167,
 pokemon,94415a900b9c1cf654831af7f8fac7ffe9053d23962507efe95f64c445d1131b,552984,Klefki [Look for Keys | Play Rough],nonfoil,provider_missing,false
 pokemon,94493877949b4bf4a21fc3ee804ca27697530cc79c6066104025e0b941d3eeb0,448218,Cynthia,nonfoil,ambiguous,false
 pokemon,94555b3ed682251270ed41c80cc6ee45161ecf108e1f3f53f28a1bd57532e073,652026,Slowbro [Dense Body | Energy Cannon],nonfoil,exact,true
-pokemon,94587c5384bfb2ad924b81f1b2ab72825095ba65b5bd7e57a1697d75943e89f4,553888,Jirachi [Stardust | Dream Dance],nonfoil,provider_missing,false
+pokemon,94587c5384bfb2ad924b81f1b2ab72825095ba65b5bd7e57a1697d75943e89f4,553888,Jirachi [Stardust | Dream Dance],nonfoil,ambiguous,false
 pokemon,94630e2e6f6a69f19054905e80f389988275f55f4eb3f10c1ca60fe4c0643bb7,462944,Grass Energy,nonfoil,ambiguous,false
 pokemon,9468c5647ffc3badda19b6252429597a8af49f1f027e7c7c62348e8ec82406f1,719547,Gengar [Poltergeist | Hollow Dive],foil,exact,true
 pokemon,9474ff08146e01908c12a85006120e2c40041bbe0f3f698231792b828c005f9b,660118,Professor Oak,nonfoil,exact,true
@@ -26514,9 +26514,9 @@ pokemon,95847381ed560874e33ad6961fd2df780a7c718a3bf2cd7594925c500a47ffc6,561582,
 pokemon,95a4af3c658bd622448379f1d89704fed5f1140788638b3bc96596bf3dea9363,552854,Goodra [Slip Trip | Dragon Pulse],nonfoil,provider_missing,false
 pokemon,95b5b44ddeb7ec48c8e6a840531edde44238b001cff73debeb460a645efb9c87,562539,Charizard Spirit Link,nonfoil,exact,true
 pokemon,95b9f778d348cd61d2c8a5eeec1a98620c295184d8cf0dbb52a612493899c3d3,725305,Pidgeot ex [Quick Search | Blustery Wind],nonfoil,provider_missing,false
-pokemon,95bf714748baf044102a46a185bfd24debadd7b9ca4f9a678096ec9b070e2a8f,553753,Greninja [Aqua Shower | Dual Cut],nonfoil,provider_missing,false
+pokemon,95bf714748baf044102a46a185bfd24debadd7b9ca4f9a678096ec9b070e2a8f,553753,Greninja [Aqua Shower | Dual Cut],nonfoil,ambiguous,false
 pokemon,95c23a5d43513dc609c498848f843af002e15ec04a01a299364408bf3c95ec5e,783503,Pikachu VMAX [Quick Attack | Discharge | Volt Tackle],nonfoil,provider_missing,false
-pokemon,95cbce76b4f229d3192b49df931b110ba44b11850480c975f807798c3bc2f7d9,553229,MMetagross EX [Gatling Slug],nonfoil,provider_missing,false
+pokemon,95cbce76b4f229d3192b49df931b110ba44b11850480c975f807798c3bc2f7d9,553229,MMetagross EX [Gatling Slug],nonfoil,exact,true
 pokemon,95e4d2fe0e0173d9b51333232e2dfb896395f86004361ff34a4e991504c193ac,699055,Alakazam Lv.47 [Power Cancel | Psychic Guard],nonfoil,provider_missing,false
 pokemon,95ef897f004f4444d062c419bffa5256a7e710d05c6e1de519a19083ce7be74f,574237,Espeon V [Zen Shot | Super Psy Bolt],nonfoil,exact,true
 pokemon,95f83b44a0958f7d96aad7d54b4dda01ed4b16701f5f407f62ef207e950e0dde,371543,Snorlax Lv.37 [Pick and Collect | Roll Over],nonfoil,provider_missing,false
@@ -26539,7 +26539,7 @@ pokemon,96467cc59827a22dd7bf55c839458ec4f631ada25d8512651b84a639c6db93c3,698806,
 pokemon,964745bc22f8d257b2b3109c556c0f3a08fe7e301d40c6ef7cdaee6d1c617e9b,870993,Dawn,foil,provider_missing,false
 pokemon,96543012634561fc7ad30a2cecfdb0d945a2378ef35678248cecf4464735dd4a,290102,Zygarde [Rumble | Geostrike],nonfoil,exact,true
 pokemon,9657e5c2ce639f33bda36ab1defbb09aab2c9cf11ce63fb638b317eb3cb57588,469149,Grass Energy,nonfoil,ambiguous,false
-pokemon,9658c160407847c3a7a12d665550989ecef3b469861b91025f9a93981484433f,553593,Kyogre [Spring Tides | Ocean Cyclone],nonfoil,provider_missing,false
+pokemon,9658c160407847c3a7a12d665550989ecef3b469861b91025f9a93981484433f,553593,Kyogre [Spring Tides | Ocean Cyclone],nonfoil,exact,true
 pokemon,96602befcd8169f1604e1a465bf65411b8630c732f136076fe1c858cd6d8251d,585107,Dark Hypno [Psypunch | Bench Manipulation],nonfoil,ambiguous,false
 pokemon,9660d1a7e1694b6b8d194c286ee3be83253b2b4363eaebeb3440f5df76023d86,566214,Dialga [Time Rewind],nonfoil,provider_missing,false
 pokemon,9662516b37ad66b2704c97b58225b84f488e43e68bdb6ebcabdaf6abcda65225,567902,Ultra Ball,nonfoil,exact,true
@@ -26559,7 +26559,7 @@ pokemon,96bb1a1cbd020604835c58eda3f055c7bd730f3f3356d041abcfc2dc82d4e007,563050,
 pokemon,96bc36e7811daa971ea77ad00f431d23502484143d1480331f4601e853b2ce0c,295137,Vulpix [Roar | Gnaw],nonfoil,exact,true
 pokemon,96d426fb4b7ffdc5a7342de902faee69d505a76e770934fff2c3294d85064e94,372492,Koga's Trap,nonfoil,provider_missing,false
 pokemon,96d87766eaa5cefc85808a0b77427e7a0acef293dc46b255ea77a44e0f6ef172,654312,Hoothoot [Risky Kick],nonfoil,provider_missing,false
-pokemon,96eac0e78a9947b42fa1bb17a1f95af77d6a3e795838737dfbc386eeb49115bc,553059,Pikachu [Outbreak!?],nonfoil,provider_missing,false
+pokemon,96eac0e78a9947b42fa1bb17a1f95af77d6a3e795838737dfbc386eeb49115bc,553059,Pikachu [Outbreak!?],nonfoil,ambiguous,false
 pokemon,9702a6d7df428954ecce51fbea2439d57ca6f521346c3d72f82a6288b66f7ba2,312281,Espeon EX [Miraculous Shine | Psyshock],nonfoil,ambiguous,false
 pokemon,970ae88aad9fcf90888b959a238a87a83d940f6c14dc142d6c5bfd4d7d89982e,841940,Mimikyu VMAX [Ominous Numbers | Max Shadow],nonfoil,provider_missing,false
 pokemon,970f9028977965de1d4d5c34603288441fe0587d0e712dfe8f29180ff012165c,567307,Celebi VMAX [Curative Forest | Max Plant],nonfoil,exact,true
@@ -26575,7 +26575,7 @@ pokemon,976712b2f2aa3357947a1bc7d29144dc59d2929daaf8561b94cc1a733db13397,561784,
 pokemon,976ae5190984173fa0d3aa513021f532a1805f05b04b0280075e9836c7a6c111,765685,Ninetales [Safeguard | Quick Attack | Will-o'-the-wisp],nonfoil,exact,true
 pokemon,97735070620da44ecef9aac65f8c7306702a1c803ed1bce1252038ff6ec28ffe,842683,Pikachu ex [Resolute Heart | Topaz Bolt],nonfoil,provider_missing,false
 pokemon,9783643bb78438087f8b91223cb3d17fe382e78b008139899a3bdfa5b79a4bc7,562220,Krokorok [Mud-Slap | Corkscrew Punch],foil,provider_missing,false
-pokemon,9784378e5bf14af3b00a17ffd5146ed5af303694e5101fcaf34fca8705255828,553404,Swampert EX [Mud Flood | Hydro Tackle],nonfoil,provider_missing,false
+pokemon,9784378e5bf14af3b00a17ffd5146ed5af303694e5101fcaf34fca8705255828,553404,Swampert EX [Mud Flood | Hydro Tackle],nonfoil,exact,true
 pokemon,97856a6bc73bc03a02b590b328affa3d5f14ffb938daee9df2ced7408b35f996,571206,Pokémon Center Osaka,nonfoil,provider_missing,false
 pokemon,9788000ff988e8f9ab9c9f87cdbeae1cf8af6af2de993e1dbba4ad41745a0fbb,394567,Mewtwo [Mind Report | Psyshock],nonfoil,ambiguous,false
 pokemon,9788eae85569bcadb74ef2a6c828bc66922e481c8664c7bb1f4be03e494ee272,469539,Pikachu [Nuzzle | Thunder Jolt],nonfoil,provider_missing,false
@@ -26637,8 +26637,8 @@ pokemon,994a2e1b03c7a0e4f2c7cbb2eeb4d96b25ae31b2b671023b6705a3bfd139de6a,355547,
 pokemon,994a33249cef2add3cfc60b7b6b4621865734e62396e9c289ee7c20ab454c677,765777,Metal Energy [Special],nonfoil,exact,true
 pokemon,994cbd637c829a70162f5a8c2cdefe66059881b722bc763122bb5f47d916aa58,566404,Porygon-Z [G] Lv.56 [Dowsing Code | Ambush],nonfoil,provider_missing,false
 pokemon,9956257476a39b0a5ed6f9f367950c18f70719d3d460db03f09305ee0599980d,560025,Pokémon Fan Club,nonfoil,provider_missing,false
-pokemon,99580582bf85e528db261d63bcf47654fa5128d894130b2fde55f5ea7375ffba,553454,Sableye [Energy Hunt | Claw Slash],nonfoil,provider_missing,false
-pokemon,995d156c626d11c3c8365fbd56c8813a36ad1a2eb5ae0243d6c42a0fd54ab4f6,553439,Groudon [Rock Smash | Break Ground],nonfoil,provider_missing,false
+pokemon,99580582bf85e528db261d63bcf47654fa5128d894130b2fde55f5ea7375ffba,553454,Sableye [Energy Hunt | Claw Slash],nonfoil,exact,true
+pokemon,995d156c626d11c3c8365fbd56c8813a36ad1a2eb5ae0243d6c42a0fd54ab4f6,553439,Groudon [Rock Smash | Break Ground],nonfoil,exact,true
 pokemon,995f051b3969fb2d2856dca840ea70ee7d2f026111046ae186a4a61907a18634,560024,Gardenia,nonfoil,ambiguous,false
 pokemon,9969185295c70c76ce47c135e387fd9202c3eca969b136b0b71880905edfe382,763487,Gyarados δ Delta Species [Delta Reactor | Hyper Beam | Heavy Impact],nonfoil,provider_missing,false
 pokemon,99733b8cc8b43f7a09110b6b3c63e29ae08d042c299341cff4236c1e27069c21,584675,Jolteon [Quick Attack | Pin Missile],nonfoil,provider_missing,false
@@ -26861,7 +26861,7 @@ pokemon,9f6d8087c27fc284da900f00d760bc34399d9c1100b8bedbf63c96cd2ee76252,697100,
 pokemon,9f7989231edef8b44f2674199dacf22b7014e46013e74db3f4ff6c6393a24a06,794618,Jasmine's Gaze,nonfoil,provider_missing,false
 pokemon,9f7d78f9cc05880bd0a16eb78a4fb42c16a50d1eb8d5dc573a0ba7744e5d49cd,761122,Revavroom [Rumbling Engine | Knock Away],nonfoil,provider_missing,false
 pokemon,9f84283289ce820693bab7e67b107425bf1f582b366302ba55ef80dad5197c2b,884418,Hisuian Zoroark [Doom Curse | Call Back],nonfoil,exact,true
-pokemon,9f87e4549e4293c38488277f44a3e9182eca2490a3dcc5fd9578c295174f0b22,554265,Pikachu [Nuzzle | Quick Attack],nonfoil,provider_missing,false
+pokemon,9f87e4549e4293c38488277f44a3e9182eca2490a3dcc5fd9578c295174f0b22,554265,Pikachu [Nuzzle | Quick Attack],nonfoil,ambiguous,false
 pokemon,9f8c6d207be688faa9eb378d6717f7fe29a2cd1a0aa6319a2477aca9f86041df,677573,Milotic Lv.52 [Aqua Mirage | Dwindling Wave],nonfoil,provider_missing,false
 pokemon,9f8d213e677c82ddd7ee9e5c5eef5ea302f83d9557cba85ec3048ae824ac3aa7,554743,Darkness Energy [Special],nonfoil,provider_missing,false
 pokemon,9f9190d5017558f20b1fb23ecfafb96504df5f5c9e75abfefdb9cba079191e00,734335,Parasol Lady,nonfoil,provider_missing,false
@@ -26905,7 +26905,7 @@ pokemon,a0c27858dbac1e6668584565ce30348cbdb6a7cfe3ffedeb859c692bb03ac458,845084,
 pokemon,a0c7101764e6b1e28869198a6bf443148b6f949dba7e33ae51a6a5b9348d5541,850498,Basic Darkness Energy,foil,provider_missing,false
 pokemon,a0c94727fd5503814c372e0b25823e484964e4c623abfafc309dd79887a87d16,884755,Ampharos [Synchro Pulse | Flashing Bolt],nonfoil,provider_missing,false
 pokemon,a0d982428e05f59e877e2defd6d42bd7d92c2248de61a1eef295c665b089eb65,859875,Zorua [Take Down],nonfoil,provider_missing,false
-pokemon,a0f3b00b48acc164a6692aa780adf77ece71f434081aee834f3ecb64cb1b826d,553464,Snorlax [Plump Body | Knock Away],nonfoil,provider_missing,false
+pokemon,a0f3b00b48acc164a6692aa780adf77ece71f434081aee834f3ecb64cb1b826d,553464,Snorlax [Plump Body | Knock Away],nonfoil,exact,true
 pokemon,a0f7be40a33c15aedf9fe143d5bc1915a7a000bb1f3061d7f912132d97c596b4,869902,Iris's Fighting Spirit,nonfoil,provider_missing,false
 pokemon,a1002569fc0af3d1a6d16ff9db32e3548d0ec93a684ddc977c6a651a1f94f0c9,843626,Shadow Rider Calyrex VMAX [Underworld Door | Max Geist],nonfoil,provider_missing,false
 pokemon,a104765ed297f44baa0dec5ab4316c61950b07d7fd0f80b0145326b7a650c1dc,804755,Battle Compressor Team Flare Gear,nonfoil,exact,true
@@ -27060,7 +27060,7 @@ pokemon,a5e140df3af26cd8cc360b62cb8ed826f79818d0295cb1b961483e92aabc1e00,560168,
 pokemon,a5ee09fa58c3adba046a493aeb331ec1084806913cbe69f951e263e742009460,836555,Stunfisk [Muddy Bolt | Flop],foil,provider_missing,false
 pokemon,a5f59100e04f27ad799d7f31022416d9de63b883bef7953de0f5924f7189ec30,554578,Rocket's Entei [Burning Tackle],nonfoil,provider_missing,false
 pokemon,a606474f77048c5d75a6a89d7fbb1c06d8c1706704c67d9ad801fd850f341671,825393,Umbreon [Blindside | Moon Mirage],nonfoil,provider_missing,false
-pokemon,a632b7ebfb096a38faac406c2d1a1572faaa8395e6fab01d4d95739763421552,787811,Magikarp [Epic Splash],nonfoil,provider_missing,false
+pokemon,a632b7ebfb096a38faac406c2d1a1572faaa8395e6fab01d4d95739763421552,787811,Magikarp [Epic Splash],nonfoil,exact,true
 pokemon,a6428d4088fbd2c680e18af29be3bbc268c192e09f7a0d2fedf3528511af6b52,563166,MGyarados EX [Blast Geyser],nonfoil,ambiguous,false
 pokemon,a643940b5bba53c95b2e52c4ff507590bead4ea5568acf9a92bc351a974dcb98,569185,Giratina EX [Shred | Dragon Pulse],nonfoil,ambiguous,false
 pokemon,a647c97325f2aa1696bca5aeee87be76a799c43fbaddb08676a784b2297a1cfa,554475,Janine's Weezing [Smog],nonfoil,provider_missing,false
@@ -27069,7 +27069,7 @@ pokemon,a659c222f4f3878ce6634311939e338417a53981b90984014f56a122a7624e6c,371548,
 pokemon,a6661c78b94cb9bd09b2fa09197834d959c94f0ff474a4c151f13b39704e421d,783290,Treecko Gold Star [Tackle | Spring Back],nonfoil,provider_missing,false
 pokemon,a66a6851c118f2ddfef6a48e50b989e3e53e3678f20b9f69faa7444f7671d743,784398,Pichu [Baby Evolution | Energy Retrieval],nonfoil,exact,true
 pokemon,a67b6d04522f7cac0286a2f7bf937903a681e994d9af7a8f91357de7c7f27478,571899,Dance! Neo Imakuni?,nonfoil,provider_missing,false
-pokemon,a685b6c328fb741b8219bde1fa5cea4100808073b50c0977388944065efd2b80,553254,Treecko [Quick Attack],nonfoil,provider_missing,false
+pokemon,a685b6c328fb741b8219bde1fa5cea4100808073b50c0977388944065efd2b80,553254,Treecko [Quick Attack],nonfoil,exact,true
 pokemon,a685cc55eae67c5b4645741de0b7fd72d0c56bd85b3b781bcdc961b409e21e49,807714,N's Zoroark ex [Trade | Night Joker],nonfoil,provider_missing,false
 pokemon,a68fbf8f8c4c3373306125949ed16a23eb47add65c0d42054d8d724f32a2ffbd,397032,Silvally GX [Gyro Unit | Turbo Drive | Rebel GX],nonfoil,provider_missing,false
 pokemon,a69ab114641c03fac256225d240c293d61b3e42dacea4c9a0b9d9087d3087931,705130,Mew VMAX [Cross Fusion Strike | Max Miracle],nonfoil,provider_missing,false
@@ -27142,7 +27142,7 @@ pokemon,a854964709b455c53fbf734824078af63313bf17b04fba18cc56a4f0fc94f044,555071,
 pokemon,a85ed3ec4a25302f1703d9f7714ac67690202220ba4ed9b961955d9b99be8a6f,606290,Arceus VSTAR [Trinity Nova | Starbirth],nonfoil,ambiguous,false
 pokemon,a861d48c9de0241a9b96c7187e94ff0d803668f836f249272a0182c10926d812,719662,Switch,nonfoil,ambiguous,false
 pokemon,a863de8ad793263a19eb1d0f71cb7f8d3aa181cf772a849054696cbb7a916edc,869276,Tauros [Crush Chance | Call for Family | Horn Attack],nonfoil,provider_missing,false
-pokemon,a863e95445219039cb2c07ecf64193e82ef7589d38fda870bceb5cc839bf7914,553623,MAerodactyl EX [Rock Drill Dive],nonfoil,provider_missing,false
+pokemon,a863e95445219039cb2c07ecf64193e82ef7589d38fda870bceb5cc839bf7914,553623,MAerodactyl EX [Rock Drill Dive],nonfoil,exact,true
 pokemon,a8669c62e6da157c4311bab4f16d8dd68fd5e461d67fe38e0f889a44893ba4c1,406959,Mewtwo & Mew GX [Perfection | Miraculous Duo GX],nonfoil,ambiguous,false
 pokemon,a867a4dbdb3303de968b83983fe804df7905cb83e80f616dcd14f6c4a633737e,366056,Salamence GX [Dragon Lift | Bright Flame | Flame Jet GX],nonfoil,exact,true
 pokemon,a86b223491d3b349e779fe2ee784536f773258a0a49f1a1821714cc52ec218ea,567565,Dialga EX [Reverse Edge | Fast Forward],nonfoil,ambiguous,false
@@ -27260,7 +27260,7 @@ pokemon,ab5ffba68c67b8b65632e3c7f33f628f071e529c289727d6e756eaa9eeb231b0,576682,
 pokemon,ab7334f1036eb40753478403126044e05c8b429331b91a3d154dee480362f293,463714,Pokemon Breeder's Nurturing,nonfoil,provider_missing,false
 pokemon,ab8a7fb6db8d706397cb406cbbdc48309d5a3dc3507e83bfe4a8025c8b4c4460,560375,Celebi [Time Call | Leech Seed],nonfoil,ambiguous,false
 pokemon,ab8fef653405f18fe99af1652d9097dc0752a226d542703d6f773f3388fe675f,697111,Sylveon V [Dream Gift | Magical Shot],nonfoil,provider_missing,false
-pokemon,ab9e8b82f1a02a7fb6be34c816693e5d1d775c8cfd0f769392150317bed158d4,554043,Volcanion [Stomp | Heat Tackle],nonfoil,provider_missing,false
+pokemon,ab9e8b82f1a02a7fb6be34c816693e5d1d775c8cfd0f769392150317bed158d4,554043,Volcanion [Stomp | Heat Tackle],nonfoil,ambiguous,false
 pokemon,aba5352295322a4070595354d79220cb087b8d6513d80a019efd34e87325665a,566409,Arceus Lv.100 [Ripple Swell | Sky Spear],nonfoil,provider_missing,false
 pokemon,aba9533556a6b263fc42abbd6bb95c33c299065ef5f1abc27986c7316982d845,862184,Minun [Buddy Pulse | Speed Ball],nonfoil,provider_missing,false
 pokemon,abba690ffd087d762eb594517377c40d8275f06aa6970260a1aee492e75e58f7,605151,Lt. Surge's Magneton [Energy Charge | Mega Shock],nonfoil,exact,true
@@ -27346,11 +27346,11 @@ pokemon,ae91f30a7b1462197d6ef886fe2438d319a231bfb7461c6c758bca67fc6e60ed,852634,
 pokemon,aebdfb5b6af0f0aa309bbbe66737c59f55608aa2f499c53232b404050dca91ac,691924,Mewtwo VSTAR [Psy Purge | Star Raid],nonfoil,exact,true
 pokemon,aebebaa5a2b2f64b8e437b2443f3c61392513f4b24eb895a97b7569c7109bc90,715680,Eiscue [Headbutt | Frigid Block],nonfoil,provider_missing,false
 pokemon,aebf2428501e2232d4f29061cecb1799826dd4ff70dde432e122712934d1bf35,845083,Charizard V [Claw Slash | Fire Spin],nonfoil,provider_missing,false
-pokemon,aec9ae932a91823d84ed4af196070b0616b2f25d5613cc15d3e6c11f2a5c8506,553409,MBlaziken EX [Moonsault Blaze],foil,provider_missing,false
+pokemon,aec9ae932a91823d84ed4af196070b0616b2f25d5613cc15d3e6c11f2a5c8506,553409,MBlaziken EX [Moonsault Blaze],foil,exact,true
 pokemon,aed0bc8c3736bea67595a93a5f0eed8154a019228db675f618ae8e8850ed87ed,293359,MVenusaur EX [Crisis Vine],nonfoil,ambiguous,false
 pokemon,aedc70f441f2fd337a01455b146fec2fb32943cf4bfb0f9ed52662c12641bc88,850131,Munkidori [Adrena-Brain | Mind Bend],nonfoil,provider_missing,false
 pokemon,aee742eafa79b62e7a295c6b6302ffc25c5f357f444e9c90eb4175216208c0a6,725282,Cleffa [Grasping Draw],nonfoil,provider_missing,false
-pokemon,aee799fb63e80d4d11b4383090ec14aad0c8232fa9a2bca2f7d33d39e448e05f,553653,Beheeyem BREAK [Cosmic Circle],nonfoil,provider_missing,false
+pokemon,aee799fb63e80d4d11b4383090ec14aad0c8232fa9a2bca2f7d33d39e448e05f,553653,Beheeyem BREAK [Cosmic Circle],nonfoil,exact,true
 pokemon,aeed8f825e7b16d868a5796bb172d8206b359fdc51ef827363a19b5fb353b849,857702,Mega Sharpedo ex [Greedy Fang | Hungry Jaws],nonfoil,provider_missing,false
 pokemon,aef4e4a8b5c7ff73e2aef05966262ac2a139dbf11e656c4c3fac6918ffe3717f,563566,Gardevoir [Bright Heal | Telekinesis],nonfoil,exact,true
 pokemon,af06bf8920a46bd6712b02f2496c60fb417995b5175b5fd18b436c22021a1ebe,469489,Pretend Boss Pikachu - Team Magma [Amibition of the Land? | Pika Punch],nonfoil,provider_missing,false
@@ -27360,7 +27360,7 @@ pokemon,af4db440bef7c5d48f48a347195dd77cf749a157b62b66f784eaac07bf9ecc6f,660196,
 pokemon,af54f52a8d5285a12f9eeb481c3f16ae2886fcdeb36335cc981279306005b780,608745,Boltund V [Electrify | Bolt Storm],nonfoil,exact,true
 pokemon,af659add73609d7e65fe19828d7797043ed8316a7fc5355ca82a1a8cbd0be7c2,449493,Espeon [Solar Revelation | Psy Report],nonfoil,exact,true
 pokemon,af6604bb95bffd323d9c34524cc0df0e101378d883cd332b91846e3507ac31d6,563141,Sylveon EX [Dress Up | Precious Ribbon],nonfoil,ambiguous,false
-pokemon,af6608384658d36114a2a8ddb8a73e9ab06016079c58b8ec0d5434e409a10de2,553024,Pikachu [Tail Whip | Electro Ball],nonfoil,provider_missing,false
+pokemon,af6608384658d36114a2a8ddb8a73e9ab06016079c58b8ec0d5434e409a10de2,553024,Pikachu [Tail Whip | Electro Ball],nonfoil,ambiguous,false
 pokemon,af68447da0ab565747d567822e8105bd0e1b73e8c7fe79f0a9379d67ef6a9bfd,574256,Duraludon V [Metal Claw | Breaking Swipe],nonfoil,exact,true
 pokemon,af6ab26a0d2937e421ef901ec144be992f8bc81602e46e03cb9a239cd65afa52,554495,Blaine's Typhlosion [Claw Swipe | Hot Air],nonfoil,provider_missing,false
 pokemon,af7aae38271388af1d9a9f83dfbe084285a506565d1c8c51c7b1ad5d0bf3f87d,563381,MMewtwo EX [Vanishing Strike],nonfoil,ambiguous,false
@@ -27371,7 +27371,7 @@ pokemon,af989d135f08958a98e9c45d9efaa5acb551181ec67685ff57b1ddb124edad7b,553479,
 pokemon,afa44074d5af7d345c44f05fcca5719d07fc136f7b1f6aab4eac55509c1eec1f,654772,Charmander [Gnaw | Searing Flame],nonfoil,ambiguous,false
 pokemon,afbaecc499ed0a7d6588aa4007457c9d0af96587fbcca570bc420214c6f41769,825087,Cyclizar [Flat-Out Dash | Power Tackle],foil,provider_missing,false
 pokemon,afbb021b852e09e500c0ee06cfc5ab0d76d5a0e94298f8f240ad10ddf3b8fe80,396942,Espeon GX [Psybeam | Psychic | Divide GX],nonfoil,provider_missing,false
-pokemon,afd400eb5cd01b688ef2fbdb7b8480ec136a7664aa5f155a18003c8c539732fa,553663,Mewtwo EX [Shatter Shot | Damage Change],nonfoil,provider_missing,false
+pokemon,afd400eb5cd01b688ef2fbdb7b8480ec136a7664aa5f155a18003c8c539732fa,553663,Mewtwo EX [Shatter Shot | Damage Change],nonfoil,ambiguous,false
 pokemon,afe45c8dfc92ed0466ce0dc8bfff9b3d02845164f11d72b34ab7f3bf582cc5a4,836109,Panpour [Collect | Scratch | SV],nonfoil,provider_missing,false
 pokemon,afef73914d01d0f4a296e5b9b62156f3b56cf7c6b5aac402b80614a6c3b96e31,810398,Pikachu [Unwind],nonfoil,provider_missing,false
 pokemon,afff8a710eea71838dcbe067816c20a9faddeccf738d0dccfb67735d36dddd68,586928,Vaporeon [Torrential Awakening | Aurora Beam],nonfoil,provider_missing,false
@@ -27419,7 +27419,7 @@ pokemon,b16d87d8204942b8eda0826f83b9a94c2da4f253cb6ae6e26f248f9471ad6094,783084,
 pokemon,b176ae5a6b22efe687f32203f03051c3e117d7ac4ac8d763eb2af21ea8bc09e4,563410,Mewtwo EX [Shatter Shot | Damage Change],nonfoil,ambiguous,false
 pokemon,b1774367179fe11bc95bda3ae17db7b9663e623cd8c073241d73c9f9a5eda618,705116,Glaceon VMAX [Crystal Veil | Max Icicle],nonfoil,provider_missing,false
 pokemon,b17796aa6c03e3c98cd0c0ad5014c98745d160dfb0acd484d37103431e7262ba,289702,Kingdra [Gather Strength | Dragon Blast],nonfoil,exact,true
-pokemon,b17cae1ec262d85c8f99972553986d42783ac0917e0f64a04ca8db58be1de5b2,828103,MAbsol EX [Disaster Wing],nonfoil,provider_missing,false
+pokemon,b17cae1ec262d85c8f99972553986d42783ac0917e0f64a04ca8db58be1de5b2,828103,MAbsol EX [Disaster Wing],nonfoil,exact,true
 pokemon,b18037f04a34b5e5b7328d841353e41b3a4b8984e2eda9ea6026a385a4070cc3,828209,Team Rocket's Tyranitar [Sand Stream | Demolition Tackle],nonfoil,provider_missing,false
 pokemon,b1a14fa4e10824e25366006c6ae0cde4c42d2c51b0cc5067e91b8436f7449720,554093,Poncho-wearing Pikachu [Mega Pretend | Triple Spark],nonfoil,provider_missing,false
 pokemon,b1a1a11652a9246bc139828c7f8bfb0ee74b3a6e956c337fde5d802b787a7541,765712,Claydol ex [Type Shift | Psychic Boom | Shadow Crush],nonfoil,exact,true
@@ -27468,7 +27468,7 @@ pokemon,b2bc64e1e5bc52283dd542554c9c9afb18aa288fa8dea4a46743901cb73f4147,875188,
 pokemon,b2c11d2d9dd9111ef237bb85c8586f60ba46c488b3a6a1aca634a2448d59c554,566068,Typhlosion [Magma Punch | Fire Spin],nonfoil,provider_missing,false
 pokemon,b2c29abd1c410dc7a1e15dc2c7124cbc4b07e6e7c09b21e0e8b96517df05235f,284265,Sceptile EX [Sleep Poison | Unseen Claw],nonfoil,ambiguous,false
 pokemon,b2cb8a96f4117371a83a226834e47fe2450966818b92247c83102cdfec634d25,691948,Origin Forme Dialga VSTAR [Metal Blast | Star Chronos],nonfoil,exact,true
-pokemon,b2cb9a6f19e6ddb1257abe98d48d1e4cd2da79d7f8be292786c1d658b5603cb3,553543,Aurorus EX [Frozen Charm | Crystal Breath],nonfoil,provider_missing,false
+pokemon,b2cb9a6f19e6ddb1257abe98d48d1e4cd2da79d7f8be292786c1d658b5603cb3,553543,Aurorus EX [Frozen Charm | Crystal Breath],nonfoil,exact,true
 pokemon,b2dae82518dd547c7839ce70cfc2d54c4ebd36cc2f329a1ca2c06ccac0f2252d,877536,Mega Clefable ex [Wings of Light | Shooting Moon],nonfoil,provider_missing,false
 pokemon,b2dbca06bdbbe34756ae8d4e138c41e42bfc590e912cef14686bb4e3bb7a1e17,288458,MBlastoise EX [Dread Launcher],nonfoil,exact,true
 pokemon,b2dcd06ff575a8d0675ba39e58918ddd81748f5e4109486966876788837f8f18,871308,Bulbasaur [Bind Down],foil,provider_missing,false
@@ -27479,7 +27479,7 @@ pokemon,b3068dcfd5b5ffd2e1be1a1b7fe8b27b8d69f45a731120bf0c8c962613ddb74e,697082,
 pokemon,b30a9f1f39463e7a1d191b87664aad7a8f9b31d6239ff4a8b892677beab0482a,869412,Jolteon Gold Star [Yellow Ray | Agility],nonfoil,provider_missing,false
 pokemon,b30abe1af13020d69d141a3572a5ee11a0addb9301cec3f24f93e1508ec8c75f,654070,Houndoom [Ambush | Lonely Fang],nonfoil,ambiguous,false
 pokemon,b30ee279f97716e7e85941a3212717c8938ffc1ee912dae8f815b89cd6a8e088,834536,Umbreon VMAX [Dark Signal | Max Darkness],nonfoil,provider_missing,false
-pokemon,b31ccf9b38c68bcce9b52a15fa0728b3cbd1ef2b5de3ee51c7ceef2f4d715865,553808,Azelf [Shining Eyes | Mind Bend],nonfoil,provider_missing,false
+pokemon,b31ccf9b38c68bcce9b52a15fa0728b3cbd1ef2b5de3ee51c7ceef2f4d715865,553808,Azelf [Shining Eyes | Mind Bend],nonfoil,exact,true
 pokemon,b31e6e9d665b8d4dfc18815bd98cb37b57f39eedd19b1041e39c20942d119708,571391,Jolteon VMAX [Max Thunder Rumble],nonfoil,provider_missing,false
 pokemon,b328c186f3af40732bfaf86f6c5b3053f390630bc28eb04367955eb23b1541c4,561985,Zygarde EX [Land's Pulse | Cell Storm | Land's Wrath],nonfoil,provider_missing,false
 pokemon,b32accd2156addb5db91952df098c66ed5e69af0ba1b2f3a9134d0a5120dbc79,559884,Volkner,nonfoil,ambiguous,false
@@ -27551,7 +27551,7 @@ pokemon,b4f0c54e9f47bb6979d467584a56996821ffa76f86582a1e2e6df76b6ecfe045,555053,
 pokemon,b504eaea27a7c3d6b0124ac33869bd3cebfa1b9936d5e3d022b868f722c54a2c,855023,Charizard [Energy Burn | Fire Spin],nonfoil,exact,true
 pokemon,b511217d8ca7660e2cf7089f361d02768abb21a29aebc003bd3ca41159a3cda8,860868,Gardevoir ex [Psychic Embrace | Miracle Force],nonfoil,provider_missing,false
 pokemon,b51c51b5b94c0736909d04b2e4a42cda077771a5edd07d7a4f37fb15f734d243,678417,Pikachu Lv.11 [Gnaw | Thundershock],nonfoil,provider_missing,false
-pokemon,b51fce40bbe1b3acaf94021ab46daf51344483b3e75565f47a8862979dad4481,864133,Crobat BREAK [Silent Bite],nonfoil,provider_missing,false
+pokemon,b51fce40bbe1b3acaf94021ab46daf51344483b3e75565f47a8862979dad4481,864133,Crobat BREAK [Silent Bite],nonfoil,exact,true
 pokemon,b5277bf08be0ca80febc7bb62f5dd36eee3d8d62cb0ac98a2906cf7cc2f53df2,807434,Iono's Wattrel [Quick Attack],nonfoil,provider_missing,false
 pokemon,b52ad951ca3aa3857be9055bd28738604cb45481b6514171faf234c52be620b8,779146,Briar,nonfoil,provider_missing,false
 pokemon,b531ab939391e02ca23af9de6fe8bfc75534d71779a73eb8300176d2797ebc14,469519,Pretend Boss Pikachu - Team Plasma [Liberation? | Pika Punch],nonfoil,provider_missing,false
@@ -27617,7 +27617,7 @@ pokemon,b6cb2cb5e2be2c375ebfd9bccdf5b0500c2cf42652ae027f69281e7fb63645d9,833720,
 pokemon,b6cfecbec5a8e61de923b64c7153df2a2c99066438eb51d2ffc05df6c0a122de,570310,Suicune [Mirror Coat | Bubblebeam],nonfoil,exact,true
 pokemon,b6dcbc0d118f6aa1f57089761dbd34bc5d5e16ad048e16c25d885b5703dadbeb,837659,Croconaw [Reverse Thrust],foil,provider_missing,false
 pokemon,b6dfcfe33176078a754e477c3323deba15034375de1fd66ec710f533cb5d3f0f,562142,Darumaka [Searing Flame],nonfoil,provider_missing,false
-pokemon,b6e35ef48d982252bb88b90dc17664ce27649436a35cbe9eae4f78e0297ae092,553803,Ash-Greninja EX [Dancing Shuriken | Ninja Blade],nonfoil,provider_missing,false
+pokemon,b6e35ef48d982252bb88b90dc17664ce27649436a35cbe9eae4f78e0297ae092,553803,Ash-Greninja EX [Dancing Shuriken | Ninja Blade],nonfoil,exact,true
 pokemon,b6ec7f77e847bd5ee06df050684d15b5e982d61408499cd519e9231cf0b1100d,552564,Mario Pikachu [Coin Gather | Super Jump],nonfoil,provider_missing,false
 pokemon,b70350bcbc573b0d57ded74ee29e3d070032b76b4ae2b19b14905b4310fdaa15,297891,MLucario EX [Rising Fist],nonfoil,ambiguous,false
 pokemon,b7183ff153ca3866964dc97c5ee1fbe6c2bfa111020078dc77d2b48fbae10e6f,463219,Mallow & Lana,nonfoil,ambiguous,false
@@ -27644,7 +27644,7 @@ pokemon,b79d0a9eb0dcd3902da09a53e75b28205cad89b646b7880c1821de777a1dddb9,665245,
 pokemon,b7a482b3940083f76780a1c2755f8cda32ce3fd4ae7c1e0e6bc3c764d5816ac4,783505,Drednaw VMAX [Bite | Jaw Lock | Hydro Pump],nonfoil,provider_missing,false
 pokemon,b7a57d88adb9e38f8e3d9bc826dd151b9851a9de71b2f1edf145e22bbd5f6828,707670,Raichu [Electrocharge | Thunderbolt],nonfoil,provider_missing,false
 pokemon,b7bfd9b0d47a8d4c6b7f28618947cfc97b6f05934ac627df188984b2bd4fa834,567491,Pokémon Enterprise,foil,provider_missing,false
-pokemon,b7d47fdba4bd1c98dc08254c0acd564cf52bfd97e7f6723d3dec8ffed5ff0c91,553638,MMawile EX [Twin Grapple],nonfoil,provider_missing,false
+pokemon,b7d47fdba4bd1c98dc08254c0acd564cf52bfd97e7f6723d3dec8ffed5ff0c91,553638,MMawile EX [Twin Grapple],nonfoil,exact,true
 pokemon,b7d49eddc362532ee66426e5befd74fefbc48b8ad59d5cb40f3fef0f5800d283,525400,Kanazawa's Pikachu [New Open | Pika Stroll],nonfoil,provider_missing,false
 pokemon,b7d5024cd254b2133083b883f125ddad9fb95ce64fa04676b233bf11bce989b6,560029,Dialga GX [Overclock | Shred | Timeless GX],nonfoil,ambiguous,false
 pokemon,b7dec960e19346cb4e41626f4c9cd7bd9614fd5ce40a282c0fdb5df1d24a72ef,730137,Radiant Tsareena [Elegant Heal | Aroma Shot],nonfoil,provider_missing,false
@@ -27682,7 +27682,7 @@ pokemon,b89878961bfeee5b646197dda258600b1a9553f0e355c1dad3271d500cf63271,576944,
 pokemon,b8a54f08aa4b6422a094c509aedd065837dcc463b4308589b1199423edcc8292,886725,Pikachu [Tail Whap | Spark],nonfoil,ambiguous,false
 pokemon,b8ab4b4e4a95d436d0e9cd7391c5159378eca2f8116c80dc49db4b00377512c0,561991,Karen,nonfoil,ambiguous,false
 pokemon,b8ac8d1f6e05ce0117c3beaba716f53b545e92a60cbaa8ec54645cfbfd552843,573759,Mightyena ex [Driving Howl | Sharp Fang | Hyper Claws],nonfoil,exact,true
-pokemon,b8c519db83b30886af7c0955a403523e4a95499a1e7eee7a541112c7b043ed43,553329,Rayquaza EX [Mega Ascension | Aeroscream],nonfoil,provider_missing,false
+pokemon,b8c519db83b30886af7c0955a403523e4a95499a1e7eee7a541112c7b043ed43,553329,Rayquaza EX [Mega Ascension | Aeroscream],nonfoil,ambiguous,false
 pokemon,b8c74783ba960b5a2cfb49ff8b8f66e7928a7c1e1388e210aab2e026ac06ffb1,708483,Leafeon [Aromatic Breeze],nonfoil,provider_missing,false
 pokemon,b8dad29fa97f082a829bbd145b30313bbe18b5c3c46b9d2d445a941fa734a292,299552,Machamp GX [Cross-Cut | Bedrock Breaker | Muscle Punch GX],nonfoil,exact,true
 pokemon,b8e7f1beb040c9b9bd30d2737eb29d7abc610d49ec27eff5439671c968d68240,369095,Latias & Latios GX [Buster Purge | Aero Unit GX],nonfoil,exact,true
@@ -27697,7 +27697,7 @@ pokemon,b926b88470ffb5d9deef772d2b6ded9918616bbe950e76031f1efb28adbfa6bd,606876,
 pokemon,b9299480bba3988f659bbfa583891953609bb46721131501c55f3e3ff3edded4,449538,Fire Energy,nonfoil,exact,true
 pokemon,b92baff8796609f7fefbbdcb3485a22ef4a553a2b5d8852e876dc4731c70e27f,551666,Metagross GX [Geotech System | Giga Hammer | Algorithm GX],nonfoil,provider_missing,false
 pokemon,b932e5321666762efacd46ed144e92a66a10aba1a4fd568230561daffbae15cf,700742,Vivillon [Conversion Powder | Colorful Wind],nonfoil,exact,true
-pokemon,b9352014894dfaa806c66c574840409766e6917653dc02150f4c410791123797,552804,Greninja EX [Sharpshooting | Aqua Blast],nonfoil,provider_missing,false
+pokemon,b9352014894dfaa806c66c574840409766e6917653dc02150f4c410791123797,552804,Greninja EX [Sharpshooting | Aqua Blast],nonfoil,exact,true
 pokemon,b945a15a1cf9340f14bb187fa7fe8a669859f7e8dad5ae08cd0abe8bdf90ecd3,669046,Tyranitar [Darkness Howl | Power Claw | Megaton Tail | Prime],nonfoil,provider_missing,false
 pokemon,b94e51e6a15ace7bea4cb6d177dbb1c801736a61b22773537376c48cdbc01092,674226,Gengar [Netherworld Gate | Screaming Circle],nonfoil,exact,true
 pokemon,b955e5df22448ba778490ac01facfa183d81dfad965476020a8174d915e588c5,811211,Grand Tree,nonfoil,provider_missing,false
@@ -27869,7 +27869,7 @@ pokemon,be7f4d81c62e169f7b3001d2d198de35620075d2061fe008fa7b2abca001ca1f,660223,
 pokemon,be86e7af167e59f58d1c6de7f5d25864868507eb3be769d06aca3e243f2c5087,389077,Recycle Energy,nonfoil,exact,true
 pokemon,be8a1f5509f672ef4e119a79685c1eb584af5254835201b080aad48f11e730f6,825072,Pikachu [Charge | Pika Punch],nonfoil,provider_missing,false
 pokemon,be8dddaf4064a38ddd222977cd100efabb37c56357ceed7e6f005eaad9d1f50f,523940,Charizard VMAX [Claw Slash | G-Max Wildfire],nonfoil,provider_missing,false
-pokemon,be94d2281919c9a867d2950e2d8599652ecb43d94a780fde3844b0fb8d9924d9,553424,Sylveon [Disarming Voice | Fairy Wind],nonfoil,provider_missing,false
+pokemon,be94d2281919c9a867d2950e2d8599652ecb43d94a780fde3844b0fb8d9924d9,553424,Sylveon [Disarming Voice | Fairy Wind],nonfoil,exact,true
 pokemon,bea13cfb7c0128f3b481cdadeffe0d1806f68b5034e83b68f51fc4426d3bd881,841985,Pikachu [Growl | Thundershock],nonfoil,provider_missing,false
 pokemon,bea6aa9ba269c57c011c00a18afad3fb535e0213eb5c56a7216173961470a981,562017,Water Energy,nonfoil,exact,true
 pokemon,beb32566b25b48dc515e147773a06c6ef52c58787a663977766473bc80f77fa4,557701,Mewtwo [Psychic | Barrier],nonfoil,exact,true
@@ -28290,7 +28290,7 @@ pokemon,cac0be6ef4fb2dce64d346ce79f02733dd74835a41ebbfb628d94ac28aa41a9a,295467,
 pokemon,cac2794b905c3b55fc01e82e28b732d2eca394257ce24f6524a057bcdf239a27,800140,Blastoise V [Water Gun | Torrential Cannon],nonfoil,provider_missing,false
 pokemon,cad50fd3cf07ff34ba7e3765a25d71000ed64ae30199b48738e8f7996cd63298,851942,Charizard ex [Infernal Reign | Burning Darkness],nonfoil,provider_missing,false
 pokemon,cad51d201f89c1f93f91efe1a7610883b438b5621757e19aa6b4a54846c7c0d4,551591,Mewtwo GX [Full Burst | Super Absorption | Psystrike GX],nonfoil,provider_missing,false
-pokemon,cae0b535d9690d11258998ae28461cb5bf0bb6aedcca6b1bdb63d8d3eb7a3411,553499,Hoopa [Summoning Draw | Double Spin],nonfoil,provider_missing,false
+pokemon,cae0b535d9690d11258998ae28461cb5bf0bb6aedcca6b1bdb63d8d3eb7a3411,553499,Hoopa [Summoning Draw | Double Spin],nonfoil,ambiguous,false
 pokemon,cafc566ccd15eaecdb76373b7b4c8443f2a153010de8840d11bacf21b5875516,522435,Charizard V [Claw Slash | Fire Spin],nonfoil,provider_missing,false
 pokemon,cb044d0885e3ce1d9b40a813a141d96b05095fbf5447fa049699ea50e5d2bb02,660188,Raticate [Bite | Super Fang],nonfoil,exact,true
 pokemon,cb299bbe7440800a2b787d823800b570207658a9af43230d02b533a8f7ccf914,561950,Karen,nonfoil,ambiguous,false
@@ -28487,7 +28487,7 @@ pokemon,d0ccd4dc8c73d5ac7ed3ef5e092d43c6af487d2600b6a7bf8933389aaafd1e03,783445,
 pokemon,d0d10c75d5d7666237ba375eb54df8b902a838e26bb59a9520f473b6cc29f9dc,814545,Mew ex [Restart | Genome Hacking],nonfoil,provider_missing,false
 pokemon,d0d6c2f34d94657abcc115037b76348436e3e7dc2c762d5190250e6859e77afb,678622,Ampharos Lv.57 [Damage Bind | Gigavolt | Reflect Energy],nonfoil,provider_missing,false
 pokemon,d0eb03691d5bb7fd9cfc5ad36a903e38dd92491b8733ababf5b53bea806a5b20,792414,MGengar EX [Phantom Gate],nonfoil,provider_missing,false
-pokemon,d0ee522902d967a7386d50d65a57aaad0f7b18cd610c1af1a4a198978e55385c,553034,Pikachu [Tail Whip | Electro Ball],nonfoil,provider_missing,false
+pokemon,d0ee522902d967a7386d50d65a57aaad0f7b18cd610c1af1a4a198978e55385c,553034,Pikachu [Tail Whip | Electro Ball],nonfoil,ambiguous,false
 pokemon,d0eebca5e8f4d83ab2630fc9967aa3386a2510a56740a0e59e93aad303cace36,558482,Erika's Hospitality,nonfoil,provider_missing,false
 pokemon,d106eaec26fe7d919a1212ad29d507cf6197c4b266f2a680b742d3e3d38bbad3,587029,Sylveon V [Dream Gift | Magical Shot],nonfoil,provider_missing,false
 pokemon,d109512c94c46bf065cc4648dbe58ae25b56ed5a924fdba121fd6c2484e2c3d5,558174,Pheromosa & Buzzwole GX [Jet Punch | Elegant Sole | Beast Game GX],nonfoil,ambiguous,false
@@ -28496,7 +28496,7 @@ pokemon,d118fad3391277a035c3b3284bc70147e1551ea336869099d152414b6f316b68,557311,
 pokemon,d120fae3b4973ee68218a220f3cb3fff7ffbee7a65673bf2ac3d4f5633541c9a,410579,Vileplume GX [Flagrant Flower Garden | Massive Bloom | Allergic Explosion GX],nonfoil,exact,true
 pokemon,d121372ff55ef942c5a0da2611751654f7629eaf0534dc02b027c9a46ee309f2,654262,Arcanine [Take Down],nonfoil,exact,true
 pokemon,d1268e25281135f74de7ace09ebfcbc511ebd5d847cff87516918d0cab2b71c6,687795,Regigigas VSTAR [Giga Impact | Star Guardian],nonfoil,provider_missing,false
-pokemon,d127bed2e3bd948aabfac33e319efc2dd511a4716c5244852d167d2b5ed77882,553515,Reshiram [Turboblaze | Bright Wing],nonfoil,provider_missing,false
+pokemon,d127bed2e3bd948aabfac33e319efc2dd511a4716c5244852d167d2b5ed77882,553515,Reshiram [Turboblaze | Bright Wing],nonfoil,exact,true
 pokemon,d13501ba56319a2dce51e9098060db28f0a679f0276a4354d4946a65e1aaba4a,786024,Terapagos ex [Unified Beatdown | Crown Opal],nonfoil,provider_missing,false
 pokemon,d147c72bda1336c37657e05f8be02a788b1cf2063d8e7a78e30a00856c394cb0,576794,MRayquaza EX [Emerald Break],nonfoil,exact,true
 pokemon,d14b921f2f51b628397f739aef39be9d095d22341b0ec0d2271a0677ae710178,561849,MAlakazam EX [Zen Force],nonfoil,provider_missing,false
@@ -28588,7 +28588,7 @@ pokemon,d3e2b98d457ac9385fc427b932b9df1a80ebe06a07ed186c28edf058a31e2d7e,563021,
 pokemon,d3e880d2d533c3df1192a17f15de57435f4ef5f99e94f0711cc171b1228bac9a,605387,Koga's Ditto [Giant Growth | Pound],nonfoil,exact,true
 pokemon,d3f108b562ccaec18923d1c22656c86113c3d45599bf7da2fd4da18154a352fb,811246,Unfair Stamp,nonfoil,provider_missing,false
 pokemon,d3f623486e0e81674540c9f3b57d3b7c1f3799d38769cf0cdecc1ef77589ec70,864055,Mightyena [Kick Away | Sharp Fang],nonfoil,provider_missing,false
-pokemon,d3fb23ac2b66f9fdeb8f8880ba5c5fca4f9f84bcc593c3a63cce66eca700dfd2,553718,Mewtwo [Psy Bolt | Zen Blade],nonfoil,provider_missing,false
+pokemon,d3fb23ac2b66f9fdeb8f8880ba5c5fca4f9f84bcc593c3a63cce66eca700dfd2,553718,Mewtwo [Psy Bolt | Zen Blade],nonfoil,ambiguous,false
 pokemon,d40389ca350fdc516dcced56311d82c2f49a4ef2b8ed64aefba801c19188f028,566218,Porygon2 [Shortcut | Reckless Charge],nonfoil,provider_missing,false
 pokemon,d40503fa11d75a356305ff9612ddeb13b9e9f4852a203ddb721781c63ac14dad,561355,Tauros [Take Down],nonfoil,provider_missing,false
 pokemon,d40f9163dbcede6d8a9e56fda577c828172e8922d4ecd8d8ca11d07355511fde,571146,Dratini [Energy Draw | Dragon Bind],nonfoil,provider_missing,false
@@ -28616,7 +28616,7 @@ pokemon,d4c60ad4f941c62fd01de83f2c91c7868a1862406b8b2ae5882cb638774f34a1,765209,
 pokemon,d4dc44175b10531d29bd5a24adac7dc912cdff103614c19629dc8cd2a13b2d25,836148,Solosis [Rollout],nonfoil,provider_missing,false
 pokemon,d4dd248fe123f5a4754102b33e44eb8fc7303a95c5704e305a3d5bae1e0762f2,567297,Caitlin,nonfoil,exact,true
 pokemon,d4e9186810fba5b17f312c4cfeeac762ed57474e126a6691b9943d6f3ade98ba,830112,Hearthflame Mask Ogerpon ex [Wrathful Hearth | Dynamic Blaze],nonfoil,provider_missing,false
-pokemon,d4eb37b434883c4f81acef321366932a2d4c318b587f6e9c099f4784033ed4c7,554123,Pikachu [Growl | Thundershock],nonfoil,provider_missing,false
+pokemon,d4eb37b434883c4f81acef321366932a2d4c318b587f6e9c099f4784033ed4c7,554123,Pikachu [Growl | Thundershock],nonfoil,ambiguous,false
 pokemon,d4ec1a70eaa84c2c91d6f14eeb2191b52c6385475fc02327b671226783470881,299546,Golisopod GX [First Impression | Armor Press | Crossing Cut GX],nonfoil,exact,true
 pokemon,d4ee144b6a23fb7a6cb90280e325069ed4960be443a365a25f8f5ce79778e514,571839,Murkrow [Peck | Pursuit],nonfoil,provider_missing,false
 pokemon,d4efee1b125e84f6445405398f49f7fcbcac5091a6ee11289e6748d3c5316596,570542,Ho-oh ex [Golden Wing | Rainbow Burn],nonfoil,provider_missing,false
@@ -28710,7 +28710,7 @@ pokemon,d76c6d6692918b98843d15e1bb7b06bfc48428accd38e3624f647a677aa0b0c5,606005,
 pokemon,d76cb335f6440d877926e68b3fa66e9978d93512fe7a848597c0d2508b58e734,837448,Weezing [Let's Have a Blast | Spinning Fumes],foil,ambiguous,false
 pokemon,d76f6f9be1dbb142b4d3dbf6da1b9beecdf2cd86bdb44ae9407bdfc97d3f2fe0,784267,Steelix [Rage | Spinning Tail],nonfoil,provider_missing,false
 pokemon,d77fdb9d36c23ebc387ddaf5c3090e1049323006aeb327181f9ca45feccdcc40,568362,Cobalion EX [Righteous Edge | Steel Bullet],nonfoil,ambiguous,false
-pokemon,d796f9cde24bf22a1438833b2e42e2ba476996cd513fc5b27d106d9746a55700,554008,Pikachu [Charge | Thunderbolt],nonfoil,provider_missing,false
+pokemon,d796f9cde24bf22a1438833b2e42e2ba476996cd513fc5b27d106d9746a55700,554008,Pikachu [Charge | Thunderbolt],nonfoil,ambiguous,false
 pokemon,d79ef90367fc0a72b37e8032594062a8f691e78f569415d7d8ba9573f84085d6,561123,Ho-Oh GX [Sacred Fire | Phoenix Burn | Eternal Flame GX],nonfoil,ambiguous,false
 pokemon,d7ac6e30d0e2c68ae31b6ffdace794664e56c67fdfdb8f5afd65b16f2a910860,560239,Zoroark GX [Trade | Riotous Beating | Trickster GX],nonfoil,ambiguous,false
 pokemon,d7d2837ebf950e9ab2e5b41ec10ff1939e0dd7c9748f2118775d3436dadedfe3,571835,Exeggutor [Stomp],nonfoil,provider_missing,false
@@ -28724,7 +28724,7 @@ pokemon,d8003ea1eb3c5555ba940719c9b007ff69d5f3bd4cf6495ae90fa3bfa88b6330,365840,
 pokemon,d8022b77299b71789cf9074ef3c3abad335dc166dfb8a32229485f4280a73fe0,845339,Paradise Resort,nonfoil,provider_missing,false
 pokemon,d808bc4d04242b256551871e86cabd7ac761bfe0519fef8f8e56659b6a5778fa,571999,Pokémon Pal City,nonfoil,provider_missing,false
 pokemon,d80d15e4e5c66dcf641f2f2c4256e50301281089e6faf3214b5bf38abe874635,834783,Mew VMAX [Cross Fusion Strike | Max Miracle],nonfoil,ambiguous,false
-pokemon,d810baa225996a9d447761b66aded80080e016a86b0435b3cf7ba77d10dd38a2,553384,Tyrantrum EX [Despotic Fang | Dragon Impact],nonfoil,provider_missing,false
+pokemon,d810baa225996a9d447761b66aded80080e016a86b0435b3cf7ba77d10dd38a2,553384,Tyrantrum EX [Despotic Fang | Dragon Impact],nonfoil,exact,true
 pokemon,d819bfe3ac68a9a894279ba7bf24ac662c8f11503bde245601a39ec6b9f535f7,881786,Wartortle [Water Gun | Smash Turn],nonfoil,provider_missing,false
 pokemon,d81a872cb20610be04c9df589464c7867fd1e97bf6d8f319b6318d1f73d3b420,740796,Altaria ex [Humming Heal | Light Pulse],nonfoil,provider_missing,false
 pokemon,d81d5048f1b32f77af3a025124f84ad656373579a4db18038f43733c9748309a,571825,Mankey [Peek | Scratch],nonfoil,provider_missing,false
@@ -28748,7 +28748,7 @@ pokemon,d873de3f1e5915e6d0919799faee3ebb8318b060275e6114296f600d92285f03,295157,
 pokemon,d88b74d02eb4d3258811ba77f4d795896459e51e81a0bc8b4d8c09c0d7d0803f,832357,Cyndaquil [Firebreathing],nonfoil,ambiguous,false
 pokemon,d88bd8b9d495f844f0b7b4aa1638f17b7cd2692424c03c89590a22553ad64ae6,650716,Dragonite [Tailwind | Dragon Tail],nonfoil,ambiguous,false
 pokemon,d897b0b6b9ab31d416ed50e5577d52482149550301fa515a1538fbcd15a5de94,567936,Zorua [Double Scratch],nonfoil,provider_missing,false
-pokemon,d8a697540e0fa8142b0665d63e1a7da1532d3f8ea0dbf467dd5ec7ed6197bcfe,553289,Flygon EX [Voice of the Sands | Spiral Buzz],nonfoil,provider_missing,false
+pokemon,d8a697540e0fa8142b0665d63e1a7da1532d3f8ea0dbf467dd5ec7ed6197bcfe,553289,Flygon EX [Voice of the Sands | Spiral Buzz],nonfoil,exact,true
 pokemon,d8a93e61ea659fe62bb6cde2fe261ae0afbb08866cd02a35b40273c732fce2bb,653888,Ledian [Pollen Shield | Swift],nonfoil,ambiguous,false
 pokemon,d8b042fac135799bd39af2f662f800ef653173e74ee58f4bd4e34f90948c4869,561585,Sylveon GX [Magical Ribbon | Fairy Wind | Plea GX],nonfoil,provider_missing,false
 pokemon,d8b4d6700761774bbceebadd2684bdfd71266bcbd154c4b6c89abe8b3b20eb81,675886,Lugia VSTAR [Tempest Dive | Summoning Star],nonfoil,provider_missing,false
@@ -28886,7 +28886,7 @@ pokemon,dc6264cfaf33120082b6bb542e008803a53be29ca442a2e13c4192ff6e661c5f,606481,
 pokemon,dc62c4e8966bb64a9aff941159b2c83a748fc6e013fc8b9d0b9acc322d03cb6f,366834,Eevee [Energy Evolution | Quick Draw],nonfoil,exact,true
 pokemon,dc68eb487415813dbc75dfe278c218a2815f272589889d1c44c713e0bc066c13,539498,Suicune [Wave Splash | Aurora Loop],nonfoil,exact,true
 pokemon,dc69a51d59654b0915c8de16764343b64c91f868a1f7136b4f5652b5ff2c980f,713845,Sylveon V [Dream Gift | Magical Shot],nonfoil,provider_missing,false
-pokemon,dc6bb7df7ec130f8cc84db9898cb853b6269cd9e06c871b704fa82d15df05509,553983,Salamence EX [Beastly Fang | Dragon Strike],nonfoil,provider_missing,false
+pokemon,dc6bb7df7ec130f8cc84db9898cb853b6269cd9e06c871b704fa82d15df05509,553983,Salamence EX [Beastly Fang | Dragon Strike],nonfoil,exact,true
 pokemon,dc73654b00772641eaf56aaf5c8e175642f6ec65f779943200a2c5dd63b40840,574235,Jolteon V [Thunder Spear | Pin Missile],nonfoil,exact,true
 pokemon,dc76aabc23680f2077a29488c35101626d67b7d864a59811d0421db279fd42ae,853283,Espeon GX [Psybeam | Psychic | Divide GX],nonfoil,provider_missing,false
 pokemon,dc76bd61e6f52bc7734bc497132dcd5ffff1348d6e856a1afc5e30c783752d77,869895,Mega Gengar ex [Shadowy Concealment | Void Gale],nonfoil,provider_missing,false
@@ -28990,7 +28990,7 @@ pokemon,df34218d755ca96302d991278323769f80298fc488dad218a58c5039180bba0e,677531,
 pokemon,df34bf73d3c0fb720ab44f17c55752886128f907b65b1aa5f33439aa14bb3b3b,670054,Ursaring [Berserk | Hammer Arm | Megaton Lariat | Prime],foil,provider_missing,false
 pokemon,df38e3a6ae65db5cae2a8c51ac222ed2a8edaf0acf168751150aec3b6b9a4c5b,563735,Team Magma's Groudon EX [Power Saver | Magma Quake],nonfoil,exact,true
 pokemon,df3b7682eb3c05027e83178aae9a51590b78ca9bccfdba08100afea55589215f,783740,Squirtle [Sleepy Ball],nonfoil,ambiguous,false
-pokemon,df4175103eb9a53236b04d3d8bef6c948d6faafb02ceaaabe7ae321ea66873b5,553853,Lugia [Gust | Aeroblast],foil,provider_missing,false
+pokemon,df4175103eb9a53236b04d3d8bef6c948d6faafb02ceaaabe7ae321ea66873b5,553853,Lugia [Gust | Aeroblast],foil,exact,true
 pokemon,df47b781091b45e9c261e56ca5d36d8660dfcd2432bc1a8e90d22d8217e303e4,583173,Pikachu V [Volt Tackle],nonfoil,provider_missing,false
 pokemon,df49b1dee96d2ab023bbd231c2431c708e87feb23252ec07d3396d83808e59d2,796964,Victini ex [Strafe | Victory Flame],nonfoil,provider_missing,false
 pokemon,df4f1f4480a10e9c2e061b42026751f57dc4523bb45e0f04d81b8291283e8f04,882662,Galarian Slowking VMAX [Max Toxify],nonfoil,provider_missing,false
@@ -29017,7 +29017,7 @@ pokemon,e0157b71f92ccd764802a33848833e7c40955a7d8f3cf316d026968804ce4a9b,675952,
 pokemon,e01fc474c766e4387759660c31325d2740e98764e1348c36085196718fda980f,293189,Keldeo [Justified | Sacred Sword],nonfoil,ambiguous,false
 pokemon,e031abb1543f6887e3978ef38071637a32f34b8727ef12cecf2ff524af57e438,553483,Groudon EX [Rip Claw | Massive Rend],nonfoil,exact,true
 pokemon,e031e6f50d5ba1836cd355631ead3c841a7031efdefc12f2af7c0a14b6282152,832347,Squirtle [Water Power | Pound],nonfoil,exact,true
-pokemon,e032fe7cc122b64506ff73d594df126315ab3f962c93c7393bffec921205fcc5,553169,Pikachu [Thunderbolt],nonfoil,provider_missing,false
+pokemon,e032fe7cc122b64506ff73d594df126315ab3f962c93c7393bffec921205fcc5,553169,Pikachu [Thunderbolt],nonfoil,ambiguous,false
 pokemon,e0358993f14bda06f624162137de472cd57d332c6c9fe35885db7c720451f9a4,574252,Rayquaza V [Dragon Pulse | Spiral Burst],nonfoil,exact,true
 pokemon,e03bde61337e4cf79c836d4396133c322c4fec71c92e56bf84549e45b992bfaf,289876,Umbreon EX [Veil of Darkness | Endgame],nonfoil,exact,true
 pokemon,e03e58015a48f499f373f73294b719ab5e2cdccd3277ebf1cb6d2e4727c4bf7b,886512,Cinccino ex [Smooth Coat | Energized Slap],nonfoil,provider_missing,false
@@ -29034,7 +29034,7 @@ pokemon,e07def0f57e40d2a5bcfd340111181e965a72de700c4b889b160de0cb004f275,450143,
 pokemon,e08109e6406d9309a6ef97b245c4c5ded7e7b24fb706998c9ebe5b60ff15a643,558183,Lucario & Melmetal GX [Steel Fist | Heavy Impact | Full Metal Wall GX],foil,ambiguous,false
 pokemon,e08dacaecb9add1fb94e8284f153abeea53aed8afec6ac504a7d47b389c42ad2,553324,Steven,nonfoil,ambiguous,false
 pokemon,e0939e1f5b5fb789cb332b3b1ae42128d1eb6e6c21e7d2f04b92595077ba47bb,700740,Vivillon [Conversion Powder | Colorful Wind],nonfoil,exact,true
-pokemon,e0977b4026e83b0dcb05d96ce96c69026a42c88cb36ba3009b96f4c02662af79,553094,Charizard EX [Stoke | Fire Blast],nonfoil,provider_missing,false
+pokemon,e0977b4026e83b0dcb05d96ce96c69026a42c88cb36ba3009b96f4c02662af79,553094,Charizard EX [Stoke | Fire Blast],nonfoil,ambiguous,false
 pokemon,e09a7b1c671a0e9131a9ce468714766eea716ae2e78885ab5ff6eb24f5c1aec4,697128,Rapid Strike Urshifu VMAX [Gale Thrust | G-Max Rapid Flow],nonfoil,provider_missing,false
 pokemon,e09eee7c3a8f83818e20fc231eddead12ac687c2f580c6d8f204334805db30cb,668830,Machamp [Fighting Tag | Crushing Punch | Champ Buster | Prime],foil,ambiguous,false
 pokemon,e0a3bbcf7595e1832dd375cb4f33808d7ef9953e6c87de6a4e048b0a4be3f981,784513,Gardevoir [Psy Shadow | Energy Burst],nonfoil,exact,true
@@ -29076,7 +29076,7 @@ pokemon,e1cc4a3f8203255f9365e4ee4e368870c702042879f011253ba29b806d8c88e0,571797,
 pokemon,e1d678fadec0699e679532b7019ce2422285901bb0ea78c536f3e984bb63f70e,571816,Lawrence III,nonfoil,provider_missing,false
 pokemon,e1d779b9b8dd4cf10a9acaecb3a57c131efa14a04b3717e82a8a4656ab98a390,828859,Hop's Snorlax [Extra Helpings | Dynamic Press],nonfoil,provider_missing,false
 pokemon,e1e260d95011ba9c3d60f2caf8d9aa54cdd2aa9118b5f416041e29fde295a832,606724,Delibird [Present],nonfoil,exact,true
-pokemon,e1e59b99a916c4b7af9ea721a0155221ea4370581ac540b5de48b4cd8ebddb5f,553224,Metagross EX [Magnetic Laser | Squared Attack],nonfoil,provider_missing,false
+pokemon,e1e59b99a916c4b7af9ea721a0155221ea4370581ac540b5de48b4cd8ebddb5f,553224,Metagross EX [Magnetic Laser | Squared Attack],nonfoil,exact,true
 pokemon,e1faa7993fba830ec78a6d880e4930ee6e334be54de4383c15e836205132a212,652086,Arceus V [Trinity Charge | Power Edge],nonfoil,exact,true
 pokemon,e1fac2b66ce47dcc5ae125f72ecbcfd8906f271cce7aedcd9d5b64cc64ccfa50,558297,Magikarp & Wailord GX [Super Splash | Towering Splash GX],nonfoil,ambiguous,false
 pokemon,e2051ae8ea8a2a55a4eec9136f4ecdc96fe1df728742338f0c04e0149e629fa1,782282,Hero's Cape,nonfoil,provider_missing,false
@@ -29113,7 +29113,7 @@ pokemon,e2e3bfc454a14348b553d7c3e9ac098cdb117e0f11f7bd1eca7f137d40ed09c5,571927,
 pokemon,e2e9bb4b8db11bf57bab898a6a0e04ee676a1b94c39b0d92ff49e333eb7bdb29,871796,Blaziken ex [Blaze Kick | Volcanic Ash],nonfoil,provider_missing,false
 pokemon,e2eaf51819be3cf4cb74f1fe5ef8251c1fef1a6b98b6c1ea753181fb73c9b8d2,583020,Espeon VMAX [Solar Revelation | Max Mindstorm],nonfoil,exact,true
 pokemon,e2eb996fa8a32bdec6af8045820138f9281dbe5aff31acab8d29f3d1cbee1144,681215,Hisuian Braviary [Battle Cry | Dual Cut],nonfoil,provider_missing,false
-pokemon,e30a0a1b85c531c05d731756655f9f2e50cbed631390a1fa9f0243c41349900a,553938,Garchomp EX [Shred | Hyper Beam],nonfoil,provider_missing,false
+pokemon,e30a0a1b85c531c05d731756655f9f2e50cbed631390a1fa9f0243c41349900a,553938,Garchomp EX [Shred | Hyper Beam],nonfoil,ambiguous,false
 pokemon,e30f114499543e80b80698d18579f81d8ab80aa29c730fe1192a6b3c71f8ad6a,606854,Unown [G] [Give | Hidden Power],nonfoil,provider_missing,false
 pokemon,e3137c9ce62cc39d36885f9c1eeb43acfc7e701e3ffee486ec52b74898d2f07e,851254,Acerola's Mischief,nonfoil,provider_missing,false
 pokemon,e31a04d6624e495c84938da36bcb87e5f9e4e00e5ea04c99e440334415475942,720366,Charmander [Blazing Destruction | Steady Firebreathing],nonfoil,ambiguous,false
@@ -29159,7 +29159,7 @@ pokemon,e4236cc459597f8ea50799180598196850e04dfd55378c041e6f98b2c2aac364,678146,
 pokemon,e431048e85141595911110517762293b62ab9fd966580fadd5e40474ab15070b,782831,Typhlosion ex [Bursting Up | Kindle],nonfoil,exact,true
 pokemon,e4311141aeb16bdf64df76d6f2ee199c6eba1f3c6efaed98a1aa05873d175eb2,296846,Sylveon GX [Magical Ribbon | Fairy Wind | Plea GX],nonfoil,exact,true
 pokemon,e433ac8713caef6b51d2204e53c276aa7ae739487c3681f4224bc9d302a70e73,311415,Ho-Oh GX [Sacred Fire | Phoenix Burn | Eternal Flame GX],nonfoil,ambiguous,false
-pokemon,e43c59c7e2796f87b6d71f1b887d2a57e75ec02ab7a306ba01ac0c5f238c6353,553833,Ho-Oh [Stoke | Fire Wing],nonfoil,provider_missing,false
+pokemon,e43c59c7e2796f87b6d71f1b887d2a57e75ec02ab7a306ba01ac0c5f238c6353,553833,Ho-Oh [Stoke | Fire Wing],nonfoil,exact,true
 pokemon,e4519ef4264cb19eca726bf487690a6014fe18c5a035e92609fb495978394f2b,396917,Articuno GX [Legendary Ascent | Ice Wing | Cold Crush GX],nonfoil,provider_missing,false
 pokemon,e45423bf17d50be4561ddadc79076bc97d47ef9962d57f90e8fe9a443c564e3e,606853,Dark Slowking [Cunning | Mind Shock],nonfoil,exact,true
 pokemon,e46ac0bfee0d448eac7f7bc3615b3e1ea3ae8a1ac5bb9faa1f2f6dd5516ae113,556774,Professor Oak's Setup,nonfoil,provider_missing,false
@@ -29190,7 +29190,7 @@ pokemon,e50ac678ef187c99222e86abfc1a77967e287140053df8d6316640c91a4d9753,522515,
 pokemon,e50d249b0f7daef3511678ff68c49c318f3900845a2ca36fc829d963bbf3b1f1,566514,Piplup Lv.8 [Pecha Berry | Splatter],nonfoil,provider_missing,false
 pokemon,e52c95a2f604abf5c76f2ebac49503d1c2a0d369ed749042ae68e3c91020d93d,293477,MPidgeot EX [Mach Cyclone],nonfoil,ambiguous,false
 pokemon,e533baa793b55b313227187ea31336307d1a3971408afc06ce8d613e9e71576e,660210,Dragonair [Slam | Hyper Beam],nonfoil,exact,true
-pokemon,e5343acb5de12ab0659e2fdda4a8e0397610db1c407d8f38071b60f45dc26a91,553583,Pikachu [Thunderbolt],nonfoil,provider_missing,false
+pokemon,e5343acb5de12ab0659e2fdda4a8e0397610db1c407d8f38071b60f45dc26a91,553583,Pikachu [Thunderbolt],nonfoil,ambiguous,false
 pokemon,e53750a20659c758f46caaddbdf02f6443c4a4f99c9b414a8094a246ca999222,807713,Lillie's Clefairy ex [Fairy Zone | Full Moon Rondo],nonfoil,provider_missing,false
 pokemon,e539db6683dfe854988a3f0b2b5334e0eec6db779cafba87046491f341d21c77,555076,Cynthia & Caitlin,nonfoil,ambiguous,false
 pokemon,e5442f15b3f4eeeee8ff964c95f765d5c0b88a62b0936d2d6811e221aab44e64,289721,MAbsol EX [Disaster Wing],nonfoil,exact,true
@@ -29233,7 +29233,7 @@ pokemon,e678dbb49082898b8bb65f9ad923127c7a2ea89f0951d8b6ea90c974c980e51f,765737,
 pokemon,e67aa1125bb04ba0da0e2dac7f2cc22348dd154505b3ae74599ea08d45dbae2c,727983,Pikachu [Growl | Pika Bolt],nonfoil,provider_missing,false
 pokemon,e67b4f289760d7747b322792624128901c0a3c131131fe1a66e6c0120d5ec299,784468,Treecko [Tail Slap | Razor Leaf],nonfoil,ambiguous,false
 pokemon,e687bddd0ad6fbd443f83d4a6dd7c7109cc32c46915bbf9fb53fd0147078f538,299553,Lycanroc GX [Crunch | Accelerock | Lycanfang GX],nonfoil,exact,true
-pokemon,e69b4b419cec579f96de19ce7c83dd71bf387967e6f8832012739968b0ca4bb1,552544,Garchomp EX [Dual Chop | Power Blast],nonfoil,provider_missing,false
+pokemon,e69b4b419cec579f96de19ce7c83dd71bf387967e6f8832012739968b0ca4bb1,552544,Garchomp EX [Dual Chop | Power Blast],nonfoil,ambiguous,false
 pokemon,e6a34490d7bbaa95e27fd608431931876762299859addbb335494a8df5c92a51,836135,Tynamo [Hold Still],nonfoil,provider_missing,false
 pokemon,e6a5e1b9d82908fcb5328b24c4580ee2a784bfbe01aebfc361e7f291461691d7,554457,Misty's Quagsire [Headbutt | Hug],nonfoil,provider_missing,false
 pokemon,e6a823e002acc85fd9c19bc73605874e09c376caf4f18ab5b93daa602d60e959,725817,Defiance Band,nonfoil,provider_missing,false
@@ -29301,7 +29301,7 @@ pokemon,e83662fbd49f7d135f1d1fa185de75a28c0dc80171034b040244975e6eb519c0,468749,
 pokemon,e83937f0a63edecbe38071301e7e15061015294724b8870883a419e1f1b359c1,369469,Eevee & Snorlax GX [Cheer Up | Dump Truck Press | Megaton Friends GX],nonfoil,provider_missing,false
 pokemon,e8415e58617e5c0ea480febd5b0e3fabb5ce3aefeec2a8daaff81dfb78922e7d,851046,Inteleon [Bring Down | Water Shot],nonfoil,provider_missing,false
 pokemon,e84ac6d5bb7da3128c7338c08f8d83a4431d384c3d704ed1337ba8d091712c3f,799713,Magneton [Overvolt Discharge | Electric Ball],nonfoil,provider_missing,false
-pokemon,e857da09a930927e7a78f6388e4692dcd276f6736b7912baf1c80a45af73fe81,864131,Empoleon BREAK [Emperor's Command],nonfoil,provider_missing,false
+pokemon,e857da09a930927e7a78f6388e4692dcd276f6736b7912baf1c80a45af73fe81,864131,Empoleon BREAK [Emperor's Command],nonfoil,exact,true
 pokemon,e86b3a58f1772e7c3bfb35f9c76bb7b23485251819401a7d6da88633a4a3b1d9,851204,Bulbasaur [Bind Down],nonfoil,provider_missing,false
 pokemon,e86e868e90ed825c9989bf949d9bcca0616c072d8a793c4b220ed17c92eb520f,767567,Buddy-Buddy Poffin,nonfoil,provider_missing,false
 pokemon,e872534fc6b47d27da9c3b9087713a63c3e1b63015115cbb30cfccf1b0d5734d,765278,Machamp [Derail | Swift Blow],nonfoil,exact,true
@@ -29411,7 +29411,7 @@ pokemon,eabb56cff66b876e88eff6a12b45c85ef709a8e714996175ee157f896db1caab,851468,
 pokemon,eac65d781ffc28316ecfa8369796d145d9661c733891c9c3ba86657761b768e2,469484,Pretend Boss Pikachu - Team Aqua [Amibition of the Sea? | Pika Punch],nonfoil,provider_missing,false
 pokemon,eace7e169bb40fad1b5d5470c992c083ee913ebe5916a384ebce36ca98fe6372,567830,Latias EX [Bright Down | Barrier Break],nonfoil,ambiguous,false
 pokemon,eacfafa5db0dbf007c0db31dc0082058ab69d0b1e83130167d44e5f3ffc190ae,668949,Gengar [Catastrophe | Hurl into Darkness | Cursed Drop | Prime],nonfoil,exact,true
-pokemon,eacfe2f85172cce9ed228bf5384fa159a5389b4a8196127c8f96ca0d05a68f12,752373,Mewtwo EX [Photon Wave | Psyburn],nonfoil,provider_missing,false
+pokemon,eacfe2f85172cce9ed228bf5384fa159a5389b4a8196127c8f96ca0d05a68f12,752373,Mewtwo EX [Photon Wave | Psyburn],nonfoil,ambiguous,false
 pokemon,ead6a741ec2146e37eec0c6115b6de3a89fa53e47aa49ccc9f0b8935e03ffe79,763510,Deoxys δ Delta Species [Form Change | Delta Reduction],nonfoil,provider_missing,false
 pokemon,eae6c4866c683cf34f8a9431f293b21df2abfed7ac8b902d1aff0a76e229869e,806405,Basic Water Energy,foil,provider_missing,false
 pokemon,eae767b62ca0b5029734e1b1914d0aa265dbaaa204d6550c996de5280599e0e7,554251,Gym Badge,nonfoil,ambiguous,false
@@ -29482,7 +29482,7 @@ pokemon,ecc7fb42ba680ffc70eb3960c1c11cbe859777d23bb5ab245e54c773bf12564e,606414,
 pokemon,ecea3e0f378577aa133f059b41e62009f335364432db6835dfe42cc078a323f7,715679,Marill [Bubble Drain],nonfoil,provider_missing,false
 pokemon,eced0a577cd3ad66ff4b05d052c157398c4e99c341ca33b929d8dcb8e2db94ac,449283,Bagon [Headbutt | Dragon Claw],nonfoil,exact,true
 pokemon,ecfd8317202886e828e26d51e47e337faa31b5c7a77f34649efb7f55b007a97b,570648,Flareon [Quick Attack | Fire Spin],nonfoil,provider_missing,false
-pokemon,ecffc8d108b975bf29b185bfb787320a96d4807c0073765c34322ce10f1775f1,553104,Ditto [Metamorphosis Gene | Stick On],nonfoil,provider_missing,false
+pokemon,ecffc8d108b975bf29b185bfb787320a96d4807c0073765c34322ce10f1775f1,553104,Ditto [Metamorphosis Gene | Stick On],nonfoil,exact,true
 pokemon,ed0800e33f036c30f8e3d5e12996331978b2fd3a12299851457629de57caae90,554313,Bugsy's Pinsir [ViceGrip | Double Stab],nonfoil,provider_missing,false
 pokemon,ed34340aa6e81eadd94c6cd07146bbbb2270d3ead048a52e63e4550751b73814,842187,Mewtwo VSTAR [Psy Purge | Star Raid],nonfoil,provider_missing,false
 pokemon,ed3ea914327cb2c9039ada0ce9f49c5d945fc401190e9608cca4f3a0720e6308,369111,Gengar & Mimikyu GX [Poltergeist | Horror House GX],nonfoil,exact,true
@@ -29522,7 +29522,7 @@ pokemon,ee63cdb0901b2faf21e3484490135f0f4af9a601b37ca759cad2a214fea76b69,570989,
 pokemon,ee6e2e44e2d5ccec24a26367e0ce7c6a07aeda8dd4c2b914efcf391b71dfa03c,557907,Blastoise [Rain Dance | Hydro Pump],nonfoil,provider_missing,false
 pokemon,ee7144572642e657814216106de19e499dfca5b9967969abbe2e1016503c8158,557059,Mewtwo & Mew GX [Perfection | Miraculous Duo GX],nonfoil,ambiguous,false
 pokemon,ee732fa592918f7bb428f088a28fb5d11911257c2f8f69535620dc5621504c95,850834,Red & Blue,nonfoil,ambiguous,false
-pokemon,ee7e40fb7758504cfa65829e04de1c25f186a4e05bf81b787715355366713423,552939,Delphox EX [Psybeam | Wonder Flare],nonfoil,provider_missing,false
+pokemon,ee7e40fb7758504cfa65829e04de1c25f186a4e05bf81b787715355366713423,552939,Delphox EX [Psybeam | Wonder Flare],nonfoil,exact,true
 pokemon,ee83061b696814fe458ad32afe89397c823bb07210f21e2fa3a2b22673c10312,733768,Pikachu [Charge | Pika Punch],nonfoil,exact,true
 pokemon,ee84f0abf007aae640ec4b0709d876a3c4aadd6e86fa51b6186847005273c11e,563144,Altaria [Flap | Fairy Friend],foil,exact,true
 pokemon,ee85972bd955100cddf98253fd21d6835f187ab8153ad5971293bac47897b70e,587042,Umbreon V [Mean Look | Moonlight Blade],nonfoil,provider_missing,false
@@ -29566,12 +29566,12 @@ pokemon,f029266ae4deda6a7229bdc7b1e62068d9d67655451d35508f330f1cf526e0f3,397964,
 pokemon,f03683bbb6bbfb1275ff31dbe2304d37322d213610e170606c6264b753b72ae2,864057,Eevee [Boosted Evolution | Reckless Charge],nonfoil,provider_missing,false
 pokemon,f0370e9180ec3f9af3d10bc847c7e409f1565e47a8e6bd6a74f11d990c994c4d,843594,Celebi V [Leaflet Dance | Slash Back],nonfoil,provider_missing,false
 pokemon,f03eb7e94bc78ad4a94cd9cfce0c41b2026154485ba8392d18363e60daecf338,457353,Toxtricity VMAX [G-Max Riot],nonfoil,exact,true
-pokemon,f046a6e21ed78be345b28552912fc95d79e256f6877beef3a05a04bdb12dce67,552919,Krookodile EX [Second Bite | Megaton Fang],nonfoil,provider_missing,false
+pokemon,f046a6e21ed78be345b28552912fc95d79e256f6877beef3a05a04bdb12dce67,552919,Krookodile EX [Second Bite | Megaton Fang],nonfoil,exact,true
 pokemon,f04910cb04e6b453f66f7d5ab4814573c8a1c572f3fab9e926aa610a4eea289f,316063,Leafeon GX [Breath of the Leaves | Solar Beam | Grand Bloom GX],nonfoil,exact,true
 pokemon,f04eeb63243b0d216e19ffd78da2b46da331cf87e18e83c15226b9a4afce0d63,679290,Skitty [Important Errands | Jump On],nonfoil,exact,true
 pokemon,f0546ba21d93af98221d6feece24f2263f6705cf41de5315ec909379c0d32bb6,560032,Unit Energy [GRW],nonfoil,provider_missing,false
 pokemon,f05c387043f79e9e824050e41a8eb011f00fe304223e35525d06bb31a640f403,843623,Celebi VMAX [Curative Forest | Max Plant],nonfoil,provider_missing,false
-pokemon,f067b79b1f8e12b3f409b995cff7066ca880bd9bf8d3d65a5306da7961ce16b6,553434,Kyogre [Spring Tides | Ocean Cyclone],nonfoil,provider_missing,false
+pokemon,f067b79b1f8e12b3f409b995cff7066ca880bd9bf8d3d65a5306da7961ce16b6,553434,Kyogre [Spring Tides | Ocean Cyclone],nonfoil,exact,true
 pokemon,f07118f1926cf28aa7c559dfd2c2830caaa2be2c8689877c1f441b0f5bf17583,705134,Shaymin V [Flap | Revenge Blast],nonfoil,provider_missing,false
 pokemon,f073ccd96c75dfcb1deecdf293c898ff55346ed0d7b142f5acc4a0848896efe2,606718,Houndoom [Dark Flame | Black Fang],nonfoil,exact,true
 pokemon,f074afb9d2af589e524a02102b861a2c537ca3ac01a75a373a16ced794174cd2,562116,Snivy [Slam],nonfoil,provider_missing,false
@@ -29621,7 +29621,7 @@ pokemon,f186bdcec18392229c37263f95006b53df332ac615836163ad658850573458b7,470004,
 pokemon,f18d0b67a9f210c7e86db52f2a90c744fbf2265358db9bff76f9efe80be5fc7c,388927,Garchomp & Giratina GX [Linear Attack | Calamitous Slash | GG End GX],nonfoil,exact,true
 pokemon,f1909e3876182857dca4a8478e2af8c412d080c537c8a09a059df213467bd60e,554450,Sabrina's Xatu [Teleport | Sharp Beak],nonfoil,provider_missing,false
 pokemon,f19203a3e57ff8e89ea9d50a688dec62d0cf87135f2c869015f0f465ead11cf4,291586,Clawitzer [Mega Boost | Crabhammer],nonfoil,exact,true
-pokemon,f19bb8e760ae39f5f3c113d72fd0f24265dbe5cfbcd3c3b83978a4c6db5494b5,786637,MGarchomp EX [Crimson Edge],nonfoil,provider_missing,false
+pokemon,f19bb8e760ae39f5f3c113d72fd0f24265dbe5cfbcd3c3b83978a4c6db5494b5,786637,MGarchomp EX [Crimson Edge],nonfoil,exact,true
 pokemon,f19c5b5007419206527fc2f52ee1fc1c49c9961c06470d6715ad850c8c67329e,562233,Jigglypuff [Continuous Tumble],nonfoil,provider_missing,false
 pokemon,f1a567733a92651fded9e02559b683d103b0c8f32400120c7d5139ff4b2590c5,721198,Squirtle [Withdraw | Skull Bash],nonfoil,ambiguous,false
 pokemon,f1a855ecc583c7a6bebeb108abffee4865725fc8ca572ab8a44ae3524ac9e25d,571904,Lucky Stadium,nonfoil,exact,true
@@ -29664,7 +29664,7 @@ pokemon,f298c9fd56ac5517e1ac7903b3afbe2b46b7af1282b62da41952dfa984aeee1c,836096,
 pokemon,f29deebdde000564c0ade51444c961b9b4c580a666d2c5b0db81d928aec9d21c,567922,Thundurus [Supersonic Flight | Flashing Bolt],nonfoil,provider_missing,false
 pokemon,f2a428365154583efe16c64c8238f6b1b5d122dff1f4c16ca4f89a9cfda8151a,546396,Single Strike Urshifu V [Laser Focus | Impact Blow],nonfoil,exact,true
 pokemon,f2a951377bcce91670cb0b2b7f47a0e080a97c3d51a0f2b98740d8dd367ddbb1,570320,PokéPark's Pikachu [Quick Attack | Thunderbolt],nonfoil,provider_missing,false
-pokemon,f2b1763bbdf734829b89b65eca795aa425ca93bcbc4b598e7f93442ce47c52a4,709548,Champions Festival [Duckboat],nonfoil,provider_missing,false
+pokemon,f2b1763bbdf734829b89b65eca795aa425ca93bcbc4b598e7f93442ce47c52a4,709548,Champions Festival [Duckboat],nonfoil,ambiguous,false
 pokemon,f2cbf1cec3d239a46e4eea88b7b3ad30f9232508398ea417122a6d0a21871479,554393,Chuck's Granbull [Roar | Chomp],nonfoil,provider_missing,false
 pokemon,f2cd039447697ffc7750edcccceea80e1a2b18d9369d16190275941f39c54bcd,858881,Scyther [Agility | Cut],nonfoil,provider_missing,false
 pokemon,f2cf0b098e1cd0814f924bc8c859242b0e6a46fc019b2d1b69c88ffdc25c2d09,549161,Bill's PC,nonfoil,provider_missing,false
@@ -29736,7 +29736,7 @@ pokemon,f4ce99e7795b39bfde943c2acb0246fe4e7594945aa11d79b336068f938a94fe,571752,
 pokemon,f4df28736c12f232814c69fbe630c974f8a77cc427fbc34e73a6bb5cb18b738c,585047,Dark Charizard [Nail Flick | Continuous Fireball],nonfoil,ambiguous,false
 pokemon,f4df65fb7aba371a76ce7f785940f675c4f11a032879451e6d01d1b77b5070e5,705139,Vaporeon VMAX [Bubble Pod | Max Torrent],nonfoil,provider_missing,false
 pokemon,f4e65c05514380af8ebd0e29f24fa3c937efcbd860a8920914dfdcb8e48bb1f6,687763,Riolu [Low Kick],nonfoil,provider_missing,false
-pokemon,f4e7c42f8b73294b74e7475dd10db5439477323258cd27cfb60d50324635516e,553998,MSalamence EX [Savage Wing],nonfoil,provider_missing,false
+pokemon,f4e7c42f8b73294b74e7475dd10db5439477323258cd27cfb60d50324635516e,553998,MSalamence EX [Savage Wing],nonfoil,exact,true
 pokemon,f4eec0d104de6da66cf6145ba7ed5f4f8813f2bcdb7745164d9d478c1f5bef6c,691882,Magmortar [Mega Punch | Boltsplosion],nonfoil,exact,true
 pokemon,f4f424cebead72b1dc24a764e6b1a1ec3b2f3308da00c7e6837346938d0bb053,693157,Slowpoke [Rest | Headbutt],nonfoil,provider_missing,false
 pokemon,f4f490207a565b5b0d75ed2d878b301332ca7341d8b3e51111218473c7f23461,660186,Wartortle [Withdraw | Bite],nonfoil,exact,true
@@ -29920,7 +29920,7 @@ pokemon,f9fac948962bf743040066d011b0cb07ad5c3cedc2e93b9acb3b679f939243d4,871028,
 pokemon,f9ffba95f0c4a60097c11a110b724ffb375250db4ed80798a306e9e54124617b,869277,Mew Gold Star δ Delta Species [Mimicry | Rainbow Wave],nonfoil,provider_missing,false
 pokemon,fa037a7b01a5edde2e881f93463687aa99c0b262a91d33b13ff809c3a063237b,437094,Marnie,nonfoil,exact,true
 pokemon,fa041d0bfe6dfe292b1d70239344c7ce671c1c0693cfe904e549acac67158294,762587,Swampert ex [Energy Recycle | Ultra Pump],nonfoil,exact,true
-pokemon,fa06ac035817e79e956059a6111a150e093b4f92abc481e6045f7a340027e330,553738,Pikachu [Nuzzle | Quick Attack],nonfoil,provider_missing,false
+pokemon,fa06ac035817e79e956059a6111a150e093b4f92abc481e6045f7a340027e330,553738,Pikachu [Nuzzle | Quick Attack],nonfoil,ambiguous,false
 pokemon,fa080b9874af33074b1f939f29ee9373e54265ec8c4b557e0fad0dec312641fa,743180,Snorlax [Collect | Collapse],nonfoil,provider_missing,false
 pokemon,fa0ddedf8e1fcfc1c16451f1392b33abff45cad0b0f742e158c26ebff471fd42,450888,Zoroark GX [Trade | Riotous Beating | Trickster GX],nonfoil,ambiguous,false
 pokemon,fa1ab8fbcc4db3b1c10d391db62ef4daba1ad3053d41f6bcc545f7b897d346b5,780965,Dusknoir [Cursed Blast | Shadow Bind],nonfoil,provider_missing,false
@@ -30122,7 +30122,7 @@ pokemon,ffe62901ab38e001e9e312cade6099c599f1ac6846310f454b20ccb983fb3000,762625,
 pokemon,ffe7f9a1d82c69e7f82da76aeb7a902c632cf3a3e6d6c40154c6e1cadb2f68e4,861240,Ultra Ball,foil,ambiguous,false
 pokemon,ffeb246942294d27928142a93f5a592070c572ff7a0960f8f3b1e5b8115b1b78,291557,Magearna EX [Mystic Heart | Soul Blaster],nonfoil,exact,true
 pokemon,ffebd9285b5dd68a1ed4a3f489405d9d97dcdac9e79c762283cd2cd65923a415,658871,Origin Forme Dialga VSTAR [Metal Blast | Star Chronos],nonfoil,exact,true
-pokemon,ffef0fb2a77abbfd5e534448ceffd0cac52596dd36ca5f72d2c4498d025e8de5,553339,Salamence [Call for Goons | Dragon Pulse],nonfoil,provider_missing,false
+pokemon,ffef0fb2a77abbfd5e534448ceffd0cac52596dd36ca5f72d2c4498d025e8de5,553339,Salamence [Call for Goons | Dragon Pulse],nonfoil,exact,true
 pokemon,fff5937e6d1430c80de66c0ccb8e0958a9c3229718172c6880d2c658aee27ad3,805564,Amarys,nonfoil,provider_missing,false
 pokemon,fff91a406bc955d37fd80d25fec0f9d205971cb5363c9e0fc3619581aa2cdfdc,871812,Gardevoir [Psy Shadow | Energy Burst],nonfoil,provider_missing,false
 pokemon,fffeadf73ea934fd5d87ea09adcd343fe2b29ce25b852eb1ad01e433e2e8c1c1,361393,Mr. Mime GX [Magic Evens | Breakdown | Life Trick GX],nonfoil,exact,true
