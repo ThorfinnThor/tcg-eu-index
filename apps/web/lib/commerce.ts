@@ -39,23 +39,7 @@ export function cardCommerceQuery(card: CommerceCard): string {
 }
 
 export function tcgplayerCommerceQuery(card: CommerceCard): string {
-  const name = card.name
-    .replace(/[\[\]|]/gu, " ")
-    .replace(/\s+/gu, " ")
-    .trim();
-  const setName = card.set_name && !/^Expansion\s+\d+$/iu.test(card.set_name.trim())
-    ? card.set_name.trim()
-    : null;
-  const collectorNumber = card.collector_number?.trim() || null;
-  const setCode = card.set_code?.trim() || null;
-  const distinctSetCode = setCode && collectorNumber
-    && collectorNumber.toLocaleLowerCase().startsWith(setCode.toLocaleLowerCase())
-    ? null
-    : setCode;
-
-  return [name, distinctSetCode, collectorNumber, setName]
-    .filter((value): value is string => Boolean(value))
-    .join(" ");
+  return cardCommerceQuery(card);
 }
 
 export function commerceTargets(card: CommerceCard, gameName?: string): CommerceTarget[] {

@@ -23,13 +23,13 @@ describe("commerce destinations", () => {
     })).toBe("Lugia EX");
   });
 
-  it("keeps disambiguating card text in TCGplayer searches", () => {
+  it("removes Cardmarket attack text from TCGplayer searches", () => {
     expect(tcgplayerCommerceQuery({
       ...card,
       name: "Lugia EX [Aero Ball | Deep Hurricane]",
       set_name: "Expansion 1660",
       collector_number: null
-    })).toBe("Lugia EX Aero Ball Deep Hurricane");
+    })).toBe("Lugia EX");
   });
 
   it("keeps a real collector number while removing internal metadata", () => {
