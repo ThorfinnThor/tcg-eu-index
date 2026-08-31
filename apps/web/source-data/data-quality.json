@@ -4,7 +4,7 @@
       "detail": "Every exported preview is verified against its private calculation manifest before repository files are written.",
       "id": "preview-output-checksums",
       "label": "Preview output checksums",
-      "status": "pass"
+      "status": "pending"
     },
     {
       "detail": "Preview calculations use a dedicated R2 prefix and preview data state.",
@@ -25,7 +25,7 @@
       "status": "pending"
     }
   ],
-  "datasetCompleteness": 1.0,
+  "datasetCompleteness": 0.0,
   "gaps": [],
   "licensingPosture": "derived-preview-contract",
   "limitations": [
@@ -54,5 +54,5 @@
       "title": "Carry-forward rule"
     }
   ],
-  "sourceCoverage": "20 of 20 indexes expose Cardmarket-derived preview data"
+  "sourceCoverage": "0 of 20 indexes expose Cardmarket-derived preview data"
 }
