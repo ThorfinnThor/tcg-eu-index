@@ -35,7 +35,10 @@ from indexengine.card_images.overrides import (
     ManualCardImageOverride,
     load_manual_overrides,
 )
-from indexengine.card_images.pipeline import materialize_magic_images
+from indexengine.card_images.pipeline import (
+    _verified_expansion_metadata,
+    materialize_magic_images,
+)
 from indexengine.card_images.policy import ProviderPolicy
 from indexengine.card_images.qa import (
     MagicQaCandidate,
@@ -420,6 +423,15 @@ def test_materialization_refreshes_latest_metadata_summary(tmp_path: Path) -> No
     assert projected["set_name"] == "Battle of Chaos"
     assert projected["collector_number"] == "BACH-EN025"
     assert projected["image_source"] == "ygoprodeck"
+
+
+def test_verified_expansion_metadata_rejects_conflicting_provider_evidence() -> None:
+    assert _verified_expansion_metadata(
+        {
+            10: {("Base Set", "base1")},
+            20: {("Base Set", "base1"), ("Celebrations", "cel25")},
+        }
+    ) == {10: ("Base Set", "base1")}
 
 
 def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None:

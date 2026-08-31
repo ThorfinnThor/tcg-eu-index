@@ -456,10 +456,33 @@ def materialize_magic_images(
         default_status = (
             "blocked_credentials" if game in credential_games else "missing_prerequisite"
         )
+        page_payloads: list[tuple[Path, dict[str, Any]]] = []
+        expansion_evidence: dict[int, set[tuple[str, str | None]]] = defaultdict(set)
         for page_path in sorted((index_root / "composition").rglob("*.json")):
             payload = json.loads(page_path.read_text())
             if not isinstance(payload, dict) or not isinstance(payload.get("constituents"), list):
                 raise ValueError(f"invalid collector composition page {page_path}")
+            page_payloads.append((page_path, payload))
+            for member in payload["constituents"]:
+                if not isinstance(member, dict):
+                    raise ValueError(f"invalid collector constituent in {page_path}")
+                metadata = game_metadata.get(
+                    (int(member["cm_product_id"]), str(member["variant_key"]))
+                )
+                if metadata is None:
+                    continue
+                provider_set_name, provider_set_code, _ = metadata
+                if isinstance(provider_set_name, str) and _is_real_set_name(provider_set_name):
+                    expansion_id = member.get("cm_expansion_id")
+                    if expansion_id is not None:
+                        expansion_evidence[int(expansion_id)].add(
+                            (
+                                provider_set_name.strip(),
+                                provider_set_code.strip() if provider_set_code else None,
+                            )
+                        )
+        verified_expansion_metadata = _verified_expansion_metadata(expansion_evidence)
+        for page_path, payload in page_payloads:
             is_latest_page = str(payload.get("effective_date")) == latest_effective_date
             page_changed = False
             for member in payload["constituents"]:
@@ -507,6 +530,26 @@ def materialize_magic_images(
                     ):
                         member["collector_number"] = provider_collector_number
                         page_changed = True
+                expansion_id = member.get("cm_expansion_id")
+                expansion_metadata = (
+                    verified_expansion_metadata.get(int(expansion_id))
+                    if expansion_id is not None
+                    else None
+                )
+                if expansion_metadata is not None and not _is_real_set_name(
+                    member.get("set_name")
+                ):
+                    provider_set_name, provider_set_code = expansion_metadata
+                    member["set_name"] = provider_set_name
+                    if provider_set_code and member.get("set_code") != provider_set_code:
+                        member["set_code"] = provider_set_code
+                    page_changed = True
+                elif (
+                    not _is_real_set_name(member.get("set_name"))
+                    and member.get("set_name") is not None
+                ):
+                    member["set_name"] = None
+                    page_changed = True
                 statuses[image.status] = statuses.get(image.status, 0) + 1
                 game_statuses[image.status] = game_statuses.get(image.status, 0) + 1
                 rows += 1
@@ -515,7 +558,7 @@ def materialize_magic_images(
                 if is_latest_page:
                     latest_rows += 1
                     latest_named += bool(member.get("name"))
-                    latest_set_names += bool(member.get("set_name"))
+                    latest_set_names += _is_real_set_name(member.get("set_name"))
                     latest_collector_numbers += bool(member.get("collector_number"))
                     latest_published += is_published
                     latest_statuses[image.status] = latest_statuses.get(image.status, 0) + 1
@@ -549,6 +592,25 @@ def materialize_magic_images(
         statuses=dict(sorted(statuses.items())),
         changed_files=tuple(sorted(set(changed))),
     )
+
+
+def _is_real_set_name(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and bool(value.strip())
+        and not value.strip().startswith("Expansion ")
+    )
+
+
+def _verified_expansion_metadata(
+    evidence: dict[int, set[tuple[str, str | None]]],
+) -> dict[int, tuple[str, str | None]]:
+    """Return only expansion metadata with one unambiguous provider identity."""
+    return {
+        expansion_id: next(iter(values))
+        for expansion_id, values in evidence.items()
+        if len(values) == 1
+    }
 
 
 def _load_raw_set_names(store: ObjectStore, snapshot_id: str) -> dict[str, str]:
