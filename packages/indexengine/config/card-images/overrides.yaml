@@ -10793,3 +10793,192 @@ mappings:
   evidence:
   - Cardmarket reference image https://product-images.s3.cardmarket.com/1621/STP-JP/884266/884266.jpg visually matched to the official Bandai artwork.
   - Normalized RGB RMS 75.109; runner-up 101.535 at 128x179 pixels.
+- game: digimon
+  cardmarket_product_id: 744904
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: P-114
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/P/744904/744904.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 54.013 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 755676
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT14-014
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-15/755676/755676.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 92.157 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 755688
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT15-014
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-15/755688/755688.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 67.310 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 755699
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT15-026
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-15/755699/755699.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 78.973 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 755709
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT15-038
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-15/755709/755709.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 69.801 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 756200
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: P-113
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/CP24/756200/756200.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 64.490 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 769468
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT16-027
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-16/769468/769468.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 81.226 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 775347
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: EX6-029
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/EX-06/775347/775347.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 78.000 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 775354
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: EX6-035
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/EX-06/775354/775354.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 82.848 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 779728
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT17-077
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-17/779728/779728.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 83.060 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 779729
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT17-078
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-17/779729/779729.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 92.514 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 785215
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: ST17-08
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/CP24/785215/785215.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 72.734 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 803497
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: EX8-044
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/EX-08/803497/803497.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 77.952 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 807847
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT20-077
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/SB2.5/807847/807847.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 79.725 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 807851
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT20-081
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/SB2.5/807851/807851.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 83.312 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 835181
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT22-025
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-22/835181/835181.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 76.087 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 847053
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: EX10-010
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/EX-10/847053/847053.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 87.399 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 847740
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: EX10-074
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/EX-10/847740/847740.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 58.262 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 885299
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT25-043
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-25/885299/885299.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 89.904 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 885313
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT25-057
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-25/885313/885313.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 83.296 at 128x179 pixels; exact artwork confirmed visually.
+- game: digimon
+  cardmarket_product_id: 886295
+  finish: nonfoil
+  provider: digimon
+  provider_card_id: BT25-104
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-25/886295/886295.jpg visually matched to the active Digimon catalogue artwork.
+  - Normalized RGB RMS 80.117 at 128x179 pixels; exact artwork confirmed visually.

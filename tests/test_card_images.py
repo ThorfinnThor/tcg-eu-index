@@ -15,6 +15,7 @@ from indexengine.card_images.catalogs import (
     match_catalog_identities,
     parse_apitcg_payload,
     parse_bandai_onepiece_payload,
+    parse_digimon_payload,
     parse_lorcast_payload,
     parse_optcg_payload,
     parse_riot_riftbound_page,
@@ -970,6 +971,65 @@ def test_manual_override_accepts_verified_onepiece_nami_alias() -> None:
 
     assert matches[0].status == "manual"
     assert matches[0].provider_art_id == "OP06-101_p3"
+    assert matches[0].asset_id in assets
+
+
+@pytest.mark.parametrize(
+    ("cardmarket_name", "provider_name", "number"),
+    (
+        ("Diaboromon Ace", "Diaboromon", "P-114"),
+        (
+            "ShineGreymon: Burst Mode / Final Shining Burst",
+            "ShineGreymon: Burst Mode",
+            "BT25-104",
+        ),
+    ),
+)
+def test_manual_override_accepts_verified_digimon_name_aliases(
+    cardmarket_name: str, provider_name: str, number: str
+) -> None:
+    record = parse_digimon_payload(
+        json.dumps([{"id": number, "name": provider_name, "set_name": []}]).encode()
+    )[0]
+    snapshot = CatalogSnapshot(
+        provider="digimon",
+        game="digimon",
+        snapshot_id="digimon-name-alias",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://digimoncard.io/",
+        source_version="test",
+        raw_sha256="f" * 64,
+        records=(record,),
+    )
+    identity = replace(
+        _identity(product_id=99),
+        game="digimon",
+        source_row_key=source_row_key("digimon", 99, "nonfoil"),
+        cardmarket_product_id=99,
+        cardmarket_name_raw=cardmarket_name,
+        name_normalized=normalize_card_name(cardmarket_name),
+        collector_number_raw=number,
+        collector_number_canonical=number,
+    )
+    override = ManualCardImageOverride(
+        source_row_key=identity.source_row_key,
+        game="digimon",
+        cardmarket_product_id=99,
+        finish="nonfoil",
+        provider="digimon",
+        provider_card_id=number,
+        provider_art_id=None,
+        reviewed_at="2026-08-31",
+        evidence=("reviewed against the exact Cardmarket product",),
+    )
+    policy = replace(_policy(), provider="digimon", games=("digimon",))
+
+    matches, assets = match_catalog_identities(
+        [identity], snapshot, policy, manual_overrides={identity.source_row_key: override}
+    )
+
+    assert matches[0].status == "manual"
+    assert matches[0].provider_card_id == number
     assert matches[0].asset_id in assets
 
 

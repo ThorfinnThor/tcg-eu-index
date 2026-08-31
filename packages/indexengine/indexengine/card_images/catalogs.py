@@ -1583,6 +1583,12 @@ def _manual_override_name_matches(
     provider_name = _loose_name(candidate.name_raw)
     if source_name == provider_name:
         return True
+    if identity.game == "digimon" and identity.collector_number_canonical:
+        if source_name.endswith("ace") and source_name.removesuffix("ace") == provider_name:
+            return True
+        source_primary_name = _loose_name(identity.cardmarket_name_raw.split("/", 1)[0])
+        if source_primary_name == provider_name:
+            return True
     return (
         identity.game == "onepiece"
         and identity.collector_number_canonical == "OP06-101"
