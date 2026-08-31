@@ -19,6 +19,7 @@ from indexengine.card_images.catalogs import (
     parse_lorcast_payload,
     parse_optcg_payload,
     parse_riot_riftbound_page,
+    parse_swudb_payload,
     parse_tcgdex_tarball,
 )
 from indexengine.card_images.contracts import (
@@ -1033,6 +1034,87 @@ def test_manual_override_accepts_verified_digimon_name_aliases(
     assert matches[0].asset_id in assets
 
 
+@pytest.mark.parametrize(
+    ("cardmarket_name", "provider_name"),
+    (
+        ("Count Dooku, Darth Tyranus", "Count Dooku, Darth Tyrannus"),
+        ("C-3PO, Anything I Might Do?", "C-3P0, Anything I Might Do?"),
+        ("Iden Versio, Inferno Squad Commander", "Iden Versio, Infero Squad Commander"),
+        ("Security Complex", "Security Complex, Scarif"),
+        ("Energy Conversion Lab", "Energy Conversion Lab, Eadu"),
+        ("Tarkintown", "Tarkintown, Lothal"),
+        ("Jabba the Hutt, His High Exaltedness", "Jabba the Hutt, His High Exaltdeness"),
+        ("Petranaki Arena", "Petranaki Arena, Geonosis"),
+        ("Data Vault", "Data Vault, Scarif"),
+        ("Poe Dameron, One Hell of a Pilot", "Poe Dameron, One Hell of a a Pilot"),
+        ("Theed Palace", "Theed Palace, Naboo"),
+        ("Shield Generator Complex", "Shield Generator Complex, Endor"),
+        ("Mos Eisley", "Mos Eisley, Tatooine"),
+        ("Massassi Temple", "Massassi Temple, Yavin 4"),
+        ("C-3PO, Human-Cyborg Relations", "C-3P0, Human-Cyborg Relations"),
+        ("Enfys Nest, Until We Can Go No Higher", "Enfy Nest, Until We Can Go No Higher"),
+        ("K-2SO, Locking the Vault", "K-2S0, Locking the Vault"),
+    ),
+)
+def test_manual_override_accepts_reviewed_swu_name_aliases(
+    cardmarket_name: str, provider_name: str
+) -> None:
+    record = parse_swudb_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "Name": provider_name,
+                        "Set": "TST",
+                        "Number": "001",
+                        "FrontArt": "https://cdn.swu-db.com/images/cards/TST/001.png",
+                    }
+                ]
+            }
+        ).encode()
+    )[0]
+    snapshot = CatalogSnapshot(
+        provider="swudb",
+        game="starwarsunlimited",
+        snapshot_id="swudb-reviewed-name-alias",
+        fetched_at="2026-08-31T00:00:00+00:00",
+        source_url="https://www.swu-db.com/api",
+        source_version="test",
+        raw_sha256="f" * 64,
+        records=(record,),
+    )
+    identity = replace(
+        _identity(product_id=99),
+        game="starwarsunlimited",
+        source_row_key=source_row_key("starwarsunlimited", 99, "nonfoil"),
+        cardmarket_product_id=99,
+        cardmarket_name_raw=cardmarket_name,
+        name_normalized=normalize_card_name(cardmarket_name),
+        collector_number_raw=None,
+        collector_number_canonical=None,
+    )
+    override = ManualCardImageOverride(
+        source_row_key=identity.source_row_key,
+        game="starwarsunlimited",
+        cardmarket_product_id=99,
+        finish="nonfoil",
+        provider="swudb",
+        provider_card_id="TST-001",
+        provider_art_id=None,
+        reviewed_at="2026-08-31",
+        evidence=("reviewed against the exact Cardmarket product",),
+    )
+    policy = replace(_policy(), provider="swudb", games=("starwarsunlimited",))
+
+    matches, assets = match_catalog_identities(
+        [identity], snapshot, policy, manual_overrides={identity.source_row_key: override}
+    )
+
+    assert matches[0].status == "manual"
+    assert matches[0].provider_card_id == "TST-001"
+    assert matches[0].asset_id in assets
+
+
 def test_manual_override_loader_derives_keys_and_rejects_duplicates(tmp_path: Path) -> None:
     path = tmp_path / "overrides.yaml"
     mapping = (
@@ -1072,6 +1154,62 @@ def test_reviewed_lorcana_overrides_exclude_the_pre_errata_stitch_print() -> Non
     assert not any(
         override.cardmarket_product_id == 832576 for override in lorcana.values()
     )
+
+
+def test_reviewed_swu_overrides_include_only_visually_confirmed_artworks() -> None:
+    overrides = load_manual_overrides(
+        Path("packages/indexengine/config/card-images/overrides.yaml")
+    )
+    swu = {
+        key: override
+        for key, override in overrides.items()
+        if override.game == "starwarsunlimited"
+    }
+
+    assert len(swu) == 636
+    assert len({override.cardmarket_product_id for override in swu.values()}) == 574
+    assert all(override.provider == "swudb" for override in swu.values())
+    excluded_products = {
+        815864,  # Annihilator: provider image is a different presentation.
+        815900,  # Annihilator: provider image is a different presentation.
+        815907,  # Executor: provider image does not match the Cardmarket image side.
+        848227,  # No matching provider artwork in the active P25 snapshot.
+        857161,  # No matching provider artwork in the active SEC snapshot.
+        882842,  # No matching provider artwork in the active P26 snapshot.
+        882847,  # No matching provider artwork in the active P26 snapshot.
+        # Organized-play products whose Cardmarket artwork differs from every
+        # reachable same-name printing in the active SWUDB snapshot.
+        795084,
+        795085,
+        795086,
+        795087,
+        795088,
+        795090,
+        800800,
+        804737,
+        804739,
+        804740,
+        804741,
+        804742,
+        # Missing-provider rows whose closest names are absent or whose
+        # available artwork was visually different.
+        804735,
+        814028,
+        814029,
+        814030,
+        814031,
+        814032,
+        814033,
+        833317,
+        838354,
+        838355,
+        838356,
+        838357,
+        882844,
+    }
+    assert not excluded_products & {
+        override.cardmarket_product_id for override in swu.values()
+    }
 
 
 def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:

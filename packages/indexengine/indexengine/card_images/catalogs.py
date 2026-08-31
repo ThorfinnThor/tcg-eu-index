@@ -1576,6 +1576,27 @@ def _loose_name(value: str) -> str:
     return "".join(character for character in normalize_card_name(value) if character.isalnum())
 
 
+_SWU_REVIEWED_NAME_ALIASES = {
+    ("countdookudarthtyranus", "countdookudarthtyrannus"),
+    ("c3poanythingimightdo", "c3p0anythingimightdo"),
+    ("idenversioinfernosquadcommander", "idenversioinferosquadcommander"),
+    ("securitycomplex", "securitycomplexscarif"),
+    ("energyconversionlab", "energyconversionlabeadu"),
+    ("tarkintown", "tarkintownlothal"),
+    ("jabbathehutthishighexaltedness", "jabbathehutthishighexaltdeness"),
+    ("petranakiarena", "petranakiarenageonosis"),
+    ("datavault", "datavaultscarif"),
+    ("poedamerononehellofapilot", "poedamerononehellofaapilot"),
+    ("theedpalace", "theedpalacenaboo"),
+    ("shieldgeneratorcomplex", "shieldgeneratorcomplexendor"),
+    ("moseisley", "moseisleytatooine"),
+    ("massassitemple", "massassitempleyavin4"),
+    ("c3pohumancyborgrelations", "c3p0humancyborgrelations"),
+    ("enfysnestuntilwecangonohigher", "enfynestuntilwecangonohigher"),
+    ("k2solockingthevault", "k2s0lockingthevault"),
+}
+
+
 def _manual_override_name_matches(
     identity: CanonicalCardIdentity, candidate: CatalogCardRecord
 ) -> bool:
@@ -1589,6 +1610,11 @@ def _manual_override_name_matches(
         source_primary_name = _loose_name(identity.cardmarket_name_raw.split("/", 1)[0])
         if source_primary_name == provider_name:
             return True
+    if (
+        identity.game == "starwarsunlimited"
+        and (source_name, provider_name) in _SWU_REVIEWED_NAME_ALIASES
+    ):
+        return True
     return (
         identity.game == "onepiece"
         and identity.collector_number_canonical == "OP06-101"
