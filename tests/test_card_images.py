@@ -426,6 +426,7 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
     archive_body = io.BytesIO()
     with tarfile.open(fileobj=archive_body, mode="w:gz") as archive:
         files = {
+            "repo/data/Base.ts": 'const series = { id: "base" }',
             "repo/data/Base/Test Set.ts": (
                 'const set = { id: "base-test", name: { en: "Test Set" }, '
                 "thirdParty: { cardmarket: 1234 } }"
@@ -437,6 +438,7 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
             "repo/data/Base/Test Set/002.ts": (
                 'const card = { name: { en: "Raichu" }, variants: [] }'
             ),
+            "repo/data-asia/SM.ts": 'const series = { id: "sm" }',
             "repo/data-asia/SM/SM12a.ts": (
                 'const set = { id: "SM12a", name: { ja: "タッグオールスターズ" }, '
                 "thirdParty: { cardmarket: 3776 } }"
@@ -452,7 +454,46 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
             member.size = len(encoded)
             archive.addfile(member, io.BytesIO(encoded))
 
-    records = parse_tcgdex_tarball(archive_body.getvalue())
+    asset_manifest = json.dumps(
+        {"en": {"base": {"base-test": {"001": "checksum"}}}}
+    ).encode()
+    pokemon_tcg_body = io.BytesIO()
+    with tarfile.open(fileobj=pokemon_tcg_body, mode="w:gz") as archive:
+        pokemon_tcg_files = {
+            "repo/sets/en.json": json.dumps(
+                [{"id": "base-test-api", "name": "Test Set"}]
+            ),
+            "repo/cards/en/base-test-api.json": json.dumps(
+                [
+                    {
+                        "id": "base-test-api-42",
+                        "name": "Raichu",
+                        "number": "42",
+                        "images": {
+                            "small": "https://images.pokemontcg.io/base-test-api/42.png",
+                            "large": "https://images.pokemontcg.io/base-test-api/42_hires.png",
+                        },
+                    }
+                ]
+            ),
+        }
+        for name, body in pokemon_tcg_files.items():
+            encoded = body.encode()
+            member = tarfile.TarInfo(name)
+            member.size = len(encoded)
+            archive.addfile(member, io.BytesIO(encoded))
+    records = parse_tcgdex_tarball(
+        archive_body.getvalue(),
+        asset_manifest=asset_manifest,
+        pokemon_tcg_raw=pokemon_tcg_body.getvalue(),
+        pokemon_tcg_verification=json.dumps(
+            {
+                "https://images.pokemontcg.io/base-test-api/42_hires.png": (
+                    "https://images.pokemontcg.io/base-test-api/42.png"
+                )
+            }
+        ).encode(),
+    )
 
     assert len(records) == 3
     by_number = {record.collector_number: record for record in records}
@@ -460,11 +501,17 @@ def test_tcgdex_snapshot_preserves_direct_cardmarket_and_expansion_ids() -> None
     assert by_number["001"].cardmarket_expansion_id == 1234
     assert by_number["001"].set_name == "Test Set"
     assert by_number["001"].faces[0].normal.url == (
-        "https://images.pokemontcg.io/base-test/001.png"
+        "https://assets.tcgdex.net/en/base/base-test/001/high.webp"
+    )
+    assert by_number["001"].faces[0].thumb.url == (
+        "https://assets.tcgdex.net/en/base/base-test/001/low.webp"
     )
     assert by_number["002"].cardmarket_id is None
     assert by_number["002"].cardmarket_expansion_id == 1234
     assert by_number["002"].set_name == "Test Set"
+    assert by_number["002"].faces[0].normal.url == (
+        "https://images.pokemontcg.io/base-test-api/42.png"
+    )
     assert by_number["186"].cardmarket_id == 544676
     assert by_number["186"].cardmarket_expansion_id == 3776
     assert by_number["186"].set_code == "SM12a"

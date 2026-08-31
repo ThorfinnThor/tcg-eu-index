@@ -11,6 +11,7 @@ import tarfile
 import time
 from collections import defaultdict
 from collections.abc import Iterable, Mapping
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import PurePosixPath
@@ -32,7 +33,7 @@ from indexengine.card_images.contracts import (
 from indexengine.card_images.overrides import ManualCardImageOverride
 from indexengine.card_images.policy import ProviderPolicy
 
-ADAPTER_VERSION = "1.5.0"
+ADAPTER_VERSION = "1.6.0"
 MATCHER_VERSION = "1.2.0"
 SITE_URL = "https://tcg-eu-index-web.shuu9599.workers.dev"
 
@@ -655,8 +656,46 @@ def _fetch_provider(
         meta = _json_object(
             _get(session, "https://api.github.com/repos/tcgdex/cards-database/releases/latest")
         )
-        raw = _get(session, str(meta["tarball_url"]), timeout=240)
-        return str(meta["html_url"]), str(meta["tag_name"]), raw, parse_tcgdex_tarball(raw)
+        tcgdex_raw = _get(session, str(meta["tarball_url"]), timeout=240)
+        asset_manifest = _get(session, "https://assets.tcgdex.net/datas.json", timeout=120)
+        pokemon_tcg_meta = _json_object(
+            _get(
+                session,
+                "https://api.github.com/repos/PokemonTCG/pokemon-tcg-data/commits/master",
+            )
+        )
+        pokemon_tcg_sha = str(pokemon_tcg_meta["sha"])
+        pokemon_tcg_raw = _get(
+            session,
+            f"https://api.github.com/repos/PokemonTCG/pokemon-tcg-data/tarball/{pokemon_tcg_sha}",
+            timeout=240,
+        )
+        candidate_records = parse_tcgdex_tarball(
+            tcgdex_raw,
+            asset_manifest=asset_manifest,
+            pokemon_tcg_raw=pokemon_tcg_raw,
+        )
+        pokemon_tcg_verification = _json_bytes(
+            _verify_pokemon_tcg_fallbacks(session, candidate_records)
+        )
+        raw = _pack_tcgdex_bundle(
+            tcgdex_raw,
+            asset_manifest,
+            pokemon_tcg_raw,
+            pokemon_tcg_verification,
+        )
+        source_version = (
+            f"{meta['tag_name']}+assets-{sha256_hex(asset_manifest)[:12]}"
+            f"+ptcg-{pokemon_tcg_sha[:12]}"
+            f"+verified-{sha256_hex(pokemon_tcg_verification)[:12]}"
+        )
+        records = parse_tcgdex_tarball(
+            tcgdex_raw,
+            asset_manifest=asset_manifest,
+            pokemon_tcg_raw=pokemon_tcg_raw,
+            pokemon_tcg_verification=pokemon_tcg_verification,
+        )
+        return str(meta["html_url"]), source_version, raw, records
     if provider == "fab_dataset":
         commit = _json_object(
             _get(
@@ -761,9 +800,24 @@ def _fetch_provider(
     raise AssertionError(provider)
 
 
-def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
+def parse_tcgdex_tarball(
+    raw: bytes,
+    *,
+    asset_manifest: bytes | None = None,
+    pokemon_tcg_raw: bytes | None = None,
+    pokemon_tcg_verification: bytes | None = None,
+) -> list[CatalogCardRecord]:
     records: list[CatalogCardRecord] = []
-    set_info: dict[tuple[str, str], tuple[str, str, int | None]] = {}
+    tcgdex_assets = _tcgdex_asset_index(asset_manifest)
+    pokemon_tcg_assets = _pokemon_tcg_asset_index(pokemon_tcg_raw)
+    verified_fallbacks = (
+        _json_object(pokemon_tcg_verification)
+        if pokemon_tcg_verification is not None
+        else None
+    )
+    series_info: dict[tuple[str, str], str] = {}
+    set_info: dict[tuple[str, str], tuple[str, str, int | None, str]] = {}
+    set_files: list[tuple[str, str, bytes]] = []
     card_files: list[tuple[str, str, bytes]] = []
     with tarfile.open(fileobj=io.BytesIO(raw), mode="r:gz") as archive:
         for member in archive.getmembers():
@@ -777,30 +831,39 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
                 continue
             relative = member.name.split(f"/{catalogue}/", 1)[1]
             parts = PurePosixPath(relative).parts
-            if len(parts) not in {2, 3}:
+            if len(parts) not in {1, 2, 3}:
                 continue
             body_stream = archive.extractfile(member)
             if body_stream is None:
                 continue
             body = body_stream.read()
-            if len(parts) == 2:
-                text = body.decode(errors="replace")
-                set_id = _ts_string(text, "id")
-                set_name = _ts_display_name(text)
-                if set_id and set_name:
-                    set_info[(catalogue, f"{parts[0]}/{PurePosixPath(parts[1]).stem}")] = (
-                        set_id,
-                        set_name,
-                        _ts_cardmarket_id(text),
-                    )
+            if len(parts) == 1:
+                series_id = _ts_string(body.decode(errors="replace"), "id")
+                if series_id:
+                    series_info[(catalogue, PurePosixPath(parts[0]).stem)] = series_id
+            elif len(parts) == 2:
+                set_files.append((catalogue, relative, body))
             else:
                 card_files.append((catalogue, relative, body))
+    for catalogue, relative, body in set_files:
+        path = PurePosixPath(relative)
+        text = body.decode(errors="replace")
+        set_id = _ts_string(text, "id")
+        set_name = _ts_display_name(text)
+        series_id = series_info.get((catalogue, path.parts[0]))
+        if set_id and set_name and series_id:
+            set_info[(catalogue, f"{path.parts[0]}/{path.stem}")] = (
+                set_id,
+                set_name,
+                _ts_cardmarket_id(text),
+                series_id,
+            )
     for catalogue, relative, body in card_files:
         path = PurePosixPath(relative)
         info = set_info.get((catalogue, f"{path.parts[0]}/{path.parts[1]}"))
         if info is None:
             continue
-        set_id, set_name, market_set_id = info
+        set_id, set_name, market_set_id, series_id = info
         number = path.stem
         text = body.decode(errors="replace")
         name = _ts_display_name(text) or f"{set_id} {number}"
@@ -815,11 +878,34 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
         if not market_ids_or_none:
             market_ids_or_none.append(None)
         for market_id in market_ids_or_none:
-            image = (
-                f"https://images.pokemontcg.io/{set_id}/{number}.png"
-                if catalogue == "data"
-                else None
-            )
+            image_url: str | None = None
+            thumb_url: str | None = None
+            mime_type = "image/webp"
+            image_provider: str | None = None
+            if catalogue == "data" and (series_id, set_id, number) in tcgdex_assets:
+                image_base = f"https://assets.tcgdex.net/en/{series_id}/{set_id}/{number}"
+                image_url = f"{image_base}/high.webp"
+                thumb_url = f"{image_base}/low.webp"
+                mime_type = "image/webp"
+                image_provider = "tcgdex"
+            elif catalogue == "data":
+                set_name_key = _loose_name(set_name)
+                name_key = _pokemon_card_name_key(name)
+                fallback = pokemon_tcg_assets.get(
+                    (set_name_key, number.casefold(), name_key)
+                ) or pokemon_tcg_assets.get((set_name_key, "", name_key))
+                if fallback is not None:
+                    _, candidate_large = fallback
+                    verified_url = (
+                        verified_fallbacks.get(candidate_large)
+                        if verified_fallbacks is not None
+                        else candidate_large
+                    )
+                    if isinstance(verified_url, str) and verified_url.startswith("https://"):
+                        thumb_url = verified_url
+                        image_url = verified_url
+                        mime_type = "image/png"
+                        image_provider = "pokemon-tcg-data"
             records.append(
                 _record(
                     provider="tcgdex",
@@ -834,16 +920,184 @@ def parse_tcgdex_tarball(raw: bytes) -> list[CatalogCardRecord]:
                     number=number,
                     language="en" if catalogue == "data" else "ja",
                     variant=None,
-                    image_url=image,
+                    image_url=image_url,
+                    thumb_url=thumb_url,
+                    large_url=image_url,
                     raw={
                         "catalogue": catalogue,
                         "path": relative,
                         "cardmarket_id": market_id,
+                        "series_id": series_id,
+                        "image_provider": image_provider,
                     },
-                    mime_type="image/png",
+                    mime_type=mime_type,
                 )
             )
     return records
+
+
+def _pack_tcgdex_bundle(
+    tcgdex_raw: bytes,
+    asset_manifest: bytes,
+    pokemon_tcg_raw: bytes,
+    pokemon_tcg_verification: bytes,
+) -> bytes:
+    """Archive every input that influences the normalized TCGdex snapshot."""
+    magic = b"TCGDEX_BUNDLE_V1\n"
+    lengths = (
+        f"{len(tcgdex_raw)} {len(asset_manifest)} {len(pokemon_tcg_raw)} "
+        f"{len(pokemon_tcg_verification)}\n"
+    ).encode()
+    return (
+        magic
+        + lengths
+        + tcgdex_raw
+        + asset_manifest
+        + pokemon_tcg_raw
+        + pokemon_tcg_verification
+    )
+
+
+def _verify_pokemon_tcg_fallbacks(
+    session: HttpClient, records: list[CatalogCardRecord]
+) -> dict[str, str | None]:
+    candidates = {
+        face.normal.url: face.thumb.url
+        for record in records
+        for face in record.faces
+        if face.normal is not None
+        and face.thumb is not None
+        and face.normal.url.startswith("https://images.pokemontcg.io/")
+    }
+
+    def available(url: str) -> bool:
+        response = session.get(
+            url,
+            headers={
+                "Accept": "image/*",
+                "Range": "bytes=0-255",
+                "User-Agent": "tcg-eu-index/0.1 card-images",
+            },
+            timeout=30,
+            stream=True,
+        )
+        try:
+            content_type = response.headers.get(
+                "Content-Type", response.headers.get("content-type", "")
+            )
+            return response.status_code in {200, 206} and content_type.startswith("image/")
+        finally:
+            close = getattr(response, "close", None)
+            if callable(close):
+                close()
+
+    def verify(pair: tuple[str, str]) -> tuple[str, str | None]:
+        large, small = pair
+        try:
+            if available(large):
+                return large, large
+            if available(small):
+                return large, small
+        except requests.RequestException:
+            pass
+        return large, None
+
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        return dict(pool.map(verify, sorted(candidates.items())))
+
+
+def _tcgdex_asset_index(raw: bytes | None) -> set[tuple[str, str, str]]:
+    if raw is None:
+        return set()
+    payload = _json_object(raw)
+    english = payload.get("en")
+    if not isinstance(english, dict):
+        return set()
+    result: set[tuple[str, str, str]] = set()
+    for series_id, raw_sets in english.items():
+        if not isinstance(raw_sets, dict):
+            continue
+        for set_id, raw_cards in raw_sets.items():
+            if not isinstance(raw_cards, dict):
+                continue
+            result.update(
+                (str(series_id), str(set_id), str(number))
+                for number in raw_cards
+                if str(number) != "logo"
+            )
+    return result
+
+
+def _pokemon_tcg_asset_index(
+    raw: bytes | None,
+) -> dict[tuple[str, str, str], tuple[str, str]]:
+    """Return only unique set/number/name image records from PokemonTCG data."""
+    if raw is None:
+        return {}
+    sets: dict[str, str] = {}
+    cards_by_set: dict[str, list[dict[str, Any]]] = {}
+    with tarfile.open(fileobj=io.BytesIO(raw), mode="r:gz") as archive:
+        for member in archive.getmembers():
+            if not member.isfile():
+                continue
+            path = PurePosixPath(member.name)
+            body_stream = archive.extractfile(member)
+            if body_stream is None:
+                continue
+            if path.parts[-2:] == ("sets", "en.json"):
+                payload = json.loads(body_stream.read())
+                if isinstance(payload, list):
+                    sets.update(
+                        {
+                            str(item["id"]): str(item["name"])
+                            for item in payload
+                            if isinstance(item, dict) and item.get("id") and item.get("name")
+                        }
+                    )
+                continue
+            if len(path.parts) < 3 or path.parts[-3:-1] != ("cards", "en"):
+                continue
+            payload = json.loads(body_stream.read())
+            if isinstance(payload, list):
+                cards_by_set[path.stem] = [item for item in payload if isinstance(item, dict)]
+    candidates: dict[tuple[str, str, str], set[tuple[str, str]]] = defaultdict(set)
+    for set_id, cards in cards_by_set.items():
+        set_name = sets.get(set_id)
+        if not set_name:
+            continue
+        for card in cards:
+            name = _text(card.get("name"))
+            number = _text(card.get("number"))
+            images = card.get("images")
+            if not name or not number or not isinstance(images, dict):
+                continue
+            small = _text(images.get("small"))
+            large = _text(images.get("large"))
+            if not small or not large or not small.startswith("https://") or not large.startswith(
+                "https://"
+            ):
+                continue
+            name_key = _pokemon_card_name_key(name)
+            key = (_loose_name(set_name), number.casefold(), name_key)
+            candidates[key].add((small, large))
+            # Some providers expose a synthetic local number for subsets (for
+            # example CC001), while PokemonTCG retains the number printed on
+            # the original card. Exact set + exact card name is still safe when
+            # it identifies one image within that set.
+            candidates[(_loose_name(set_name), "", name_key)].add((small, large))
+    return {
+        key: next(iter(images))
+        for key, images in candidates.items()
+        if len(images) == 1
+    }
+
+
+def _pokemon_card_name_key(value: str) -> str:
+    # Provider spelling differs for historical mechanics ("Mewtwo EX" versus
+    # "Mewtwo-EX", star glyph variants, and an occasionally omitted delta
+    # marker). Set and card identity are still exact, but presentation marks do
+    # not form part of the cross-provider key.
+    return _loose_name(value).removesuffix("δ")
 
 
 def parse_ygoprodeck_payload(raw: bytes) -> list[CatalogCardRecord]:

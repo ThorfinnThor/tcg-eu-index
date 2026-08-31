@@ -33,11 +33,14 @@ describe("collector UI labels", () => {
     expect(matchesCollectorPriceBand(50_000, "all")).toBe(true);
   });
 
-  it("delivers TCGdex Pokemon matches through the responsive image host", () => {
-    expect(cardImageDeliveryUrl("https://assets.tcgdex.net/en/xy7/97/high.webp"))
-      .toBe("https://images.pokemontcg.io/xy7/97.png");
+  it("preserves approved HTTPS image URLs without rewriting provider identities", () => {
+    expect(cardImageDeliveryUrl("https://assets.tcgdex.net/en/xy/xy7/97/high.webp"))
+      .toBe("https://assets.tcgdex.net/en/xy/xy7/97/high.webp");
     expect(cardImageDeliveryUrl("https://cards.scryfall.io/normal/example.jpg"))
       .toBe("https://cards.scryfall.io/normal/example.jpg");
+    expect(cardImageDeliveryUrl("http://assets.tcgdex.net/en/xy/xy7/97/high.webp"))
+      .toBeNull();
+    expect(cardImageDeliveryUrl("not a URL")).toBeNull();
     expect(cardImageDeliveryUrl(null)).toBeNull();
   });
 
