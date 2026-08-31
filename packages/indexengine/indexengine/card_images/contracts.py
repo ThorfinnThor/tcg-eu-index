@@ -26,6 +26,7 @@ MatchMethod = Literal[
     "set_number_name_variant",
     "set_number_name_unique",
     "inferred_set_name_unique",
+    "set_name_name_unique",
     "parsed_identifier_verified",
     "name_candidate_only",
     "none",
