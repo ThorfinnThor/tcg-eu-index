@@ -631,8 +631,8 @@ def test_catalog_matcher_uses_explicit_set_name_for_unique_card_name() -> None:
         set_code_raw="test",
         set_code_canonical="test",
         set_provider_id=None,
-        collector_number_raw=None,
-        collector_number_canonical=None,
+        collector_number_raw="001",
+        collector_number_canonical="001",
     )
     policy = replace(_policy(), provider="tcgdex", games=("pokemon",))
 

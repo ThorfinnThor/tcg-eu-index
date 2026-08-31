@@ -338,6 +338,24 @@ def match_catalog_identities(
         candidates: list[CatalogCardRecord]
         method = "none"
         evidence: tuple[str, ...] = ()
+        set_name_candidates: list[CatalogCardRecord] = []
+        if identity.set_name_raw:
+            set_name_key = _loose_name(identity.set_name_raw)
+            name_key = _loose_name(identity.cardmarket_name_raw)
+            set_code = identity.set_code_canonical or identity.set_code_raw
+            set_name_candidates = (
+                by_set_name.get((set_code.casefold(), set_name_key, name_key), [])
+                if set_code
+                else by_set_name_without_code.get((set_name_key, name_key), [])
+            )
+            if identity.collector_number_canonical:
+                set_name_candidates = [
+                    record
+                    for record in set_name_candidates
+                    if record.collector_number
+                    and record.collector_number.casefold()
+                    == identity.collector_number_canonical.casefold()
+                ]
         if identity.cardmarket_product_id in by_market:
             candidates = by_market[identity.cardmarket_product_id]
             method = "direct_marketplace_id"
@@ -384,6 +402,14 @@ def match_catalog_identities(
                 f"set_signature_runner_up={runner_up}",
                 f"name={_loose_name(identity.cardmarket_name_raw)}",
             )
+        elif set_name_candidates:
+            candidates = set_name_candidates
+            method = "set_name_name_unique"
+            evidence = (
+                f"provider_set_name={identity.set_name_raw}",
+                f"provider_set_code={identity.set_code_canonical or identity.set_code_raw or ''}",
+                f"name={_loose_name(identity.cardmarket_name_raw)}",
+            )
         elif identity.collector_number_canonical:
             key = (identity.collector_number_canonical.casefold(), identity.name_normalized)
             candidates = by_number_name.get(key, [])
@@ -391,35 +417,6 @@ def match_catalog_identities(
             evidence = (
                 f"collector_number={identity.collector_number_canonical}",
                 f"name={identity.name_normalized}",
-            )
-        elif identity.set_name_raw:
-            set_name_key = _loose_name(identity.set_name_raw)
-            name_key = _loose_name(identity.cardmarket_name_raw)
-            candidates = (
-                by_set_name.get(
-                    (
-                        (identity.set_code_canonical or identity.set_code_raw or "").casefold(),
-                        set_name_key,
-                        name_key,
-                    ),
-                    [],
-                )
-                if identity.set_code_canonical or identity.set_code_raw
-                else by_set_name_without_code.get((set_name_key, name_key), [])
-            )
-            if identity.collector_number_canonical:
-                candidates = [
-                    record
-                    for record in candidates
-                    if record.collector_number
-                    and record.collector_number.casefold()
-                    == identity.collector_number_canonical.casefold()
-                ]
-            method = "set_name_name_unique"
-            evidence = (
-                f"provider_set_name={identity.set_name_raw}",
-                f"provider_set_code={identity.set_code_canonical or identity.set_code_raw or ''}",
-                f"name={name_key}",
             )
         else:
             candidates = by_name.get(identity.name_normalized, [])
