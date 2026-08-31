@@ -1615,6 +1615,21 @@ def _manual_override_name_matches(
         and (source_name, provider_name) in _SWU_REVIEWED_NAME_ALIASES
     ):
         return True
+    if identity.game == "riftbound" and "," in identity.cardmarket_name_raw:
+        # Cardmarket prefixes champion legend cards with the champion name
+        # (for example "Kai'Sa, Daughter of the Void"), while Riot's official
+        # gallery uses only the printed legend title ("Daughter of the Void")
+        # and labels starter-deck records with an additional "Starter" suffix.
+        # This relaxation is intentionally limited to manually reviewed
+        # overrides, where the exact provider printing is versioned in YAML.
+        source_legend_title = _loose_name(
+            identity.cardmarket_name_raw.split(",", 1)[1]
+        )
+        if source_legend_title == provider_name or (
+            provider_name.endswith("starter")
+            and source_legend_title == provider_name.removesuffix("starter")
+        ):
+            return True
     return (
         identity.game == "onepiece"
         and identity.collector_number_canonical == "OP06-101"

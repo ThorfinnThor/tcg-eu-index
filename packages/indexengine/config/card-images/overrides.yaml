@@ -21098,3 +21098,1771 @@ mappings:
     difference.
   - Normalized RGB RMS 56.335; runner-up 56.600 at 128x179 pixels; exact artwork confirmed
     visually.
+- game: riftbound
+  cardmarket_product_id: 847156
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-039-298
+  provider_art_id: ogn-039-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Kai'Sa, Survivor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847156 maps to official provider printing ogn-039-298.
+- game: riftbound
+  cardmarket_product_id: 847156
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-039-298
+  provider_art_id: ogn-039-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Kai'Sa, Survivor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847156 maps to official provider printing ogn-039-298.
+- game: riftbound
+  cardmarket_product_id: 847157
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-039a-298
+  provider_art_id: ogn-039a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Kai'Sa, Survivor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847157 maps to official provider printing ogn-039a-298.
+- game: riftbound
+  cardmarket_product_id: 847157
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-039a-298
+  provider_art_id: ogn-039a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Kai'Sa, Survivor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847157 maps to official provider printing ogn-039a-298.
+- game: riftbound
+  cardmarket_product_id: 847329
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-164-298
+  provider_art_id: ogn-164-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847329 maps to official provider printing ogn-164-298.
+- game: riftbound
+  cardmarket_product_id: 847329
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-164-298
+  provider_art_id: ogn-164-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847329 maps to official provider printing ogn-164-298.
+- game: riftbound
+  cardmarket_product_id: 847330
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-164a-298
+  provider_art_id: ogn-164a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847330 maps to official provider printing ogn-164a-298.
+- game: riftbound
+  cardmarket_product_id: 847330
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-164a-298
+  provider_art_id: ogn-164a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 847330 maps to official provider printing ogn-164a-298.
+- game: riftbound
+  cardmarket_product_id: 866785
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-057-221
+  provider_art_id: sfd-057-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866785 maps to official provider printing sfd-057-221.
+- game: riftbound
+  cardmarket_product_id: 866785
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-057-221
+  provider_art_id: sfd-057-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866785 maps to official provider printing sfd-057-221.
+- game: riftbound
+  cardmarket_product_id: 866786
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-057a-221
+  provider_art_id: sfd-057a-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866786 maps to official provider printing sfd-057a-221.
+- game: riftbound
+  cardmarket_product_id: 866786
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-057a-221
+  provider_art_id: sfd-057a-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866786 maps to official provider printing sfd-057a-221.
+- game: riftbound
+  cardmarket_product_id: 866891
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-149-221
+  provider_art_id: sfd-149-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ezreal, Prodigy was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866891 maps to official provider printing sfd-149-221.
+- game: riftbound
+  cardmarket_product_id: 866891
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-149-221
+  provider_art_id: sfd-149-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ezreal, Prodigy was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866891 maps to official provider printing sfd-149-221.
+- game: riftbound
+  cardmarket_product_id: 866892
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-149a-221
+  provider_art_id: sfd-149a-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ezreal, Prodigy was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866892 maps to official provider printing sfd-149a-221.
+- game: riftbound
+  cardmarket_product_id: 866892
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-149a-221
+  provider_art_id: sfd-149a-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ezreal, Prodigy was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866892 maps to official provider printing sfd-149a-221.
+- game: riftbound
+  cardmarket_product_id: 866970
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-223-221
+  provider_art_id: sfd-223-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vayne, Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866970 maps to official provider printing sfd-223-221.
+- game: riftbound
+  cardmarket_product_id: 866970
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-223-221
+  provider_art_id: sfd-223-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vayne, Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866970 maps to official provider printing sfd-223-221.
+- game: riftbound
+  cardmarket_product_id: 866972
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-225-221
+  provider_art_id: sfd-225-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866972 maps to official provider printing sfd-225-221.
+- game: riftbound
+  cardmarket_product_id: 866974
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-227-221
+  provider_art_id: sfd-227-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ahri, Inquisitive was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866974 maps to official provider printing sfd-227-221.
+- game: riftbound
+  cardmarket_product_id: 866977
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-230-221
+  provider_art_id: sfd-230-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Teemo, Strategist was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866977 maps to official provider printing sfd-230-221.
+- game: riftbound
+  cardmarket_product_id: 866979
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-232-221
+  provider_art_id: sfd-232-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866979 maps to official provider printing sfd-232-221.
+- game: riftbound
+  cardmarket_product_id: 866982
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-235-221
+  provider_art_id: sfd-235-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Yasuo, Windrider was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866982 maps to official provider printing sfd-235-221.
+- game: riftbound
+  cardmarket_product_id: 866983
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-236-221
+  provider_art_id: sfd-236-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Darius, Executioner was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866983 maps to official provider printing sfd-236-221.
+- game: riftbound
+  cardmarket_product_id: 866984
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-237-221
+  provider_art_id: sfd-237-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Karma, Channeler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866984 maps to official provider printing sfd-237-221.
+- game: riftbound
+  cardmarket_product_id: 866984
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-237-221
+  provider_art_id: sfd-237-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Karma, Channeler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 866984 maps to official provider printing sfd-237-221.
+- game: riftbound
+  cardmarket_product_id: 867002
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-223-star-221
+  provider_art_id: sfd-223-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vayne, Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867002 maps to official provider printing sfd-223-star-221.
+- game: riftbound
+  cardmarket_product_id: 867004
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-225-star-221
+  provider_art_id: sfd-225-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Irelia, Fervent was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867004 maps to official provider printing sfd-225-star-221.
+- game: riftbound
+  cardmarket_product_id: 867005
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-227-star-221
+  provider_art_id: sfd-227-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Ahri, Inquisitive was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867005 maps to official provider printing sfd-227-star-221.
+- game: riftbound
+  cardmarket_product_id: 867007
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-230-star-221
+  provider_art_id: sfd-230-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Teemo, Strategist was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867007 maps to official provider printing sfd-230-star-221.
+- game: riftbound
+  cardmarket_product_id: 867008
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-232-star-221
+  provider_art_id: sfd-232-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867008 maps to official provider printing sfd-232-star-221.
+- game: riftbound
+  cardmarket_product_id: 867008
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-232-star-221
+  provider_art_id: sfd-232-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Sett, Brawler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867008 maps to official provider printing sfd-232-star-221.
+- game: riftbound
+  cardmarket_product_id: 867010
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-235-star-221
+  provider_art_id: sfd-235-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Yasuo, Windrider was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867010 maps to official provider printing sfd-235-star-221.
+- game: riftbound
+  cardmarket_product_id: 867011
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-236-star-221
+  provider_art_id: sfd-236-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Darius, Executioner was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867011 maps to official provider printing sfd-236-star-221.
+- game: riftbound
+  cardmarket_product_id: 867012
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-237-star-221
+  provider_art_id: sfd-237-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Karma, Channeler was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 867012 maps to official provider printing sfd-237-star-221.
+- game: riftbound
+  cardmarket_product_id: 883987
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-028-219
+  provider_art_id: unl-028-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Pyke, Dockside Butcher was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 883987 maps to official provider printing unl-028-219.
+- game: riftbound
+  cardmarket_product_id: 883987
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-028-219
+  provider_art_id: unl-028-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Pyke, Dockside Butcher was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 883987 maps to official provider printing unl-028-219.
+- game: riftbound
+  cardmarket_product_id: 883988
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-028a-219
+  provider_art_id: unl-028a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Pyke, Dockside Butcher was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 883988 maps to official provider printing unl-028a-219.
+- game: riftbound
+  cardmarket_product_id: 883988
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-028a-219
+  provider_art_id: unl-028a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Pyke, Dockside Butcher was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 883988 maps to official provider printing unl-028a-219.
+- game: riftbound
+  cardmarket_product_id: 884026
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-060-219
+  provider_art_id: unl-060-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vilemaw was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884026 maps to official provider printing unl-060-219.
+- game: riftbound
+  cardmarket_product_id: 884026
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-060-219
+  provider_art_id: unl-060-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vilemaw was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884026 maps to official provider printing unl-060-219.
+- game: riftbound
+  cardmarket_product_id: 884027
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-060a-219
+  provider_art_id: unl-060a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vilemaw was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884027 maps to official provider printing unl-060a-219.
+- game: riftbound
+  cardmarket_product_id: 884027
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-060a-219
+  provider_art_id: unl-060a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vilemaw was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884027 maps to official provider printing unl-060a-219.
+- game: riftbound
+  cardmarket_product_id: 884097
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-118-219
+  provider_art_id: unl-118-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Elder Dragon was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884097 maps to official provider printing unl-118-219.
+- game: riftbound
+  cardmarket_product_id: 884097
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-118-219
+  provider_art_id: unl-118-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Elder Dragon was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884097 maps to official provider printing unl-118-219.
+- game: riftbound
+  cardmarket_product_id: 884098
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-118a-219
+  provider_art_id: unl-118a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Elder Dragon was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884098 maps to official provider printing unl-118a-219.
+- game: riftbound
+  cardmarket_product_id: 884098
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-118a-219
+  provider_art_id: unl-118a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Elder Dragon was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884098 maps to official provider printing unl-118a-219.
+- game: riftbound
+  cardmarket_product_id: 884101
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-120-219
+  provider_art_id: unl-120-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Rengar, Trophy Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884101 maps to official provider printing unl-120-219.
+- game: riftbound
+  cardmarket_product_id: 884101
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-120-219
+  provider_art_id: unl-120-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Rengar, Trophy Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884101 maps to official provider printing unl-120-219.
+- game: riftbound
+  cardmarket_product_id: 884102
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-120a-219
+  provider_art_id: unl-120a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Rengar, Trophy Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884102 maps to official provider printing unl-120a-219.
+- game: riftbound
+  cardmarket_product_id: 884102
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-120a-219
+  provider_art_id: unl-120a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Rengar, Trophy Hunter was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884102 maps to official provider printing unl-120a-219.
+- game: riftbound
+  cardmarket_product_id: 884131
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-147-219
+  provider_art_id: unl-147-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Baron Nashor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884131 maps to official provider printing unl-147-219.
+- game: riftbound
+  cardmarket_product_id: 884131
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-147-219
+  provider_art_id: unl-147-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Baron Nashor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884131 maps to official provider printing unl-147-219.
+- game: riftbound
+  cardmarket_product_id: 884132
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-147a-219
+  provider_art_id: unl-147a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Baron Nashor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884132 maps to official provider printing unl-147a-219.
+- game: riftbound
+  cardmarket_product_id: 884132
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-147a-219
+  provider_art_id: unl-147a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Baron Nashor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884132 maps to official provider printing unl-147a-219.
+- game: riftbound
+  cardmarket_product_id: 884136
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-150-219
+  provider_art_id: unl-150-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vex, Apathetic was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884136 maps to official provider printing unl-150-219.
+- game: riftbound
+  cardmarket_product_id: 884136
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-150-219
+  provider_art_id: unl-150-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vex, Apathetic was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884136 maps to official provider printing unl-150-219.
+- game: riftbound
+  cardmarket_product_id: 884137
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-150a-219
+  provider_art_id: unl-150a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vex, Apathetic was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884137 maps to official provider printing unl-150a-219.
+- game: riftbound
+  cardmarket_product_id: 884137
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-150a-219
+  provider_art_id: unl-150a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Vex, Apathetic was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884137 maps to official provider printing unl-150a-219.
+- game: riftbound
+  cardmarket_product_id: 884237
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-238-219
+  provider_art_id: unl-238-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket version ordering for Baron Nashor was reviewed against the official Riot Riftbound card-gallery collector sequence.
+  - Exact equal-cardinality variant family; product 884237 maps to official provider printing unl-238-219.
+- game: riftbound
+  cardmarket_product_id: 847499
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-299-298
+  provider_art_id: ogn-299-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Kai'Sa, Daughter of the Void were reviewed against Riot's official legend-card sequence.
+  - Product 847499 is the Showcase printing and maps to official provider printing ogn-299-298.
+- game: riftbound
+  cardmarket_product_id: 847500
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-299-star-298
+  provider_art_id: ogn-299-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Kai'Sa, Daughter of the Void were reviewed against Riot's official legend-card sequence.
+  - Product 847500 is the Signed Showcase printing and maps to official provider printing ogn-299-star-298.
+- game: riftbound
+  cardmarket_product_id: 847501
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-300-298
+  provider_art_id: ogn-300-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Volibear, Relentless Storm were reviewed against Riot's official legend-card sequence.
+  - Product 847501 is the Showcase printing and maps to official provider printing ogn-300-298.
+- game: riftbound
+  cardmarket_product_id: 847501
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-300-298
+  provider_art_id: ogn-300-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Volibear, Relentless Storm were reviewed against Riot's official legend-card sequence.
+  - Product 847501 is the Showcase printing and maps to official provider printing ogn-300-298.
+- game: riftbound
+  cardmarket_product_id: 847502
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-300-star-298
+  provider_art_id: ogn-300-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Volibear, Relentless Storm were reviewed against Riot's official legend-card sequence.
+  - Product 847502 is the Signed Showcase printing and maps to official provider printing ogn-300-star-298.
+- game: riftbound
+  cardmarket_product_id: 847502
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-300-star-298
+  provider_art_id: ogn-300-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Volibear, Relentless Storm were reviewed against Riot's official legend-card sequence.
+  - Product 847502 is the Signed Showcase printing and maps to official provider printing ogn-300-star-298.
+- game: riftbound
+  cardmarket_product_id: 847503
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-301-298
+  provider_art_id: ogn-301-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Jinx, Loose Cannon were reviewed against Riot's official legend-card sequence.
+  - Product 847503 is the Showcase printing and maps to official provider printing ogn-301-298.
+- game: riftbound
+  cardmarket_product_id: 847504
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-301-star-298
+  provider_art_id: ogn-301-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Jinx, Loose Cannon were reviewed against Riot's official legend-card sequence.
+  - Product 847504 is the Signed Showcase printing and maps to official provider printing ogn-301-star-298.
+- game: riftbound
+  cardmarket_product_id: 847504
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-301-star-298
+  provider_art_id: ogn-301-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Jinx, Loose Cannon were reviewed against Riot's official legend-card sequence.
+  - Product 847504 is the Signed Showcase printing and maps to official provider printing ogn-301-star-298.
+- game: riftbound
+  cardmarket_product_id: 847505
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-302-298
+  provider_art_id: ogn-302-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Darius, Hand of Noxus were reviewed against Riot's official legend-card sequence.
+  - Product 847505 is the Showcase printing and maps to official provider printing ogn-302-298.
+- game: riftbound
+  cardmarket_product_id: 847506
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-302-star-298
+  provider_art_id: ogn-302-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Darius, Hand of Noxus were reviewed against Riot's official legend-card sequence.
+  - Product 847506 is the Signed Showcase printing and maps to official provider printing ogn-302-star-298.
+- game: riftbound
+  cardmarket_product_id: 847506
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-302-star-298
+  provider_art_id: ogn-302-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Darius, Hand of Noxus were reviewed against Riot's official legend-card sequence.
+  - Product 847506 is the Signed Showcase printing and maps to official provider printing ogn-302-star-298.
+- game: riftbound
+  cardmarket_product_id: 847507
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-303-298
+  provider_art_id: ogn-303-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Ahri, Nine-Tailed Fox were reviewed against Riot's official legend-card sequence.
+  - Product 847507 is the Showcase printing and maps to official provider printing ogn-303-298.
+- game: riftbound
+  cardmarket_product_id: 847507
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-303-298
+  provider_art_id: ogn-303-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Ahri, Nine-Tailed Fox were reviewed against Riot's official legend-card sequence.
+  - Product 847507 is the Showcase printing and maps to official provider printing ogn-303-298.
+- game: riftbound
+  cardmarket_product_id: 847508
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-303-star-298
+  provider_art_id: ogn-303-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Ahri, Nine-Tailed Fox were reviewed against Riot's official legend-card sequence.
+  - Product 847508 is the Signed Showcase printing and maps to official provider printing ogn-303-star-298.
+- game: riftbound
+  cardmarket_product_id: 847509
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-304-298
+  provider_art_id: ogn-304-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Lee Sin, Blind Monk were reviewed against Riot's official legend-card sequence.
+  - Product 847509 is the Showcase printing and maps to official provider printing ogn-304-298.
+- game: riftbound
+  cardmarket_product_id: 847509
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-304-298
+  provider_art_id: ogn-304-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Lee Sin, Blind Monk were reviewed against Riot's official legend-card sequence.
+  - Product 847509 is the Showcase printing and maps to official provider printing ogn-304-298.
+- game: riftbound
+  cardmarket_product_id: 847510
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-304-star-298
+  provider_art_id: ogn-304-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Lee Sin, Blind Monk were reviewed against Riot's official legend-card sequence.
+  - Product 847510 is the Signed Showcase printing and maps to official provider printing ogn-304-star-298.
+- game: riftbound
+  cardmarket_product_id: 847510
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-304-star-298
+  provider_art_id: ogn-304-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Lee Sin, Blind Monk were reviewed against Riot's official legend-card sequence.
+  - Product 847510 is the Signed Showcase printing and maps to official provider printing ogn-304-star-298.
+- game: riftbound
+  cardmarket_product_id: 847511
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-305-298
+  provider_art_id: ogn-305-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Yasuo, Unforgiven were reviewed against Riot's official legend-card sequence.
+  - Product 847511 is the Showcase printing and maps to official provider printing ogn-305-298.
+- game: riftbound
+  cardmarket_product_id: 847511
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-305-298
+  provider_art_id: ogn-305-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Yasuo, Unforgiven were reviewed against Riot's official legend-card sequence.
+  - Product 847511 is the Showcase printing and maps to official provider printing ogn-305-298.
+- game: riftbound
+  cardmarket_product_id: 847512
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-305-star-298
+  provider_art_id: ogn-305-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Yasuo, Unforgiven were reviewed against Riot's official legend-card sequence.
+  - Product 847512 is the Signed Showcase printing and maps to official provider printing ogn-305-star-298.
+- game: riftbound
+  cardmarket_product_id: 847513
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-306-298
+  provider_art_id: ogn-306-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Leona, Radiant Dawn were reviewed against Riot's official legend-card sequence.
+  - Product 847513 is the Showcase printing and maps to official provider printing ogn-306-298.
+- game: riftbound
+  cardmarket_product_id: 847514
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-306-star-298
+  provider_art_id: ogn-306-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Leona, Radiant Dawn were reviewed against Riot's official legend-card sequence.
+  - Product 847514 is the Signed Showcase printing and maps to official provider printing ogn-306-star-298.
+- game: riftbound
+  cardmarket_product_id: 847514
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-306-star-298
+  provider_art_id: ogn-306-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Leona, Radiant Dawn were reviewed against Riot's official legend-card sequence.
+  - Product 847514 is the Signed Showcase printing and maps to official provider printing ogn-306-star-298.
+- game: riftbound
+  cardmarket_product_id: 847515
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-307-298
+  provider_art_id: ogn-307-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Teemo, Swift Scout were reviewed against Riot's official legend-card sequence.
+  - Product 847515 is the Showcase printing and maps to official provider printing ogn-307-298.
+- game: riftbound
+  cardmarket_product_id: 847515
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-307-298
+  provider_art_id: ogn-307-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Teemo, Swift Scout were reviewed against Riot's official legend-card sequence.
+  - Product 847515 is the Showcase printing and maps to official provider printing ogn-307-298.
+- game: riftbound
+  cardmarket_product_id: 847516
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-307-star-298
+  provider_art_id: ogn-307-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Teemo, Swift Scout were reviewed against Riot's official legend-card sequence.
+  - Product 847516 is the Signed Showcase printing and maps to official provider printing ogn-307-star-298.
+- game: riftbound
+  cardmarket_product_id: 847516
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-307-star-298
+  provider_art_id: ogn-307-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Teemo, Swift Scout were reviewed against Riot's official legend-card sequence.
+  - Product 847516 is the Signed Showcase printing and maps to official provider printing ogn-307-star-298.
+- game: riftbound
+  cardmarket_product_id: 847517
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-308-298
+  provider_art_id: ogn-308-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Viktor, Herald of the Arcane were reviewed against Riot's official legend-card sequence.
+  - Product 847517 is the Showcase printing and maps to official provider printing ogn-308-298.
+- game: riftbound
+  cardmarket_product_id: 847517
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-308-298
+  provider_art_id: ogn-308-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Viktor, Herald of the Arcane were reviewed against Riot's official legend-card sequence.
+  - Product 847517 is the Showcase printing and maps to official provider printing ogn-308-298.
+- game: riftbound
+  cardmarket_product_id: 847518
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-308-star-298
+  provider_art_id: ogn-308-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Viktor, Herald of the Arcane were reviewed against Riot's official legend-card sequence.
+  - Product 847518 is the Signed Showcase printing and maps to official provider printing ogn-308-star-298.
+- game: riftbound
+  cardmarket_product_id: 847519
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-309-298
+  provider_art_id: ogn-309-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Miss Fortune, Bounty Hunter were reviewed against Riot's official legend-card sequence.
+  - Product 847519 is the Showcase printing and maps to official provider printing ogn-309-298.
+- game: riftbound
+  cardmarket_product_id: 847519
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-309-298
+  provider_art_id: ogn-309-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Miss Fortune, Bounty Hunter were reviewed against Riot's official legend-card sequence.
+  - Product 847519 is the Showcase printing and maps to official provider printing ogn-309-298.
+- game: riftbound
+  cardmarket_product_id: 847520
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-309-star-298
+  provider_art_id: ogn-309-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Miss Fortune, Bounty Hunter were reviewed against Riot's official legend-card sequence.
+  - Product 847520 is the Signed Showcase printing and maps to official provider printing ogn-309-star-298.
+- game: riftbound
+  cardmarket_product_id: 847520
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-309-star-298
+  provider_art_id: ogn-309-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Miss Fortune, Bounty Hunter were reviewed against Riot's official legend-card sequence.
+  - Product 847520 is the Signed Showcase printing and maps to official provider printing ogn-309-star-298.
+- game: riftbound
+  cardmarket_product_id: 847521
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-310-298
+  provider_art_id: ogn-310-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Sett, The Boss were reviewed against Riot's official legend-card sequence.
+  - Product 847521 is the Showcase printing and maps to official provider printing ogn-310-298.
+- game: riftbound
+  cardmarket_product_id: 847521
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-310-298
+  provider_art_id: ogn-310-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Sett, The Boss were reviewed against Riot's official legend-card sequence.
+  - Product 847521 is the Showcase printing and maps to official provider printing ogn-310-298.
+- game: riftbound
+  cardmarket_product_id: 847522
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-310-star-298
+  provider_art_id: ogn-310-star-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Origins spoiler version ordering and price tier for Sett, The Boss were reviewed against Riot's official legend-card sequence.
+  - Product 847522 is the Signed Showcase printing and maps to official provider printing ogn-310-star-298.
+- game: riftbound
+  cardmarket_product_id: 866987
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-240-221
+  provider_art_id: sfd-240-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Rumble, Mechanized Menace were reviewed against Riot's official legend-card sequence.
+  - Product 866987 is the Showcase printing and maps to official provider printing sfd-240-221.
+- game: riftbound
+  cardmarket_product_id: 866987
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-240-221
+  provider_art_id: sfd-240-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Rumble, Mechanized Menace were reviewed against Riot's official legend-card sequence.
+  - Product 866987 is the Showcase printing and maps to official provider printing sfd-240-221.
+- game: riftbound
+  cardmarket_product_id: 866988
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-241-221
+  provider_art_id: sfd-241-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Lucian, Purifier were reviewed against Riot's official legend-card sequence.
+  - Product 866988 is the Showcase printing and maps to official provider printing sfd-241-221.
+- game: riftbound
+  cardmarket_product_id: 866989
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-242-221
+  provider_art_id: sfd-242-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Draven, Glorious Executioner were reviewed against Riot's official legend-card sequence.
+  - Product 866989 is the Showcase printing and maps to official provider printing sfd-242-221.
+- game: riftbound
+  cardmarket_product_id: 866989
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-242-221
+  provider_art_id: sfd-242-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Draven, Glorious Executioner were reviewed against Riot's official legend-card sequence.
+  - Product 866989 is the Showcase printing and maps to official provider printing sfd-242-221.
+- game: riftbound
+  cardmarket_product_id: 866990
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-243-221
+  provider_art_id: sfd-243-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Rek'Sai, Void Burrower were reviewed against Riot's official legend-card sequence.
+  - Product 866990 is the Showcase printing and maps to official provider printing sfd-243-221.
+- game: riftbound
+  cardmarket_product_id: 866990
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-243-221
+  provider_art_id: sfd-243-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Rek'Sai, Void Burrower were reviewed against Riot's official legend-card sequence.
+  - Product 866990 is the Showcase printing and maps to official provider printing sfd-243-221.
+- game: riftbound
+  cardmarket_product_id: 866991
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-244-221
+  provider_art_id: sfd-244-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Ornn, Fire Below the Mountain were reviewed against Riot's official legend-card sequence.
+  - Product 866991 is the Showcase printing and maps to official provider printing sfd-244-221.
+- game: riftbound
+  cardmarket_product_id: 866992
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-245-221
+  provider_art_id: sfd-245-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Jax, Grandmaster at Arms were reviewed against Riot's official legend-card sequence.
+  - Product 866992 is the Showcase printing and maps to official provider printing sfd-245-221.
+- game: riftbound
+  cardmarket_product_id: 866993
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-246-221
+  provider_art_id: sfd-246-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Irelia, Blade Dancer were reviewed against Riot's official legend-card sequence.
+  - Product 866993 is the Showcase printing and maps to official provider printing sfd-246-221.
+- game: riftbound
+  cardmarket_product_id: 866993
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-246-221
+  provider_art_id: sfd-246-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Irelia, Blade Dancer were reviewed against Riot's official legend-card sequence.
+  - Product 866993 is the Showcase printing and maps to official provider printing sfd-246-221.
+- game: riftbound
+  cardmarket_product_id: 866994
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-247-221
+  provider_art_id: sfd-247-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Azir, Emperor of the Sands were reviewed against Riot's official legend-card sequence.
+  - Product 866994 is the Showcase printing and maps to official provider printing sfd-247-221.
+- game: riftbound
+  cardmarket_product_id: 866994
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-247-221
+  provider_art_id: sfd-247-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Azir, Emperor of the Sands were reviewed against Riot's official legend-card sequence.
+  - Product 866994 is the Showcase printing and maps to official provider printing sfd-247-221.
+- game: riftbound
+  cardmarket_product_id: 866995
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-248-221
+  provider_art_id: sfd-248-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Ezreal, Prodigal Explorer were reviewed against Riot's official legend-card sequence.
+  - Product 866995 is the Showcase printing and maps to official provider printing sfd-248-221.
+- game: riftbound
+  cardmarket_product_id: 866996
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-249-221
+  provider_art_id: sfd-249-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Renata Glasc, Chem-Baroness were reviewed against Riot's official legend-card sequence.
+  - Product 866996 is the Showcase printing and maps to official provider printing sfd-249-221.
+- game: riftbound
+  cardmarket_product_id: 866996
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-249-221
+  provider_art_id: sfd-249-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Renata Glasc, Chem-Baroness were reviewed against Riot's official legend-card sequence.
+  - Product 866996 is the Showcase printing and maps to official provider printing sfd-249-221.
+- game: riftbound
+  cardmarket_product_id: 866997
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-250-221
+  provider_art_id: sfd-250-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Sivir, Battle Mistress were reviewed against Riot's official legend-card sequence.
+  - Product 866997 is the Showcase printing and maps to official provider printing sfd-250-221.
+- game: riftbound
+  cardmarket_product_id: 866997
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-250-221
+  provider_art_id: sfd-250-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Sivir, Battle Mistress were reviewed against Riot's official legend-card sequence.
+  - Product 866997 is the Showcase printing and maps to official provider printing sfd-250-221.
+- game: riftbound
+  cardmarket_product_id: 866998
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-251-221
+  provider_art_id: sfd-251-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Fiora, Grand Duelist were reviewed against Riot's official legend-card sequence.
+  - Product 866998 is the Showcase printing and maps to official provider printing sfd-251-221.
+- game: riftbound
+  cardmarket_product_id: 866998
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-251-221
+  provider_art_id: sfd-251-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Spiritforged spoiler version ordering and price tier for Fiora, Grand Duelist were reviewed against Riot's official legend-card sequence.
+  - Product 866998 is the Showcase printing and maps to official provider printing sfd-251-221.
+- game: riftbound
+  cardmarket_product_id: 884218
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-226-219
+  provider_art_id: unl-226-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Jhin, Virtuoso were reviewed against Riot's official legend-card sequence.
+  - Product 884218 is the Showcase printing and maps to official provider printing unl-226-219.
+- game: riftbound
+  cardmarket_product_id: 884218
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-226-219
+  provider_art_id: unl-226-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Jhin, Virtuoso were reviewed against Riot's official legend-card sequence.
+  - Product 884218 is the Showcase printing and maps to official provider printing unl-226-219.
+- game: riftbound
+  cardmarket_product_id: 884219
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-227-219
+  provider_art_id: unl-227-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Rengar, Pridestalker were reviewed against Riot's official legend-card sequence.
+  - Product 884219 is the Showcase printing and maps to official provider printing unl-227-219.
+- game: riftbound
+  cardmarket_product_id: 884220
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-228-219
+  provider_art_id: unl-228-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Pyke, Bloodharbor Ripper were reviewed against Riot's official legend-card sequence.
+  - Product 884220 is the Showcase printing and maps to official provider printing unl-228-219.
+- game: riftbound
+  cardmarket_product_id: 884220
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-228-219
+  provider_art_id: unl-228-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Pyke, Bloodharbor Ripper were reviewed against Riot's official legend-card sequence.
+  - Product 884220 is the Showcase printing and maps to official provider printing unl-228-219.
+- game: riftbound
+  cardmarket_product_id: 884221
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-229-219
+  provider_art_id: unl-229-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vi, Piltover Enforcer were reviewed against Riot's official legend-card sequence.
+  - Product 884221 is the Showcase printing and maps to official provider printing unl-229-219.
+- game: riftbound
+  cardmarket_product_id: 884221
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-229-219
+  provider_art_id: unl-229-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vi, Piltover Enforcer were reviewed against Riot's official legend-card sequence.
+  - Product 884221 is the Showcase printing and maps to official provider printing unl-229-219.
+- game: riftbound
+  cardmarket_product_id: 884222
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-230-219
+  provider_art_id: unl-230-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Lillia, Bashful Bloom were reviewed against Riot's official legend-card sequence.
+  - Product 884222 is the Showcase printing and maps to official provider printing unl-230-219.
+- game: riftbound
+  cardmarket_product_id: 884222
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-230-219
+  provider_art_id: unl-230-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Lillia, Bashful Bloom were reviewed against Riot's official legend-card sequence.
+  - Product 884222 is the Showcase printing and maps to official provider printing unl-230-219.
+- game: riftbound
+  cardmarket_product_id: 884223
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-231-219
+  provider_art_id: unl-231-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Master Yi, Wuju Master were reviewed against Riot's official legend-card sequence.
+  - Product 884223 is the Showcase printing and maps to official provider printing unl-231-219.
+- game: riftbound
+  cardmarket_product_id: 884223
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-231-219
+  provider_art_id: unl-231-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Master Yi, Wuju Master were reviewed against Riot's official legend-card sequence.
+  - Product 884223 is the Showcase printing and maps to official provider printing unl-231-219.
+- game: riftbound
+  cardmarket_product_id: 884224
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-231-star-219
+  provider_art_id: unl-231-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Master Yi, Wuju Master were reviewed against Riot's official legend-card sequence.
+  - Product 884224 is the Signed Showcase printing and maps to official provider printing unl-231-star-219.
+- game: riftbound
+  cardmarket_product_id: 884225
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-232-219
+  provider_art_id: unl-232-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vex, Gloomist were reviewed against Riot's official legend-card sequence.
+  - Product 884225 is the Showcase printing and maps to official provider printing unl-232-219.
+- game: riftbound
+  cardmarket_product_id: 884225
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-232-219
+  provider_art_id: unl-232-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vex, Gloomist were reviewed against Riot's official legend-card sequence.
+  - Product 884225 is the Showcase printing and maps to official provider printing unl-232-219.
+- game: riftbound
+  cardmarket_product_id: 884226
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-232-star-219
+  provider_art_id: unl-232-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vex, Gloomist were reviewed against Riot's official legend-card sequence.
+  - Product 884226 is the Signed Showcase printing and maps to official provider printing unl-232-star-219.
+- game: riftbound
+  cardmarket_product_id: 884226
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-232-star-219
+  provider_art_id: unl-232-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vex, Gloomist were reviewed against Riot's official legend-card sequence.
+  - Product 884226 is the Signed Showcase printing and maps to official provider printing unl-232-star-219.
+- game: riftbound
+  cardmarket_product_id: 884227
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-233-219
+  provider_art_id: unl-233-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Ivern, Green Father were reviewed against Riot's official legend-card sequence.
+  - Product 884227 is the Showcase printing and maps to official provider printing unl-233-219.
+- game: riftbound
+  cardmarket_product_id: 884227
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-233-219
+  provider_art_id: unl-233-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Ivern, Green Father were reviewed against Riot's official legend-card sequence.
+  - Product 884227 is the Showcase printing and maps to official provider printing unl-233-219.
+- game: riftbound
+  cardmarket_product_id: 884228
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-233-star-219
+  provider_art_id: unl-233-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Ivern, Green Father were reviewed against Riot's official legend-card sequence.
+  - Product 884228 is the Signed Showcase printing and maps to official provider printing unl-233-star-219.
+- game: riftbound
+  cardmarket_product_id: 884229
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-234-219
+  provider_art_id: unl-234-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Diana, Scorn of the Moon were reviewed against Riot's official legend-card sequence.
+  - Product 884229 is the Showcase printing and maps to official provider printing unl-234-219.
+- game: riftbound
+  cardmarket_product_id: 884229
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-234-219
+  provider_art_id: unl-234-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Diana, Scorn of the Moon were reviewed against Riot's official legend-card sequence.
+  - Product 884229 is the Showcase printing and maps to official provider printing unl-234-219.
+- game: riftbound
+  cardmarket_product_id: 884230
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-234-star-219
+  provider_art_id: unl-234-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Diana, Scorn of the Moon were reviewed against Riot's official legend-card sequence.
+  - Product 884230 is the Signed Showcase printing and maps to official provider printing unl-234-star-219.
+- game: riftbound
+  cardmarket_product_id: 884230
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-234-star-219
+  provider_art_id: unl-234-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Diana, Scorn of the Moon were reviewed against Riot's official legend-card sequence.
+  - Product 884230 is the Signed Showcase printing and maps to official provider printing unl-234-star-219.
+- game: riftbound
+  cardmarket_product_id: 884231
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-235-219
+  provider_art_id: unl-235-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Leblanc, Deceiver were reviewed against Riot's official legend-card sequence.
+  - Product 884231 is the Showcase printing and maps to official provider printing unl-235-219.
+- game: riftbound
+  cardmarket_product_id: 884231
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-235-219
+  provider_art_id: unl-235-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Leblanc, Deceiver were reviewed against Riot's official legend-card sequence.
+  - Product 884231 is the Showcase printing and maps to official provider printing unl-235-219.
+- game: riftbound
+  cardmarket_product_id: 884232
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-235-star-219
+  provider_art_id: unl-235-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Leblanc, Deceiver were reviewed against Riot's official legend-card sequence.
+  - Product 884232 is the Signed Showcase printing and maps to official provider printing unl-235-star-219.
+- game: riftbound
+  cardmarket_product_id: 884232
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-235-star-219
+  provider_art_id: unl-235-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Leblanc, Deceiver were reviewed against Riot's official legend-card sequence.
+  - Product 884232 is the Signed Showcase printing and maps to official provider printing unl-235-star-219.
+- game: riftbound
+  cardmarket_product_id: 884233
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-236-219
+  provider_art_id: unl-236-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Kha'Zix, Voidreaver were reviewed against Riot's official legend-card sequence.
+  - Product 884233 is the Showcase printing and maps to official provider printing unl-236-219.
+- game: riftbound
+  cardmarket_product_id: 884233
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-236-219
+  provider_art_id: unl-236-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Kha'Zix, Voidreaver were reviewed against Riot's official legend-card sequence.
+  - Product 884233 is the Showcase printing and maps to official provider printing unl-236-219.
+- game: riftbound
+  cardmarket_product_id: 884234
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-236-star-219
+  provider_art_id: unl-236-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Kha'Zix, Voidreaver were reviewed against Riot's official legend-card sequence.
+  - Product 884234 is the Signed Showcase printing and maps to official provider printing unl-236-star-219.
+- game: riftbound
+  cardmarket_product_id: 884235
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-237-219
+  provider_art_id: unl-237-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Poppy, Keeper of the Hammer were reviewed against Riot's official legend-card sequence.
+  - Product 884235 is the Showcase printing and maps to official provider printing unl-237-219.
+- game: riftbound
+  cardmarket_product_id: 884236
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-237-star-219
+  provider_art_id: unl-237-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Poppy, Keeper of the Hammer were reviewed against Riot's official legend-card sequence.
+  - Product 884236 is the Signed Showcase printing and maps to official provider printing unl-237-star-219.
+- game: riftbound
+  cardmarket_product_id: 885568
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-229-star-219
+  provider_art_id: unl-229-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Vi, Piltover Enforcer were reviewed against Riot's official legend-card sequence.
+  - Product 885568 is the Signed Showcase printing and maps to official provider printing unl-229-star-219.
+- game: riftbound
+  cardmarket_product_id: 885569
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-230-star-219
+  provider_art_id: unl-230-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Lillia, Bashful Bloom were reviewed against Riot's official legend-card sequence.
+  - Product 885569 is the Signed Showcase printing and maps to official provider printing unl-230-star-219.
+- game: riftbound
+  cardmarket_product_id: 885569
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-230-star-219
+  provider_art_id: unl-230-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Lillia, Bashful Bloom were reviewed against Riot's official legend-card sequence.
+  - Product 885569 is the Signed Showcase printing and maps to official provider printing unl-230-star-219.
+- game: riftbound
+  cardmarket_product_id: 885570
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-227-star-219
+  provider_art_id: unl-227-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Rengar, Pridestalker were reviewed against Riot's official legend-card sequence.
+  - Product 885570 is the Signed Showcase printing and maps to official provider printing unl-227-star-219.
+- game: riftbound
+  cardmarket_product_id: 885571
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-228-star-219
+  provider_art_id: unl-228-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Pyke, Bloodharbor Ripper were reviewed against Riot's official legend-card sequence.
+  - Product 885571 is the Signed Showcase printing and maps to official provider printing unl-228-star-219.
+- game: riftbound
+  cardmarket_product_id: 885572
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-226-star-219
+  provider_art_id: unl-226-star-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket Unleashed spoiler version ordering and price tier for Jhin, Virtuoso were reviewed against Riot's official legend-card sequence.
+  - Product 885572 is the Signed Showcase printing and maps to official provider printing unl-226-star-219.
+- game: riftbound
+  cardmarket_product_id: 847265
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-119a-298
+  provider_art_id: ogn-119a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Ahri, Inquisitive V.2 as the Origins Showcase printing; Riot assigns that artwork OGN-119a/298.
+- game: riftbound
+  cardmarket_product_id: 847265
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-119a-298
+  provider_art_id: ogn-119a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Ahri, Inquisitive V.2 as the Origins Showcase printing; Riot assigns that artwork OGN-119a/298.
+- game: riftbound
+  cardmarket_product_id: 847327
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-162a-298
+  provider_art_id: ogn-162a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Miss Fortune, Captain V.2 as the Origins Showcase printing; Riot assigns that artwork OGN-162a/298.
+- game: riftbound
+  cardmarket_product_id: 847366
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: ogn-197a-298
+  provider_art_id: ogn-197a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Teemo, Scout V.2 as the Origins Showcase printing; Riot assigns that artwork OGN-197a/298.
+- game: riftbound
+  cardmarket_product_id: 847366
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogn-197a-298
+  provider_art_id: ogn-197a-298
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Teemo, Scout V.2 as the Origins Showcase printing; Riot assigns that artwork OGN-197a/298.
+- game: riftbound
+  cardmarket_product_id: 847541
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: ogs-019-024
+  provider_art_id: ogs-019-024
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies this product as the Proving Grounds printing of Master Yi, Wuju Bladesman; Riot lists it as Wuju Bladesman - Starter, OGS-019/024.
+- game: riftbound
+  cardmarket_product_id: 866971
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-224-221
+  provider_art_id: sfd-224-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Aphelios, Exalted V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-224/221.
+- game: riftbound
+  cardmarket_product_id: 867003
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-224-star-221
+  provider_art_id: sfd-224-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Aphelios, Exalted V.3 as the Signed Showcase printing; Riot assigns that artwork SFD-224*/221.
+- game: riftbound
+  cardmarket_product_id: 867003
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-224-star-221
+  provider_art_id: sfd-224-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Aphelios, Exalted V.3 as the Signed Showcase printing; Riot assigns that artwork SFD-224*/221.
+- game: riftbound
+  cardmarket_product_id: 866975
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-228-221
+  provider_art_id: sfd-228-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Bard, Mercurial V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-228/221.
+- game: riftbound
+  cardmarket_product_id: 866975
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-228-221
+  provider_art_id: sfd-228-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Bard, Mercurial V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-228/221.
+- game: riftbound
+  cardmarket_product_id: 867006
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-228-star-221
+  provider_art_id: sfd-228-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Bard, Mercurial V.3 as the Signed Showcase printing; Riot assigns that artwork SFD-228*/221.
+- game: riftbound
+  cardmarket_product_id: 866980
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-233-221
+  provider_art_id: sfd-233-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Yone, Blademaster V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-233/221.
+- game: riftbound
+  cardmarket_product_id: 866980
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-233-221
+  provider_art_id: sfd-233-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Yone, Blademaster V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-233/221.
+- game: riftbound
+  cardmarket_product_id: 867009
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-233-star-221
+  provider_art_id: sfd-233-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Yone, Blademaster V.3 as the Signed Showcase printing; Riot assigns that artwork SFD-233*/221.
+- game: riftbound
+  cardmarket_product_id: 866986
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-239-221
+  provider_art_id: sfd-239-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Soraka, Wanderer V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-239/221.
+- game: riftbound
+  cardmarket_product_id: 866986
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: sfd-239-221
+  provider_art_id: sfd-239-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Soraka, Wanderer V.2 as the Spiritforged Showcase printing; Riot assigns that artwork SFD-239/221.
+- game: riftbound
+  cardmarket_product_id: 867013
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: sfd-239-star-221
+  provider_art_id: sfd-239-star-221
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Soraka, Wanderer V.3 as the Signed Showcase printing; Riot assigns that artwork SFD-239*/221.
+- game: riftbound
+  cardmarket_product_id: 883980
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-022a-219
+  provider_art_id: unl-022a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Jhin, Murderous Artist V.2 as the Unleashed Showcase printing; Riot assigns that artwork UNL-022a/219.
+- game: riftbound
+  cardmarket_product_id: 884165
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-176a-219
+  provider_art_id: unl-176a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Vi, Peacekeeper V.2 as the Unleashed Showcase printing; Riot assigns that artwork UNL-176a/219.
+- game: riftbound
+  cardmarket_product_id: 884171
+  finish: foil
+  provider: riot_riftbound
+  provider_card_id: unl-179a-219
+  provider_art_id: unl-179a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Rift Herald V.2 as the Unleashed Showcase printing; Riot assigns that artwork UNL-179a/219.
+- game: riftbound
+  cardmarket_product_id: 884171
+  finish: nonfoil
+  provider: riot_riftbound
+  provider_card_id: unl-179a-219
+  provider_art_id: unl-179a-219
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket identifies Rift Herald V.2 as the Unleashed Showcase printing; Riot assigns that artwork UNL-179a/219.

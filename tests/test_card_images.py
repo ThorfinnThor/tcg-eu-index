@@ -1258,6 +1258,132 @@ def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:
     assert record.faces[0].normal.url == "https://cmsassets.rgpub.io/card.png"
 
 
+def test_reviewed_riftbound_variant_overrides_preserve_version_order() -> None:
+    overrides = load_manual_overrides(
+        Path("packages/indexengine/config/card-images/overrides.yaml")
+    )
+    riftbound = {
+        key: override
+        for key, override in overrides.items()
+        if override.game == "riftbound"
+    }
+
+    assert len(riftbound) == 179
+    assert len({override.cardmarket_product_id for override in riftbound.values()}) == 112
+    assert all(override.provider == "riot_riftbound" for override in riftbound.values())
+
+    product_to_printing = {
+        override.cardmarket_product_id: override.provider_card_id
+        for override in riftbound.values()
+    }
+    assert product_to_printing[847156] == "ogn-039-298"
+    assert product_to_printing[847157] == "ogn-039a-298"
+    assert product_to_printing[866785] == "sfd-057-221"
+    assert product_to_printing[866786] == "sfd-057a-221"
+    assert product_to_printing[866972] == "sfd-225-221"
+    assert product_to_printing[867004] == "sfd-225-star-221"
+    assert product_to_printing[884131] == "unl-147-219"
+    assert product_to_printing[884132] == "unl-147a-219"
+    assert product_to_printing[884237] == "unl-238-219"
+    assert product_to_printing[847499] == "ogn-299-298"
+    assert product_to_printing[847500] == "ogn-299-star-298"
+    assert product_to_printing[866987] == "sfd-240-221"
+    assert product_to_printing[847265] == "ogn-119a-298"
+    assert product_to_printing[847541] == "ogs-019-024"
+    assert product_to_printing[866971] == "sfd-224-221"
+    assert product_to_printing[867003] == "sfd-224-star-221"
+    assert product_to_printing[883980] == "unl-022a-219"
+    assert product_to_printing[884171] == "unl-179a-219"
+    assert product_to_printing[884218] == "unl-226-219"
+    assert product_to_printing[885572] == "unl-226-star-219"
+
+
+@pytest.mark.parametrize(
+    ("provider_name", "provider_id", "source_name"),
+    [
+        ("Daughter of the Void", "ogn-299-298", "Kai'Sa, Daughter of the Void"),
+        (
+            "Wuju Bladesman - Starter",
+            "ogs-019-024",
+            "Master Yi, Wuju Bladesman",
+        ),
+    ],
+)
+def test_manual_override_accepts_riftbound_champion_legend_title(
+    provider_name: str,
+    provider_id: str,
+    source_name: str,
+) -> None:
+    page = {
+        "props": {
+            "pageProps": {
+                "cards": [
+                    {
+                        "id": provider_id,
+                        "name": provider_name,
+                        "publicCode": "OGN-299/298",
+                        "set": {"value": {"id": "OGN", "label": "Origins"}},
+                        "rarity": {"value": {"label": "Showcase"}},
+                        "cardImage": {"url": "https://cmsassets.rgpub.io/kaisa.png"},
+                    }
+                ]
+            }
+        }
+    }
+    raw = (
+        '<script id="__NEXT_DATA__" type="application/json">'
+        + json.dumps(page)
+        + "</script>"
+    ).encode()
+    record = parse_riot_riftbound_page(raw)[0]
+    snapshot = CatalogSnapshot(
+        provider="riot_riftbound",
+        game="riftbound",
+        snapshot_id="riftbound-reviewed-legend-title",
+        fetched_at="2026-08-31T00:00:00+00:00",
+        source_url="https://playriftbound.com/en-us/card-gallery/",
+        source_version="test",
+        raw_sha256="f" * 64,
+        records=(record,),
+    )
+    identity = replace(
+        _identity(product_id=847499),
+        game="riftbound",
+        source_row_key=source_row_key("riftbound", 847499, "foil"),
+        cardmarket_product_id=847499,
+        cardmarket_name_raw=source_name,
+        name_normalized=normalize_card_name(source_name),
+        collector_number_raw=None,
+        collector_number_canonical=None,
+        finish="foil",
+    )
+    override = ManualCardImageOverride(
+        source_row_key=identity.source_row_key,
+        game="riftbound",
+        cardmarket_product_id=847499,
+        finish="foil",
+        provider="riot_riftbound",
+        provider_card_id=provider_id,
+        provider_art_id=provider_id,
+        reviewed_at="2026-08-31",
+        evidence=("reviewed against the exact Cardmarket version",),
+    )
+    policy = replace(
+        _policy(), provider="riot_riftbound", games=("riftbound",)
+    )
+
+    matches, assets = match_catalog_identities(
+        [identity],
+        snapshot,
+        policy,
+        manual_overrides={identity.source_row_key: override},
+    )
+
+    assert matches[0].status == "manual"
+    assert matches[0].provider_card_id == provider_id
+    assert matches[0].asset_id in assets
+
+
 class _Response:
     def __init__(self, payload: object, *, headers: dict[str, str] | None = None) -> None:
         self.content = payload if isinstance(payload, bytes) else json.dumps(payload).encode()
