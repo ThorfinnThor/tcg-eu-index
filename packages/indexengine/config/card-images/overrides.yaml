@@ -10982,3 +10982,3081 @@ mappings:
   evidence:
   - Cardmarket reference image https://product-images.s3.cardmarket.com/1611/BT-25/886295/886295.jpg visually matched to the active Digimon catalogue artwork.
   - Normalized RGB RMS 80.117 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885786
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_2eb1fa4c7ab0498b8d4cfcd28f56a8cf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885786/885786.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.812; runner-up 41.345 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799160
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b29e4a26e9324724aab37e97a7738476
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799160/799160.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 19.251; runner-up 88.564 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729218
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_04bca46a8e2d4e9ba0fbdbfc6c99e51e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729218/729218.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 50.103; runner-up 71.771 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757416
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_0a9db863f78c46429d3f1835d046bb2e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757416/757416.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 18.463; runner-up 52.406 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745479
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e08d7a85c4e84f1e83a7521ff9c15a89
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745479/745479.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.384; runner-up 74.886 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871435
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_580ca4f029554dd68409aac983fdae69
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871435/871435.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.229; runner-up 84.995 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885812
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c4e66047e01c49f4bedb6c185d0af90a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885812/885812.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.620; runner-up 84.943 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856275
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3c235410b79145c080fa8e3b000a2c60
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856275/856275.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.796; runner-up 86.890 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885814
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_acf86cd5ee4e434fac91134e9ecf07c5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885814/885814.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.341; runner-up 84.279 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844001
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_535bf9178837443f894f45d8c71045a0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844001/844001.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.630; runner-up 74.569 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781834
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e382f2cee40343d7ae3faed897045a66
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781834/781834.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.021; runner-up 91.479 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770408
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6155d5f7f7da4f3da02d755d51f10fa7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770408/770408.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.006; runner-up 71.356 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844186
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_f5d62175b09243eda1bf9f34ea01d884
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844186/844186.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.095; runner-up 88.574 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871198
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b1aa36e48c8e4041b07e30efb7837fa3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871198/871198.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.772; runner-up 94.850 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885821
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_baeb30c2d1dd4756b259daeb2833fad4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885821/885821.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.924; runner-up 80.143 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826552
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_cf079ada81bd48cdb9290647f227982c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826552/826552.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.617; runner-up 89.502 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840560
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_be9c85638bda44878c44cf4cc7e7cfb0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840560/840560.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.650; runner-up 86.809 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844179
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_69d9b22e10244e2fb65ffbdb5f99da83
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844179/844179.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.774; runner-up 90.216 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729404
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b42271147bf14a5e89d33571e64abb6d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729404/729404.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.213; runner-up 88.503 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840563
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_77b92f4bb7d2460ea85b9d547cb8e72f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840563/840563.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.725; runner-up 109.299 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814248
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_434537e486234e2095f03c19628e07d4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814248/814248.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.056; runner-up 92.801 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844173
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a78a6d864bae48dca06ed1dc25e75e3f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844173/844173.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 27.339; runner-up 58.435 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770397
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b20587f1945e42d59b750f9b69cc4a6b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770397/770397.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.470; runner-up 98.922 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770407
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_016db7e8b21348aca4b407fb6d2ce26d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770407/770407.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 71.221; runner-up 84.136 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799170
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c343d1fc29f3491f95bb460c90e081a7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799170/799170.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 50.963; runner-up 92.827 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770412
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8ac9f95c19af4213b7c6aed341965206
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770412/770412.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.454; runner-up 82.260 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871430
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_8ef1d474eb68402e8d35e2aa3bce689a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871430/871430.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.511; runner-up 89.250 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729395
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_cbc18e77d7ec4d50bf19650a9a559686
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729395/729395.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.584; runner-up 81.195 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799163
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_865641f3cac34a65a36bb2404f4e39dd
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799163/799163.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.884; runner-up 92.227 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757401
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_ae42b2ab4e074f3e91c29d4ba2c3e601
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757401/757401.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.044; runner-up 69.752 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781839
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ad336bbf94b74813aa25312a57af4525
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781839/781839.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.783; runner-up 90.031 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871408
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d8dddac12b0749ba9c6510af447895bd
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871408/871408.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 7.036; runner-up 39.659 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729396
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5739e1f6076840cd901a1bc283ca6e96
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729396/729396.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 41.698; runner-up 85.032 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814252
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6a4c5fe1b3b74110acd16d725f8cc3f6
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814252/814252.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.946; runner-up 70.913 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826548
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7f8ab8154a444fb69a3eed9c7647b623
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826548/826548.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.666; runner-up 89.712 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799154
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_60630688715e45079236d447087a9a83
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799154/799154.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 42.565; runner-up 84.691 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856266
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ed9fc60aa63a4eafa4116188e41910f2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856266/856266.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.497; runner-up 80.730 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871440
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9652fdf2822645ee91302352c74c9d6a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871440/871440.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.304; runner-up 98.108 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781837
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ca78ff510359490a862b871b577a5fec
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781837/781837.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.294; runner-up 95.565 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729399
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7c621010e3e6471d9916eee4bcd0b11d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729399/729399.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.029; runner-up 71.891 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844159
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d292fcaa144d4f739bda2c14948da2ce
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844159/844159.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 27.115; runner-up 53.793 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729400
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_f839f8a7cb9a47ae962503f3ea69bec5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729400/729400.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.999; runner-up 88.544 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814250
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c43f19388b414266aeddb6cd78f7c020
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814250/814250.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.565; runner-up 77.927 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856281
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4656262d1cbc478aab92978dc7729663
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856281/856281.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.370; runner-up 82.757 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871410
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_899fe35731aa4f609bb72a19d7e831c8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871410/871410.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.307; runner-up 53.455 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781528
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_74f050d47ef34391ba29b8c521450dac
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781528/781528.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.196; runner-up 94.472 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770401
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_45acf301d7e2469fb961cc1f06bd2889
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770401/770401.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.217; runner-up 70.958 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757412
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7ad03b4873f042bcae4da820a7061ba4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757412/757412.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.051; runner-up 76.633 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745483
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_42ef053d7aab445fa7b0a2bf2e028864
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745483/745483.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.880; runner-up 73.532 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729393
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_a9c86e6316084d76a03b32be95977091
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729393/729393.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.865; runner-up 89.953 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745473
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_4cf391db31ba468f948bad5a20b0bc16
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745473/745473.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.384; runner-up 75.741 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757412
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7ad03b4873f042bcae4da820a7061ba4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757412/757412.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.051; runner-up 76.633 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729394
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_35c968e4b25945e897940860221f9d51
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729394/729394.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.451; runner-up 97.026 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844178
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c51b6a26015b45f298d1664787f37234
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844178/844178.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.350; runner-up 83.752 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757410
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b5e74b533270492982dff9472aee8664
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757410/757410.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.179; runner-up 73.295 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757408
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a1af7dad15b64d31a696f7bbb49bfe92
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757408/757408.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 79.498; runner-up 89.579 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757405
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5a2ba6e63b07496d96a17d2565b2a1db
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757405/757405.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.008; runner-up 67.528 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770411
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_94501fb9ecad49e9a81cd51f7c31dac7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770411/770411.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.805; runner-up 79.280 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757406
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_2e1d43823fc642549ba92787523ce17f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757406/757406.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.801; runner-up 76.703 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856258
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7101d6f7aaba488e9a508b0d40172743
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856258/856258.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.110; runner-up 41.986 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826544
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5615e8aef96941acb0e5cf1cfc8988c0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826544/826544.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 26.367; runner-up 99.025 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871408
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_d8dddac12b0749ba9c6510af447895bd
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871408/871408.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 7.036; runner-up 39.659 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770405
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3088ee50256240d0b22c045f593df9a8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770405/770405.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.475; runner-up 87.398 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856277
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8941521977e54d6fa2baaae91d13fb6e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856277/856277.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.516; runner-up 66.992 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745473
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4cf391db31ba468f948bad5a20b0bc16
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745473/745473.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.384; runner-up 75.741 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799164
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_37f652aa15934d2b9bd7ad15eb18bbfb
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799164/799164.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.914; runner-up 91.770 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 767794
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_af531020efc14cb38f4ffeb159eb8eff
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/767794/767794.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.283; runner-up 66.609 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885819
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4ca85bb2c2274683bb7f2015997479c5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885819/885819.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.157; runner-up 80.422 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856047
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d4514592d27b40cca5821f510aea2db2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856047/856047.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 3.875; runner-up 82.652 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844179
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_69d9b22e10244e2fb65ffbdb5f99da83
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844179/844179.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.774; runner-up 90.216 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844180
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_aa13ad9fe176464bac51e72c45dd6914
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844180/844180.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 8.555; runner-up 73.368 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814253
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_f2493d13b19a45559af0e7ce96f079bc
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814253/814253.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.482; runner-up 86.958 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757407
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7c5be60911d844b48189f3a042abdcfa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757407/757407.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.695; runner-up 74.219 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871198
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b1aa36e48c8e4041b07e30efb7837fa3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871198/871198.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.772; runner-up 94.850 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729395
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_cbc18e77d7ec4d50bf19650a9a559686
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729395/729395.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.584; runner-up 81.195 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856262
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_51faef6e502845188f6fee9429829df2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856262/856262.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.620; runner-up 87.716 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757404
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_40690491af114f2e810a6fd1c6ddcafa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757404/757404.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.549; runner-up 62.495 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770397
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b20587f1945e42d59b750f9b69cc4a6b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770397/770397.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.470; runner-up 98.922 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844175
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c233fd3627b24b02bd616aa62bbdc83a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844175/844175.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 12.353; runner-up 102.679 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781529
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_cb38cec5fa8e49139bb0377111d6d048
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781529/781529.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.945; runner-up 100.950 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856178
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_31e94039c2494d31b8966443911b0fb2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856178/856178.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.730; runner-up 87.101 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745478
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_458325805fc445799aabfe4c4046f89b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745478/745478.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.034; runner-up 74.176 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856272
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ee5abfdfaa9d469e93dd20e1253ed1d0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856272/856272.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.429; runner-up 77.619 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871390
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e4d3bcc244e44eefae088a4970acffc5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871390/871390.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.286; runner-up 84.925 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781528
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_74f050d47ef34391ba29b8c521450dac
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781528/781528.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.196; runner-up 94.472 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757409
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_266d7d17b42a44be9472057e4e6dd1b1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757409/757409.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.767; runner-up 74.848 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757404
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_40690491af114f2e810a6fd1c6ddcafa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757404/757404.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.549; runner-up 62.495 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844184
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e6a1d03334964fb78033020d86a5f502
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844184/844184.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.037; runner-up 68.805 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871428
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_758bab20496f4673991e53ac59f1bcaa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871428/871428.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.711; runner-up 95.173 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844185
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_08b670dabf3b4ff0a56cb4525b0b57db
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844185/844185.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.463; runner-up 90.753 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745474
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e97e4b9894fe4c9798b0d925092d3eea
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745474/745474.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.170; runner-up 62.748 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729401
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_72fe56f4aa85484284d8e3632d06ad9b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729401/729401.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.078; runner-up 70.679 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885815
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_549170e882a24974be95e3cbaf53f34e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885815/885815.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.174; runner-up 77.842 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871445
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_40a3f6d8de604ff085fa5629597780a3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871445/871445.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.751; runner-up 95.270 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781832
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae57eb31413644379c43ec4208a4023b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781832/781832.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.967; runner-up 77.830 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757391
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_fc5e485b906a4e97b420d9ea122b4414
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757391/757391.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.977; runner-up 48.907 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871429
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_862f8b58a6e247cd865509856286449e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871429/871429.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.758; runner-up 75.468 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840561
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d2d94d7cffe349d9a618f8bdb6695f29
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840561/840561.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 12.159; runner-up 85.665 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871426
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_87abaabc59344ef1bfed548f0b6753bf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871426/871426.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.732; runner-up 94.808 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871434
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d0659baf8fad4748ae9abf7260279d8c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871434/871434.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.608; runner-up 82.210 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757414
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_9f0ca76ac1444a1290ac0003ef15d292
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757414/757414.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 97.664; runner-up 100.763 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757402
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_bbb647e1cbe3487baa2ad65b27a999ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757402/757402.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 81.650; runner-up 91.458 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856247
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_04d59c2ff0e648eb9dad622fa82ce49b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856247/856247.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.088; runner-up 44.528 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781836
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d08869cde8294b0b9f73d0f7192e2335
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781836/781836.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.756; runner-up 97.397 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781531
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9c2a04a39aee4b989bf2b1f18bf923ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781531/781531.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.639; runner-up 87.255 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871441
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_82807328c2514c0d8f22366b4720a583
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871441/871441.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.413; runner-up 90.507 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871439
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b30562a95420404b911886bcfc9e7a9c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871439/871439.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.905; runner-up 94.262 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799158
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_21bfac43fba64c06ab62139f3befd6c1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799158/799158.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.339; runner-up 85.678 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871427
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b3c4b83755bd417bb09f35ffea57cb68
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871427/871427.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.579; runner-up 107.927 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799161
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b1ea1c67fc224e968a4906149590585c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799161/799161.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.048; runner-up 81.934 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757408
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_a1af7dad15b64d31a696f7bbb49bfe92
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757408/757408.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 79.498; runner-up 89.579 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757416
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0a9db863f78c46429d3f1835d046bb2e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757416/757416.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 18.463; runner-up 52.406 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781831
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_19b1f802f23a4673aac60e04df0fb2ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781831/781831.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.200; runner-up 98.205 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856263
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_54bfc0bd37f44871a4ef50193d58ca2c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856263/856263.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.355; runner-up 82.201 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814244
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_1cda76d2cbe84ccda25bd2dc1b21844b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814244/814244.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.751; runner-up 90.275 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814242
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_aa7db27471b142cfa97cd5ca3409669d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814242/814242.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.477; runner-up 75.494 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799157
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_66c2f5fd704b45bdbe79f585ac31d6fc
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799157/799157.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 20.432; runner-up 75.147 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840565
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4d10d4cd91454ff389318fd9a19a879f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840565/840565.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.265; runner-up 97.101 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745475
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_19431b87131547d98fef8a693077a77e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745475/745475.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.455; runner-up 67.483 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799154
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_60630688715e45079236d447087a9a83
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799154/799154.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 42.565; runner-up 84.691 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871425
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_41acb92e0c494214949c72c409593b50
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871425/871425.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.112; runner-up 85.797 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799169
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_eb10018264004dc59f9bf0f31295d757
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799169/799169.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.830; runner-up 82.072 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844177
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ee377c93c09341fe808b8582cbded0f2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844177/844177.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 8.895; runner-up 82.663 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729401
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_72fe56f4aa85484284d8e3632d06ad9b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729401/729401.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.078; runner-up 70.679 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729330
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_63c2ca66eeea417b9079d833e0fd88d4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729330/729330.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 50.008; runner-up 79.785 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885814
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_acf86cd5ee4e434fac91134e9ecf07c5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885814/885814.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.341; runner-up 84.279 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781840
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c88d044f605440a29cbf41b7cdc7d340
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781840/781840.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 62.815; runner-up 89.148 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799152
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c1cd26316f4948a382770ffb29440699
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799152/799152.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.783; runner-up 91.077 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885823
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4811e7317e3149db966bab69151147cc
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885823/885823.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.234; runner-up 85.656 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844176
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8016f590ebb344a2934d76f614fedbba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844176/844176.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.770; runner-up 90.343 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799167
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c75fe9ce070a454696dd8d42c6931c68
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799167/799167.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.350; runner-up 99.811 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840551
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8c2b197768734180bf5a4ec7bf1b4e37
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840551/840551.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.901; runner-up 99.230 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856276
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9a1fff8a9426484ebc7fae9cb8605572
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856276/856276.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.400; runner-up 89.144 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729404
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b42271147bf14a5e89d33571e64abb6d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729404/729404.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.213; runner-up 88.503 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844101
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_01628a4e66c2451ab623ce46309c8378
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844101/844101.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 27.825; runner-up 110.239 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856276
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_9a1fff8a9426484ebc7fae9cb8605572
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856276/856276.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.400; runner-up 89.144 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871353
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d598d22b1dbf4566bede003c3af9e0a8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871353/871353.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.208; runner-up 101.896 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856278
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8a558015ad0948f5be96f85dc60b3c76
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856278/856278.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.025; runner-up 82.249 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871353
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_d598d22b1dbf4566bede003c3af9e0a8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871353/871353.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.208; runner-up 101.896 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871439
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b30562a95420404b911886bcfc9e7a9c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871439/871439.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.905; runner-up 94.262 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885813
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_519eea38258c49ca9b1eab9981d74544
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885813/885813.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.335; runner-up 86.601 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757403
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3ecab24376cb4cd5989309e000f797c1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757403/757403.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.462; runner-up 80.007 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885792
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_dc61d69860c541f6bca41a4a9b8c17f1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885792/885792.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.002; runner-up 46.972 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885822
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0b928f0cd5d2473482e07a609205c26b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885822/885822.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.569; runner-up 82.629 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781896
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4690391667a14f42a7df8ef76771703d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781896/781896.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 68.789; runner-up 87.384 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844181
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_aed92d8e19b14ef19a92fb436dde357c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844181/844181.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 8.959; runner-up 72.158 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871434
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_d0659baf8fad4748ae9abf7260279d8c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871434/871434.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.608; runner-up 82.210 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729397
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae7e91462bfc4861bbf97e99ed53a1c1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729397/729397.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.493; runner-up 81.578 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781532
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_ae4635bbf7ef4b4fb6a30c61f633fa0d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781532/781532.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.875; runner-up 94.551 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781830
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d7a644695e604c958aee5d0ba8fa8415
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781830/781830.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.823; runner-up 93.377 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871436
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b35b509f95d441c1bd11ec67d755db5d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871436/871436.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.083; runner-up 91.358 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885810
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_c671f23fc8e74ee3a7925ad650577008
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885810/885810.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.514; runner-up 75.885 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885811
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_2ec97929d9ee45578f91dea1a62048b8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885811/885811.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.902; runner-up 71.739 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745484
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_8b02499c992945e2990cb669d7468256
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745484/745484.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.263; runner-up 84.846 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856280
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5b53a4c5b3854ab0ba71dd388aaa0d9f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856280/856280.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.875; runner-up 83.569 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871441
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_82807328c2514c0d8f22366b4720a583
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871441/871441.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.413; runner-up 90.507 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729402
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_021c1d57c42d4fb7836097cbe9eacfb7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729402/729402.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 41.706; runner-up 89.629 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770409
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_20f6a0577b714cf393648a074b1f0bb2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770409/770409.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.745; runner-up 75.062 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770404
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3694abe0d09349ca9dbef6861ea42f5a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770404/770404.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.906; runner-up 61.296 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757400
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7a288d030d1a471fbb818ccfdddc6052
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757400/757400.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.628; runner-up 63.173 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871440
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_9652fdf2822645ee91302352c74c9d6a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871440/871440.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.304; runner-up 98.108 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871425
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_41acb92e0c494214949c72c409593b50
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871425/871425.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.112; runner-up 85.797 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729403
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_80cf71e223cf491796609458b2866665
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729403/729403.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.521; runner-up 91.053 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856046
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a6116dcba33643b9a31897960a2267f1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856046/856046.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.947; runner-up 81.057 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885807
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_aa4a880f25814ec58358ea3ad771fbb3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885807/885807.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.488; runner-up 79.423 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871428
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_758bab20496f4673991e53ac59f1bcaa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871428/871428.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.711; runner-up 95.173 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871433
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_2319774247e242a19dfa6a0fe584fff0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871433/871433.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.217; runner-up 88.147 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799160
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b29e4a26e9324724aab37e97a7738476
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799160/799160.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 19.251; runner-up 88.564 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871435
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_580ca4f029554dd68409aac983fdae69
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871435/871435.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.229; runner-up 84.995 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757406
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_2e1d43823fc642549ba92787523ce17f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757406/757406.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.801; runner-up 76.703 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871432
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5eb205c36e0b4038a8a46aa47dd50b0f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871432/871432.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.478; runner-up 95.107 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814240
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_dbecb4ca526f46ac8faa1a361f1c8bdf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814240/814240.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.882; runner-up 78.882 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757401
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae42b2ab4e074f3e91c29d4ba2c3e601
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757401/757401.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.044; runner-up 69.752 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871430
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8ef1d474eb68402e8d35e2aa3bce689a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871430/871430.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.511; runner-up 89.250 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745480
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9c3f1e9961584a3ca4c8c32241d25d0b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745480/745480.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.551; runner-up 75.084 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745477
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_67714955a33e4508913f44b8ccb08e5c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745477/745477.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.906; runner-up 77.615 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770399
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_68c45595c25041f3bcf2073a5b533edd
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770399/770399.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.216; runner-up 62.864 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826550
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a728498e9f554bb2b5e4fd82595ed11e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826550/826550.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.690; runner-up 88.478 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844190
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7e0b8f2e97fc4d6ca8badbb552024f58
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844190/844190.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.860; runner-up 82.567 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814245
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_29df1d46e9f9463f9058c264f7b3bbd5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814245/814245.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.050; runner-up 83.408 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856148
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e50f2393108947e785165163324df9e2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856148/856148.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.439; runner-up 82.997 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770403
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_54e413e671dc4fa3872b3481db960d47
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770403/770403.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.088; runner-up 71.590 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 843982
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e573fd1307ec42b6b2dbd9ebb94504f0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/843982/843982.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.982; runner-up 85.494 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844182
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b5087f60fdf4442686a00fb4243fcf48
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844182/844182.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 11.544; runner-up 92.856 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757405
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_5a2ba6e63b07496d96a17d2565b2a1db
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757405/757405.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.008; runner-up 67.528 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770400
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_34dd94ad32194a96931c9e2ff311ad26
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770400/770400.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.287; runner-up 70.538 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757411
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7c421033c14c40e7a5be957ba42bb1b7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757411/757411.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 83.508; runner-up 94.052 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770413
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae2a969b746542268ff0bcfc735ea367
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770413/770413.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 71.969; runner-up 80.901 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799159
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_03fecbc6607a4948a586ccf4f0915c79
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799159/799159.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.939; runner-up 108.344 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840560
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_be9c85638bda44878c44cf4cc7e7cfb0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840560/840560.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 10.650; runner-up 86.809 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856270
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5547bd08bb6344d4bcd03d37e415c75f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856270/856270.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.303; runner-up 71.459 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757402
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_bbb647e1cbe3487baa2ad65b27a999ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757402/757402.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 81.650; runner-up 91.458 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757413
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_ee9f19ba64f54bf78ba3cf40e0cac256
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757413/757413.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 19.951; runner-up 88.146 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770410
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_79195cfde0ae4948894c37bef02d9e6f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770410/770410.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 67.517; runner-up 84.167 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757414
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9f0ca76ac1444a1290ac0003ef15d292
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757414/757414.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 97.664; runner-up 100.763 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781829
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6d0b490fddd34aab828b26cb90a827d6
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781829/781829.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 35.116; runner-up 97.073 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814241
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e8863a1965284a3bad897ee8614d2866
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814241/814241.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.512; runner-up 87.595 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826543
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d5c56759b4164f8d98eac7c93c8514b2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826543/826543.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.065; runner-up 95.263 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814247
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6826d906dfc147e89f475f146034e75f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814247/814247.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.738; runner-up 88.634 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729403
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_80cf71e223cf491796609458b2866665
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729403/729403.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.521; runner-up 91.053 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757407
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7c5be60911d844b48189f3a042abdcfa
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757407/757407.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.695; runner-up 74.219 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871432
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_5eb205c36e0b4038a8a46aa47dd50b0f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871432/871432.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.478; runner-up 95.107 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745475
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_19431b87131547d98fef8a693077a77e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745475/745475.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.455; runner-up 67.483 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856178
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_31e94039c2494d31b8966443911b0fb2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856178/856178.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.730; runner-up 87.101 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856046
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_a6116dcba33643b9a31897960a2267f1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856046/856046.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.947; runner-up 81.057 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885818
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a2a3a343dac1408092294ea226dcd028
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885818/885818.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.674; runner-up 93.201 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826547
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6527615670294d2a8a23873bc964cec0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826547/826547.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.171; runner-up 83.584 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745480
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_9c3f1e9961584a3ca4c8c32241d25d0b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745480/745480.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.551; runner-up 75.084 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 794842
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_02c20f35d83f4d6094a4427dae0c821f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/794842/794842.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.276; runner-up 91.419 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844001
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_535bf9178837443f894f45d8c71045a0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844001/844001.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.630; runner-up 74.569 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826559
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a8b66e0b4abe48f58f9c47dc25593197
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826559/826559.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 26.783; runner-up 89.941 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844163
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_2b5958e1524648629b663fb210bb7f76
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844163/844163.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 26.901; runner-up 54.468 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781407
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7e4aa6ffcba9401b916220a6f79c355c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781407/781407.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 44.908; runner-up 100.174 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885810
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c671f23fc8e74ee3a7925ad650577008
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885810/885810.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.514; runner-up 75.885 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826549
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a44f1da598c94ec18b4060bb1e932c66
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826549/826549.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 28.193; runner-up 85.377 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856047
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_d4514592d27b40cca5821f510aea2db2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856047/856047.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 3.875; runner-up 82.652 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885817
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8197b190acad44c7a28b50a83fb573f1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885817/885817.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.136; runner-up 87.253 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871446
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b73d08030c9646ab8a227158b8e453d4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871446/871446.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.991; runner-up 101.879 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770406
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d0714091b2a14f478e2d7704c8eb50d8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770406/770406.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.251; runner-up 109.724 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871390
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e4d3bcc244e44eefae088a4970acffc5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871390/871390.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.286; runner-up 84.925 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844031
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_520397ac5c7a4811b50c9adea4f2f1c9
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844031/844031.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.036; runner-up 94.408 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729402
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_021c1d57c42d4fb7836097cbe9eacfb7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729402/729402.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 41.706; runner-up 89.629 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745478
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_458325805fc445799aabfe4c4046f89b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745478/745478.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.034; runner-up 74.176 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856271
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c2a0cc56159841db921d13a52589d13a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856271/856271.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.415; runner-up 82.664 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885816
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d515c85e0daa4cfd8c3a84154d328cd4
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885816/885816.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.913; runner-up 92.906 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799156
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b8f5f89ae4fa49e29637b1fffd9c9e4c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799156/799156.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.416; runner-up 94.377 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844189
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3d02b1019aa34f70b5e0da64191d9326
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844189/844189.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.891; runner-up 90.003 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745477
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_67714955a33e4508913f44b8ccb08e5c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745477/745477.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 23.906; runner-up 77.615 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826553
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0a53330fb9424adcab9e92d04aa428a0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826553/826553.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.909; runner-up 81.347 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871410
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_899fe35731aa4f609bb72a19d7e831c8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871410/871410.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.307; runner-up 53.455 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856268
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c607f55525894e1bbdb8121eed6bf886
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856268/856268.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.675; runner-up 87.181 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885808
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ea1ebbf0332f4cb78f6b7a6a90d826a7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885808/885808.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.103; runner-up 86.030 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856261
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_de5dfda85c534def9ee3a0d93cb55597
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856261/856261.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.964; runner-up 45.456 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826555
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_95167fa28eb2442c8d04fc67d2db7fa7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826555/826555.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.892; runner-up 96.929 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729398
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_1a8604b7ba6c45e2bc8b32b0a70d08b5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729398/729398.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.895; runner-up 96.605 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871443
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_789d5871174e4da293165a39bdfece14
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871443/871443.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.982; runner-up 77.821 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856264
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_24dfd54db49e4a5d8004c51d0882aa46
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856264/856264.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.621; runner-up 85.127 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757410
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b5e74b533270492982dff9472aee8664
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757410/757410.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.179; runner-up 73.295 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814255
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ec8ba95c2c20470ab00ef4f03c8db8ee
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814255/814255.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.070; runner-up 99.275 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770402
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_93ab5d88940f4610a375a928963a570f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770402/770402.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.936; runner-up 71.434 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844160
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_6ccc388f32064927a08d9914aad4bc8f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844160/844160.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.482; runner-up 45.365 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814251
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0d38ed42e8f14a299f6efefb250350d3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814251/814251.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 37.544; runner-up 88.366 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885809
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a8ae68af26f84535869ce0dac1f4a3de
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885809/885809.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.163; runner-up 92.615 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871429
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_862f8b58a6e247cd865509856286449e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871429/871429.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.758; runner-up 75.468 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885808
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_ea1ebbf0332f4cb78f6b7a6a90d826a7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885808/885808.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.103; runner-up 86.030 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871444
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_656cd1bfb0084f92bfd003ca69b3b3c9
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871444/871444.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.787; runner-up 77.981 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856273
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_fe0bc499ead74e4f8a5d2b0e6037cf91
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856273/856273.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.047; runner-up 83.421 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871421
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7379a15083914913b21c37d59e503c0c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871421/871421.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.289; runner-up 42.698 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885820
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_fcfb9ad84f3a4c2db462a9ec4d3a63d1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885820/885820.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.212; runner-up 85.176 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745482
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_f9edf9a591974716b2d7f02764f93737
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745482/745482.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.689; runner-up 76.644 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781530
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_306fb0ac65b44f289a2cbacac51ba9fe
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781530/781530.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.029; runner-up 101.188 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826557
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8b81f6ba845442d095833d7c1bee3a6c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826557/826557.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.247; runner-up 86.485 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840565
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_4d10d4cd91454ff389318fd9a19a879f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840565/840565.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.265; runner-up 97.101 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856269
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_9a1c82a2d3dd4ef898fb86f089242018
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856269/856269.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.249; runner-up 78.036 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745483
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_42ef053d7aab445fa7b0a2bf2e028864
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745483/745483.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.880; runner-up 73.532 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729398
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_1a8604b7ba6c45e2bc8b32b0a70d08b5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729398/729398.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.895; runner-up 96.605 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856265
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_831e34ca1c2143dd82785500356c339e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856265/856265.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.569; runner-up 78.032 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856267
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_715c77fe8d9b410d8194beea91b7163d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856267/856267.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.394; runner-up 79.850 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856280
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_5b53a4c5b3854ab0ba71dd388aaa0d9f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856280/856280.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.875; runner-up 83.569 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745476
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_26dd3cd037974467a3c4078d58f4ae25
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745476/745476.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 26.343; runner-up 78.041 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757400
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7a288d030d1a471fbb818ccfdddc6052
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757400/757400.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.628; runner-up 63.173 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885805
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_68c6733378304dca8d2adb4b1c993433
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885805/885805.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.163; runner-up 85.664 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871438
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e3dbc3e8ae3543059ee67af1d144c576
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871438/871438.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.800; runner-up 90.531 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781838
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_222e3894d8c04d2899b047a97912b5c6
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781838/781838.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.288; runner-up 94.496 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729396
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_5739e1f6076840cd901a1bc283ca6e96
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729396/729396.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 41.698; runner-up 85.032 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729393
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a9c86e6316084d76a03b32be95977091
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729393/729393.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.865; runner-up 89.953 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757413
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ee9f19ba64f54bf78ba3cf40e0cac256
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757413/757413.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 19.951; runner-up 88.146 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745481
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_3f0711ce8e06486a8bde68218e75d360
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745481/745481.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.027; runner-up 93.725 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885806
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_611ab7622d0b4aa7a9aa98ab736f329c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885806/885806.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.728; runner-up 85.633 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856087
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_58ae0148760646e99f9394011ca1cbb9
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856087/856087.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.361; runner-up 87.336 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757417
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_0bd8f734ff064b3881191b916f8354cf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757417/757417.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.171; runner-up 74.397 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814249
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7896cd21215c42609fc262c908068d94
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814249/814249.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.960; runner-up 86.667 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757403
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_3ecab24376cb4cd5989309e000f797c1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757403/757403.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.462; runner-up 80.007 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844183
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d72f9b00497a4ff0ac7ddb0f85da659d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844183/844183.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.633; runner-up 86.661 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826560
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_cfbcf752b5064d1e8abfc2a2c6d3e98a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826560/826560.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 17.429; runner-up 79.153 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799168
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_98e2f67c2ee14092be9f89b31f20db4e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799168/799168.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.845; runner-up 88.762 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799153
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4dfb12a1e5844317a783074a548bc8c7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799153/799153.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.506; runner-up 85.826 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856148
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e50f2393108947e785165163324df9e2
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856148/856148.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.439; runner-up 82.997 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814254
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0fa2b60dcf3d46fbb5e61428e33d7d7d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814254/814254.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.439; runner-up 86.912 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871433
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_2319774247e242a19dfa6a0fe584fff0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871433/871433.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.217; runner-up 88.147 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757417
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_0bd8f734ff064b3881191b916f8354cf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757417/757417.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.171; runner-up 74.397 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729397
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_ae7e91462bfc4861bbf97e99ed53a1c1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729397/729397.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.493; runner-up 81.578 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745484
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8b02499c992945e2990cb669d7468256
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745484/745484.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.263; runner-up 84.846 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871427
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b3c4b83755bd417bb09f35ffea57cb68
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871427/871427.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.579; runner-up 107.927 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781833
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_8dbe711cfb4541309eb32cf37fe48997
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781833/781833.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 39.196; runner-up 106.154 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856196
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_daf2fde77da94e85898ad1cbd36059e6
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856196/856196.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 3.775; runner-up 67.033 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856196
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_daf2fde77da94e85898ad1cbd36059e6
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856196/856196.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 3.775; runner-up 67.033 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871443
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_789d5871174e4da293165a39bdfece14
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871443/871443.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.982; runner-up 77.821 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814239
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_54102dba80604a609eed679b7f33fad3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814239/814239.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.832; runner-up 90.384 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799165
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae7e15af9559439ba734caac9aa567e5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799165/799165.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 19.989; runner-up 92.116 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799156
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_b8f5f89ae4fa49e29637b1fffd9c9e4c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799156/799156.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.416; runner-up 94.377 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757415
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_51bf217683f54e1bb4e6835392851031
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757415/757415.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.012; runner-up 80.257 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745476
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_26dd3cd037974467a3c4078d58f4ae25
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745476/745476.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 26.343; runner-up 78.041 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781531
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_9c2a04a39aee4b989bf2b1f18bf923ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781531/781531.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 34.639; runner-up 87.255 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757415
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_51bf217683f54e1bb4e6835392851031
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757415/757415.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.012; runner-up 80.257 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826558
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_1a6358dd0385477eb83213749cb5d38f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826558/826558.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.782; runner-up 105.995 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781530
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_306fb0ac65b44f289a2cbacac51ba9fe
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781530/781530.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.029; runner-up 101.188 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729394
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_35c968e4b25945e897940860221f9d51
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729394/729394.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 38.451; runner-up 97.026 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 840563
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_77b92f4bb7d2460ea85b9d547cb8e72f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/840563/840563.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.725; runner-up 109.299 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770396
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_eaf7db4a652b47939bddb0db4c9030e9
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770396/770396.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 29.598; runner-up 100.790 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781529
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_cb38cec5fa8e49139bb0377111d6d048
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781529/781529.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.945; runner-up 100.950 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826556
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_4ea909f6818d4776ae936aa51aed88b8
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826556/826556.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.274; runner-up 80.916 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871442
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_fbad358f2f804554838545c738341380
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871442/871442.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.096; runner-up 84.865 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871426
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_87abaabc59344ef1bfed548f0b6753bf
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871426/871426.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.732; runner-up 94.808 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844188
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_fbccd8fc95fa45009665824b0731c3d3
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844188/844188.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.771; runner-up 81.298 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729399
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7c621010e3e6471d9916eee4bcd0b11d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729399/729399.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.029; runner-up 71.891 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885804
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c0337343682c4e9e9bac90b90fb4f24a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885804/885804.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.302; runner-up 69.580 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 843982
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e573fd1307ec42b6b2dbd9ebb94504f0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/843982/843982.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.982; runner-up 85.494 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826554
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a209d31e37bc44e78b2f56cf474bde5d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826554/826554.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.278; runner-up 87.866 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856279
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_70fa88bf3a35452b8178209944e8604a
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856279/856279.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.590; runner-up 85.558 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826546
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_a288e4ad2fa24cadada391a6d1896d9c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826546/826546.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.233; runner-up 90.299 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826545
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_db4137ebc57046a3ba7736adbdb01d44
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826545/826545.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.113; runner-up 92.094 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814256
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ad5f241dfb68479189af1ac3802327d7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814256/814256.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.395; runner-up 85.916 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871436
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_b35b509f95d441c1bd11ec67d755db5d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871436/871436.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.083; runner-up 91.358 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814196
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_06dfa21b660f45cabf624bb321400368
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814196/814196.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 45.535; runner-up 82.904 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 729400
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_f839f8a7cb9a47ae962503f3ea69bec5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/729400/729400.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.999; runner-up 88.544 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826558
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_1a6358dd0385477eb83213749cb5d38f
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826558/826558.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.782; runner-up 105.995 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757409
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_266d7d17b42a44be9472057e4e6dd1b1
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757409/757409.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.767; runner-up 74.848 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 727101
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_78e5de38150f48c5b9813c08cc534dfb
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/1TFC/727101/727101.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.921; runner-up 88.702 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826553
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_0a53330fb9424adcab9e92d04aa428a0
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826553/826553.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.909; runner-up 81.347 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745474
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e97e4b9894fe4c9798b0d925092d3eea
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745474/745474.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 22.170; runner-up 62.748 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 826551
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_1f6ec070467643d195c82c92cf93c955
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/8JAF/826551/826551.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.622; runner-up 92.326 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871188
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7d2a989b37854bd5ac05ab0ee4bf086e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871188/871188.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.606; runner-up 95.439 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871442
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_fbad358f2f804554838545c738341380
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871442/871442.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.096; runner-up 84.865 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745479
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_e08d7a85c4e84f1e83a7521ff9c15a89
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745479/745479.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.384; runner-up 74.886 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781835
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_f799b47b4b894912a8d83942d0fa4d22
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781835/781835.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 31.162; runner-up 97.007 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 770398
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7bd65d4574434dd3ba908203c8cea774
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/4URS/770398/770398.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 36.417; runner-up 69.689 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814246
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_07d1ea2923ad44b9b2dddf78993e103b
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814246/814246.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 33.714; runner-up 77.161 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871438
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_e3dbc3e8ae3543059ee67af1d144c576
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871438/871438.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.800; runner-up 90.531 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745481
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_3f0711ce8e06486a8bde68218e75d360
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745481/745481.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 24.027; runner-up 93.725 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 781532
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ae4635bbf7ef4b4fb6a30c61f633fa0d
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/5SSK/781532/781532.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 32.875; runner-up 94.551 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799166
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7a1524eb2f994287ab6de2e677431724
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799166/799166.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 20.502; runner-up 92.886 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 844187
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_050ae6da90154532905911c8c2569802
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/9FAB/844187/844187.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 9.739; runner-up 109.385 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 798990
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_c01f3a4124be48dbb77aaa45281e74ba
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/798990/798990.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 27.613; runner-up 84.010 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 799155
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_d5432572fd3d4dfc95b01b682c71943c
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/6AZS/799155/799155.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 21.135; runner-up 97.413 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 745482
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_f9edf9a591974716b2d7f02764f93737
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/2ROF/745482/745482.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 25.689; runner-up 76.644 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 814243
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_ac531a6c2f3046d3adcffbd1b1e5228e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/7ARI/814243/814243.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 30.285; runner-up 79.094 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871409
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_adca393d2367497aac99f2c4dd29b8ce
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871409/871409.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 6.186; runner-up 79.247 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 871188
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_7d2a989b37854bd5ac05ab0ee4bf086e
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/11WSP/871188/871188.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.606; runner-up 95.439 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 856274
+  finish: foil
+  provider: lorcast
+  provider_card_id: crd_5413c96876fd4884861caaef3fcb58b5
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/10WHI/856274/856274.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 4.964; runner-up 95.016 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 885823
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_4811e7317e3149db966bab69151147cc
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/12WIL/885823/885823.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 5.234; runner-up 85.656 at 128x179 pixels; exact artwork confirmed visually.
+- game: lorcana
+  cardmarket_product_id: 757411
+  finish: nonfoil
+  provider: lorcast
+  provider_card_id: crd_7c421033c14c40e7a5be957ba42bb1b7
+  reviewed_at: '2026-08-31'
+  evidence:
+  - Cardmarket reference image https://product-images.s3.cardmarket.com/1629/3INK/757411/757411.jpg visually matched to the active Lorcast catalogue artwork.
+  - Normalized RGB RMS 83.508; runner-up 94.052 at 128x179 pixels; exact artwork confirmed visually.

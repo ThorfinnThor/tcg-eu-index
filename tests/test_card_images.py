@@ -1057,6 +1057,23 @@ def test_manual_override_loader_derives_keys_and_rejects_duplicates(tmp_path: Pa
         load_manual_overrides(path)
 
 
+def test_reviewed_lorcana_overrides_exclude_the_pre_errata_stitch_print() -> None:
+    overrides = load_manual_overrides(
+        Path("packages/indexengine/config/card-images/overrides.yaml")
+    )
+    lorcana = {
+        key: override
+        for key, override in overrides.items()
+        if override.game == "lorcana"
+    }
+
+    assert len(lorcana) == 342
+    assert all(override.provider == "lorcast" for override in lorcana.values())
+    assert not any(
+        override.cardmarket_product_id == 832576 for override in lorcana.values()
+    )
+
+
 def test_riot_riftbound_parser_uses_official_number_set_and_image() -> None:
     page = {
         "props": {
