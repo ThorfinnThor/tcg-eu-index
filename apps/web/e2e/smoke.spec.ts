@@ -86,7 +86,7 @@ test("collector singles expose clear card identity and commerce destinations", a
   });
   await expect(primalGroudonSearch).toHaveAttribute(
     "href",
-    /q=Primal\+Groudon\+EX\+Gaia\+Volcano/
+    /q=Primal\+Groudon\+EX\+xy7\+97\+Ancient\+Origins/
   );
 });
 
