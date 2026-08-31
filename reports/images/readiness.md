@@ -4,7 +4,7 @@ Generated for `2026-08-30`.
 
 | Game | Rows | Unique products | Real sets | Numbers | Missing prerequisites |
 |---|---:|---:|---:|---:|---:|
-| digimon | 829 | 829 | 347 | 829 | 829 |
+| digimon | 829 | 829 | 359 | 829 | 829 |
 | dragonballsuper | 1781 | 1472 | 0 | 57 | 1781 |
 | fleshandblood | 1582 | 1582 | 301 | 301 | 1582 |
 | lorcana | 506 | 365 | 119 | 119 | 387 |
