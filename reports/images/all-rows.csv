@@ -30428,736 +30428,736 @@ riftbound,fd9e449f817aebf391cb737562c52a407a99dd9310152b529dea715c3f35d751,88422
 riftbound,fedb0e68fb412d9046e62cdda69ea84b0f7a40b8555059b787e0e2614c376bca,858988,"Caitlyn, Patrolling",foil,exact,true
 riftbound,fef910c79dae95554ea233e28287b10122c23a93c2fd3c6be5ac8ea2ae8c17cd,866984,"Karma, Channeler",foil,ambiguous,false
 riftbound,fffb9f5526e25dba8cb46bc9e9fd5f3878f6b92c884cbc84a1bceee224b9872c,866994,"Azir, Emperor of the Sands",nonfoil,provider_missing,false
-starwarsunlimited,002e6261aa5c7292a764561897caab3833a71de3c2bda5bf4cdbbd8cb6defc67,757451,Sneak Attack,foil,ambiguous,false
-starwarsunlimited,010d1228f042d1f2916962bf0209eec9c2b0a15b422a9477f7997e5f7a88b5d8,776862,"Jabba the Hutt, His High Exaltedness",foil,provider_missing,false
-starwarsunlimited,011afea1d56860b5919b17041525f41c3a67210d2c4cafe7c53b20b67033a488,815812,"Darth Vader, Victor Squadron Leader",foil,ambiguous,false
-starwarsunlimited,01a74fbff2ae028d7791817106b50dad3aa70c9b4660c08c1d4ee6436ed1707a,856808,"Bail Organa, Doing Everything He Can",foil,ambiguous,false
-starwarsunlimited,01d336da3f36f542ae581278d9b665b0ebbaf9b3934e9d75a9703098a35bd25d,876565,"Sabine Wren, Spectre Five",foil,ambiguous,false
-starwarsunlimited,021e280e84aee6912f220ce51f1afa056034ec23560a42212bc957c8d3775e3b,876542,"Boba Fett, For a Price",foil,ambiguous,false
-starwarsunlimited,02a99bd1416cca4d832381038b2879516e725d882c10b39891210cbdf6e19af2,876577,"R2-D2, Part of the Plan",foil,ambiguous,false
-starwarsunlimited,02f7950facfc86d32341a1ea59609034cfdd2caa7dd726d26f1f1cf5ad19eefd,833343,"Yaddle, A Chance To Make Things Right",foil,ambiguous,false
-starwarsunlimited,031fe8845581b728f484dbd6a7fcc73f1fe3c939a6121bc9f8e61066b5387b89,876560,"Val, It's Been a Ride, Babe",foil,ambiguous,false
+starwarsunlimited,002e6261aa5c7292a764561897caab3833a71de3c2bda5bf4cdbbd8cb6defc67,757451,Sneak Attack,foil,manual,true
+starwarsunlimited,010d1228f042d1f2916962bf0209eec9c2b0a15b422a9477f7997e5f7a88b5d8,776862,"Jabba the Hutt, His High Exaltedness",foil,manual,true
+starwarsunlimited,011afea1d56860b5919b17041525f41c3a67210d2c4cafe7c53b20b67033a488,815812,"Darth Vader, Victor Squadron Leader",foil,manual,true
+starwarsunlimited,01a74fbff2ae028d7791817106b50dad3aa70c9b4660c08c1d4ee6436ed1707a,856808,"Bail Organa, Doing Everything He Can",foil,manual,true
+starwarsunlimited,01d336da3f36f542ae581278d9b665b0ebbaf9b3934e9d75a9703098a35bd25d,876565,"Sabine Wren, Spectre Five",foil,manual,true
+starwarsunlimited,021e280e84aee6912f220ce51f1afa056034ec23560a42212bc957c8d3775e3b,876542,"Boba Fett, For a Price",foil,manual,true
+starwarsunlimited,02a99bd1416cca4d832381038b2879516e725d882c10b39891210cbdf6e19af2,876577,"R2-D2, Part of the Plan",foil,manual,true
+starwarsunlimited,02f7950facfc86d32341a1ea59609034cfdd2caa7dd726d26f1f1cf5ad19eefd,833343,"Yaddle, A Chance To Make Things Right",foil,manual,true
+starwarsunlimited,031fe8845581b728f484dbd6a7fcc73f1fe3c939a6121bc9f8e61066b5387b89,876560,"Val, It's Been a Ride, Babe",foil,manual,true
 starwarsunlimited,035d36f2256550b5d62bcad30bb1f8cf00adbb869bbd5b0dd9fc5f00f89122c6,815900,"Annihilator, Tagge's Flagship",foil,ambiguous,false
-starwarsunlimited,036a5d0cb554d937bf74ecac025754f2cc1754ee4fb747a5d6d665ed1b2cdfe6,868662,"Darth Nihilus, Lord of Hunger",foil,ambiguous,false
+starwarsunlimited,036a5d0cb554d937bf74ecac025754f2cc1754ee4fb747a5d6d665ed1b2cdfe6,868662,"Darth Nihilus, Lord of Hunger",foil,manual,true
 starwarsunlimited,0398592b89aff0707a17b15ef4991e28f47c57ee6b1d5229c3c72d74b2bd6da9,795087,"Doctor Evazan, Wanted on Twelve Systems",foil,ambiguous,false
-starwarsunlimited,039e630137abe0a81ab57be96dcbd9befc89fd2d4614ceb5a62625f1d3ba2789,862264,"Obi-Wan Kenobi, Protective Padawan",foil,ambiguous,false
-starwarsunlimited,03c1f5b2e3d367b2c9200c0bbb4df292fe268db917dd84522595c7d792251428,876459,"Agent Kallus, Reconsider Your Allegiance",foil,ambiguous,false
-starwarsunlimited,03e6f30e91b063c5fe7202141532bb90fa3a110609a14c8c72dcc4e7988a93c9,815908,"Blue Leader, Scarif Air Support",foil,ambiguous,false
-starwarsunlimited,0442beae368a1c2946e461bb431f94bad6703ffa0519a1ed697a068af794d123,833066,"The Legacy Run, Doomed Debris",foil,ambiguous,false
-starwarsunlimited,052d027f71227a16339973a3e63ae89b6083222dccec41d6c0f4632a1a2c760f,815811,"Admiral Piett, Commanding the Armada",foil,ambiguous,false
-starwarsunlimited,05471f8de761151e57422064290ae1529c20bce95d84b8334e65c2202d9bead6,833241,"Luke Skywalker, A Hero's Beginning",foil,ambiguous,false
-starwarsunlimited,0552de16959aa08e31ed8969d289e8eb687685758f16c89667b80536e4a4fd9d,757480,Spark of Rebellion,foil,ambiguous,false
-starwarsunlimited,055957f3e9c7aa61503dcf75e00d5b2bc0edad37b724ce0c34b8e34cd4dd3cd5,845343,"Grand Inquisitor, You're Right to Be Afraid",foil,ambiguous,false
-starwarsunlimited,05f06eee07baf40a55a488b4d9f3ddb9a973c59a1b3d3c58f3be0e350ad0d597,757424,You're My Only Hope,foil,ambiguous,false
-starwarsunlimited,062357dac4736bb01964ad1bc91fe99f511a3633eda68a1e2a8d2b2953c5e461,796104,"Pre Vizsla, Pursuing the Throne",foil,ambiguous,false
-starwarsunlimited,06f932bd6f8f2ac7fac9925429c5c07e7987a2521ed740b396b26a7d0098aad2,838436,"Darth Vader, Commanding the First Legion",foil,ambiguous,false
-starwarsunlimited,078bfec033c83e5c323ab7d8bec970291e3f66458701d16ab69acbe690af26a5,876588,"Hondo Ohnaka, Plays By His Own Rules",foil,ambiguous,false
-starwarsunlimited,07cbe8ca89a29527d0dbc6abb18e75e9c1bd2f25d19e1b77c06f27a169fabede,819483,"Obi-Wan Kenobi, Following Fate",foil,ambiguous,false
-starwarsunlimited,082590cb931d7a29b5de5bb590168cd020a1012203ad543254e3dc49a1f44597,819490,"Obi-Wan Kenobi, Following Fate",foil,ambiguous,false
+starwarsunlimited,039e630137abe0a81ab57be96dcbd9befc89fd2d4614ceb5a62625f1d3ba2789,862264,"Obi-Wan Kenobi, Protective Padawan",foil,manual,true
+starwarsunlimited,03c1f5b2e3d367b2c9200c0bbb4df292fe268db917dd84522595c7d792251428,876459,"Agent Kallus, Reconsider Your Allegiance",foil,manual,true
+starwarsunlimited,03e6f30e91b063c5fe7202141532bb90fa3a110609a14c8c72dcc4e7988a93c9,815908,"Blue Leader, Scarif Air Support",foil,manual,true
+starwarsunlimited,0442beae368a1c2946e461bb431f94bad6703ffa0519a1ed697a068af794d123,833066,"The Legacy Run, Doomed Debris",foil,manual,true
+starwarsunlimited,052d027f71227a16339973a3e63ae89b6083222dccec41d6c0f4632a1a2c760f,815811,"Admiral Piett, Commanding the Armada",foil,manual,true
+starwarsunlimited,05471f8de761151e57422064290ae1529c20bce95d84b8334e65c2202d9bead6,833241,"Luke Skywalker, A Hero's Beginning",foil,manual,true
+starwarsunlimited,0552de16959aa08e31ed8969d289e8eb687685758f16c89667b80536e4a4fd9d,757480,Spark of Rebellion,foil,manual,true
+starwarsunlimited,055957f3e9c7aa61503dcf75e00d5b2bc0edad37b724ce0c34b8e34cd4dd3cd5,845343,"Grand Inquisitor, You're Right to Be Afraid",foil,manual,true
+starwarsunlimited,05f06eee07baf40a55a488b4d9f3ddb9a973c59a1b3d3c58f3be0e350ad0d597,757424,You're My Only Hope,foil,manual,true
+starwarsunlimited,062357dac4736bb01964ad1bc91fe99f511a3633eda68a1e2a8d2b2953c5e461,796104,"Pre Vizsla, Pursuing the Throne",foil,manual,true
+starwarsunlimited,06f932bd6f8f2ac7fac9925429c5c07e7987a2521ed740b396b26a7d0098aad2,838436,"Darth Vader, Commanding the First Legion",foil,manual,true
+starwarsunlimited,078bfec033c83e5c323ab7d8bec970291e3f66458701d16ab69acbe690af26a5,876588,"Hondo Ohnaka, Plays By His Own Rules",foil,manual,true
+starwarsunlimited,07cbe8ca89a29527d0dbc6abb18e75e9c1bd2f25d19e1b77c06f27a169fabede,819483,"Obi-Wan Kenobi, Following Fate",foil,manual,true
+starwarsunlimited,082590cb931d7a29b5de5bb590168cd020a1012203ad543254e3dc49a1f44597,819490,"Obi-Wan Kenobi, Following Fate",foil,manual,true
 starwarsunlimited,0862d14627f2db6e74562013c1e6c2521a13fcde96579092ac0d5f50bb75a6d3,838414,"Asajj Ventress, Harden Your Heart",foil,exact,true
 starwarsunlimited,08935eee9b06022701bdf91e61bb3573bb5ac46e06392b91df7d513310c3575a,838424,"Darth Sidious, The Phantom Menace",foil,exact,true
-starwarsunlimited,08ebc02427c93408eff1e0737296da3f813670aa3fba73355c172f8881334fdb,832955,"HK-47, Exclamation: Die, Meatbag!",foil,ambiguous,false
-starwarsunlimited,09d38bf2860566f7d8921a51fad3d259f1ef33990aea6749e742189ccfa221cd,857146,"Mon Mothma, Clinging to Hope",foil,ambiguous,false
-starwarsunlimited,09d9ed8ee18296177687047729b0125af96c161040e971bc08e87e5e7a46d4c6,868655,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,09fdaf045a5e334546d66988f0ab83a57d1efdef1b8aea9fce58b5c9455e66d3,856883,"Captain Rex, Into the Firefight",foil,ambiguous,false
-starwarsunlimited,0a3673f4c0de3949cb0bcf556f39143fef777d7fc7ff36aeaeb987469c090c50,876567,"The Ghost, Home of the Spectres",foil,ambiguous,false
-starwarsunlimited,0a67eca8e91cb571d6f740a224445d58a5b99be0307f4f9087eb11703a416d8f,757556,"Emperor Palpatine, Master of the Dark Side",foil,ambiguous,false
-starwarsunlimited,0a96b3adfc34090d0e70428fba59fa4d0cc02f2e7172de76b975c0d7dc6c89e6,796092,"Obi-Wan Kenobi, Patient Mentor",foil,ambiguous,false
-starwarsunlimited,0abdebbfe661ddc6fb460b08bdd888371396a77eaba7752835c87bdd68606fb6,854935,Vigilance,nonfoil,ambiguous,false
-starwarsunlimited,0c540ab5e12be742ca33c5b8e04c0cd8b5c0a1636a35107c33d4bda1c4c041d0,856634,"Captain Typho, All Necessary Precautions",nonfoil,ambiguous,false
+starwarsunlimited,08ebc02427c93408eff1e0737296da3f813670aa3fba73355c172f8881334fdb,832955,"HK-47, Exclamation: Die, Meatbag!",foil,manual,true
+starwarsunlimited,09d38bf2860566f7d8921a51fad3d259f1ef33990aea6749e742189ccfa221cd,857146,"Mon Mothma, Clinging to Hope",foil,manual,true
+starwarsunlimited,09d9ed8ee18296177687047729b0125af96c161040e971bc08e87e5e7a46d4c6,868655,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,09fdaf045a5e334546d66988f0ab83a57d1efdef1b8aea9fce58b5c9455e66d3,856883,"Captain Rex, Into the Firefight",foil,manual,true
+starwarsunlimited,0a3673f4c0de3949cb0bcf556f39143fef777d7fc7ff36aeaeb987469c090c50,876567,"The Ghost, Home of the Spectres",foil,manual,true
+starwarsunlimited,0a67eca8e91cb571d6f740a224445d58a5b99be0307f4f9087eb11703a416d8f,757556,"Emperor Palpatine, Master of the Dark Side",foil,manual,true
+starwarsunlimited,0a96b3adfc34090d0e70428fba59fa4d0cc02f2e7172de76b975c0d7dc6c89e6,796092,"Obi-Wan Kenobi, Patient Mentor",foil,manual,true
+starwarsunlimited,0abdebbfe661ddc6fb460b08bdd888371396a77eaba7752835c87bdd68606fb6,854935,Vigilance,nonfoil,manual,true
+starwarsunlimited,0c540ab5e12be742ca33c5b8e04c0cd8b5c0a1636a35107c33d4bda1c4c041d0,856634,"Captain Typho, All Necessary Precautions",nonfoil,manual,true
 starwarsunlimited,0c9d0044126bf0d685852fcd6e082bec8b3a878967e706d99fdbfb86bce0dc26,819482,"Han Solo, Reluctant Hero",foil,exact,true
-starwarsunlimited,0d40e71adfe984d1665aece99355b7de0f63416a39c8131919c91364858203f2,833263,"Jocasta Nu, The Gift of Knowledge",foil,ambiguous,false
-starwarsunlimited,0d514fcb63df3da71b838b71e72b3fd5f9464d59d27d991a2610d4de0454cf70,815682,"Han Solo, Has His Moments",foil,ambiguous,false
-starwarsunlimited,0d8edadf430157bac3aabbad9ebe92ee0963f06c9b620d10ed5d0c1e17cea1c0,876591,"Jabba's Rancor, Snack Time!",foil,ambiguous,false
-starwarsunlimited,0da9745f4fac5ebe39f37ae89807db71da430c69744acccc789ab5c57096f47e,776858,"Qi'ra, I Alone Survived",foil,ambiguous,false
-starwarsunlimited,0daa2def830e094f0e917126f70b5026d24897755a4e0ffc1e5db2e4891d7625,838426,"The Mandalorian, Wherever I Go, He Goes",foil,ambiguous,false
+starwarsunlimited,0d40e71adfe984d1665aece99355b7de0f63416a39c8131919c91364858203f2,833263,"Jocasta Nu, The Gift of Knowledge",foil,manual,true
+starwarsunlimited,0d514fcb63df3da71b838b71e72b3fd5f9464d59d27d991a2610d4de0454cf70,815682,"Han Solo, Has His Moments",foil,manual,true
+starwarsunlimited,0d8edadf430157bac3aabbad9ebe92ee0963f06c9b620d10ed5d0c1e17cea1c0,876591,"Jabba's Rancor, Snack Time!",foil,manual,true
+starwarsunlimited,0da9745f4fac5ebe39f37ae89807db71da430c69744acccc789ab5c57096f47e,776858,"Qi'ra, I Alone Survived",foil,manual,true
+starwarsunlimited,0daa2def830e094f0e917126f70b5026d24897755a4e0ffc1e5db2e4891d7625,838426,"The Mandalorian, Wherever I Go, He Goes",foil,manual,true
 starwarsunlimited,0db5d8e4535ca14c61e08976fbfddc07bd45a68561820b817c22389ce1591045,875423,"Karis Nemik, Freedom is a Pure Idea",foil,exact,true
-starwarsunlimited,0e302781a3fe0ae787ba549cee8dd731e936de71982a7814cb67b21a73905781,776870,"Han Solo, Worth the Risk",foil,ambiguous,false
+starwarsunlimited,0e302781a3fe0ae787ba549cee8dd731e936de71982a7814cb67b21a73905781,776870,"Han Solo, Worth the Risk",foil,manual,true
 starwarsunlimited,0e61e742ade2780dfda06af87cc1b1667d8ded39f4ac9ba0fef8210846cdcf08,882842,"Maul, Master of the Shadow Collective",foil,ambiguous,false
 starwarsunlimited,0e8addce7f17e962a4d7d28d302b47999ef06b641241f54218296749c79c9c57,848227,Darth Revan's Lightsabers,foil,ambiguous,false
-starwarsunlimited,0f7436aa40ae2ad73c8a576a7050612b4f40f75561f65cf98d2b23f1076bc6d9,833380,"Anakin Skywalker, Champion of Mortis",foil,ambiguous,false
-starwarsunlimited,0f74cb70b5bdda70e25bfdae599feed4cd85f72ceff949c30586e7776164c425,856802,"Jabba the Hutt, Wonderful Human Being",foil,ambiguous,false
-starwarsunlimited,1010deec5ced5962a57325325f59b4e02dcc9f7374de1c953cfcb78118badb8c,815899,"Chimaera, Reinforcing the Center",foil,ambiguous,false
+starwarsunlimited,0f7436aa40ae2ad73c8a576a7050612b4f40f75561f65cf98d2b23f1076bc6d9,833380,"Anakin Skywalker, Champion of Mortis",foil,manual,true
+starwarsunlimited,0f74cb70b5bdda70e25bfdae599feed4cd85f72ceff949c30586e7776164c425,856802,"Jabba the Hutt, Wonderful Human Being",foil,manual,true
+starwarsunlimited,1010deec5ced5962a57325325f59b4e02dcc9f7374de1c953cfcb78118badb8c,815899,"Chimaera, Reinforcing the Center",foil,manual,true
 starwarsunlimited,1041c70fa64167815c8f308496d7fcb5ff18c5d2d6db559c846539ef1fa31015,822541,"Enfys Nest, Champion of Justice",foil,exact,true
-starwarsunlimited,1042f4229b96cd092fed1261a64ae0d4cf2dc33de8d9388b051fdfd9220fd1b0,868638,"Qui-Gon Jinn, The Negotiations Will Be Short",nonfoil,ambiguous,false
-starwarsunlimited,1087a6226576b44010f0b910974560793e64aff51ca7bbcfec727eb96176680a,760873,Takedown,nonfoil,ambiguous,false
-starwarsunlimited,114d031e87b32480982f63bfa5ecd3ab695a70802239750df7e20f4428d31231,856811,"Governor Pryce, Tyrant of Lothal",foil,ambiguous,false
-starwarsunlimited,116c2d7199d6c3f091916ee746aea93903f0b926597a764fbb3f04c9a1bb5375,823581,"Rey, Keeping the Past",foil,ambiguous,false
-starwarsunlimited,1172f42fd83e69ad40da4f5a86d2143ad1710005fdcf5574c3980aac661b4318,838425,"Darth Tyranus, Servant of Sidious",foil,ambiguous,false
-starwarsunlimited,1198932b985a271048dadcaa75523745a3279b3b0b2099019031a931bbca0192,868645,"Darth Vader, Twilight of the Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,134d2019f755e34e802144794f1247b5fb6dbe305ff76039a1a3e58316c0081d,868639,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,ambiguous,false
-starwarsunlimited,136e6479607ee4b6bad1495791f84d2d70b84d206fe02a816ca4e285d782aa42,833335,"Oppo Rancisis, Ancient Councilor",foil,ambiguous,false
-starwarsunlimited,13872301be7989dab21c812fab27f4850d34acec3ca6c38e7f2ffd303161eb73,856574,Condemn,nonfoil,ambiguous,false
-starwarsunlimited,13d5bdf2cf414e449c5ff7a9b3d92d9a3b6fd055c92d58e2b2b4b1cda53b7d9f,757447,"Chirrut Îmwe, One With The Force",foil,ambiguous,false
+starwarsunlimited,1042f4229b96cd092fed1261a64ae0d4cf2dc33de8d9388b051fdfd9220fd1b0,868638,"Qui-Gon Jinn, The Negotiations Will Be Short",nonfoil,manual,true
+starwarsunlimited,1087a6226576b44010f0b910974560793e64aff51ca7bbcfec727eb96176680a,760873,Takedown,nonfoil,manual,true
+starwarsunlimited,114d031e87b32480982f63bfa5ecd3ab695a70802239750df7e20f4428d31231,856811,"Governor Pryce, Tyrant of Lothal",foil,manual,true
+starwarsunlimited,116c2d7199d6c3f091916ee746aea93903f0b926597a764fbb3f04c9a1bb5375,823581,"Rey, Keeping the Past",foil,manual,true
+starwarsunlimited,1172f42fd83e69ad40da4f5a86d2143ad1710005fdcf5574c3980aac661b4318,838425,"Darth Tyranus, Servant of Sidious",foil,manual,true
+starwarsunlimited,1198932b985a271048dadcaa75523745a3279b3b0b2099019031a931bbca0192,868645,"Darth Vader, Twilight of the Apprentice",nonfoil,manual,true
+starwarsunlimited,134d2019f755e34e802144794f1247b5fb6dbe305ff76039a1a3e58316c0081d,868639,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,manual,true
+starwarsunlimited,136e6479607ee4b6bad1495791f84d2d70b84d206fe02a816ca4e285d782aa42,833335,"Oppo Rancisis, Ancient Councilor",foil,manual,true
+starwarsunlimited,13872301be7989dab21c812fab27f4850d34acec3ca6c38e7f2ffd303161eb73,856574,Condemn,nonfoil,manual,true
+starwarsunlimited,13d5bdf2cf414e449c5ff7a9b3d92d9a3b6fd055c92d58e2b2b4b1cda53b7d9f,757447,"Chirrut Îmwe, One With The Force",foil,manual,true
 starwarsunlimited,143e93c848b508457c37b950ae4cdea737a2ea2ae1c7eb4efd4706388b6cd51f,838408,"Obi-Wan Kenobi, Protective Padawan",foil,exact,true
-starwarsunlimited,144e40e43a70314cddeadb483d9c4418e7b1d7543e099b8cc36bdfa3f1b23f4e,819473,"Black One, Straight At Them",nonfoil,ambiguous,false
-starwarsunlimited,14912475c5b7b5ae304e6d29dc671353022b68451a79820ac350e2efa57ef6bd,757557,Ruthless Raider,foil,ambiguous,false
+starwarsunlimited,144e40e43a70314cddeadb483d9c4418e7b1d7543e099b8cc36bdfa3f1b23f4e,819473,"Black One, Straight At Them",nonfoil,manual,true
+starwarsunlimited,14912475c5b7b5ae304e6d29dc671353022b68451a79820ac350e2efa57ef6bd,757557,Ruthless Raider,foil,manual,true
 starwarsunlimited,1498a5c1d5d04e77aa940c07fe8605d44be542a408200705f827994cc0cc3fda,814031,Jabba's Palace,foil,provider_missing,false
-starwarsunlimited,14b5deb84f0ed0de4b8d210bddfb27d52eadda4ff39dfaa5c1ee8d09a3b2c5b6,833352,"Ki-Adi-Mundi, We Must Push On",foil,ambiguous,false
-starwarsunlimited,14bacf61956482cb0d3a8e578ea8f8ba2296d0489638f1da2a83252b3746491a,815809,"Lando Calrissian, Buying Time",foil,ambiguous,false
-starwarsunlimited,14e670ff76b3b5d801b575d3d89ac3b44ce7c93a91b89bbf73059bdfc5f082b0,876469,"Chewbacca, Hero of Kessel",foil,ambiguous,false
-starwarsunlimited,15d90700840d8cbb1fbef33e248bbb84cd91402dfe408b3399210ac65f8abf4f,854977,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,16020c2edd206358fdc6197d3cb804131de95d7edc1d07203b92e6ff299f89d6,856802,"Jabba the Hutt, Wonderful Human Being",nonfoil,ambiguous,false
-starwarsunlimited,161ea7c2ed110908bce92908f5455a6de9976f3a4818d42e849dedf3ca78f9eb,857144,"Mina Bonteri, Stop This War",foil,ambiguous,false
-starwarsunlimited,164e297c9a3e2bf7aa69e9d8621dbff2c5d1bd3d5753b0d0c6afabaee7a54a2a,876559,"L3-37, Radical Instigator",foil,ambiguous,false
-starwarsunlimited,167469c48cc204a709a27e4c9e65fdb222fc9b3ae20e2de7710c5b5f8411c470,757459,"Hera Syndulla, Spectre Two",foil,ambiguous,false
+starwarsunlimited,14b5deb84f0ed0de4b8d210bddfb27d52eadda4ff39dfaa5c1ee8d09a3b2c5b6,833352,"Ki-Adi-Mundi, We Must Push On",foil,manual,true
+starwarsunlimited,14bacf61956482cb0d3a8e578ea8f8ba2296d0489638f1da2a83252b3746491a,815809,"Lando Calrissian, Buying Time",foil,manual,true
+starwarsunlimited,14e670ff76b3b5d801b575d3d89ac3b44ce7c93a91b89bbf73059bdfc5f082b0,876469,"Chewbacca, Hero of Kessel",foil,manual,true
+starwarsunlimited,15d90700840d8cbb1fbef33e248bbb84cd91402dfe408b3399210ac65f8abf4f,854977,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,16020c2edd206358fdc6197d3cb804131de95d7edc1d07203b92e6ff299f89d6,856802,"Jabba the Hutt, Wonderful Human Being",nonfoil,manual,true
+starwarsunlimited,161ea7c2ed110908bce92908f5455a6de9976f3a4818d42e849dedf3ca78f9eb,857144,"Mina Bonteri, Stop This War",foil,manual,true
+starwarsunlimited,164e297c9a3e2bf7aa69e9d8621dbff2c5d1bd3d5753b0d0c6afabaee7a54a2a,876559,"L3-37, Radical Instigator",foil,manual,true
+starwarsunlimited,167469c48cc204a709a27e4c9e65fdb222fc9b3ae20e2de7710c5b5f8411c470,757459,"Hera Syndulla, Spectre Two",foil,manual,true
 starwarsunlimited,169a493695bab89cb5cc9c15a901a9ab418d597e041236ce75869668b7be3755,838395,"Chewbacca, Faithful First Mate",foil,exact,true
-starwarsunlimited,16febe544d20aaa3317bfc268502c3e5f1a5da5612127082f74a179d00882e7f,776590,"Kylo's TIE Silencer, Ruthlessly Efficient",foil,ambiguous,false
-starwarsunlimited,179146006fdf8234d2994be86169a37d4769733bbe3bb2ef3aeac17f3ed04a04,856743,"Lightmaker, I Have An Idea",nonfoil,ambiguous,false
-starwarsunlimited,17e97041c53258fa0d44f597286d0eab049df3032e6a700af938cc17a5d0e71d,876470,"Enfys Nest, Until We Can Go No Higher",foil,provider_missing,false
-starwarsunlimited,18617f6409d5a363c28912b80db8d9d0c616683de40b28c50456517092636a0c,856936,"Queen Amidala, Championing Her People",foil,ambiguous,false
-starwarsunlimited,19591dfa05cc3d82f025c4ae77b3a0870a4ae94c3be92e2799d359bad999ac51,876272,"Luke Skywalker, Profit or Be Destroyed",foil,ambiguous,false
-starwarsunlimited,19605164ca137688d3621d6ceaf100c0f65f718adef4806b8aa7cafb497f2f57,819484,"Kylo Ren, Killing the Past",nonfoil,ambiguous,false
-starwarsunlimited,19c54de6ef096cd4fdcb02076cb758ef4bff46e05392fd31cc8445e279a9a809,876463,"Boba Fett, Krayt's Claw Commander",foil,ambiguous,false
+starwarsunlimited,16febe544d20aaa3317bfc268502c3e5f1a5da5612127082f74a179d00882e7f,776590,"Kylo's TIE Silencer, Ruthlessly Efficient",foil,manual,true
+starwarsunlimited,179146006fdf8234d2994be86169a37d4769733bbe3bb2ef3aeac17f3ed04a04,856743,"Lightmaker, I Have An Idea",nonfoil,manual,true
+starwarsunlimited,17e97041c53258fa0d44f597286d0eab049df3032e6a700af938cc17a5d0e71d,876470,"Enfys Nest, Until We Can Go No Higher",foil,manual,true
+starwarsunlimited,18617f6409d5a363c28912b80db8d9d0c616683de40b28c50456517092636a0c,856936,"Queen Amidala, Championing Her People",foil,manual,true
+starwarsunlimited,19591dfa05cc3d82f025c4ae77b3a0870a4ae94c3be92e2799d359bad999ac51,876272,"Luke Skywalker, Profit or Be Destroyed",foil,manual,true
+starwarsunlimited,19605164ca137688d3621d6ceaf100c0f65f718adef4806b8aa7cafb497f2f57,819484,"Kylo Ren, Killing the Past",nonfoil,manual,true
+starwarsunlimited,19c54de6ef096cd4fdcb02076cb758ef4bff46e05392fd31cc8445e279a9a809,876463,"Boba Fett, Krayt's Claw Commander",foil,manual,true
 starwarsunlimited,1a3af41214da36f1bb65452a6b3f6bb1937939131ec950cae778c817fad7bf83,838416,"The Ghost, Heart of the Family",foil,exact,true
-starwarsunlimited,1aa86d04d3aa8214bd45a90d0b2fe7897130653d80cebe613eb8ca1060d79583,779478,"Kylo Ren, Killing the Past",foil,ambiguous,false
-starwarsunlimited,1b135971bc4cc29fbddad830970f4c779ab19d7acde57cd41cbcc33018d5a61c,760875,"Mace Windu, Party Crasher",nonfoil,ambiguous,false
-starwarsunlimited,1b242212fab6bff45f8b48308977f7348daa4cfef78e677f95cae79491212833,815904,"Silver Angel, Trace's Hope",foil,ambiguous,false
-starwarsunlimited,1bcec406ea31e0101ae6031d4ee1094615551a8b86a152f17a7e5d08d3c04068,854988,"Darth Vader, Scourge of Squadrons",foil,ambiguous,false
-starwarsunlimited,1bf137a9f2b547b4a386cfc2dd16937fa4584b55a291dde4b07965f06c2844d3,833347,"Mace Windu, Leaping into Action",foil,ambiguous,false
-starwarsunlimited,1cfe0a61e06188aaabfd1b2f4cf470ce9185ab73837b18190f91a99900afbe4d,856834,"Grand Admiral Thrawn, Grand Schemer",nonfoil,ambiguous,false
-starwarsunlimited,1d083251af857797194ed204064fad5d3c3b1f3fa7e1c40e77626ac766769aab,868632,"Grogu, Mysterious Child",nonfoil,ambiguous,false
-starwarsunlimited,1d4a2ddaef1b7edd01d57cdc6240871bc2c04973ef2df0a3446a4b55d6059cda,833399,"Kylo Ren, I Know Your Story",foil,ambiguous,false
-starwarsunlimited,1ecdfbb835bbd1c01a52281233f5913b621fa30357a489f1711a7c4388160001,815925,"Home One, On My Mark",foil,ambiguous,false
-starwarsunlimited,1f84310d41e082987feae99b8f4bfc4d3a72a9e9622e89857d928fc00732f154,857156,"General Grievous, Scuttling to Safety",foil,ambiguous,false
-starwarsunlimited,1f962e6f55df98e6b839fe44b570c3d664273ef13bb2203813837ba4be6a4e3b,875732,Single Reactor Ignition,nonfoil,ambiguous,false
-starwarsunlimited,2048e5aa5535444ad67252d4b5f028fb87423b6a8e31a54b5427a983436d9193,876341,"Rey, Skywalker",foil,ambiguous,false
+starwarsunlimited,1aa86d04d3aa8214bd45a90d0b2fe7897130653d80cebe613eb8ca1060d79583,779478,"Kylo Ren, Killing the Past",foil,manual,true
+starwarsunlimited,1b135971bc4cc29fbddad830970f4c779ab19d7acde57cd41cbcc33018d5a61c,760875,"Mace Windu, Party Crasher",nonfoil,manual,true
+starwarsunlimited,1b242212fab6bff45f8b48308977f7348daa4cfef78e677f95cae79491212833,815904,"Silver Angel, Trace's Hope",foil,manual,true
+starwarsunlimited,1bcec406ea31e0101ae6031d4ee1094615551a8b86a152f17a7e5d08d3c04068,854988,"Darth Vader, Scourge of Squadrons",foil,manual,true
+starwarsunlimited,1bf137a9f2b547b4a386cfc2dd16937fa4584b55a291dde4b07965f06c2844d3,833347,"Mace Windu, Leaping into Action",foil,manual,true
+starwarsunlimited,1cfe0a61e06188aaabfd1b2f4cf470ce9185ab73837b18190f91a99900afbe4d,856834,"Grand Admiral Thrawn, Grand Schemer",nonfoil,manual,true
+starwarsunlimited,1d083251af857797194ed204064fad5d3c3b1f3fa7e1c40e77626ac766769aab,868632,"Grogu, Mysterious Child",nonfoil,manual,true
+starwarsunlimited,1d4a2ddaef1b7edd01d57cdc6240871bc2c04973ef2df0a3446a4b55d6059cda,833399,"Kylo Ren, I Know Your Story",foil,manual,true
+starwarsunlimited,1ecdfbb835bbd1c01a52281233f5913b621fa30357a489f1711a7c4388160001,815925,"Home One, On My Mark",foil,manual,true
+starwarsunlimited,1f84310d41e082987feae99b8f4bfc4d3a72a9e9622e89857d928fc00732f154,857156,"General Grievous, Scuttling to Safety",foil,manual,true
+starwarsunlimited,1f962e6f55df98e6b839fe44b570c3d664273ef13bb2203813837ba4be6a4e3b,875732,Single Reactor Ignition,nonfoil,manual,true
+starwarsunlimited,2048e5aa5535444ad67252d4b5f028fb87423b6a8e31a54b5427a983436d9193,876341,"Rey, Skywalker",foil,manual,true
 starwarsunlimited,2104070612c5a2d8f445977265e3744baa13f554267ee5458c1d0c4361c39e76,804739,"Tranquility, Inspiring Flagship",foil,ambiguous,false
-starwarsunlimited,21138497ca604fcd29c2c8abaf3961e2802024961a37ff034e3d02795cdcf1f5,853849,Hyperspace Disaster,nonfoil,ambiguous,false
-starwarsunlimited,212c2cf12f1fdca63daccdec6860095e35594c6900d15c706760b345281627de,876581,"Millennium Falcon, Dodging Patrols",foil,ambiguous,false
+starwarsunlimited,21138497ca604fcd29c2c8abaf3961e2802024961a37ff034e3d02795cdcf1f5,853849,Hyperspace Disaster,nonfoil,manual,true
+starwarsunlimited,212c2cf12f1fdca63daccdec6860095e35594c6900d15c706760b345281627de,876581,"Millennium Falcon, Dodging Patrols",foil,manual,true
 starwarsunlimited,21756472833557a608ebc43e61abd0053ff4455927e32031a11856f7e2e28348,814028,Dagobah Swamp,foil,provider_missing,false
-starwarsunlimited,222d4ea3fc7be65f5687dec4d14e41a48ac1f55a45c092535a1be872955b5706,876474,"Lando Calrissian, Full Sabacc",foil,ambiguous,false
-starwarsunlimited,225ad2f8fd647d977f0bd73d03d7395f5bdaeb159818767d58d5165e959caf7d,760877,"Mace Windu, Party Crasher",foil,ambiguous,false
+starwarsunlimited,222d4ea3fc7be65f5687dec4d14e41a48ac1f55a45c092535a1be872955b5706,876474,"Lando Calrissian, Full Sabacc",foil,manual,true
+starwarsunlimited,225ad2f8fd647d977f0bd73d03d7395f5bdaeb159818767d58d5165e959caf7d,760877,"Mace Windu, Party Crasher",foil,manual,true
 starwarsunlimited,225f65dcde80283924fc216ea1f412581f8d54d433e2b7cf737f40e382d6ceaa,795084,"Doctor Evazan, Wanted on Twelve Systems",foil,ambiguous,false
-starwarsunlimited,22c6a881bf14396678fa88f7f5633f8122e8b6e27dd1907a5e710c785c262aff,776873,"Fennec Shand, Honoring the Deal",foil,ambiguous,false
-starwarsunlimited,22c6b422ef157695f5596370309755ae67a1cc0f5e48e6909e6a975174a9fb41,856809,"Mon Mothma, Forming a Coalition",foil,ambiguous,false
-starwarsunlimited,23100c3ba4f387f710845cedb59fea5207409dc8795cd48f2c758e0e1db5f2e2,833358,"Adi Gallia, Stern and Focused",foil,ambiguous,false
-starwarsunlimited,23ba67b7b1fb616942c0bf51cbb4f47fa7c74659e8470ecfbe749d003e2bfa2f,831505,"The Legacy Run, Doomed Debris",nonfoil,ambiguous,false
-starwarsunlimited,23d335436369f499dbcb663d9a03fb88452d1c4cebb2e1815dd08a14832e19cc,875907,"Anakin's Podracer, So Wizard!",nonfoil,ambiguous,false
-starwarsunlimited,24b5beac050deb561e73fc27cb4e998a33ef43e5fd956e012c503c877938b839,857168,"Alexsandr Kallus, With New Purpose",foil,ambiguous,false
-starwarsunlimited,2550b34db5aec48231c6c7e66986268647f4463392d693ee1039e6cd0fccb4f7,815912,"Vonreg's TIE Interceptor, Ace of the First Order",foil,ambiguous,false
+starwarsunlimited,22c6a881bf14396678fa88f7f5633f8122e8b6e27dd1907a5e710c785c262aff,776873,"Fennec Shand, Honoring the Deal",foil,manual,true
+starwarsunlimited,22c6b422ef157695f5596370309755ae67a1cc0f5e48e6909e6a975174a9fb41,856809,"Mon Mothma, Forming a Coalition",foil,manual,true
+starwarsunlimited,23100c3ba4f387f710845cedb59fea5207409dc8795cd48f2c758e0e1db5f2e2,833358,"Adi Gallia, Stern and Focused",foil,manual,true
+starwarsunlimited,23ba67b7b1fb616942c0bf51cbb4f47fa7c74659e8470ecfbe749d003e2bfa2f,831505,"The Legacy Run, Doomed Debris",nonfoil,manual,true
+starwarsunlimited,23d335436369f499dbcb663d9a03fb88452d1c4cebb2e1815dd08a14832e19cc,875907,"Anakin's Podracer, So Wizard!",nonfoil,manual,true
+starwarsunlimited,24b5beac050deb561e73fc27cb4e998a33ef43e5fd956e012c503c877938b839,857168,"Alexsandr Kallus, With New Purpose",foil,manual,true
+starwarsunlimited,2550b34db5aec48231c6c7e66986268647f4463392d693ee1039e6cd0fccb4f7,815912,"Vonreg's TIE Interceptor, Ace of the First Order",foil,manual,true
 starwarsunlimited,25756f0222c368d54bdcaeb6ef851afdb7ee375bea6d837817b4741af271861c,795088,"Doctor Evazan, Wanted on Twelve Systems",foil,ambiguous,false
-starwarsunlimited,26045b041a633c42ade65f95a8232643d75755fdd2e688ded866e4f3d2fdfc69,868600,"Galen Erso, You'll Never Win",foil,ambiguous,false
-starwarsunlimited,2650b1b3ac16490d7f9d692607940c482e05933b3d8dfb063642100a934f0ee9,868660,"Karis Nemik, Freedom is a Pure Idea",nonfoil,ambiguous,false
-starwarsunlimited,2685e935811852f5737d90f14732865dd260b92c7c8e3edc5aa8a35bddf6b9b2,868653,"Karis, We Don't Like Strangers",nonfoil,ambiguous,false
-starwarsunlimited,26be53cd1b1f54f4e3680acf4895799a2a524d0fed88f3dda239dce963ad3cfc,868647,Shatterpoint,nonfoil,ambiguous,false
+starwarsunlimited,26045b041a633c42ade65f95a8232643d75755fdd2e688ded866e4f3d2fdfc69,868600,"Galen Erso, You'll Never Win",foil,manual,true
+starwarsunlimited,2650b1b3ac16490d7f9d692607940c482e05933b3d8dfb063642100a934f0ee9,868660,"Karis Nemik, Freedom is a Pure Idea",nonfoil,manual,true
+starwarsunlimited,2685e935811852f5737d90f14732865dd260b92c7c8e3edc5aa8a35bddf6b9b2,868653,"Karis, We Don't Like Strangers",nonfoil,manual,true
+starwarsunlimited,26be53cd1b1f54f4e3680acf4895799a2a524d0fed88f3dda239dce963ad3cfc,868647,Shatterpoint,nonfoil,manual,true
 starwarsunlimited,2736aac44a9408f748cfc4018ce13b47a2e149e00af81f523b3e5fb9d5715105,848227,Darth Revan's Lightsabers,nonfoil,ambiguous,false
-starwarsunlimited,2788e3ca4d3639b7d86dbcd7e5b1084ff0729a11a6d35be50699229a45136946,833295,"Saesee Tiin, Courageous Warrior",foil,ambiguous,false
+starwarsunlimited,2788e3ca4d3639b7d86dbcd7e5b1084ff0729a11a6d35be50699229a45136946,833295,"Saesee Tiin, Courageous Warrior",foil,manual,true
 starwarsunlimited,27a700632a7dfd3140c74f8d34c1b47d17d54ba5ecaf374da383058ddfba6cf3,759959,"Luke Skywalker, Faithful Friend",nonfoil,exact,true
-starwarsunlimited,2806e3a2c6aac460504768bb86c3cd286ca0dd34a14a69c4abb5097c33baa344,876558,"Latts Razzi, Deadly Whipmaster",foil,ambiguous,false
-starwarsunlimited,289391719a1c7563e77836eea754a08d41971cf62b2280923ffee2574193f81e,833395,"Pong Krell, It's Treason, Then",foil,ambiguous,false
-starwarsunlimited,28eb3d226ae04e7f3ac7be04e5762e6d6c97748d7b914eb3559e85e7a13419d6,819471,"Devastator, Hunting the Rebellion",foil,ambiguous,false
-starwarsunlimited,2a0314972d7b6cdb42b418765a5e883a716ccaae06a76654a9889bf8bc33a4d2,757452,"Emperor Palpatine, Galactic Ruler",foil,ambiguous,false
-starwarsunlimited,2a4cbbcf5057744698dcbff440061d0031dfcf7592e0d51b8ab68cd5975b97c5,815810,"Rose Tico, Saving What We Love",foil,ambiguous,false
-starwarsunlimited,2aa077a88e9f1f5bf833f1f840fd641b0cbe353f6259fe6ac56d900037c6aad6,819483,"Obi-Wan Kenobi, Following Fate",nonfoil,ambiguous,false
-starwarsunlimited,2ace2419c12331c023f064370584cdede342f72afea08a8b99ad03f5a9105998,757652,"Luke Skywalker, Jedi Knight",foil,ambiguous,false
-starwarsunlimited,2aea8aacaa415bf08aae1671d5013d638ded7c6e580b43e7d58310fa7c68a365,857153,"Dedra Meero, With Verifiable Data",foil,ambiguous,false
-starwarsunlimited,2bd3b2ff8d65f970394a705a5670c8fe03fa72be87ab8514b41258426d7afd2a,857018,Topple the Summit,foil,ambiguous,false
-starwarsunlimited,2c7d89b643e633fa3ba1a2a71d028c29210aa2375192c9f7e128e76d2290356b,833290,"Dooku, It Is Too Late",foil,ambiguous,false
-starwarsunlimited,2c903e85af07adbe36470926baf60ca7f410a4b3b321a72bda80c81860f77f66,858996,"Queen Amidala, Championing Her People",nonfoil,ambiguous,false
-starwarsunlimited,2d0a28438988b0160a3822def0a9799114008991238f0164cd327d1f6cb24182,757452,"Emperor Palpatine, Galactic Ruler",nonfoil,ambiguous,false
-starwarsunlimited,2d0c8422abeca0c74ca50bfe0239538833a25cfd9989b932935fc562ea635123,776627,Krayt Dragon,nonfoil,ambiguous,false
-starwarsunlimited,2d22558129e829d6745d22b0bcfb033c57716a1761b0ececd51d79febb02ec25,868605,"HK-47, Exclamation: Die, Meatbag!",nonfoil,ambiguous,false
-starwarsunlimited,2d7bc53255f2f009bed6742bfda4ffcc4a75702c371c6d9306fba4c585da2a94,757544,"K-2SO, Cassian's Counterpart",foil,ambiguous,false
-starwarsunlimited,2dab718082de2f073cc99b161f62236b3fff848de8a0b5dbcb387ee89da0d503,757594,"Home One, Alliance Flagship",foil,ambiguous,false
-starwarsunlimited,2dbae75097f0829367e48820d2528ec4c43c62c4412a336202aeca2a083caae2,795996,"Ahsoka Tano, Always Ready For Trouble",foil,ambiguous,false
-starwarsunlimited,2e3f06294822d9f2c5c16beace1c6eb1f8b2ac458806d16a78575cee62ccceab,857143,"Senator Chuchi, Voice for the Voiceless",foil,ambiguous,false
-starwarsunlimited,2e55907b0cdcc3ebcfeb8b425d2e5f5c2ceca71e21691190d7dafc88adf49652,819476,"Home One, On My Mark",nonfoil,ambiguous,false
+starwarsunlimited,2806e3a2c6aac460504768bb86c3cd286ca0dd34a14a69c4abb5097c33baa344,876558,"Latts Razzi, Deadly Whipmaster",foil,manual,true
+starwarsunlimited,289391719a1c7563e77836eea754a08d41971cf62b2280923ffee2574193f81e,833395,"Pong Krell, It's Treason, Then",foil,manual,true
+starwarsunlimited,28eb3d226ae04e7f3ac7be04e5762e6d6c97748d7b914eb3559e85e7a13419d6,819471,"Devastator, Hunting the Rebellion",foil,manual,true
+starwarsunlimited,2a0314972d7b6cdb42b418765a5e883a716ccaae06a76654a9889bf8bc33a4d2,757452,"Emperor Palpatine, Galactic Ruler",foil,manual,true
+starwarsunlimited,2a4cbbcf5057744698dcbff440061d0031dfcf7592e0d51b8ab68cd5975b97c5,815810,"Rose Tico, Saving What We Love",foil,manual,true
+starwarsunlimited,2aa077a88e9f1f5bf833f1f840fd641b0cbe353f6259fe6ac56d900037c6aad6,819483,"Obi-Wan Kenobi, Following Fate",nonfoil,manual,true
+starwarsunlimited,2ace2419c12331c023f064370584cdede342f72afea08a8b99ad03f5a9105998,757652,"Luke Skywalker, Jedi Knight",foil,manual,true
+starwarsunlimited,2aea8aacaa415bf08aae1671d5013d638ded7c6e580b43e7d58310fa7c68a365,857153,"Dedra Meero, With Verifiable Data",foil,manual,true
+starwarsunlimited,2bd3b2ff8d65f970394a705a5670c8fe03fa72be87ab8514b41258426d7afd2a,857018,Topple the Summit,foil,manual,true
+starwarsunlimited,2c7d89b643e633fa3ba1a2a71d028c29210aa2375192c9f7e128e76d2290356b,833290,"Dooku, It Is Too Late",foil,manual,true
+starwarsunlimited,2c903e85af07adbe36470926baf60ca7f410a4b3b321a72bda80c81860f77f66,858996,"Queen Amidala, Championing Her People",nonfoil,manual,true
+starwarsunlimited,2d0a28438988b0160a3822def0a9799114008991238f0164cd327d1f6cb24182,757452,"Emperor Palpatine, Galactic Ruler",nonfoil,manual,true
+starwarsunlimited,2d0c8422abeca0c74ca50bfe0239538833a25cfd9989b932935fc562ea635123,776627,Krayt Dragon,nonfoil,manual,true
+starwarsunlimited,2d22558129e829d6745d22b0bcfb033c57716a1761b0ececd51d79febb02ec25,868605,"HK-47, Exclamation: Die, Meatbag!",nonfoil,manual,true
+starwarsunlimited,2d7bc53255f2f009bed6742bfda4ffcc4a75702c371c6d9306fba4c585da2a94,757544,"K-2SO, Cassian's Counterpart",foil,manual,true
+starwarsunlimited,2dab718082de2f073cc99b161f62236b3fff848de8a0b5dbcb387ee89da0d503,757594,"Home One, Alliance Flagship",foil,manual,true
+starwarsunlimited,2dbae75097f0829367e48820d2528ec4c43c62c4412a336202aeca2a083caae2,795996,"Ahsoka Tano, Always Ready For Trouble",foil,manual,true
+starwarsunlimited,2e3f06294822d9f2c5c16beace1c6eb1f8b2ac458806d16a78575cee62ccceab,857143,"Senator Chuchi, Voice for the Voiceless",foil,manual,true
+starwarsunlimited,2e55907b0cdcc3ebcfeb8b425d2e5f5c2ceca71e21691190d7dafc88adf49652,819476,"Home One, On My Mark",nonfoil,manual,true
 starwarsunlimited,2e7a20cb90880aab6434bbf64821e903dacaf1234abe73c1469453cfc5f35c23,804735,"""""Discard"""" Card",foil,provider_missing,false
-starwarsunlimited,2e7bcf71eb0a16b00610477b40207c85859a3af8ff715af0f4bbfdbbe8ac6de4,796041,Now There Are Two of Them,foil,ambiguous,false
-starwarsunlimited,2ea0d976d90e5b8da370bc7b20c683efd38a9134c9da596b3c04f438ddf72759,857154,"Director Krennic, I Lose Nothing But Time",foil,ambiguous,false
-starwarsunlimited,2ea7ba026d3aec5df251bca733edef677d34e8499376e20408b9d41561d88c26,796098,"Captain Rex, Fighting For His Brothers",foil,ambiguous,false
-starwarsunlimited,2ef532319cb8feae7cb1c1aa15328050bcbf341878b6132894de802610ddabdb,857151,"Vice Admiral Rampart, On Schedule",foil,ambiguous,false
-starwarsunlimited,2ef75356d1d25744a4f50f28a10e9c467b5ef951e9f7ed9ebb09b1c52ba07d65,876556,"Hound's Tooth, Hunters' Approach",foil,ambiguous,false
-starwarsunlimited,2f0466dbba4a5b208536a88cac7eae847dc0509914d94580b9c4ed0d8b944cdf,757476,"Boba Fett, Collecting the Bounty",nonfoil,ambiguous,false
-starwarsunlimited,2f23996ad26c0e5b4d8b6f5b8183c499ca74762b9114fd9ede30adb85181a3f9,796254,"Ahsoka Tano, Snips",foil,ambiguous,false
-starwarsunlimited,2f5bc04300d32f32f7ea72cf8342d9106aa1d82c9bf059778f8055f5a4001663,839954,Theed Palace,nonfoil,provider_missing,false
+starwarsunlimited,2e7bcf71eb0a16b00610477b40207c85859a3af8ff715af0f4bbfdbbe8ac6de4,796041,Now There Are Two of Them,foil,manual,true
+starwarsunlimited,2ea0d976d90e5b8da370bc7b20c683efd38a9134c9da596b3c04f438ddf72759,857154,"Director Krennic, I Lose Nothing But Time",foil,manual,true
+starwarsunlimited,2ea7ba026d3aec5df251bca733edef677d34e8499376e20408b9d41561d88c26,796098,"Captain Rex, Fighting For His Brothers",foil,manual,true
+starwarsunlimited,2ef532319cb8feae7cb1c1aa15328050bcbf341878b6132894de802610ddabdb,857151,"Vice Admiral Rampart, On Schedule",foil,manual,true
+starwarsunlimited,2ef75356d1d25744a4f50f28a10e9c467b5ef951e9f7ed9ebb09b1c52ba07d65,876556,"Hound's Tooth, Hunters' Approach",foil,manual,true
+starwarsunlimited,2f0466dbba4a5b208536a88cac7eae847dc0509914d94580b9c4ed0d8b944cdf,757476,"Boba Fett, Collecting the Bounty",nonfoil,manual,true
+starwarsunlimited,2f23996ad26c0e5b4d8b6f5b8183c499ca74762b9114fd9ede30adb85181a3f9,796254,"Ahsoka Tano, Snips",foil,manual,true
+starwarsunlimited,2f5bc04300d32f32f7ea72cf8342d9106aa1d82c9bf059778f8055f5a4001663,839954,Theed Palace,nonfoil,manual,true
 starwarsunlimited,2f5e8b864791eab62ea535db29825bb8aa41e2a2f0037ac6ce0cb20734f6a28a,838409,"Leia Organa, Extraordinary",foil,exact,true
-starwarsunlimited,2fb6133955a7704832f4b05ee2931724041a72202d5b4e335043c72c0f3e5337,868663,"Leia Organa, Extraordinary",nonfoil,ambiguous,false
-starwarsunlimited,2fb6dfcf65010d3890214e04bd8de837afea15347faa0db4e9e0243596be3dee,776864,"Boba Fett, Daimyo",foil,ambiguous,false
-starwarsunlimited,311820d37a4aa56ca1b75ce7f980a4c2d4240cd4b2959e9c33ba49bbb2532e04,876553,"Asajj Ventress, Reluctant Hunter",foil,ambiguous,false
-starwarsunlimited,313af295322f4b98471095fd81d24f24c02daf7dbaf43f8f656207e6e2f9dad4,757475,Cunning,nonfoil,ambiguous,false
+starwarsunlimited,2fb6133955a7704832f4b05ee2931724041a72202d5b4e335043c72c0f3e5337,868663,"Leia Organa, Extraordinary",nonfoil,manual,true
+starwarsunlimited,2fb6dfcf65010d3890214e04bd8de837afea15347faa0db4e9e0243596be3dee,776864,"Boba Fett, Daimyo",foil,manual,true
+starwarsunlimited,311820d37a4aa56ca1b75ce7f980a4c2d4240cd4b2959e9c33ba49bbb2532e04,876553,"Asajj Ventress, Reluctant Hunter",foil,manual,true
+starwarsunlimited,313af295322f4b98471095fd81d24f24c02daf7dbaf43f8f656207e6e2f9dad4,757475,Cunning,nonfoil,manual,true
 starwarsunlimited,31b7a0a5b8834af92aa4b8a0c7b7dd6b97f7d6fa60930f39ef03533f8e770b72,838357,X-Wing Token,nonfoil,provider_missing,false
-starwarsunlimited,32134223285499e77c29fb646031095aafbd72da6a64bfbf2e9a9f6af26becf3,815922,"Invincible, Naval Adversary",foil,ambiguous,false
-starwarsunlimited,3288725d39537174f61d23c92abb5e6aff5973689e95923bd97c00ea126d046c,757464,"Grand Inquisitor, Hunting the Jedi",foil,ambiguous,false
-starwarsunlimited,32b60181acdbfea843e7f39f5648811617d7dd01b17f294f0ea7fa31423d0643,757482,"Han Solo, Audacious Smuggler",foil,ambiguous,false
-starwarsunlimited,3345b7642a436f402509416d0da2adea218525bfce03bd72eb09a6d51bed85e5,876040,"The Stranger, No Survivors",nonfoil,ambiguous,false
-starwarsunlimited,34c7b270bf73bdf46526b6ce5927319412a7d749514b6e5d45cba1f931474cee,815917,"Profundity, We Fight!",foil,ambiguous,false
-starwarsunlimited,353d64ed642007a69315ae7304b3a7aed6e586f84a733703f55372badd8758cc,854296,"Karis Nemik, Freedom is a Pure Idea",foil,ambiguous,false
-starwarsunlimited,357d29d8d4092d55bd71ca026151009e8b8e9ca97a31681ce913d4e2bfd1a0c3,857157,"Grand Moff Tarkin, Taking Krennic's Achievement",foil,ambiguous,false
-starwarsunlimited,35d198f4305f79f0024c67efae6e998bc13d742827ec4373e4e4544e810ce12b,796116,"Chancellor Palpatine // Darth Sidious, Playing Both Sides",foil,ambiguous,false
-starwarsunlimited,35df1c6de760a8bf69adce17e663f2264c506462852be4acffb398faf3713296,876575,"Luke Skywalker, Profit or Be Destroyed",foil,ambiguous,false
-starwarsunlimited,3605d181ad30f7222046f4ca6c2cab4f4a114185ecdb5f02f5a76931c50d7d17,815901,"Phantom II, Modified to Dock",foil,ambiguous,false
+starwarsunlimited,32134223285499e77c29fb646031095aafbd72da6a64bfbf2e9a9f6af26becf3,815922,"Invincible, Naval Adversary",foil,manual,true
+starwarsunlimited,3288725d39537174f61d23c92abb5e6aff5973689e95923bd97c00ea126d046c,757464,"Grand Inquisitor, Hunting the Jedi",foil,manual,true
+starwarsunlimited,32b60181acdbfea843e7f39f5648811617d7dd01b17f294f0ea7fa31423d0643,757482,"Han Solo, Audacious Smuggler",foil,manual,true
+starwarsunlimited,3345b7642a436f402509416d0da2adea218525bfce03bd72eb09a6d51bed85e5,876040,"The Stranger, No Survivors",nonfoil,manual,true
+starwarsunlimited,34c7b270bf73bdf46526b6ce5927319412a7d749514b6e5d45cba1f931474cee,815917,"Profundity, We Fight!",foil,manual,true
+starwarsunlimited,353d64ed642007a69315ae7304b3a7aed6e586f84a733703f55372badd8758cc,854296,"Karis Nemik, Freedom is a Pure Idea",foil,manual,true
+starwarsunlimited,357d29d8d4092d55bd71ca026151009e8b8e9ca97a31681ce913d4e2bfd1a0c3,857157,"Grand Moff Tarkin, Taking Krennic's Achievement",foil,manual,true
+starwarsunlimited,35d198f4305f79f0024c67efae6e998bc13d742827ec4373e4e4544e810ce12b,796116,"Chancellor Palpatine // Darth Sidious, Playing Both Sides",foil,manual,true
+starwarsunlimited,35df1c6de760a8bf69adce17e663f2264c506462852be4acffb398faf3713296,876575,"Luke Skywalker, Profit or Be Destroyed",foil,manual,true
+starwarsunlimited,3605d181ad30f7222046f4ca6c2cab4f4a114185ecdb5f02f5a76931c50d7d17,815901,"Phantom II, Modified to Dock",foil,manual,true
 starwarsunlimited,362f2c460c6308513a592dcd8a5fc7719b82339d98bddb3421d1f34ac3dbff39,838354,Battle Droid Token,nonfoil,provider_missing,false
-starwarsunlimited,36cea82a64be6964eda66c84277f618c8545b0b3b17cbf2ca4eb08c975357082,876587,"Cad Bane, Now It's My Turn",foil,ambiguous,false
-starwarsunlimited,375456afc65efea1f9b10a12f3678dd258ec71db3e7b1da3d2125db3ebcf3f8d,776629,Hotshot DL-44 Blaster,foil,ambiguous,false
+starwarsunlimited,36cea82a64be6964eda66c84277f618c8545b0b3b17cbf2ca4eb08c975357082,876587,"Cad Bane, Now It's My Turn",foil,manual,true
+starwarsunlimited,375456afc65efea1f9b10a12f3678dd258ec71db3e7b1da3d2125db3ebcf3f8d,776629,Hotshot DL-44 Blaster,foil,manual,true
 starwarsunlimited,3766c9fcda4d3067cce8644a1a467c98b2bc4f91d8379df6e9929b6191759eb3,838355,TIE Fighter Token,nonfoil,provider_missing,false
-starwarsunlimited,376d4f5a7bdf82056821f8955e87aa116b9338659a89ebfdf2e76eb0fc355ab7,833165,"Mother Talzin, Power Through Magick",foil,ambiguous,false
-starwarsunlimited,378f6643ebff61dc55498ba248cb5868f0bafe53a41fd0c724eed88074c4b329,815842,"Devastator, Hunting the Rebellion",nonfoil,ambiguous,false
-starwarsunlimited,3875a2040d688d006993359aa68b219e29ae2b5f31e731070f731ca1e80442c3,868659,"Black One, Straight At Them",foil,ambiguous,false
-starwarsunlimited,3879106882cce82fd81468f5a5e44cc628e86643c17c99bcfdd9ae4594512dc8,815902,"The Ghost, Heart of the Family",foil,ambiguous,false
-starwarsunlimited,387e420353a20ea3abb06bc77f37f1e2e559f02efe147261609e30cdf883a7ad,757476,"Boba Fett, Collecting the Bounty",foil,ambiguous,false
-starwarsunlimited,38c93c386028cfe6e0b8c2ea41e5cf9848ebdeae6c066b52fd799b88d31a9c9a,829757,"R2-D2, Artooooooooo!",foil,ambiguous,false
-starwarsunlimited,399caeecd8551743ba3e1b2337a8883f6e96c9c01d4716a1b3042491ac6c440c,755143,"Luke Skywalker, Jedi Knight",nonfoil,ambiguous,false
-starwarsunlimited,39a7077ccb1a20fdf2f83dc50187d940ab4aa31c3533246d8522e8a5a2362a7b,757611,"Relentless, Konstantine's Folly",foil,ambiguous,false
-starwarsunlimited,39f59dd18767ed08a306dfcd47751114beffc1cb69d648bd6c5c8c4fdddbadf7,757483,"Han Solo, Reluctant Hero",foil,ambiguous,false
-starwarsunlimited,3a028d6ebde1af7c8af09157f3f82c04a545a95164bb84dd5a8855a44957bf85,833191,"Barriss Offee, We Have Become Villains",foil,ambiguous,false
+starwarsunlimited,376d4f5a7bdf82056821f8955e87aa116b9338659a89ebfdf2e76eb0fc355ab7,833165,"Mother Talzin, Power Through Magick",foil,manual,true
+starwarsunlimited,378f6643ebff61dc55498ba248cb5868f0bafe53a41fd0c724eed88074c4b329,815842,"Devastator, Hunting the Rebellion",nonfoil,manual,true
+starwarsunlimited,3875a2040d688d006993359aa68b219e29ae2b5f31e731070f731ca1e80442c3,868659,"Black One, Straight At Them",foil,manual,true
+starwarsunlimited,3879106882cce82fd81468f5a5e44cc628e86643c17c99bcfdd9ae4594512dc8,815902,"The Ghost, Heart of the Family",foil,manual,true
+starwarsunlimited,387e420353a20ea3abb06bc77f37f1e2e559f02efe147261609e30cdf883a7ad,757476,"Boba Fett, Collecting the Bounty",foil,manual,true
+starwarsunlimited,38c93c386028cfe6e0b8c2ea41e5cf9848ebdeae6c066b52fd799b88d31a9c9a,829757,"R2-D2, Artooooooooo!",foil,manual,true
+starwarsunlimited,399caeecd8551743ba3e1b2337a8883f6e96c9c01d4716a1b3042491ac6c440c,755143,"Luke Skywalker, Jedi Knight",nonfoil,manual,true
+starwarsunlimited,39a7077ccb1a20fdf2f83dc50187d940ab4aa31c3533246d8522e8a5a2362a7b,757611,"Relentless, Konstantine's Folly",foil,manual,true
+starwarsunlimited,39f59dd18767ed08a306dfcd47751114beffc1cb69d648bd6c5c8c4fdddbadf7,757483,"Han Solo, Reluctant Hero",foil,manual,true
+starwarsunlimited,3a028d6ebde1af7c8af09157f3f82c04a545a95164bb84dd5a8855a44957bf85,833191,"Barriss Offee, We Have Become Villains",foil,manual,true
 starwarsunlimited,3a4d6501b85aa98ef0c87cc8b085a53c56f09f8d9bf762942bf2dc7ac2884cd8,822536,"Luke Skywalker, You Still With Me?",foil,exact,true
-starwarsunlimited,3aba972491cd3fec8cc6a5272f2859e64daf5ff13a43c04127d759f1e3276bc0,795912,General's Blade,foil,ambiguous,false
+starwarsunlimited,3aba972491cd3fec8cc6a5272f2859e64daf5ff13a43c04127d759f1e3276bc0,795912,General's Blade,foil,manual,true
 starwarsunlimited,3ad38d3bcebb851406fc9447478580b4949d746df303bb932eef5290f38acc59,857161,"Jar Jar Binks, Mesa Propose…",foil,ambiguous,false
-starwarsunlimited,3ad7d7b37707c4a3c2c440d03f876d12b7f430a51037af28745761a9e34b6fa4,856913,Hyperspace Disaster,foil,ambiguous,false
-starwarsunlimited,3aebdda22ee2fc81b5e299e13ee7b05f49b95962268801abf249b5f7eee12e40,868644,"Darth Sion, Lord of Pain",nonfoil,ambiguous,false
-starwarsunlimited,3aebfde8710c32d9d266ae6e92699c899eacce7ed9e672b5ecbb7bd243f74fdf,857183,"Libertine, Under New Ownership",foil,ambiguous,false
-starwarsunlimited,3b35435486d359d58695439bfaff4c152e1a43c49ccc90c3e9869c43a25190c5,795798,"General Grievous, Trophy Collector",foil,ambiguous,false
-starwarsunlimited,3b38e2a36eb871713f2e04964411f673ad540e2e73e934e048f267421b562e42,796113,"General Grievous, General of the Droid Armies",foil,ambiguous,false
-starwarsunlimited,3c863cccd7b2cad02cd024bd473602d8915be24266158e9f35a9ef6c89d57acd,856477,"Lightmaker, I Have An Idea",foil,ambiguous,false
-starwarsunlimited,3cc02a3967f0f4a78ab6ed1d7ff0451c50f1aadd76d38361e3559faa3ea7b6f7,854988,"Darth Vader, Scourge of Squadrons",nonfoil,ambiguous,false
-starwarsunlimited,3cd5a60656b5f21318f550b2c06c4be9268cbd054d20ff85f309438a500ffbb0,831259,Constructed Lightsaber,nonfoil,ambiguous,false
-starwarsunlimited,3d423dc54dad66bf4d8dc510fb897fa759de25881cb58f785b27e70ec14ae1be,776627,Krayt Dragon,foil,ambiguous,false
-starwarsunlimited,3d7649cc7d38fc90777a7670b14869ab6a6811a5d03935ae4b9c7990d84af88a,796105,"Ahsoka Tano, Snips",foil,ambiguous,false
-starwarsunlimited,3d9cca91b937eab77608a6024bac31a7d13974098f805d4fca019530273b6791,819474,"Home One, On My Mark",foil,ambiguous,false
-starwarsunlimited,3dc00c2eced70c2b202320da4f1bc9af5c019ad298bd72a56fc2f98332d61e17,819475,"Home One, On My Mark",nonfoil,ambiguous,false
-starwarsunlimited,3dd19a9fd043adbcdcdfd278a44156f6e5301227fb7d502e1bacbee03533cce3,868660,"Karis Nemik, Freedom is a Pure Idea",foil,ambiguous,false
-starwarsunlimited,3dead08c73e93c8091e706a020b2bd66d3f904420120e6c0b8d7b94a02e3b81f,815816,"Captain Phasma, Chrome Dome",foil,ambiguous,false
-starwarsunlimited,3e76b5e124ed0c1d2da6894092f72ee570eecfdaefe3e328bec49bebbb3f577c,848224,"Darth Malak, Covetous Apprentice",foil,ambiguous,false
-starwarsunlimited,3f301646d63fc23ab43e3fda6e282ec11c89f2c982acfc7a072557521b2d1aef,815815,"Boba Fett, Any Methods Necessary",foil,ambiguous,false
-starwarsunlimited,3f47f183a4ee1d7197faecbacacfd7263c753c06e28d1ed3cac1b001090023e4,757439,"Iden Versio, Inferno Squad Commander",nonfoil,provider_missing,false
-starwarsunlimited,3f5655c4c1ecef3b172e516b5b299ec5beb23d9c53c171fb35cde3a6cd6b0cf0,856810,"Dedra Meero, Not Wasting Time",foil,ambiguous,false
-starwarsunlimited,402c98734dafc08023058820e9f08e3406f687a68ed9a81d4d945284a6a1c06e,757505,"Boba Fett, Disintegrator",foil,ambiguous,false
-starwarsunlimited,4048668e8f7f0a3e145391d9ab95770de8065e9c016fc8d7cd8b6d610f52a0b0,757500,"Fett's Firespray, Pursuing the Bounty",foil,ambiguous,false
-starwarsunlimited,407092d845f1432e825fc6d9d78ebc1c929de99284fb4ae48676070f97730075,776608,"Poe Dameron, Quick to Improvise",foil,ambiguous,false
-starwarsunlimited,40a42a38dfe38c1ba0dbc858e9e84abec5bf4ecb686665a002d869a85dcce328,856816,"Padmé Amidala, What Do You Have to Hide?",foil,ambiguous,false
-starwarsunlimited,415fe316abf10904a1cb39cb6d832773509fe7830e6e42c8509023732c0f7d5c,833258,"Gungi, Finding Himself",foil,ambiguous,false
-starwarsunlimited,41dbbd96ae8b75fe3fb2a3fa3078a1a513dc6a77573de33e3eb70e5441a6b6fc,815903,"Gold Leader, Fastest Ship in the Fleet",foil,ambiguous,false
-starwarsunlimited,42779651344aa5743cf7f6cbf2282d1dde733d853610a45846d61c5ae95b7750,854987,"Darth Vader, Scourge of Squadrons",nonfoil,ambiguous,false
-starwarsunlimited,432344469e5f16abc60284466633ec338bb7c5816ffcc0e707dfdda04169f7aa,876464,"Director Krennic, Amidst My Achievement",foil,ambiguous,false
-starwarsunlimited,4335ce8bf1016353107a5e9d8a8477c7626dec81aab4add4250a104bdeb927e9,833365,"The Daughter, Embodiment of Light",foil,ambiguous,false
-starwarsunlimited,434f98643bac2b50ac86efc2e0d764ce28c21cfdad819433e8dc8740ccd055a1,796100,"Padmé Amidala, Serving the Republic",foil,ambiguous,false
+starwarsunlimited,3ad7d7b37707c4a3c2c440d03f876d12b7f430a51037af28745761a9e34b6fa4,856913,Hyperspace Disaster,foil,manual,true
+starwarsunlimited,3aebdda22ee2fc81b5e299e13ee7b05f49b95962268801abf249b5f7eee12e40,868644,"Darth Sion, Lord of Pain",nonfoil,manual,true
+starwarsunlimited,3aebfde8710c32d9d266ae6e92699c899eacce7ed9e672b5ecbb7bd243f74fdf,857183,"Libertine, Under New Ownership",foil,manual,true
+starwarsunlimited,3b35435486d359d58695439bfaff4c152e1a43c49ccc90c3e9869c43a25190c5,795798,"General Grievous, Trophy Collector",foil,manual,true
+starwarsunlimited,3b38e2a36eb871713f2e04964411f673ad540e2e73e934e048f267421b562e42,796113,"General Grievous, General of the Droid Armies",foil,manual,true
+starwarsunlimited,3c863cccd7b2cad02cd024bd473602d8915be24266158e9f35a9ef6c89d57acd,856477,"Lightmaker, I Have An Idea",foil,manual,true
+starwarsunlimited,3cc02a3967f0f4a78ab6ed1d7ff0451c50f1aadd76d38361e3559faa3ea7b6f7,854988,"Darth Vader, Scourge of Squadrons",nonfoil,manual,true
+starwarsunlimited,3cd5a60656b5f21318f550b2c06c4be9268cbd054d20ff85f309438a500ffbb0,831259,Constructed Lightsaber,nonfoil,manual,true
+starwarsunlimited,3d423dc54dad66bf4d8dc510fb897fa759de25881cb58f785b27e70ec14ae1be,776627,Krayt Dragon,foil,manual,true
+starwarsunlimited,3d7649cc7d38fc90777a7670b14869ab6a6811a5d03935ae4b9c7990d84af88a,796105,"Ahsoka Tano, Snips",foil,manual,true
+starwarsunlimited,3d9cca91b937eab77608a6024bac31a7d13974098f805d4fca019530273b6791,819474,"Home One, On My Mark",foil,manual,true
+starwarsunlimited,3dc00c2eced70c2b202320da4f1bc9af5c019ad298bd72a56fc2f98332d61e17,819475,"Home One, On My Mark",nonfoil,manual,true
+starwarsunlimited,3dd19a9fd043adbcdcdfd278a44156f6e5301227fb7d502e1bacbee03533cce3,868660,"Karis Nemik, Freedom is a Pure Idea",foil,manual,true
+starwarsunlimited,3dead08c73e93c8091e706a020b2bd66d3f904420120e6c0b8d7b94a02e3b81f,815816,"Captain Phasma, Chrome Dome",foil,manual,true
+starwarsunlimited,3e76b5e124ed0c1d2da6894092f72ee570eecfdaefe3e328bec49bebbb3f577c,848224,"Darth Malak, Covetous Apprentice",foil,manual,true
+starwarsunlimited,3f301646d63fc23ab43e3fda6e282ec11c89f2c982acfc7a072557521b2d1aef,815815,"Boba Fett, Any Methods Necessary",foil,manual,true
+starwarsunlimited,3f47f183a4ee1d7197faecbacacfd7263c753c06e28d1ed3cac1b001090023e4,757439,"Iden Versio, Inferno Squad Commander",nonfoil,manual,true
+starwarsunlimited,3f5655c4c1ecef3b172e516b5b299ec5beb23d9c53c171fb35cde3a6cd6b0cf0,856810,"Dedra Meero, Not Wasting Time",foil,manual,true
+starwarsunlimited,402c98734dafc08023058820e9f08e3406f687a68ed9a81d4d945284a6a1c06e,757505,"Boba Fett, Disintegrator",foil,manual,true
+starwarsunlimited,4048668e8f7f0a3e145391d9ab95770de8065e9c016fc8d7cd8b6d610f52a0b0,757500,"Fett's Firespray, Pursuing the Bounty",foil,manual,true
+starwarsunlimited,407092d845f1432e825fc6d9d78ebc1c929de99284fb4ae48676070f97730075,776608,"Poe Dameron, Quick to Improvise",foil,manual,true
+starwarsunlimited,40a42a38dfe38c1ba0dbc858e9e84abec5bf4ecb686665a002d869a85dcce328,856816,"Padmé Amidala, What Do You Have to Hide?",foil,manual,true
+starwarsunlimited,415fe316abf10904a1cb39cb6d832773509fe7830e6e42c8509023732c0f7d5c,833258,"Gungi, Finding Himself",foil,manual,true
+starwarsunlimited,41dbbd96ae8b75fe3fb2a3fa3078a1a513dc6a77573de33e3eb70e5441a6b6fc,815903,"Gold Leader, Fastest Ship in the Fleet",foil,manual,true
+starwarsunlimited,42779651344aa5743cf7f6cbf2282d1dde733d853610a45846d61c5ae95b7750,854987,"Darth Vader, Scourge of Squadrons",nonfoil,manual,true
+starwarsunlimited,432344469e5f16abc60284466633ec338bb7c5816ffcc0e707dfdda04169f7aa,876464,"Director Krennic, Amidst My Achievement",foil,manual,true
+starwarsunlimited,4335ce8bf1016353107a5e9d8a8477c7626dec81aab4add4250a104bdeb927e9,833365,"The Daughter, Embodiment of Light",foil,manual,true
+starwarsunlimited,434f98643bac2b50ac86efc2e0d764ce28c21cfdad819433e8dc8740ccd055a1,796100,"Padmé Amidala, Serving the Republic",foil,manual,true
 starwarsunlimited,43584d03fcae97726c0fb75493953a5739229efe7da04205a0628dbed15cc98b,882847,"Chewbacca, Mighty Rescuer",foil,ambiguous,false
-starwarsunlimited,4457071ac44661dca27753ed56f5b35b46227c8b39d42d986505104be3aa3d10,875774,"The Stranger, No Survivors",nonfoil,ambiguous,false
-starwarsunlimited,44c164c7a250955a17a001e129ec2429a85273c671f9dcc56c78552d48bffdf2,857159,"Lando Calrissian, Trust Me",foil,ambiguous,false
+starwarsunlimited,4457071ac44661dca27753ed56f5b35b46227c8b39d42d986505104be3aa3d10,875774,"The Stranger, No Survivors",nonfoil,manual,true
+starwarsunlimited,44c164c7a250955a17a001e129ec2429a85273c671f9dcc56c78552d48bffdf2,857159,"Lando Calrissian, Trust Me",foil,manual,true
 starwarsunlimited,4520a42334e7b85d900bee8656a9cc018485929b644f6029fe8715cb51aa470c,884870,"General Grievous, Crush Them!",nonfoil,exact,true
-starwarsunlimited,452322576679b547e47f91026ea389594e86ee81b4567da342365d9371591f7b,776609,"Wrecker, Boom!",foil,ambiguous,false
-starwarsunlimited,46402fffbde196a02914c16000e90fcdf6408dbe724e50173cee8695934cc966,757517,Force Throw,foil,ambiguous,false
-starwarsunlimited,468386a8aab8312b03c89f0b6a759529a79b668e0b8ad0e21e7d37c901329f92,776875,"The Mandalorian, Sworn To The Creed",foil,ambiguous,false
-starwarsunlimited,46abf00c0ca7d6d74b8d9dbbf74d416d212f2f3bef49186e8db8201cde1e5243,833163,"Kylo Ren, We're Not Done Yet",foil,ambiguous,false
-starwarsunlimited,46e8863e4036106a9a602d4ee99cb8290a74346f39f3fe652d7d8c2d7bfe284e,757439,"Iden Versio, Inferno Squad Commander",foil,provider_missing,false
-starwarsunlimited,479bb57e2a07e847a2f9005a403f79ede4783ef07c25e2c7925354daccf659a0,833300,"Bendu, Do You Fear the Storm?",foil,ambiguous,false
-starwarsunlimited,480594c1a410a4750cb5b7bf8e37e7f995f3fee0c2d56109b465f8b96760984a,833386,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,4816e23fc2309f6ee9b1f1f17486a45204e2f26b923ee4365d48d4e0b41ef42b,833197,"Darth Revan, Scourge of the Old Republic",foil,ambiguous,false
-starwarsunlimited,485dd309c9bda5093506a80883a92ccb3a530abc1a79e3c96c692424abdefa54,833340,"Eeth Koth, Spiritual Warrior",foil,ambiguous,false
-starwarsunlimited,48a091fd06c0b69278090404d265f7b44dfa4fce107390afcd12403e822d122d,868643,"Karis, We Don't Like Strangers",nonfoil,ambiguous,false
-starwarsunlimited,48eb2080eb8b105ad83838ccbf23e3e6883a8aa041ce63d23692ecf6b4ffec9a,854950,Command,nonfoil,ambiguous,false
-starwarsunlimited,48ec520734a87240517c5563ab30a18abd934405c6221d7acaf700ff8e0eabac,857023,"Darth Traya, Lord of Betrayal",foil,ambiguous,false
-starwarsunlimited,48f13e5e78da8a60021dcf2c6f9a6e8416dc91cfc802efabb40cfceb3f203021,857152,"Mas Amedda, Accomplice to Power",foil,ambiguous,false
-starwarsunlimited,498a3d2dfcef1be2ff5723dad0e44ea327b20f1cd8dff968e6fd885f4c1e751a,875998,Single Reactor Ignition,nonfoil,ambiguous,false
-starwarsunlimited,49bf4d484a7b9a85b6641e64c97c210df9b3c670c738378b86b5c587d3c49f8d,815660,Planetary Bombardment,foil,ambiguous,false
+starwarsunlimited,452322576679b547e47f91026ea389594e86ee81b4567da342365d9371591f7b,776609,"Wrecker, Boom!",foil,manual,true
+starwarsunlimited,46402fffbde196a02914c16000e90fcdf6408dbe724e50173cee8695934cc966,757517,Force Throw,foil,manual,true
+starwarsunlimited,468386a8aab8312b03c89f0b6a759529a79b668e0b8ad0e21e7d37c901329f92,776875,"The Mandalorian, Sworn To The Creed",foil,manual,true
+starwarsunlimited,46abf00c0ca7d6d74b8d9dbbf74d416d212f2f3bef49186e8db8201cde1e5243,833163,"Kylo Ren, We're Not Done Yet",foil,manual,true
+starwarsunlimited,46e8863e4036106a9a602d4ee99cb8290a74346f39f3fe652d7d8c2d7bfe284e,757439,"Iden Versio, Inferno Squad Commander",foil,manual,true
+starwarsunlimited,479bb57e2a07e847a2f9005a403f79ede4783ef07c25e2c7925354daccf659a0,833300,"Bendu, Do You Fear the Storm?",foil,manual,true
+starwarsunlimited,480594c1a410a4750cb5b7bf8e37e7f995f3fee0c2d56109b465f8b96760984a,833386,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,4816e23fc2309f6ee9b1f1f17486a45204e2f26b923ee4365d48d4e0b41ef42b,833197,"Darth Revan, Scourge of the Old Republic",foil,manual,true
+starwarsunlimited,485dd309c9bda5093506a80883a92ccb3a530abc1a79e3c96c692424abdefa54,833340,"Eeth Koth, Spiritual Warrior",foil,manual,true
+starwarsunlimited,48a091fd06c0b69278090404d265f7b44dfa4fce107390afcd12403e822d122d,868643,"Karis, We Don't Like Strangers",nonfoil,manual,true
+starwarsunlimited,48eb2080eb8b105ad83838ccbf23e3e6883a8aa041ce63d23692ecf6b4ffec9a,854950,Command,nonfoil,manual,true
+starwarsunlimited,48ec520734a87240517c5563ab30a18abd934405c6221d7acaf700ff8e0eabac,857023,"Darth Traya, Lord of Betrayal",foil,manual,true
+starwarsunlimited,48f13e5e78da8a60021dcf2c6f9a6e8416dc91cfc802efabb40cfceb3f203021,857152,"Mas Amedda, Accomplice to Power",foil,manual,true
+starwarsunlimited,498a3d2dfcef1be2ff5723dad0e44ea327b20f1cd8dff968e6fd885f4c1e751a,875998,Single Reactor Ignition,nonfoil,manual,true
+starwarsunlimited,49bf4d484a7b9a85b6641e64c97c210df9b3c670c738378b86b5c587d3c49f8d,815660,Planetary Bombardment,foil,manual,true
 starwarsunlimited,49e2de826065f147ca11807db119dee4c9c46bb527d8daea2ec634bb6a361410,822540,"Ahsoka Tano, Chasing Whispers",foil,exact,true
-starwarsunlimited,4a40a30e67d167f99eb50956e77b214102490d137a20e5b02200fdaec0e1dc84,757445,Change of Heart,foil,ambiguous,false
-starwarsunlimited,4a71e1f0603cf6188acafe5cfdf4bd54ceeadeabc3d1e6c1a0c908e752215c39,832830,Constructed Lightsaber,foil,ambiguous,false
+starwarsunlimited,4a40a30e67d167f99eb50956e77b214102490d137a20e5b02200fdaec0e1dc84,757445,Change of Heart,foil,manual,true
+starwarsunlimited,4a71e1f0603cf6188acafe5cfdf4bd54ceeadeabc3d1e6c1a0c908e752215c39,832830,Constructed Lightsaber,foil,manual,true
 starwarsunlimited,4a9248c508c6686a5859477fb4625356642bae6b959f29e00eb97e32149cfcb3,884838,"Jendirian Valley, Refugee Freighter",nonfoil,exact,true
-starwarsunlimited,4adc659a1c852e0579ed05b419f34fa7f6422482fe78c132d7bad64d9345538b,757679,"Avenger, Hunting Star Destroyer",nonfoil,ambiguous,false
-starwarsunlimited,4b13cd63995e8f38541a7b8bfe09fdc9071a94ea5e4ce9f182b758fbb8253ac6,815362,Stolen AT-Hauler,foil,ambiguous,false
-starwarsunlimited,4b4b82457723eb548112413b74b8c3da0d249a5b4a0600ab5ca823f0a3166a23,815507,Data Vault,nonfoil,provider_missing,false
+starwarsunlimited,4adc659a1c852e0579ed05b419f34fa7f6422482fe78c132d7bad64d9345538b,757679,"Avenger, Hunting Star Destroyer",nonfoil,manual,true
+starwarsunlimited,4b13cd63995e8f38541a7b8bfe09fdc9071a94ea5e4ce9f182b758fbb8253ac6,815362,Stolen AT-Hauler,foil,manual,true
+starwarsunlimited,4b4b82457723eb548112413b74b8c3da0d249a5b4a0600ab5ca823f0a3166a23,815507,Data Vault,nonfoil,manual,true
 starwarsunlimited,4b807768d00a66369b4b2f2a91f125e5b8635ecede3f70468d5714212e6f2018,838422,"Millennium Falcon, Piece of Junk",foil,exact,true
-starwarsunlimited,4bb117b229149ab84972c3125a92c53741d6ee6bad15d06fa6c7838b466380d8,854331,"Lightmaker, I Have An Idea",nonfoil,ambiguous,false
-starwarsunlimited,4bbbe0d9e1436d9e03eca3b914faa4cdcd6822ef3c2fbaca02e4e71e092fa788,857127,"Lightmaker, I Have An Idea",foil,ambiguous,false
-starwarsunlimited,4be03b0398301ef524da78153d7bc3a7c3b23915e606bb216518b9e6d8080db3,815813,"Admiral Holdo, We're Not Alone",foil,ambiguous,false
-starwarsunlimited,4c91ec7d384519b1ee6cb9b66885b0f432111b7a9383a38d74b32a7a97500f81,857175,"First Light, Threatening Elegance",foil,ambiguous,false
+starwarsunlimited,4bb117b229149ab84972c3125a92c53741d6ee6bad15d06fa6c7838b466380d8,854331,"Lightmaker, I Have An Idea",nonfoil,manual,true
+starwarsunlimited,4bbbe0d9e1436d9e03eca3b914faa4cdcd6822ef3c2fbaca02e4e71e092fa788,857127,"Lightmaker, I Have An Idea",foil,manual,true
+starwarsunlimited,4be03b0398301ef524da78153d7bc3a7c3b23915e606bb216518b9e6d8080db3,815813,"Admiral Holdo, We're Not Alone",foil,manual,true
+starwarsunlimited,4c91ec7d384519b1ee6cb9b66885b0f432111b7a9383a38d74b32a7a97500f81,857175,"First Light, Threatening Elegance",foil,manual,true
 starwarsunlimited,4c97a2ed296a45e83771aecf731137ef7f79406fe5a79f63467e1b0007fc4ca8,822535,"Poggle the Lesser, Archduke of the Stalgasin Hive",nonfoil,exact,true
 starwarsunlimited,4d146d4cbdc8d983957ce0f64cb177e2b7c0556c2ad917aa19b5eefacdc0a77e,838418,"Executor, Might of the Empire",foil,exact,true
-starwarsunlimited,4d164d0f8320e6b970e6885326bef4eab195969de02f63c3b523cadbb4d452ba,854960,"Yaddle, A Chance To Make Things Right",nonfoil,ambiguous,false
-starwarsunlimited,4d63fc403c31396ce939fcbd1d236e40e2a501522ccec1f483864d0ceb2afddc,819486,"Kylo Ren, Killing the Past",nonfoil,ambiguous,false
-starwarsunlimited,4db75adbf3384e12ab58fa46b761655b728a4ae962045ed836e3e2ca96600f8a,760876,"Mace Windu, Party Crasher",nonfoil,ambiguous,false
-starwarsunlimited,4df2401e536268c270478c531426ce81c96fadbd4f18c82dc0ffc281799e0eb4,757479,"Grand Admiral Thrawn, Patient and Insightful",nonfoil,ambiguous,false
-starwarsunlimited,4e0865f6b8e4a80bdb0eb3a93ba9d33c9101b80a36e95dac03fdbb487506878f,876582,"Boba Fett, For a Price",foil,ambiguous,false
-starwarsunlimited,4f17a82c71953309e238b0bade4dd434dea31e2e310d25efd4a87da8256907bb,815918,"Shadow Caster, Just Business",foil,ambiguous,false
-starwarsunlimited,504d1814db5acac995a0ef127b08314aceb13c07011e6f337f362a1f888743d3,815283,"Darth Vader, Scourge of Squadrons",foil,ambiguous,false
+starwarsunlimited,4d164d0f8320e6b970e6885326bef4eab195969de02f63c3b523cadbb4d452ba,854960,"Yaddle, A Chance To Make Things Right",nonfoil,manual,true
+starwarsunlimited,4d63fc403c31396ce939fcbd1d236e40e2a501522ccec1f483864d0ceb2afddc,819486,"Kylo Ren, Killing the Past",nonfoil,manual,true
+starwarsunlimited,4db75adbf3384e12ab58fa46b761655b728a4ae962045ed836e3e2ca96600f8a,760876,"Mace Windu, Party Crasher",nonfoil,manual,true
+starwarsunlimited,4df2401e536268c270478c531426ce81c96fadbd4f18c82dc0ffc281799e0eb4,757479,"Grand Admiral Thrawn, Patient and Insightful",nonfoil,manual,true
+starwarsunlimited,4e0865f6b8e4a80bdb0eb3a93ba9d33c9101b80a36e95dac03fdbb487506878f,876582,"Boba Fett, For a Price",foil,manual,true
+starwarsunlimited,4f17a82c71953309e238b0bade4dd434dea31e2e310d25efd4a87da8256907bb,815918,"Shadow Caster, Just Business",foil,manual,true
+starwarsunlimited,504d1814db5acac995a0ef127b08314aceb13c07011e6f337f362a1f888743d3,815283,"Darth Vader, Scourge of Squadrons",foil,manual,true
 starwarsunlimited,50a57550c49976da92e7a5550d3c2c68a74152c01afb3477caf41dccd910f39a,838407,"The Invisible Hand, Crawling With Vultures",foil,exact,true
-starwarsunlimited,50cafaeeea1dc7ca3f9676b2ac0e9b7ebfbe727dc7f16523d3fb5c940d8c32d1,815025,"Darth Vader, Scourge of Squadrons",nonfoil,ambiguous,false
-starwarsunlimited,512bccffbb04ed146e6927a0952ab0b67949ab0adbcc95b1aaf3e94ee5939811,833387,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,517d0826bc7ba221011cb51be6c74bfcad6f4f8e924d756faebdf3b7d58de11c,876231,"Latts Razzi, Deadly Whipmaster",foil,ambiguous,false
-starwarsunlimited,52430e5bc42fbc0c7ee6162e4cc3e1585ad0d49e39bd815de02417733b91e0a8,833266,"Grogu, Mysterious Child",foil,ambiguous,false
-starwarsunlimited,52f25e71947b0d8f2716f8c6d77b212b764fba88227f92f6637a7fce809e44ea,833304,"Chirrut Îmwe, Blind, but not Deaf",foil,ambiguous,false
-starwarsunlimited,536d3cda966fae806d624868f4409c61aeb3a1a0331badfc1736e48c8ca06e1d,868666,"Darth Traya, Lord of Betrayal",nonfoil,ambiguous,false
-starwarsunlimited,5389ddd6b53a131d79b453caa3d802e3069205d20642133636a95014a27bc8c2,757459,"Hera Syndulla, Spectre Two",nonfoil,ambiguous,false
-starwarsunlimited,53dfd76b7139846654c6c39f1735d79d1617d29fac1be5aa6aa8d4be4d5d92c0,839956,Shield Generator Complex,nonfoil,provider_missing,false
-starwarsunlimited,54419948ffd773b8533cf80d33f2a6c64734f99ced356ffa91bf83c5b6516fe9,868634,"Chancellor Palpatine, I Am the Senate",nonfoil,ambiguous,false
-starwarsunlimited,54b44bf262914bb0a8c2757a1f17ebb8b599f124e53e77d00a0a929ba7286c4c,854990,"Luke Skywalker, Jedi Knight",nonfoil,ambiguous,false
-starwarsunlimited,553cf169d8a57f07900805409cd9044dc17df7c6f66e5a38892ad850f3beb331,815921,"Mist Hunter, The Findsman's Pursuit",foil,ambiguous,false
-starwarsunlimited,554febb72006c1214afd32a2233dfb539560878feb3e92547e291e02772b2330,868639,"Qui-Gon Jinn, The Negotiations Will Be Short",nonfoil,ambiguous,false
-starwarsunlimited,5594e04c8fa6ffe33851ade2ab316452d8fbccdae8ab061c0d9639191f0ccd4a,831320,"Darth Vader, Twilight of the Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,5612b49b3912d775dd43ae62d05ba7e79eb414fa4e042a06c067cfff3d3797db,757467,"IG-88, Ruthless Bounty Hunter",nonfoil,ambiguous,false
-starwarsunlimited,561964d9141f97b1763a1a38454bb324f9eeb7d8e91bc1d47fb999e6af1bdfe6,856818,"DJ, Need a Lift?",foil,ambiguous,false
-starwarsunlimited,56c7a1cc7d097f713c87cd5ee23378859ae510a8ddbc220b4027f666aac180a7,776863,"Moff Gideon, Formidable Commander",foil,ambiguous,false
+starwarsunlimited,50cafaeeea1dc7ca3f9676b2ac0e9b7ebfbe727dc7f16523d3fb5c940d8c32d1,815025,"Darth Vader, Scourge of Squadrons",nonfoil,manual,true
+starwarsunlimited,512bccffbb04ed146e6927a0952ab0b67949ab0adbcc95b1aaf3e94ee5939811,833387,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,517d0826bc7ba221011cb51be6c74bfcad6f4f8e924d756faebdf3b7d58de11c,876231,"Latts Razzi, Deadly Whipmaster",foil,manual,true
+starwarsunlimited,52430e5bc42fbc0c7ee6162e4cc3e1585ad0d49e39bd815de02417733b91e0a8,833266,"Grogu, Mysterious Child",foil,manual,true
+starwarsunlimited,52f25e71947b0d8f2716f8c6d77b212b764fba88227f92f6637a7fce809e44ea,833304,"Chirrut Îmwe, Blind, but not Deaf",foil,manual,true
+starwarsunlimited,536d3cda966fae806d624868f4409c61aeb3a1a0331badfc1736e48c8ca06e1d,868666,"Darth Traya, Lord of Betrayal",nonfoil,manual,true
+starwarsunlimited,5389ddd6b53a131d79b453caa3d802e3069205d20642133636a95014a27bc8c2,757459,"Hera Syndulla, Spectre Two",nonfoil,manual,true
+starwarsunlimited,53dfd76b7139846654c6c39f1735d79d1617d29fac1be5aa6aa8d4be4d5d92c0,839956,Shield Generator Complex,nonfoil,manual,true
+starwarsunlimited,54419948ffd773b8533cf80d33f2a6c64734f99ced356ffa91bf83c5b6516fe9,868634,"Chancellor Palpatine, I Am the Senate",nonfoil,manual,true
+starwarsunlimited,54b44bf262914bb0a8c2757a1f17ebb8b599f124e53e77d00a0a929ba7286c4c,854990,"Luke Skywalker, Jedi Knight",nonfoil,manual,true
+starwarsunlimited,553cf169d8a57f07900805409cd9044dc17df7c6f66e5a38892ad850f3beb331,815921,"Mist Hunter, The Findsman's Pursuit",foil,manual,true
+starwarsunlimited,554febb72006c1214afd32a2233dfb539560878feb3e92547e291e02772b2330,868639,"Qui-Gon Jinn, The Negotiations Will Be Short",nonfoil,manual,true
+starwarsunlimited,5594e04c8fa6ffe33851ade2ab316452d8fbccdae8ab061c0d9639191f0ccd4a,831320,"Darth Vader, Twilight of the Apprentice",nonfoil,manual,true
+starwarsunlimited,5612b49b3912d775dd43ae62d05ba7e79eb414fa4e042a06c067cfff3d3797db,757467,"IG-88, Ruthless Bounty Hunter",nonfoil,manual,true
+starwarsunlimited,561964d9141f97b1763a1a38454bb324f9eeb7d8e91bc1d47fb999e6af1bdfe6,856818,"DJ, Need a Lift?",foil,manual,true
+starwarsunlimited,56c7a1cc7d097f713c87cd5ee23378859ae510a8ddbc220b4027f666aac180a7,776863,"Moff Gideon, Formidable Commander",foil,manual,true
 starwarsunlimited,577ef7a7614bb70bc749187685290651fb45f11e840b736c846655d949d32c8e,838399,"Kylo Ren, I Know Your Story",foil,exact,true
-starwarsunlimited,5796e76225bb97b12d124179e8c2b0a081c9b507550c358d5cfb2dfe928258a0,848224,"Darth Malak, Covetous Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,579dcb0b55dedcd282a7719db306d3c21b0dc45fb3243d016bc2c28195d7416d,831553,Constructed Lightsaber,nonfoil,ambiguous,false
-starwarsunlimited,57b05e0ac29176ba204b7b0c2ca475c1254fee65f14aca8b9038ad9c097bae86,815822,"Admiral Ackbar, It's A Trap!",foil,ambiguous,false
-starwarsunlimited,57d50de75b947f29b232853a23f63f2f9df5bfa99c423e6464f10aff771b8d41,815821,"Rio Durant, Wisecracking Wheelman",foil,ambiguous,false
-starwarsunlimited,5805a4f695abf5deace9483440b7b4efc0bc859b29a14a947b71f2dc0909deb2,815923,"Fireball, An Explosion With Wings",foil,ambiguous,false
+starwarsunlimited,5796e76225bb97b12d124179e8c2b0a081c9b507550c358d5cfb2dfe928258a0,848224,"Darth Malak, Covetous Apprentice",nonfoil,manual,true
+starwarsunlimited,579dcb0b55dedcd282a7719db306d3c21b0dc45fb3243d016bc2c28195d7416d,831553,Constructed Lightsaber,nonfoil,manual,true
+starwarsunlimited,57b05e0ac29176ba204b7b0c2ca475c1254fee65f14aca8b9038ad9c097bae86,815822,"Admiral Ackbar, It's A Trap!",foil,manual,true
+starwarsunlimited,57d50de75b947f29b232853a23f63f2f9df5bfa99c423e6464f10aff771b8d41,815821,"Rio Durant, Wisecracking Wheelman",foil,manual,true
+starwarsunlimited,5805a4f695abf5deace9483440b7b4efc0bc859b29a14a947b71f2dc0909deb2,815923,"Fireball, An Explosion With Wings",foil,manual,true
 starwarsunlimited,5828df78bc9e497e2290a8c525ebb384832e73c560c976e4fd2b947922c0f872,795090,Legal Authority,foil,ambiguous,false
-starwarsunlimited,58e7a7983de10c3be0b98fd75e3292c9771b51eab47e70a18954fd2ca31e7d14,815823,"Han Solo, Never Tell Me the Odds",foil,ambiguous,false
-starwarsunlimited,59ae358059bdde309aa3ad8bfd7126950635a2702389f2d1ddbfa2454c7d4412,876465,"Hera Syndulla, Not Fighting Alone",foil,ambiguous,false
-starwarsunlimited,59b94753ae1d96f0c4c54089ec29e7b6112001509d3c2a510b5819cb2c4d7959,776608,"Poe Dameron, Quick to Improvise",nonfoil,ambiguous,false
-starwarsunlimited,59dd7f5fbfbf8731492d9b5fe349bb29d7c137f957beb6454109c7534d23b543,833320,"Obi-Wan Kenobi, Protective Padawan",nonfoil,ambiguous,false
-starwarsunlimited,59e96bd246c7a3f7e11ef8337a50aa79e1402f92b33dbc3ecf80cbdf15e8dcb9,833374,"Baylan Skoll, Enigmatic Master",foil,ambiguous,false
-starwarsunlimited,5a80b72a9e04d59e88b335c21cee208098cf14b532179cafa25c1477fa7f1efd,833309,"Zuckuss, The Findsman",foil,ambiguous,false
-starwarsunlimited,5ab82a811380238870551811a83fb43d1a6dac25f5946945da11ab8e293c7187,776549,Palpatine's Return,foil,ambiguous,false
-starwarsunlimited,5bc2c02a7feb87c32b0c602d3c4d921d0129d7627894aed111bb1892481a764e,815814,"Wedge Antilles, Leader of Red Squadron",foil,ambiguous,false
-starwarsunlimited,5c24bf49e265b35ad9e1891b6e1a2864f9c512a87638f97dc0b3baafdaff0f73,876573,"Baze Malbus, Good Luck",foil,ambiguous,false
+starwarsunlimited,58e7a7983de10c3be0b98fd75e3292c9771b51eab47e70a18954fd2ca31e7d14,815823,"Han Solo, Never Tell Me the Odds",foil,manual,true
+starwarsunlimited,59ae358059bdde309aa3ad8bfd7126950635a2702389f2d1ddbfa2454c7d4412,876465,"Hera Syndulla, Not Fighting Alone",foil,manual,true
+starwarsunlimited,59b94753ae1d96f0c4c54089ec29e7b6112001509d3c2a510b5819cb2c4d7959,776608,"Poe Dameron, Quick to Improvise",nonfoil,manual,true
+starwarsunlimited,59dd7f5fbfbf8731492d9b5fe349bb29d7c137f957beb6454109c7534d23b543,833320,"Obi-Wan Kenobi, Protective Padawan",nonfoil,manual,true
+starwarsunlimited,59e96bd246c7a3f7e11ef8337a50aa79e1402f92b33dbc3ecf80cbdf15e8dcb9,833374,"Baylan Skoll, Enigmatic Master",foil,manual,true
+starwarsunlimited,5a80b72a9e04d59e88b335c21cee208098cf14b532179cafa25c1477fa7f1efd,833309,"Zuckuss, The Findsman",foil,manual,true
+starwarsunlimited,5ab82a811380238870551811a83fb43d1a6dac25f5946945da11ab8e293c7187,776549,Palpatine's Return,foil,manual,true
+starwarsunlimited,5bc2c02a7feb87c32b0c602d3c4d921d0129d7627894aed111bb1892481a764e,815814,"Wedge Antilles, Leader of Red Squadron",foil,manual,true
+starwarsunlimited,5c24bf49e265b35ad9e1891b6e1a2864f9c512a87638f97dc0b3baafdaff0f73,876573,"Baze Malbus, Good Luck",foil,manual,true
 starwarsunlimited,5c7813508bd978c797e5462cae12d35f40c2910db7c15470c14b69f3295648f1,838356,Clone Trooper Token,nonfoil,provider_missing,false
-starwarsunlimited,5ca32ffed2f555ed5445898e6be3afca9a616e797293aa93c2cf40f5af6a41c9,815872,"Blue Leader, Scarif Air Support",foil,ambiguous,false
-starwarsunlimited,5cba89235bd0808675b0b55a897d25facc6b1b1b301f34218660cf762df995bd,833397,"Karis, We Don't Like Strangers",foil,ambiguous,false
-starwarsunlimited,5ccc444f7be662f8d2fe1b5b33c979aa1c8d3049e512f7a410de10fd60076f6b,819477,"Home One, On My Mark",nonfoil,ambiguous,false
-starwarsunlimited,5ccd25982a2fcb44f92d636e8be804ec6a70dd82edc1533a3e5a7799b48bdad9,832782,"The Legacy Run, Doomed Debris",foil,ambiguous,false
-starwarsunlimited,5d426c76e8e2f616b0db785285a70d9938ea77566d7fb8ba6fbe178c6c57955f,876026,"Max Rebo, Encore!",nonfoil,ambiguous,false
-starwarsunlimited,5d800d8c8818cf8762583f53e78bec4366bf5026cf33a3dfb849141f0db48213,757461,"Leia Organa, Alliance General",nonfoil,ambiguous,false
-starwarsunlimited,5e1b6cc27da2160df12e14e326a74a331c8a04c6f7fa50be701a773f21c46a97,809407,"Tech, Source of Insight",nonfoil,ambiguous,false
-starwarsunlimited,5e3ff19c0c1c9c3d0731a51c57fbeac55dddfcc219bf866f3c4d4d288163c453,876566,"Zeb Orellios, Spectre Four",foil,ambiguous,false
-starwarsunlimited,5e6cf904c177bcb9387a5144883ce11a7a08273b33e02e9a5cae79395fd3cd34,856614,Hyperspace Disaster,nonfoil,ambiguous,false
-starwarsunlimited,5eed01d9603d1091f53c600b8d84f8b5b71935131add0e72735dcb07c91775cd,857178,"Garindan, Information Broker",foil,ambiguous,false
-starwarsunlimited,5f49553a4ac8aecd4197d026cd1d3e03bc1072424b6dc67e7150c1f8da2c1442,757485,"Jyn Erso, Resisting Oppression",nonfoil,ambiguous,false
-starwarsunlimited,5f95c7e9f9ff793d6454f4e5d726020bc4a3bb697e2fe06bde7241c66a5c7941,776874,"Lando Calrissian, With Impeccable Taste",foil,ambiguous,false
-starwarsunlimited,5fb93f0179e6c6e5c442d63bfa734797db4e91dbff8b256900eb40c15bdddb5e,819489,"Kylo Ren, Killing the Past",nonfoil,ambiguous,false
-starwarsunlimited,6034bd08d1a43d53ca37c2199c0f92b078e21d9e3dbe1309b5e851a54b0c9978,833276,"Priestesses of the Force, Eternal",foil,ambiguous,false
-starwarsunlimited,603f9ee0bed87b0246ef167962675601646d45b2463a9c68c7074156d8ae3250,757554,Fallen Lightsaber,foil,ambiguous,false
-starwarsunlimited,605dda83b54b6fce1065ea8265abb2fb1dc39eb4c14741ea49215f3b5a5c9a1c,757456,"Grand Moff Tarkin, Oversector Governor",nonfoil,ambiguous,false
-starwarsunlimited,6134222b3f71e9bad91bb7570cb7807ba01868bc14423174d9f1785def2b9352,854943,Planetary Bombardment,nonfoil,ambiguous,false
-starwarsunlimited,61712e5780f94e07ac9e5b0363ca87348ea6bb6e1638a633bc0fe3d6b00b9892,815916,"Red Five, Running the Trench",foil,ambiguous,false
+starwarsunlimited,5ca32ffed2f555ed5445898e6be3afca9a616e797293aa93c2cf40f5af6a41c9,815872,"Blue Leader, Scarif Air Support",foil,manual,true
+starwarsunlimited,5cba89235bd0808675b0b55a897d25facc6b1b1b301f34218660cf762df995bd,833397,"Karis, We Don't Like Strangers",foil,manual,true
+starwarsunlimited,5ccc444f7be662f8d2fe1b5b33c979aa1c8d3049e512f7a410de10fd60076f6b,819477,"Home One, On My Mark",nonfoil,manual,true
+starwarsunlimited,5ccd25982a2fcb44f92d636e8be804ec6a70dd82edc1533a3e5a7799b48bdad9,832782,"The Legacy Run, Doomed Debris",foil,manual,true
+starwarsunlimited,5d426c76e8e2f616b0db785285a70d9938ea77566d7fb8ba6fbe178c6c57955f,876026,"Max Rebo, Encore!",nonfoil,manual,true
+starwarsunlimited,5d800d8c8818cf8762583f53e78bec4366bf5026cf33a3dfb849141f0db48213,757461,"Leia Organa, Alliance General",nonfoil,manual,true
+starwarsunlimited,5e1b6cc27da2160df12e14e326a74a331c8a04c6f7fa50be701a773f21c46a97,809407,"Tech, Source of Insight",nonfoil,manual,true
+starwarsunlimited,5e3ff19c0c1c9c3d0731a51c57fbeac55dddfcc219bf866f3c4d4d288163c453,876566,"Zeb Orellios, Spectre Four",foil,manual,true
+starwarsunlimited,5e6cf904c177bcb9387a5144883ce11a7a08273b33e02e9a5cae79395fd3cd34,856614,Hyperspace Disaster,nonfoil,manual,true
+starwarsunlimited,5eed01d9603d1091f53c600b8d84f8b5b71935131add0e72735dcb07c91775cd,857178,"Garindan, Information Broker",foil,manual,true
+starwarsunlimited,5f49553a4ac8aecd4197d026cd1d3e03bc1072424b6dc67e7150c1f8da2c1442,757485,"Jyn Erso, Resisting Oppression",nonfoil,manual,true
+starwarsunlimited,5f95c7e9f9ff793d6454f4e5d726020bc4a3bb697e2fe06bde7241c66a5c7941,776874,"Lando Calrissian, With Impeccable Taste",foil,manual,true
+starwarsunlimited,5fb93f0179e6c6e5c442d63bfa734797db4e91dbff8b256900eb40c15bdddb5e,819489,"Kylo Ren, Killing the Past",nonfoil,manual,true
+starwarsunlimited,6034bd08d1a43d53ca37c2199c0f92b078e21d9e3dbe1309b5e851a54b0c9978,833276,"Priestesses of the Force, Eternal",foil,manual,true
+starwarsunlimited,603f9ee0bed87b0246ef167962675601646d45b2463a9c68c7074156d8ae3250,757554,Fallen Lightsaber,foil,manual,true
+starwarsunlimited,605dda83b54b6fce1065ea8265abb2fb1dc39eb4c14741ea49215f3b5a5c9a1c,757456,"Grand Moff Tarkin, Oversector Governor",nonfoil,manual,true
+starwarsunlimited,6134222b3f71e9bad91bb7570cb7807ba01868bc14423174d9f1785def2b9352,854943,Planetary Bombardment,nonfoil,manual,true
+starwarsunlimited,61712e5780f94e07ac9e5b0363ca87348ea6bb6e1638a633bc0fe3d6b00b9892,815916,"Red Five, Running the Trench",foil,manual,true
 starwarsunlimited,6199aaf637b4080b073a4b41b51d943b31d4458939e6d056baaaf191cbfd8691,822533,"The Ghost, Heart of the Family",nonfoil,exact,true
-starwarsunlimited,61f1f2c3f75d3f3ff7f55ec0edcd8bb43165213d275f3cc0912318effb404959,796090,"Nute Gunray, Vindictive Viceroy",foil,ambiguous,false
-starwarsunlimited,624e3eaf87db7b4a37ada1651d68abdc293870fcd829a62968c96d77a5ab00e8,862265,"Darth Sidious, The Phantom Menace",foil,ambiguous,false
-starwarsunlimited,62a6792224c6b62363c8dd1a933c86dcecaed7ed9de3469a35d01106afae5975,857166,"Karis Nemik, Freedom is a Pure Idea",foil,ambiguous,false
-starwarsunlimited,62f1a098a0dc4e226e1d4c246467848bfee7e26e86dc39ba705cb3ea4e93831c,868578,Planetary Bombardment,foil,ambiguous,false
-starwarsunlimited,631cb2226b70fcf81cd22bd8a21724755ff5d0c22936523791e4e0f1e392c45e,839962,Massassi Temple,nonfoil,provider_missing,false
-starwarsunlimited,6434faf78e37226a30c874682c475f856e482a683dcad42c42316bb9ede1e9e2,815322,Planetary Bombardment,foil,ambiguous,false
-starwarsunlimited,645c5582a520599a9563fd0160198d91266a296f514e0a4d8d782b8ef497cfd2,876583,"Fett's Firespray, In Pursuit",foil,ambiguous,false
-starwarsunlimited,64fe0ebca1a0ae30c0fd6319b58c90f1326b0ddd7b5b214210de26b17da8e88f,868632,"Grogu, Mysterious Child",foil,ambiguous,false
-starwarsunlimited,657cda6939bc08bcb7a9224d786a0131b7c857a86d6259449417015e61e4547a,839442,"The Mandalorian, Wherever I Go, He Goes",foil,ambiguous,false
-starwarsunlimited,65c4adf750aa906dc61e65032e9188327f3deaeb4daf259104978258269326a9,876467,"Darth Vader, Unstoppable",foil,ambiguous,false
-starwarsunlimited,66207f434f83f72472ff31c8f3f1131ee0fd263d018a1f8b8d6b0f5594b2a1e1,833169,"Kanan Jarrus, Help Us Survive",foil,ambiguous,false
-starwarsunlimited,666d512ede335efa1ba52df47d2b559a3a628118cc49d206c668d99c3d66e945,819475,"Home One, On My Mark",foil,ambiguous,false
-starwarsunlimited,667f9393b6ea1e11ddb9dc2a9cf9557f8cb1d231e812cc7547daa70409aa5845,876590,"IG-88, Programmed to Kill",foil,ambiguous,false
-starwarsunlimited,668bcd1cabe36990dc4b1c10a63f0b1c28505dac35c39f318bdb7e15f487a97f,776669,"DJ, Blatant Thief",foil,ambiguous,false
-starwarsunlimited,66a5e3b02bb9fd9df354f678c685a665c3ccecaa4d068d811b035f61cad4e57e,856801,"Chancellor Palpatine, How Liberty Dies",foil,ambiguous,false
-starwarsunlimited,6723f409001fa7cf9e6d5832f549ca6c5dc6040ff5c73015c16a3643c679e243,856814,"Sly Moore, Cipher in the Dark",foil,ambiguous,false
-starwarsunlimited,673ec970643ff555fbf0671bbd0041cb4f4b29963080f706cdc2feeb072e887d,757574,Traitorous,foil,ambiguous,false
-starwarsunlimited,675ea34ba279c1459ee695809bb16fbd1d5328681cb6556e0b5d84a5ec193969,833192,"Grand Inquisitor, Stories Travel Quickly",foil,ambiguous,false
-starwarsunlimited,67e11955293da3fe6c9104e980c73f40187882a8e5b1c9648d2d5ead0ee8a9f1,848225,"Darth Malak, Covetous Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,68a97e7a8912d30790e65dc8c6cbdc3539f5351c1aa8d29b619f0a0b7a6f72dc,868644,"Darth Sion, Lord of Pain",foil,ambiguous,false
-starwarsunlimited,6923c0e166eada4558b875771b0ae1f0231d19b7b44bd212b2b909e022bbd14c,776662,Final Showdown,foil,ambiguous,false
-starwarsunlimited,697dcff2ac18dd660200b06d288d22ac39e14afc5c3bdee6930051dc7036d4cb,856684,"Karis Nemik, Freedom is a Pure Idea",nonfoil,ambiguous,false
-starwarsunlimited,69ab258a0001742aa78ca2414d6c4c266948d99189e0ade06de15b31a2476492,876471,"Jabba the Hutt, Crime Boss",foil,ambiguous,false
-starwarsunlimited,69ea3dff0cabfb8c09ac3b0c7184f1b505daf1e803d6b4572aa20e739854ff4e,776868,"Kylo Ren, Rash and Deadly",foil,ambiguous,false
-starwarsunlimited,6a049ea5e6497629e0099a2dca94903ab8f0cf46eb0b20b892e3e73d4b9a9d27,856813,"Luthen Rael, Don't You Want to Fight For Real?",foil,ambiguous,false
-starwarsunlimited,6a5fb3d072a8efb86d29bcff54220cfddef74bc2b685216f91c300a2d943bd52,757485,"Jyn Erso, Resisting Oppression",foil,ambiguous,false
-starwarsunlimited,6a6420630a8629569089f2d93d421b5f8e31c0d9939d1edf3ccbd13ac6fc71b3,875993,"Latts Razzi, Deadly Whipmaster",nonfoil,ambiguous,false
-starwarsunlimited,6a6eedf4103ca3b0d999f6addd8bf6b7f3e144b07bea019ceb54290bb87963f2,833303,"Chirrut Îmwe, Blind, but not Deaf",foil,ambiguous,false
+starwarsunlimited,61f1f2c3f75d3f3ff7f55ec0edcd8bb43165213d275f3cc0912318effb404959,796090,"Nute Gunray, Vindictive Viceroy",foil,manual,true
+starwarsunlimited,624e3eaf87db7b4a37ada1651d68abdc293870fcd829a62968c96d77a5ab00e8,862265,"Darth Sidious, The Phantom Menace",foil,manual,true
+starwarsunlimited,62a6792224c6b62363c8dd1a933c86dcecaed7ed9de3469a35d01106afae5975,857166,"Karis Nemik, Freedom is a Pure Idea",foil,manual,true
+starwarsunlimited,62f1a098a0dc4e226e1d4c246467848bfee7e26e86dc39ba705cb3ea4e93831c,868578,Planetary Bombardment,foil,manual,true
+starwarsunlimited,631cb2226b70fcf81cd22bd8a21724755ff5d0c22936523791e4e0f1e392c45e,839962,Massassi Temple,nonfoil,manual,true
+starwarsunlimited,6434faf78e37226a30c874682c475f856e482a683dcad42c42316bb9ede1e9e2,815322,Planetary Bombardment,foil,manual,true
+starwarsunlimited,645c5582a520599a9563fd0160198d91266a296f514e0a4d8d782b8ef497cfd2,876583,"Fett's Firespray, In Pursuit",foil,manual,true
+starwarsunlimited,64fe0ebca1a0ae30c0fd6319b58c90f1326b0ddd7b5b214210de26b17da8e88f,868632,"Grogu, Mysterious Child",foil,manual,true
+starwarsunlimited,657cda6939bc08bcb7a9224d786a0131b7c857a86d6259449417015e61e4547a,839442,"The Mandalorian, Wherever I Go, He Goes",foil,manual,true
+starwarsunlimited,65c4adf750aa906dc61e65032e9188327f3deaeb4daf259104978258269326a9,876467,"Darth Vader, Unstoppable",foil,manual,true
+starwarsunlimited,66207f434f83f72472ff31c8f3f1131ee0fd263d018a1f8b8d6b0f5594b2a1e1,833169,"Kanan Jarrus, Help Us Survive",foil,manual,true
+starwarsunlimited,666d512ede335efa1ba52df47d2b559a3a628118cc49d206c668d99c3d66e945,819475,"Home One, On My Mark",foil,manual,true
+starwarsunlimited,667f9393b6ea1e11ddb9dc2a9cf9557f8cb1d231e812cc7547daa70409aa5845,876590,"IG-88, Programmed to Kill",foil,manual,true
+starwarsunlimited,668bcd1cabe36990dc4b1c10a63f0b1c28505dac35c39f318bdb7e15f487a97f,776669,"DJ, Blatant Thief",foil,manual,true
+starwarsunlimited,66a5e3b02bb9fd9df354f678c685a665c3ccecaa4d068d811b035f61cad4e57e,856801,"Chancellor Palpatine, How Liberty Dies",foil,manual,true
+starwarsunlimited,6723f409001fa7cf9e6d5832f549ca6c5dc6040ff5c73015c16a3643c679e243,856814,"Sly Moore, Cipher in the Dark",foil,manual,true
+starwarsunlimited,673ec970643ff555fbf0671bbd0041cb4f4b29963080f706cdc2feeb072e887d,757574,Traitorous,foil,manual,true
+starwarsunlimited,675ea34ba279c1459ee695809bb16fbd1d5328681cb6556e0b5d84a5ec193969,833192,"Grand Inquisitor, Stories Travel Quickly",foil,manual,true
+starwarsunlimited,67e11955293da3fe6c9104e980c73f40187882a8e5b1c9648d2d5ead0ee8a9f1,848225,"Darth Malak, Covetous Apprentice",nonfoil,manual,true
+starwarsunlimited,68a97e7a8912d30790e65dc8c6cbdc3539f5351c1aa8d29b619f0a0b7a6f72dc,868644,"Darth Sion, Lord of Pain",foil,manual,true
+starwarsunlimited,6923c0e166eada4558b875771b0ae1f0231d19b7b44bd212b2b909e022bbd14c,776662,Final Showdown,foil,manual,true
+starwarsunlimited,697dcff2ac18dd660200b06d288d22ac39e14afc5c3bdee6930051dc7036d4cb,856684,"Karis Nemik, Freedom is a Pure Idea",nonfoil,manual,true
+starwarsunlimited,69ab258a0001742aa78ca2414d6c4c266948d99189e0ade06de15b31a2476492,876471,"Jabba the Hutt, Crime Boss",foil,manual,true
+starwarsunlimited,69ea3dff0cabfb8c09ac3b0c7184f1b505daf1e803d6b4572aa20e739854ff4e,776868,"Kylo Ren, Rash and Deadly",foil,manual,true
+starwarsunlimited,6a049ea5e6497629e0099a2dca94903ab8f0cf46eb0b20b892e3e73d4b9a9d27,856813,"Luthen Rael, Don't You Want to Fight For Real?",foil,manual,true
+starwarsunlimited,6a5fb3d072a8efb86d29bcff54220cfddef74bc2b685216f91c300a2d943bd52,757485,"Jyn Erso, Resisting Oppression",foil,manual,true
+starwarsunlimited,6a6420630a8629569089f2d93d421b5f8e31c0d9939d1edf3ccbd13ac6fc71b3,875993,"Latts Razzi, Deadly Whipmaster",nonfoil,manual,true
+starwarsunlimited,6a6eedf4103ca3b0d999f6addd8bf6b7f3e144b07bea019ceb54290bb87963f2,833303,"Chirrut Îmwe, Blind, but not Deaf",foil,manual,true
 starwarsunlimited,6ad6a3bf5d594af46048bb0bcec96c219e86713c2366a8278b8c7b423178d3c6,838412,"Boba Fett, Feared Bounty Hunter",foil,exact,true
-starwarsunlimited,6b0839781d45d28b553fda76ab27e608219bd6687dc3fd68c290556c11346aea,823576,"Rey, Keeping the Past",foil,ambiguous,false
-starwarsunlimited,6c0046be4171745a30fc87c735d32f680089339e831bb50a057bbe80b6b9d0f7,856637,"Queen Amidala, Championing Her People",nonfoil,ambiguous,false
-starwarsunlimited,6c156aab816ae68dacf9db98d4118c237f1b89a8c62f48bb9d67068c51b6fa53,833327,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,ambiguous,false
-starwarsunlimited,6c84dc8d02ae0dbfa316632b7ba65b134cb5a957278f22c2dc8f7fb9822e94a7,819471,"Devastator, Hunting the Rebellion",nonfoil,ambiguous,false
-starwarsunlimited,6c8d0edd39d550f2ce3848b43649087bce4b98dcd77628fe73f561d2aae1fa33,833331,"Anakin Skywalker, Force Prodigy",foil,ambiguous,false
-starwarsunlimited,6cd076dfdf1080ddaeb42f57d871678c0530c13eb7abd72f18e6ab37d40ce4b5,757467,"IG-88, Ruthless Bounty Hunter",foil,ambiguous,false
-starwarsunlimited,6d0e20d212e83b87ad9d7cb24dad8dd1dc987440d18efda52cb8edf92cf676f4,856780,"Darth Nihilus, Lord of Hunger",nonfoil,ambiguous,false
-starwarsunlimited,6dd5765d310565b968e6041799357c69a84fa6c244446a69dcf0f21dbf21099d,832844,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,6e1b53be5fc9bacef32030fca57523ab31b6928430e7ac0e8ca97460d4ea8b43,815106,Stolen AT-Hauler,nonfoil,ambiguous,false
-starwarsunlimited,6ebd702dd556a4b1d5fb65db56d5d1ca43629b51ba6a03baac064d85ee0becee,831211,"The Legacy Run, Doomed Debris",nonfoil,ambiguous,false
-starwarsunlimited,6eed50e3c25290eb7bd0b84ca619b38abccbb1d32e2023747adbd1f78059e2b7,868656,Always Two,nonfoil,ambiguous,false
-starwarsunlimited,6f3751032a7fcce4c4c63bda67fe3e73394c74eaac49e40834ae929fb34058c5,856458,"Darth Traya, Lord of Betrayal",foil,ambiguous,false
+starwarsunlimited,6b0839781d45d28b553fda76ab27e608219bd6687dc3fd68c290556c11346aea,823576,"Rey, Keeping the Past",foil,manual,true
+starwarsunlimited,6c0046be4171745a30fc87c735d32f680089339e831bb50a057bbe80b6b9d0f7,856637,"Queen Amidala, Championing Her People",nonfoil,manual,true
+starwarsunlimited,6c156aab816ae68dacf9db98d4118c237f1b89a8c62f48bb9d67068c51b6fa53,833327,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,manual,true
+starwarsunlimited,6c84dc8d02ae0dbfa316632b7ba65b134cb5a957278f22c2dc8f7fb9822e94a7,819471,"Devastator, Hunting the Rebellion",nonfoil,manual,true
+starwarsunlimited,6c8d0edd39d550f2ce3848b43649087bce4b98dcd77628fe73f561d2aae1fa33,833331,"Anakin Skywalker, Force Prodigy",foil,manual,true
+starwarsunlimited,6cd076dfdf1080ddaeb42f57d871678c0530c13eb7abd72f18e6ab37d40ce4b5,757467,"IG-88, Ruthless Bounty Hunter",foil,manual,true
+starwarsunlimited,6d0e20d212e83b87ad9d7cb24dad8dd1dc987440d18efda52cb8edf92cf676f4,856780,"Darth Nihilus, Lord of Hunger",nonfoil,manual,true
+starwarsunlimited,6dd5765d310565b968e6041799357c69a84fa6c244446a69dcf0f21dbf21099d,832844,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,6e1b53be5fc9bacef32030fca57523ab31b6928430e7ac0e8ca97460d4ea8b43,815106,Stolen AT-Hauler,nonfoil,manual,true
+starwarsunlimited,6ebd702dd556a4b1d5fb65db56d5d1ca43629b51ba6a03baac064d85ee0becee,831211,"The Legacy Run, Doomed Debris",nonfoil,manual,true
+starwarsunlimited,6eed50e3c25290eb7bd0b84ca619b38abccbb1d32e2023747adbd1f78059e2b7,868656,Always Two,nonfoil,manual,true
+starwarsunlimited,6f3751032a7fcce4c4c63bda67fe3e73394c74eaac49e40834ae929fb34058c5,856458,"Darth Traya, Lord of Betrayal",foil,manual,true
 starwarsunlimited,6fb88da26f0c7e4b007296c1f0b2a94fc362a0644c8600727b380a25a4ea26e1,875425,"General Grievous, Scuttling to Safety",foil,exact,true
-starwarsunlimited,6fe5155eb7d3f16106d4623d1a6098dee7f8ef70ba7fefce4bd3198b4ea11daf,857147,"Bail Organa, Responding to Catastrophe",foil,ambiguous,false
-starwarsunlimited,700c86985d08fa7363055e1f7ea8822a97810459c30261c794517d132e72120d,757447,"Chirrut Îmwe, One With The Force",nonfoil,ambiguous,false
-starwarsunlimited,703cdf587136be05cf6bc8571e8ef82870f53e0ed524e8ba03744776a8692c2f,833401,"Grand Inquisitor, You're Right to Be Afraid",foil,ambiguous,false
-starwarsunlimited,713420729b55be74824163a611def45783c428644f367d38a3dcfc5c2627b88c,876178,"Liberty, Draw Their Fire!",nonfoil,ambiguous,false
-starwarsunlimited,713477b37b669d91775e8f7594b3f05abba54a0aa684874ad5ae2c52fd24f11d,757613,"Darth Vader, Commanding the First Legion",foil,ambiguous,false
-starwarsunlimited,713df8bb2af970ed6b139f98887da44ff6628b6cb0c29195aa6ad5dfb6942e57,757531,Aggression,foil,ambiguous,false
-starwarsunlimited,71dcc8a1e4884a9d8f704493d5d0afecb6383b01afb6f25247c98be6ab9bec93,838420,"Poe Dameron, One Hell of a Pilot",foil,provider_missing,false
-starwarsunlimited,7236a6cc979edb5ee76ae40fd7c7f9ee72e36b18efd75187030fb1af32fe92d7,815700,Stolen AT-Hauler,foil,ambiguous,false
-starwarsunlimited,723fe48ade61ab751eb76510bcb44a418160a9153f9909b2d8e13e45b0f5588b,854939,"HK-47, Exclamation: Die, Meatbag!",foil,ambiguous,false
+starwarsunlimited,6fe5155eb7d3f16106d4623d1a6098dee7f8ef70ba7fefce4bd3198b4ea11daf,857147,"Bail Organa, Responding to Catastrophe",foil,manual,true
+starwarsunlimited,700c86985d08fa7363055e1f7ea8822a97810459c30261c794517d132e72120d,757447,"Chirrut Îmwe, One With The Force",nonfoil,manual,true
+starwarsunlimited,703cdf587136be05cf6bc8571e8ef82870f53e0ed524e8ba03744776a8692c2f,833401,"Grand Inquisitor, You're Right to Be Afraid",foil,manual,true
+starwarsunlimited,713420729b55be74824163a611def45783c428644f367d38a3dcfc5c2627b88c,876178,"Liberty, Draw Their Fire!",nonfoil,manual,true
+starwarsunlimited,713477b37b669d91775e8f7594b3f05abba54a0aa684874ad5ae2c52fd24f11d,757613,"Darth Vader, Commanding the First Legion",foil,manual,true
+starwarsunlimited,713df8bb2af970ed6b139f98887da44ff6628b6cb0c29195aa6ad5dfb6942e57,757531,Aggression,foil,manual,true
+starwarsunlimited,71dcc8a1e4884a9d8f704493d5d0afecb6383b01afb6f25247c98be6ab9bec93,838420,"Poe Dameron, One Hell of a Pilot",foil,manual,true
+starwarsunlimited,7236a6cc979edb5ee76ae40fd7c7f9ee72e36b18efd75187030fb1af32fe92d7,815700,Stolen AT-Hauler,foil,manual,true
+starwarsunlimited,723fe48ade61ab751eb76510bcb44a418160a9153f9909b2d8e13e45b0f5588b,854939,"HK-47, Exclamation: Die, Meatbag!",foil,manual,true
 starwarsunlimited,725c9c7fcdefa2562107096593338f14b364177b7826b303019dd4a203cbaef5,814030,Catacombs of Cadera,foil,provider_missing,false
-starwarsunlimited,72982ab1cee2b640849e3a6e9379a3bcafe7a981bca6a69dfad7ec6b6ad418d7,755143,"Luke Skywalker, Jedi Knight",foil,ambiguous,false
-starwarsunlimited,730fb64e9064da55cc450b0cfe4a2cd9262b8bee679cb3054737fe2a5b07020a,876586,"Jango Fett, Wily Mercenary",foil,ambiguous,false
-starwarsunlimited,7368e479ef436201b48efb06152cc307051474f69f022caec2502317db02d325,819484,"Kylo Ren, Killing the Past",foil,ambiguous,false
-starwarsunlimited,737aaf4653ad82a5fb5890a98ab4aff3ab71746c2f466b504ab77c9a7d35a41e,776859,"Finn, This is a Rescue",foil,ambiguous,false
-starwarsunlimited,769e7f8cc4f30e92324a7321d70fa2ae77294e1677fb430f81da6a4410285343,857042,"Lightmaker, I Have An Idea",foil,ambiguous,false
+starwarsunlimited,72982ab1cee2b640849e3a6e9379a3bcafe7a981bca6a69dfad7ec6b6ad418d7,755143,"Luke Skywalker, Jedi Knight",foil,manual,true
+starwarsunlimited,730fb64e9064da55cc450b0cfe4a2cd9262b8bee679cb3054737fe2a5b07020a,876586,"Jango Fett, Wily Mercenary",foil,manual,true
+starwarsunlimited,7368e479ef436201b48efb06152cc307051474f69f022caec2502317db02d325,819484,"Kylo Ren, Killing the Past",foil,manual,true
+starwarsunlimited,737aaf4653ad82a5fb5890a98ab4aff3ab71746c2f466b504ab77c9a7d35a41e,776859,"Finn, This is a Rescue",foil,manual,true
+starwarsunlimited,769e7f8cc4f30e92324a7321d70fa2ae77294e1677fb430f81da6a4410285343,857042,"Lightmaker, I Have An Idea",foil,manual,true
 starwarsunlimited,7760d4c10fb085eac8a2c83074157ab703ce120ad2e36c8d85e80d73b56a7076,822534,"Ki-Adi-Mundi, Composed and Confident",foil,exact,true
-starwarsunlimited,77ed3051fe18a2d8860bafe8048f64a80fb357f3b5aea3b437b08fff1d71f45e,776545,"Maul, Shadow Collective Visionary",foil,ambiguous,false
-starwarsunlimited,78ae0824da5bce7398357c1079080c7b9e861e6f842373c5a71c1e7a5e5c825c,811946,"No Glory, Only Results",nonfoil,ambiguous,false
-starwarsunlimited,78c20ec8648ef1fb46084e44bcb08009b32616ed48071c59cf948d8d428c0556,859003,"Grand Admiral Thrawn, Grand Schemer",nonfoil,ambiguous,false
-starwarsunlimited,79158b8acfe5e06c0f6320e29e5cdf80a937b6b18443caec38a6e16c989cdab6,795930,"Darth Maul, Revenge At Last",foil,ambiguous,false
-starwarsunlimited,7919e69de72e73e0c241fdf0cf194654f45ef63ed4274202ac69c1e5d3ef3189,757456,"Grand Moff Tarkin, Oversector Governor",foil,ambiguous,false
-starwarsunlimited,79ab045d985ba425e7d2d006629591053ce0791559711874ac02c7480b24d371,854954,Aggression,nonfoil,ambiguous,false
-starwarsunlimited,7a79e775d75fcb5bbdc27d518661dd0d995043a70ccb54a0463abb5b086cf254,832596,"Anakin Skywalker, Champion of Mortis",foil,ambiguous,false
+starwarsunlimited,77ed3051fe18a2d8860bafe8048f64a80fb357f3b5aea3b437b08fff1d71f45e,776545,"Maul, Shadow Collective Visionary",foil,manual,true
+starwarsunlimited,78ae0824da5bce7398357c1079080c7b9e861e6f842373c5a71c1e7a5e5c825c,811946,"No Glory, Only Results",nonfoil,manual,true
+starwarsunlimited,78c20ec8648ef1fb46084e44bcb08009b32616ed48071c59cf948d8d428c0556,859003,"Grand Admiral Thrawn, Grand Schemer",nonfoil,manual,true
+starwarsunlimited,79158b8acfe5e06c0f6320e29e5cdf80a937b6b18443caec38a6e16c989cdab6,795930,"Darth Maul, Revenge At Last",foil,manual,true
+starwarsunlimited,7919e69de72e73e0c241fdf0cf194654f45ef63ed4274202ac69c1e5d3ef3189,757456,"Grand Moff Tarkin, Oversector Governor",foil,manual,true
+starwarsunlimited,79ab045d985ba425e7d2d006629591053ce0791559711874ac02c7480b24d371,854954,Aggression,nonfoil,manual,true
+starwarsunlimited,7a79e775d75fcb5bbdc27d518661dd0d995043a70ccb54a0463abb5b086cf254,832596,"Anakin Skywalker, Champion of Mortis",foil,manual,true
 starwarsunlimited,7a89bd557dbf7e4b4be661e4c9350f9f9394e826f19c7df5e3d2435f0b24a177,804742,"Tranquility, Inspiring Flagship",foil,ambiguous,false
-starwarsunlimited,7c700ba690094c7ea7608adcd21ed404a528c1a4e99f76b714970ae4a0489ad0,776581,The Darksaber,foil,ambiguous,false
-starwarsunlimited,7ccdf886f9537b422824bb1e9defbc9d64fea89d4aba1a9b9841ac11ac2f761c,857164,"Cassian Andor, Lay Low",foil,ambiguous,false
-starwarsunlimited,7d85363887c68d87c54e63bc695a7f9cdbfe4ea85851816d59f3fab88ac7f9e2,776872,"Doctor Aphra, Rapacious Archaeologist",foil,ambiguous,false
-starwarsunlimited,7dd19c8e00296269e3fb62cf4f5e2250682fbabdc19336ae03da13f1d47ef53c,868626,Planetary Bombardment,foil,ambiguous,false
-starwarsunlimited,7e00428dddb1c90a799231354a84e3e98b21f63fdef65c377573e9fa01712914,876466,"Leia Organa, Someone Who Loves You",foil,ambiguous,false
-starwarsunlimited,7e3c32b9cff8182f242af5d041b88c9c6d4c8d5a63e8bbf95121c0258ea09626,760877,"Mace Windu, Party Crasher",nonfoil,ambiguous,false
+starwarsunlimited,7c700ba690094c7ea7608adcd21ed404a528c1a4e99f76b714970ae4a0489ad0,776581,The Darksaber,foil,manual,true
+starwarsunlimited,7ccdf886f9537b422824bb1e9defbc9d64fea89d4aba1a9b9841ac11ac2f761c,857164,"Cassian Andor, Lay Low",foil,manual,true
+starwarsunlimited,7d85363887c68d87c54e63bc695a7f9cdbfe4ea85851816d59f3fab88ac7f9e2,776872,"Doctor Aphra, Rapacious Archaeologist",foil,manual,true
+starwarsunlimited,7dd19c8e00296269e3fb62cf4f5e2250682fbabdc19336ae03da13f1d47ef53c,868626,Planetary Bombardment,foil,manual,true
+starwarsunlimited,7e00428dddb1c90a799231354a84e3e98b21f63fdef65c377573e9fa01712914,876466,"Leia Organa, Someone Who Loves You",foil,manual,true
+starwarsunlimited,7e3c32b9cff8182f242af5d041b88c9c6d4c8d5a63e8bbf95121c0258ea09626,760877,"Mace Windu, Party Crasher",nonfoil,manual,true
 starwarsunlimited,7e8d713a50ef1e06ca67dadc2a8905111ebb6aae6f040f9761ed2d771d749704,882844,"Benthic “Two Tubes”, The War Has Just Begun",foil,provider_missing,false
-starwarsunlimited,7eda467dd5e16cb8d95d39604d20531909e27c4efd95cc8eaa564552f6a9d049,833195,"Qui-Gon Jinn, Student of the Living Force",foil,ambiguous,false
-starwarsunlimited,7ee5bd6472d765547eb618b285daa9474d534d33eb78a4ef326cc7e43253e803,875912,"Liberty, Draw Their Fire!",nonfoil,ambiguous,false
+starwarsunlimited,7eda467dd5e16cb8d95d39604d20531909e27c4efd95cc8eaa564552f6a9d049,833195,"Qui-Gon Jinn, Student of the Living Force",foil,manual,true
+starwarsunlimited,7ee5bd6472d765547eb618b285daa9474d534d33eb78a4ef326cc7e43253e803,875912,"Liberty, Draw Their Fire!",nonfoil,manual,true
 starwarsunlimited,7f0f8845113465fb84d97f497279b42d939e7b2d3fb594be9edc12451f1adb84,822537,"Darth Maul, Revenge At Last",nonfoil,exact,true
-starwarsunlimited,7f397a18c38cd63de1e6bddc5d17f92b5d9890bc746357b549fb368a737bc63d,833198,"Anakin Skywalker, Tempted by the Dark Side",foil,ambiguous,false
-starwarsunlimited,7f55f7752b87eb393fc8529ae3bc790a575e5d833aedd2d6d7d0097160a8fd1e,854958,Cunning,nonfoil,ambiguous,false
-starwarsunlimited,7f62e638b59dfe15756a30e8fc7eb70fb30735ae8e4d3a372f8a720520f9eedf,858999,"Galen Erso, You'll Never Win",nonfoil,ambiguous,false
-starwarsunlimited,7f90923a68d90fca794690de0c9aafe88d2385679dbde8895d898801e4fc8000,856803,"Lama Su, We Modified Their Genetics",foil,ambiguous,false
-starwarsunlimited,7fb210a4796d9ffe8e82c6d5ccd90ef230711cdd049c641a1763f280a3c5c7ad,857148,"Nute Gunray, Escaping Justice",foil,ambiguous,false
-starwarsunlimited,7fc8bf1fc571a9d14ee561bbbbfa4fecec9a1f1c3b2e4428e3fbf735da1411c0,854990,"Luke Skywalker, Jedi Knight",foil,ambiguous,false
-starwarsunlimited,7ffa650f29d8975c76a87d4af7cd997bc4311dd849c189ad0b0d517152d0a233,856812,"Cassian Andor, Climb!",foil,ambiguous,false
+starwarsunlimited,7f397a18c38cd63de1e6bddc5d17f92b5d9890bc746357b549fb368a737bc63d,833198,"Anakin Skywalker, Tempted by the Dark Side",foil,manual,true
+starwarsunlimited,7f55f7752b87eb393fc8529ae3bc790a575e5d833aedd2d6d7d0097160a8fd1e,854958,Cunning,nonfoil,manual,true
+starwarsunlimited,7f62e638b59dfe15756a30e8fc7eb70fb30735ae8e4d3a372f8a720520f9eedf,858999,"Galen Erso, You'll Never Win",nonfoil,manual,true
+starwarsunlimited,7f90923a68d90fca794690de0c9aafe88d2385679dbde8895d898801e4fc8000,856803,"Lama Su, We Modified Their Genetics",foil,manual,true
+starwarsunlimited,7fb210a4796d9ffe8e82c6d5ccd90ef230711cdd049c641a1763f280a3c5c7ad,857148,"Nute Gunray, Escaping Justice",foil,manual,true
+starwarsunlimited,7fc8bf1fc571a9d14ee561bbbbfa4fecec9a1f1c3b2e4428e3fbf735da1411c0,854990,"Luke Skywalker, Jedi Knight",foil,manual,true
+starwarsunlimited,7ffa650f29d8975c76a87d4af7cd997bc4311dd849c189ad0b0d517152d0a233,856812,"Cassian Andor, Climb!",foil,manual,true
 starwarsunlimited,800e575fba8a49317c97f08fdfb58c98c82d3e9174ef89a24978e993b7f8b564,843697,Watch This,nonfoil,exact,true
-starwarsunlimited,80287723d0e9b5598e50fc5fda5f87c4f5b02858d6c757329308b3aeab3b885e,776649,Triple Dark Raid,foil,ambiguous,false
+starwarsunlimited,80287723d0e9b5598e50fc5fda5f87c4f5b02858d6c757329308b3aeab3b885e,776649,Triple Dark Raid,foil,manual,true
 starwarsunlimited,80748757de605369ea8f3c45afe15e4128a6a97a8ed99eb9fdca3f9d49a2f081,838413,"Ahsoka Tano, Always Ready For Trouble",foil,exact,true
 starwarsunlimited,80da60b68fe3c1f0b877c49a0194a9672967ea12acb241a57ab69781315c37eb,822534,"Ki-Adi-Mundi, Composed and Confident",nonfoil,exact,true
-starwarsunlimited,8185997a070ef67e989b620eb6fa0ee290fbaf4dbafa990308c2db5fa0d8087b,815911,"The Starhawk, Prototype Battleship",foil,ambiguous,false
-starwarsunlimited,81e16743ae2d14053ff34ce19af9ba557ef5d2aae714ea885504cfb76a6779de,876563,"Kanan Jarrus, Spectre One",foil,ambiguous,false
+starwarsunlimited,8185997a070ef67e989b620eb6fa0ee290fbaf4dbafa990308c2db5fa0d8087b,815911,"The Starhawk, Prototype Battleship",foil,manual,true
+starwarsunlimited,81e16743ae2d14053ff34ce19af9ba557ef5d2aae714ea885504cfb76a6779de,876563,"Kanan Jarrus, Spectre One",foil,manual,true
 starwarsunlimited,823df5711713bf559fde76e78dd8551e57fbb029de2601b9c37e7c38b96dd6ba,822540,"Ahsoka Tano, Chasing Whispers",nonfoil,exact,true
-starwarsunlimited,824c0975f61adbfcfc20db4c97b87cbc2b2af320450127a707af26cc7f2bbe55,776869,"Bo-Katan Kryze, Princess in Exile",foil,ambiguous,false
-starwarsunlimited,8316f6da5fe4adad2e982a27f97a95ef3165d5f8dca4a07fdfc86a8c055de13b,757479,"Grand Admiral Thrawn, Patient and Insightful",foil,ambiguous,false
-starwarsunlimited,835fb1736c9280578f29374ab4c1767be5c91a8dbea74ad49e1a2c448496e1f2,876564,"Chopper, Spectre Three",foil,ambiguous,false
-starwarsunlimited,83daeb64b23492e8b3b9569135be97a02f95e7627209fc1ba2e1121dd49564dd,876458,"Tobias Beckett, People are Predictable",foil,ambiguous,false
-starwarsunlimited,83ddb3a4b3228e0600ff9b6bf890ac07cfa8c1a29945e56833ff462e8c564473,780157,Unrefusable Offer,foil,ambiguous,false
+starwarsunlimited,824c0975f61adbfcfc20db4c97b87cbc2b2af320450127a707af26cc7f2bbe55,776869,"Bo-Katan Kryze, Princess in Exile",foil,manual,true
+starwarsunlimited,8316f6da5fe4adad2e982a27f97a95ef3165d5f8dca4a07fdfc86a8c055de13b,757479,"Grand Admiral Thrawn, Patient and Insightful",foil,manual,true
+starwarsunlimited,835fb1736c9280578f29374ab4c1767be5c91a8dbea74ad49e1a2c448496e1f2,876564,"Chopper, Spectre Three",foil,manual,true
+starwarsunlimited,83daeb64b23492e8b3b9569135be97a02f95e7627209fc1ba2e1121dd49564dd,876458,"Tobias Beckett, People are Predictable",foil,manual,true
+starwarsunlimited,83ddb3a4b3228e0600ff9b6bf890ac07cfa8c1a29945e56833ff462e8c564473,780157,Unrefusable Offer,foil,manual,true
 starwarsunlimited,8417431047351f1427bc0ab487af0c683740fc864dd8f422ef1d5d33c2a6de3a,838405,"Supreme Leader Snoke, Shadow Ruler",foil,exact,true
-starwarsunlimited,8452f77a51cc4c7281fedbb3d1f916b592b43cba77587772d9b6127978eafb25,856805,"Satine Kryze, Standing on Principles",foil,ambiguous,false
+starwarsunlimited,8452f77a51cc4c7281fedbb3d1f916b592b43cba77587772d9b6127978eafb25,856805,"Satine Kryze, Standing on Principles",foil,manual,true
 starwarsunlimited,8570d72dfa3cebf531a8d2a5f2534fcfc722a3443e9e338a98e4182d6a2f1c11,804741,"Tranquility, Inspiring Flagship",foil,ambiguous,false
-starwarsunlimited,85e3f6eefe8c76ea083a7a256b779141343a3682ef8eac0bde605399b27ebcef,857040,"Obi-Wan Kenobi, Finding What Doesn't Exist",foil,ambiguous,false
-starwarsunlimited,861873a5709fbc753e38c503a8663255e3a3a7e47ef0d6a58b28eea42f866a63,868576,"IG-2000, Assassin's Aggressor",foil,ambiguous,false
+starwarsunlimited,85e3f6eefe8c76ea083a7a256b779141343a3682ef8eac0bde605399b27ebcef,857040,"Obi-Wan Kenobi, Finding What Doesn't Exist",foil,manual,true
+starwarsunlimited,861873a5709fbc753e38c503a8663255e3a3a7e47ef0d6a58b28eea42f866a63,868576,"IG-2000, Assassin's Aggressor",foil,manual,true
 starwarsunlimited,862b577c2bc5b701e4201db1f51fbe1a7c2eb362e3265b98c460d9d5055fd219,875419,"Darth Sion, Lord of Pain",foil,exact,true
 starwarsunlimited,86618ced5cd0ab075e844bb998f4aa521833dabb5f07e684d31bad3629c309e1,875444,"Luke Skywalker, A Hero's Beginning",foil,exact,true
-starwarsunlimited,86a63be46284bbba0d45bff94afed51bd3e88eeb5da74425f51749faab9cdb17,815930,"Millennium Falcon, Get Out And Push",foil,ambiguous,false
-starwarsunlimited,884b627c2e25e4a0b13b70a63e389843935b3aecd7da431dc47bdb14e859bd6d,857174,"Cad Bane, Impressed Now?",foil,ambiguous,false
-starwarsunlimited,88b4e8bb262f1a632e4358139f415332c44242dd2060385e3ce2d4dc227bee7b,854959,"Yaddle, A Chance To Make Things Right",nonfoil,ambiguous,false
+starwarsunlimited,86a63be46284bbba0d45bff94afed51bd3e88eeb5da74425f51749faab9cdb17,815930,"Millennium Falcon, Get Out And Push",foil,manual,true
+starwarsunlimited,884b627c2e25e4a0b13b70a63e389843935b3aecd7da431dc47bdb14e859bd6d,857174,"Cad Bane, Impressed Now?",foil,manual,true
+starwarsunlimited,88b4e8bb262f1a632e4358139f415332c44242dd2060385e3ce2d4dc227bee7b,854959,"Yaddle, A Chance To Make Things Right",nonfoil,manual,true
 starwarsunlimited,88c274ebc94e5e396ddaba796667dae9408374d4ab7faf6d9bd4173860bda7ce,838402,"Luke Skywalker, Faithful Friend",foil,exact,true
 starwarsunlimited,8929ec92a72cb2d7b3a16da285fb542031666ba189e0aed726c97c355c9b6bc9,815907,"Executor, Might of the Empire",foil,ambiguous,false
-starwarsunlimited,897c9dd3a11a27d7afc1a5b42e3080625d2a09004188bf901bf551d1df9bb637,829756,"BB-8, Happy Beeps",foil,ambiguous,false
+starwarsunlimited,897c9dd3a11a27d7afc1a5b42e3080625d2a09004188bf901bf551d1df9bb637,829756,"BB-8, Happy Beeps",foil,manual,true
 starwarsunlimited,8acea718016c469f62ae49cfbffea03d249aa5d40ea707962de8dfef203b612f,838383,"Director Krennic, On the Verge of Greatness",foil,exact,true
-starwarsunlimited,8ad985c0357d04d41bce065aa314c5196db02bd1e002e09a73e0c3635374fbaa,757503,"Jabba the Hutt, Cunning Daimyo",foil,ambiguous,false
-starwarsunlimited,8b43dc50b8060f6b5a5f50fbfbeacef61ce1f5e982a1d3142b9a9ba7ea183771,796111,"Asajj Ventress, Unparalleled Adversary",foil,ambiguous,false
-starwarsunlimited,8bafc69208bc05637407aa0a28743a8ae531e5d44482f96613d3840881dcfc64,795986,"Cad Bane, Hostage Taker",nonfoil,ambiguous,false
-starwarsunlimited,8beeae71ebe314bc6b83fdfabe4497791da2b89488d3dbbc26828f3d9b275030,833350,"Yoda, My Ally is the Force",foil,ambiguous,false
-starwarsunlimited,8cc826b89fbc930824e37c0445ff3f2e99c71e2ed53b891020ac8e6803adb7a2,854992,"Luke Skywalker, Jedi Knight",nonfoil,ambiguous,false
-starwarsunlimited,8d37143226b61ed66787ac8f5d43aaf9245c547add6da80647f93aa00b14feaf,833168,"Ahsoka Tano, Fighting For Peace",foil,ambiguous,false
-starwarsunlimited,8d996733c901b4737090a0fdf4bd6ba5528d53f39d9ea26d392e2d979e62156d,831359,"Anakin Skywalker, Champion of Mortis",nonfoil,ambiguous,false
-starwarsunlimited,8e0415b74ea0675531164467a06359d54ceb31447072cd6d06a6972703992582,811981,Stolen AT-Hauler,nonfoil,ambiguous,false
-starwarsunlimited,8e1c9812507deabf04402a3f3d771fb0374c32f92292b3fdf4f9a2bb8db89098,853815,Condemn,nonfoil,ambiguous,false
-starwarsunlimited,8e2eb2c72daa37335e25c75daf74933614ac701f3923d48e2771313a428cc375,776507,"Rey, Keeping the Past",foil,ambiguous,false
-starwarsunlimited,8e4f9cda872fda5aaf11738321d4af76b6a7456de3fbc3d5b4c4c863ee176f91,815913,"IG-2000, Assassin's Aggressor",foil,ambiguous,false
+starwarsunlimited,8ad985c0357d04d41bce065aa314c5196db02bd1e002e09a73e0c3635374fbaa,757503,"Jabba the Hutt, Cunning Daimyo",foil,manual,true
+starwarsunlimited,8b43dc50b8060f6b5a5f50fbfbeacef61ce1f5e982a1d3142b9a9ba7ea183771,796111,"Asajj Ventress, Unparalleled Adversary",foil,manual,true
+starwarsunlimited,8bafc69208bc05637407aa0a28743a8ae531e5d44482f96613d3840881dcfc64,795986,"Cad Bane, Hostage Taker",nonfoil,manual,true
+starwarsunlimited,8beeae71ebe314bc6b83fdfabe4497791da2b89488d3dbbc26828f3d9b275030,833350,"Yoda, My Ally is the Force",foil,manual,true
+starwarsunlimited,8cc826b89fbc930824e37c0445ff3f2e99c71e2ed53b891020ac8e6803adb7a2,854992,"Luke Skywalker, Jedi Knight",nonfoil,manual,true
+starwarsunlimited,8d37143226b61ed66787ac8f5d43aaf9245c547add6da80647f93aa00b14feaf,833168,"Ahsoka Tano, Fighting For Peace",foil,manual,true
+starwarsunlimited,8d996733c901b4737090a0fdf4bd6ba5528d53f39d9ea26d392e2d979e62156d,831359,"Anakin Skywalker, Champion of Mortis",nonfoil,manual,true
+starwarsunlimited,8e0415b74ea0675531164467a06359d54ceb31447072cd6d06a6972703992582,811981,Stolen AT-Hauler,nonfoil,manual,true
+starwarsunlimited,8e1c9812507deabf04402a3f3d771fb0374c32f92292b3fdf4f9a2bb8db89098,853815,Condemn,nonfoil,manual,true
+starwarsunlimited,8e2eb2c72daa37335e25c75daf74933614ac701f3923d48e2771313a428cc375,776507,"Rey, Keeping the Past",foil,manual,true
+starwarsunlimited,8e4f9cda872fda5aaf11738321d4af76b6a7456de3fbc3d5b4c4c863ee176f91,815913,"IG-2000, Assassin's Aggressor",foil,manual,true
 starwarsunlimited,8e7d4334d809769a54824e9e2fed003946053eaac7b9149b36b5adfd8f36f63f,804735,"""""Discard"""" Card",nonfoil,provider_missing,false
-starwarsunlimited,8eba3dfe850822b80abb7cb4eb82f5235cf380d373cb3e2391c26cb46d380738,856815,"C-3PO, Human-Cyborg Relations",foil,provider_missing,false
-starwarsunlimited,8ee25df168b135cc09d7e6064f052c06ad986a076e426fdde187e8f5474d59f2,854951,"HK-47, Exclamation: Die, Meatbag!",nonfoil,ambiguous,false
-starwarsunlimited,8f68e5b4de73d59e5f0c3a2a9060a196a764f18364d1e67776c5ab98cdc3d01f,857123,"Karis Nemik, Freedom is a Pure Idea",foil,ambiguous,false
-starwarsunlimited,8faa19fc5972f347de4828b8498d200b2929f4cf68fecb3655afdfa05bf6ef03,833179,"Third Sister, Seething With Ambition",foil,ambiguous,false
+starwarsunlimited,8eba3dfe850822b80abb7cb4eb82f5235cf380d373cb3e2391c26cb46d380738,856815,"C-3PO, Human-Cyborg Relations",foil,manual,true
+starwarsunlimited,8ee25df168b135cc09d7e6064f052c06ad986a076e426fdde187e8f5474d59f2,854951,"HK-47, Exclamation: Die, Meatbag!",nonfoil,manual,true
+starwarsunlimited,8f68e5b4de73d59e5f0c3a2a9060a196a764f18364d1e67776c5ab98cdc3d01f,857123,"Karis Nemik, Freedom is a Pure Idea",foil,manual,true
+starwarsunlimited,8faa19fc5972f347de4828b8498d200b2929f4cf68fecb3655afdfa05bf6ef03,833179,"Third Sister, Seething With Ambition",foil,manual,true
 starwarsunlimited,9069a18ce67b4938a0c3f1c1c26170fcd55446d7f59ec87e17412098e5ca8065,875439,"HK-47, Exclamation: Die, Meatbag!",foil,exact,true
-starwarsunlimited,90ab8e173f6594dce8dfef078ba1396e52aab4eb609a49cc87be325d17a41b7b,857155,"Syril Karn, Where Is He?",foil,ambiguous,false
-starwarsunlimited,90bb59da310d23529dd2a7130956680dfcdac760ac784d1d4f08c238425194bc,876462,"Vel Sartha, Aldhani Insurgent",foil,ambiguous,false
-starwarsunlimited,9132f9ba84cffa8ed93bd3a0fbc7d78d528839b44bf89a243417deba75a266a6,757545,"Red Three, Unstoppable",foil,ambiguous,false
-starwarsunlimited,91485b390ce67b0eff540a82f75fdbdb7094cc1c27252c3040723e00f36ab86c,854986,"Ahsoka Tano, Chasing Whispers",foil,ambiguous,false
+starwarsunlimited,90ab8e173f6594dce8dfef078ba1396e52aab4eb609a49cc87be325d17a41b7b,857155,"Syril Karn, Where Is He?",foil,manual,true
+starwarsunlimited,90bb59da310d23529dd2a7130956680dfcdac760ac784d1d4f08c238425194bc,876462,"Vel Sartha, Aldhani Insurgent",foil,manual,true
+starwarsunlimited,9132f9ba84cffa8ed93bd3a0fbc7d78d528839b44bf89a243417deba75a266a6,757545,"Red Three, Unstoppable",foil,manual,true
+starwarsunlimited,91485b390ce67b0eff540a82f75fdbdb7094cc1c27252c3040723e00f36ab86c,854986,"Ahsoka Tano, Chasing Whispers",foil,manual,true
 starwarsunlimited,91ac96f4a4894419a28e95daede90861a0061e694c9b96a033bf5ab8de362b62,838406,"Ezra Bridger, Attuned With Life",foil,exact,true
-starwarsunlimited,91fd658165040ebea2885a396bf13cd9ecab33899ed7b29b2a55f98d585d8519,875727,"Latts Razzi, Deadly Whipmaster",nonfoil,ambiguous,false
-starwarsunlimited,92e984437be5700de39c267e8a0406f09dd93af33740d57e04d8687b405643d6,815898,"Corvus, Inferno Squadron Raider",foil,ambiguous,false
-starwarsunlimited,9437e608f74976dfe31fb83379400999ad0e041b1bcd363023d5eb4a65240c30,833344,"Yaddle, A Chance To Make Things Right",foil,ambiguous,false
-starwarsunlimited,950bcba7d8be17a58f96e6f30067e1f16193ae744f57b9aa5d934316a7437ca0,854987,"Darth Vader, Scourge of Squadrons",foil,ambiguous,false
-starwarsunlimited,957caf39f96b8e82f8b49551dc0a157476f25f9d23b3431ee88c2a5027e477b6,857079,"Darth Nihilus, Lord of Hunger",foil,ambiguous,false
-starwarsunlimited,96590f049cdb6a92f392e77e57449c76bb778fb3f40b76336da92e57cda1cc65,795878,"Aayla Secura, Master of the Blade",foil,ambiguous,false
-starwarsunlimited,9711679027f198af6deea1163e7d803c3d91d5fc3b3ff6d55db4dec8d327a1d3,815894,"Millennium Falcon, Get Out And Push",foil,ambiguous,false
-starwarsunlimited,97d3ec15744708fa9d9b47b1813a5e4e5a94f6fbae168d0ab6e6b6917607a48a,876370,"Persecutor, Fire Over Scarif",foil,ambiguous,false
-starwarsunlimited,97f60d7dbc44c8ee3f80eda9e45ea50594221222658e837a403b5769ba8565ce,776705,"Tech, Source of Insight",foil,ambiguous,false
-starwarsunlimited,980960201fefd337a9135f193528db69f2cf81b0205aed6e7962933eec1cef11,833382,"Darth Malak, Covetous Apprentice",foil,ambiguous,false
-starwarsunlimited,981ea225f93b34ffe414aff257c271ce9686edb41ebf9a2881e07f0708520402,757639,Regional Governor,foil,ambiguous,false
-starwarsunlimited,98ef2e109215c69721eb8b9359b4e63d5fe61080efe7ddeac1abda84c7aa0934,854938,Command,nonfoil,ambiguous,false
-starwarsunlimited,990bc309e8f907527ff2282c7fba9ebb5527c5984fea01dac8cf6157e765cb08,773267,Krayt Dragon,foil,ambiguous,false
-starwarsunlimited,993e1507feb66e1ef75e27a4a67572e7eb240a36d90b214b698b1849d815d829,857160,"Chancellor Valorum, Civil Servant",foil,ambiguous,false
-starwarsunlimited,99ce88faa1aefb2774d5c37da9bfe23a4476c1b352b1353fbd30bbf73a7d94a2,757592,U-Wing Reinforcement,foil,ambiguous,false
+starwarsunlimited,91fd658165040ebea2885a396bf13cd9ecab33899ed7b29b2a55f98d585d8519,875727,"Latts Razzi, Deadly Whipmaster",nonfoil,manual,true
+starwarsunlimited,92e984437be5700de39c267e8a0406f09dd93af33740d57e04d8687b405643d6,815898,"Corvus, Inferno Squadron Raider",foil,manual,true
+starwarsunlimited,9437e608f74976dfe31fb83379400999ad0e041b1bcd363023d5eb4a65240c30,833344,"Yaddle, A Chance To Make Things Right",foil,manual,true
+starwarsunlimited,950bcba7d8be17a58f96e6f30067e1f16193ae744f57b9aa5d934316a7437ca0,854987,"Darth Vader, Scourge of Squadrons",foil,manual,true
+starwarsunlimited,957caf39f96b8e82f8b49551dc0a157476f25f9d23b3431ee88c2a5027e477b6,857079,"Darth Nihilus, Lord of Hunger",foil,manual,true
+starwarsunlimited,96590f049cdb6a92f392e77e57449c76bb778fb3f40b76336da92e57cda1cc65,795878,"Aayla Secura, Master of the Blade",foil,manual,true
+starwarsunlimited,9711679027f198af6deea1163e7d803c3d91d5fc3b3ff6d55db4dec8d327a1d3,815894,"Millennium Falcon, Get Out And Push",foil,manual,true
+starwarsunlimited,97d3ec15744708fa9d9b47b1813a5e4e5a94f6fbae168d0ab6e6b6917607a48a,876370,"Persecutor, Fire Over Scarif",foil,manual,true
+starwarsunlimited,97f60d7dbc44c8ee3f80eda9e45ea50594221222658e837a403b5769ba8565ce,776705,"Tech, Source of Insight",foil,manual,true
+starwarsunlimited,980960201fefd337a9135f193528db69f2cf81b0205aed6e7962933eec1cef11,833382,"Darth Malak, Covetous Apprentice",foil,manual,true
+starwarsunlimited,981ea225f93b34ffe414aff257c271ce9686edb41ebf9a2881e07f0708520402,757639,Regional Governor,foil,manual,true
+starwarsunlimited,98ef2e109215c69721eb8b9359b4e63d5fe61080efe7ddeac1abda84c7aa0934,854938,Command,nonfoil,manual,true
+starwarsunlimited,990bc309e8f907527ff2282c7fba9ebb5527c5984fea01dac8cf6157e765cb08,773267,Krayt Dragon,foil,manual,true
+starwarsunlimited,993e1507feb66e1ef75e27a4a67572e7eb240a36d90b214b698b1849d815d829,857160,"Chancellor Valorum, Civil Servant",foil,manual,true
+starwarsunlimited,99ce88faa1aefb2774d5c37da9bfe23a4476c1b352b1353fbd30bbf73a7d94a2,757592,U-Wing Reinforcement,foil,manual,true
 starwarsunlimited,9a2b21edffa459ed54f7a0bfddc0ac31fbeda0d65c61125b0582ca6aa583a045,795090,Legal Authority,nonfoil,ambiguous,false
-starwarsunlimited,9a4f93e7e1ff99011445203740fd403ab9d1f3b5412683f359828630abc508ee,854953,"Wrecker, Boom!",nonfoil,ambiguous,false
-starwarsunlimited,9a9933c1a3ec8d9549a9c0cc5ca16acdade5352135954f321f5b77650695d221,829760,"Chopper, War Hero",foil,ambiguous,false
-starwarsunlimited,9aa61943c643d16604dc53ee346b857576f35d445c1cbef2e847cdcc9b6aac93,757434,"Director Krennic, Aspiring to Authority",nonfoil,ambiguous,false
-starwarsunlimited,9ad55e508d4badd9d16afac7d22fce109bf4dd1d13a248b1121a55e93cbe6bae,815820,"Admiral Trench, Chk-chk-chk-chk",foil,ambiguous,false
-starwarsunlimited,9b2e7bfb0a264b22667c2b593297f3dd449fcc6f263a83b3910ccea1b1d8d58a,796093,"Yoda, Sensing Darkness",foil,ambiguous,false
-starwarsunlimited,9bb6debaccb3732d1e1f6e1a87aa5ff16ddbb3dac0bd59511359631f3936a713,757473,"Sabine Wren, Galvanized Revolutionary",nonfoil,ambiguous,false
-starwarsunlimited,9c424c77c4e64116a2fdc70bdd28b7b9fdca86522fa5e18695ffebe796c524e8,833368,"The Father, Maintaining Balance",foil,ambiguous,false
-starwarsunlimited,9c4cc38a9b10dafc58e5c1f38169f8aa0211d14f1a13e8a02af92645a67e47ff,815920,"Hound's Tooth, Reliable and Deadly",foil,ambiguous,false
-starwarsunlimited,9cd669dee36c9d180e444c406fd2857f3054ab26dbf513a359d6048bc4756138,848223,"Darth Malak, Covetous Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,9d2034c738ff08d5ae505978b781abfc60255aa64653326163a5041ebac974f4,856873,Condemn,foil,ambiguous,false
-starwarsunlimited,9d48888ce3fc26b150ec8d08989d86828d631ef07733632a73164be3c6ed009d,757443,"Chewbacca, Walking Carpet",nonfoil,ambiguous,false
-starwarsunlimited,9d9bc829a8ed2927ab53116d9c5da4291654863780fe7751c855c61e3183b5d2,833234,"Ezra Bridger, Attuned With Life",foil,ambiguous,false
-starwarsunlimited,9e35fbf756cc01ccad648db9afc58bb071cad7b81c6bf38c4af91cbec2a2c96d,755290,"Millennium Falcon, Piece of Junk",foil,ambiguous,false
-starwarsunlimited,9e7c14d8e29d0bb917e801d99c5b33d87eb82b9ba50412fca829f6921df0bba0,833378,"Anakin Skywalker, Champion of Mortis",nonfoil,ambiguous,false
-starwarsunlimited,9ed9de23cf20a751f3f857ba535454ed8e2dfefd973cb93380d7f2d6dbb59c48,876244,"The Mandalorian, Let's See the Puck",foil,ambiguous,false
-starwarsunlimited,9edcea7de8da943d0a982151e44ed2c431ae185528a2a4fe098707c84cbbec3e,868654,"Darth Sion, Lord of Pain",nonfoil,ambiguous,false
+starwarsunlimited,9a4f93e7e1ff99011445203740fd403ab9d1f3b5412683f359828630abc508ee,854953,"Wrecker, Boom!",nonfoil,manual,true
+starwarsunlimited,9a9933c1a3ec8d9549a9c0cc5ca16acdade5352135954f321f5b77650695d221,829760,"Chopper, War Hero",foil,manual,true
+starwarsunlimited,9aa61943c643d16604dc53ee346b857576f35d445c1cbef2e847cdcc9b6aac93,757434,"Director Krennic, Aspiring to Authority",nonfoil,manual,true
+starwarsunlimited,9ad55e508d4badd9d16afac7d22fce109bf4dd1d13a248b1121a55e93cbe6bae,815820,"Admiral Trench, Chk-chk-chk-chk",foil,manual,true
+starwarsunlimited,9b2e7bfb0a264b22667c2b593297f3dd449fcc6f263a83b3910ccea1b1d8d58a,796093,"Yoda, Sensing Darkness",foil,manual,true
+starwarsunlimited,9bb6debaccb3732d1e1f6e1a87aa5ff16ddbb3dac0bd59511359631f3936a713,757473,"Sabine Wren, Galvanized Revolutionary",nonfoil,manual,true
+starwarsunlimited,9c424c77c4e64116a2fdc70bdd28b7b9fdca86522fa5e18695ffebe796c524e8,833368,"The Father, Maintaining Balance",foil,manual,true
+starwarsunlimited,9c4cc38a9b10dafc58e5c1f38169f8aa0211d14f1a13e8a02af92645a67e47ff,815920,"Hound's Tooth, Reliable and Deadly",foil,manual,true
+starwarsunlimited,9cd669dee36c9d180e444c406fd2857f3054ab26dbf513a359d6048bc4756138,848223,"Darth Malak, Covetous Apprentice",nonfoil,manual,true
+starwarsunlimited,9d2034c738ff08d5ae505978b781abfc60255aa64653326163a5041ebac974f4,856873,Condemn,foil,manual,true
+starwarsunlimited,9d48888ce3fc26b150ec8d08989d86828d631ef07733632a73164be3c6ed009d,757443,"Chewbacca, Walking Carpet",nonfoil,manual,true
+starwarsunlimited,9d9bc829a8ed2927ab53116d9c5da4291654863780fe7751c855c61e3183b5d2,833234,"Ezra Bridger, Attuned With Life",foil,manual,true
+starwarsunlimited,9e35fbf756cc01ccad648db9afc58bb071cad7b81c6bf38c4af91cbec2a2c96d,755290,"Millennium Falcon, Piece of Junk",foil,manual,true
+starwarsunlimited,9e7c14d8e29d0bb917e801d99c5b33d87eb82b9ba50412fca829f6921df0bba0,833378,"Anakin Skywalker, Champion of Mortis",nonfoil,manual,true
+starwarsunlimited,9ed9de23cf20a751f3f857ba535454ed8e2dfefd973cb93380d7f2d6dbb59c48,876244,"The Mandalorian, Let's See the Puck",foil,manual,true
+starwarsunlimited,9edcea7de8da943d0a982151e44ed2c431ae185528a2a4fe098707c84cbbec3e,868654,"Darth Sion, Lord of Pain",nonfoil,manual,true
 starwarsunlimited,9f4050250288c5f0b9bcb793e4e2ceb06e29f8976973ccd99e60279958f2e220,838423,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,exact,true
 starwarsunlimited,9f5953990e39d8764eb6e7a91eee877eca85e4c569f16479f981fae84d11ccd7,795086,"Doctor Evazan, Wanted on Twelve Systems",foil,ambiguous,false
 starwarsunlimited,a074f1298b87babd75f59923bbd06125f1194b70cb9ea55ae596f157572939f9,838386,Superlaser Blast,foil,exact,true
-starwarsunlimited,a11bafbf10a5220d5c6581d6cac6d180adf85d75f42dfba2a7a2548055e88c91,854967,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,a1338d797c0e01e7c343db850a131348e648fd7774532cba7e049951dade8b5e,868656,Always Two,foil,ambiguous,false
-starwarsunlimited,a17a2b3a165050598df11bb8b39b450176222c49b4d8d74c5d41b280b6049a62,833328,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,ambiguous,false
-starwarsunlimited,a1a1f5a097a25c2d6ba5c18b10443296bf84261f725318f112e0d2a8b9ae0eea,815522,"No Glory, Only Results",foil,ambiguous,false
-starwarsunlimited,a2318d2d4b2751ed759ae74712628419e8dc6f119cff52608b848fd694be2726,757475,Cunning,foil,ambiguous,false
-starwarsunlimited,a24accdbb8003d5532e07bf0e0741adc62665fdf44fa265371dc788ba7c7e76c,796114,"Jango Fett, Concealing the Conspiracy",foil,ambiguous,false
+starwarsunlimited,a11bafbf10a5220d5c6581d6cac6d180adf85d75f42dfba2a7a2548055e88c91,854967,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,a1338d797c0e01e7c343db850a131348e648fd7774532cba7e049951dade8b5e,868656,Always Two,foil,manual,true
+starwarsunlimited,a17a2b3a165050598df11bb8b39b450176222c49b4d8d74c5d41b280b6049a62,833328,"Qui-Gon Jinn, The Negotiations Will Be Short",foil,manual,true
+starwarsunlimited,a1a1f5a097a25c2d6ba5c18b10443296bf84261f725318f112e0d2a8b9ae0eea,815522,"No Glory, Only Results",foil,manual,true
+starwarsunlimited,a2318d2d4b2751ed759ae74712628419e8dc6f119cff52608b848fd694be2726,757475,Cunning,foil,manual,true
+starwarsunlimited,a24accdbb8003d5532e07bf0e0741adc62665fdf44fa265371dc788ba7c7e76c,796114,"Jango Fett, Concealing the Conspiracy",foil,manual,true
 starwarsunlimited,a251caa13ff8d2cf99d8bb210daed0843b57846836c17e637dcc4533b0eaa64d,838398,"Rey, With Palpatine's Power",foil,exact,true
-starwarsunlimited,a259a32f1eee0077679c89443a79c206f8a58b6b83123c8b48bf51b87de0d87b,832522,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,a2f9294cc0d5a21df9a1882e39f5b7ba5b8a4528082241e9561241144db72e7c,757471,"Cassian Andor, Dedicated to the Rebellion",nonfoil,ambiguous,false
-starwarsunlimited,a3747d913380ed71970b7af8db545c8f465b82eab97ab9926ab75bd9db2161d9,854942,Aggression,foil,ambiguous,false
-starwarsunlimited,a3e158c56fae0f83d53cc9b4683fd761bec092a3910c3cdf916db68d18d91d4e,876535,"Luke Skywalker, Profit or Be Destroyed",foil,ambiguous,false
-starwarsunlimited,a3eaf36b333217dfc811a42f01b465ef4278a64f3ba7026c5a5a905302baaa02,868601,"Axe Woves, Accomplished Warrior",foil,ambiguous,false
-starwarsunlimited,a443a70fbe8d32f856047aa3fe3b26b0c587a00eb13649b9c01b9396fafca44f,809403,"Supreme Leader Snoke, Shadow Ruler",nonfoil,ambiguous,false
-starwarsunlimited,a482519708ce730116dd3dfad20beadf6192471349e8b2fe4d35e26ab2870a5c,815819,"Poe Dameron, I Can Fly Anything",foil,ambiguous,false
+starwarsunlimited,a259a32f1eee0077679c89443a79c206f8a58b6b83123c8b48bf51b87de0d87b,832522,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,a2f9294cc0d5a21df9a1882e39f5b7ba5b8a4528082241e9561241144db72e7c,757471,"Cassian Andor, Dedicated to the Rebellion",nonfoil,manual,true
+starwarsunlimited,a3747d913380ed71970b7af8db545c8f465b82eab97ab9926ab75bd9db2161d9,854942,Aggression,foil,manual,true
+starwarsunlimited,a3e158c56fae0f83d53cc9b4683fd761bec092a3910c3cdf916db68d18d91d4e,876535,"Luke Skywalker, Profit or Be Destroyed",foil,manual,true
+starwarsunlimited,a3eaf36b333217dfc811a42f01b465ef4278a64f3ba7026c5a5a905302baaa02,868601,"Axe Woves, Accomplished Warrior",foil,manual,true
+starwarsunlimited,a443a70fbe8d32f856047aa3fe3b26b0c587a00eb13649b9c01b9396fafca44f,809403,"Supreme Leader Snoke, Shadow Ruler",nonfoil,manual,true
+starwarsunlimited,a482519708ce730116dd3dfad20beadf6192471349e8b2fe4d35e26ab2870a5c,815819,"Poe Dameron, I Can Fly Anything",foil,manual,true
 starwarsunlimited,a4856c4a29075fc5f7c6b0747e2fd99058986d1291840aa029b23b8d08b24a42,822536,"Luke Skywalker, You Still With Me?",nonfoil,exact,true
-starwarsunlimited,a488abe42d86886519ab4c316997a5aadc5f994c2e0923f21399cc44b75921c8,838435,"Darth Vader, Commanding the First Legion",foil,ambiguous,false
+starwarsunlimited,a488abe42d86886519ab4c316997a5aadc5f994c2e0923f21399cc44b75921c8,838435,"Darth Vader, Commanding the First Legion",foil,manual,true
 starwarsunlimited,a4dd3dc3891f029768a420ef71e5a4373b272d021b92b12663c9e7a13068c205,838410,"Han Solo, Has His Moments",foil,exact,true
-starwarsunlimited,a5483a43b1fdfdef1f5c69ad976c9a919df3c3796dbef35c4d13ebec86e8da96,815621,"Darth Vader, Scourge of Squadrons",foil,ambiguous,false
-starwarsunlimited,a55ef1079530ff3ba0dafb2017a8d19d00a75dbbb90e53c5f5d447b1994acdaa,876461,"Jyn Erso, Time to Fight",foil,ambiguous,false
-starwarsunlimited,a5d27d77d4da451bbbc08313bb4cfc77405c8ae4a1691ba4ed1971caad76bcb6,868634,"Chancellor Palpatine, I Am the Senate",foil,ambiguous,false
-starwarsunlimited,a610cc88a926d1fbbb747bac14d92aec8ec449d61faa18d238df426028f17113,868630,"General Grievous, Scuttling to Safety",foil,ambiguous,false
+starwarsunlimited,a5483a43b1fdfdef1f5c69ad976c9a919df3c3796dbef35c4d13ebec86e8da96,815621,"Darth Vader, Scourge of Squadrons",foil,manual,true
+starwarsunlimited,a55ef1079530ff3ba0dafb2017a8d19d00a75dbbb90e53c5f5d447b1994acdaa,876461,"Jyn Erso, Time to Fight",foil,manual,true
+starwarsunlimited,a5d27d77d4da451bbbc08313bb4cfc77405c8ae4a1691ba4ed1971caad76bcb6,868634,"Chancellor Palpatine, I Am the Senate",foil,manual,true
+starwarsunlimited,a610cc88a926d1fbbb747bac14d92aec8ec449d61faa18d238df426028f17113,868630,"General Grievous, Scuttling to Safety",foil,manual,true
 starwarsunlimited,a68438b26a5c8dafcda6e562ce06e7fb025c0191fd04990bc4fc68adc4f781e1,875421,"Queen Amidala, Championing Her People",foil,exact,true
-starwarsunlimited,a7124320a73fab551cf5429a10781fa93064456b8ca9287b7035830f2fc19cee,856807,"Dryden Vos, I Never Ask Twice",foil,ambiguous,false
-starwarsunlimited,a7759bd114cb95ae57d425da1a8007a4330367281855bb69116529a9de6aaf7a,856870,"Darth Sion, Lord of Pain",foil,ambiguous,false
-starwarsunlimited,a7d3caf8b84baf7f0c1ff77c2e1b9f9f751d2a0df12ae444f7e7ea8ba6ab372c,757553,Force Lightning,nonfoil,ambiguous,false
-starwarsunlimited,a7e046717d1df52437df72a199d9be684b4464dfa43e4bdda5345084a80cd122,856346,Hyperspace Disaster,foil,ambiguous,false
-starwarsunlimited,a7e82e53a3b4b067273534706c465c045ef2d023a632a9e695699f621bdc8ab2,833209,"Darth Vader, Twilight of the Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,a8166acf1e9f4a96e1f9d915f9dc6ae20c8157eb691682177c1c7bd49648f41e,856719,Topple the Summit,nonfoil,ambiguous,false
-starwarsunlimited,a8aed2d52eeea60b28c12c7d66699819845b38b1e6d26c43989160dc3670f58d,854943,Planetary Bombardment,foil,ambiguous,false
-starwarsunlimited,a8babfad6ef6d3870169bd6b37120a3131a4fe1d9e66f5823ebbe99611d3dab5,857158,"Grand Admiral Thrawn, Grand Schemer",foil,ambiguous,false
-starwarsunlimited,a8feb864522a3d9ae666ecc18642556ecefe1e54ad8aa8b434eac89c7d253a22,757671,Superlaser Blast,foil,ambiguous,false
-starwarsunlimited,a9abe0383103b58271f4858794a071d15bb0631408eef4cf5e858eeab12a9e72,831380,Craving Power,nonfoil,ambiguous,false
-starwarsunlimited,aa234068fa9418d3df1bf0b6b2c3bed3f8de86526649062892ad3f4255d6fee0,815915,"Black One, Straight At Them",foil,ambiguous,false
-starwarsunlimited,ab0a00dbf5bd68d8b05c4ec30b801e59854f4b56bb842df91db5ded0640556a2,815507,Data Vault,foil,provider_missing,false
-starwarsunlimited,ab2213acf0bfad95a015005cb4f8626296ba85b1205103f1965b1d48ecf8e259,876236,Single Reactor Ignition,foil,ambiguous,false
-starwarsunlimited,abb5261a692151a89e73051b88f9a2fe58a068ad3f993b22d8b3f613c68e50ae,759952,Security Complex,foil,provider_missing,false
+starwarsunlimited,a7124320a73fab551cf5429a10781fa93064456b8ca9287b7035830f2fc19cee,856807,"Dryden Vos, I Never Ask Twice",foil,manual,true
+starwarsunlimited,a7759bd114cb95ae57d425da1a8007a4330367281855bb69116529a9de6aaf7a,856870,"Darth Sion, Lord of Pain",foil,manual,true
+starwarsunlimited,a7d3caf8b84baf7f0c1ff77c2e1b9f9f751d2a0df12ae444f7e7ea8ba6ab372c,757553,Force Lightning,nonfoil,manual,true
+starwarsunlimited,a7e046717d1df52437df72a199d9be684b4464dfa43e4bdda5345084a80cd122,856346,Hyperspace Disaster,foil,manual,true
+starwarsunlimited,a7e82e53a3b4b067273534706c465c045ef2d023a632a9e695699f621bdc8ab2,833209,"Darth Vader, Twilight of the Apprentice",nonfoil,manual,true
+starwarsunlimited,a8166acf1e9f4a96e1f9d915f9dc6ae20c8157eb691682177c1c7bd49648f41e,856719,Topple the Summit,nonfoil,manual,true
+starwarsunlimited,a8aed2d52eeea60b28c12c7d66699819845b38b1e6d26c43989160dc3670f58d,854943,Planetary Bombardment,foil,manual,true
+starwarsunlimited,a8babfad6ef6d3870169bd6b37120a3131a4fe1d9e66f5823ebbe99611d3dab5,857158,"Grand Admiral Thrawn, Grand Schemer",foil,manual,true
+starwarsunlimited,a8feb864522a3d9ae666ecc18642556ecefe1e54ad8aa8b434eac89c7d253a22,757671,Superlaser Blast,foil,manual,true
+starwarsunlimited,a9abe0383103b58271f4858794a071d15bb0631408eef4cf5e858eeab12a9e72,831380,Craving Power,nonfoil,manual,true
+starwarsunlimited,aa234068fa9418d3df1bf0b6b2c3bed3f8de86526649062892ad3f4255d6fee0,815915,"Black One, Straight At Them",foil,manual,true
+starwarsunlimited,ab0a00dbf5bd68d8b05c4ec30b801e59854f4b56bb842df91db5ded0640556a2,815507,Data Vault,foil,manual,true
+starwarsunlimited,ab2213acf0bfad95a015005cb4f8626296ba85b1205103f1965b1d48ecf8e259,876236,Single Reactor Ignition,foil,manual,true
+starwarsunlimited,abb5261a692151a89e73051b88f9a2fe58a068ad3f993b22d8b3f613c68e50ae,759952,Security Complex,foil,manual,true
 starwarsunlimited,ac12f6af22830ade1da07f77eb08b81e02f92c0ff958950900c730918c961a9a,838387,"Razor Crest, Reliable Gunship",foil,exact,true
-starwarsunlimited,ac33f8cf96201536a116b08eca60fca5bed1a0b2dbeaece09b03091802ab3919,833377,"Shin Hati, Overeager Apprentice",foil,ambiguous,false
-starwarsunlimited,ac34e42755dd361d2c504ee601a79c01ed9e33caa46d6418cf578bff87e34fc8,776639,"Bazine Netal, Spy for the First Order",foil,ambiguous,false
-starwarsunlimited,ac480f3b89612d459d8d1b0ba74991a25f2406eba57709ac1d8d2eddee90f7bc,857113,"General Grievous, Scuttling to Safety",foil,ambiguous,false
-starwarsunlimited,ac96b8abd9aa667003bf2f2a294e29b46c4a350aa89653ceb36744994f61d3fb,854961,"Anakin Skywalker, Champion of Mortis",nonfoil,ambiguous,false
-starwarsunlimited,ad58abe341586bf8e405c19fa9a10ea1cfc3d64888270b7d8dde2b07ecbebe46,757643,Vigilance,foil,ambiguous,false
-starwarsunlimited,ad76d255ca35cfc9d0c581105bc69fb28a2c76e64af1bf197b8d6540f979f2bb,868605,"HK-47, Exclamation: Die, Meatbag!",foil,ambiguous,false
-starwarsunlimited,ad8a6666e499115c295a22988a94620d104ceddb73abee9becd78bc6a85c5042,757464,"Grand Inquisitor, Hunting the Jedi",nonfoil,ambiguous,false
-starwarsunlimited,ae054c92eef0282cb753b6afe63e4db9419ef06bd7703b96db200140e57ab42b,815808,"Grand Admiral Thrawn, ...How Unfortunate",foil,ambiguous,false
-starwarsunlimited,aef19fa3e77e6708a6f2493a995405a70409c78c150de7a0f9b4049a05985a1c,796097,"Wat Tambor, Techno Union Foreman",foil,ambiguous,false
-starwarsunlimited,af0393f415e6ca5befa4ca8f6c77904bf330196f029b9dff49f5fe28493b5b41,815573,"Luke Skywalker, You Still With Me?",foil,ambiguous,false
-starwarsunlimited,afb65d051b21718d87869e958d0c1feb3bddbf65bb528ffe2c4426ef510a88ba,796102,"Maul, A Rival in Darkness",foil,ambiguous,false
-starwarsunlimited,afc39efa4a4d9863ec9bd6266275721a266080d7d6c26fc82bbaa049572fb522,755226,"Darth Vader, Commanding the First Legion",foil,ambiguous,false
-starwarsunlimited,b019752313177c17786e910eb3c0c46b689179ff14350a02e7b30d84195b0591,833173,"Supreme Leader Snoke, In the Seat of Power",foil,ambiguous,false
-starwarsunlimited,b0759b57c8c5a1cc59146fb131c3e8930da7c3a4bc8bf3a3921147b88c5f0c1a,796095,"Count Dooku, Face of the Confederacy",foil,ambiguous,false
-starwarsunlimited,b32956d41b072ee533b9e03716ec9e8614240b55a655a4b8c3ff089dc6f8814d,857176,"Dryden Vos, I Get All Worked Up",foil,ambiguous,false
-starwarsunlimited,b40fd4d1c7625bf571a49ed30276667ad7f358940e4ce0811e6105d6483acb77,759953,Energy Conversion Lab,foil,provider_missing,false
-starwarsunlimited,b427a67d9bc140914f0c70b007f89e5189c99c32aad609c58b6f24ebf43e78bd,815929,"Shuttle ST-149, Under Krennic's Authority",foil,ambiguous,false
-starwarsunlimited,b45bd3f79f2b367769220b8215e5f44cdd1327f674ff3e0384dd69aabbba7e59,829759,"C-3PO, Anything I Might Do?",foil,provider_missing,false
-starwarsunlimited,b519a3c06256e7b6ab5d550f637898c2ff778da038583c283ca89e83c7f1af9a,757648,Jedi Lightsaber,foil,ambiguous,false
-starwarsunlimited,b529a3228e9808d35c2a123fd5407f4ffb8ef2b07bdadf2a1c6119836915cb5b,876585,"The Mandalorian, Let's See the Puck",foil,ambiguous,false
-starwarsunlimited,b5887b7026421e0dcb9b3920ce527f664a5e3be3c7b2d4449d82b42ab67eddc7,833313,"Merrin, Alone with the Dead",foil,ambiguous,false
-starwarsunlimited,b7f15ce174f5f1a7aa8ff2d5fd84125ce78b5ef6c3502615ef7ec66be9f73ccd,776590,"Kylo's TIE Silencer, Ruthlessly Efficient",nonfoil,ambiguous,false
-starwarsunlimited,b84a3ba983511b32744a1f7c3925984ae36ac9240a0c4dcfb735029d8085d624,776596,"Kylo Ren, Killing the Past",foil,ambiguous,false
-starwarsunlimited,b8b00548214591df0f3bf4f5a582edeab4f08d06dc8f3566b49a434ede2c63b8,757490,"Millennium Falcon, Piece of Junk",foil,ambiguous,false
-starwarsunlimited,b8cc0e7d366442e20306e6caae864304a4686dbac5223c8351c1481c1d503f01,809404,"Maul, Shadow Collective Visionary",nonfoil,ambiguous,false
-starwarsunlimited,b8f310aa8d4226a0ee6383430cca24680084ed9e5cd75ae650c63de02d8d15c9,776857,"Gar Saxon, Viceroy of Mandalore",foil,ambiguous,false
+starwarsunlimited,ac33f8cf96201536a116b08eca60fca5bed1a0b2dbeaece09b03091802ab3919,833377,"Shin Hati, Overeager Apprentice",foil,manual,true
+starwarsunlimited,ac34e42755dd361d2c504ee601a79c01ed9e33caa46d6418cf578bff87e34fc8,776639,"Bazine Netal, Spy for the First Order",foil,manual,true
+starwarsunlimited,ac480f3b89612d459d8d1b0ba74991a25f2406eba57709ac1d8d2eddee90f7bc,857113,"General Grievous, Scuttling to Safety",foil,manual,true
+starwarsunlimited,ac96b8abd9aa667003bf2f2a294e29b46c4a350aa89653ceb36744994f61d3fb,854961,"Anakin Skywalker, Champion of Mortis",nonfoil,manual,true
+starwarsunlimited,ad58abe341586bf8e405c19fa9a10ea1cfc3d64888270b7d8dde2b07ecbebe46,757643,Vigilance,foil,manual,true
+starwarsunlimited,ad76d255ca35cfc9d0c581105bc69fb28a2c76e64af1bf197b8d6540f979f2bb,868605,"HK-47, Exclamation: Die, Meatbag!",foil,manual,true
+starwarsunlimited,ad8a6666e499115c295a22988a94620d104ceddb73abee9becd78bc6a85c5042,757464,"Grand Inquisitor, Hunting the Jedi",nonfoil,manual,true
+starwarsunlimited,ae054c92eef0282cb753b6afe63e4db9419ef06bd7703b96db200140e57ab42b,815808,"Grand Admiral Thrawn, ...How Unfortunate",foil,manual,true
+starwarsunlimited,aef19fa3e77e6708a6f2493a995405a70409c78c150de7a0f9b4049a05985a1c,796097,"Wat Tambor, Techno Union Foreman",foil,manual,true
+starwarsunlimited,af0393f415e6ca5befa4ca8f6c77904bf330196f029b9dff49f5fe28493b5b41,815573,"Luke Skywalker, You Still With Me?",foil,manual,true
+starwarsunlimited,afb65d051b21718d87869e958d0c1feb3bddbf65bb528ffe2c4426ef510a88ba,796102,"Maul, A Rival in Darkness",foil,manual,true
+starwarsunlimited,afc39efa4a4d9863ec9bd6266275721a266080d7d6c26fc82bbaa049572fb522,755226,"Darth Vader, Commanding the First Legion",foil,manual,true
+starwarsunlimited,b019752313177c17786e910eb3c0c46b689179ff14350a02e7b30d84195b0591,833173,"Supreme Leader Snoke, In the Seat of Power",foil,manual,true
+starwarsunlimited,b0759b57c8c5a1cc59146fb131c3e8930da7c3a4bc8bf3a3921147b88c5f0c1a,796095,"Count Dooku, Face of the Confederacy",foil,manual,true
+starwarsunlimited,b32956d41b072ee533b9e03716ec9e8614240b55a655a4b8c3ff089dc6f8814d,857176,"Dryden Vos, I Get All Worked Up",foil,manual,true
+starwarsunlimited,b40fd4d1c7625bf571a49ed30276667ad7f358940e4ce0811e6105d6483acb77,759953,Energy Conversion Lab,foil,manual,true
+starwarsunlimited,b427a67d9bc140914f0c70b007f89e5189c99c32aad609c58b6f24ebf43e78bd,815929,"Shuttle ST-149, Under Krennic's Authority",foil,manual,true
+starwarsunlimited,b45bd3f79f2b367769220b8215e5f44cdd1327f674ff3e0384dd69aabbba7e59,829759,"C-3PO, Anything I Might Do?",foil,manual,true
+starwarsunlimited,b519a3c06256e7b6ab5d550f637898c2ff778da038583c283ca89e83c7f1af9a,757648,Jedi Lightsaber,foil,manual,true
+starwarsunlimited,b529a3228e9808d35c2a123fd5407f4ffb8ef2b07bdadf2a1c6119836915cb5b,876585,"The Mandalorian, Let's See the Puck",foil,manual,true
+starwarsunlimited,b5887b7026421e0dcb9b3920ce527f664a5e3be3c7b2d4449d82b42ab67eddc7,833313,"Merrin, Alone with the Dead",foil,manual,true
+starwarsunlimited,b7f15ce174f5f1a7aa8ff2d5fd84125ce78b5ef6c3502615ef7ec66be9f73ccd,776590,"Kylo's TIE Silencer, Ruthlessly Efficient",nonfoil,manual,true
+starwarsunlimited,b84a3ba983511b32744a1f7c3925984ae36ac9240a0c4dcfb735029d8085d624,776596,"Kylo Ren, Killing the Past",foil,manual,true
+starwarsunlimited,b8b00548214591df0f3bf4f5a582edeab4f08d06dc8f3566b49a434ede2c63b8,757490,"Millennium Falcon, Piece of Junk",foil,manual,true
+starwarsunlimited,b8cc0e7d366442e20306e6caae864304a4686dbac5223c8351c1481c1d503f01,809404,"Maul, Shadow Collective Visionary",nonfoil,manual,true
+starwarsunlimited,b8f310aa8d4226a0ee6383430cca24680084ed9e5cd75ae650c63de02d8d15c9,776857,"Gar Saxon, Viceroy of Mandalore",foil,manual,true
 starwarsunlimited,b8f35a97699b1503c26d9093262cc87de5ed10ca86a59acb391d4ed25955c112,814033,Shield Token,foil,provider_missing,false
-starwarsunlimited,b91387b46b2d0864a4635d70048b56d6512d044d42bfa8234f21e0d02d8b1ec2,757652,"Luke Skywalker, Jedi Knight",nonfoil,ambiguous,false
-starwarsunlimited,ba1b5067b9062c57c5210db40e19c172e5e6464878ea17ae5825dd290591597b,833182,"Rey, Nobody",foil,ambiguous,false
-starwarsunlimited,ba52a30c085508649855eddca512815985230a3598de61c47d81a99f6e1474da,795786,Petranaki Arena,foil,provider_missing,false
-starwarsunlimited,ba687e6ce1b7c24af0e6fba5224d2d1b260847c58fea7b6fc782b69b078d02bc,856933,"Captain Typho, All Necessary Precautions",foil,ambiguous,false
-starwarsunlimited,ba6e371563d8d7868216b18f71fbfeebef55d961537deeb2c75eb3b550604e69,815924,"Shuttle Tydirium, Fly Casual",foil,ambiguous,false
-starwarsunlimited,bb3fe885b33775aee1008dc5badf7dab85b683927f95267043490b3369d01f5c,856806,"Colonel Yularen, This Is Why We Plan",foil,ambiguous,false
-starwarsunlimited,bb8bdb9ac4a7f914004387c492226efaf3ecb226edfee9c25c03a0c695d5a3c4,809401,"Avenger, Hunting Star Destroyer",nonfoil,ambiguous,false
-starwarsunlimited,bc0fa26790f23cb3bd993db4c933efee6d5dc684d5e61156d7c81da9235b41a9,815824,"Kazuda Xiono, Best Pilot in the Galaxy",foil,ambiguous,false
+starwarsunlimited,b91387b46b2d0864a4635d70048b56d6512d044d42bfa8234f21e0d02d8b1ec2,757652,"Luke Skywalker, Jedi Knight",nonfoil,manual,true
+starwarsunlimited,ba1b5067b9062c57c5210db40e19c172e5e6464878ea17ae5825dd290591597b,833182,"Rey, Nobody",foil,manual,true
+starwarsunlimited,ba52a30c085508649855eddca512815985230a3598de61c47d81a99f6e1474da,795786,Petranaki Arena,foil,manual,true
+starwarsunlimited,ba687e6ce1b7c24af0e6fba5224d2d1b260847c58fea7b6fc782b69b078d02bc,856933,"Captain Typho, All Necessary Precautions",foil,manual,true
+starwarsunlimited,ba6e371563d8d7868216b18f71fbfeebef55d961537deeb2c75eb3b550604e69,815924,"Shuttle Tydirium, Fly Casual",foil,manual,true
+starwarsunlimited,bb3fe885b33775aee1008dc5badf7dab85b683927f95267043490b3369d01f5c,856806,"Colonel Yularen, This Is Why We Plan",foil,manual,true
+starwarsunlimited,bb8bdb9ac4a7f914004387c492226efaf3ecb226edfee9c25c03a0c695d5a3c4,809401,"Avenger, Hunting Star Destroyer",nonfoil,manual,true
+starwarsunlimited,bc0fa26790f23cb3bd993db4c933efee6d5dc684d5e61156d7c81da9235b41a9,815824,"Kazuda Xiono, Best Pilot in the Galaxy",foil,manual,true
 starwarsunlimited,bc231236e77cfed1d65d6434cc41b08704cf8c50d94e062f1bb16cf3c0e45c6b,833317,"Sifo-Dyas, Commissioning An Army",foil,provider_missing,false
-starwarsunlimited,bc687aacd1c2c47c1a729f45a6468d3a165716340b8aadb0040110ecba68c540,815817,"Major Vonreg, Red Baron",foil,ambiguous,false
-starwarsunlimited,bc6ad862749b91cbc8fb62409424388e676061d364f113899e42f2a5c39fbad2,856842,"Karis Nemik, Freedom is a Pure Idea",nonfoil,ambiguous,false
-starwarsunlimited,bc814815ea4094cdc62c29be8a1b632213d7ba0415cad7644188e9fb9c71be9e,819473,"Black One, Straight At Them",foil,ambiguous,false
-starwarsunlimited,bcbe3eaa85bea32f187d71889b012268e562a5ed65f7277d13d761bf89a1d87d,857102,"Queen Amidala, Championing Her People",foil,ambiguous,false
-starwarsunlimited,bd20fc3d16624f20d0cbaf64b42c182fcef4bdb4d8c0bcab8a5a768391c3534d,876518,"Latts Razzi, Deadly Whipmaster",foil,ambiguous,false
-starwarsunlimited,bd258d3bdcf3cbc1aa0977cdda56a877d8fa4417c501286f12835aaae5a13911,796089,"Nala Se, Clone Engineer",foil,ambiguous,false
-starwarsunlimited,be8d21cd2a19f83288eb380acfd88867328615a39e0f2ed248ab158144c60fb8,876472,"The Client, Please Lower Your Blaster",foil,ambiguous,false
+starwarsunlimited,bc687aacd1c2c47c1a729f45a6468d3a165716340b8aadb0040110ecba68c540,815817,"Major Vonreg, Red Baron",foil,manual,true
+starwarsunlimited,bc6ad862749b91cbc8fb62409424388e676061d364f113899e42f2a5c39fbad2,856842,"Karis Nemik, Freedom is a Pure Idea",nonfoil,manual,true
+starwarsunlimited,bc814815ea4094cdc62c29be8a1b632213d7ba0415cad7644188e9fb9c71be9e,819473,"Black One, Straight At Them",foil,manual,true
+starwarsunlimited,bcbe3eaa85bea32f187d71889b012268e562a5ed65f7277d13d761bf89a1d87d,857102,"Queen Amidala, Championing Her People",foil,manual,true
+starwarsunlimited,bd20fc3d16624f20d0cbaf64b42c182fcef4bdb4d8c0bcab8a5a768391c3534d,876518,"Latts Razzi, Deadly Whipmaster",foil,manual,true
+starwarsunlimited,bd258d3bdcf3cbc1aa0977cdda56a877d8fa4417c501286f12835aaae5a13911,796089,"Nala Se, Clone Engineer",foil,manual,true
+starwarsunlimited,be8d21cd2a19f83288eb380acfd88867328615a39e0f2ed248ab158144c60fb8,876472,"The Client, Please Lower Your Blaster",foil,manual,true
 starwarsunlimited,bf0bf0eaf2ec394a8dad566ec98932372132614d7030402c684249ca8d358a47,822539,"Count Dooku, Fallen Jedi",foil,exact,true
-starwarsunlimited,bf1b26ecbccd2668cb37e3b6e1fef41282abb78f9f7932662a0641cf63a3333f,757657,"Obi-Wan Kenobi, Following Fate",foil,ambiguous,false
-starwarsunlimited,bf7457a980808b7b183c03cf38a68175a0b7f0d9dc669f30afb7521870b2c10e,815066,Planetary Bombardment,nonfoil,ambiguous,false
-starwarsunlimited,c02e446c452b03fb5705b3953e16fd8573d4adfff27e3ac8ea2b5ae7f7fd03e6,833389,"Eighth Brother, Hunt Together",foil,ambiguous,false
-starwarsunlimited,c04ebeb29550797c0d209869c940193500339cd0a1084bb5c1c8796258bb37a6,776861,"Hondo Ohnaka, That's Good Business",foil,ambiguous,false
-starwarsunlimited,c07b2a28852d4c48b7500ffbcdbc19e6a1de6c10cb5b425d87ef87ad300be640,868662,"Darth Nihilus, Lord of Hunger",nonfoil,ambiguous,false
-starwarsunlimited,c090f2f953b699589ed24d148305afd91355fb1083d9ed575c07820a174a69d3,757606,Overwhelming Barrage,foil,ambiguous,false
-starwarsunlimited,c0ab596d329e09516f218f1ede9ae093987bd11fdfabad4f078436b381da7b90,876562,"Ezra Bridger, Spectre Six",foil,ambiguous,false
-starwarsunlimited,c0dbbc0b93f3dd3c61858ae0b81cc6082844188f1dce46aa94d9d495a21ba81e,760874,"Mace Windu, Party Crasher",nonfoil,ambiguous,false
-starwarsunlimited,c16c1155ed0493cab961839d58fb0babf855295b654a0006f8c8ca8a538458f1,833362,"Depa Billaba, A Higher Purpose",foil,ambiguous,false
-starwarsunlimited,c18169c4e3c5577ee81c9c97baa12f78ab7c0de9c00c0c5c8f6f401b0e91690e,815914,"Devastator, Hunting the Rebellion",foil,ambiguous,false
-starwarsunlimited,c2190b2be5d817d8f1ff253424ba5e1fefe89dfa838fb158b6160b3be0185936,814921,"No Glory, Only Results",nonfoil,ambiguous,false
-starwarsunlimited,c2405f46c9cae9cc02eef1d23609277f48e37e9302f372ce2cb22ac7c0e30981,809405,"Wrecker, Boom!",nonfoil,ambiguous,false
-starwarsunlimited,c358fe83bd2243aa7fcb863b63464e71c83c32700728af198fd518855cf55d6d,854993,"Luke Skywalker, Jedi Knight",nonfoil,ambiguous,false
+starwarsunlimited,bf1b26ecbccd2668cb37e3b6e1fef41282abb78f9f7932662a0641cf63a3333f,757657,"Obi-Wan Kenobi, Following Fate",foil,manual,true
+starwarsunlimited,bf7457a980808b7b183c03cf38a68175a0b7f0d9dc669f30afb7521870b2c10e,815066,Planetary Bombardment,nonfoil,manual,true
+starwarsunlimited,c02e446c452b03fb5705b3953e16fd8573d4adfff27e3ac8ea2b5ae7f7fd03e6,833389,"Eighth Brother, Hunt Together",foil,manual,true
+starwarsunlimited,c04ebeb29550797c0d209869c940193500339cd0a1084bb5c1c8796258bb37a6,776861,"Hondo Ohnaka, That's Good Business",foil,manual,true
+starwarsunlimited,c07b2a28852d4c48b7500ffbcdbc19e6a1de6c10cb5b425d87ef87ad300be640,868662,"Darth Nihilus, Lord of Hunger",nonfoil,manual,true
+starwarsunlimited,c090f2f953b699589ed24d148305afd91355fb1083d9ed575c07820a174a69d3,757606,Overwhelming Barrage,foil,manual,true
+starwarsunlimited,c0ab596d329e09516f218f1ede9ae093987bd11fdfabad4f078436b381da7b90,876562,"Ezra Bridger, Spectre Six",foil,manual,true
+starwarsunlimited,c0dbbc0b93f3dd3c61858ae0b81cc6082844188f1dce46aa94d9d495a21ba81e,760874,"Mace Windu, Party Crasher",nonfoil,manual,true
+starwarsunlimited,c16c1155ed0493cab961839d58fb0babf855295b654a0006f8c8ca8a538458f1,833362,"Depa Billaba, A Higher Purpose",foil,manual,true
+starwarsunlimited,c18169c4e3c5577ee81c9c97baa12f78ab7c0de9c00c0c5c8f6f401b0e91690e,815914,"Devastator, Hunting the Rebellion",foil,manual,true
+starwarsunlimited,c2190b2be5d817d8f1ff253424ba5e1fefe89dfa838fb158b6160b3be0185936,814921,"No Glory, Only Results",nonfoil,manual,true
+starwarsunlimited,c2405f46c9cae9cc02eef1d23609277f48e37e9302f372ce2cb22ac7c0e30981,809405,"Wrecker, Boom!",nonfoil,manual,true
+starwarsunlimited,c358fe83bd2243aa7fcb863b63464e71c83c32700728af198fd518855cf55d6d,854993,"Luke Skywalker, Jedi Knight",nonfoil,manual,true
 starwarsunlimited,c388e446780c88eabff9a7ec6a4aebe44b08021d525b4a5c28fbdcdf37548cff,822535,"Poggle the Lesser, Archduke of the Stalgasin Hive",foil,exact,true
-starwarsunlimited,c3f5679004a7ebc9d5ed8cb86fbfde3accc886eeb549dfb32d48d0e1ffb944ce,876278,"The Stranger, No Survivors",foil,ambiguous,false
-starwarsunlimited,c49cfaf9ada94ec77e02e99f52d430bf0cbde7f6279c102940b21623fa9f7cb9,868626,Planetary Bombardment,nonfoil,ambiguous,false
+starwarsunlimited,c3f5679004a7ebc9d5ed8cb86fbfde3accc886eeb549dfb32d48d0e1ffb944ce,876278,"The Stranger, No Survivors",foil,manual,true
+starwarsunlimited,c49cfaf9ada94ec77e02e99f52d430bf0cbde7f6279c102940b21623fa9f7cb9,868626,Planetary Bombardment,nonfoil,manual,true
 starwarsunlimited,c54275b1bbdc542baa9e9497ae129cf032b3f27c75c622516f5ae39063f5bc22,800800,"Gor, Grievous's Pet",foil,ambiguous,false
-starwarsunlimited,c54e7275e76f456709332315f03f49dd7e072d1a7c73cc8c3f348fddfba577c4,815909,"Red Leader, Form Up",foil,ambiguous,false
-starwarsunlimited,c58de500767398efb1626801059ae06c417575608a33207abec146af0667934e,876293,"Lawbringer, Shadow Over Lothal",foil,ambiguous,false
-starwarsunlimited,c59e06d0c54f89e56770c524634c43c28e251eab6f898c6160a58c6d4d8ddc17,779473,"Count Dooku, Darth Tyranus",foil,provider_missing,false
+starwarsunlimited,c54e7275e76f456709332315f03f49dd7e072d1a7c73cc8c3f348fddfba577c4,815909,"Red Leader, Form Up",foil,manual,true
+starwarsunlimited,c58de500767398efb1626801059ae06c417575608a33207abec146af0667934e,876293,"Lawbringer, Shadow Over Lothal",foil,manual,true
+starwarsunlimited,c59e06d0c54f89e56770c524634c43c28e251eab6f898c6160a58c6d4d8ddc17,779473,"Count Dooku, Darth Tyranus",foil,manual,true
 starwarsunlimited,c5a33a278565f46576062aaf2d92fd8fc5b8a586af47b91c4d416fe602611c4b,804737,"The Invisible Hand, Imposing Flagship",nonfoil,ambiguous,false
 starwarsunlimited,c5a8a9dcd220e0310d0809f9d2f4d8ab4cc7471d78b69a5b5fe92db862188711,814032,Experience Token,foil,provider_missing,false
 starwarsunlimited,c64ab03945a89e6e1dbaa8a386f2274fe8433288a16131b82e198d5a0abf3ce5,815864,"Annihilator, Tagge's Flagship",foil,ambiguous,false
-starwarsunlimited,c653957b7eafa8dafa7cb045d31d4608a74bde5eb6281941891e9262bd923af0,876571,"K-2SO, Locking the Vault",foil,provider_missing,false
-starwarsunlimited,c6e7f25c438fbdbe0f966743736d036b05ec4b330673585cee27cd0644fe5c65,819489,"Kylo Ren, Killing the Past",foil,ambiguous,false
-starwarsunlimited,c6f8240b6fcd8ae27ae4f1973ab44c10dac51bee38f227550d52d6e61b03aea5,833346,"Mace Windu, Leaping into Action",foil,ambiguous,false
+starwarsunlimited,c653957b7eafa8dafa7cb045d31d4608a74bde5eb6281941891e9262bd923af0,876571,"K-2SO, Locking the Vault",foil,manual,true
+starwarsunlimited,c6e7f25c438fbdbe0f966743736d036b05ec4b330673585cee27cd0644fe5c65,819489,"Kylo Ren, Killing the Past",foil,manual,true
+starwarsunlimited,c6f8240b6fcd8ae27ae4f1973ab44c10dac51bee38f227550d52d6e61b03aea5,833346,"Mace Windu, Leaping into Action",foil,manual,true
 starwarsunlimited,c7620f1bdb129db913f4944e9c76762333416988188505b28e7e36745d913d3d,819482,"Han Solo, Reluctant Hero",nonfoil,exact,true
-starwarsunlimited,c7f1ba58b179a2656e5e1507edf1c8a43eeea6571e4da9d8743857aadca4e6c1,819477,"Home One, On My Mark",foil,ambiguous,false
-starwarsunlimited,c7f3c7b85ae54a03ea1293932db58839b2192d87793d14e9687cbc33cc614cfa,833176,"Obi-Wan Kenobi, Courage Makes Heroes",foil,ambiguous,false
-starwarsunlimited,c7fd0744aecd4556ca15daf5af0637d3d12583e90dec9d40c3f791573444320a,848222,"Darth Malak, Covetous Apprentice",foil,ambiguous,false
-starwarsunlimited,c8da33cbe94ce3ecb8a762f161fddc991923d6085229d98c9d21cfa49f0c5e5a,875837,"Rey, Skywalker",nonfoil,ambiguous,false
-starwarsunlimited,c9afc697c9466022e0a55d870b41be464fad8e86d559460699fef3a06ca3a839,776860,"Rey, More Than a Scavenger",foil,ambiguous,false
-starwarsunlimited,ca69d44563fbf31b3a6f7980bac44a01a937f35b32c2690db6031e2ebc2db6c7,815927,"Radiant VII, Ambassadors' Arrival",foil,ambiguous,false
-starwarsunlimited,cafb8939ec11ce8dcc45bc149ccd98baf47fab48a3755b0482e32ffa2c81b16f,854942,Aggression,nonfoil,ambiguous,false
-starwarsunlimited,cb04ee023c349b95722393c83b97606281c9125dcd5cec9e05af72fa4bb00a16,854293,"Queen Amidala, Championing Her People",foil,ambiguous,false
-starwarsunlimited,cb7bcd7dc3372b8da398c42e1f5269d000b08bdfd6aa6d05f8422647600f22a5,856846,"Lightmaker, I Have An Idea",nonfoil,ambiguous,false
-starwarsunlimited,ccd949afe22b80d421f72ba5aea72bee17922bb147982da000ed48e7ff01919c,779479,"Asajj Ventress, Count Dooku's Assassin",foil,ambiguous,false
-starwarsunlimited,cce0a7e2b1b2cbf8694ffe962c0637bbe7be5308ea76521ac0842dc80d630f52,815897,"Banshee, Crippling Command",foil,ambiguous,false
-starwarsunlimited,cda5aec6b3b79fb638ae718bd0770587fd4f60c4fc42fef617388cbf643a32bb,854955,Planetary Bombardment,nonfoil,ambiguous,false
-starwarsunlimited,cdc1d6613f80deb5d7d2b4b92d59f4b622ddfef97ae9e7d738f7bf697d29f87b,839961,Mos Eisley,nonfoil,provider_missing,false
-starwarsunlimited,ce0b9ab27e1613daf1fbf322e7e6f6251f19af546333bc763b68e925b675d169,868655,"Darth Vader, Twilight of the Apprentice",nonfoil,ambiguous,false
-starwarsunlimited,ce4147f808930fe62b7c6aaaea15b2eae839759a190eba9268bf7e0b1164cb1c,868652,"Darth Nihilus, Lord of Hunger",foil,ambiguous,false
-starwarsunlimited,ce7927872c60608433514858dbde04a38b1ba448baf7ededeb9cacaab7cb6298,757609,"Devastator, Inescapable",nonfoil,ambiguous,false
-starwarsunlimited,cf220d71df5de212172cd9f09e6546f817367e3dfad14895558c0806536ff848,857150,"Major Partagaz, Healthcare Provider",foil,ambiguous,false
-starwarsunlimited,cfa3100b0f4f309c810d403513146ce04595d4d02a84dc255cd3512b0b692426,823583,"Emperor Palpatine, Master of the Dark Side",foil,ambiguous,false
-starwarsunlimited,d07308b5ebe3fddc9e33552cf99053b30851f4e8fe13e6d55504d31ad05a95f8,757482,"Han Solo, Audacious Smuggler",nonfoil,ambiguous,false
-starwarsunlimited,d097e6a8dda72092030f881a8bc7006fced513b949d03ca4eda9ca1b8c5bce44,833349,"Yoda, My Ally is the Force",foil,ambiguous,false
-starwarsunlimited,d157e93914cdb00a0f9247738f45b7b7600a3bb28da2534b2029ae26e8215a2e,859002,"Grand Admiral Thrawn, Grand Schemer",nonfoil,ambiguous,false
-starwarsunlimited,d19d461666891ab2c5fb3b998f9b1ff419479484a53b14fdf7db1b9a6b2fe817,823582,"Emperor Palpatine, Master of the Dark Side",foil,ambiguous,false
-starwarsunlimited,d1c2b9478556a7aac870cf8150cb9d776adfff31d36d57c8e193e9922333f8e1,876103,"Rey, Skywalker",nonfoil,ambiguous,false
-starwarsunlimited,d20aaa42e5452a5c3953efd352cb1489e8558a594f1d9b6ca1dd244dfd8db3ab,757461,"Leia Organa, Alliance General",foil,ambiguous,false
-starwarsunlimited,d220cefb01e54f1f39635089bc56c5a53cf90ac1dd953024d721d7bdf717581d,779481,"Darth Maul, Revenge At Last",foil,ambiguous,false
-starwarsunlimited,d234a302f36655d347bde1079b5c86579750dfedad6daab7e3da42ba6dd7dacc,857184,"Vel Sartha, One Path, One Choice",foil,ambiguous,false
-starwarsunlimited,d2624669ff71493569b59f5b72da89d8162d6f34c20a7d7bbd5de737b78ee550,838411,"Grand Inquisitor, You're Right to Be Afraid",foil,ambiguous,false
-starwarsunlimited,d3fe655092442e907acc3acb1504d68915c395d28277569bd0863a049cdf3ad4,854980,"Maul, Shadow Collective Visionary",foil,ambiguous,false
-starwarsunlimited,d4108b180575ae1143690f25f2aaedb9f97c7c49461b9d71b33234e5042d2346,856817,"Sabé, Queen's Shadow",foil,ambiguous,false
-starwarsunlimited,d42a7e74c31f003026cb66f3fe951025fc33f8e0fe7d37fb393d8a9857b24ced,876457,"Saw Gerrera, Bring Down the Empire",foil,ambiguous,false
-starwarsunlimited,d43285c7c2ce59d07a0e81c6ee1b16e2b95f37f3c0c13d2fac7f35d60b961a95,757553,Force Lightning,foil,ambiguous,false
-starwarsunlimited,d4c38d2cd5f44d30c24e56615bd62df9179450e0b4b7a50ca2b8c7a5f525392b,876468,"Sebulba, Especially Dangerous Dug",foil,ambiguous,false
-starwarsunlimited,d523a4f94c5b3689dcb6e609d793ce455a9dc25ede958da46375861cd93c8580,833171,"Morgan Elsbeth, Following the Call",foil,ambiguous,false
-starwarsunlimited,d61fc730747d1feaef13575d3c0283370fdf0f51083fbda7f396d0c7b3cb80fa,856370,"Queen Amidala, Championing Her People",foil,ambiguous,false
-starwarsunlimited,d66a856fe6fb429b338fc3379bec77678a390be55dfc7fa5119335f626b104b1,876557,"Highsinger, Deadly Droid",foil,ambiguous,false
-starwarsunlimited,d6d62b86b3d6b15c54b60100749f5f6a0af98c3fb54de644d54e79ef640d5f87,833379,"Anakin Skywalker, Champion of Mortis",foil,ambiguous,false
-starwarsunlimited,d7d597376eadaea8a3c797a097e469dd9d1d97237ac9e92936cd9437ec4d2cd4,833194,"Cal Kestis, I Can't Keep Hiding",foil,ambiguous,false
-starwarsunlimited,d7ee2d1e76dcd12169208ee1540734e5907f4ac7ac957317c04a7e80dc53a9de,815919,"Rampart, Enjoy the Exit",foil,ambiguous,false
-starwarsunlimited,d826282922cff3aca354da0d6079bf7ee00f3ad0840e94d7b186565d8eea7ff5,815818,"Luke Skywalker, Hero of Yavin",foil,ambiguous,false
-starwarsunlimited,d8d9ca025ebf020f3b94bc4a620cb9422c32d16cede55b96776d78690affce93,830959,"Anakin Skywalker, Champion of Mortis",nonfoil,ambiguous,false
-starwarsunlimited,d9592b9273462823a9f6ea22ce42fb7b59b560720ec7a765eb12f4bb8c38ef4b,868652,"Darth Nihilus, Lord of Hunger",nonfoil,ambiguous,false
-starwarsunlimited,d96a2e0125fb37966c118f743d2b64ba06c84b407c7c8444db68df0ed1cadf13,854947,Vigilance,nonfoil,ambiguous,false
-starwarsunlimited,d970e799bd234048fd15c972964828ccbabdc95a8a653ca592ff8943983ff4dc,833180,"Kit Fisto, Focused Jedi Master",foil,ambiguous,false
-starwarsunlimited,da545895e9f3edf998a07c9706b09ebab1d1a0c59e8c6d0d19df700368fb8bbc,796110,"Mace Windu, Vaapad Form Master",foil,ambiguous,false
-starwarsunlimited,da57c00898ecaf67dfd8e7f1f0648d347dd2a5e70fe2c45b512b8c68ca282847,795835,"Ki-Adi-Mundi, Composed and Confident",foil,ambiguous,false
-starwarsunlimited,da5ba816f1743ad9776a7b0cc4ca1d57b4d21af7511e374ff290ae68694478e9,757589,Command,foil,ambiguous,false
-starwarsunlimited,db15d3e335651fcd54f2c9c9a972975471b7f59c3cd115d2a7f0a58d800341b8,757443,"Chewbacca, Walking Carpet",foil,ambiguous,false
-starwarsunlimited,db990a8cd27129fdcf1775d29e7c0c872e60ad00cb28e3e817959c70f3bd6752,876264,"Max Rebo, Encore!",foil,ambiguous,false
-starwarsunlimited,dba51e2180e984bfd7b919926a6c00f66da224c39026b45b4526ece1e514d877,809402,"K-2SO, Cassian's Counterpart",nonfoil,ambiguous,false
-starwarsunlimited,dbb06e0bb052b3ade22fa5b807ad8e75aea28ce093cf232268ddcde0652582eb,833371,"The Son, Embodiment of Darkness",foil,ambiguous,false
-starwarsunlimited,dbbaed2cdb894988702829422639e4395d35f722e7c7fc3133fd989c75b8e6af,857101,"Mina Bonteri, Stop This War",foil,ambiguous,false
-starwarsunlimited,dbc0db97cddd6cca8046ae7575e28c3cee96e50ece1520c4edaa429fef7c530a,796117,"Quinlan Vos, Sticking the Landing",foil,ambiguous,false
-starwarsunlimited,dc38cdb7daf0a74f41f631aa2d67f37f3845b9e7f912cbf344dda0af6dfe8c2c,815905,"Victor Leader, Leading from the Front",foil,ambiguous,false
-starwarsunlimited,dc625109c2dc34b700caf824234f48f4b7536e78201a004aab4160550b8474d4,876473,"Han Solo, I Got a Really Good Feeling",foil,ambiguous,false
+starwarsunlimited,c7f1ba58b179a2656e5e1507edf1c8a43eeea6571e4da9d8743857aadca4e6c1,819477,"Home One, On My Mark",foil,manual,true
+starwarsunlimited,c7f3c7b85ae54a03ea1293932db58839b2192d87793d14e9687cbc33cc614cfa,833176,"Obi-Wan Kenobi, Courage Makes Heroes",foil,manual,true
+starwarsunlimited,c7fd0744aecd4556ca15daf5af0637d3d12583e90dec9d40c3f791573444320a,848222,"Darth Malak, Covetous Apprentice",foil,manual,true
+starwarsunlimited,c8da33cbe94ce3ecb8a762f161fddc991923d6085229d98c9d21cfa49f0c5e5a,875837,"Rey, Skywalker",nonfoil,manual,true
+starwarsunlimited,c9afc697c9466022e0a55d870b41be464fad8e86d559460699fef3a06ca3a839,776860,"Rey, More Than a Scavenger",foil,manual,true
+starwarsunlimited,ca69d44563fbf31b3a6f7980bac44a01a937f35b32c2690db6031e2ebc2db6c7,815927,"Radiant VII, Ambassadors' Arrival",foil,manual,true
+starwarsunlimited,cafb8939ec11ce8dcc45bc149ccd98baf47fab48a3755b0482e32ffa2c81b16f,854942,Aggression,nonfoil,manual,true
+starwarsunlimited,cb04ee023c349b95722393c83b97606281c9125dcd5cec9e05af72fa4bb00a16,854293,"Queen Amidala, Championing Her People",foil,manual,true
+starwarsunlimited,cb7bcd7dc3372b8da398c42e1f5269d000b08bdfd6aa6d05f8422647600f22a5,856846,"Lightmaker, I Have An Idea",nonfoil,manual,true
+starwarsunlimited,ccd949afe22b80d421f72ba5aea72bee17922bb147982da000ed48e7ff01919c,779479,"Asajj Ventress, Count Dooku's Assassin",foil,manual,true
+starwarsunlimited,cce0a7e2b1b2cbf8694ffe962c0637bbe7be5308ea76521ac0842dc80d630f52,815897,"Banshee, Crippling Command",foil,manual,true
+starwarsunlimited,cda5aec6b3b79fb638ae718bd0770587fd4f60c4fc42fef617388cbf643a32bb,854955,Planetary Bombardment,nonfoil,manual,true
+starwarsunlimited,cdc1d6613f80deb5d7d2b4b92d59f4b622ddfef97ae9e7d738f7bf697d29f87b,839961,Mos Eisley,nonfoil,manual,true
+starwarsunlimited,ce0b9ab27e1613daf1fbf322e7e6f6251f19af546333bc763b68e925b675d169,868655,"Darth Vader, Twilight of the Apprentice",nonfoil,manual,true
+starwarsunlimited,ce4147f808930fe62b7c6aaaea15b2eae839759a190eba9268bf7e0b1164cb1c,868652,"Darth Nihilus, Lord of Hunger",foil,manual,true
+starwarsunlimited,ce7927872c60608433514858dbde04a38b1ba448baf7ededeb9cacaab7cb6298,757609,"Devastator, Inescapable",nonfoil,manual,true
+starwarsunlimited,cf220d71df5de212172cd9f09e6546f817367e3dfad14895558c0806536ff848,857150,"Major Partagaz, Healthcare Provider",foil,manual,true
+starwarsunlimited,cfa3100b0f4f309c810d403513146ce04595d4d02a84dc255cd3512b0b692426,823583,"Emperor Palpatine, Master of the Dark Side",foil,manual,true
+starwarsunlimited,d07308b5ebe3fddc9e33552cf99053b30851f4e8fe13e6d55504d31ad05a95f8,757482,"Han Solo, Audacious Smuggler",nonfoil,manual,true
+starwarsunlimited,d097e6a8dda72092030f881a8bc7006fced513b949d03ca4eda9ca1b8c5bce44,833349,"Yoda, My Ally is the Force",foil,manual,true
+starwarsunlimited,d157e93914cdb00a0f9247738f45b7b7600a3bb28da2534b2029ae26e8215a2e,859002,"Grand Admiral Thrawn, Grand Schemer",nonfoil,manual,true
+starwarsunlimited,d19d461666891ab2c5fb3b998f9b1ff419479484a53b14fdf7db1b9a6b2fe817,823582,"Emperor Palpatine, Master of the Dark Side",foil,manual,true
+starwarsunlimited,d1c2b9478556a7aac870cf8150cb9d776adfff31d36d57c8e193e9922333f8e1,876103,"Rey, Skywalker",nonfoil,manual,true
+starwarsunlimited,d20aaa42e5452a5c3953efd352cb1489e8558a594f1d9b6ca1dd244dfd8db3ab,757461,"Leia Organa, Alliance General",foil,manual,true
+starwarsunlimited,d220cefb01e54f1f39635089bc56c5a53cf90ac1dd953024d721d7bdf717581d,779481,"Darth Maul, Revenge At Last",foil,manual,true
+starwarsunlimited,d234a302f36655d347bde1079b5c86579750dfedad6daab7e3da42ba6dd7dacc,857184,"Vel Sartha, One Path, One Choice",foil,manual,true
+starwarsunlimited,d2624669ff71493569b59f5b72da89d8162d6f34c20a7d7bbd5de737b78ee550,838411,"Grand Inquisitor, You're Right to Be Afraid",foil,manual,true
+starwarsunlimited,d3fe655092442e907acc3acb1504d68915c395d28277569bd0863a049cdf3ad4,854980,"Maul, Shadow Collective Visionary",foil,manual,true
+starwarsunlimited,d4108b180575ae1143690f25f2aaedb9f97c7c49461b9d71b33234e5042d2346,856817,"Sabé, Queen's Shadow",foil,manual,true
+starwarsunlimited,d42a7e74c31f003026cb66f3fe951025fc33f8e0fe7d37fb393d8a9857b24ced,876457,"Saw Gerrera, Bring Down the Empire",foil,manual,true
+starwarsunlimited,d43285c7c2ce59d07a0e81c6ee1b16e2b95f37f3c0c13d2fac7f35d60b961a95,757553,Force Lightning,foil,manual,true
+starwarsunlimited,d4c38d2cd5f44d30c24e56615bd62df9179450e0b4b7a50ca2b8c7a5f525392b,876468,"Sebulba, Especially Dangerous Dug",foil,manual,true
+starwarsunlimited,d523a4f94c5b3689dcb6e609d793ce455a9dc25ede958da46375861cd93c8580,833171,"Morgan Elsbeth, Following the Call",foil,manual,true
+starwarsunlimited,d61fc730747d1feaef13575d3c0283370fdf0f51083fbda7f396d0c7b3cb80fa,856370,"Queen Amidala, Championing Her People",foil,manual,true
+starwarsunlimited,d66a856fe6fb429b338fc3379bec77678a390be55dfc7fa5119335f626b104b1,876557,"Highsinger, Deadly Droid",foil,manual,true
+starwarsunlimited,d6d62b86b3d6b15c54b60100749f5f6a0af98c3fb54de644d54e79ef640d5f87,833379,"Anakin Skywalker, Champion of Mortis",foil,manual,true
+starwarsunlimited,d7d597376eadaea8a3c797a097e469dd9d1d97237ac9e92936cd9437ec4d2cd4,833194,"Cal Kestis, I Can't Keep Hiding",foil,manual,true
+starwarsunlimited,d7ee2d1e76dcd12169208ee1540734e5907f4ac7ac957317c04a7e80dc53a9de,815919,"Rampart, Enjoy the Exit",foil,manual,true
+starwarsunlimited,d826282922cff3aca354da0d6079bf7ee00f3ad0840e94d7b186565d8eea7ff5,815818,"Luke Skywalker, Hero of Yavin",foil,manual,true
+starwarsunlimited,d8d9ca025ebf020f3b94bc4a620cb9422c32d16cede55b96776d78690affce93,830959,"Anakin Skywalker, Champion of Mortis",nonfoil,manual,true
+starwarsunlimited,d9592b9273462823a9f6ea22ce42fb7b59b560720ec7a765eb12f4bb8c38ef4b,868652,"Darth Nihilus, Lord of Hunger",nonfoil,manual,true
+starwarsunlimited,d96a2e0125fb37966c118f743d2b64ba06c84b407c7c8444db68df0ed1cadf13,854947,Vigilance,nonfoil,manual,true
+starwarsunlimited,d970e799bd234048fd15c972964828ccbabdc95a8a653ca592ff8943983ff4dc,833180,"Kit Fisto, Focused Jedi Master",foil,manual,true
+starwarsunlimited,da545895e9f3edf998a07c9706b09ebab1d1a0c59e8c6d0d19df700368fb8bbc,796110,"Mace Windu, Vaapad Form Master",foil,manual,true
+starwarsunlimited,da57c00898ecaf67dfd8e7f1f0648d347dd2a5e70fe2c45b512b8c68ca282847,795835,"Ki-Adi-Mundi, Composed and Confident",foil,manual,true
+starwarsunlimited,da5ba816f1743ad9776a7b0cc4ca1d57b4d21af7511e374ff290ae68694478e9,757589,Command,foil,manual,true
+starwarsunlimited,db15d3e335651fcd54f2c9c9a972975471b7f59c3cd115d2a7f0a58d800341b8,757443,"Chewbacca, Walking Carpet",foil,manual,true
+starwarsunlimited,db990a8cd27129fdcf1775d29e7c0c872e60ad00cb28e3e817959c70f3bd6752,876264,"Max Rebo, Encore!",foil,manual,true
+starwarsunlimited,dba51e2180e984bfd7b919926a6c00f66da224c39026b45b4526ece1e514d877,809402,"K-2SO, Cassian's Counterpart",nonfoil,manual,true
+starwarsunlimited,dbb06e0bb052b3ade22fa5b807ad8e75aea28ce093cf232268ddcde0652582eb,833371,"The Son, Embodiment of Darkness",foil,manual,true
+starwarsunlimited,dbbaed2cdb894988702829422639e4395d35f722e7c7fc3133fd989c75b8e6af,857101,"Mina Bonteri, Stop This War",foil,manual,true
+starwarsunlimited,dbc0db97cddd6cca8046ae7575e28c3cee96e50ece1520c4edaa429fef7c530a,796117,"Quinlan Vos, Sticking the Landing",foil,manual,true
+starwarsunlimited,dc38cdb7daf0a74f41f631aa2d67f37f3845b9e7f912cbf344dda0af6dfe8c2c,815905,"Victor Leader, Leading from the Front",foil,manual,true
+starwarsunlimited,dc625109c2dc34b700caf824234f48f4b7536e78201a004aab4160550b8474d4,876473,"Han Solo, I Got a Really Good Feeling",foil,manual,true
 starwarsunlimited,dd330a8d1da6e6653e575fe9c07dc3d1852aee0ab5c8e4cd847406bda7b1c564,804737,"The Invisible Hand, Imposing Flagship",foil,ambiguous,false
-starwarsunlimited,dd7ce79693a94f331ecb9120f70451a8dc44efaa4691172c9b83118f3f494cda,856821,"Queen Amidala, Championing Her People",nonfoil,ambiguous,false
-starwarsunlimited,ddbd6654814a13be47b8c6119492b408743f0f4792e041ef3929257686556b7a,796107,"Anakin Skywalker, What it Takes to Win",foil,ambiguous,false
+starwarsunlimited,dd7ce79693a94f331ecb9120f70451a8dc44efaa4691172c9b83118f3f494cda,856821,"Queen Amidala, Championing Her People",nonfoil,manual,true
+starwarsunlimited,ddbd6654814a13be47b8c6119492b408743f0f4792e041ef3929257686556b7a,796107,"Anakin Skywalker, What it Takes to Win",foil,manual,true
 starwarsunlimited,ddfe1e970e51edaf85110b6d62c27cb42125eabdbd900ff3cd8048abf79fbb00,838403,"Darth Vader, Dark Lord of the Sith",foil,exact,true
-starwarsunlimited,dea981662cdb394dde0ef21b6f6a50d29d90e6a4b1affe298fc6a8c79acdaf5c,857138,"Cinta Kaz, The Struggle Comes First",foil,ambiguous,false
-starwarsunlimited,ded2f93603f64b09323c17c7d115bebb037e030b2b759484fdf03f1949800bfa,757679,"Avenger, Hunting Star Destroyer",foil,ambiguous,false
-starwarsunlimited,dee13de3208345b89d9255ca6bf5d33a5b40640f6ae981af049b46b0bd439b7e,876055,"Lawbringer, Shadow Over Lothal",nonfoil,ambiguous,false
-starwarsunlimited,deece992f1b316b38a4e7f81e59bff5fdaeb66012fc1e8fa5420a783cff16e03,833178,"Darth Maul, Sith Revealed",foil,ambiguous,false
-starwarsunlimited,df399574c575d708210bf184b766ab59a76925093ae89ce82122e2413510e32b,856304,Condemn,foil,ambiguous,false
-starwarsunlimited,dfa622708b8e8b88f31f68bbfc3e812c4afa6c594f08cdabe6c3b481e982cbfc,856707,"Punishing One, Takes No Prisoners",nonfoil,ambiguous,false
-starwarsunlimited,dffa83546cf700d67c2466d56258f393659f3d5ce89bfec7badab55d94874123,833174,"Avar Kriss, Marshal of Starlight",foil,ambiguous,false
-starwarsunlimited,e093f884a94a76d1790d4ea7ab52fcb7fc2c8c3b007b52c20eda0478ea03a067,776871,"Cad Bane, He Who Needs No Introduction",foil,ambiguous,false
-starwarsunlimited,e0b6ced149d8735ce286642d1e8c0d1d6fafe4740d6a4122ac3d7e89203e2c19,857165,"Chopper, War Hero",foil,ambiguous,false
-starwarsunlimited,e0d8482b55cea0b04e8d5c12d847f666689d489371e45741f64581ebaf9cf25f,815807,"Asajj Ventress, I Work Alone",foil,ambiguous,false
-starwarsunlimited,e112c15c26588400f6041b8ba05526595fd8027124488d65850a354b5811a01d,857115,"Grand Admiral Thrawn, Grand Schemer",foil,ambiguous,false
-starwarsunlimited,e169b203745dc6cafd037f236aa40392d7964e82d8ad0d781912f13d25c4a277,854935,Vigilance,foil,ambiguous,false
-starwarsunlimited,e19c3d9524916209a8a97d71111b78c9b8d53f331b40380e29172ae88f089588,833353,"Ki-Adi-Mundi, We Must Push On",foil,ambiguous,false
-starwarsunlimited,e2019ac77fe377e205927d73c4db229f23e204211d7d2370848d364bb09ae747,815910,"Raddus, Holdo's Final Command",foil,ambiguous,false
+starwarsunlimited,dea981662cdb394dde0ef21b6f6a50d29d90e6a4b1affe298fc6a8c79acdaf5c,857138,"Cinta Kaz, The Struggle Comes First",foil,manual,true
+starwarsunlimited,ded2f93603f64b09323c17c7d115bebb037e030b2b759484fdf03f1949800bfa,757679,"Avenger, Hunting Star Destroyer",foil,manual,true
+starwarsunlimited,dee13de3208345b89d9255ca6bf5d33a5b40640f6ae981af049b46b0bd439b7e,876055,"Lawbringer, Shadow Over Lothal",nonfoil,manual,true
+starwarsunlimited,deece992f1b316b38a4e7f81e59bff5fdaeb66012fc1e8fa5420a783cff16e03,833178,"Darth Maul, Sith Revealed",foil,manual,true
+starwarsunlimited,df399574c575d708210bf184b766ab59a76925093ae89ce82122e2413510e32b,856304,Condemn,foil,manual,true
+starwarsunlimited,dfa622708b8e8b88f31f68bbfc3e812c4afa6c594f08cdabe6c3b481e982cbfc,856707,"Punishing One, Takes No Prisoners",nonfoil,manual,true
+starwarsunlimited,dffa83546cf700d67c2466d56258f393659f3d5ce89bfec7badab55d94874123,833174,"Avar Kriss, Marshal of Starlight",foil,manual,true
+starwarsunlimited,e093f884a94a76d1790d4ea7ab52fcb7fc2c8c3b007b52c20eda0478ea03a067,776871,"Cad Bane, He Who Needs No Introduction",foil,manual,true
+starwarsunlimited,e0b6ced149d8735ce286642d1e8c0d1d6fafe4740d6a4122ac3d7e89203e2c19,857165,"Chopper, War Hero",foil,manual,true
+starwarsunlimited,e0d8482b55cea0b04e8d5c12d847f666689d489371e45741f64581ebaf9cf25f,815807,"Asajj Ventress, I Work Alone",foil,manual,true
+starwarsunlimited,e112c15c26588400f6041b8ba05526595fd8027124488d65850a354b5811a01d,857115,"Grand Admiral Thrawn, Grand Schemer",foil,manual,true
+starwarsunlimited,e169b203745dc6cafd037f236aa40392d7964e82d8ad0d781912f13d25c4a277,854935,Vigilance,foil,manual,true
+starwarsunlimited,e19c3d9524916209a8a97d71111b78c9b8d53f331b40380e29172ae88f089588,833353,"Ki-Adi-Mundi, We Must Push On",foil,manual,true
+starwarsunlimited,e2019ac77fe377e205927d73c4db229f23e204211d7d2370848d364bb09ae747,815910,"Raddus, Holdo's Final Command",foil,manual,true
 starwarsunlimited,e20d9e81a7b06d1d01433723cddf013092e2f22ac2631b07c64e23f9012cbcb1,838419,"Luke Skywalker, You Still With Me?",foil,exact,true
-starwarsunlimited,e23b6ce5abb410e5050ef4d33949e8efb2a803b42886b11b7ec0c5e0c0ace6b8,815926,"Razor Crest, Ride For Hire",foil,ambiguous,false
-starwarsunlimited,e2b4bce7772095ab31c675fe61f9dedc83cc746ba4e52b739b58e66faf91ef24,815931,"Sabine's Masterpiece, Crazy Colorful",foil,ambiguous,false
-starwarsunlimited,e2bb9b49658319eef2db15642b9f0021ea653094541311fb32dcbaa1d0807e3b,757490,"Millennium Falcon, Piece of Junk",nonfoil,ambiguous,false
-starwarsunlimited,e2de1a3f15295d8586795beacbca120c2c042e7d28e928a8d282d85583c39e19,854941,"Wrecker, Boom!",nonfoil,ambiguous,false
-starwarsunlimited,e3a6a21c53a2d2ad25fcbbcc7ee1ef2c3cbdc99fa02d4f7211ce17cf57b330eb,857145,"Queen Amidala, Championing Her People",foil,ambiguous,false
+starwarsunlimited,e23b6ce5abb410e5050ef4d33949e8efb2a803b42886b11b7ec0c5e0c0ace6b8,815926,"Razor Crest, Ride For Hire",foil,manual,true
+starwarsunlimited,e2b4bce7772095ab31c675fe61f9dedc83cc746ba4e52b739b58e66faf91ef24,815931,"Sabine's Masterpiece, Crazy Colorful",foil,manual,true
+starwarsunlimited,e2bb9b49658319eef2db15642b9f0021ea653094541311fb32dcbaa1d0807e3b,757490,"Millennium Falcon, Piece of Junk",nonfoil,manual,true
+starwarsunlimited,e2de1a3f15295d8586795beacbca120c2c042e7d28e928a8d282d85583c39e19,854941,"Wrecker, Boom!",nonfoil,manual,true
+starwarsunlimited,e3a6a21c53a2d2ad25fcbbcc7ee1ef2c3cbdc99fa02d4f7211ce17cf57b330eb,857145,"Queen Amidala, Championing Her People",foil,manual,true
 starwarsunlimited,e3fbc818a1d46a8f8316ebb52ea1cfe4d8cf305afbd34bbf5951490c264f9055,822538,"Darth Vader, Scourge of Squadrons",nonfoil,exact,true
-starwarsunlimited,e4d5babdf743d240f408a99eb5c0313c9b6a6274fdc12c69c5923257a9556694,779475,"Darth Vader, Commanding the First Legion",foil,ambiguous,false
-starwarsunlimited,e5349a04d2e0d9468086cbd95e1d9a48e14e7442b7101cf9449748993c323e40,868661,"Ahsoka Tano, Chasing Whispers",nonfoil,ambiguous,false
+starwarsunlimited,e4d5babdf743d240f408a99eb5c0313c9b6a6274fdc12c69c5923257a9556694,779475,"Darth Vader, Commanding the First Legion",foil,manual,true
+starwarsunlimited,e5349a04d2e0d9468086cbd95e1d9a48e14e7442b7101cf9449748993c323e40,868661,"Ahsoka Tano, Chasing Whispers",nonfoil,manual,true
 starwarsunlimited,e575cca59a19af14e665036e2d9dfdce35cc02012fff952a414b1063d4db21d1,822537,"Darth Maul, Revenge At Last",foil,exact,true
-starwarsunlimited,e57ac021902e02c85ab26dcf4c60d22bbe69e036aa078824f127e2f20f671f2f,848223,"Darth Malak, Covetous Apprentice",foil,ambiguous,false
-starwarsunlimited,e5eb5ef4a68f2a8ce734358f80866d6bc926247384aa4ae284e481610c8bc6ed,776867,"Bossk, Hunting His Prey",foil,ambiguous,false
-starwarsunlimited,e608eb1969ecb96759e972bcab0b1ab5f0ef8057c4225b9432575be5229aad3a,759954,Tarkintown,foil,provider_missing,false
-starwarsunlimited,e62c5323902adaf2479732649205697fbaf1f603d2ed00a60bc48dcbdea50f13,856724,"Darth Traya, Lord of Betrayal",nonfoil,ambiguous,false
-starwarsunlimited,e6552c0649989bd73dd8e721932d6dde54fde5543b5f740caf79163bb750027b,833348,"Yoda, My Ally is the Force",nonfoil,ambiguous,false
-starwarsunlimited,e68c72e558f2b70e2d738097170ceba5f4a743803b71a3ab7e59707f8dca045f,876569,"Jyn Erso, Take the Next Chance",foil,ambiguous,false
-starwarsunlimited,e69601c5fd8140737144b86851e4ae3b8a5f2db9ee5255ab999d7ca2aae96794,757471,"Cassian Andor, Dedicated to the Rebellion",foil,ambiguous,false
-starwarsunlimited,e69eb8f8ce1b8537d1b8cb10b8014d60661a2d42fb9e24b6e221b245a348e0a7,829755,"L3-37, Get Out Of My Seat",foil,ambiguous,false
+starwarsunlimited,e57ac021902e02c85ab26dcf4c60d22bbe69e036aa078824f127e2f20f671f2f,848223,"Darth Malak, Covetous Apprentice",foil,manual,true
+starwarsunlimited,e5eb5ef4a68f2a8ce734358f80866d6bc926247384aa4ae284e481610c8bc6ed,776867,"Bossk, Hunting His Prey",foil,manual,true
+starwarsunlimited,e608eb1969ecb96759e972bcab0b1ab5f0ef8057c4225b9432575be5229aad3a,759954,Tarkintown,foil,manual,true
+starwarsunlimited,e62c5323902adaf2479732649205697fbaf1f603d2ed00a60bc48dcbdea50f13,856724,"Darth Traya, Lord of Betrayal",nonfoil,manual,true
+starwarsunlimited,e6552c0649989bd73dd8e721932d6dde54fde5543b5f740caf79163bb750027b,833348,"Yoda, My Ally is the Force",nonfoil,manual,true
+starwarsunlimited,e68c72e558f2b70e2d738097170ceba5f4a743803b71a3ab7e59707f8dca045f,876569,"Jyn Erso, Take the Next Chance",foil,manual,true
+starwarsunlimited,e69601c5fd8140737144b86851e4ae3b8a5f2db9ee5255ab999d7ca2aae96794,757471,"Cassian Andor, Dedicated to the Rebellion",foil,manual,true
+starwarsunlimited,e69eb8f8ce1b8537d1b8cb10b8014d60661a2d42fb9e24b6e221b245a348e0a7,829755,"L3-37, Get Out Of My Seat",foil,manual,true
 starwarsunlimited,e6a7cf2af93ae4c0c60d245eb9aee11ac602f43b27e9f036153ae9848ea298a0,875437,"Yoda, My Ally is the Force",foil,exact,true
-starwarsunlimited,e713ecf8bc2d9da0731eedf02d5193cb868ba96cca5f11b8517c3444f57385c8,757534,For a Cause I Believe In,foil,ambiguous,false
+starwarsunlimited,e713ecf8bc2d9da0731eedf02d5193cb868ba96cca5f11b8517c3444f57385c8,757534,For a Cause I Believe In,foil,manual,true
 starwarsunlimited,e731eb51e01f73ea2c7abacadf31d9311a06c524006166015dd5d481baab3e38,814029,Echo Base,foil,provider_missing,false
-starwarsunlimited,e89945dc16a89f5eece13fb9a892775811868b51791ee0b4a6b4bb0d308efebd,833267,"Grogu, Mysterious Child",foil,ambiguous,false
-starwarsunlimited,e9316ec7b02927d085ffb4c5fce425c6133da1f49990592bcc63c7967e08b7e4,833393,"Savage Opress, Imbued With Hate",foil,ambiguous,false
-starwarsunlimited,e9bbd8128bdf20ed058f108d7ffdf59b2a71a00fd3a476522180879c87c4aee3,757478,"Bodhi Rook, Imperial Defector",foil,ambiguous,false
-starwarsunlimited,ea624fe29c9bb6038465d33e05a75aa7bab480e9c2a78ba0cb3fca21d29ce3d5,776500,"Supreme Leader Snoke, Shadow Ruler",foil,ambiguous,false
-starwarsunlimited,eab865909e85716e6fa78c7d868d81c30af1bd9fe5d6856201dfcb9a3f25ea85,833253,"Leia Organa, Extraordinary",foil,ambiguous,false
-starwarsunlimited,eabb5e0f222d51d5e0b744c81c9f53b22858fdfa1511f32019f96d51d175cfef,833323,"Obi-Wan Kenobi, Protective Padawan",foil,ambiguous,false
-starwarsunlimited,eb19c3c09c97b28be17d00c27c7bb154e9798e2b3e99237e09e88c9788336873,757505,"Boba Fett, Disintegrator",nonfoil,ambiguous,false
+starwarsunlimited,e89945dc16a89f5eece13fb9a892775811868b51791ee0b4a6b4bb0d308efebd,833267,"Grogu, Mysterious Child",foil,manual,true
+starwarsunlimited,e9316ec7b02927d085ffb4c5fce425c6133da1f49990592bcc63c7967e08b7e4,833393,"Savage Opress, Imbued With Hate",foil,manual,true
+starwarsunlimited,e9bbd8128bdf20ed058f108d7ffdf59b2a71a00fd3a476522180879c87c4aee3,757478,"Bodhi Rook, Imperial Defector",foil,manual,true
+starwarsunlimited,ea624fe29c9bb6038465d33e05a75aa7bab480e9c2a78ba0cb3fca21d29ce3d5,776500,"Supreme Leader Snoke, Shadow Ruler",foil,manual,true
+starwarsunlimited,eab865909e85716e6fa78c7d868d81c30af1bd9fe5d6856201dfcb9a3f25ea85,833253,"Leia Organa, Extraordinary",foil,manual,true
+starwarsunlimited,eabb5e0f222d51d5e0b744c81c9f53b22858fdfa1511f32019f96d51d175cfef,833323,"Obi-Wan Kenobi, Protective Padawan",foil,manual,true
+starwarsunlimited,eb19c3c09c97b28be17d00c27c7bb154e9798e2b3e99237e09e88c9788336873,757505,"Boba Fett, Disintegrator",nonfoil,manual,true
 starwarsunlimited,eb1a5ef69a0db7ae8d8f55cd6546654c4c8819c2c640766af29d0f0d21364273,838396,"Mace Windu, Leaping into Action",foil,exact,true
-starwarsunlimited,eb79072ebf2b7f6af8dd4d4942a449e83cd7e4c9ab06d05a23bb5badfece7041,757434,"Director Krennic, Aspiring to Authority",foil,ambiguous,false
-starwarsunlimited,eb935ff48446187a77b1be8ca8473c1eb324b76bff907277e9799b2eca69b0cd,838417,"Anakin Skywalker, Champion of Mortis",foil,ambiguous,false
-starwarsunlimited,eb9cf3a4c4cbf3e0eda1b16d346c4bca6e037b0434995e4d8376e218e3da82ba,815878,"Devastator, Hunting the Rebellion",foil,ambiguous,false
-starwarsunlimited,ebe4691124a61ec95470a97dba0ed91c0ae2cddd4971333258eafd78caa7050c,795346,Now There Are Two of Them,foil,ambiguous,false
-starwarsunlimited,ec469ae2e3d8dfc4389b12a1f79cb45cac907c37a658cafcc4ba546ec947c825,856804,"Leia Organa, Of A Secret Bloodline",foil,ambiguous,false
-starwarsunlimited,ec7fb06dfa2c02ba89f6bb336d0efa529845fc31181defb1b9c721a63c06fdbf,876544,"Maul, Master of the Shadow Collective",foil,ambiguous,false
-starwarsunlimited,ec99d4987ac16fc05f10c2af6a37edf065ea3aae187553eeb43f769cc96e1e20,757473,"Sabine Wren, Galvanized Revolutionary",foil,ambiguous,false
-starwarsunlimited,ed1f20b3d24cd53a48ff44c8459b7a4ab759ba6b8af37a55c8d94faedb082241,868657,Shatterpoint,nonfoil,ambiguous,false
+starwarsunlimited,eb79072ebf2b7f6af8dd4d4942a449e83cd7e4c9ab06d05a23bb5badfece7041,757434,"Director Krennic, Aspiring to Authority",foil,manual,true
+starwarsunlimited,eb935ff48446187a77b1be8ca8473c1eb324b76bff907277e9799b2eca69b0cd,838417,"Anakin Skywalker, Champion of Mortis",foil,manual,true
+starwarsunlimited,eb9cf3a4c4cbf3e0eda1b16d346c4bca6e037b0434995e4d8376e218e3da82ba,815878,"Devastator, Hunting the Rebellion",foil,manual,true
+starwarsunlimited,ebe4691124a61ec95470a97dba0ed91c0ae2cddd4971333258eafd78caa7050c,795346,Now There Are Two of Them,foil,manual,true
+starwarsunlimited,ec469ae2e3d8dfc4389b12a1f79cb45cac907c37a658cafcc4ba546ec947c825,856804,"Leia Organa, Of A Secret Bloodline",foil,manual,true
+starwarsunlimited,ec7fb06dfa2c02ba89f6bb336d0efa529845fc31181defb1b9c721a63c06fdbf,876544,"Maul, Master of the Shadow Collective",foil,manual,true
+starwarsunlimited,ec99d4987ac16fc05f10c2af6a37edf065ea3aae187553eeb43f769cc96e1e20,757473,"Sabine Wren, Galvanized Revolutionary",foil,manual,true
+starwarsunlimited,ed1f20b3d24cd53a48ff44c8459b7a4ab759ba6b8af37a55c8d94faedb082241,868657,Shatterpoint,nonfoil,manual,true
 starwarsunlimited,ed4234179f987a2b15e6d8515639727e44c6ae9e7cbf32a26ccc29c087d1a87a,875427,"The Mandalorian, Cleaning Up Nevarro",foil,exact,true
-starwarsunlimited,ed51cc808e8294391fed077efaa04f717b4e3c87bf9214c850e6395e2317974f,876460,"Aurra Sing, Assassin",foil,ambiguous,false
-starwarsunlimited,ed746d683f8424bc8a28e60a882d1da592450f4131d547901dcbc1379d5f4752,833322,"Obi-Wan Kenobi, Protective Padawan",foil,ambiguous,false
-starwarsunlimited,edc00a97ecf78ad631ad8e8ae25ae51772b3462eeaaf387751bb1f0e24d529cb,779476,"Emperor Palpatine, Master of the Dark Side",foil,ambiguous,false
+starwarsunlimited,ed51cc808e8294391fed077efaa04f717b4e3c87bf9214c850e6395e2317974f,876460,"Aurra Sing, Assassin",foil,manual,true
+starwarsunlimited,ed746d683f8424bc8a28e60a882d1da592450f4131d547901dcbc1379d5f4752,833322,"Obi-Wan Kenobi, Protective Padawan",foil,manual,true
+starwarsunlimited,edc00a97ecf78ad631ad8e8ae25ae51772b3462eeaaf387751bb1f0e24d529cb,779476,"Emperor Palpatine, Master of the Dark Side",foil,manual,true
 starwarsunlimited,eee510e8b9c5a6b6f1e6fa596bcc43b6493a49a2fa186536213cabf5a37202bb,838397,"Shin Hati, Overeager Apprentice",foil,exact,true
-starwarsunlimited,efebd39b4edbb53d60d1e4b06d069abed7e266b7d9da254533de9e7fa7cb9d48,757538,"Mace Windu, Party Crasher",foil,ambiguous,false
-starwarsunlimited,f1183851d212e3a6a2dca4bb25a61cf16dcc18bd767a0e025305ab6b659202f5,757613,"Darth Vader, Commanding the First Legion",nonfoil,ambiguous,false
+starwarsunlimited,efebd39b4edbb53d60d1e4b06d069abed7e266b7d9da254533de9e7fa7cb9d48,757538,"Mace Windu, Party Crasher",foil,manual,true
+starwarsunlimited,f1183851d212e3a6a2dca4bb25a61cf16dcc18bd767a0e025305ab6b659202f5,757613,"Darth Vader, Commanding the First Legion",nonfoil,manual,true
 starwarsunlimited,f131b9eab8e5bf87e6e2ad6df985dc476244d38c29a06c716f97ccee451a3726,822533,"The Ghost, Heart of the Family",foil,exact,true
-starwarsunlimited,f137a4b4d3f31b7bbebf693223639d99fc8b2f01bc8135773011dcab7b5fee2f,854946,Cunning,nonfoil,ambiguous,false
-starwarsunlimited,f14da34d289a597c332c6473275ea55c8218bb3c41702b02ce0932cbb2f3ea2d,868665,"Darth Traya, Lord of Betrayal",nonfoil,ambiguous,false
+starwarsunlimited,f137a4b4d3f31b7bbebf693223639d99fc8b2f01bc8135773011dcab7b5fee2f,854946,Cunning,nonfoil,manual,true
+starwarsunlimited,f14da34d289a597c332c6473275ea55c8218bb3c41702b02ce0932cbb2f3ea2d,868665,"Darth Traya, Lord of Betrayal",nonfoil,manual,true
 starwarsunlimited,f1c26f96d8630b26c9fd189be3ff51e65ffc9ad425fd7ab0734720bb527ce945,822538,"Darth Vader, Scourge of Squadrons",foil,exact,true
-starwarsunlimited,f25d29a480083992fa735c32e7e81f924aea13b9f06945541312f7c97e2363c9,859000,"Grand Admiral Thrawn, Grand Schemer",nonfoil,ambiguous,false
-starwarsunlimited,f281696c3d2d93ca5a79b5118c4d72c2c3e7ca8daa0a3f6a8cc06c9af73889c3,833383,"Darth Malak, Covetous Apprentice",foil,ambiguous,false
-starwarsunlimited,f287475f23a2e107bef973db3e2d7ef9547fc7c5fd4992b047cc116d4ac8d524,876584,"Maul, Master of the Shadow Collective",foil,ambiguous,false
+starwarsunlimited,f25d29a480083992fa735c32e7e81f924aea13b9f06945541312f7c97e2363c9,859000,"Grand Admiral Thrawn, Grand Schemer",nonfoil,manual,true
+starwarsunlimited,f281696c3d2d93ca5a79b5118c4d72c2c3e7ca8daa0a3f6a8cc06c9af73889c3,833383,"Darth Malak, Covetous Apprentice",foil,manual,true
+starwarsunlimited,f287475f23a2e107bef973db3e2d7ef9547fc7c5fd4992b047cc116d4ac8d524,876584,"Maul, Master of the Shadow Collective",foil,manual,true
 starwarsunlimited,f2d57ef546a387640570f3b7a900e94182effadbd60d8a7eb121d2029ed98207,759957,"Darth Vader, Dark Lord of the Sith",nonfoil,exact,true
-starwarsunlimited,f3793adc25f326f1901bc9b715bd5866150cd3206f66b59e1df724d5f5899ee4,854938,Command,foil,ambiguous,false
-starwarsunlimited,f3ccb7097080a9a40e888d0e002c64ad3c6acdec40f6f7d63b90a66d443ea63c,868564,"Galen Erso, You'll Never Win",foil,ambiguous,false
-starwarsunlimited,f48716bf81e4966dec71d563b195f6fb3c759970fbe5dd5f71db2b92ba715aa2,876592,"Salacious Crumb, Cackling Companion",foil,ambiguous,false
-starwarsunlimited,f4aff3476a646f17f0dad6372cf06578f4bf9b7f79eac995dccc55d7cc5abae2,832883,"Anakin Skywalker, Champion of Mortis",foil,ambiguous,false
-starwarsunlimited,f4d23412b2d1b44de9a5a846ee17e0023754d70fc5906537a069159435593394,876545,"The Mandalorian, Let's See the Puck",foil,ambiguous,false
-starwarsunlimited,f574643fc1ee819e419ad8e9236d0c9f6544a5d85f00309c5bb0a932c472e881,833356,"Cin Drallig, Esteemed Blademaster",foil,ambiguous,false
-starwarsunlimited,f61ae8b926105191016ca0a7d34f7baf05d08f6cd73ce3be377677df6a60069a,815895,"Sabine's Masterpiece, Crazy Colorful",foil,ambiguous,false
-starwarsunlimited,f63b736eab1baef9222c5f77adef1c6ba9c84abcf8510fcdc10b38c623a85c89,815928,"Fett's Firespray, Feared Silhouette",foil,ambiguous,false
-starwarsunlimited,f6d3af9eee7bf35e7fa2dd9bc35620d6e911f7d38bb1e92e1b31c19dbf37cb25,757559,"Seventh Sister, Implacable Inquisitor",foil,ambiguous,false
-starwarsunlimited,f6e30eeeac4711d333549e4a0e585852ad9ddc93c29cd120037104cf47f113fb,838404,"Darth Vader, Twilight of the Apprentice",foil,ambiguous,false
-starwarsunlimited,f721930820eb89fd8e771b7099f8b4294d511dd348cb0cb70bf94ad0c87777ca,832830,Constructed Lightsaber,nonfoil,ambiguous,false
-starwarsunlimited,f78710a1ad21c64188348d645b2cbf8bce58e5c519194fee62fdad0686cc3c77,856983,"Karis Nemik, Freedom is a Pure Idea",foil,ambiguous,false
+starwarsunlimited,f3793adc25f326f1901bc9b715bd5866150cd3206f66b59e1df724d5f5899ee4,854938,Command,foil,manual,true
+starwarsunlimited,f3ccb7097080a9a40e888d0e002c64ad3c6acdec40f6f7d63b90a66d443ea63c,868564,"Galen Erso, You'll Never Win",foil,manual,true
+starwarsunlimited,f48716bf81e4966dec71d563b195f6fb3c759970fbe5dd5f71db2b92ba715aa2,876592,"Salacious Crumb, Cackling Companion",foil,manual,true
+starwarsunlimited,f4aff3476a646f17f0dad6372cf06578f4bf9b7f79eac995dccc55d7cc5abae2,832883,"Anakin Skywalker, Champion of Mortis",foil,manual,true
+starwarsunlimited,f4d23412b2d1b44de9a5a846ee17e0023754d70fc5906537a069159435593394,876545,"The Mandalorian, Let's See the Puck",foil,manual,true
+starwarsunlimited,f574643fc1ee819e419ad8e9236d0c9f6544a5d85f00309c5bb0a932c472e881,833356,"Cin Drallig, Esteemed Blademaster",foil,manual,true
+starwarsunlimited,f61ae8b926105191016ca0a7d34f7baf05d08f6cd73ce3be377677df6a60069a,815895,"Sabine's Masterpiece, Crazy Colorful",foil,manual,true
+starwarsunlimited,f63b736eab1baef9222c5f77adef1c6ba9c84abcf8510fcdc10b38c623a85c89,815928,"Fett's Firespray, Feared Silhouette",foil,manual,true
+starwarsunlimited,f6d3af9eee7bf35e7fa2dd9bc35620d6e911f7d38bb1e92e1b31c19dbf37cb25,757559,"Seventh Sister, Implacable Inquisitor",foil,manual,true
+starwarsunlimited,f6e30eeeac4711d333549e4a0e585852ad9ddc93c29cd120037104cf47f113fb,838404,"Darth Vader, Twilight of the Apprentice",foil,manual,true
+starwarsunlimited,f721930820eb89fd8e771b7099f8b4294d511dd348cb0cb70bf94ad0c87777ca,832830,Constructed Lightsaber,nonfoil,manual,true
+starwarsunlimited,f78710a1ad21c64188348d645b2cbf8bce58e5c519194fee62fdad0686cc3c77,856983,"Karis Nemik, Freedom is a Pure Idea",foil,manual,true
 starwarsunlimited,f81bc797836f2147f243a765cbce020885b66a29187d041102b61d68d79b9bc6,795085,"Doctor Evazan, Wanted on Twelve Systems",foil,ambiguous,false
-starwarsunlimited,f81fe33d2cff50cd97d9b6a9aca619b73c9235eafdd60cdc8cf84ce5bf65b3ac,815906,"The Invisible Hand, Crawling With Vultures",foil,ambiguous,false
+starwarsunlimited,f81fe33d2cff50cd97d9b6a9aca619b73c9235eafdd60cdc8cf84ce5bf65b3ac,815906,"The Invisible Hand, Crawling With Vultures",foil,manual,true
 starwarsunlimited,f841a76d4e4d18e27863eaa456092737cf09542273f02a08b3d12204d84c3ed6,838421,"Darth Maul, Revenge At Last",foil,exact,true
-starwarsunlimited,f8e4fa4a4aa7b973c3cf0841b133815f3cb3dab26453bbb2b35dd4d64c3f29f1,876479,"Latts Razzi, Deadly Whipmaster",nonfoil,ambiguous,false
-starwarsunlimited,f8fce2919c80b5d66eb702406da26e10288fcc9649bd86021379f950d288a64a,857162,"Orn Free Taa, Political Power Broker",foil,ambiguous,false
-starwarsunlimited,f94c677acabbbfb39fe59edf0a1382ea51c85182940a3e7135e2540d8cf19851,857131,"Cad Bane, Impressed Now?",foil,ambiguous,false
-starwarsunlimited,f94f729acda2f145b5d6007f5819b089e35611ed98e16898b00de77dc1176667,819476,"Home One, On My Mark",foil,ambiguous,false
-starwarsunlimited,f973f54c4d462e5869368e14d9b17609c52cf65d2c95f87b4bee2ab29dc31b88,876589,"Maz Kanata, Where's My Boyfriend?",foil,ambiguous,false
-starwarsunlimited,f99194964fd758e238eb37d402055a233947f30f6a9373af96ee476453ee405c,833400,"Grand Inquisitor, You're Right to Be Afraid",foil,ambiguous,false
-starwarsunlimited,fa373b49dce28f43648f4a0fadb443181e4f7b8be325cd1e4a1d4bf0e1632ffc,854939,"HK-47, Exclamation: Die, Meatbag!",nonfoil,ambiguous,false
-starwarsunlimited,fa9fd5a59354f3f73903d067ad9c8f373d145c9080802317936eba8c81b0a493,773264,"Poe Dameron, Quick to Improvise",foil,ambiguous,false
+starwarsunlimited,f8e4fa4a4aa7b973c3cf0841b133815f3cb3dab26453bbb2b35dd4d64c3f29f1,876479,"Latts Razzi, Deadly Whipmaster",nonfoil,manual,true
+starwarsunlimited,f8fce2919c80b5d66eb702406da26e10288fcc9649bd86021379f950d288a64a,857162,"Orn Free Taa, Political Power Broker",foil,manual,true
+starwarsunlimited,f94c677acabbbfb39fe59edf0a1382ea51c85182940a3e7135e2540d8cf19851,857131,"Cad Bane, Impressed Now?",foil,manual,true
+starwarsunlimited,f94f729acda2f145b5d6007f5819b089e35611ed98e16898b00de77dc1176667,819476,"Home One, On My Mark",foil,manual,true
+starwarsunlimited,f973f54c4d462e5869368e14d9b17609c52cf65d2c95f87b4bee2ab29dc31b88,876589,"Maz Kanata, Where's My Boyfriend?",foil,manual,true
+starwarsunlimited,f99194964fd758e238eb37d402055a233947f30f6a9373af96ee476453ee405c,833400,"Grand Inquisitor, You're Right to Be Afraid",foil,manual,true
+starwarsunlimited,fa373b49dce28f43648f4a0fadb443181e4f7b8be325cd1e4a1d4bf0e1632ffc,854939,"HK-47, Exclamation: Die, Meatbag!",nonfoil,manual,true
+starwarsunlimited,fa9fd5a59354f3f73903d067ad9c8f373d145c9080802317936eba8c81b0a493,773264,"Poe Dameron, Quick to Improvise",foil,manual,true
 starwarsunlimited,fbe1ec985cacf14ee00ccb31dcfe37678f60c3832651ad4098889a75002c6b59,804740,"Tranquility, Inspiring Flagship",foil,ambiguous,false
-starwarsunlimited,fbf419f574e6b30f54d82160b5143be5898c1b23fb879c13dea10467620aa52c,832914,Craving Power,foil,ambiguous,false
-starwarsunlimited,fd55e73d4978c9641e9c4aa0b6c7e5213d899f9b305f601ff770d077777fa7b5,757609,"Devastator, Inescapable",foil,ambiguous,false
+starwarsunlimited,fbf419f574e6b30f54d82160b5143be5898c1b23fb879c13dea10467620aa52c,832914,Craving Power,foil,manual,true
+starwarsunlimited,fd55e73d4978c9641e9c4aa0b6c7e5213d899f9b305f601ff770d077777fa7b5,757609,"Devastator, Inescapable",foil,manual,true
 starwarsunlimited,fd923490ac4e02ca99e694eb81864aa76cdf700ed2534a49e5600fc33a94bbde,838415,"Quinlan Vos, Dark Disciple",foil,exact,true
-starwarsunlimited,fdd63b26fec28ba82795f7a459e91583207f22f7e7cea4e069efe41b5634c9d6,857149,"Sly Moore, Witness to Power",foil,ambiguous,false
-starwarsunlimited,fed4d8e328b1f3c4dadda43089a46060021d2f24b73bde5bc5ea6ad7e1175211,833147,Constructed Lightsaber,foil,ambiguous,false
-starwarsunlimited,ff1eb8ca049b7e1b51cad5e2d0e6f2fa2fbdb1f625ea40d992c6c63270f50781,829758,"BD-1, Beep Boo Boo Bweep",foil,ambiguous,false
-starwarsunlimited,ff354fd3bac7a55698cda38f8a306d1e7cc11f5222e83c54d165796eea84e8b6,815932,"Tantive IV, Fleeing the Empire",foil,ambiguous,false
-starwarsunlimited,ffde3e900b1aaa499cecbdd887370d8ae5a9cfa830931bac0d157ae803dcabbc,876416,"Liberty, Draw Their Fire!",foil,ambiguous,false
-starwarsunlimited,ffed13ebc20febefcc0a3c07ea7b2729308b0fdf4f35e7ed38a0f4372a38aacd,776866,"Hunter, Outcast Sergeant",foil,ambiguous,false
-starwarsunlimited,fff4c146779e84fb241ed3cc003ebbf005bd2c056ea4c91e9c9e1ced68d48e68,795986,"Cad Bane, Hostage Taker",foil,ambiguous,false
+starwarsunlimited,fdd63b26fec28ba82795f7a459e91583207f22f7e7cea4e069efe41b5634c9d6,857149,"Sly Moore, Witness to Power",foil,manual,true
+starwarsunlimited,fed4d8e328b1f3c4dadda43089a46060021d2f24b73bde5bc5ea6ad7e1175211,833147,Constructed Lightsaber,foil,manual,true
+starwarsunlimited,ff1eb8ca049b7e1b51cad5e2d0e6f2fa2fbdb1f625ea40d992c6c63270f50781,829758,"BD-1, Beep Boo Boo Bweep",foil,manual,true
+starwarsunlimited,ff354fd3bac7a55698cda38f8a306d1e7cc11f5222e83c54d165796eea84e8b6,815932,"Tantive IV, Fleeing the Empire",foil,manual,true
+starwarsunlimited,ffde3e900b1aaa499cecbdd887370d8ae5a9cfa830931bac0d157ae803dcabbc,876416,"Liberty, Draw Their Fire!",foil,manual,true
+starwarsunlimited,ffed13ebc20febefcc0a3c07ea7b2729308b0fdf4f35e7ed38a0f4372a38aacd,776866,"Hunter, Outcast Sergeant",foil,manual,true
+starwarsunlimited,fff4c146779e84fb241ed3cc003ebbf005bd2c056ea4c91e9c9e1ced68d48e68,795986,"Cad Bane, Hostage Taker",foil,manual,true
 yugioh,00022bd6f9bfaa3ad0ebd6d3c768dc304effa8ef80235845c660eccf1a1c64ab,297293,Ash Blossom & Joyous Spring,nonfoil,ambiguous,false
 yugioh,00095014898772a502ecd73ca6c9b5cb06c993fea096575664646cb76afef97a,580749,Fire Princess,nonfoil,ambiguous,false
 yugioh,00269cace303a644feba04324e16e483a45e25d0be33d6ac010b0f85c1a76b7b,578093,Flame Swordsman,nonfoil,ambiguous,false

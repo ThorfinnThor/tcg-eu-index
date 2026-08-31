@@ -12,5 +12,5 @@ Generated for `2026-08-30`.
 | onepiece | 2126 | 2126 | 1696 | 1971 | 2126 |
 | pokemon | 8695 | 8547 | 3418 | 3420 | 5370 |
 | riftbound | 302 | 196 | 73 | 73 | 302 |
-| starwarsunlimited | 730 | 656 | 58 | 58 | 730 |
+| starwarsunlimited | 730 | 656 | 694 | 694 | 730 |
 | yugioh | 5377 | 5377 | 1729 | 1729 | 5377 |
