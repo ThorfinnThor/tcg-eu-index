@@ -1,22 +1,25 @@
+const remoteImageHosts = [
+  "product-images.s3.cardmarket.com",
+  "cards.scryfall.io",
+  "images.pokemontcg.io",
+  "images.ygoprodeck.com",
+  "product-images.tcgplayer.com",
+  "assets.tcgdex.net",
+  "images.digimoncard.io",
+  "cards.lorcast.io",
+  "cdn.swu-db.com",
+  "storage.googleapis.com",
+  "legendstory-production-s3-public.s3.amazonaws.com",
+  "d2wlb52bya4y8z.cloudfront.net",
+  "cmsassets.rgpub.io",
+  "en.onepiece-cardgame.com",
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "product-images.s3.cardmarket.com" },
-      { protocol: "https", hostname: "cards.scryfall.io" },
-      { protocol: "https", hostname: "images.pokemontcg.io" },
-      { protocol: "https", hostname: "images.ygoprodeck.com" },
-      { protocol: "https", hostname: "product-images.tcgplayer.com" },
-      { protocol: "https", hostname: "assets.tcgdex.net" },
-      { protocol: "https", hostname: "images.digimoncard.io" },
-      { protocol: "https", hostname: "cards.lorcast.io" },
-      { protocol: "https", hostname: "cdn.swu-db.com" },
-      { protocol: "https", hostname: "storage.googleapis.com" },
-      { protocol: "https", hostname: "legendstory-production-s3-public.s3.amazonaws.com" },
-      { protocol: "https", hostname: "d2wlb52bya4y8z.cloudfront.net" },
-      { protocol: "https", hostname: "en.onepiece-cardgame.com" }
-    ]
+    remotePatterns: remoteImageHosts.map((hostname) => ({ protocol: "https", hostname }))
   },
   async headers() {
     return [
@@ -28,7 +31,7 @@ const nextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           {
             key: "Content-Security-Policy",
-            value: "img-src 'self' data: https://cards.scryfall.io https://product-images.s3.cardmarket.com https://images.pokemontcg.io https://images.ygoprodeck.com https://product-images.tcgplayer.com https://assets.tcgdex.net https://images.digimoncard.io https://cards.lorcast.io https://cdn.swu-db.com https://storage.googleapis.com https://legendstory-production-s3-public.s3.amazonaws.com https://d2wlb52bya4y8z.cloudfront.net https://en.onepiece-cardgame.com"
+            value: `img-src 'self' data: ${remoteImageHosts.map((hostname) => `https://${hostname}`).join(" ")}`
           }
         ]
       }
