@@ -1,11 +1,18 @@
 {
-  "changed_keys": [],
+  "changed_keys": [
+    "image-matches/2026-08-30/magic/exact.ndjson",
+    "image-matches/2026-08-30/magic/unresolved.ndjson",
+    "image-matches/2026-08-30/magic/assets.ndjson",
+    "image-matches/2026-08-30/magic/manifest.json",
+    "public-image-manifests/2026-08-30-magic.json",
+    "derived/card-images/magic/public-manifest.json"
+  ],
   "dataset_version": "2026-08-30",
   "exact_coverage_ratio": 0.939553669222344,
   "exact_matches": 13725,
   "published_images": 13725,
   "rows": 14608,
-  "snapshot_id": "scryfall-20260830210537",
+  "snapshot_id": "scryfall-20260831090530",
   "statuses": {
     "ambiguous": 65,
     "exact": 13725,

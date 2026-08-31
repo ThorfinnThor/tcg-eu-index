@@ -1,6 +1,6 @@
 # Card image coverage
 
-Dataset `2026-08-30`, snapshot `scryfall-20260830210537`.
+Dataset `2026-08-30`, snapshot `scryfall-20260831090530`.
 
 | Game | Rows | Exact matches | Published | Exact coverage |
 |---|---:|---:|---:|---:|
