@@ -472,10 +472,7 @@ def _match_manual_override(
             "manual card-image override references a provider card/art ID "
             "that is absent from the active snapshot"
         )
-    if any(
-        _loose_name(candidate.name_raw) != _loose_name(identity.cardmarket_name_raw)
-        for candidate in candidates
-    ):
+    if any(not _manual_override_name_matches(identity, candidate) for candidate in candidates):
         raise ValueError("manual card-image override card name does not match the source row")
     if identity.collector_number_canonical and any(
         not candidate.collector_number
@@ -1577,6 +1574,20 @@ def _ts_cardmarket_id(text: str) -> int | None:
 def _loose_name(value: str) -> str:
     value = re.sub(r"\s*\[[^\]]*\]\s*$", "", value)
     return "".join(character for character in normalize_card_name(value) if character.isalnum())
+
+
+def _manual_override_name_matches(
+    identity: CanonicalCardIdentity, candidate: CatalogCardRecord
+) -> bool:
+    source_name = _loose_name(identity.cardmarket_name_raw)
+    provider_name = _loose_name(candidate.name_raw)
+    if source_name == provider_name:
+        return True
+    return (
+        identity.game == "onepiece"
+        and identity.collector_number_canonical == "OP06-101"
+        and {source_name, provider_name} == {"nami", "onami"}
+    )
 
 
 def _base_onepiece_number(value: str) -> str:

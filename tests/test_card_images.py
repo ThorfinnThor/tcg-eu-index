@@ -914,6 +914,65 @@ def test_manual_override_publishes_only_the_reviewed_provider_art() -> None:
     assert matches[0].asset_id in assets
 
 
+def test_manual_override_accepts_verified_onepiece_nami_alias() -> None:
+    record = parse_bandai_onepiece_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "id": "OP06-101_p3",
+                        "name": "O-Nami",
+                        "set_code": "OP-06",
+                        "set_name": "[OP-06] Wings of the Captain",
+                        "variant": "p3",
+                        "image_url": "https://en.onepiece-cardgame.com/images/nami.png",
+                    }
+                ]
+            }
+        ).encode()
+    )[0]
+    snapshot = CatalogSnapshot(
+        provider="bandai_onepiece",
+        game="onepiece",
+        snapshot_id="bandai-onepiece-nami-alias",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://en.onepiece-cardgame.com/cardlist/",
+        source_version="test",
+        raw_sha256="f" * 64,
+        records=(record,),
+    )
+    identity = replace(
+        _identity(product_id=99),
+        game="onepiece",
+        source_row_key=source_row_key("onepiece", 99, "nonfoil"),
+        cardmarket_product_id=99,
+        cardmarket_name_raw="Nami",
+        name_normalized=normalize_card_name("Nami"),
+        collector_number_raw="OP06-101",
+        collector_number_canonical="OP06-101",
+    )
+    override = ManualCardImageOverride(
+        source_row_key=identity.source_row_key,
+        game="onepiece",
+        cardmarket_product_id=99,
+        finish="nonfoil",
+        provider="bandai_onepiece",
+        provider_card_id="OP06-101_p3",
+        provider_art_id="OP06-101_p3",
+        reviewed_at="2026-08-31",
+        evidence=("reviewed against the exact Cardmarket product",),
+    )
+    policy = replace(_policy(), provider="bandai_onepiece", games=("onepiece",))
+
+    matches, assets = match_catalog_identities(
+        [identity], snapshot, policy, manual_overrides={identity.source_row_key: override}
+    )
+
+    assert matches[0].status == "manual"
+    assert matches[0].provider_art_id == "OP06-101_p3"
+    assert matches[0].asset_id in assets
+
+
 def test_manual_override_loader_derives_keys_and_rejects_duplicates(tmp_path: Path) -> None:
     path = tmp_path / "overrides.yaml"
     mapping = (
