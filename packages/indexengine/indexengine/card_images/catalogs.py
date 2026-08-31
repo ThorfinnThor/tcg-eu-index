@@ -130,6 +130,7 @@ class CatalogCardRecord:
     variant_raw: str | None
     faces: tuple[CardImageFace, ...]
     raw_record_hash: str
+    attack_names: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -423,6 +424,14 @@ def match_catalog_identities(
             method = "name_candidate_only"
             evidence = (f"name={identity.name_normalized}",)
         candidates = _refine_candidates(identity, _dedupe_candidates(candidates))
+        attack_candidates = _refine_by_attack_text(identity, candidates)
+        if len(candidates) > 1 and len(attack_candidates) == 1:
+            candidates = attack_candidates
+            method = "attack_text_unique"
+            evidence = (
+                f"attack_names={','.join(_source_card_disambiguators(identity.cardmarket_name_raw))}",
+                f"name={_loose_name(identity.cardmarket_name_raw)}",
+            )
         if not candidates:
             matches.append(
                 _unresolved(identity, snapshot, "provider_missing", "NO_CANDIDATE", timestamp)
@@ -470,6 +479,8 @@ def match_catalog_identities(
                     if method == "inferred_set_name_unique"
                     else 94
                     if method == "set_name_name_unique"
+                    else 93
+                    if method == "attack_text_unique"
                     else 95
                 ),
                 candidate_count=1,
@@ -849,6 +860,7 @@ def parse_tcgdex_tarball(
     records: list[CatalogCardRecord] = []
     tcgdex_assets = _tcgdex_asset_index(asset_manifest)
     pokemon_tcg_assets = _pokemon_tcg_asset_index(pokemon_tcg_raw)
+    pokemon_tcg_attacks = _pokemon_tcg_attack_index(pokemon_tcg_raw)
     verified_fallbacks = (
         _json_object(pokemon_tcg_verification)
         if pokemon_tcg_verification is not None
@@ -945,6 +957,10 @@ def parse_tcgdex_tarball(
                         image_url = verified_url
                         mime_type = "image/png"
                         image_provider = "pokemon-tcg-data"
+            attack_names = pokemon_tcg_attacks.get(
+                (_loose_name(set_name), number.casefold(), _pokemon_card_name_key(name)),
+                (),
+            )
             records.append(
                 _record(
                     provider="tcgdex",
@@ -970,6 +986,7 @@ def parse_tcgdex_tarball(
                         "image_provider": image_provider,
                     },
                     mime_type=mime_type,
+                    attack_names=attack_names,
                 )
             )
     return records
@@ -1137,6 +1154,70 @@ def _pokemon_card_name_key(value: str) -> str:
     # marker). Set and card identity are still exact, but presentation marks do
     # not form part of the cross-provider key.
     return _loose_name(value).removesuffix("δ")
+
+
+def _pokemon_tcg_attack_index(
+    raw: bytes | None,
+) -> dict[tuple[str, str, str], tuple[str, ...]]:
+    """Index attack and ability names for safe same-name disambiguation."""
+    if raw is None:
+        return {}
+    sets: dict[str, str] = {}
+    cards_by_set: dict[str, list[dict[str, Any]]] = {}
+    cards_by_key: dict[tuple[str, str, str], set[tuple[str, ...]]] = defaultdict(set)
+    with tarfile.open(fileobj=io.BytesIO(raw), mode="r:gz") as archive:
+        for member in archive.getmembers():
+            if not member.isfile():
+                continue
+            path = PurePosixPath(member.name)
+            body_stream = archive.extractfile(member)
+            if body_stream is None:
+                continue
+            if path.parts[-2:] == ("sets", "en.json"):
+                payload = json.loads(body_stream.read())
+                if isinstance(payload, list):
+                    sets.update(
+                        {
+                            str(item["id"]): str(item["name"])
+                            for item in payload
+                            if isinstance(item, dict) and item.get("id") and item.get("name")
+                        }
+                    )
+                continue
+            if len(path.parts) < 3 or path.parts[-3:-1] != ("cards", "en"):
+                continue
+            payload = json.loads(body_stream.read())
+            if not isinstance(payload, list):
+                continue
+            cards_by_set[path.stem] = [card for card in payload if isinstance(card, dict)]
+    for set_id, cards in cards_by_set.items():
+        set_name = sets.get(set_id)
+        if not set_name:
+            continue
+        for card in cards:
+            if not isinstance(card, dict):
+                continue
+            name = _text(card.get("name"))
+            number = _text(card.get("number"))
+            if not name or not number or not set_name:
+                continue
+            names: list[str] = []
+            for field in ("attacks", "abilities"):
+                values = card.get(field)
+                if not isinstance(values, list):
+                    continue
+                names.extend(
+                    str(value["name"])
+                    for value in values
+                    if isinstance(value, dict) and value.get("name")
+                )
+            key = (_loose_name(set_name), number.casefold(), _pokemon_card_name_key(name))
+            cards_by_key[key].add(tuple(names))
+    return {
+        key: next(iter(values))
+        for key, values in cards_by_key.items()
+        if len(values) == 1
+    }
 
 
 def parse_ygoprodeck_payload(raw: bytes) -> list[CatalogCardRecord]:
@@ -1668,6 +1749,7 @@ def _record(
     large_url: str | None = None,
     back_url: str | None = None,
     cardmarket_expansion_id: int | None = None,
+    attack_names: Iterable[str] | None = None,
 ) -> CatalogCardRecord:
     faces: list[CardImageFace] = []
     if image_url:
@@ -1704,6 +1786,7 @@ def _record(
         variant_raw=variant,
         faces=tuple(faces),
         raw_record_hash=sha256_hex(_json_bytes(raw)),
+        attack_names=tuple(attack_names or ()),
     )
 
 
@@ -1743,6 +1826,29 @@ def _refine_candidates(
         if numbered:
             records = numbered
     return records
+
+
+def _refine_by_attack_text(
+    identity: CanonicalCardIdentity, records: list[CatalogCardRecord]
+) -> list[CatalogCardRecord]:
+    """Use Cardmarket's bracketed attack text only to break a tie."""
+    disambiguators = _source_card_disambiguators(identity.cardmarket_name_raw)
+    if len(records) <= 1 or not disambiguators:
+        return records
+    expected = {_loose_name(value) for value in disambiguators}
+    return [
+        record
+        for record in records
+        if record.attack_names
+        and expected.issubset({_loose_name(value) for value in record.attack_names})
+    ]
+
+
+def _source_card_disambiguators(value: str) -> tuple[str, ...]:
+    match = re.search(r"\[([^\]]+)\]\s*$", value)
+    if match is None:
+        return ()
+    return tuple(part.strip() for part in match.group(1).split("|") if part.strip())
 
 
 def _unresolved(
@@ -1813,7 +1919,14 @@ def _record_from_dict(payload: dict[str, Any]) -> CatalogCardRecord:
         )
         for face in payload["faces"]
     )
-    return CatalogCardRecord(**{"cardmarket_expansion_id": None, **payload, "faces": faces})
+    return CatalogCardRecord(
+        **{
+            "cardmarket_expansion_id": None,
+            **payload,
+            "faces": faces,
+            "attack_names": tuple(payload.get("attack_names") or ()),
+        }
+    )
 
 
 def _record_sort_key(record: CatalogCardRecord) -> tuple[object, ...]:

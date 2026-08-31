@@ -643,6 +643,71 @@ def test_catalog_matcher_uses_explicit_set_name_for_unique_card_name() -> None:
     assert matches[0].provider_card_id == "test-pikachu"
 
 
+def test_catalog_matcher_uses_attack_text_to_break_same_name_tie() -> None:
+    records = parse_lorcast_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "id": "test-pikachu-a",
+                        "name": "Pikachu",
+                        "collector_number": "001",
+                        "lang": "en",
+                        "set": {"code": "test", "name": "Test Set"},
+                        "image_uris": {
+                            "digital": {"normal": "https://cards.example/pikachu-a.avif"}
+                        },
+                    },
+                    {
+                        "id": "test-pikachu-b",
+                        "name": "Pikachu",
+                        "collector_number": "002",
+                        "lang": "en",
+                        "set": {"code": "test", "name": "Test Set"},
+                        "image_uris": {
+                            "digital": {"normal": "https://cards.example/pikachu-b.avif"}
+                        },
+                    },
+                ]
+            }
+        ).encode()
+    )
+    records = [
+        replace(records[0], provider="tcgdex", attack_names=("Thunder Jolt",)),
+        replace(records[1], provider="tcgdex", attack_names=("Tackle",)),
+    ]
+    snapshot = CatalogSnapshot(
+        provider="tcgdex",
+        game="pokemon",
+        snapshot_id="tcgdex-attack-text-test",
+        fetched_at="2026-08-30T00:00:00+00:00",
+        source_url="https://example.test/tcgdex",
+        source_version="test",
+        raw_sha256="a" * 64,
+        records=tuple(records),
+    )
+    identity = replace(
+        _identity(),
+        game="pokemon",
+        source_row_key=source_row_key("pokemon", 43, "nonfoil"),
+        cardmarket_name_raw="Pikachu [Tackle]",
+        name_normalized=normalize_card_name("Pikachu [Tackle]"),
+        set_name_raw="Test Set",
+        set_code_raw="test",
+        set_code_canonical="test",
+        set_provider_id=None,
+        collector_number_raw=None,
+        collector_number_canonical=None,
+    )
+    policy = replace(_policy(), provider="tcgdex", games=("pokemon",))
+
+    matches, _ = match_catalog_identities([identity], snapshot, policy)
+
+    assert matches[0].status == "exact"
+    assert matches[0].match_method == "attack_text_unique"
+    assert matches[0].provider_card_id == "test-pikachu-b"
+
+
 def test_catalog_matcher_infers_set_only_from_corroborated_expansion_signature() -> None:
     cards = {
         "cards": [
