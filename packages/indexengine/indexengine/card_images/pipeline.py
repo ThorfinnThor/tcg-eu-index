@@ -107,8 +107,10 @@ def run_catalog_image_matching(
         manual_overrides=manual_overrides,
     )
     records_by_key: dict[tuple[str, str | None], list[CatalogCardRecord]] = defaultdict(list)
+    records_by_provider_id: dict[str, list[CatalogCardRecord]] = defaultdict(list)
     for record in snapshot.records:
         records_by_key[(record.provider_card_id, record.provider_art_id)].append(record)
+        records_by_provider_id[record.provider_card_id].append(record)
     identity_by_key = {identity.source_row_key: identity for identity in identities}
     rows: list[dict[str, object]] = []
     statuses: dict[str, int] = {}
@@ -119,7 +121,10 @@ def run_catalog_image_matching(
             assets.get(match.asset_id) if match.asset_id else None,
         )
         matched_record = _matched_catalog_record(
-            records_by_key.get((match.provider_card_id or "", match.provider_art_id), []),
+            (
+                records_by_key.get((match.provider_card_id or "", match.provider_art_id), [])
+                or records_by_provider_id.get(match.provider_card_id or "", [])
+            ),
             match,
             identity,
         )
@@ -217,6 +222,19 @@ def _matched_catalog_record(
     if len(records) == 1:
         return records[0]
     candidates = records
+    evidence = {
+        key: value
+        for item in match.evidence
+        if "=" in item
+        for key, value in (item.split("=", 1),)
+    }
+    marketplace_id = evidence.get("cardmarket_id")
+    if marketplace_id is not None and marketplace_id.isdigit():
+        in_marketplace = [
+            record for record in candidates if record.cardmarket_id == int(marketplace_id)
+        ]
+        if in_marketplace:
+            candidates = in_marketplace
     if identity.collector_number_canonical:
         number = identity.collector_number_canonical.casefold()
         numbered = [
@@ -226,12 +244,6 @@ def _matched_catalog_record(
         ]
         if numbered:
             candidates = numbered
-    evidence = {
-        key: value
-        for item in match.evidence
-        if "=" in item
-        for key, value in (item.split("=", 1),)
-    }
     provider_set_name = evidence.get("provider_set_name")
     provider_set_code = evidence.get("provider_set_code")
     if provider_set_name is not None:
@@ -245,6 +257,19 @@ def _matched_catalog_record(
             ]
         if in_set:
             candidates = in_set
+    if len(candidates) > 1:
+        metadata_keys = {
+            (
+                record.provider_card_id,
+                record.provider_art_id,
+                record.set_name,
+                record.set_code,
+                record.collector_number,
+            )
+            for record in candidates
+        }
+        if len(metadata_keys) == 1:
+            return candidates[0]
     return candidates[0] if len(candidates) == 1 else None
 
 

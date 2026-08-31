@@ -25,6 +25,7 @@ from indexengine.card_images.catalogs import (
 from indexengine.card_images.contracts import (
     CanonicalCardIdentity,
     CardImageFace,
+    CardImageMatch,
     ImageVariant,
     PublicCardImage,
     normalize_card_name,
@@ -36,6 +37,7 @@ from indexengine.card_images.overrides import (
     load_manual_overrides,
 )
 from indexengine.card_images.pipeline import (
+    _matched_catalog_record,
     _verified_expansion_metadata,
     materialize_magic_images,
 )
@@ -706,6 +708,61 @@ def test_catalog_matcher_uses_attack_text_to_break_same_name_tie() -> None:
     assert matches[0].status == "exact"
     assert matches[0].match_method == "attack_text_unique"
     assert matches[0].provider_card_id == "test-pikachu-b"
+
+
+def test_catalog_pipeline_recovers_cardmarket_specific_record() -> None:
+    records = parse_lorcast_payload(
+        json.dumps(
+            {
+                "cards": [
+                    {
+                        "id": "same-provider-card",
+                        "name": "Pikachu",
+                        "collector_number": "023",
+                        "lang": "en",
+                        "set": {"code": "test", "name": "Test Set"},
+                        "image_uris": {
+                            "digital": {"normal": "https://cards.example/pikachu.avif"}
+                        },
+                    }
+                ]
+            }
+        ).encode()
+    )
+    records = [
+        replace(records[0], provider="tcgdex", cardmarket_id=100),
+        replace(records[0], provider="tcgdex", cardmarket_id=200),
+    ]
+    match = CardImageMatch(
+        schema_version=1,
+        source_row_key="source",
+        asset_id="asset",
+        provider="tcgdex",
+        provider_card_id="same-provider-card",
+        provider_art_id=None,
+        status="exact",
+        match_method="direct_marketplace_id",
+        score=100,
+        candidate_count=1,
+        evidence=("cardmarket_id=200",),
+        reason_code=None,
+        matched_at="2026-08-30T00:00:00+00:00",
+        matcher_version="test",
+        provider_snapshot_id="snapshot",
+    )
+
+    record = _matched_catalog_record(records, match, _identity())
+
+    assert record is not None
+    assert record.cardmarket_id == 200
+
+    duplicate_without_marketplace_evidence = _matched_catalog_record(
+        records,
+        replace(match, evidence=()),
+        _identity(),
+    )
+    assert duplicate_without_marketplace_evidence is not None
+    assert duplicate_without_marketplace_evidence.collector_number == "023"
 
 
 def test_catalog_matcher_infers_set_only_from_corroborated_expansion_signature() -> None:
