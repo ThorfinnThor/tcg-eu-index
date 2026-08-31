@@ -119,11 +119,17 @@ def export_collector_preview(
         for definition in methodology.indexes
         if _is_enabled_single(definition, methodology)
     ]
+    projections = [
+        (definition, _projection(store, definition, methodology, run_date))
+        for definition in definitions
+    ]
+    for definition, projection in projections:
+        _validate_publishable_projection(definition.code, projection)
+
     changed: list[str] = []
     index_rows: list[dict[str, object]] = []
     variants = 0
-    for definition in definitions:
-        projection = _projection(store, definition, methodology, run_date)
+    for definition, projection in projections:
         index_root = output_root / "collector" / definition.code
         expected_files = set(projection)
         for removed in _remove_stale_json(index_root, expected_files):
@@ -163,6 +169,25 @@ def export_collector_preview(
         variants=variants,
         changed_files=changed,
     )
+
+
+def _validate_publishable_projection(
+    code: str,
+    projection: dict[str, dict[str, Any]],
+) -> None:
+    """Reject incomplete runs before the existing public projection is modified."""
+    summary = projection.get("summary.json", {})
+    rebalances = projection.get("rebalances.json", {}).get("rebalances")
+    composition = projection.get("composition.json", {}).get("rebalances")
+    if not isinstance(rebalances, list) or not rebalances:
+        raise ValueError(f"{code} preview has no rebalances; refusing to publish")
+    if not isinstance(composition, list) or len(composition) != len(rebalances):
+        raise ValueError(f"{code} preview composition is incomplete; refusing to publish")
+    latest = rebalances[-1]
+    if not isinstance(latest, dict) or int(latest.get("active_count", 0)) < 1:
+        raise ValueError(f"{code} preview has no active constituents; refusing to publish")
+    if summary.get("latest_index_value") is None or summary.get("latest_value_date") is None:
+        raise ValueError(f"{code} preview has no latest index value; refusing to publish")
 
 
 def _projection(

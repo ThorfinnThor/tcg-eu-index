@@ -82,7 +82,13 @@ export async function getCollectorDataset(
     };
     validateCollectorDataset(dataset);
     return dataset;
-  } catch {
+  } catch (error) {
+    console.error("Collector dataset could not be loaded", {
+      code,
+      effectiveDate: selection.effectiveDate,
+      page: selection.page,
+      error: error instanceof Error ? error.message : String(error)
+    });
     if (process.env.COLLECTOR_SHADOW_FIXTURES_ENABLED === "true" && code === "OPEUCOL") {
       const fixture = {
         manifest: collectorFixtureManifest,

@@ -4,8 +4,10 @@ import json
 from datetime import date
 from pathlib import Path
 
+import pytest
 import yaml
 from core.r2 import LocalObjectStore
+from indexengine import collector_preview
 from indexengine.collector_calc import CollectorDailyValue, CollectorMember, CollectorRebalance
 from indexengine.collector_preview import (
     _paginate_rebalances,
@@ -190,3 +192,41 @@ def test_paginates_compositions_in_global_ascending_price_order() -> None:
         item["stable_variant_id"]
         for item in pages["composition/2026-08-29/0001.json"]["constituents"]
     ] == ["first", "second", "third"]
+
+
+def test_rejects_empty_projection_before_replacing_live_files(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    source_methodology = Path("packages/indexengine/methodologies/v1.5.0-preview.2.yaml")
+    methodology_payload = yaml.safe_load(source_methodology.read_text())
+    methodology_payload["indexes"] = [
+        item for item in methodology_payload["indexes"] if item["code"] == "OPEUCOL"
+    ]
+    methodology_path = tmp_path / "methodology.yaml"
+    methodology_path.write_text(yaml.safe_dump(methodology_payload, sort_keys=False))
+    output_root = tmp_path / "web"
+    existing_summary = output_root / "collector/OPEUCOL/summary.json"
+    existing_summary.parent.mkdir(parents=True)
+    existing_summary.write_text('{"sentinel":"last-known-good"}\n')
+
+    empty_projection = {
+        "summary.json": {"latest_index_value": None, "latest_value_date": None},
+        "rebalances.json": {"rebalances": []},
+        "composition.json": {"rebalances": []},
+    }
+    monkeypatch.setattr(
+        collector_preview,
+        "_projection",
+        lambda *_args, **_kwargs: empty_projection,
+    )
+
+    with pytest.raises(ValueError, match="has no rebalances; refusing to publish"):
+        export_collector_preview(
+            LocalObjectStore(tmp_path / "r2"),
+            date(2026, 8, 31),
+            output_root,
+            methodology_path=methodology_path,
+        )
+
+    assert json.loads(existing_summary.read_text()) == {"sentinel": "last-known-good"}
