@@ -418,13 +418,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 439464,
     "entry_reason": "entrant selected at reference-price rank 103",
     "liquidity_score": 0.5428571428571428,
     "member_since": "2026-09-01",
     "name": "Vegeta, Making an Entrance",
     "ref_price": 273.93,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 2104",
     "variant_key": "foil"
   },
@@ -5497,6 +5499,17 @@
     "name": "Energy Marker (E-100) [Fusion World]",
     "ref_price": 550.0,
     "set": "Expansion 5786",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 384342,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6135714285714285,
+    "member_since": "2026-09-02",
+    "name": "Caulifla & Kale // Kefla, Soul Overflowing",
+    "ref_price": 37.53,
+    "set": "Expansion 2547",
     "variant_key": "foil"
   }
 ]

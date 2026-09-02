@@ -550,13 +550,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 804532,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "CS 2024 Top Player Pack Vol 2",
     "ref_price": 250.0,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-02",
     "set": "Expansion 5244",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1099,17 @@
     "name": "Mini-tin Pack Set Vol.2 (12 Mini-tins) (Asia Region Legal)",
     "ref_price": 950.0,
     "set": "Expansion 5244",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891005,
+    "entry_reason": "entrant selected at reference-price rank 35",
+    "liquidity_score": 0.687920724300163,
+    "member_since": "2026-09-02",
+    "name": "The Time of Battle Booster Box Case (Asia Region Legal)",
+    "ref_price": 1489.99,
+    "set": "Expansion 6606",
     "variant_key": "nonfoil"
   }
 ]

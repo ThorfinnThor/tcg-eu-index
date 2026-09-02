@@ -22,13 +22,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847142,
     "entry_reason": "entrant selected at reference-price rank 393",
     "liquidity_score": 0.5141666666666667,
     "member_since": "2026-09-01",
     "name": "Darius, Trifarian",
     "ref_price": 1.6,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 6286",
     "variant_key": "nonfoil"
   },

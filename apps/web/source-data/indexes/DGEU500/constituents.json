@@ -770,13 +770,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 696448,
     "entry_reason": "entrant selected at reference-price rank 270",
     "liquidity_score": 0.6632319934707203,
     "member_since": "2026-09-01",
     "name": "Mirei Mikagura (BT11-094)",
     "ref_price": 36.69,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 5246",
     "variant_key": "nonfoil"
   },
@@ -1793,13 +1795,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 755708,
     "entry_reason": "entrant selected at reference-price rank 372",
     "liquidity_score": 0.6439588688946015,
     "member_since": "2026-09-01",
     "name": "Angewomon Ace (BT15-038)",
     "ref_price": 21.83,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 5577",
     "variant_key": "nonfoil"
   },
@@ -5291,13 +5295,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 885315,
     "entry_reason": "entrant selected at reference-price rank 109",
     "liquidity_score": 0.6989799999999999,
     "member_since": "2026-09-01",
     "name": "Monarchlizamon / Final Judgment (BT25-057)",
     "ref_price": 105.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 6535",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5503,39 @@
     "name": "Alphamon (BT22-063)",
     "ref_price": 18.43,
     "set": "Expansion 5011",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 835242,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.685,
+    "member_since": "2026-09-02",
+    "name": "Dianamon (BT22-077)",
+    "ref_price": 15.7,
+    "set": "Expansion 6173",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 864239,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6708578143360752,
+    "member_since": "2026-09-02",
+    "name": "Inori Misono (BT24-084)",
+    "ref_price": 15.69,
+    "set": "Expansion 6414",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 873686,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.9620342008996552,
+    "member_since": "2026-09-02",
+    "name": "ShineGreymon: Ruin Mode (EX4-074)",
+    "ref_price": 15.61,
+    "set": "Expansion 6482",
     "variant_key": "nonfoil"
   }
 ]

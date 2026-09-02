@@ -5027,13 +5027,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 804217,
     "entry_reason": "entrant selected at reference-price rank 453",
     "liquidity_score": 0.6583333333333333,
     "member_since": "2026-09-01",
     "name": "Kaldra Compleat",
     "ref_price": 379.88,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 66",
     "variant_key": "foil"
   },
@@ -5498,5 +5500,16 @@
     "ref_price": 1235.0,
     "set": "Expansion 6577",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 6846,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6438965884861407,
+    "member_since": "2026-09-02",
+    "name": "Shahrazad",
+    "ref_price": 346.57,
+    "set": "Expansion 4",
+    "variant_key": "nonfoil"
   }
 ]

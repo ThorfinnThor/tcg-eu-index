@@ -385,13 +385,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 286576,
     "entry_reason": "entrant selected at reference-price rank 92",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Skyridge: Eeveelution Theme Deck",
     "ref_price": 2499.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 1538",
     "variant_key": "nonfoil"
   },
@@ -825,13 +827,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 606398,
     "entry_reason": "entrant selected at reference-price rank 42",
     "liquidity_score": 0.5007555555555555,
     "member_since": "2026-09-01",
     "name": "Neo Starter Deck",
     "ref_price": 4500.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 4506",
     "variant_key": "nonfoil"
   },
@@ -1023,13 +1027,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 764885,
     "entry_reason": "entrant selected at reference-price rank 90",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Silver Deck Kit",
     "ref_price": 2500.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 5725",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1103,39 @@
     "name": "Lost Origin 10 Elite Trainer Box Case",
     "ref_price": 2750.0,
     "set": "Expansion 5093",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 550441,
+    "entry_reason": "entrant selected at reference-price rank 98",
+    "liquidity_score": 0.6979364076647716,
+    "member_since": "2026-09-02",
+    "name": "Tag Bolt Booster Box",
+    "ref_price": 2374.5,
+    "set": "Expansion 3851",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 791312,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.5297872340425532,
+    "member_since": "2026-09-02",
+    "name": "Traditional Chinese 5th Anniversary Premium Card Set Box",
+    "ref_price": 2350.0,
+    "set": "Expansion 5960",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 800365,
+    "entry_reason": "entrant selected at reference-price rank 99",
+    "liquidity_score": 0.6938899379552199,
+    "member_since": "2026-09-02",
+    "name": "Terastal Festival ex Booster Box Case",
+    "ref_price": 2372.48,
+    "set": "Expansion 5928",
     "variant_key": "nonfoil"
   }
 ]

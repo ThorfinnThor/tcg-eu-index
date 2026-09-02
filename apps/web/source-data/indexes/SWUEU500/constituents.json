@@ -792,13 +792,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 796041,
     "entry_reason": "entrant selected at reference-price rank 343",
     "liquidity_score": 0.6290322580645161,
     "member_since": "2026-09-01",
     "name": "Now There Are Two of Them",
     "ref_price": 24.83,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-02",
     "set": "Expansion 5937",
     "variant_key": "foil"
   },
@@ -5498,5 +5500,16 @@
     "ref_price": 14.97,
     "set": "Expansion 6472",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 875993,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6572815533980583,
+    "member_since": "2026-09-02",
+    "name": "Latts Razzi, Deadly Whipmaster",
+    "ref_price": 12.75,
+    "set": "Expansion 6452",
+    "variant_key": "nonfoil"
   }
 ]
