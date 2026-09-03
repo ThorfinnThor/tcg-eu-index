@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-02",
+  "generated_for": "2026-09-03",
   "index_code": "YGEU500",
   "rebalances": [
     {
@@ -3022,6 +3022,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "ca2b18d99db0bcda2a0aee2b1e998b58810bcf52ceeb9cad4e9856f858f5dd0d"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-03",
+      "eligible_count": 16165,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "110bf2b88112e68a6c19df1d3731c0303c260d04d19e97a26a4c6c4e1f7dcf3a"
     }
   ],
   "schema_version": 1

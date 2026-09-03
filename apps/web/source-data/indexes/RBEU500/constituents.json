@@ -11,13 +11,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847137,
     "entry_reason": "entrant selected at reference-price rank 391",
     "liquidity_score": 0.5019417475728155,
     "member_since": "2026-09-01",
     "name": "Thermo Beam",
     "ref_price": 1.87,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -4334,5 +4336,27 @@
     "ref_price": 420.84,
     "set": "Expansion 6567",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891137,
+    "entry_reason": "entrant selected at reference-price rank 27",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-03",
+    "name": "Rengar, Pouncing",
+    "ref_price": 443.86,
+    "set": "Expansion 6483",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891138,
+    "entry_reason": "entrant selected at reference-price rank 167",
+    "liquidity_score": 0.6093394077448747,
+    "member_since": "2026-09-03",
+    "name": "Gold",
+    "ref_price": 17.77,
+    "set": "Expansion 6483",
+    "variant_key": "nonfoil"
   }
 ]

@@ -1001,13 +1001,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757406,
     "entry_reason": "entrant selected at reference-price rank 71",
     "liquidity_score": 0.5943919885550787,
     "member_since": "2026-09-01",
     "name": "Morph - Space Goo",
     "ref_price": 119.17,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 5567",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5499,17 @@
     "name": "Jessie - Lively Cowgirl",
     "ref_price": 7.68,
     "set": "Expansion 6551",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 757406,
+    "entry_reason": "entrant selected at reference-price rank 169",
+    "liquidity_score": 0.8027157998918616,
+    "member_since": "2026-09-03",
+    "name": "Morph - Space Goo",
+    "ref_price": 54.89,
+    "set": "Expansion 5567",
     "variant_key": "foil"
   }
 ]

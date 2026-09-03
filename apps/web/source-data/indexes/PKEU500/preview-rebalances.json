@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-02",
+  "generated_for": "2026-09-03",
   "index_code": "PKEU500",
   "rebalances": [
     {
@@ -3022,6 +3022,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "d23e66202195bc22171039a18b5b4f97733ec1f960cce9695cc0c6c91f03b727"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 887977,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 576934,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-03",
+      "eligible_count": 20455,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "40c04a4619a5621e4f4e764db5a60e8d582846f77c43ecbd62c2b78d608c0ea7"
     }
   ],
   "schema_version": 1

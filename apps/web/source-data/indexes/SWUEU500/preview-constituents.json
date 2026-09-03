@@ -154,13 +154,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757480,
     "entry_reason": "entrant selected at reference-price rank 493",
     "liquidity_score": 0.6647058823529411,
     "member_since": "2026-09-01",
     "name": "Spark of Rebellion",
     "ref_price": 13.06,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -407,13 +409,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 776581,
     "entry_reason": "entrant selected at reference-price rank 339",
     "liquidity_score": 0.6708571428571428,
     "member_since": "2026-09-01",
     "name": "The Darksaber",
     "ref_price": 25.43,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 5781",
     "variant_key": "foil"
   },
@@ -5510,6 +5514,28 @@
     "name": "Latts Razzi, Deadly Whipmaster",
     "ref_price": 12.75,
     "set": "Expansion 6452",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 755226,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6548205489092189,
+    "member_since": "2026-09-03",
+    "name": "Darth Vader, Commanding the First Legion",
+    "ref_price": 12.69,
+    "set": "Expansion 5618",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 884870,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6470588235294118,
+    "member_since": "2026-09-03",
+    "name": "General Grievous, Crush Them!",
+    "ref_price": 12.68,
+    "set": "Expansion 6532",
     "variant_key": "nonfoil"
   }
 ]

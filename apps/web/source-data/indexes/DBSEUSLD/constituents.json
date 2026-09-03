@@ -748,13 +748,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 790839,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.6882717054894935,
     "member_since": "2026-09-01",
     "name": "Ultra Limit Booster Box [Fusion World] (Non-English)",
     "ref_price": 61.39,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-03",
     "set": "Expansion 5906",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1099,17 @@
     "name": "Dragon Ball Games Battle Hour 2026 Premium Card Collection",
     "ref_price": 700.0,
     "set": "Expansion 2321",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 427466,
+    "entry_reason": "entrant selected at reference-price rank 89",
+    "liquidity_score": 0.7633333333333334,
+    "member_since": "2026-09-03",
+    "name": "Starter Deck: Instinct Surpassed",
+    "ref_price": 66.66666666666667,
+    "set": "Expansion 2926",
     "variant_key": "nonfoil"
   }
 ]

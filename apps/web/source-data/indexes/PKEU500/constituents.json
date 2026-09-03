@@ -3201,13 +3201,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 576934,
     "entry_reason": "entrant selected at reference-price rank 481",
     "liquidity_score": 0.6999942855510157,
     "member_since": "2026-09-01",
     "name": "Pikachu [Hello! | Thunderbolt]",
     "ref_price": 273.62,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 4392",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5499,17 @@
     "name": "Mega Darkrai ex [Dusk Raid | Abyss Eye]",
     "ref_price": 462.25,
     "set": "Expansion 6556",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 887977,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6575252127445984,
+    "member_since": "2026-09-03",
+    "name": "Lisia's Appeal",
+    "ref_price": 267.6,
+    "set": "Expansion 6568",
     "variant_key": "nonfoil"
   }
 ]

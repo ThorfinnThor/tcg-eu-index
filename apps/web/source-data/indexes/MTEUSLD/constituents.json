@@ -517,13 +517,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 240211,
     "entry_reason": "entrant selected at reference-price rank 73",
     "liquidity_score": 0.5437351119580752,
     "member_since": "2026-09-01",
     "name": "Champions of Kamigawa Full Set",
     "ref_price": 1049.5,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 48",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1099,17 @@
     "name": "Magic: The Gathering - FINAL FANTASY Collector Booster Box",
     "ref_price": 1132.56,
     "set": "Expansion 6057",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 210182,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.5226415094339623,
+    "member_since": "2026-09-03",
+    "name": "Onslaught Fat Pack",
+    "ref_price": 795.0,
+    "set": "Expansion 41",
     "variant_key": "nonfoil"
   }
 ]

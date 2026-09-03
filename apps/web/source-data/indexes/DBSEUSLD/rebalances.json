@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-02",
+  "generated_for": "2026-09-03",
   "index_code": "DBSEUSLD",
   "rebalances": [
     {
@@ -622,6 +622,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "0335e7e2e306234e064c68de5f8ebb3b8d8857ecba2ccaf300e6a37ab55e5e12"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 427466,
+          "reason": "entrant selected at reference-price rank 89",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 790839,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-03",
+      "eligible_count": 251,
+      "methodology_version": "1.4.0",
+      "retained_count": 99,
+      "selection_snapshot_sha256": "10b93c6c6919708982008f8dff227c4aac921ea62ed90916373accb10e4befde"
     }
   ],
   "schema_version": 1

@@ -2145,13 +2145,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 695774,
     "entry_reason": "entrant selected at reference-price rank 71",
     "liquidity_score": 0.6324414715719063,
     "member_since": "2026-09-01",
     "name": "Metacarpus Node",
     "ref_price": 299.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -3949,13 +3951,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 808607,
     "entry_reason": "entrant selected at reference-price rank 228",
     "liquidity_score": 0.6512042337185441,
     "member_since": "2026-09-01",
     "name": "Erase Face",
     "ref_price": 110.48,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-03",
     "set": "Expansion 5207",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5501,28 @@
     "name": "Blitz Kicks",
     "ref_price": 60.0,
     "set": "Expansion 5207",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 750740,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6666666666666667,
+    "member_since": "2026-09-03",
+    "name": "Betsy, Skin in the Game",
+    "ref_price": 56.2,
+    "set": "Expansion 5596",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 787406,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6573333333333333,
+    "member_since": "2026-09-03",
+    "name": "Arcanite Fortress",
+    "ref_price": 56.22,
+    "set": "Expansion 5801",
     "variant_key": "nonfoil"
   }
 ]
