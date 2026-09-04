@@ -1210,13 +1210,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 553728,
     "entry_reason": "entrant selected at reference-price rank 7",
     "liquidity_score": 0.691304347826087,
     "member_since": "2026-09-01",
     "name": "Mega Tokyo's Pikachu [Mega Open! | Thunder Shock]",
     "ref_price": 5125.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-04",
     "set": "Expansion 4159",
     "variant_key": "nonfoil"
   },
@@ -5510,6 +5512,17 @@
     "name": "Lisia's Appeal",
     "ref_price": 267.6,
     "set": "Expansion 6568",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 560859,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.5947617794156357,
+    "member_since": "2026-09-04",
+    "name": "Shadow Rider Calyrex VMAX [Underworld Door | Max Geist]",
+    "ref_price": 267.31,
+    "set": "Expansion 4172",
     "variant_key": "nonfoil"
   }
 ]

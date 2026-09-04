@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-03",
+  "generated_for": "2026-09-04",
   "index_code": "RBEU500",
   "rebalances": [
     {
@@ -2421,6 +2421,22 @@
       "methodology_version": "1.4.0",
       "retained_count": 392,
       "selection_snapshot_sha256": "b9bfc42399a4e9b3a70d865688a90736503fab9a1a60e4e2f3a1d24c9073daa4"
+    },
+    {
+      "active_count": 393,
+      "changes": [
+        {
+          "action": "removed",
+          "cm_product_id": 884134,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-04",
+      "eligible_count": 393,
+      "methodology_version": "1.4.0",
+      "retained_count": 393,
+      "selection_snapshot_sha256": "0dce97eabfd8189758ebe8dac55d62717f93e3be2ef08311f9a7392bf65a5eeb"
     }
   ],
   "schema_version": 1

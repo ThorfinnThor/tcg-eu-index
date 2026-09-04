@@ -5062,13 +5062,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 813896,
     "entry_reason": "entrant selected at reference-price rank 189",
     "liquidity_score": 0.5666422201850154,
     "member_since": "2026-09-01",
     "name": "Karn Liberated",
     "ref_price": 869.74,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-04",
     "set": "Expansion 66",
     "variant_key": "foil"
   },
@@ -5510,6 +5512,17 @@
     "name": "Shahrazad",
     "ref_price": 346.57,
     "set": "Expansion 4",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 6929,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.6717334518979603,
+    "member_since": "2026-09-04",
+    "name": "Transmute Artifact",
+    "ref_price": 348.13,
+    "set": "Expansion 5",
     "variant_key": "nonfoil"
   }
 ]

@@ -618,13 +618,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 253856,
     "entry_reason": "entrant selected at reference-price rank 58",
     "liquidity_score": 0.7,
     "member_since": "2026-09-01",
     "name": "Mercadian Masques: Tournament Pack Box",
     "ref_price": 1400.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-04",
     "set": "Expansion 31",
     "variant_key": "nonfoil"
   },
@@ -1110,6 +1112,17 @@
     "name": "Onslaught Fat Pack",
     "ref_price": 795.0,
     "set": "Expansion 41",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 210125,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6594936708860759,
+    "member_since": "2026-09-04",
+    "name": "Renaissance Booster Box",
+    "ref_price": 790.0,
+    "set": "Expansion 60",
     "variant_key": "nonfoil"
   }
 ]

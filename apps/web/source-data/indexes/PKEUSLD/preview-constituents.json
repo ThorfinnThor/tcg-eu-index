@@ -11,13 +11,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 271841,
     "entry_reason": "entrant selected at reference-price rank 45",
     "liquidity_score": 0.5275862068965518,
     "member_since": "2026-09-01",
     "name": "EX Deoxys Booster",
     "ref_price": 4350.0,
+    "removal_reason": "incumbent removed at reference-price rank 105 outside top 100",
+    "removed_at": "2026-09-04",
     "set": "Expansion 1546",
     "variant_key": "nonfoil"
   },
@@ -1136,6 +1138,17 @@
     "name": "Terastal Festival ex Booster Box Case",
     "ref_price": 2372.48,
     "set": "Expansion 5928",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 800356,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6585548885077187,
+    "member_since": "2026-09-04",
+    "name": "Shiny Treasure ex Booster Box Case",
+    "ref_price": 2332.0,
+    "set": "Expansion 5519",
     "variant_key": "nonfoil"
   }
 ]

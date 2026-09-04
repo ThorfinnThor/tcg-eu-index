@@ -3612,13 +3612,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 884134,
     "entry_reason": "entrant selected at reference-price rank 384",
     "liquidity_score": 0.5669642857142857,
     "member_since": "2026-09-01",
     "name": "Diana, No Longer Human",
     "ref_price": 2.03,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-04",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },

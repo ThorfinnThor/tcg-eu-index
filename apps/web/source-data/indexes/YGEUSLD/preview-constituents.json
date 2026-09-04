@@ -770,13 +770,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 714587,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Dark Revelation 1 Booster Box",
     "ref_price": 380.0,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-04",
     "set": "Expansion 1020",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1099,17 @@
     "name": "Chaos Origins Case (12 Booster Boxes)",
     "ref_price": 794.31,
     "set": "Expansion 6536",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 287687,
+    "entry_reason": "entrant selected at reference-price rank 88",
+    "liquidity_score": 0.6384120202020201,
+    "member_since": "2026-09-04",
+    "name": "Anniversary Pack",
+    "ref_price": 407.5,
+    "set": "Expansion 1171",
     "variant_key": "nonfoil"
   }
 ]

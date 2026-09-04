@@ -244,13 +244,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757544,
     "entry_reason": "entrant selected at reference-price rank 463",
     "liquidity_score": 0.6816347124117054,
     "member_since": "2026-09-01",
     "name": "K-2SO, Cassian's Counterpart",
     "ref_price": 14.44,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-04",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -5536,6 +5538,17 @@
     "name": "General Grievous, Crush Them!",
     "ref_price": 12.68,
     "set": "Expansion 6532",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 854331,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6359816653934302,
+    "member_since": "2026-09-04",
+    "name": "Lightmaker, I Have An Idea",
+    "ref_price": 12.67,
+    "set": "Expansion 6333",
     "variant_key": "nonfoil"
   }
 ]
