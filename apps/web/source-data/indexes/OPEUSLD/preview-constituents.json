@@ -341,13 +341,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 752999,
     "entry_reason": "entrant selected at reference-price rank 89",
     "liquidity_score": 0.5370794849322457,
     "member_since": "2026-09-01",
     "name": "Double Pack Set Vol.3",
     "ref_price": 296.66,
+    "removal_reason": "incumbent removed at reference-price rank 102 outside top 100",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5524",
     "variant_key": "nonfoil"
   },
@@ -1110,6 +1112,17 @@
     "name": "The Time of Battle Booster Box Case (Asia Region Legal)",
     "ref_price": 1489.99,
     "set": "Expansion 6606",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 804532,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-05",
+    "name": "CS 2024 Top Player Pack Vol 2",
+    "ref_price": 250.0,
+    "set": "Expansion 5244",
     "variant_key": "nonfoil"
   }
 ]

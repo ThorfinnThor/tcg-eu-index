@@ -5528,14 +5528,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 873686,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.9620342008996552,
     "member_since": "2026-09-02",
     "name": "ShineGreymon: Ruin Mode (EX4-074)",
     "ref_price": 15.61,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 6482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 722622,
+    "entry_reason": "entrant selected at reference-price rank 238",
+    "liquidity_score": 0.550027397260274,
+    "member_since": "2026-09-05",
+    "name": "Magnamon (BT13-040)",
+    "ref_price": 44.56,
+    "set": "Expansion 5394",
     "variant_key": "nonfoil"
   }
 ]

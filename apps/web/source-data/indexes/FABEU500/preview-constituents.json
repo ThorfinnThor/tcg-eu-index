@@ -5504,13 +5504,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 750740,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6666666666666667,
     "member_since": "2026-09-03",
     "name": "Betsy, Skin in the Game",
     "ref_price": 56.2,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5596",
     "variant_key": "nonfoil"
   },
@@ -5523,6 +5525,17 @@
     "name": "Arcanite Fortress",
     "ref_price": 56.22,
     "set": "Expansion 5801",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 602750,
+    "entry_reason": "entrant selected at reference-price rank 269",
+    "liquidity_score": 0.5425777777777778,
+    "member_since": "2026-09-05",
+    "name": "Phantasmal Footsteps",
+    "ref_price": 98.1,
+    "set": "Expansion 4484",
     "variant_key": "nonfoil"
   }
 ]

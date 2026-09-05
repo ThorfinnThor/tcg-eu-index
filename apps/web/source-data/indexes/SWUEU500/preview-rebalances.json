@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-04",
+  "generated_for": "2026-09-05",
   "index_code": "SWUEU500",
   "rebalances": [
     {
@@ -3091,6 +3091,76 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "68a4c985f649d3c617ffb807a439dc3aec6a7f9688959ac2776e101996ad9905"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 776874,
+          "reason": "entrant selected at reference-price rank 179",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 815700,
+          "reason": "entrant selected at reference-price rank 340",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 795930,
+          "reason": "entrant selected at reference-price rank 383",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 757648,
+          "reason": "entrant selected at reference-price rank 443",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 757657,
+          "reason": "entrant selected at reference-price rank 448",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 755226,
+          "reason": "incumbent removed at reference-price rank 502 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 815700,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 854331,
+          "reason": "incumbent removed at reference-price rank 504 outside top 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 875993,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 884870,
+          "reason": "incumbent removed at reference-price rank 503 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-05",
+      "eligible_count": 1427,
+      "methodology_version": "1.4.0",
+      "retained_count": 495,
+      "selection_snapshot_sha256": "600621317e8bdf0a1452a1c949c90df31230ed9254a1f8fee144608de222f441"
     }
   ],
   "schema_version": 1

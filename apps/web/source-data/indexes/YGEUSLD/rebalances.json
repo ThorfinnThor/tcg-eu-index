@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-04",
+  "generated_for": "2026-09-05",
   "index_code": "YGEUSLD",
   "rebalances": [
     {
@@ -653,6 +653,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 99,
       "selection_snapshot_sha256": "8935efa13179bcc7718717a0e4d60673f71e2b9a5f0e3fef75adc8322f0e71c2"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 611235,
+          "reason": "entrant selected at reference-price rank 70",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 548791,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-05",
+      "eligible_count": 1155,
+      "methodology_version": "1.4.0",
+      "retained_count": 99,
+      "selection_snapshot_sha256": "a973ab871318c8b7556cca964c156ba6640f7dcc4b56952bdb296520ff449f0e"
     }
   ],
   "schema_version": 1

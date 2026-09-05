@@ -541,13 +541,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 581648,
     "entry_reason": "entrant selected at reference-price rank 323",
     "liquidity_score": 0.7,
     "member_since": "2026-09-01",
     "name": "Pan, Time Patrol Maiden",
     "ref_price": 66.13,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-05",
     "set": "Expansion 4384",
     "variant_key": "foil"
   },
@@ -5504,25 +5506,62 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 384342,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6135714285714285,
     "member_since": "2026-09-02",
     "name": "Caulifla & Kale // Kefla, Soul Overflowing",
     "ref_price": 37.53,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 2547",
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 862843,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.8363361024575978,
     "member_since": "2026-09-03",
     "name": "Earth-Destroying Blow (FB02-104) [Fusion World]",
     "ref_price": 37.52,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 6410",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 581648,
+    "entry_reason": "entrant selected at reference-price rank 226",
+    "liquidity_score": 0.5598665554628858,
+    "member_since": "2026-09-05",
+    "name": "Pan, Time Patrol Maiden",
+    "ref_price": 114.43,
+    "set": "Expansion 4384",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 773363,
+    "entry_reason": "entrant selected at reference-price rank 57",
+    "liquidity_score": 0.55,
+    "member_since": "2026-09-05",
+    "name": "Bursting Rage",
+    "ref_price": 543.16,
+    "set": "Expansion 2104",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 874970,
+    "entry_reason": "entrant selected at reference-price rank 453",
+    "liquidity_score": 0.5235087719298246,
+    "member_since": "2026-09-05",
+    "name": "Goku Black (FS10-04) [Fusion World]",
+    "ref_price": 44.0,
+    "set": "Expansion 6163",
     "variant_key": "foil"
   }
 ]

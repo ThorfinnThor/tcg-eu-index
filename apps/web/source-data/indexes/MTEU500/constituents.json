@@ -3476,13 +3476,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 685226,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Mystic Forge",
     "ref_price": 347.29,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5170",
     "variant_key": "foil"
   },
@@ -3630,13 +3632,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 686014,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.7,
     "member_since": "2026-09-01",
     "name": "Savannah",
     "ref_price": 348.5,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5199",
     "variant_key": "nonfoil"
   },
@@ -5504,13 +5508,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 6846,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6438965884861407,
     "member_since": "2026-09-02",
     "name": "Shahrazad",
     "ref_price": 346.57,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 4",
     "variant_key": "nonfoil"
   },
@@ -5524,5 +5530,38 @@
     "ref_price": 348.13,
     "set": "Expansion 5",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 9357,
+    "entry_reason": "entrant selected at reference-price rank 494",
+    "liquidity_score": 0.644418757313697,
+    "member_since": "2026-09-05",
+    "name": "Survival of the Fittest",
+    "ref_price": 352.06,
+    "set": "Expansion 21",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 15786,
+    "entry_reason": "entrant selected at reference-price rank 492",
+    "liquidity_score": 0.612,
+    "member_since": "2026-09-05",
+    "name": "Swords to Plowshares",
+    "ref_price": 352.87,
+    "set": "Expansion 72",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 574618,
+    "entry_reason": "entrant selected at reference-price rank 444",
+    "liquidity_score": 0.544,
+    "member_since": "2026-09-05",
+    "name": "Tiamat",
+    "ref_price": 384.53,
+    "set": "Expansion 4358",
+    "variant_key": "foil"
   }
 ]

@@ -5515,14 +5515,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 560859,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.5947617794156357,
     "member_since": "2026-09-04",
     "name": "Shadow Rider Calyrex VMAX [Underworld Door | Max Geist]",
     "ref_price": 267.31,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 4172",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 759873,
+    "entry_reason": "entrant selected at reference-price rank 333",
+    "liquidity_score": 0.6595323104160519,
+    "member_since": "2026-09-05",
+    "name": "Charmander [Blazing Destruction | Steady Firebreathing]",
+    "ref_price": 381.4,
+    "set": "Expansion 5402",
+    "variant_key": "foil"
   }
 ]

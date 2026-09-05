@@ -587,13 +587,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 377487,
     "entry_reason": "entrant selected at reference-price rank 98",
     "liquidity_score": 0.6224489795918368,
     "member_since": "2026-09-01",
     "name": "Unified Minds Booster Box",
     "ref_price": 2450.0,
+    "removal_reason": "incumbent removed at reference-price rank 106 outside top 100",
+    "removed_at": "2026-09-05",
     "set": "Expansion 2487",
     "variant_key": "nonfoil"
   },
@@ -1130,13 +1132,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 800365,
     "entry_reason": "entrant selected at reference-price rank 99",
     "liquidity_score": 0.6938899379552199,
     "member_since": "2026-09-02",
     "name": "Terastal Festival ex Booster Box Case",
     "ref_price": 2372.48,
+    "removal_reason": "incumbent removed at reference-price rank 105 outside top 100",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5928",
     "variant_key": "nonfoil"
   },
@@ -1149,6 +1153,28 @@
     "name": "Shiny Treasure ex Booster Box Case",
     "ref_price": 2332.0,
     "set": "Expansion 5519",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 286913,
+    "entry_reason": "entrant selected at reference-price rank 99",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-05",
+    "name": "Arceus Collector's Tins: Arceus LV.X Tin (Blue)",
+    "ref_price": 2300.0,
+    "set": "Expansion 1645",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 552224,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-05",
+    "name": "Bandit Ring Booster Box",
+    "ref_price": 2300.0,
+    "set": "Expansion 4024",
     "variant_key": "nonfoil"
   }
 ]

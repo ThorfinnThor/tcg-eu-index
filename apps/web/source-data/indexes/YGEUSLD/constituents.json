@@ -572,13 +572,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 548791,
     "entry_reason": "entrant selected at reference-price rank 99",
     "liquidity_score": 0.6473684210526316,
     "member_since": "2026-09-01",
     "name": "King's Court Case (12 Booster Boxes)",
     "ref_price": 380.0,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-05",
     "set": "Expansion 3791",
     "variant_key": "nonfoil"
   },
@@ -1110,6 +1112,17 @@
     "name": "Anniversary Pack",
     "ref_price": 407.5,
     "set": "Expansion 1171",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 611235,
+    "entry_reason": "entrant selected at reference-price rank 70",
+    "liquidity_score": 0.4,
+    "member_since": "2026-09-05",
+    "name": "Duelist Pack: Jaden Yuki Booster Box",
+    "ref_price": 520.0,
+    "set": "Expansion 1027",
     "variant_key": "nonfoil"
   }
 ]

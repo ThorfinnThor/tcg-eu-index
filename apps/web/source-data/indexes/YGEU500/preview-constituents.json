@@ -3366,13 +3366,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 682574,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Millennium-Eyes Restrict",
     "ref_price": 83.66,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5086",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5499,17 @@
     "name": "Dominus Impulse",
     "ref_price": 334.53,
     "set": "Expansion 6537",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 584296,
+    "entry_reason": "entrant selected at reference-price rank 299",
+    "liquidity_score": 0.4639487897579516,
+    "member_since": "2026-09-05",
+    "name": "Magician of Faith",
+    "ref_price": 124.99,
+    "set": "Expansion 4462",
     "variant_key": "nonfoil"
   }
 ]

@@ -1003,13 +1003,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 867291,
     "entry_reason": "entrant selected at reference-price rank 99",
     "liquidity_score": 0.6783976646123906,
     "member_since": "2026-09-01",
     "name": "Premium Card Collection 02",
     "ref_price": 61.66,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-05",
     "set": "Expansion 5679",
     "variant_key": "nonfoil"
   },
@@ -1110,6 +1112,17 @@
     "name": "Starter Deck: Instinct Surpassed",
     "ref_price": 66.66666666666667,
     "set": "Expansion 2926",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 840323,
+    "entry_reason": "entrant selected at reference-price rank 42",
+    "liquidity_score": 0.4,
+    "member_since": "2026-09-05",
+    "name": "Championship Pack 03 - Finalist - [Fusion World]",
+    "ref_price": 175.0,
+    "set": "Expansion 5679",
     "variant_key": "nonfoil"
   }
 ]

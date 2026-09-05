@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-04",
+  "generated_for": "2026-09-05",
   "index_code": "YGEU500",
   "rebalances": [
     {
@@ -3040,6 +3040,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "aae9c95a7f506169fceb15a54f1950d7defa6419f464aadd800e596572612ad4"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 584296,
+          "reason": "entrant selected at reference-price rank 299",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 682574,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-05",
+      "eligible_count": 16177,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "59780b0d22abed6048b28e09494ea4202580a3391b5ebe68b549d089f67b9464"
     }
   ],
   "schema_version": 1
