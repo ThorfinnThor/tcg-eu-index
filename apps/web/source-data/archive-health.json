@@ -1,42 +1,148 @@
 {
-  "coverageRatio": 1.0,
+  "coverageRatio": 0.25,
   "cutoverProjection": {
     "assumesNoGaps": true,
     "firstEligibleEffectiveDate": "2026-10-11",
     "firstFullObservationDate": "2026-10-10",
     "firstMonthlyRebalanceDate": "2026-11-01"
   },
-  "expectedDays": 21,
-  "gapCount": 0,
-  "gaps": [],
-  "generatedFor": "2026-08-30",
-  "integrityErrorCount": 0,
-  "manifestCount": 21,
+  "expectedDays": 28,
+  "gapCount": 21,
+  "gaps": [
+    {
+      "date": "2026-08-10",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-11",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-12",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-13",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-14",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-15",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-16",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-17",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-18",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-19",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-20",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-21",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-22",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-23",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-24",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-25",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-26",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-27",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-28",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-29",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    },
+    {
+      "date": "2026-08-30",
+      "game": null,
+      "reason": "Daily archive manifest missing"
+    }
+  ],
+  "generatedFor": "2026-09-06",
+  "integrityErrorCount": 21,
+  "manifestCount": 7,
   "operations": {
-    "billingMonth": "2026-08",
+    "billingMonth": "2026-09",
     "classA": {
       "freeTier": 1000000,
-      "projected": 31000,
+      "projected": 30000,
       "status": "within_free_tier",
-      "usageRatio": 0.031
+      "usageRatio": 0.03
     },
     "classB": {
       "freeTier": 10000000,
-      "projected": 124000,
+      "projected": 120000,
       "status": "within_free_tier",
-      "usageRatio": 0.0124
+      "usageRatio": 0.012
     }
   },
   "schemaVersion": 1,
   "since": "2026-08-10",
-  "status": "healthy",
+  "status": "attention_required",
   "storage": {
-    "bytes": 2089481804,
+    "bytes": 2512751737,
     "freeTierBytes": 10000000000,
     "status": "within_free_tier",
-    "usageRatio": 0.20894818
+    "usageRatio": 0.25127517
   },
-  "until": "2026-08-30",
-  "verifiedFileCount": 20,
+  "until": "2026-09-06",
+  "verifiedFileCount": 7,
   "warningCount": 0
 }
