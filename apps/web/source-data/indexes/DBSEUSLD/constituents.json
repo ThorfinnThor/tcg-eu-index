@@ -827,13 +827,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 829734,
     "entry_reason": "entrant selected at reference-price rank 89",
     "liquidity_score": 0.6452854859799506,
     "member_since": "2026-09-01",
     "name": "Starter Deck: EX Shallot [Fusion World]",
     "ref_price": 68.83,
+    "removal_reason": "incumbent removed at reference-price rank 102 outside top 100",
+    "removed_at": "2026-09-06",
     "set": "Expansion 6164",
     "variant_key": "nonfoil"
   },
@@ -1122,6 +1124,17 @@
     "member_since": "2026-09-05",
     "name": "Championship Pack 03 - Finalist - [Fusion World]",
     "ref_price": 175.0,
+    "set": "Expansion 5679",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 867291,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6783976646123906,
+    "member_since": "2026-09-06",
+    "name": "Premium Card Collection 02",
+    "ref_price": 61.66,
     "set": "Expansion 5679",
     "variant_key": "nonfoil"
   }

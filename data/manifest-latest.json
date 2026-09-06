@@ -1,125 +1,125 @@
 {
-  "date": "2026-09-05",
+  "date": "2026-09-06",
   "files": [
     {
       "game": "magic",
-      "key": "cardmarket/priceguide/magic/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/magic/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "6036ec5aa8d7685b10f395eb30112e9d722c0a39c3646d050b652866a831639a"
+      "sha256_uncompressed": "e09635701ff7b82274f1a8d6e1ed43dd1ff1db7bd66ed20f19b1ffef66af7ce0"
     },
     {
       "game": "magic",
-      "key": "cardmarket/catalogue/magic/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/magic/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "478d1b3a6fad42259b4f587994e8bc2ffd9fe15e29dfecbade352f373dfe182f"
+      "sha256_uncompressed": "976fc9208b15977d886a486520322f2a43800e664d7b229c08801e0d8dd7bb2e"
     },
     {
       "game": "yugioh",
-      "key": "cardmarket/priceguide/yugioh/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/yugioh/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "a59d3b23c83c4ad42cc1a6a3e6a01c1b5ff0e5c74c60d5fe603dbaa7366936a3"
+      "sha256_uncompressed": "d335f10047e0c69ebec49aa187b8af5f2d2c0aebf334efbbd67e2a12cd8e5a23"
     },
     {
       "game": "yugioh",
-      "key": "cardmarket/catalogue/yugioh/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/yugioh/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "41f028506086d904f1b1b4710260f7aa20db2682a94711d035f978c0d711e449"
+      "sha256_uncompressed": "fde84b11f2c3d8e98dc48ab07fd744e0a9262bddd5df7b6e213361d3aaaf49f2"
     },
     {
       "game": "pokemon",
-      "key": "cardmarket/priceguide/pokemon/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/pokemon/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "f47c6417a80ffaa2c79e203bfdfcf4ec7c934a99994c4b7e9463e19b3e528318"
+      "sha256_uncompressed": "bfb3a422478c9aa28c0bb5f6f51e54049b32ed9b73c0766d5bcf654c2c0b92c7"
     },
     {
       "game": "pokemon",
-      "key": "cardmarket/catalogue/pokemon/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/pokemon/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "e77482e4e45f37659242897f87f1d33a6e832a887491bba4b61bef1afd0b0a05"
+      "sha256_uncompressed": "5a59e31bdc1240db29fa0120fd03cba78a1b1681a376953b5d844605b7b88bea"
     },
     {
       "game": "onepiece",
-      "key": "cardmarket/priceguide/onepiece/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/onepiece/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "97e9767b5c2bedad0b397b3802e74b2c8c7d83f9cadf46180af88892e1961b33"
+      "sha256_uncompressed": "d9eff697dee23191b929b44889cf2f43fdc421555c494626deec76114d410697"
     },
     {
       "game": "onepiece",
-      "key": "cardmarket/catalogue/onepiece/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/onepiece/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "b0fa1817f113b7b836f954657b4302b6e9332adb7848b5969659b7514aff27e5"
+      "sha256_uncompressed": "66c95421962b87bef7d50973ee2c2587ad72eec657e425a80a30a1d2e0be9a94"
     },
     {
       "game": "dragonballsuper",
-      "key": "cardmarket/priceguide/dragonballsuper/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/dragonballsuper/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "a973963a30a4d375f9df0f15906ffdadf2a6393b5ec973988188ce596d2bbaea"
+      "sha256_uncompressed": "44200299048b29f6ec53874315bcb440595f4f9102842b010e23f482bd21e694"
     },
     {
       "game": "dragonballsuper",
-      "key": "cardmarket/catalogue/dragonballsuper/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/dragonballsuper/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "6577faba19de8f66a04d33c8632a8b08677732a3fda8462030c644d26f7d141a"
+      "sha256_uncompressed": "6fa0bcd15bd144940b3b8e058fa04a8551ac9bdb2f2d3764ee69815b47a25597"
     },
     {
       "game": "fleshandblood",
-      "key": "cardmarket/priceguide/fleshandblood/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/fleshandblood/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "804cd03529a8bac9cc53fc50c0a1808d02cb8bbc62b4083f550522288f6cb52f"
+      "sha256_uncompressed": "00b4a36e5f25888f58e1edcdac79c164a7b663eb3884af26e015ebfdaa61d4e4"
     },
     {
       "game": "fleshandblood",
-      "key": "cardmarket/catalogue/fleshandblood/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/fleshandblood/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "2b510ad56b49cedc524430382a3084880deb05e097c24b1539ae81520ee2bc17"
+      "sha256_uncompressed": "25c92d6fd885263849c4da2c6f14f30f40b1e246018e9cdec116a66bba8f322d"
     },
     {
       "game": "digimon",
-      "key": "cardmarket/priceguide/digimon/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/digimon/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "6e1ef64c570f295b863517b180718599ff7c014e923239708879f8b100b52871"
+      "sha256_uncompressed": "d18e3b0407803b722e6a10718049b1b2063b2c4fa676b667057e0b29d1b57e77"
     },
     {
       "game": "digimon",
-      "key": "cardmarket/catalogue/digimon/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/digimon/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "ec035612d04ee2ed9a5095ac1ea50e54d74c6bb56a79fdf4a50dc329480698ef"
+      "sha256_uncompressed": "b82017e3b25dbd1c551ae9455da2f70bb78a1e673a64eeda029b6cf4d3ff5e8a"
     },
     {
       "game": "lorcana",
-      "key": "cardmarket/priceguide/lorcana/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/lorcana/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "fdf698661c5534155cc4ae36b40628d5f0e06ecf37576e2bb1ac1c67eec940a5"
+      "sha256_uncompressed": "93b0f67721dce26c43baee1dccb814ae249a56cb638b9bb190837c17ea76c568"
     },
     {
       "game": "lorcana",
-      "key": "cardmarket/catalogue/lorcana/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/lorcana/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "07848ee304e9d6a26fee0efa1d82e0273ddb101ff9fc5e262097dad01a56aadc"
+      "sha256_uncompressed": "324171aaf1ffe6ba18a71d40b0b7868b02e70fda8c80e6c499a5c69a653d6f0a"
     },
     {
       "game": "starwarsunlimited",
-      "key": "cardmarket/priceguide/starwarsunlimited/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/starwarsunlimited/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "aef43a7d74c4a1530cffe05646492ae5fdf5498d73389f28f06b16c4eaecd2c0"
+      "sha256_uncompressed": "e51865929879822a77ad307801fb3cbca95271cf44f2c1d11785e93262379e43"
     },
     {
       "game": "starwarsunlimited",
-      "key": "cardmarket/catalogue/starwarsunlimited/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/starwarsunlimited/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "0e331054dcc16931b9b385231ac7f7f97d6181612ec1eaa615d3f026d6790478"
+      "sha256_uncompressed": "60f2eeef46170ca150ea489012c5cf1f4ec2539e12dc6e291597c0254b0e4e0a"
     },
     {
       "game": "riftbound",
-      "key": "cardmarket/priceguide/riftbound/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/priceguide/riftbound/2026/09/2026-09-06.json.gz",
       "kind": "priceguide",
-      "sha256_uncompressed": "220b6b8c25a1398fea775a60c09a44597b4be943bc24ce63eb432c17d968ee62"
+      "sha256_uncompressed": "44adf2c6e918fe8003666d451f6820efa94a568ad0b15863cb0f48ef74483085"
     },
     {
       "game": "riftbound",
-      "key": "cardmarket/catalogue/riftbound/2026/09/2026-09-05.json.gz",
+      "key": "cardmarket/catalogue/riftbound/2026/09/2026-09-06.json.gz",
       "kind": "catalogue",
-      "sha256_uncompressed": "0a9bf64dbf188387c50fa1931597005382d719f57b7007b543294a418abf08ff"
+      "sha256_uncompressed": "ce3a39f9fd1eb00be45de5e05c3dd5ade16f30adc658b7546706fbcf5ddadc68"
     }
   ]
 }

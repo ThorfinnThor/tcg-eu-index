@@ -763,13 +763,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 699123,
     "entry_reason": "entrant selected at reference-price rank 114",
     "liquidity_score": 0.6928423458818487,
     "member_since": "2026-09-01",
     "name": "Dragon Ball Games Battle Hour 2023",
     "ref_price": 242.92,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-06",
     "set": "Expansion 2081",
     "variant_key": "foil"
   },
@@ -5562,6 +5564,17 @@
     "name": "Goku Black (FS10-04) [Fusion World]",
     "ref_price": 44.0,
     "set": "Expansion 6163",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 384342,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6135714285714285,
+    "member_since": "2026-09-06",
+    "name": "Caulifla & Kale // Kefla, Soul Overflowing",
+    "ref_price": 37.53,
+    "set": "Expansion 2547",
     "variant_key": "foil"
   }
 ]

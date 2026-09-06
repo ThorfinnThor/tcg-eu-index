@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-05",
+  "generated_for": "2026-09-06",
   "index_code": "RBEU500",
   "rebalances": [
     {
@@ -2471,6 +2471,58 @@
       "methodology_version": "1.4.0",
       "retained_count": 391,
       "selection_snapshot_sha256": "d48d9ec911a5c3f542dedd9fbc8e263dd5f54a600b957fd05f5c4389e2fa22a2"
+    },
+    {
+      "active_count": 398,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 891440,
+          "reason": "entrant selected at reference-price rank 250",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 891438,
+          "reason": "entrant selected at reference-price rank 258",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 891437,
+          "reason": "entrant selected at reference-price rank 268",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 891436,
+          "reason": "entrant selected at reference-price rank 300",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 891441,
+          "reason": "entrant selected at reference-price rank 316",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 891439,
+          "reason": "entrant selected at reference-price rank 328",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 884188,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-06",
+      "eligible_count": 398,
+      "methodology_version": "1.4.0",
+      "retained_count": 392,
+      "selection_snapshot_sha256": "45e34ce215fc2c3c8f4263dadfa25760889c26edc416adcecbb7273e03f6d8b2"
     }
   ],
   "schema_version": 1

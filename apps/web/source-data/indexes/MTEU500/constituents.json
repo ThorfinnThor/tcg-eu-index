@@ -3179,13 +3179,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 266983,
     "entry_reason": "entrant selected at reference-price rank 480",
     "liquidity_score": 0.6746835443037975,
     "member_since": "2026-09-01",
     "name": "Force of Will",
     "ref_price": 359.94,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-06",
     "set": "Expansion 80",
     "variant_key": "foil"
   },
@@ -5387,13 +5389,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 868546,
     "entry_reason": "entrant selected at reference-price rank 281",
     "liquidity_score": 0.6857112244460635,
     "member_since": "2026-09-01",
     "name": "Vendilion Clique",
     "ref_price": 616.66,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-06",
     "set": "Expansion 66",
     "variant_key": "foil"
   },
@@ -5563,5 +5567,27 @@
     "ref_price": 384.53,
     "set": "Expansion 4358",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 6846,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6438965884861407,
+    "member_since": "2026-09-06",
+    "name": "Shahrazad",
+    "ref_price": 349.16,
+    "set": "Expansion 4",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 686014,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.7,
+    "member_since": "2026-09-06",
+    "name": "Savannah",
+    "ref_price": 348.5,
+    "set": "Expansion 5199",
+    "variant_key": "nonfoil"
   }
 ]

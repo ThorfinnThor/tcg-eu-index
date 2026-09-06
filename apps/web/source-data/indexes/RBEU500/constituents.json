@@ -3792,13 +3792,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 884188,
     "entry_reason": "entrant selected at reference-price rank 392",
     "liquidity_score": 0.5492610837438424,
     "member_since": "2026-09-01",
     "name": "Daisy!",
     "ref_price": 1.8,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-06",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },
@@ -4386,5 +4388,71 @@
     "ref_price": 2.57,
     "set": "Expansion 6567",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891436,
+    "entry_reason": "entrant selected at reference-price rank 300",
+    "liquidity_score": 0.7235536032594857,
+    "member_since": "2026-09-06",
+    "name": "Fury Rune",
+    "ref_price": 3.93,
+    "set": "Expansion 6567",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891437,
+    "entry_reason": "entrant selected at reference-price rank 268",
+    "liquidity_score": 0.6974790881939384,
+    "member_since": "2026-09-06",
+    "name": "Calm Rune",
+    "ref_price": 4.83,
+    "set": "Expansion 6567",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891438,
+    "entry_reason": "entrant selected at reference-price rank 258",
+    "liquidity_score": 0.6982556352459017,
+    "member_since": "2026-09-06",
+    "name": "Mind Rune",
+    "ref_price": 5.12,
+    "set": "Expansion 6567",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891439,
+    "entry_reason": "entrant selected at reference-price rank 328",
+    "liquidity_score": 0.6672489601901368,
+    "member_since": "2026-09-06",
+    "name": "Body Rune",
+    "ref_price": 3.24,
+    "set": "Expansion 6567",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891440,
+    "entry_reason": "entrant selected at reference-price rank 250",
+    "liquidity_score": 0.6888399273473901,
+    "member_since": "2026-09-06",
+    "name": "Chaos Rune",
+    "ref_price": 5.61,
+    "set": "Expansion 6567",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891441,
+    "entry_reason": "entrant selected at reference-price rank 316",
+    "liquidity_score": 0.6926002778516746,
+    "member_since": "2026-09-06",
+    "name": "Order Rune",
+    "ref_price": 3.65,
+    "set": "Expansion 6567",
+    "variant_key": "nonfoil"
   }
 ]
