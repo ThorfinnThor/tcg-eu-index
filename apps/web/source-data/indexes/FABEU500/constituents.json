@@ -2213,13 +2213,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 700654,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.6954545454545454,
     "member_since": "2026-09-01",
     "name": "Phantasmal Footsteps",
     "ref_price": 56.36,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5252",
     "variant_key": "nonfoil"
   },
@@ -5536,6 +5538,17 @@
     "name": "Phantasmal Footsteps",
     "ref_price": 98.1,
     "set": "Expansion 4484",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 806861,
+    "entry_reason": "entrant selected at reference-price rank 494",
+    "liquidity_score": 0.6608995956873316,
+    "member_since": "2026-09-07",
+    "name": "Kabuto of Imperial Authority",
+    "ref_price": 57.11,
+    "set": "Expansion 5959",
     "variant_key": "nonfoil"
   }
 ]

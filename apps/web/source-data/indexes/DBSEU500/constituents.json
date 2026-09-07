@@ -308,13 +308,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 414724,
     "entry_reason": "entrant selected at reference-price rank 409",
     "liquidity_score": 0.6333333333333333,
     "member_since": "2026-09-01",
     "name": "Dragon Balls, Negative Energy Overflow",
     "ref_price": 50.89,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 2774",
     "variant_key": "nonfoil"
   },
@@ -985,13 +987,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 721589,
     "entry_reason": "entrant selected at reference-price rank 393",
     "liquidity_score": 0.6185185185185185,
     "member_since": "2026-09-01",
     "name": "Ultra Instinct Son Goku, Energy Explosion",
     "ref_price": 52.18,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 4326",
     "variant_key": "foil"
   },
@@ -5567,14 +5571,49 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 384342,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6135714285714285,
     "member_since": "2026-09-06",
     "name": "Caulifla & Kale // Kefla, Soul Overflowing",
     "ref_price": 37.53,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 2547",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 831733,
+    "entry_reason": "entrant selected at reference-price rank 490",
+    "liquidity_score": 0.7127361409441926,
+    "member_since": "2026-09-07",
+    "name": "Energy Marker (Trunks & Bulma - E62) [Fusion World]",
+    "ref_price": 38.71,
+    "set": "Expansion 6171",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 862843,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.7403345201008753,
+    "member_since": "2026-09-07",
+    "name": "Earth-Destroying Blow (FB02-104) [Fusion World]",
+    "ref_price": 37.6,
+    "set": "Expansion 6410",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 876711,
+    "entry_reason": "entrant selected at reference-price rank 479",
+    "liquidity_score": 0.6522222996994007,
+    "member_since": "2026-09-07",
+    "name": "Vegeta (FB09-045) [Fusion World]",
+    "ref_price": 40.08,
+    "set": "Expansion 6502",
     "variant_key": "foil"
   }
 ]

@@ -2716,13 +2716,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 833353,
     "entry_reason": "entrant selected at reference-price rank 94",
     "liquidity_score": 0.66,
     "member_since": "2026-09-01",
     "name": "Ki-Adi-Mundi, We Must Push On",
     "ref_price": 125.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6188",
     "variant_key": "foil"
   },
@@ -3706,13 +3708,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 856304,
     "entry_reason": "entrant selected at reference-price rank 498",
     "liquidity_score": 0.6275690999291283,
     "member_since": "2026-09-01",
     "name": "Condemn",
     "ref_price": 13.0,
+    "removal_reason": "incumbent removed at reference-price rank 521 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6333",
     "variant_key": "foil"
   },
@@ -4564,13 +4568,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 868660,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6579876434245366,
     "member_since": "2026-09-01",
     "name": "Karis Nemik, Freedom is a Pure Idea",
     "ref_price": 12.87,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6472",
     "variant_key": "nonfoil"
   },
@@ -5614,6 +5620,39 @@
     "name": "Stolen AT-Hauler",
     "ref_price": 26.0,
     "set": "Expansion 6074",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 875727,
+    "entry_reason": "entrant selected at reference-price rank 481",
+    "liquidity_score": 0.7268904726371948,
+    "member_since": "2026-09-07",
+    "name": "Latts Razzi, Deadly Whipmaster",
+    "ref_price": 13.43,
+    "set": "Expansion 6451",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 875993,
+    "entry_reason": "entrant selected at reference-price rank 494",
+    "liquidity_score": 0.7093844463032715,
+    "member_since": "2026-09-07",
+    "name": "Latts Razzi, Deadly Whipmaster",
+    "ref_price": 13.08,
+    "set": "Expansion 6452",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 884870,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6470588235294118,
+    "member_since": "2026-09-07",
+    "name": "General Grievous, Crush Them!",
+    "ref_price": 12.81,
+    "set": "Expansion 6532",
     "variant_key": "nonfoil"
   }
 ]

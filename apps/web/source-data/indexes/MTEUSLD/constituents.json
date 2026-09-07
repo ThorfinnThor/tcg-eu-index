@@ -110,13 +110,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 210083,
     "entry_reason": "entrant selected at reference-price rank 55",
     "liquidity_score": 0.6793103448275862,
     "member_since": "2026-09-01",
     "name": "Weatherlight Booster Box",
     "ref_price": 1450.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 18",
     "variant_key": "nonfoil"
   },
@@ -374,13 +376,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 210130,
     "entry_reason": "entrant selected at reference-price rank 78",
     "liquidity_score": 0.5808080808080809,
     "member_since": "2026-09-01",
     "name": "Lorwyn Booster Box",
     "ref_price": 990.0,
+    "removal_reason": "incumbent removed at reference-price rank 108 outside top 100",
+    "removed_at": "2026-09-07",
     "set": "Expansion 84",
     "variant_key": "nonfoil"
   },
@@ -1123,6 +1127,28 @@
     "name": "Renaissance Booster Box",
     "ref_price": 790.0,
     "set": "Expansion 60",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 240180,
+    "entry_reason": "entrant selected at reference-price rank 99",
+    "liquidity_score": 0.7117704402251492,
+    "member_since": "2026-09-07",
+    "name": "Onslaught Full Set",
+    "ref_price": 782.0857142857143,
+    "set": "Expansion 41",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 719684,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6028694902828332,
+    "member_since": "2026-09-07",
+    "name": "Wilds of Eldraine Collector Booster Box",
+    "ref_price": 777.49,
+    "set": "Expansion 5359",
     "variant_key": "nonfoil"
   }
 ]

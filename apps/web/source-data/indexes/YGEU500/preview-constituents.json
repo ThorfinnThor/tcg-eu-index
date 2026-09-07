@@ -2288,13 +2288,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 511360,
     "entry_reason": "entrant selected at reference-price rank 486",
     "liquidity_score": 0.6569858712715856,
     "member_since": "2026-09-01",
     "name": "The Phantom Knights of Torn Scales",
     "ref_price": 85.13,
+    "removal_reason": "incumbent removed at reference-price rank 510 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 3364",
     "variant_key": "nonfoil"
   },
@@ -2310,13 +2312,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 536607,
     "entry_reason": "entrant selected at reference-price rank 480",
     "liquidity_score": 0.6232855601787641,
     "member_since": "2026-09-01",
     "name": "Pot of Prosperity",
     "ref_price": 85.97,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 3540",
     "variant_key": "nonfoil"
   },
@@ -2530,13 +2534,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 578098,
     "entry_reason": "entrant selected at reference-price rank 433",
     "liquidity_score": 0.5421052631578948,
     "member_since": "2026-09-01",
     "name": "Gaia The Fierce Knight",
     "ref_price": 95.0,
+    "removal_reason": "incumbent removed at reference-price rank 773 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 1064",
     "variant_key": "nonfoil"
   },
@@ -2772,13 +2778,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 584306,
     "entry_reason": "entrant selected at reference-price rank 491",
     "liquidity_score": 0.574275,
     "member_since": "2026-09-01",
     "name": "Gearfried the Iron Knight",
     "ref_price": 84.87,
+    "removal_reason": "incumbent removed at reference-price rank 587 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 4462",
     "variant_key": "nonfoil"
   },
@@ -3863,13 +3871,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 726765,
     "entry_reason": "entrant selected at reference-price rank 498",
     "liquidity_score": 0.5555864369093941,
     "member_since": "2026-09-01",
     "name": "Exodia the Forbidden One",
     "ref_price": 83.93,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 4892",
     "variant_key": "nonfoil"
   },
@@ -5370,13 +5380,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 885484,
     "entry_reason": "entrant selected at reference-price rank 490",
     "liquidity_score": 0.6484780994803266,
     "member_since": "2026-09-01",
     "name": "Dominus Spark",
     "ref_price": 84.9,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6450",
     "variant_key": "nonfoil"
   },
@@ -5510,6 +5522,72 @@
     "name": "Magician of Faith",
     "ref_price": 124.99,
     "set": "Expansion 4462",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 102175,
+    "entry_reason": "entrant selected at reference-price rank 371",
+    "liquidity_score": 0.5636787538534956,
+    "member_since": "2026-09-07",
+    "name": "Black Luster Soldier - Envoy of the Beginning",
+    "ref_price": 106.03,
+    "set": "Expansion 1028",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 105124,
+    "entry_reason": "entrant selected at reference-price rank 491",
+    "liquidity_score": 0.550997150997151,
+    "member_since": "2026-09-07",
+    "name": "Rainbow Dragon",
+    "ref_price": 84.64,
+    "set": "Expansion 1037",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 109896,
+    "entry_reason": "entrant selected at reference-price rank 459",
+    "liquidity_score": 0.538345944793776,
+    "member_since": "2026-09-07",
+    "name": "Archlord Kristya",
+    "ref_price": 90.76,
+    "set": "Expansion 1178",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 247112,
+    "entry_reason": "entrant selected at reference-price rank 489",
+    "liquidity_score": 0.6196076085656179,
+    "member_since": "2026-09-07",
+    "name": "Dark Magician",
+    "ref_price": 84.69,
+    "set": "Expansion 1066",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 682574,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-07",
+    "name": "Millennium-Eyes Restrict",
+    "ref_price": 83.66,
+    "set": "Expansion 5086",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 873139,
+    "entry_reason": "entrant selected at reference-price rank 496",
+    "liquidity_score": 0.7418064899477474,
+    "member_since": "2026-09-07",
+    "name": "Dark Magician of Destruction",
+    "ref_price": 84.04,
+    "set": "Expansion 6433",
     "variant_key": "nonfoil"
   }
 ]

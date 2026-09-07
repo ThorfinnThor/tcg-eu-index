@@ -235,13 +235,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847203,
     "entry_reason": "entrant selected at reference-price rank 220",
     "liquidity_score": 0.547672778561354,
     "member_since": "2026-09-01",
     "name": "Leona, Zealot",
     "ref_price": 6.98,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -257,13 +259,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847205,
     "entry_reason": "entrant selected at reference-price rank 182",
     "liquidity_score": 0.698674618952949,
     "member_since": "2026-09-01",
     "name": "Seal of Focus",
     "ref_price": 15.08,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "nonfoil"
   },
@@ -378,24 +382,28 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847268,
     "entry_reason": "entrant selected at reference-price rank 253",
     "liquidity_score": 0.5884169884169884,
     "member_since": "2026-09-01",
     "name": "Teemo, Strategist",
     "ref_price": 5.18,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847270,
     "entry_reason": "entrant selected at reference-price rank 203",
     "liquidity_score": 0.5418947368421053,
     "member_since": "2026-09-01",
     "name": "Teemo, Strategist",
     "ref_price": 9.26,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -444,13 +452,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847310,
     "entry_reason": "entrant selected at reference-price rank 376",
     "liquidity_score": 0.5754716981132075,
     "member_since": "2026-09-01",
     "name": "Lee Sin, Centered",
     "ref_price": 2.11,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -829,13 +839,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847435,
     "entry_reason": "entrant selected at reference-price rank 164",
     "liquidity_score": 0.6389631213254944,
     "member_since": "2026-09-01",
     "name": "Seal of Unity",
     "ref_price": 18.43,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -928,13 +940,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847464,
     "entry_reason": "entrant selected at reference-price rank 268",
     "liquidity_score": 0.6223628691983123,
     "member_since": "2026-09-01",
     "name": "Guerilla Warfare",
     "ref_price": 4.71,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -1412,13 +1426,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 855686,
     "entry_reason": "entrant selected at reference-price rank 86",
     "liquidity_score": 0.5622,
     "member_since": "2026-09-01",
     "name": "Teemo, Swift Scout",
     "ref_price": 65.33,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6322",
     "variant_key": "nonfoil"
   },
@@ -1511,13 +1527,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 856106,
     "entry_reason": "entrant selected at reference-price rank 242",
     "liquidity_score": 0.6340033500837521,
     "member_since": "2026-09-01",
     "name": "Stacked Deck",
     "ref_price": 5.84,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6322",
     "variant_key": "nonfoil"
   },
@@ -1788,24 +1806,28 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866754,
     "entry_reason": "entrant selected at reference-price rank 207",
     "liquidity_score": 0.5544857768052517,
     "member_since": "2026-09-01",
     "name": "Rek'Sai, Breacher",
     "ref_price": 8.78,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866755,
     "entry_reason": "entrant selected at reference-price rank 202",
     "liquidity_score": 0.632183908045977,
     "member_since": "2026-09-01",
     "name": "Rek'Sai, Breacher",
     "ref_price": 10.1,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -1854,13 +1876,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866785,
     "entry_reason": "entrant selected at reference-price rank 168",
     "liquidity_score": 0.6378910776361529,
     "member_since": "2026-09-01",
     "name": "Irelia, Fervent",
     "ref_price": 17.59,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -1887,13 +1911,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866789,
     "entry_reason": "entrant selected at reference-price rank 165",
     "liquidity_score": 0.5840824960338445,
     "member_since": "2026-09-01",
     "name": "Svellsongur",
     "ref_price": 17.83,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -1942,13 +1968,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866821,
     "entry_reason": "entrant selected at reference-price rank 311",
     "liquidity_score": 0.5513513513513514,
     "member_since": "2026-09-01",
     "name": "Renata Glasc, Mastermind",
     "ref_price": 3.59,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -2129,13 +2157,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866892,
     "entry_reason": "entrant selected at reference-price rank 187",
     "liquidity_score": 0.6091405184174625,
     "member_since": "2026-09-01",
     "name": "Ezreal, Prodigy",
     "ref_price": 14.03,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -2184,13 +2214,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866923,
     "entry_reason": "entrant selected at reference-price rank 217",
     "liquidity_score": 0.5788489208633094,
     "member_since": "2026-09-01",
     "name": "Azir, Sovereign",
     "ref_price": 7.09,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -2228,13 +2260,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866933,
     "entry_reason": "entrant selected at reference-price rank 239",
     "liquidity_score": 0.5877192982456141,
     "member_since": "2026-09-01",
     "name": "Spinning Axe",
     "ref_price": 5.96,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -2272,13 +2306,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866945,
     "entry_reason": "entrant selected at reference-price rank 161",
     "liquidity_score": 0.6870576339737108,
     "member_since": "2026-09-01",
     "name": "Arise!",
     "ref_price": 20.07,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -2426,24 +2462,28 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866980,
     "entry_reason": "entrant selected at reference-price rank 99",
     "liquidity_score": 0.6015254237288136,
     "member_since": "2026-09-01",
     "name": "Yone, Blademaster",
     "ref_price": 52.75,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866981,
     "entry_reason": "entrant selected at reference-price rank 81",
     "liquidity_score": 0.6333333333333333,
     "member_since": "2026-09-01",
     "name": "Seal of Discord",
     "ref_price": 74.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -2514,13 +2554,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866988,
     "entry_reason": "entrant selected at reference-price rank 129",
     "liquidity_score": 0.5890621519269326,
     "member_since": "2026-09-01",
     "name": "Lucian, Purifier",
     "ref_price": 33.93,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "nonfoil"
   },
@@ -2624,13 +2666,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866998,
     "entry_reason": "entrant selected at reference-price rank 93",
     "liquidity_score": 0.6048492791612058,
     "member_since": "2026-09-01",
     "name": "Fiora, Grand Duelist",
     "ref_price": 60.48,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -2877,13 +2921,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 871898,
     "entry_reason": "entrant selected at reference-price rank 272",
     "liquidity_score": 0.6251046025104603,
     "member_since": "2026-09-01",
     "name": "Order Rune",
     "ref_price": 4.56,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },
@@ -2965,13 +3011,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 874112,
     "entry_reason": "entrant selected at reference-price rank 259",
     "liquidity_score": 0.6503006012024048,
     "member_since": "2026-09-01",
     "name": "Order Rune",
     "ref_price": 4.99,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6483",
     "variant_key": "foil"
   },
@@ -3229,13 +3277,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 883988,
     "entry_reason": "entrant selected at reference-price rank 175",
     "liquidity_score": 0.6150086256469235,
     "member_since": "2026-09-01",
     "name": "Pyke, Dockside Butcher",
     "ref_price": 16.11,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },
@@ -3638,13 +3688,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 884136,
     "entry_reason": "entrant selected at reference-price rank 183",
     "liquidity_score": 0.6479488903833222,
     "member_since": "2026-09-01",
     "name": "Vex, Apathetic",
     "ref_price": 15.07,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },
@@ -3915,13 +3967,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 884219,
     "entry_reason": "entrant selected at reference-price rank 102",
     "liquidity_score": 0.6685274910469771,
     "member_since": "2026-09-01",
     "name": "Rengar, Pridestalker",
     "ref_price": 50.46,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },
@@ -3937,13 +3991,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 884221,
     "entry_reason": "entrant selected at reference-price rank 84",
     "liquidity_score": 0.6595294117647059,
     "member_since": "2026-09-01",
     "name": "Vi, Piltover Enforcer",
     "ref_price": 68.73,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6491",
     "variant_key": "nonfoil"
   },
@@ -4168,13 +4224,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 885242,
     "entry_reason": "entrant selected at reference-price rank 213",
     "liquidity_score": 0.5963855421686747,
     "member_since": "2026-09-01",
     "name": "Chaos Rune",
     "ref_price": 7.67,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6491",
     "variant_key": "foil"
   },
@@ -4280,13 +4338,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 890058,
     "entry_reason": "entrant selected at reference-price rank 162",
     "liquidity_score": 0.6998001998001998,
     "member_since": "2026-09-01",
     "name": "Rengar, Trophy Hunter",
     "ref_price": 19.93,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6567",
     "variant_key": "nonfoil"
   },
@@ -4368,13 +4428,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 858989,
     "entry_reason": "entrant selected at reference-price rank 116",
     "liquidity_score": 0.5541955555555556,
     "member_since": "2026-09-05",
     "name": "Warwick, Hunter",
     "ref_price": 45.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6322",
     "variant_key": "nonfoil"
   },
@@ -4454,5 +4516,346 @@
     "ref_price": 3.65,
     "set": "Expansion 6567",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847203,
+    "entry_reason": "entrant selected at reference-price rank 225",
+    "liquidity_score": 0.555808133472367,
+    "member_since": "2026-09-07",
+    "name": "Leona, Zealot",
+    "ref_price": 6.86,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847205,
+    "entry_reason": "entrant selected at reference-price rank 181",
+    "liquidity_score": 0.6832736739342662,
+    "member_since": "2026-09-07",
+    "name": "Seal of Focus",
+    "ref_price": 15.31,
+    "set": "Expansion 6286",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847268,
+    "entry_reason": "entrant selected at reference-price rank 265",
+    "liquidity_score": 0.5950207468879668,
+    "member_since": "2026-09-07",
+    "name": "Teemo, Strategist",
+    "ref_price": 4.96,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847270,
+    "entry_reason": "entrant selected at reference-price rank 208",
+    "liquidity_score": 0.5447191011235956,
+    "member_since": "2026-09-07",
+    "name": "Teemo, Strategist",
+    "ref_price": 8.91,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847310,
+    "entry_reason": "entrant selected at reference-price rank 388",
+    "liquidity_score": 0.5759144237405107,
+    "member_since": "2026-09-07",
+    "name": "Lee Sin, Centered",
+    "ref_price": 2.07,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847435,
+    "entry_reason": "entrant selected at reference-price rank 164",
+    "liquidity_score": 0.6390166473093303,
+    "member_since": "2026-09-07",
+    "name": "Seal of Unity",
+    "ref_price": 18.29,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847464,
+    "entry_reason": "entrant selected at reference-price rank 280",
+    "liquidity_score": 0.6410071942446043,
+    "member_since": "2026-09-07",
+    "name": "Guerilla Warfare",
+    "ref_price": 4.41,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 855686,
+    "entry_reason": "entrant selected at reference-price rank 83",
+    "liquidity_score": 0.597103209019948,
+    "member_since": "2026-09-07",
+    "name": "Teemo, Swift Scout",
+    "ref_price": 73.34,
+    "set": "Expansion 6322",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 856106,
+    "entry_reason": "entrant selected at reference-price rank 242",
+    "liquidity_score": 0.6467889908256881,
+    "member_since": "2026-09-07",
+    "name": "Stacked Deck",
+    "ref_price": 5.97,
+    "set": "Expansion 6322",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 858989,
+    "entry_reason": "entrant selected at reference-price rank 116",
+    "liquidity_score": 0.674676351828782,
+    "member_since": "2026-09-07",
+    "name": "Warwick, Hunter",
+    "ref_price": 45.33,
+    "set": "Expansion 6322",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866754,
+    "entry_reason": "entrant selected at reference-price rank 207",
+    "liquidity_score": 0.6046686483650988,
+    "member_since": "2026-09-07",
+    "name": "Rek'Sai, Breacher",
+    "ref_price": 8.93,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866755,
+    "entry_reason": "entrant selected at reference-price rank 202",
+    "liquidity_score": 0.6463414634146342,
+    "member_since": "2026-09-07",
+    "name": "Rek'Sai, Breacher",
+    "ref_price": 10.18,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866785,
+    "entry_reason": "entrant selected at reference-price rank 168",
+    "liquidity_score": 0.6436572139745755,
+    "member_since": "2026-09-07",
+    "name": "Irelia, Fervent",
+    "ref_price": 17.59,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866789,
+    "entry_reason": "entrant selected at reference-price rank 170",
+    "liquidity_score": 0.5844784128790959,
+    "member_since": "2026-09-07",
+    "name": "Svellsongur",
+    "ref_price": 17.1,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866821,
+    "entry_reason": "entrant selected at reference-price rank 318",
+    "liquidity_score": 0.5518575258521639,
+    "member_since": "2026-09-07",
+    "name": "Renata Glasc, Mastermind",
+    "ref_price": 3.59,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866892,
+    "entry_reason": "entrant selected at reference-price rank 186",
+    "liquidity_score": 0.6146522757356685,
+    "member_since": "2026-09-07",
+    "name": "Ezreal, Prodigy",
+    "ref_price": 14.02,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866923,
+    "entry_reason": "entrant selected at reference-price rank 219",
+    "liquidity_score": 0.5831670558267884,
+    "member_since": "2026-09-07",
+    "name": "Azir, Sovereign",
+    "ref_price": 7.11,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866933,
+    "entry_reason": "entrant selected at reference-price rank 246",
+    "liquidity_score": 0.5930566640063847,
+    "member_since": "2026-09-07",
+    "name": "Spinning Axe",
+    "ref_price": 5.83,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866945,
+    "entry_reason": "entrant selected at reference-price rank 154",
+    "liquidity_score": 0.6792166628933666,
+    "member_since": "2026-09-07",
+    "name": "Arise!",
+    "ref_price": 22.29,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866980,
+    "entry_reason": "entrant selected at reference-price rank 103",
+    "liquidity_score": 0.6093226022803487,
+    "member_since": "2026-09-07",
+    "name": "Yone, Blademaster",
+    "ref_price": 52.92,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866981,
+    "entry_reason": "entrant selected at reference-price rank 82",
+    "liquidity_score": 0.6396880681274519,
+    "member_since": "2026-09-07",
+    "name": "Seal of Discord",
+    "ref_price": 74.27,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866988,
+    "entry_reason": "entrant selected at reference-price rank 131",
+    "liquidity_score": 0.6208445098208878,
+    "member_since": "2026-09-07",
+    "name": "Lucian, Purifier",
+    "ref_price": 34.36,
+    "set": "Expansion 6399",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 866998,
+    "entry_reason": "entrant selected at reference-price rank 93",
+    "liquidity_score": 0.6220675185962236,
+    "member_since": "2026-09-07",
+    "name": "Fiora, Grand Duelist",
+    "ref_price": 60.46,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 871898,
+    "entry_reason": "entrant selected at reference-price rank 276",
+    "liquidity_score": 0.6466146756469338,
+    "member_since": "2026-09-07",
+    "name": "Order Rune",
+    "ref_price": 4.53,
+    "set": "Expansion 6399",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 874112,
+    "entry_reason": "entrant selected at reference-price rank 269",
+    "liquidity_score": 0.6471861471861472,
+    "member_since": "2026-09-07",
+    "name": "Order Rune",
+    "ref_price": 4.88,
+    "set": "Expansion 6483",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 883988,
+    "entry_reason": "entrant selected at reference-price rank 174",
+    "liquidity_score": 0.6740726935935666,
+    "member_since": "2026-09-07",
+    "name": "Pyke, Dockside Butcher",
+    "ref_price": 16.11,
+    "set": "Expansion 6491",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 884136,
+    "entry_reason": "entrant selected at reference-price rank 182",
+    "liquidity_score": 0.6954397403707668,
+    "member_since": "2026-09-07",
+    "name": "Vex, Apathetic",
+    "ref_price": 15.24,
+    "set": "Expansion 6491",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 884219,
+    "entry_reason": "entrant selected at reference-price rank 98",
+    "liquidity_score": 0.7201361841497722,
+    "member_since": "2026-09-07",
+    "name": "Rengar, Pridestalker",
+    "ref_price": 55.42,
+    "set": "Expansion 6491",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 884221,
+    "entry_reason": "entrant selected at reference-price rank 85",
+    "liquidity_score": 0.6472824542775307,
+    "member_since": "2026-09-07",
+    "name": "Vi, Piltover Enforcer",
+    "ref_price": 69.56,
+    "set": "Expansion 6491",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 885242,
+    "entry_reason": "entrant selected at reference-price rank 215",
+    "liquidity_score": 0.6727726256906816,
+    "member_since": "2026-09-07",
+    "name": "Chaos Rune",
+    "ref_price": 7.61,
+    "set": "Expansion 6491",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 890058,
+    "entry_reason": "entrant selected at reference-price rank 159",
+    "liquidity_score": 0.674044827311159,
+    "member_since": "2026-09-07",
+    "name": "Rengar, Trophy Hunter",
+    "ref_price": 21.16,
+    "set": "Expansion 6567",
+    "variant_key": "foil"
   }
 ]

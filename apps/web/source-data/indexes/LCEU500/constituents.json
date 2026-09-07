@@ -726,13 +726,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 745467,
     "entry_reason": "entrant selected at reference-price rank 486",
     "liquidity_score": 0.589544235924933,
     "member_since": "2026-09-01",
     "name": "Namaari - Morning Mist",
     "ref_price": 4.65,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5502",
     "variant_key": "foil"
   },
@@ -2224,13 +2226,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 801854,
     "entry_reason": "entrant selected at reference-price rank 498",
     "liquidity_score": 0.5093167701863354,
     "member_since": "2026-09-01",
     "name": "Stitch - Alien Buccaneer",
     "ref_price": 4.44,
+    "removal_reason": "incumbent removed at reference-price rank 630 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5844",
     "variant_key": "foil"
   },
@@ -2257,13 +2261,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 803384,
     "entry_reason": "entrant selected at reference-price rank 494",
     "liquidity_score": 0.5040650406504065,
     "member_since": "2026-09-01",
     "name": "Befuddle",
     "ref_price": 4.46,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5434",
     "variant_key": "foil"
   },
@@ -2301,13 +2307,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 814108,
     "entry_reason": "entrant selected at reference-price rank 497",
     "liquidity_score": 0.6188524590163934,
     "member_since": "2026-09-01",
     "name": "The Queen - Jealous Beauty",
     "ref_price": 4.44,
+    "removal_reason": "incumbent removed at reference-price rank 504 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6013",
     "variant_key": "foil"
   },
@@ -2642,13 +2650,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 826347,
     "entry_reason": "entrant selected at reference-price rank 496",
     "liquidity_score": 0.5375335120643432,
     "member_since": "2026-09-01",
     "name": "Lady - Family Dog",
     "ref_price": 4.45,
+    "removal_reason": "incumbent removed at reference-price rank 526 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6087",
     "variant_key": "foil"
   },
@@ -3203,13 +3213,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 843982,
     "entry_reason": "entrant selected at reference-price rank 284",
     "liquidity_score": 0.6225490196078431,
     "member_since": "2026-09-01",
     "name": "Circle of Life",
     "ref_price": 23.13,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6170",
     "variant_key": "nonfoil"
   },
@@ -5007,13 +5019,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 885608,
     "entry_reason": "entrant selected at reference-price rank 469",
     "liquidity_score": 0.6261603375527426,
     "member_since": "2026-09-01",
     "name": "You've Got a Friend in Me",
     "ref_price": 4.91,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6551",
     "variant_key": "foil"
   },
@@ -5073,13 +5087,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 885708,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.5863930885529158,
     "member_since": "2026-09-01",
     "name": "Mr. Incredible - Super Strong",
     "ref_price": 4.43,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6551",
     "variant_key": "foil"
   },
@@ -5510,6 +5526,94 @@
     "name": "Morph - Space Goo",
     "ref_price": 54.89,
     "set": "Expansion 5567",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 729356,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.5891315900362062,
+    "member_since": "2026-09-07",
+    "name": "Fishbone Quill",
+    "ref_price": 4.53,
+    "set": "Expansion 5434",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 771376,
+    "entry_reason": "entrant selected at reference-price rank 494",
+    "liquidity_score": 0.5104968509447166,
+    "member_since": "2026-09-07",
+    "name": "Minnie Mouse - Wild-Eyed Diver",
+    "ref_price": 4.59,
+    "set": "Expansion 5764",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 814107,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6967973081348723,
+    "member_since": "2026-09-07",
+    "name": "Donald Duck - Flustered Sorcerer",
+    "ref_price": 4.46,
+    "set": "Expansion 6013",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 843982,
+    "entry_reason": "entrant selected at reference-price rank 291",
+    "liquidity_score": 0.68674172661581,
+    "member_since": "2026-09-07",
+    "name": "Circle of Life",
+    "ref_price": 22.9,
+    "set": "Expansion 6170",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891468,
+    "entry_reason": "entrant selected at reference-price rank 238",
+    "liquidity_score": 0.645475705557172,
+    "member_since": "2026-09-07",
+    "name": "Maleficent - Monstrous Dragon",
+    "ref_price": 36.33,
+    "set": "Expansion 6208",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891469,
+    "entry_reason": "entrant selected at reference-price rank 32",
+    "liquidity_score": 0.65,
+    "member_since": "2026-09-07",
+    "name": "Maleficent - Monstrous Dragon",
+    "ref_price": 300.0,
+    "set": "Expansion 6208",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891470,
+    "entry_reason": "entrant selected at reference-price rank 285",
+    "liquidity_score": 0.6266233766233766,
+    "member_since": "2026-09-07",
+    "name": "Woody - Helping a Friend",
+    "ref_price": 23.62,
+    "set": "Expansion 6208",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891472,
+    "entry_reason": "entrant selected at reference-price rank 223",
+    "liquidity_score": 0.6561175666438824,
+    "member_since": "2026-09-07",
+    "name": "Elsa - Exploring the Unknown",
+    "ref_price": 40.55,
+    "set": "Expansion 6208",
     "variant_key": "foil"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-06",
+  "generated_for": "2026-09-07",
   "index_code": "MTEU500",
   "rebalances": [
     {
@@ -3146,6 +3146,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 498,
       "selection_snapshot_sha256": "692dde0c0251db159be4e24fa88f237f0da067c8c8141031b0f9882523aa558b"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 685227,
+          "reason": "entrant selected at reference-price rank 495",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 686014,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-07",
+      "eligible_count": 30927,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "9a61f262a58e612827823765210673cdd048d3d3c19ee7d0a16624f19849177c"
     }
   ],
   "schema_version": 1

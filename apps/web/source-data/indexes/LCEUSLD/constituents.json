@@ -275,13 +275,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 761839,
     "entry_reason": "entrant selected at reference-price rank 99",
     "liquidity_score": 0.5663790242283439,
     "member_since": "2026-09-01",
     "name": "Illumineer's Quest: Deep Trouble",
     "ref_price": 30.13,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5764",
     "variant_key": "nonfoil"
   },
@@ -1097,6 +1099,17 @@
     "name": "Attack of the Vine! 4 Booster Box Case",
     "ref_price": 601.81,
     "set": "Expansion 6586",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 891475,
+    "entry_reason": "entrant selected at reference-price rank 81",
+    "liquidity_score": 0.6564245810055866,
+    "member_since": "2026-09-07",
+    "name": "Elsa - Exploring the Unknown and Stitch - Carefree Snowboarder Pack",
+    "ref_price": 44.75,
+    "set": "Expansion 6208",
     "variant_key": "nonfoil"
   }
 ]

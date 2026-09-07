@@ -1452,13 +1452,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 780220,
     "entry_reason": "entrant selected at reference-price rank 492",
     "liquidity_score": 0.6454696591853699,
     "member_since": "2026-09-01",
     "name": "Monkey.D.Luffy (P-080)",
     "ref_price": 164.6,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5230",
     "variant_key": "nonfoil"
   },
@@ -3267,13 +3269,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 829837,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.6868066682575938,
     "member_since": "2026-09-01",
     "name": "Nami (OP09-050)",
     "ref_price": 159.22,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5510",
     "variant_key": "nonfoil"
   },
@@ -5497,6 +5501,28 @@
     "name": "Portgas.D.Ace (ST15-005)",
     "ref_price": 187.01,
     "set": "Expansion 6457",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 815153,
+    "entry_reason": "entrant selected at reference-price rank 468",
+    "liquidity_score": 0.6738493341806734,
+    "member_since": "2026-09-07",
+    "name": "Roronoa Zoro (OP06-118)",
+    "ref_price": 176.93,
+    "set": "Expansion 5267",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 852364,
+    "entry_reason": "entrant selected at reference-price rank 493",
+    "liquidity_score": 0.6342171691259466,
+    "member_since": "2026-09-07",
+    "name": "Shanks (OP06-007)",
+    "ref_price": 164.1,
+    "set": "Expansion 6242",
     "variant_key": "nonfoil"
   }
 ]

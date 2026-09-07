@@ -44,13 +44,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 288632,
     "entry_reason": "entrant selected at reference-price rank 381",
     "liquidity_score": 0.5545970735968552,
     "member_since": "2026-09-01",
     "name": "Mew [Clairvoyance | Psychic]",
     "ref_price": 332.14,
+    "removal_reason": "incumbent removed at reference-price rank 1406 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 1612",
     "variant_key": "nonfoil"
   },
@@ -132,13 +134,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 367141,
     "entry_reason": "entrant selected at reference-price rank 415",
     "liquidity_score": 0.5425849831901383,
     "member_since": "2026-09-01",
     "name": "Gengar & Mimikyu GX [Poltergeist | Horror House GX]",
     "ref_price": 304.03,
+    "removal_reason": "incumbent removed at reference-price rank 574 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 2407",
     "variant_key": "nonfoil"
   },
@@ -198,13 +202,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 369469,
     "entry_reason": "entrant selected at reference-price rank 462",
     "liquidity_score": 0.559340494253737,
     "member_since": "2026-09-01",
     "name": "Eevee & Snorlax GX [Cheer Up | Dump Truck Press | Megaton Friends GX]",
     "ref_price": 279.31,
+    "removal_reason": "incumbent removed at reference-price rank 587 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 1757",
     "variant_key": "nonfoil"
   },
@@ -231,13 +237,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 388892,
     "entry_reason": "entrant selected at reference-price rank 493",
     "liquidity_score": 0.5881703189025477,
     "member_since": "2026-09-01",
     "name": "Raichu & Alolan Raichu GX [Tandem Shock | Lightning Ride GX]",
     "ref_price": 269.77,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 2487",
     "variant_key": "nonfoil"
   },
@@ -330,13 +338,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 449108,
     "entry_reason": "entrant selected at reference-price rank 483",
     "liquidity_score": 0.5472212132219397,
     "member_since": "2026-09-01",
     "name": "Umbreon & Darkrai GX [Black Lance | Dark Moon GX]",
     "ref_price": 272.94,
+    "removal_reason": "incumbent removed at reference-price rank 515 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 1757",
     "variant_key": "nonfoil"
   },
@@ -4690,13 +4700,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 794611,
     "entry_reason": "entrant selected at reference-price rank 488",
     "liquidity_score": 0.625881220379147,
     "member_since": "2026-09-01",
     "name": "Pikachu ex [Resolute Heart | Topaz Bolt]",
     "ref_price": 271.0,
+    "removal_reason": "incumbent removed at reference-price rank 533 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 5879",
     "variant_key": "nonfoil"
   },
@@ -5350,13 +5362,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 869892,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6025040269439157,
     "member_since": "2026-09-01",
     "name": "Team Rocket's Mewtwo ex [Power Saver | Erasure Ball]",
     "ref_price": 267.62,
+    "removal_reason": "incumbent removed at reference-price rank 531 outside top 500",
+    "removed_at": "2026-09-07",
     "set": "Expansion 6395",
     "variant_key": "nonfoil"
   },
@@ -5537,5 +5551,82 @@
     "ref_price": 381.4,
     "set": "Expansion 5402",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 362170,
+    "entry_reason": "entrant selected at reference-price rank 491",
+    "liquidity_score": 0.5321433501390249,
+    "member_since": "2026-09-07",
+    "name": "Rayquaza GX [Stormy Winds | Dragon Break | Tempest GX]",
+    "ref_price": 268.9,
+    "set": "Expansion 2320",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 554180,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6156879929886065,
+    "member_since": "2026-09-07",
+    "name": "Pitch's Pikachu [Pika Shoot]",
+    "ref_price": 265.91,
+    "set": "Expansion 4159",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 554579,
+    "entry_reason": "entrant selected at reference-price rank 465",
+    "liquidity_score": 0.5526963943064983,
+    "member_since": "2026-09-07",
+    "name": "Rocket's Suicune [Quick Stream]",
+    "ref_price": 277.96,
+    "set": "Expansion 4168",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 560859,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.5947617794156357,
+    "member_since": "2026-09-07",
+    "name": "Shadow Rider Calyrex VMAX [Underworld Door | Max Geist]",
+    "ref_price": 267.31,
+    "set": "Expansion 4172",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 574263,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6220632044927374,
+    "member_since": "2026-09-07",
+    "name": "Leafeon VMAX [Grass Knot | Max Leaf]",
+    "ref_price": 267.05,
+    "set": "Expansion 4328",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 824122,
+    "entry_reason": "entrant selected at reference-price rank 483",
+    "liquidity_score": 0.6279747463167269,
+    "member_since": "2026-09-07",
+    "name": "Ditto [Let's Swim Together | Splup]",
+    "ref_price": 272.65,
+    "set": "Expansion 5212",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 836117,
+    "entry_reason": "entrant selected at reference-price rank 416",
+    "liquidity_score": 0.583139341536415,
+    "member_since": "2026-09-07",
+    "name": "Seismitoad [Round | Hyper Voice | SV]",
+    "ref_price": 301.93,
+    "set": "Expansion 6134",
+    "variant_key": "nonfoil"
   }
 ]
