@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "RBEU500",
   "rebalances": [
     {
@@ -2905,6 +2905,85 @@
       "methodology_version": "1.4.0",
       "retained_count": 367,
       "selection_snapshot_sha256": "ffa602fb9ad3f57c20ba8f6840d4c230e85fbff505ede34a3e7a43371170676b"
+    },
+    {
+      "active_count": 398,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 847271,
+          "reason": "entrant selected at reference-price rank 128",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 874129,
+          "reason": "entrant selected at reference-price rank 153",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 883988,
+          "reason": "entrant selected at reference-price rank 174",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 847199,
+          "reason": "entrant selected at reference-price rank 226",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 847160,
+          "reason": "entrant selected at reference-price rank 337",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 847160,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 847199,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 847271,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 874129,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 883988,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-09-08",
+      "eligible_count": 398,
+      "methodology_version": "1.4.0",
+      "retained_count": 393,
+      "selection_snapshot_sha256": "3774c26a00c932d608def508658fa938ea382441daa5219e56450e4082354e7f"
+    },
+    {
+      "active_count": 398,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 398,
+      "methodology_version": "1.4.0",
+      "retained_count": 398,
+      "selection_snapshot_sha256": "d8ef55d5d45a815f374f4e5fcd201a0ae39377a1735bc0138f95dec8bb1b7fae"
     }
   ],
   "schema_version": 1

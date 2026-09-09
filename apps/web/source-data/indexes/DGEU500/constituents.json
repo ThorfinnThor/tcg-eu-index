@@ -5554,14 +5554,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 873686,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.712565542556091,
     "member_since": "2026-09-07",
     "name": "ShineGreymon: Ruin Mode (EX4-074)",
     "ref_price": 15.61,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 812058,
+    "entry_reason": "entrant selected at reference-price rank 479",
+    "liquidity_score": 0.6804511278195489,
+    "member_since": "2026-09-08",
+    "name": "WarGreymon (BT17-015)",
+    "ref_price": 16.54,
+    "set": "Expansion 5010",
     "variant_key": "nonfoil"
   }
 ]

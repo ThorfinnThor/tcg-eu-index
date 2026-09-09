@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "SWUEUSLD",
   "rebalances": [
     {
@@ -553,6 +553,37 @@
       "methodology_version": "1.4.0",
       "retained_count": 81,
       "selection_snapshot_sha256": "bfd39ab39bdde5ab1e7dde7697e93a8eaf912b2aff0232a8ef7508d65639fa73"
+    },
+    {
+      "active_count": 81,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 892053,
+          "reason": "entrant selected at reference-price rank 57",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 796170,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-08",
+      "eligible_count": 81,
+      "methodology_version": "1.4.0",
+      "retained_count": 80,
+      "selection_snapshot_sha256": "b68fc81457f8dfcf20102f19cc68da6d67e7f1c797fcbb88575c31719141989c"
+    },
+    {
+      "active_count": 81,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 81,
+      "methodology_version": "1.4.0",
+      "retained_count": 81,
+      "selection_snapshot_sha256": "5afb82bdee4c7e950dd8919d6b2a1f49d82b43fcf9d886fb333f23b1ad5a0762"
     }
   ],
   "schema_version": 1

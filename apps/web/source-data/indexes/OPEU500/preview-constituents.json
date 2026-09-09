@@ -3304,13 +3304,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 830372,
     "entry_reason": "entrant selected at reference-price rank 156",
     "liquidity_score": 0.6828582857142858,
     "member_since": "2026-09-01",
     "name": "Marshall.D.Teach (OP09-093)",
     "ref_price": 764.16,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6157",
     "variant_key": "nonfoil"
   },
@@ -5523,6 +5525,30 @@
     "name": "Shanks (OP06-007)",
     "ref_price": 164.1,
     "set": "Expansion 6242",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "removed",
+    "cm_product_id": 837871,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6658291457286433,
+    "member_since": "2026-09-08",
+    "name": "Koby (OP11-119)",
+    "ref_price": 159.38,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-09",
+    "set": "Expansion 5598",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892386,
+    "entry_reason": "entrant selected at reference-price rank 445",
+    "liquidity_score": 0.5828092243186582,
+    "member_since": "2026-09-09",
+    "name": "Koby (OP16-064)",
+    "ref_price": 191.04,
+    "set": "Expansion 6457",
     "variant_key": "nonfoil"
   }
 ]

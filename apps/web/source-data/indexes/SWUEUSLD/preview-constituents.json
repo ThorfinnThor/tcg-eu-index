@@ -242,13 +242,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 796170,
     "entry_reason": "entrant selected at reference-price rank 71",
     "liquidity_score": 0.5712857142857143,
     "member_since": "2026-09-01",
     "name": "Twilight of the Republic: Uncommon Set",
     "ref_price": 14.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 5888",
     "variant_key": "nonfoil"
   },
@@ -888,6 +890,17 @@
     "name": "2026 Convention Exclusive",
     "ref_price": 125.0,
     "set": "Expansion 5626",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892053,
+    "entry_reason": "entrant selected at reference-price rank 57",
+    "liquidity_score": 0.5127282789153292,
+    "member_since": "2026-09-08",
+    "name": "Season 1 Regional Qualifier 2026 Black Promo Booster",
+    "ref_price": 18.07,
+    "set": "Expansion 6472",
     "variant_key": "nonfoil"
   }
 ]

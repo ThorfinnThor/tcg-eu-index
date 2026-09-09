@@ -11,13 +11,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757434,
     "entry_reason": "entrant selected at reference-price rank 167",
     "liquidity_score": 0.6692307692307693,
     "member_since": "2026-09-01",
     "name": "Director Krennic, Aspiring to Authority",
     "ref_price": 77.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -257,13 +259,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757545,
     "entry_reason": "entrant selected at reference-price rank 445",
     "liquidity_score": 0.6830018083182641,
     "member_since": "2026-09-01",
     "name": "Red Three, Unstoppable",
     "ref_price": 15.2,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -279,13 +283,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757554,
     "entry_reason": "entrant selected at reference-price rank 443",
     "liquidity_score": 0.6337792642140468,
     "member_since": "2026-09-01",
     "name": "Fallen Lightsaber",
     "ref_price": 15.41,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -3224,13 +3230,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 838416,
     "entry_reason": "entrant selected at reference-price rank 296",
     "liquidity_score": 0.6925,
     "member_since": "2026-09-01",
     "name": "The Ghost, Heart of the Family",
     "ref_price": 35.56,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 6101",
     "variant_key": "foil"
   },
@@ -4436,13 +4444,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 868632,
     "entry_reason": "entrant selected at reference-price rank 348",
     "liquidity_score": 0.5619047619047619,
     "member_since": "2026-09-01",
     "name": "Grogu, Mysterious Child",
     "ref_price": 24.14,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6472",
     "variant_key": "foil"
   },
@@ -5653,6 +5663,61 @@
     "name": "General Grievous, Crush Them!",
     "ref_price": 12.81,
     "set": "Expansion 6532",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 868632,
+    "entry_reason": "entrant selected at reference-price rank 391",
+    "liquidity_score": 0.6595989632369066,
+    "member_since": "2026-09-08",
+    "name": "Grogu, Mysterious Child",
+    "ref_price": 19.15,
+    "set": "Expansion 6472",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 755226,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.6548205489092189,
+    "member_since": "2026-09-09",
+    "name": "Darth Vader, Commanding the First Legion",
+    "ref_price": 12.69,
+    "set": "Expansion 5618",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 757503,
+    "entry_reason": "entrant selected at reference-price rank 497",
+    "liquidity_score": 0.6226851851851851,
+    "member_since": "2026-09-09",
+    "name": "Jabba the Hutt, Cunning Daimyo",
+    "ref_price": 12.72,
+    "set": "Expansion 5638",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 857131,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6870907390084191,
+    "member_since": "2026-09-09",
+    "name": "Cad Bane, Impressed Now?",
+    "ref_price": 12.64,
+    "set": "Expansion 6364",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 875837,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.7143259518259518,
+    "member_since": "2026-09-09",
+    "name": "Rey, Skywalker",
+    "ref_price": 12.66,
+    "set": "Expansion 6451",
     "variant_key": "nonfoil"
   }
 ]

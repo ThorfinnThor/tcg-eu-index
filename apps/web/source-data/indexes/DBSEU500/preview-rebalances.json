@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "DBSEU500",
   "rebalances": [
     {
@@ -3180,6 +3180,49 @@
       "methodology_version": "1.4.0",
       "retained_count": 497,
       "selection_snapshot_sha256": "905a8c46c706e01001e1b886a6bfdd7e0f615463499caa62ee8aadbdf45eb540"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 683198,
+          "reason": "entrant selected at reference-price rank 232",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 384342,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 683198,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 883593,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-09-08",
+      "eligible_count": 2808,
+      "methodology_version": "1.4.0",
+      "retained_count": 498,
+      "selection_snapshot_sha256": "c88b6f5e39f6bae23ae5b3b8990a1102df864c2634128894560069ee2e9d52b6"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 2795,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "0b6a518fde1eb73e03011775f950a65395293771cd97d1b3a13463cce78a639d"
     }
   ],
   "schema_version": 1

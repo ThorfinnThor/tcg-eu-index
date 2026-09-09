@@ -699,13 +699,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 683198,
     "entry_reason": "entrant selected at reference-price rank 231",
     "liquidity_score": 0.6633736161582017,
     "member_since": "2026-09-01",
     "name": "Evil Saiyan, Malice Made Flesh",
     "ref_price": 108.14,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 5176",
     "variant_key": "foil"
   },
@@ -5292,13 +5294,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 883593,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.6906214258482654,
     "member_since": "2026-09-01",
     "name": "Son Gohan : SH / Piccolo : SH (FP-076) [Fusion World]",
     "ref_price": 37.79,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 5633",
     "variant_key": "foil"
   },
@@ -5615,5 +5619,27 @@
     "ref_price": 40.08,
     "set": "Expansion 6502",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 384342,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6135714285714285,
+    "member_since": "2026-09-08",
+    "name": "Caulifla & Kale // Kefla, Soul Overflowing",
+    "ref_price": 37.53,
+    "set": "Expansion 2547",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 683198,
+    "entry_reason": "entrant selected at reference-price rank 232",
+    "liquidity_score": 0.7059950738916256,
+    "member_since": "2026-09-08",
+    "name": "Evil Saiyan, Malice Made Flesh",
+    "ref_price": 108.1,
+    "set": "Expansion 5176",
+    "variant_key": "nonfoil"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "MTEU500",
   "rebalances": [
     {
@@ -3168,6 +3168,37 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "9a61f262a58e612827823765210673cdd048d3d3c19ee7d0a16624f19849177c"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-08",
+      "eligible_count": 30894,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "4281432ceddac42ac54d545f022f924249d4d9a0e81faff769ed95c9e340e1aa"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 686014,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 2993,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-09-09",
+      "eligible_count": 30716,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "63a39f89ed1f10e3a9842cb849a335b868a3e53875d1472d1bb81c2b0f64c722"
     }
   ],
   "schema_version": 1

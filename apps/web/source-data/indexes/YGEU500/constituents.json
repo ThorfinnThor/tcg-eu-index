@@ -5569,13 +5569,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 682574,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.5,
     "member_since": "2026-09-07",
     "name": "Millennium-Eyes Restrict",
     "ref_price": 83.66,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-08",
     "set": "Expansion 5086",
     "variant_key": "nonfoil"
   },
@@ -5588,6 +5590,17 @@
     "name": "Dark Magician of Destruction",
     "ref_price": 84.04,
     "set": "Expansion 6433",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 250326,
+    "entry_reason": "entrant selected at reference-price rank 490",
+    "liquidity_score": 0.6202264673178456,
+    "member_since": "2026-09-08",
+    "name": "Test Tiger",
+    "ref_price": 84.7,
+    "set": "Expansion 1021",
     "variant_key": "nonfoil"
   }
 ]

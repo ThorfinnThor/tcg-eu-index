@@ -5564,13 +5564,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 554180,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6156879929886065,
     "member_since": "2026-09-07",
     "name": "Pitch's Pikachu [Pika Shoot]",
     "ref_price": 265.91,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-08",
     "set": "Expansion 4159",
     "variant_key": "nonfoil"
   },
@@ -5627,6 +5629,30 @@
     "name": "Seismitoad [Round | Hyper Voice | SV]",
     "ref_price": 301.93,
     "set": "Expansion 6134",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "removed",
+    "cm_product_id": 829533,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6844439183141937,
+    "member_since": "2026-09-08",
+    "name": "Reshiram ex [Slash | Blazing Burst]",
+    "ref_price": 266.72,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-09",
+    "set": "Expansion 6131",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892632,
+    "entry_reason": "entrant selected at reference-price rank 280",
+    "liquidity_score": 0.6570641816353787,
+    "member_since": "2026-09-09",
+    "name": "Sylveon ex [Magical Charm | Angelite]",
+    "ref_price": 436.27,
+    "set": "Expansion 6595",
     "variant_key": "nonfoil"
   }
 ]

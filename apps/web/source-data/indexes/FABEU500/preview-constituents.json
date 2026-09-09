@@ -814,13 +814,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 602642,
     "entry_reason": "entrant selected at reference-price rank 341",
     "liquidity_score": 0.6733333333333333,
     "member_since": "2026-09-01",
     "name": "Lumina Ascension",
     "ref_price": 80.81,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 4484",
     "variant_key": "nonfoil"
   },
@@ -2123,24 +2125,28 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 695771,
     "entry_reason": "entrant selected at reference-price rank 106",
     "liquidity_score": 0.6333333333333333,
     "member_since": "2026-09-01",
     "name": "Coat of Frost",
     "ref_price": 225.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 695772,
     "entry_reason": "entrant selected at reference-price rank 261",
     "liquidity_score": 0.6272727272727273,
     "member_since": "2026-09-01",
     "name": "Bone Vizier",
     "ref_price": 100.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -2919,13 +2925,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 755402,
     "entry_reason": "entrant selected at reference-price rank 94",
     "liquidity_score": 0.6276595744680851,
     "member_since": "2026-09-01",
     "name": "Aether Ironweave",
     "ref_price": 242.5,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-09",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -5549,6 +5557,50 @@
     "name": "Kabuto of Imperial Authority",
     "ref_price": 57.11,
     "set": "Expansion 5959",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 750740,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6666666666666667,
+    "member_since": "2026-09-08",
+    "name": "Betsy, Skin in the Game",
+    "ref_price": 56.2,
+    "set": "Expansion 5596",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 601040,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-09",
+    "name": "Throttle (Blue)",
+    "ref_price": 56.05,
+    "set": "Expansion 4480",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 602152,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6795333333333333,
+    "member_since": "2026-09-09",
+    "name": "Plasma Barrel Shot",
+    "ref_price": 55.84,
+    "set": "Expansion 4482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 700654,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6954545454545454,
+    "member_since": "2026-09-09",
+    "name": "Phantasmal Footsteps",
+    "ref_price": 55.91,
+    "set": "Expansion 5252",
     "variant_key": "nonfoil"
   }
 ]

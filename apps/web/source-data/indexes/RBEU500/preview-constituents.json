@@ -125,13 +125,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847160,
     "entry_reason": "entrant selected at reference-price rank 315",
     "liquidity_score": 0.5520231213872833,
     "member_since": "2026-09-01",
     "name": "Volibear, Furious",
     "ref_price": 3.48,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6286",
     "variant_key": "foil"
   },
@@ -202,13 +204,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847199,
     "entry_reason": "entrant selected at reference-price rank 225",
     "liquidity_score": 0.6186440677966102,
     "member_since": "2026-09-01",
     "name": "Zhonya's Hourglass",
     "ref_price": 6.74,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6286",
     "variant_key": "nonfoil"
   },
@@ -408,13 +412,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847271,
     "entry_reason": "entrant selected at reference-price rank 127",
     "liquidity_score": 0.6969534050179211,
     "member_since": "2026-09-01",
     "name": "Time Warp",
     "ref_price": 35.11,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6286",
     "variant_key": "nonfoil"
   },
@@ -3112,13 +3118,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 874129,
     "entry_reason": "entrant selected at reference-price rank 151",
     "liquidity_score": 0.6336771122570408,
     "member_since": "2026-09-01",
     "name": "Annie, Dark Child",
     "ref_price": 23.73,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6322",
     "variant_key": "foil"
   },
@@ -4793,13 +4801,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 883988,
     "entry_reason": "entrant selected at reference-price rank 174",
     "liquidity_score": 0.6740726935935666,
     "member_since": "2026-09-07",
     "name": "Pyke, Dockside Butcher",
     "ref_price": 16.11,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6491",
     "variant_key": "foil"
   },
@@ -4857,5 +4867,60 @@
     "ref_price": 21.16,
     "set": "Expansion 6567",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847160,
+    "entry_reason": "entrant selected at reference-price rank 337",
+    "liquidity_score": 0.5550161812297735,
+    "member_since": "2026-09-08",
+    "name": "Volibear, Furious",
+    "ref_price": 3.12,
+    "set": "Expansion 6286",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847199,
+    "entry_reason": "entrant selected at reference-price rank 226",
+    "liquidity_score": 0.651467380845468,
+    "member_since": "2026-09-08",
+    "name": "Zhonya's Hourglass",
+    "ref_price": 6.81,
+    "set": "Expansion 6286",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847271,
+    "entry_reason": "entrant selected at reference-price rank 128",
+    "liquidity_score": 0.7185899364051037,
+    "member_since": "2026-09-08",
+    "name": "Time Warp",
+    "ref_price": 35.39,
+    "set": "Expansion 6286",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 874129,
+    "entry_reason": "entrant selected at reference-price rank 153",
+    "liquidity_score": 0.6424545454545455,
+    "member_since": "2026-09-08",
+    "name": "Annie, Dark Child",
+    "ref_price": 22.6,
+    "set": "Expansion 6322",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 883988,
+    "entry_reason": "entrant selected at reference-price rank 174",
+    "liquidity_score": 0.6584299153383063,
+    "member_since": "2026-09-08",
+    "name": "Pyke, Dockside Butcher",
+    "ref_price": 16.11,
+    "set": "Expansion 6491",
+    "variant_key": "nonfoil"
   }
 ]

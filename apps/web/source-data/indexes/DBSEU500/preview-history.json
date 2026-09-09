@@ -82,5 +82,29 @@
     "rebalance_effective_date": "2026-09-07",
     "value_date": "2026-09-07",
     "whole_market_carried_forward": false
+  },
+  {
+    "calc_version": "1.4.0",
+    "daily_return": 0.0,
+    "index_value": 1002.6984545579071,
+    "n_capped": 0,
+    "n_carried_forward": 499,
+    "n_constituents_active": 499,
+    "n_stale": 0,
+    "rebalance_effective_date": "2026-09-08",
+    "value_date": "2026-09-08",
+    "whole_market_carried_forward": true
+  },
+  {
+    "calc_version": "1.4.0",
+    "daily_return": 0.0011002519563843738,
+    "index_value": 1003.801675494198,
+    "n_capped": 5,
+    "n_carried_forward": 0,
+    "n_constituents_active": 500,
+    "n_stale": 0,
+    "rebalance_effective_date": "2026-09-09",
+    "value_date": "2026-09-09",
+    "whole_market_carried_forward": false
   }
 ]

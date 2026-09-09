@@ -4491,13 +4491,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 871216,
     "entry_reason": "entrant selected at reference-price rank 488",
     "liquidity_score": 0.6255230125523012,
     "member_since": "2026-09-01",
     "name": "Anna - Soothing Sister",
     "ref_price": 4.61,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-08",
     "set": "Expansion 6412",
     "variant_key": "foil"
   },
@@ -5614,6 +5616,17 @@
     "name": "Elsa - Exploring the Unknown",
     "ref_price": 40.55,
     "set": "Expansion 6208",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 770299,
+    "entry_reason": "entrant selected at reference-price rank 487",
+    "liquidity_score": 0.5469630026331057,
+    "member_since": "2026-09-08",
+    "name": "Ursula's Plan",
+    "ref_price": 4.75,
+    "set": "Expansion 5697",
     "variant_key": "foil"
   }
 ]

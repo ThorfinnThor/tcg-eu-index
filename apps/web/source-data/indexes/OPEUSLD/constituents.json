@@ -264,13 +264,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 744669,
     "entry_reason": "entrant selected at reference-price rank 95",
     "liquidity_score": 0.6787038120878692,
     "member_since": "2026-09-01",
     "name": "Premium Card Collection Girls Edition (Non-English)",
     "ref_price": 256.29,
+    "removal_reason": "incumbent removed at reference-price rank 102 outside top 100",
+    "removed_at": "2026-09-09",
     "set": "Expansion 5267",
     "variant_key": "nonfoil"
   },
@@ -807,13 +809,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 862845,
     "entry_reason": "entrant selected at reference-price rank 84",
     "liquidity_score": 0.5315796122023622,
     "member_since": "2026-09-01",
     "name": "Official Playmat & Card Set \"\"Whole Cake Island Arc\"\"",
     "ref_price": 316.66,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-09",
     "set": "Expansion 5244",
     "variant_key": "nonfoil"
   },
@@ -1136,6 +1140,28 @@
     "name": "Gift Collection 2023 Booster",
     "ref_price": 248.5,
     "set": "Expansion 5244",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 786092,
+    "entry_reason": "entrant selected at reference-price rank 99",
+    "liquidity_score": 0.7164896235704007,
+    "member_since": "2026-09-09",
+    "name": "Treasure Boosters Set",
+    "ref_price": 245.83333333333334,
+    "set": "Expansion 5244",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 840415,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.646473303766586,
+    "member_since": "2026-09-09",
+    "name": "The Best Vol.2 Booster Box",
+    "ref_price": 245.02000000000004,
+    "set": "Expansion 6242",
     "variant_key": "nonfoil"
   }
 ]

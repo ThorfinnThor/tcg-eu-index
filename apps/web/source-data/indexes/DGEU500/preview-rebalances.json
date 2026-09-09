@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "DGEU500",
   "rebalances": [
     {
@@ -3130,6 +3130,37 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "a1c91529929dcf97682e8792f15692f2f6599f1a8df849e4b9ec90352ce353f3"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 812058,
+          "reason": "entrant selected at reference-price rank 479",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 873686,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-08",
+      "eligible_count": 2041,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "855976936ed27531164d6e68bf51e05a2bd6754374ccf3afc1d9556d01cc4397"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 2036,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "89e9734785085b910e04844893b1133f81c7daf73482df58039d811dfe30a77f"
     }
   ],
   "schema_version": 1

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "YGEUSLD",
   "rebalances": [
     {
@@ -693,6 +693,24 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "cd87abefedd9c606dc7ba066d4f6dff4112719ca004a3f4851b2788acd7d2d32"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-08",
+      "eligible_count": 1152,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "c28dc0a05afd36a60ce081a3af1df23df42d01c5e7a54227daf614560dac60fa"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 1150,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "52915ff283f4b4c6e863d8a218292cb860028fe51927103708c8b66ee787bb54"
     }
   ],
   "schema_version": 1

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "MTEUSLD",
   "rebalances": [
     {
@@ -718,6 +718,24 @@
       "methodology_version": "1.4.0",
       "retained_count": 98,
       "selection_snapshot_sha256": "cd13a027f97052e29f7f69b231fc8728730bf3fb202a72d2b946d948c3c2c3ce"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-08",
+      "eligible_count": 3177,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "c67f9921b920de9fc454bc921335a03f8c37466f0f92bf6227a679358abc37a0"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-09",
+      "eligible_count": 3174,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "2966df9286b5269c7fe0a4fbfb3a87c3422a0fe2584ea1cbc6645ece0b5c5100"
     }
   ],
   "schema_version": 1

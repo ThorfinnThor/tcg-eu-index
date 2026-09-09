@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-07",
+  "generated_for": "2026-09-09",
   "index_code": "OPEUSLD",
   "rebalances": [
     {
@@ -706,6 +706,49 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "63522959ec5ca52403c2d0db33d8371c3d7f7511d08757bb896abe30886e6d5d"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-08",
+      "eligible_count": 349,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "c59b24243c146ce23eebbd3d554aa48d23dcee21c659fa281c19a3aefc980de7"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 786092,
+          "reason": "entrant selected at reference-price rank 99",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 840415,
+          "reason": "entrant selected at reference-price rank 100",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 744669,
+          "reason": "incumbent removed at reference-price rank 102 outside top 100",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 862845,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-09",
+      "eligible_count": 348,
+      "methodology_version": "1.4.0",
+      "retained_count": 98,
+      "selection_snapshot_sha256": "0913eb5f631f95a1e7f98ad20fb5c13bec812c6de931cf693e806ee8b1df5e80"
     }
   ],
   "schema_version": 1
