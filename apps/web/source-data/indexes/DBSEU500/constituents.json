@@ -154,13 +154,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 360590,
     "entry_reason": "entrant selected at reference-price rank 491",
     "liquidity_score": 0.6112911392405064,
     "member_since": "2026-09-01",
     "name": "Kaio-Ken Son Goku",
     "ref_price": 38.84,
+    "removal_reason": "incumbent removed at reference-price rank 507 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 2105",
     "variant_key": "foil"
   },
@@ -176,13 +178,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 367737,
     "entry_reason": "entrant selected at reference-price rank 490",
     "liquidity_score": 0.69,
     "member_since": "2026-09-01",
     "name": "Son Goku // Son Goku, The Legendary Super Saiyan",
     "ref_price": 38.95,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 2416",
     "variant_key": "foil"
   },
@@ -510,13 +514,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 578586,
     "entry_reason": "entrant selected at reference-price rank 489",
     "liquidity_score": 0.6333777925975326,
     "member_since": "2026-09-01",
     "name": "Super Baby 1, Parasitic Menace",
     "ref_price": 38.99,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 2105",
     "variant_key": "foil"
   },
@@ -1013,13 +1019,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 730973,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.5059825126553152,
     "member_since": "2026-09-01",
     "name": "SS4 Son Goku, Cross-Dimensional Fighting Spirit",
     "ref_price": 37.65,
+    "removal_reason": "incumbent removed at reference-price rank 511 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5369",
     "variant_key": "foil"
   },
@@ -1101,13 +1109,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 756835,
     "entry_reason": "entrant selected at reference-price rank 495",
     "liquidity_score": 0.660050936874659,
     "member_since": "2026-09-01",
     "name": "Son Goku // Son Goku (FB01-001) [Fusion World]",
     "ref_price": 38.08,
+    "removal_reason": "incumbent removed at reference-price rank 513 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5552",
     "variant_key": "foil"
   },
@@ -1629,13 +1639,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 782978,
     "entry_reason": "entrant selected at reference-price rank 498",
     "liquidity_score": 0.6762114537444934,
     "member_since": "2026-09-01",
     "name": "Son Goku : GT // Son Goku : GT (FB03-104) [Fusion World]",
     "ref_price": 37.81,
+    "removal_reason": "incumbent removed at reference-price rank 515 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5847",
     "variant_key": "foil"
   },
@@ -2014,13 +2026,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 809362,
     "entry_reason": "entrant selected at reference-price rank 494",
     "liquidity_score": 0.6857585139318886,
     "member_since": "2026-09-01",
     "name": "Energy Marker \"\"Vegito\"\"",
     "ref_price": 38.27,
+    "removal_reason": "incumbent removed at reference-price rank 512 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5786",
     "variant_key": "nonfoil"
   },
@@ -2929,13 +2943,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 831727,
     "entry_reason": "entrant selected at reference-price rank 493",
     "liquidity_score": 0.6969314079422383,
     "member_since": "2026-09-01",
     "name": "Energy Marker (Gohan & Piccolo- E59) [Fusion World]",
     "ref_price": 38.49,
+    "removal_reason": "incumbent removed at reference-price rank 509 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6171",
     "variant_key": "foil"
   },
@@ -3094,13 +3110,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 840301,
     "entry_reason": "entrant selected at reference-price rank 497",
     "liquidity_score": 0.6724137931034483,
     "member_since": "2026-09-01",
     "name": "Frieza (FS04-11) [Fusion World]",
     "ref_price": 37.87,
+    "removal_reason": "incumbent removed at reference-price rank 510 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5645",
     "variant_key": "foil"
   },
@@ -4051,13 +4069,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 862309,
     "entry_reason": "entrant selected at reference-price rank 492",
     "liquidity_score": 0.65625,
     "member_since": "2026-09-01",
     "name": "Son Goku (FB08-007) [Fusion World]",
     "ref_price": 38.82,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6410",
     "variant_key": "foil"
   },
@@ -4810,13 +4830,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 874978,
     "entry_reason": "entrant selected at reference-price rank 496",
     "liquidity_score": 0.6967741935483871,
     "member_since": "2026-09-01",
     "name": "Hit (FS10-12) [Fusion World]",
     "ref_price": 38.0,
+    "removal_reason": "incumbent removed at reference-price rank 514 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6163",
     "variant_key": "foil"
   },
@@ -4843,13 +4865,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 876606,
     "entry_reason": "entrant selected at reference-price rank 485",
     "liquidity_score": 0.6889308855291577,
     "member_since": "2026-09-01",
     "name": "Son Goku (FS11-07) [Fusion World]",
     "ref_price": 39.72,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6505",
     "variant_key": "foil"
   },
@@ -5250,13 +5274,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 883488,
     "entry_reason": "entrant selected at reference-price rank 487",
     "liquidity_score": 0.6334141904184354,
     "member_since": "2026-09-01",
     "name": "Energy Marker \"\"Son Gohan Beast E-128\"\"",
     "ref_price": 39.6,
+    "removal_reason": "incumbent removed at reference-price rank 504 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5786",
     "variant_key": "foil"
   },
@@ -5588,24 +5614,28 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 831733,
     "entry_reason": "entrant selected at reference-price rank 490",
     "liquidity_score": 0.7127361409441926,
     "member_since": "2026-09-07",
     "name": "Energy Marker (Trunks & Bulma - E62) [Fusion World]",
     "ref_price": 38.71,
+    "removal_reason": "incumbent removed at reference-price rank 506 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6171",
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 862843,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.7403345201008753,
     "member_since": "2026-09-07",
     "name": "Earth-Destroying Blow (FB02-104) [Fusion World]",
     "ref_price": 37.6,
+    "removal_reason": "incumbent removed at reference-price rank 516 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6410",
     "variant_key": "foil"
   },
@@ -5621,13 +5651,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 384342,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6135714285714285,
     "member_since": "2026-09-08",
     "name": "Caulifla & Kale // Kefla, Soul Overflowing",
     "ref_price": 37.53,
+    "removal_reason": "incumbent removed at reference-price rank 517 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 2547",
     "variant_key": "foil"
   },
@@ -5641,5 +5673,181 @@
     "ref_price": 108.1,
     "set": "Expansion 5176",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892728,
+    "entry_reason": "entrant selected at reference-price rank 162",
+    "liquidity_score": 0.7127814587806354,
+    "member_since": "2026-09-10",
+    "name": "Son Goku // Son Goku (FB10-001) [Fusion World]",
+    "ref_price": 175.53,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892757,
+    "entry_reason": "entrant selected at reference-price rank 392",
+    "liquidity_score": 0.676732701693942,
+    "member_since": "2026-09-10",
+    "name": "Everyone on Earth (FB10-014) [Fusion World]",
+    "ref_price": 54.16,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892851,
+    "entry_reason": "entrant selected at reference-price rank 220",
+    "liquidity_score": 0.699333779264214,
+    "member_since": "2026-09-10",
+    "name": "Son Goku/Vegeta // Vegito (FB10-025) [Fusion World]",
+    "ref_price": 124.83,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892961,
+    "entry_reason": "entrant selected at reference-price rank 394",
+    "liquidity_score": 0.566887844190732,
+    "member_since": "2026-09-10",
+    "name": "Vegito (FB10-040) [Fusion World]",
+    "ref_price": 53.77,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 892965,
+    "entry_reason": "entrant selected at reference-price rank 263",
+    "liquidity_score": 0.6575293517100562,
+    "member_since": "2026-09-10",
+    "name": "Vegito (FB10-041) [Fusion World]",
+    "ref_price": 94.82,
+    "set": "Expansion 6594",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893023,
+    "entry_reason": "entrant selected at reference-price rank 381",
+    "liquidity_score": 0.6706456692913386,
+    "member_since": "2026-09-10",
+    "name": "Potara (FB10-047) [Fusion World]",
+    "ref_price": 55.69,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893085,
+    "entry_reason": "entrant selected at reference-price rank 422",
+    "liquidity_score": 0.6873762920606994,
+    "member_since": "2026-09-10",
+    "name": "Son Gohan : Youth/Piccolo // Son Gohan : Adolescence/Piccolo (FB10-049) [Fusion World]",
+    "ref_price": 50.22,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893115,
+    "entry_reason": "entrant selected at reference-price rank 485",
+    "liquidity_score": 0.6782059800664452,
+    "member_since": "2026-09-10",
+    "name": "Piccolo (FB10-070) [Fusion World]",
+    "ref_price": 41.2,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893119,
+    "entry_reason": "entrant selected at reference-price rank 357",
+    "liquidity_score": 0.644,
+    "member_since": "2026-09-10",
+    "name": "Boujack // Boujack (FB10-073) [Fusion World]",
+    "ref_price": 61.99,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893489,
+    "entry_reason": "entrant selected at reference-price rank 272",
+    "liquidity_score": 0.6738343179008106,
+    "member_since": "2026-09-10",
+    "name": "Cell // Cell (FB10-097) [Fusion World]",
+    "ref_price": 88.99,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893513,
+    "entry_reason": "entrant selected at reference-price rank 476",
+    "liquidity_score": 0.7184918284553861,
+    "member_since": "2026-09-10",
+    "name": "Cell (FB10-113) [Fusion World]",
+    "ref_price": 42.4,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893522,
+    "entry_reason": "entrant selected at reference-price rank 288",
+    "liquidity_score": 0.6822942795962068,
+    "member_since": "2026-09-10",
+    "name": "Vegito (FB10-121) [Fusion World]",
+    "ref_price": 81.04,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893525,
+    "entry_reason": "entrant selected at reference-price rank 123",
+    "liquidity_score": 0.675865800865801,
+    "member_since": "2026-09-10",
+    "name": "Son Gohan : Childhood (FB10-122) [Fusion World]",
+    "ref_price": 225.05,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893526,
+    "entry_reason": "entrant selected at reference-price rank 33",
+    "liquidity_score": 0.6875435428571428,
+    "member_since": "2026-09-10",
+    "name": "Son Gohan : Childhood (FB10-122) [Fusion World]",
+    "ref_price": 1083.0,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893528,
+    "entry_reason": "entrant selected at reference-price rank 192",
+    "liquidity_score": 0.6829370629370629,
+    "member_since": "2026-09-10",
+    "name": "Cell (FB10-123) [Fusion World]",
+    "ref_price": 147.38,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893529,
+    "entry_reason": "entrant selected at reference-price rank 20",
+    "liquidity_score": 0.6852173913043478,
+    "member_since": "2026-09-10",
+    "name": "Cell (FB10-123) [Fusion World]",
+    "ref_price": 1425.0,
+    "set": "Expansion 6594",
+    "variant_key": "foil"
   }
 ]

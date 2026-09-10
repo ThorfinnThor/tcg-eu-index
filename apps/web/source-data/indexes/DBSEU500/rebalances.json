@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-09",
+  "generated_for": "2026-09-10",
   "index_code": "DBSEU500",
   "rebalances": [
     {
@@ -3223,6 +3223,208 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "0b6a518fde1eb73e03011775f950a65395293771cd97d1b3a13463cce78a639d"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 893529,
+          "reason": "entrant selected at reference-price rank 20",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893526,
+          "reason": "entrant selected at reference-price rank 33",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893525,
+          "reason": "entrant selected at reference-price rank 123",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 892728,
+          "reason": "entrant selected at reference-price rank 162",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893528,
+          "reason": "entrant selected at reference-price rank 192",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 892851,
+          "reason": "entrant selected at reference-price rank 220",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 892965,
+          "reason": "entrant selected at reference-price rank 263",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893489,
+          "reason": "entrant selected at reference-price rank 272",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893522,
+          "reason": "entrant selected at reference-price rank 288",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893119,
+          "reason": "entrant selected at reference-price rank 357",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893023,
+          "reason": "entrant selected at reference-price rank 381",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 892757,
+          "reason": "entrant selected at reference-price rank 392",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 892961,
+          "reason": "entrant selected at reference-price rank 394",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893085,
+          "reason": "entrant selected at reference-price rank 422",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893513,
+          "reason": "entrant selected at reference-price rank 476",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893115,
+          "reason": "entrant selected at reference-price rank 485",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 360590,
+          "reason": "incumbent removed at reference-price rank 507 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 367737,
+          "reason": "incumbent removed at reference-price rank 503 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 384342,
+          "reason": "incumbent removed at reference-price rank 517 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 578586,
+          "reason": "incumbent removed at reference-price rank 502 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 730973,
+          "reason": "incumbent removed at reference-price rank 511 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 756835,
+          "reason": "incumbent removed at reference-price rank 513 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 782978,
+          "reason": "incumbent removed at reference-price rank 515 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 809362,
+          "reason": "incumbent removed at reference-price rank 512 outside top 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 831727,
+          "reason": "incumbent removed at reference-price rank 509 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 831733,
+          "reason": "incumbent removed at reference-price rank 506 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 840301,
+          "reason": "incumbent removed at reference-price rank 510 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 862309,
+          "reason": "incumbent removed at reference-price rank 505 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 862843,
+          "reason": "incumbent removed at reference-price rank 516 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 874978,
+          "reason": "incumbent removed at reference-price rank 514 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 876606,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 883488,
+          "reason": "incumbent removed at reference-price rank 504 outside top 500",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-09-10",
+      "eligible_count": 2854,
+      "methodology_version": "1.4.0",
+      "retained_count": 484,
+      "selection_snapshot_sha256": "213476b7fbc76c4378afda3b2d4b795bdc2823b327d063173a3b9eb72e222c1f"
     }
   ],
   "schema_version": 1

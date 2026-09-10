@@ -583,13 +583,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 745021,
     "entry_reason": "entrant selected at reference-price rank 489",
     "liquidity_score": 0.6265822784810127,
     "member_since": "2026-09-01",
     "name": "Cinderella - Ballroom Sensation",
     "ref_price": 4.54,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5502",
     "variant_key": "foil"
   },
@@ -3820,13 +3822,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 847236,
     "entry_reason": "entrant selected at reference-price rank 208",
     "liquidity_score": 0.7,
     "member_since": "2026-09-01",
     "name": "Beast - Gracious Prince",
     "ref_price": 44.22,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-10",
     "set": "Expansion 6208",
     "variant_key": "foil"
   },
@@ -5628,5 +5632,27 @@
     "ref_price": 4.75,
     "set": "Expansion 5697",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 770311,
+    "entry_reason": "entrant selected at reference-price rank 469",
+    "liquidity_score": 0.46849785407725325,
+    "member_since": "2026-09-10",
+    "name": "Pegasus - Cloud Racer",
+    "ref_price": 5.08,
+    "set": "Expansion 5697",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 847236,
+    "entry_reason": "entrant selected at reference-price rank 197",
+    "liquidity_score": 0.5561935483870968,
+    "member_since": "2026-09-10",
+    "name": "Beast - Gracious Prince",
+    "ref_price": 47.03,
+    "set": "Expansion 6208",
+    "variant_key": "nonfoil"
   }
 ]

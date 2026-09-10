@@ -4203,13 +4203,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 759512,
     "entry_reason": "entrant selected at reference-price rank 499",
     "liquidity_score": 0.6775280898876405,
     "member_since": "2026-09-01",
     "name": "Dark Magician",
     "ref_price": 83.67,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5649",
     "variant_key": "nonfoil"
   },
@@ -5601,6 +5603,17 @@
     "name": "Test Tiger",
     "ref_price": 84.7,
     "set": "Expansion 1021",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 263746,
+    "entry_reason": "entrant selected at reference-price rank 217",
+    "liquidity_score": 0.543141052631579,
+    "member_since": "2026-09-10",
+    "name": "Blue-Eyes White Dragon",
+    "ref_price": 160.17,
+    "set": "Expansion 1044",
     "variant_key": "nonfoil"
   }
 ]

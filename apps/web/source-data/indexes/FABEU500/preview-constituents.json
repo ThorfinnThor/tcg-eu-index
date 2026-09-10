@@ -5582,13 +5582,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 602152,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6795333333333333,
     "member_since": "2026-09-09",
     "name": "Plasma Barrel Shot",
     "ref_price": 55.84,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 4482",
     "variant_key": "nonfoil"
   },
@@ -5601,6 +5603,17 @@
     "name": "Phantasmal Footsteps",
     "ref_price": 55.91,
     "set": "Expansion 5252",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 757253,
+    "entry_reason": "entrant selected at reference-price rank 167",
+    "liquidity_score": 0.5482666666666667,
+    "member_since": "2026-09-10",
+    "name": "Shimmers of Silver",
+    "ref_price": 143.42,
+    "set": "Expansion 5207",
     "variant_key": "nonfoil"
   }
 ]

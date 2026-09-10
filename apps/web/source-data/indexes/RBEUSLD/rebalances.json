@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-09",
+  "generated_for": "2026-09-10",
   "index_code": "RBEUSLD",
   "rebalances": [
     {
@@ -379,6 +379,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 49,
       "selection_snapshot_sha256": "8586f5b27571ef04e937511cd78bef24b196d8405362449ebff521616f4333fb"
+    },
+    {
+      "active_count": 49,
+      "changes": [],
+      "effective_date": "2026-09-10",
+      "eligible_count": 49,
+      "methodology_version": "1.4.0",
+      "retained_count": 49,
+      "selection_snapshot_sha256": "c8164c91b738c69abac0e14229a4094eea2b5cf07cc145e554e990bd9659b62a"
     }
   ],
   "schema_version": 1

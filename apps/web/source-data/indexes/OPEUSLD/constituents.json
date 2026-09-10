@@ -11,13 +11,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 692260,
     "entry_reason": "entrant selected at reference-price rank 97",
     "liquidity_score": 0.5395910117703008,
     "member_since": "2026-09-01",
     "name": "Super PreRelease Starter Deck: Animal Kingdom Pirates",
     "ref_price": 252.33,
+    "removal_reason": "incumbent removed at reference-price rank 103 outside top 100",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5240",
     "variant_key": "nonfoil"
   },
@@ -1162,6 +1164,17 @@
     "name": "The Best Vol.2 Booster Box",
     "ref_price": 245.02000000000004,
     "set": "Expansion 6242",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 744669,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.7128401648596412,
+    "member_since": "2026-09-10",
+    "name": "Premium Card Collection Girls Edition (Non-English)",
+    "ref_price": 240.204,
+    "set": "Expansion 5267",
     "variant_key": "nonfoil"
   }
 ]

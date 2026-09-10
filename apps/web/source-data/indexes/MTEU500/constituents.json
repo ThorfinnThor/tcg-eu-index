@@ -5606,14 +5606,27 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 686014,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.7,
     "member_since": "2026-09-09",
     "name": "Savannah",
     "ref_price": 348.5,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-10",
     "set": "Expansion 5199",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 10843,
+    "entry_reason": "entrant selected at reference-price rank 493",
+    "liquidity_score": 0.6123076923076923,
+    "member_since": "2026-09-10",
+    "name": "Yavimaya Hollow",
+    "ref_price": 351.54,
+    "set": "Expansion 28",
+    "variant_key": "foil"
   }
 ]

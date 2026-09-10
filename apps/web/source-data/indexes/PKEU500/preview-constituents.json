@@ -3875,13 +3875,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 669039,
     "entry_reason": "entrant selected at reference-price rank 491",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Umbreon [Moonlight Fang | Quick Blow]",
     "ref_price": 270.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-10",
     "set": "Expansion 4265",
     "variant_key": "foil"
   },
@@ -5653,6 +5655,17 @@
     "name": "Sylveon ex [Magical Charm | Angelite]",
     "ref_price": 436.27,
     "set": "Expansion 6595",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 829533,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6760960060003415,
+    "member_since": "2026-09-10",
+    "name": "Reshiram ex [Slash | Blazing Burst]",
+    "ref_price": 266.72,
+    "set": "Expansion 6131",
     "variant_key": "nonfoil"
   }
 ]
