@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-10",
+  "generated_for": "2026-09-11",
   "index_code": "LCEU500",
   "rebalances": [
     {
@@ -3242,6 +3242,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 498,
       "selection_snapshot_sha256": "37ba24ad3b34e4918d45d943dc8bb0f283b30b6a5129b40da2245e59caf56fff"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-11",
+      "eligible_count": 710,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "c0d4083780bb1df5192d41696727a34926b5d81c8f33894d285810df5999e27b"
     }
   ],
   "schema_version": 1

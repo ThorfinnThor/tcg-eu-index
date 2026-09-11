@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-10",
+  "generated_for": "2026-09-11",
   "index_code": "OPEU500",
   "rebalances": [
     {
@@ -3145,6 +3145,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "ba64205e5520aab1059ea4da96410413ab5e1148b620643e0096347b3eb76038"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-11",
+      "eligible_count": 3852,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "3b05cb2b2051faab730b08158dd32a066ed69fffe0059d41b14d55e3a0575c42"
     }
   ],
   "schema_version": 1

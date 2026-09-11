@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-10",
+  "generated_for": "2026-09-11",
   "index_code": "DGEUSLD",
   "rebalances": [
     {
@@ -694,6 +694,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "a5026bcc94d095b3d5b70b8d09449e62550590b9ed78e4d54868b654a561d8f9"
+    },
+    {
+      "active_count": 100,
+      "changes": [],
+      "effective_date": "2026-09-11",
+      "eligible_count": 134,
+      "methodology_version": "1.4.0",
+      "retained_count": 100,
+      "selection_snapshot_sha256": "71610a2c8a81efbf8a5ac5130e3eb060f3a5641d41bfddc944b31ad903f62ed8"
     }
   ],
   "schema_version": 1
