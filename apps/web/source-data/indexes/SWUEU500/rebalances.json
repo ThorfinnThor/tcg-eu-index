@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-11",
+  "generated_for": "2026-09-12",
   "index_code": "SWUEU500",
   "rebalances": [
     {
@@ -3314,6 +3314,40 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "07bc172eacdcfb669144c724ce3f18cc4e7475404153b905eb373436dfcfe852"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 876544,
+          "reason": "entrant selected at reference-price rank 499",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 868660,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 776858,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 796114,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        }
+      ],
+      "effective_date": "2026-09-12",
+      "eligible_count": 1383,
+      "methodology_version": "1.4.0",
+      "retained_count": 498,
+      "selection_snapshot_sha256": "ad1f7b2ed63dacb04d0604437982a60bb64552577bfe46a7ce9eaf34a330cf7e"
     }
   ],
   "schema_version": 1

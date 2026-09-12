@@ -518,13 +518,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 776858,
     "entry_reason": "entrant selected at reference-price rank 68",
     "liquidity_score": 0.6948717948717948,
     "member_since": "2026-09-01",
     "name": "Qi'ra, I Alone Survived",
     "ref_price": 143.43,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 5781",
     "variant_key": "foil"
   },
@@ -949,13 +951,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 796114,
     "entry_reason": "entrant selected at reference-price rank 114",
     "liquidity_score": 0.6812297734627832,
     "member_since": "2026-09-01",
     "name": "Jango Fett, Concealing the Conspiracy",
     "ref_price": 106.49,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 5937",
     "variant_key": "foil"
   },
@@ -5719,5 +5723,27 @@
     "ref_price": 12.66,
     "set": "Expansion 6451",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 868660,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.7010196381288614,
+    "member_since": "2026-09-12",
+    "name": "Karis Nemik, Freedom is a Pure Idea",
+    "ref_price": 12.53,
+    "set": "Expansion 6472",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 876544,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6810584958217271,
+    "member_since": "2026-09-12",
+    "name": "Maul, Master of the Shadow Collective",
+    "ref_price": 12.61,
+    "set": "Expansion 6452",
+    "variant_key": "foil"
   }
 ]

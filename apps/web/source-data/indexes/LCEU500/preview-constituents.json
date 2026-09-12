@@ -3657,13 +3657,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 844540,
     "entry_reason": "entrant selected at reference-price rank 455",
     "liquidity_score": 0.5183823529411765,
     "member_since": "2026-09-01",
     "name": "Dumbo - The Flying Elephant",
     "ref_price": 5.19,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 6208",
     "variant_key": "nonfoil"
   },
@@ -3734,13 +3736,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 844572,
     "entry_reason": "entrant selected at reference-price rank 56",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Donald Duck - Buccaneer",
     "ref_price": 147.67,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 6208",
     "variant_key": "nonfoil"
   },
@@ -5654,5 +5658,27 @@
     "ref_price": 47.03,
     "set": "Expansion 6208",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 745021,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6265822784810127,
+    "member_since": "2026-09-12",
+    "name": "Cinderella - Ballroom Sensation",
+    "ref_price": 4.51,
+    "set": "Expansion 5502",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 844572,
+    "entry_reason": "entrant selected at reference-price rank 66",
+    "liquidity_score": 0.5716071607160715,
+    "member_since": "2026-09-12",
+    "name": "Donald Duck - Buccaneer",
+    "ref_price": 137.13,
+    "set": "Expansion 6208",
+    "variant_key": "foil"
   }
 ]

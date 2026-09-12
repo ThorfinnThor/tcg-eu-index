@@ -4623,13 +4623,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 853460,
     "entry_reason": "entrant selected at reference-price rank 45",
     "liquidity_score": 0.6,
     "member_since": "2026-09-01",
     "name": "Summit, the Unforgiving",
     "ref_price": 400.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 4503",
     "variant_key": "nonfoil"
   },
@@ -5614,6 +5616,17 @@
     "name": "Shimmers of Silver",
     "ref_price": 143.42,
     "set": "Expansion 5207",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 602152,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6795333333333333,
+    "member_since": "2026-09-12",
+    "name": "Plasma Barrel Shot",
+    "ref_price": 55.84,
+    "set": "Expansion 4482",
     "variant_key": "nonfoil"
   }
 ]

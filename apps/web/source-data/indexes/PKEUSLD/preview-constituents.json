@@ -1167,14 +1167,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 552224,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.5,
     "member_since": "2026-09-05",
     "name": "Bandit Ring Booster Box",
     "ref_price": 2300.0,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-12",
     "set": "Expansion 4024",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 551761,
+    "entry_reason": "entrant selected at reference-price rank 99",
+    "liquidity_score": 0.6613980339343615,
+    "member_since": "2026-09-12",
+    "name": "Sky-Splitting Charisma Booster Box",
+    "ref_price": 2324.75,
+    "set": "Expansion 3881",
     "variant_key": "nonfoil"
   }
 ]

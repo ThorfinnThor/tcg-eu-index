@@ -2883,13 +2883,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 571810,
     "entry_reason": "entrant selected at reference-price rank 457",
     "liquidity_score": 0.5434877147205914,
     "member_since": "2026-09-01",
     "name": "Dragonite [Healing Wind | Slam]",
     "ref_price": 283.67,
+    "removal_reason": "incumbent removed at reference-price rank 533 outside top 500",
+    "removed_at": "2026-09-12",
     "set": "Expansion 4170",
     "variant_key": "nonfoil"
   },
@@ -3303,13 +3305,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 605331,
     "entry_reason": "entrant selected at reference-price rank 446",
     "liquidity_score": 0.5824676542283893,
     "member_since": "2026-09-01",
     "name": "Blaine's Charizard [Roaring Flames | Flame Jet]",
     "ref_price": 288.14,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-12",
     "set": "Expansion 4467",
     "variant_key": "nonfoil"
   },
@@ -3501,13 +3505,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 608700,
     "entry_reason": "entrant selected at reference-price rank 494",
     "liquidity_score": 0.555678894879656,
     "member_since": "2026-09-01",
     "name": "Charizard V [Incinerate | Heat Blast]",
     "ref_price": 268.91,
+    "removal_reason": "incumbent removed at reference-price rank 524 outside top 500",
+    "removed_at": "2026-09-12",
     "set": "Expansion 4434",
     "variant_key": "nonfoil"
   },
@@ -5666,6 +5672,39 @@
     "name": "Reshiram ex [Slash | Blazing Burst]",
     "ref_price": 266.72,
     "set": "Expansion 6131",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 284275,
+    "entry_reason": "entrant selected at reference-price rank 418",
+    "liquidity_score": 0.5492077895067617,
+    "member_since": "2026-09-12",
+    "name": "Lugia EX [Aero Ball | Deep Hurricane]",
+    "ref_price": 304.34,
+    "set": "Expansion 1660",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 568363,
+    "entry_reason": "entrant selected at reference-price rank 472",
+    "liquidity_score": 0.5918432846508321,
+    "member_since": "2026-09-12",
+    "name": "Lugia EX [Overflow | Plasma Gale]",
+    "ref_price": 276.08,
+    "set": "Expansion 4193",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 727072,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6328475330563513,
+    "member_since": "2026-09-12",
+    "name": "Detective Pikachu [Thorough Investigation | Ride Dash]",
+    "ref_price": 266.74,
+    "set": "Expansion 5212",
     "variant_key": "nonfoil"
   }
 ]

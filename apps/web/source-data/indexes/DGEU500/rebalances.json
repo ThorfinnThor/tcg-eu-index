@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-11",
+  "generated_for": "2026-09-12",
   "index_code": "DGEU500",
   "rebalances": [
     {
@@ -3179,6 +3179,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "c6a3933856fec5a69537a08797cc2673444a62fb53c62197a6835c438eef4218"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-12",
+      "eligible_count": 2024,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "d449b831c042a0a1e3633eb5317f11456180e254fbefd287184b30b6c5b46427"
     }
   ],
   "schema_version": 1

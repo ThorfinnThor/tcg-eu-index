@@ -728,13 +728,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 846512,
     "entry_reason": "entrant selected at reference-price rank 98",
     "liquidity_score": 0.6885014137606033,
     "member_since": "2026-09-01",
     "name": "Rise of the Floodborn Japanese Booster Box",
     "ref_price": 31.83,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-12",
     "set": "Expansion 5502",
     "variant_key": "nonfoil"
   },
@@ -1110,6 +1112,17 @@
     "name": "Elsa - Exploring the Unknown and Stitch - Carefree Snowboarder Pack",
     "ref_price": 44.75,
     "set": "Expansion 6208",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 846521,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6910319662448609,
+    "member_since": "2026-09-12",
+    "name": "Shimmering Skies Japanese Booster Box",
+    "ref_price": 32.288333333333334,
+    "set": "Expansion 5792",
     "variant_key": "nonfoil"
   }
 ]

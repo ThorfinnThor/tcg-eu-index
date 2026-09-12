@@ -1167,14 +1167,27 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 744669,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.7128401648596412,
     "member_since": "2026-09-10",
     "name": "Premium Card Collection Girls Edition (Non-English)",
     "ref_price": 240.204,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-12",
     "set": "Expansion 5267",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 750069,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6879137305146273,
+    "member_since": "2026-09-12",
+    "name": "500 Years into the Future Booster Box",
+    "ref_price": 234.15,
+    "set": "Expansion 5586",
     "variant_key": "nonfoil"
   }
 ]

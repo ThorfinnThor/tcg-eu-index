@@ -123,13 +123,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 210084,
     "entry_reason": "entrant selected at reference-price rank 26",
     "liquidity_score": 0.6919432278994323,
     "member_since": "2026-09-01",
     "name": "Tempest Booster Box",
     "ref_price": 3699.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-12",
     "set": "Expansion 19",
     "variant_key": "nonfoil"
   },
@@ -1149,6 +1151,17 @@
     "name": "Wilds of Eldraine Collector Booster Box",
     "ref_price": 777.49,
     "set": "Expansion 5359",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 210126,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.662877123477105,
+    "member_since": "2026-09-12",
+    "name": "Future Sight Booster Box",
+    "ref_price": 768.7441666666667,
+    "set": "Expansion 70",
     "variant_key": "nonfoil"
   }
 ]
