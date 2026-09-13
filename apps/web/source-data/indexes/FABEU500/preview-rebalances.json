@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-12",
+  "generated_for": "2026-09-13",
   "index_code": "FABEU500",
   "rebalances": [
     {
@@ -3239,6 +3239,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "1e22e70376d867dd8ba8ba4b035d2fd889e9fd6785d27a6c9f778c6fed36df2d"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 768826,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 667080,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-13",
+      "eligible_count": 3126,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "022143961f61999242f2e82e4da424290bca7b85483fb30c99d443e5df0dc463"
     }
   ],
   "schema_version": 1

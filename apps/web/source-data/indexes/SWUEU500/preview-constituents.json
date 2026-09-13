@@ -35,13 +35,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 757447,
     "entry_reason": "entrant selected at reference-price rank 268",
     "liquidity_score": 0.6818181818181819,
     "member_since": "2026-09-01",
     "name": "Chirrut Îmwe, One With The Force",
     "ref_price": 41.1,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 5638",
     "variant_key": "foil"
   },
@@ -1593,13 +1595,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 815904,
     "entry_reason": "entrant selected at reference-price rank 141",
     "liquidity_score": 0.55,
     "member_since": "2026-09-01",
     "name": "Silver Angel, Trace's Hope",
     "ref_price": 89.83,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 6074",
     "variant_key": "foil"
   },
@@ -3269,13 +3273,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 838423,
     "entry_reason": "entrant selected at reference-price rank 191",
     "liquidity_score": 0.6428571428571429,
     "member_since": "2026-09-01",
     "name": "Qui-Gon Jinn, The Negotiations Will Be Short",
     "ref_price": 70.22,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 6101",
     "variant_key": "foil"
   },
@@ -3843,13 +3849,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 856806,
     "entry_reason": "entrant selected at reference-price rank 200",
     "liquidity_score": 0.6428571428571429,
     "member_since": "2026-09-01",
     "name": "Colonel Yularen, This Is Why We Plan",
     "ref_price": 65.28,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 6364",
     "variant_key": "foil"
   },
@@ -5745,5 +5753,49 @@
     "ref_price": 12.61,
     "set": "Expansion 6452",
     "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 757606,
+    "entry_reason": "entrant selected at reference-price rank 497",
+    "liquidity_score": 0.5808163265306122,
+    "member_since": "2026-09-13",
+    "name": "Overwhelming Barrage",
+    "ref_price": 12.52,
+    "set": "Expansion 5638",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 854331,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6285773050478933,
+    "member_since": "2026-09-13",
+    "name": "Lightmaker, I Have An Idea",
+    "ref_price": 12.29,
+    "set": "Expansion 6333",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 857101,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.7065384615384616,
+    "member_since": "2026-09-13",
+    "name": "Mina Bonteri, Stop This War",
+    "ref_price": 12.27,
+    "set": "Expansion 6364",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 868647,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-13",
+    "name": "Shatterpoint",
+    "ref_price": 12.5,
+    "set": "Expansion 6472",
+    "variant_key": "nonfoil"
   }
 ]

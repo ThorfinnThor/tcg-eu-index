@@ -718,13 +718,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 688065,
     "entry_reason": "entrant selected at reference-price rank 89",
     "liquidity_score": 0.68,
     "member_since": "2026-09-01",
     "name": "Son Gohan, Beyond the Ultimate",
     "ref_price": 305.91,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 5176",
     "variant_key": "foil"
   },
@@ -3387,13 +3389,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 850063,
     "entry_reason": "entrant selected at reference-price rank 404",
     "liquidity_score": 0.6799910004499775,
     "member_since": "2026-09-01",
     "name": "Son Goku (FB02-119) [Fusion World]",
     "ref_price": 51.28,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 5645",
     "variant_key": "foil"
   },
@@ -3981,13 +3985,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 859314,
     "entry_reason": "entrant selected at reference-price rank 85",
     "liquidity_score": 0.601010101010101,
     "member_since": "2026-09-01",
     "name": "Energy Marker (E-85) [Fusion World]",
     "ref_price": 326.75,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 6383",
     "variant_key": "foil"
   },
@@ -5848,6 +5854,39 @@
     "name": "Cell (FB10-123) [Fusion World]",
     "ref_price": 1425.0,
     "set": "Expansion 6594",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 367737,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.7147435897435898,
+    "member_since": "2026-09-13",
+    "name": "Son Goku // Son Goku, The Legendary Super Saiyan",
+    "ref_price": 38.95,
+    "set": "Expansion 2416",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 578586,
+    "entry_reason": "entrant selected at reference-price rank 499",
+    "liquidity_score": 0.6333777925975326,
+    "member_since": "2026-09-13",
+    "name": "Super Baby 1, Parasitic Menace",
+    "ref_price": 38.99,
+    "set": "Expansion 2105",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 876606,
+    "entry_reason": "entrant selected at reference-price rank 498",
+    "liquidity_score": 0.6785761754444259,
+    "member_since": "2026-09-13",
+    "name": "Son Goku (FS11-07) [Fusion World]",
+    "ref_price": 39.02,
+    "set": "Expansion 6505",
     "variant_key": "foil"
   }
 ]

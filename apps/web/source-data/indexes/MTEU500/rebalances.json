@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-12",
+  "generated_for": "2026-09-13",
   "index_code": "MTEU500",
   "rebalances": [
     {
@@ -3252,6 +3252,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "ce37d9ff8dbabc519b37a9f6f20dc6fd09837ec50876585148d360f1b4885c5d"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-13",
+      "eligible_count": 30855,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "9b4df85703fba02b6c3d5bcc7e305834ac7cac715cbfa46beb39d8a99d7980ea"
     }
   ],
   "schema_version": 1

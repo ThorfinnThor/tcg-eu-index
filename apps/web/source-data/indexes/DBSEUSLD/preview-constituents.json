@@ -697,13 +697,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 776887,
     "entry_reason": "entrant selected at reference-price rank 25",
     "liquidity_score": 0.5828514285714286,
     "member_since": "2026-09-01",
     "name": "Legends of the Dragon Balls Booster Box",
     "ref_price": 350.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 5810",
     "variant_key": "nonfoil"
   },
@@ -1188,6 +1190,17 @@
     "name": "Cross Force Booster Box Case [Fusion World]",
     "ref_price": 1848.33,
     "set": "Expansion 6594",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 840531,
+    "entry_reason": "entrant selected at reference-price rank 100",
+    "liquidity_score": 0.6778095238095239,
+    "member_since": "2026-09-13",
+    "name": "New Adventure Booster Box [Fusion World] (Non-English)",
+    "ref_price": 63.0,
+    "set": "Expansion 6076",
     "variant_key": "nonfoil"
   }
 ]

@@ -1751,13 +1751,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 667080,
     "entry_reason": "entrant selected at reference-price rank 156",
     "liquidity_score": 0.6733333333333333,
     "member_since": "2026-09-01",
     "name": "Katsu, the Wanderer",
     "ref_price": 157.5,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 5042",
     "variant_key": "nonfoil"
   },
@@ -5627,6 +5629,17 @@
     "name": "Plasma Barrel Shot",
     "ref_price": 55.84,
     "set": "Expansion 4482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 768826,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6692633198692056,
+    "member_since": "2026-09-13",
+    "name": "Zen, Tamer of Purpose",
+    "ref_price": 55.62,
+    "set": "Expansion 5756",
     "variant_key": "nonfoil"
   }
 ]

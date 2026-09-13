@@ -3584,13 +3584,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 651746,
     "entry_reason": "entrant selected at reference-price rank 361",
     "liquidity_score": 0.5085657142857143,
     "member_since": "2026-09-01",
     "name": "Grass Energy",
     "ref_price": 350.0,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-13",
     "set": "Expansion 6697",
     "variant_key": "foil"
   },
@@ -5705,6 +5707,17 @@
     "name": "Detective Pikachu [Thorough Investigation | Ride Dash]",
     "ref_price": 266.74,
     "set": "Expansion 5212",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 554180,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6189240207645116,
+    "member_since": "2026-09-13",
+    "name": "Pitch's Pikachu [Pika Shoot]",
+    "ref_price": 265.91,
+    "set": "Expansion 4159",
     "variant_key": "nonfoil"
   }
 ]
