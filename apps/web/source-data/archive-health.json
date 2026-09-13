@@ -1,12 +1,12 @@
 {
-  "coverageRatio": 0.25,
+  "coverageRatio": 0.4,
   "cutoverProjection": {
     "assumesNoGaps": true,
     "firstEligibleEffectiveDate": "2026-10-11",
     "firstFullObservationDate": "2026-10-10",
     "firstMonthlyRebalanceDate": "2026-11-01"
   },
-  "expectedDays": 28,
+  "expectedDays": 35,
   "gapCount": 21,
   "gaps": [
     {
@@ -115,9 +115,9 @@
       "reason": "Daily archive manifest missing"
     }
   ],
-  "generatedFor": "2026-09-06",
+  "generatedFor": "2026-09-13",
   "integrityErrorCount": 21,
-  "manifestCount": 7,
+  "manifestCount": 14,
   "operations": {
     "billingMonth": "2026-09",
     "classA": {
@@ -137,12 +137,12 @@
   "since": "2026-08-10",
   "status": "attention_required",
   "storage": {
-    "bytes": 2512751737,
+    "bytes": 6477760668,
     "freeTierBytes": 10000000000,
     "status": "within_free_tier",
-    "usageRatio": 0.25127517
+    "usageRatio": 0.64777607
   },
-  "until": "2026-09-06",
-  "verifiedFileCount": 7,
+  "until": "2026-09-13",
+  "verifiedFileCount": 14,
   "warningCount": 0
 }
