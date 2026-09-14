@@ -5538,13 +5538,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 9357,
     "entry_reason": "entrant selected at reference-price rank 494",
     "liquidity_score": 0.644418757313697,
     "member_since": "2026-09-05",
     "name": "Survival of the Fittest",
     "ref_price": 352.06,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-14",
     "set": "Expansion 21",
     "variant_key": "nonfoil"
   },
@@ -5640,6 +5642,17 @@
     "name": "Lord of the Pit",
     "ref_price": 371.86,
     "set": "Expansion 5245",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 6846,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6438965884861407,
+    "member_since": "2026-09-14",
+    "name": "Shahrazad",
+    "ref_price": 349.16,
+    "set": "Expansion 4",
     "variant_key": "nonfoil"
   }
 ]

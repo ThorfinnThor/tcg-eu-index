@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-13",
+  "generated_for": "2026-09-14",
   "index_code": "DBSEU500",
   "rebalances": [
     {
@@ -3489,6 +3489,52 @@
       "methodology_version": "1.4.0",
       "retained_count": 497,
       "selection_snapshot_sha256": "155cd9e3fc36a9e0b90abbe57e5ab042fda904dbb1b4c3a26b2ee4826d0f9a77"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 795666,
+          "reason": "entrant selected at reference-price rank 147",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 883488,
+          "reason": "entrant selected at reference-price rank 499",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 862309,
+          "reason": "entrant selected at reference-price rank 500",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 525875,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 795666,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 850024,
+          "reason": "incumbent removed after failing current eligibility gates",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-14",
+      "eligible_count": 2816,
+      "methodology_version": "1.4.0",
+      "retained_count": 497,
+      "selection_snapshot_sha256": "8d47331f8df351a9eecd19b215b96bcbe3fbc2fe97e29b4441ec7f8d2c4d8c35"
     }
   ],
   "schema_version": 1

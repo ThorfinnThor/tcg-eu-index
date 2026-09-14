@@ -1779,13 +1779,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 866743,
     "entry_reason": "entrant selected at reference-price rank 389",
     "liquidity_score": 0.5492610837438424,
     "member_since": "2026-09-01",
     "name": "Draven, Vanquisher",
     "ref_price": 1.97,
+    "removal_reason": "incumbent removed after failing current eligibility gates",
+    "removed_at": "2026-09-14",
     "set": "Expansion 6399",
     "variant_key": "foil"
   },

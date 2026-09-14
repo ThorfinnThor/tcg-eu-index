@@ -99,13 +99,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 361506,
     "entry_reason": "entrant selected at reference-price rank 91",
     "liquidity_score": 0.5615384615384615,
     "member_since": "2026-09-01",
     "name": "Expansion Set: Ultimate Box",
     "ref_price": 65.0,
+    "removal_reason": "incumbent removed at reference-price rank 102 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 2350",
     "variant_key": "nonfoil"
   },
@@ -330,13 +332,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 457418,
     "entry_reason": "entrant selected at reference-price rank 97",
     "liquidity_score": 0.6888302128340534,
     "member_since": "2026-09-01",
     "name": "Rise of the Unison Warrior Booster Box",
     "ref_price": 62.49,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 3193",
     "variant_key": "nonfoil"
   },
@@ -418,13 +422,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 538193,
     "entry_reason": "entrant selected at reference-price rank 94",
     "liquidity_score": 0.6579030475288173,
     "member_since": "2026-09-01",
     "name": "Battle Evolution Booster Booster Box",
     "ref_price": 63.33,
+    "removal_reason": "incumbent removed at reference-price rank 104 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 3733",
     "variant_key": "nonfoil"
   },
@@ -442,13 +448,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 571326,
     "entry_reason": "entrant selected at reference-price rank 92",
     "liquidity_score": 0.680882582254795,
     "member_since": "2026-09-01",
     "name": "Collector's Selection Vol.1",
     "ref_price": 64.13,
+    "removal_reason": "incumbent removed at reference-price rank 103 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 5067",
     "variant_key": "nonfoil"
   },
@@ -1193,14 +1201,71 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 840531,
     "entry_reason": "entrant selected at reference-price rank 100",
     "liquidity_score": 0.6778095238095239,
     "member_since": "2026-09-13",
     "name": "New Adventure Booster Box [Fusion World] (Non-English)",
     "ref_price": 63.0,
+    "removal_reason": "incumbent removed at reference-price rank 105 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 6076",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893628,
+    "entry_reason": "entrant selected at reference-price rank 82",
+    "liquidity_score": 0.7188163102583343,
+    "member_since": "2026-09-14",
+    "name": "Rivals Clash Booster Box [Fusion World] (Asia Region Legal)",
+    "ref_price": 84.90428571428572,
+    "set": "Expansion 6523",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893629,
+    "entry_reason": "entrant selected at reference-price rank 63",
+    "liquidity_score": 0.5,
+    "member_since": "2026-09-14",
+    "name": "Wish for Shenron Booster Box [Fusion World] (Asia Region Legal)",
+    "ref_price": 119.13,
+    "set": "Expansion 6524",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893630,
+    "entry_reason": "entrant selected at reference-price rank 92",
+    "liquidity_score": 0.7229931023770203,
+    "member_since": "2026-09-14",
+    "name": "Saiyans Pride Booster Box [Fusion World] (Asia Region Legal)",
+    "ref_price": 74.98142857142857,
+    "set": "Expansion 6525",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893631,
+    "entry_reason": "entrant selected at reference-price rank 73",
+    "liquidity_score": 0.7051234262951966,
+    "member_since": "2026-09-14",
+    "name": "Dual Evolution Booster Box [Fusion World] (Asia Region Legal)",
+    "ref_price": 98.85714285714286,
+    "set": "Expansion 6526",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893632,
+    "entry_reason": "entrant selected at reference-price rank 66",
+    "liquidity_score": 0.6849413258764485,
+    "member_since": "2026-09-14",
+    "name": "Cross Force Booster Box [Fusion World] (Asia Region Legal)",
+    "ref_price": 116.99,
+    "set": "Expansion 6620",
     "variant_key": "nonfoil"
   }
 ]

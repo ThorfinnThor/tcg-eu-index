@@ -429,13 +429,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 254511,
     "entry_reason": "entrant selected at reference-price rank 98",
     "liquidity_score": 0.6826315789473685,
     "member_since": "2026-09-01",
     "name": "Galactic Overlord Booster Box",
     "ref_price": 380.0,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-14",
     "set": "Expansion 1364",
     "variant_key": "nonfoil"
   },
@@ -1123,6 +1125,17 @@
     "name": "Duelist Pack: Jaden Yuki Booster Box",
     "ref_price": 520.0,
     "set": "Expansion 1027",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 254376,
+    "entry_reason": "entrant selected at reference-price rank 98",
+    "liquidity_score": 0.5553192937093866,
+    "member_since": "2026-09-14",
+    "name": "Collector's Tins 2006: Elemental HERO Shining Flare Wingman",
+    "ref_price": 389.2857142857143,
+    "set": "Expansion 1107",
     "variant_key": "nonfoil"
   }
 ]
