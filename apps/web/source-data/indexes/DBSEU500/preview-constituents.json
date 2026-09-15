@@ -5907,13 +5907,15 @@
     "variant_key": "foil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 862309,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6795597373589584,
     "member_since": "2026-09-14",
     "name": "Son Goku (FB08-007) [Fusion World]",
     "ref_price": 38.82,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 6410",
     "variant_key": "foil"
   },
@@ -5926,6 +5928,17 @@
     "name": "Energy Marker \"\"Son Gohan Beast E-128\"\"",
     "ref_price": 38.94,
     "set": "Expansion 5786",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 831716,
+    "entry_reason": "entrant selected at reference-price rank 258",
+    "liquidity_score": 0.5479396923076923,
+    "member_since": "2026-09-15",
+    "name": "Energy Marker (Goku & Gohan - E53) [Fusion World]",
+    "ref_price": 96.28,
+    "set": "Expansion 6171",
     "variant_key": "foil"
   }
 ]

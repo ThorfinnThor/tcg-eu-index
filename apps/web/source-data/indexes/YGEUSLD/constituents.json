@@ -242,13 +242,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 254481,
     "entry_reason": "entrant selected at reference-price rank 97",
     "liquidity_score": 0.6117853586962217,
     "member_since": "2026-09-01",
     "name": "Rise of Destiny Booster Box",
     "ref_price": 381.66,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-15",
     "set": "Expansion 1032",
     "variant_key": "nonfoil"
   },
@@ -1136,6 +1138,17 @@
     "name": "Collector's Tins 2006: Elemental HERO Shining Flare Wingman",
     "ref_price": 389.2857142857143,
     "set": "Expansion 1107",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 611236,
+    "entry_reason": "entrant selected at reference-price rank 91",
+    "liquidity_score": 0.4,
+    "member_since": "2026-09-15",
+    "name": "Duelist Pack: Chazz Princeton Booster Box",
+    "ref_price": 410.0,
+    "set": "Expansion 1067",
     "variant_key": "nonfoil"
   }
 ]

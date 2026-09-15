@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-14",
+  "generated_for": "2026-09-15",
   "index_code": "MTEU500",
   "rebalances": [
     {
@@ -3283,6 +3283,52 @@
       "methodology_version": "1.4.0",
       "retained_count": 499,
       "selection_snapshot_sha256": "f8082a85b95fbabec6a9b17814b0721d60831e53fbf6cd2bd7e4a6a7a9bb7a01"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 5182,
+          "reason": "entrant selected at reference-price rank 66",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 750326,
+          "reason": "entrant selected at reference-price rank 487",
+          "variant_key": "foil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 819504,
+          "reason": "entrant selected at reference-price rank 493",
+          "variant_key": "foil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 6846,
+          "reason": "incumbent removed at reference-price rank 503 outside top 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 16652,
+          "reason": "incumbent removed at reference-price rank 501 outside top 500",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 16698,
+          "reason": "incumbent removed at reference-price rank 502 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-15",
+      "eligible_count": 30985,
+      "methodology_version": "1.4.0",
+      "retained_count": 497,
+      "selection_snapshot_sha256": "1bc2244ae401b98c0be69de09fe70e3b8b020ef0b085dd192828d3bc86161fdc"
     }
   ],
   "schema_version": 1

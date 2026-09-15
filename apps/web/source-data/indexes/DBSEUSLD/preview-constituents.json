@@ -518,13 +518,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 666444,
     "entry_reason": "entrant selected at reference-price rank 95",
     "liquidity_score": 0.678586114186304,
     "member_since": "2026-09-01",
     "name": "Theme Selection: History of Son Goku",
     "ref_price": 63.23,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-15",
     "set": "Expansion 5105",
     "variant_key": "nonfoil"
   },
@@ -1266,6 +1268,17 @@
     "name": "Cross Force Booster Box [Fusion World] (Asia Region Legal)",
     "ref_price": 116.99,
     "set": "Expansion 6620",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 359232,
+    "entry_reason": "entrant selected at reference-price rank 92",
+    "liquidity_score": 0.5137777777777778,
+    "member_since": "2026-09-15",
+    "name": "Colossal Warfare Booster Box",
+    "ref_price": 75.0,
+    "set": "Expansion 2331",
     "variant_key": "nonfoil"
   }
 ]

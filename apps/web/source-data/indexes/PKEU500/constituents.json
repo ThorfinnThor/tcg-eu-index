@@ -4468,13 +4468,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 765791,
     "entry_reason": "entrant selected at reference-price rank 497",
     "liquidity_score": 0.6190476190476191,
     "member_since": "2026-09-01",
     "name": "Ancient Mew [Psyche]",
     "ref_price": 268.01,
+    "removal_reason": "incumbent removed at reference-price rank 505 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 4170",
     "variant_key": "nonfoil"
   },
@@ -5699,25 +5701,62 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 727072,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6328475330563513,
     "member_since": "2026-09-12",
     "name": "Detective Pikachu [Thorough Investigation | Ride Dash]",
     "ref_price": 266.74,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 5212",
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 554180,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6189240207645116,
     "member_since": "2026-09-13",
     "name": "Pitch's Pikachu [Pika Shoot]",
     "ref_price": 265.91,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 4159",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 372483,
+    "entry_reason": "entrant selected at reference-price rank 420",
+    "liquidity_score": 0.5589883655364758,
+    "member_since": "2026-09-15",
+    "name": "Greninja & Zoroark GX [Dark Pulse | Dark Union GX]",
+    "ref_price": 302.79,
+    "set": "Expansion 2437",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 849669,
+    "entry_reason": "entrant selected at reference-price rank 497",
+    "liquidity_score": 0.7166489560521686,
+    "member_since": "2026-09-15",
+    "name": "Magikarp & Wailord GX [Super Splash | Towering Splash GX]",
+    "ref_price": 268.08,
+    "set": "Expansion 6319",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 882966,
+    "entry_reason": "entrant selected at reference-price rank 324",
+    "liquidity_score": 0.4861336675020886,
+    "member_since": "2026-09-15",
+    "name": "Pikachu ex [Thunderbolt]",
+    "ref_price": 399.0,
+    "set": "Expansion 6519",
     "variant_key": "nonfoil"
   }
 ]

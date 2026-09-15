@@ -2334,13 +2334,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 16652,
     "entry_reason": "entrant selected at reference-price rank 497",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Firebreathing",
     "ref_price": 350.0,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 76",
     "variant_key": "nonfoil"
   },
@@ -2400,13 +2402,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 16698,
     "entry_reason": "entrant selected at reference-price rank 498",
     "liquidity_score": 0.5,
     "member_since": "2026-09-01",
     "name": "Fungusaur",
     "ref_price": 350.0,
+    "removal_reason": "incumbent removed at reference-price rank 502 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 76",
     "variant_key": "nonfoil"
   },
@@ -5645,14 +5649,49 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 6846,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6438965884861407,
     "member_since": "2026-09-14",
     "name": "Shahrazad",
     "ref_price": 349.16,
+    "removal_reason": "incumbent removed at reference-price rank 503 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 4",
     "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 5182,
+    "entry_reason": "entrant selected at reference-price rank 66",
+    "liquidity_score": 0.5309613460663939,
+    "member_since": "2026-09-15",
+    "name": "Badlands",
+    "ref_price": 1993.27,
+    "set": "Expansion 2",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 750326,
+    "entry_reason": "entrant selected at reference-price rank 487",
+    "liquidity_score": 0.4,
+    "member_since": "2026-09-15",
+    "name": "Deathrite Shaman",
+    "ref_price": 356.78,
+    "set": "Expansion 5506",
+    "variant_key": "foil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 819504,
+    "entry_reason": "entrant selected at reference-price rank 493",
+    "liquidity_score": 0.6982312517387702,
+    "member_since": "2026-09-15",
+    "name": "Misty Rainforest",
+    "ref_price": 353.25,
+    "set": "Expansion 5523",
+    "variant_key": "foil"
   }
 ]

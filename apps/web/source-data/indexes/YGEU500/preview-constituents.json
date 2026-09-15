@@ -5540,13 +5540,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 105124,
     "entry_reason": "entrant selected at reference-price rank 491",
     "liquidity_score": 0.550997150997151,
     "member_since": "2026-09-07",
     "name": "Rainbow Dragon",
     "ref_price": 84.64,
+    "removal_reason": "incumbent removed at reference-price rank 641 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 1037",
     "variant_key": "nonfoil"
   },
@@ -5627,6 +5629,17 @@
     "name": "Blue-Eyes Toon Ultimate Dragon",
     "ref_price": 86.33,
     "set": "Expansion 6619",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 242729,
+    "entry_reason": "entrant selected at reference-price rank 500",
+    "liquidity_score": 0.6002105283075991,
+    "member_since": "2026-09-15",
+    "name": "Foolish Burial",
+    "ref_price": 84.04,
+    "set": "Expansion 1207",
     "variant_key": "nonfoil"
   }
 ]

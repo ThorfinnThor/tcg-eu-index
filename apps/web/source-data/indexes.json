@@ -1,9 +1,9 @@
 {
-  "datasetVersion": "2026-09-14.preview.1.4.0",
+  "datasetVersion": "2026-09-15.preview.1.4.0",
   "indexes": [
     {
       "base_date": "2026-09-01",
-      "breadth": 0.09561752988047809,
+      "breadth": 0.100990099009901,
       "code": "MTEU500",
       "game": "Magic: The Gathering",
       "history_start_date": "2026-09-01",
@@ -14,7 +14,7 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.02810143892734443
+      "volatility_30d": 0.029952276408276145
     },
     {
       "base_date": "2026-09-01",
@@ -29,11 +29,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.01969583413756715
+      "volatility_30d": 0.019201409530723516
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.08964143426294821,
+      "breadth": 0.09760956175298804,
       "code": "YGEU500",
       "game": "Yu-Gi-Oh!",
       "history_start_date": "2026-09-01",
@@ -44,11 +44,11 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.03086173489202174
+      "volatility_30d": 0.029767725422308586
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.019801980198019802,
+      "breadth": 0.0196078431372549,
       "code": "YGEUSLD",
       "game": "Yu-Gi-Oh!",
       "history_start_date": "2026-09-01",
@@ -59,11 +59,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.029503471085244603
+      "volatility_30d": 0.02852308470574698
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.06374501992031872,
+      "breadth": 0.0775347912524851,
       "code": "OPEU500",
       "game": "One Piece",
       "history_start_date": "2026-09-01",
@@ -74,7 +74,7 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.022372062613562674
+      "volatility_30d": 0.022462340736371007
     },
     {
       "base_date": "2026-09-01",
@@ -89,11 +89,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.05247981079226651
+      "volatility_30d": 0.05264225651185345
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.061386138613861385,
+      "breadth": 0.0688976377952756,
       "code": "PKEU500",
       "game": "Pokemon",
       "history_start_date": "2026-09-01",
@@ -104,7 +104,7 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.024916902916620787
+      "volatility_30d": 0.026808146528607208
     },
     {
       "base_date": "2026-09-01",
@@ -119,11 +119,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.0224582326803293
+      "volatility_30d": 0.02186092272569355
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.06963249516441006,
+      "breadth": 0.09073359073359073,
       "code": "DBSEU500",
       "game": "Dragon Ball Super",
       "history_start_date": "2026-09-01",
@@ -134,11 +134,11 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.0317490928699622
+      "volatility_30d": 0.030994378019685975
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.13761467889908258,
+      "breadth": 0.17272727272727273,
       "code": "DBSEUSLD",
       "game": "Dragon Ball Super",
       "history_start_date": "2026-09-01",
@@ -149,11 +149,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.04350226549353835
+      "volatility_30d": 0.04192481034016295
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.053784860557768925,
+      "breadth": 0.061752988047808766,
       "code": "FABEU500",
       "game": "Flesh and Blood",
       "history_start_date": "2026-09-01",
@@ -164,11 +164,11 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.0147074647657265
+      "volatility_30d": 0.014190240807869117
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.06,
+      "breadth": 0.07,
       "code": "FABEUSLD",
       "game": "Flesh and Blood",
       "history_start_date": "2026-09-01",
@@ -179,11 +179,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.03050592191885271
+      "volatility_30d": 0.029726160076880156
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.07171314741035857,
+      "breadth": 0.08946322067594434,
       "code": "DGEU500",
       "game": "Digimon",
       "history_start_date": "2026-09-01",
@@ -194,7 +194,7 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.019720533894073786
+      "volatility_30d": 0.019503401347208044
     },
     {
       "base_date": "2026-09-01",
@@ -209,11 +209,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.020183084453662906
+      "volatility_30d": 0.01949316799480747
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.18290258449304175,
+      "breadth": 0.18687872763419483,
       "code": "LCEU500",
       "game": "Disney Lorcana",
       "history_start_date": "2026-09-01",
@@ -224,11 +224,11 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.05964898590868652
+      "volatility_30d": 0.05803043965221005
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.0891089108910891,
+      "breadth": 0.10679611650485436,
       "code": "LCEUSLD",
       "game": "Disney Lorcana",
       "history_start_date": "2026-09-01",
@@ -239,11 +239,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.05674036069501115
+      "volatility_30d": 0.056695727797336455
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.08695652173913043,
+      "breadth": 0.09072978303747535,
       "code": "SWUEU500",
       "game": "Star Wars: Unlimited",
       "history_start_date": "2026-09-01",
@@ -254,7 +254,7 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.018627800795960405
+      "volatility_30d": 0.01980521776067765
     },
     {
       "base_date": "2026-09-01",
@@ -269,11 +269,11 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.048736159324715374
+      "volatility_30d": 0.04696382767963292
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.16834170854271358,
+      "breadth": 0.20854271356783918,
       "code": "RBEU500",
       "game": "Riftbound",
       "history_start_date": "2026-09-01",
@@ -284,11 +284,11 @@
       "status": "preview",
       "target_size": 500,
       "universe": "singles",
-      "volatility_30d": 0.03158177512909765
+      "volatility_30d": 0.03145659037428945
     },
     {
       "base_date": "2026-09-01",
-      "breadth": 0.24489795918367346,
+      "breadth": 0.30612244897959184,
       "code": "RBEUSLD",
       "game": "Riftbound",
       "history_start_date": "2026-09-01",
@@ -299,7 +299,7 @@
       "status": "preview",
       "target_size": 100,
       "universe": "sealed",
-      "volatility_30d": 0.09052480187318754
+      "volatility_30d": 0.1030705750876097
     }
   ],
   "methodologyVersion": "1.4.0",

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-14",
+  "generated_for": "2026-09-15",
   "index_code": "FABEU500",
   "rebalances": [
     {
@@ -3270,6 +3270,15 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "cc39be53cf576de1a5750c9a86eea6399b5c3a6dbf3d92d796614a6fa9f9bbfa"
+    },
+    {
+      "active_count": 500,
+      "changes": [],
+      "effective_date": "2026-09-15",
+      "eligible_count": 3130,
+      "methodology_version": "1.4.0",
+      "retained_count": 500,
+      "selection_snapshot_sha256": "2d6a8da3bb3c1015c5a24e0fb678b06330943c57982361df6a2c8b198d0ec605"
     }
   ],
   "schema_version": 1

@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-14",
+  "generated_for": "2026-09-15",
   "index_code": "LCEUSLD",
   "rebalances": [
     {
@@ -756,6 +756,40 @@
       "methodology_version": "1.4.0",
       "retained_count": 100,
       "selection_snapshot_sha256": "c6d375cb1563f0f4701fa825547dc5aad9ed54f304dd60e618e757d7aa9c9a33"
+    },
+    {
+      "active_count": 100,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 893920,
+          "reason": "entrant selected at reference-price rank 57",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "added",
+          "cm_product_id": 893921,
+          "reason": "entrant selected at reference-price rank 65",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 807397,
+          "reason": "incumbent removed at reference-price rank 101 outside top 100",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 882174,
+          "reason": "incumbent removed at reference-price rank 102 outside top 100",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-15",
+      "eligible_count": 155,
+      "methodology_version": "1.4.0",
+      "retained_count": 98,
+      "selection_snapshot_sha256": "adeadc6c3d6263b50f7cdfe65be7f3b10fae457f40c210d8842e05a35ea197c8"
     }
   ],
   "schema_version": 1

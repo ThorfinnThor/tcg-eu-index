@@ -5582,13 +5582,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 620764,
     "entry_reason": "entrant selected at reference-price rank 500",
     "liquidity_score": 0.6216950959488273,
     "member_since": "2026-09-14",
     "name": "Sistermon Ciel (BT6-084)",
     "ref_price": 15.6,
+    "removal_reason": "incumbent removed at reference-price rank 501 outside top 500",
+    "removed_at": "2026-09-15",
     "set": "Expansion 4992",
     "variant_key": "nonfoil"
   },
@@ -5601,6 +5603,17 @@
     "name": "ShineGreymon: Ruin Mode (EX4-074)",
     "ref_price": 15.61,
     "set": "Expansion 6482",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 696433,
+    "entry_reason": "entrant selected at reference-price rank 464",
+    "liquidity_score": 0.5175234521575985,
+    "member_since": "2026-09-15",
+    "name": "UlforceVeedramon (BT11-032)",
+    "ref_price": 17.17,
+    "set": "Expansion 5246",
     "variant_key": "nonfoil"
   }
 ]

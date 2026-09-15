@@ -1,7 +1,7 @@
 {
   "cadence": "daily_preview",
   "data_state": "preview",
-  "generated_for": "2026-09-14",
+  "generated_for": "2026-09-15",
   "index_code": "OPEU500",
   "rebalances": [
     {
@@ -3206,6 +3206,28 @@
       "methodology_version": "1.4.0",
       "retained_count": 500,
       "selection_snapshot_sha256": "f6303d26029b9b9a8b1bc0259178b9ad45c4d6050e35e0ad19507217137480f7"
+    },
+    {
+      "active_count": 500,
+      "changes": [
+        {
+          "action": "added",
+          "cm_product_id": 882469,
+          "reason": "entrant selected at reference-price rank 3",
+          "variant_key": "nonfoil"
+        },
+        {
+          "action": "removed",
+          "cm_product_id": 747817,
+          "reason": "incumbent removed at reference-price rank 505 outside top 500",
+          "variant_key": "nonfoil"
+        }
+      ],
+      "effective_date": "2026-09-15",
+      "eligible_count": 3844,
+      "methodology_version": "1.4.0",
+      "retained_count": 499,
+      "selection_snapshot_sha256": "2ec086310ce15e791f07182ca1fa3c8620b761156f35d478cbb6b89f22877427"
     }
   ],
   "schema_version": 1

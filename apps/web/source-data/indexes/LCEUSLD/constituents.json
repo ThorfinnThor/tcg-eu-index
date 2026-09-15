@@ -519,13 +519,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 807397,
     "entry_reason": "entrant selected at reference-price rank 97",
     "liquidity_score": 0.6537042729787887,
     "member_since": "2026-09-01",
     "name": "Archazia's Island Illumineer's Trove",
     "ref_price": 32.53,
+    "removal_reason": "incumbent removed at reference-price rank 101 outside top 100",
+    "removed_at": "2026-09-15",
     "set": "Expansion 6013",
     "variant_key": "nonfoil"
   },
@@ -1005,13 +1007,15 @@
     "variant_key": "nonfoil"
   },
   {
-    "action": "added",
+    "action": "removed",
     "cm_product_id": 882174,
     "entry_reason": "entrant selected at reference-price rank 96",
     "liquidity_score": 0.6515151515151515,
     "member_since": "2026-09-01",
     "name": "Wilds Unknown: Super Rare Set",
     "ref_price": 33.0,
+    "removal_reason": "incumbent removed at reference-price rank 102 outside top 100",
+    "removed_at": "2026-09-15",
     "set": "Expansion 6551",
     "variant_key": "nonfoil"
   },
@@ -1123,6 +1127,28 @@
     "name": "Shimmering Skies Japanese Booster Box",
     "ref_price": 32.288333333333334,
     "set": "Expansion 5792",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893920,
+    "entry_reason": "entrant selected at reference-price rank 57",
+    "liquidity_score": 0.6882283696291936,
+    "member_since": "2026-09-15",
+    "name": "Wilds Unknown Japanese Booster Box",
+    "ref_price": 84.95,
+    "set": "Expansion 6551",
+    "variant_key": "nonfoil"
+  },
+  {
+    "action": "added",
+    "cm_product_id": 893921,
+    "entry_reason": "entrant selected at reference-price rank 65",
+    "liquidity_score": 0.6895163211817965,
+    "member_since": "2026-09-15",
+    "name": "Attack of the Vine! Japanese Booster Box",
+    "ref_price": 69.95,
+    "set": "Expansion 6586",
     "variant_key": "nonfoil"
   }
 ]

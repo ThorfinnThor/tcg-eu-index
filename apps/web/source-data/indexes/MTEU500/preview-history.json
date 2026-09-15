@@ -166,5 +166,17 @@
     "rebalance_effective_date": "2026-09-14",
     "value_date": "2026-09-14",
     "whole_market_carried_forward": false
+  },
+  {
+    "calc_version": "1.4.0",
+    "daily_return": -0.002068189044138533,
+    "index_value": 1005.3022598460433,
+    "n_capped": 3,
+    "n_carried_forward": 0,
+    "n_constituents_active": 500,
+    "n_stale": 0,
+    "rebalance_effective_date": "2026-09-15",
+    "value_date": "2026-09-15",
+    "whole_market_carried_forward": false
   }
 ]
